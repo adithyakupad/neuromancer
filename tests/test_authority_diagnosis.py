@@ -33,3 +33,30 @@ def test_fixed_evaluator_memberships_do_not_change_observable():
     for j in range(4):
         assert len(g[f'fixed_unstim_sector_{j}'])==150
         assert len(g[f'observed_sector_{j}'])==20
+
+
+def _analysis_module():
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).resolve().parents[1]/'reports/evidence/m002_1/analyze.py'
+    spec=importlib.util.spec_from_file_location('m0021_analysis',path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
+def test_analysis_pairing_and_global_selection_use_only_calibration():
+    analysis=_analysis_module()
+    response=np.zeros((10,5,2,8))
+    response[:,:2,0,2]=3
+    response[:,2:,0,3]=100
+    result=analysis.selection_analysis(response)
+    assert result['global_strategy']['action']=='C01'
+    assert result['global_strategy']['network_pass_count']==0
+    assert result['oracle']['network_pass_count']==10
+    assert result['split_network_diagnostic']['network_pass_count']==0
+    interval=analysis.hierarchical_ci(np.ones((10,5,3)))
+    np.testing.assert_array_equal(interval['mean'],np.ones(3))
+    np.testing.assert_array_equal(interval['lower'],np.ones(3))
+    np.testing.assert_array_equal(interval['upper'],np.ones(3))
+    stats=analysis.t_summary(np.zeros((10,5)))
+    assert stats['replicates']==5 and stats['sd']==[0.]*10

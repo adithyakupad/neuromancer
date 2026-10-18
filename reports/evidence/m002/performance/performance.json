@@ -1,0 +1,334 @@
+{
+  "cases": [
+    {
+      "retain_spikes": false,
+      "chunked": false,
+      "initialization_ns": 29712084,
+      "simulated_seconds": 5,
+      "wall_ns": 5965070875,
+      "neural_ns": 4338126250,
+      "observation_ns": 30833000,
+      "realtime_factor": 0.8382130078211351,
+      "peak_rss_bytes": 977174528,
+      "retained_spike_events": 0,
+      "retained_event_array_bytes": 0,
+      "population_spikes": 65664,
+      "observed_spikes": 6621,
+      "provenance": {
+        "config": {
+          "network_id": 0,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "trial",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "trial",
+          "network_id": 0,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+            "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+            "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+            "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+            "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+            "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+            "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+            "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+            "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+          },
+          "1": {
+            "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+            "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+          },
+          "2": {
+            "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+            "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+          },
+          "3": {
+            "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+            "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+          },
+          "4": {
+            "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+            "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 29712084
+      }
+    },
+    {
+      "retain_spikes": false,
+      "chunked": true,
+      "initialization_ns": 38618084,
+      "simulated_seconds": 5,
+      "wall_ns": 16242701000,
+      "neural_ns": 14420675750,
+      "observation_ns": 30713750,
+      "realtime_factor": 0.30783057571520894,
+      "peak_rss_bytes": 925679616,
+      "retained_spike_events": 0,
+      "retained_event_array_bytes": 0,
+      "population_spikes": 65664,
+      "observed_spikes": 6621,
+      "provenance": {
+        "config": {
+          "network_id": 0,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "trial",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "trial",
+          "network_id": 0,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+            "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+            "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+            "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+            "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+            "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+            "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+            "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+            "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+          },
+          "1": {
+            "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+            "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+          },
+          "2": {
+            "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+            "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+          },
+          "3": {
+            "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+            "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+          },
+          "4": {
+            "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+            "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 38618084
+      }
+    },
+    {
+      "retain_spikes": true,
+      "chunked": false,
+      "initialization_ns": 35898166,
+      "simulated_seconds": 5,
+      "wall_ns": 4026880792,
+      "neural_ns": 2937837250,
+      "observation_ns": 32432000,
+      "realtime_factor": 1.2416558269947415,
+      "peak_rss_bytes": 1011400704,
+      "retained_spike_events": 65664,
+      "retained_event_array_bytes": 787968,
+      "population_spikes": 65664,
+      "observed_spikes": 6621,
+      "provenance": {
+        "config": {
+          "network_id": 0,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "trial",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": true
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "trial",
+          "network_id": 0,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+            "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+            "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+            "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+            "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+            "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+            "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+            "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+            "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+          },
+          "1": {
+            "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+            "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+          },
+          "2": {
+            "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+            "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+          },
+          "3": {
+            "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+            "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+          },
+          "4": {
+            "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+            "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 35898166
+      }
+    },
+    {
+      "retain_spikes": true,
+      "chunked": true,
+      "initialization_ns": 21567459,
+      "simulated_seconds": 5,
+      "wall_ns": 14194531042,
+      "neural_ns": 12757169250,
+      "observation_ns": 35607000,
+      "realtime_factor": 0.35224834023791063,
+      "peak_rss_bytes": 930545664,
+      "retained_spike_events": 65664,
+      "retained_event_array_bytes": 787968,
+      "population_spikes": 65664,
+      "observed_spikes": 6621,
+      "provenance": {
+        "config": {
+          "network_id": 0,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "trial",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": true
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "trial",
+          "network_id": 0,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+            "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+            "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+            "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+            "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+            "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+            "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+            "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+            "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+          },
+          "1": {
+            "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+            "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+          },
+          "2": {
+            "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+            "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+          },
+          "3": {
+            "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+            "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+          },
+          "4": {
+            "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+            "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 21567459
+      }
+    }
+  ],
+  "repetitions_per_case": 1,
+  "limitations": "Fresh process each; one timing sample, includes noise generation; peak RSS is process high-water, not incremental retention memory."
+}

@@ -355,3 +355,27 @@ def test_record_policy_cannot_change_scientific_observations():
     right=retained.run_commands(commands(retained,values))
     observations_equal(left,right)
     assert len(engine.monitor.i)==0 and len(retained.monitor.i)>0
+
+
+def test_inhibitory_event_path_and_exact_allowed_current_boundary():
+    engine=BrianEngine(Config())
+    engine.group.namespace['background']=0*b.pA
+    engine.group.namespace['noise_sigma']=0*b.pA
+    engine.group.v=-65*b.mV
+    for syn in engine.synapses:syn.weight=0*b.pA
+    pre=engine.parameters['pre'];post=engine.parameters['post']
+    edge=np.flatnonzero(pre>=800)[0]
+    source,target=int(pre[edge]),int(post[edge])
+    engine.synapses[1].weight[0]=-100*b.pA
+    engine.group.v[source]=-49*b.mV
+    trace=b.StateMonitor(engine.group,'I_I',record=[target],when='end',
+                         clock=engine.clock,codeobj_class=NumpyCodeObject)
+    engine.net.add(trace)
+    first=engine.advance(Command('trial','0',0,(30.,30.,0.,0.)),20000)
+    trace_us=np.rint(np.asarray(trace.t/b.us)).astype(int)
+    negative=np.flatnonzero(np.asarray(trace.I_I/b.pA)[0]<0)
+    assert trace_us[negative[0]]==engine.parameters['delay_us'][edge]
+    assert np.asarray(trace.I_I/b.pA)[0,negative[0]]==-100
+    result=engine.run_commands(commands(engine,[(60.,60.,0.,0.),(90.,90.,0.,0.),(120.,120.,0.,0.)]))[-1]
+    assert result.receipt.delivered_current_pA==(120.,120.,0.,0.)
+    assert sum(first.receipt.delivered_current_pA)==60

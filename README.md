@@ -17,7 +17,7 @@ Build a programmable, stimulation-responsive neural system for closed-loop biolo
 
 ## Milestones
 
-- [ ] Define neural state and stimulation interfaces
+- [x] Define neural state and stimulation interfaces
 - [ ] Implement a model-backed simulator source
 - [ ] Add plasticity / state adaptation
 - [ ] Benchmark closed-loop controllers
@@ -25,7 +25,10 @@ Build a programmable, stimulation-responsive neural system for closed-loop biolo
 
 ## Status
 
-**Concept / architecture phase.**
+**Brian2 substrate implemented; frozen V0 control-authority gate failed.**
+
+Mission 002 separates passing software qualification from insufficient measured
+control authority. System identification and controller evaluation have not begun.
 
 This repository is part of an ongoing research-engineering project backlog. Claims, results, and benchmarks will be added only when supported by reproducible experiments.
 

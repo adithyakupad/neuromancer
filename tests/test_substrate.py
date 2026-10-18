@@ -345,3 +345,13 @@ def test_future_commands_cannot_mutate_previous_observations():
     engine.reset()
     replay=engine.advance(Command('trial','first',0,(0.,)*4),20000)
     observations_equal([first],[replay])
+
+
+def test_record_policy_cannot_change_scientific_observations():
+    engine=BrianEngine(Config(retain_spikes=False))
+    retained=BrianEngine(Config(retain_spikes=True))
+    values=[(30.,)*4,(60.,)*4]+[(60.,)*4]*3
+    left=engine.run_commands(commands(engine,values))
+    right=retained.run_commands(commands(retained,values))
+    observations_equal(left,right)
+    assert len(engine.monitor.i)==0 and len(retained.monitor.i)>0

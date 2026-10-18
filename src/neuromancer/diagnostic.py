@@ -202,7 +202,8 @@ def plot_results(output):
         axes[1].axhline(4,color='black',linestyle='--',label='4 Hz authority gate')
         axes[1].set(xlabel='Training network',ylabel='Paired stimulation − sham (Hz)',title='5 s constrained holds')
         axes[1].legend(fontsize=8)
-        fig.savefig(output/'authority.svg',metadata={'Date':None});plt.close(fig)
+        fig.savefig(output/'authority.svg',metadata={'Date':None})
+        fig.savefig(output/'authority.png',dpi=150);plt.close(fig)
     elif (output/'steps.jsonl').exists():
         rows=[json.loads(line)['observation'] for line in (output/'steps.jsonl').read_text().splitlines()]
         fig,axes=plt.subplots(2,1,figsize=(7,4),layout='constrained')
@@ -211,19 +212,29 @@ def plot_results(output):
         axes[0].set(xlabel='Simulation time (ms)',ylabel='Recording channel',title='Simulation-only observed spikes')
         axes[1].plot([r['stop_us']/1000 for r in rows],[np.mean(r['sector_rate_hz']) for r in rows])
         axes[1].set(xlabel='Completed bin edge (ms)',ylabel='Observed E rate (Hz)')
-        fig.savefig(output/'smoke.svg',metadata={'Date':None});plt.close(fig)
+        fig.savefig(output/'smoke.svg',metadata={'Date':None})
+        fig.savefig(output/'smoke.png',dpi=150);plt.close(fig)
 
 
 def provenance():
-    root=Path(__file__).resolve().parents[2]
+    package=Path(__file__).resolve().parent
+    root=package.parents[1]
+    try:
+        repository=Path(subprocess.check_output(
+            ['git','-C',str(root),'rev-parse','--show-toplevel'],
+            text=True,stderr=subprocess.DEVNULL).strip())
+    except subprocess.CalledProcessError:
+        repository=None
     def git(*args):
-        return subprocess.check_output(['git','-C',str(root),*args],text=True).strip()
-    sources={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()
-             for p in sorted((root/'src/neuromancer').glob('*.py'))}
-    protocol=root/'docs/research/002_V0_PROTOCOL.md'
+        if repository is None:return None
+        return subprocess.check_output(['git','-C',str(repository),*args],text=True).strip()
+    sources={'neuromancer/'+p.name:hashlib.sha256(p.read_bytes()).hexdigest()
+             for p in sorted(package.glob('*.py'))}
     return dict(schema_version=1,experiment_kind='simulation',head=git('rev-parse','HEAD'),
         branch=git('branch','--show-current'),working_tree=git('status','--porcelain=v1'),
-        source_hashes=sources,protocol_sha256=hashlib.sha256(protocol.read_bytes()).hexdigest(),
+        source_hashes=sources,protocol_sha256='e747c6ce67dfea86bc3f32e2d66fc85b226d3504a00925bb699e2b6fb67c0833',
+        root_seed=20261018,seed_roles={0:'membrane/init',1:'connectivity',
+            2:'weights/delays',3:'channels',4:'OU',5:'calibration',6:'masks',7:'reserved Brian'},
         python=sys.version,platform=platform.platform(),machine=platform.machine(),
         package_versions={p:importlib.metadata.version(p) for p in ['neuromancer','brian2','numpy','sympy','cython']},
         cli=sys.argv,clock='integer us; 100 us neural grid and 20000 us control bins',
@@ -236,6 +247,7 @@ def main():
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=False)
+    os.environ.setdefault('MPLCONFIGDIR',str(args.output.resolve()/'.mpl-cache'))
     (args.output/'provenance.json').write_text(json.dumps(provenance(),indent=2)+'\n')
     try:
         {'smoke':smoke,'authority':authority,'performance':performance,'convergence':convergence}[args.mode](args.output)

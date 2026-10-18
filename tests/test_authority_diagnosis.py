@@ -60,3 +60,39 @@ def test_analysis_pairing_and_global_selection_use_only_calibration():
     np.testing.assert_array_equal(interval['upper'],np.ones(3))
     stats=analysis.t_summary(np.zeros((10,5)))
     assert stats['replicates']==5 and stats['sd']==[0.]*10
+
+
+def test_full_analysis_synthetic_zero_fixture(tmp_path):
+    """All-zero software data; never interpreted as a neuroscience experiment."""
+    import json
+    from itertools import product
+    analysis=_analysis_module()
+    raw=tmp_path/'raw';raw.mkdir()
+    trials=[]
+    groups=list(evaluator_groups(realization(Config())))
+    for n,r in product(range(10),range(5)):
+        folder=raw/f'network_{n}_replicate_{r}';folder.mkdir()
+        parameters=realization(Config(network_id=n))
+        np.savez_compressed(folder/'numerical.npz',
+            spike_counts=np.zeros((2,8,1000),dtype=np.int32),
+            observed_counts=np.zeros((2,8,250,20),dtype=np.int32),
+            sector_rates_hz=np.zeros((2,8,250,4)),
+            filtered_sector_rates_hz=np.zeros((2,8,250,4)),
+            group_current_trace_pA=np.zeros((2,8,250,len(groups),2)),
+            delivered_current_pA=np.tile(np.array([action_schedule(t) for t in TARGETS]),(2,1,1,1)),
+            stimulation=parameters['stimulation'],recording=parameters['recording'])
+        trial=dict(status='complete',network_id=n,replicate_id=r,group_names=groups,
+            receipt_ledger=[dict(constraint_violations=0) for _ in range(16)])
+        (folder/'trial.json').write_text(json.dumps(trial))
+        trials.append(trial)
+    (raw/'summary.json').write_text(json.dumps(dict(status='complete',trials=trials,wall_ns=0)))
+    output=tmp_path/'analysis'
+    analysis.main(raw,output)
+    result=json.loads((output/'comparison.json').read_text())
+    assert result['primary_gate']=='FAIL' and result['completed_branches']==800
+    assert result['selection']['global_strategy']['action']=='D'
+    assert result['selection']['oracle']['network_pass_count']==0
+    outcomes=json.loads((output/'outcomes.json').read_text())
+    assert len(outcomes)==800
+    assert outcomes[0]['paired_response_hz']['direct_active_E'] is None
+    assert outcomes[2]['paired_response_hz']['action_unstim_E']==0

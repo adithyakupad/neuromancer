@@ -75,3 +75,15 @@ def test_network_gate_and_selection():
     assert gate(np.ones(10),np.ones(10))['scientific_gate']=='FAIL'
     assert select([dict(loss=.1,features=4,lambda_value=.01,**{'lambda':.01}),dict(loss=.1,features=40,**{'lambda':.1})])['features']==4
     with pytest.raises(ValueError):select([dict(loss=None)])
+
+
+def test_independent_ridge_and_forecast_equations():
+    import importlib.util
+    spec=importlib.util.spec_from_file_location('necessity_audit','reports/evidence/m003_1/verify.py')
+    audit_module=importlib.util.module_from_spec(spec);spec.loader.exec_module(audit_module)
+    y,u=data();rng=np.random.default_rng(775);y+=rng.normal(0,.1,y.shape)
+    for family,size in [('STATIC',1),('FIR',10),('FIR',50),('ARX',1),('ARX',4),('AR',4),('FIR_SHUFFLED',10)]:
+        m=fit(y,u,family,size,.001);assert m['diagnostics']['valid'];audit_module.coefficient(m,y,u,{})
+        np.testing.assert_allclose(forecast(m,y[:3000],u[:3000],u[3000:3010]),audit_module.predict(m,y[:3000],u[:3000],u[3000:3010]),atol=1e-9,rtol=0)
+        expected=forecast(m,y[:3000],u[:3000],u[3000:3010]);changed=y.copy();changed[3000:]=999
+        np.testing.assert_array_equal(expected,forecast(m,changed[:3000],u[:3000],u[3000:3010]))

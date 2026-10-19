@@ -113,6 +113,12 @@ def main():
     parser.add_argument('--analysis', type=Path, required=True); parser.add_argument('--output', type=Path, required=True); args = parser.parse_args(); began = time.perf_counter()
     preserved = json.loads(Path('reports/evidence/m003_2/preservation.json').read_text())['files']
     for name, digest in preserved.items(): assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == digest
+    raw_source = json.loads((args.raw/'provenance.json').read_text())
+    assert raw_source['protocol_sha256'] == hashlib.sha256(Path('docs/research/007_M003_2_STATE_DEPENDENCE_PROTOCOL.md').read_bytes()).hexdigest()
+    for name, digest in raw_source['source_hashes'].items():
+        assert hashlib.sha256((Path('src')/name).read_bytes()).hexdigest() == digest
+    seal = json.loads((args.models/'forecast_seal.json').read_text())
+    for name, digest in seal['artifact_sha256'].items(): assert hashlib.sha256((args.models/name).read_bytes()).hexdigest() == digest
     observation_checks = 0; trials = 0; unique_noise = set()
     for n in range(10):
         for rep in ((26, 27, 28, 29, 30, 31) if n < 3 else (26, 27, 28, 29, 30)):
@@ -133,6 +139,7 @@ def main():
             for s, threshold, relation in (('LOW', bounds[0], np.less_equal), ('HIGH', bounds[1], np.greater_equal)):
                 index = np.flatnonzero(relation(candidate_rates, threshold))[0]; stop = 1260+index*10
                 o = origin(args.raw, n, rep, s); assert int(o['time_us']) == stop*20000
+                assert set(o) == {'history', 'input_history', 'rate', 'bounds', 'time_us'}
                 np.testing.assert_array_equal(o['history'], backbone['rates'][stop-50:stop])
                 assert float(o['rate']) == candidate_rates[index] and not o['input_history'].any()
                 null = None
@@ -183,6 +190,7 @@ def main():
                         np.testing.assert_allclose(delta, archived['delta'][m, s], rtol=0, atol=1e-10)
                         np.testing.assert_allclose(absolute, archived['absolute'][m, s], rtol=0, atol=1e-10); forecast_checks += 1
     data = read(args.analysis/'data.npz'); errors = np.empty_like(data['errors']); abs_errors = np.empty_like(errors)
+    half_errors = np.empty_like(data['half_errors'])
     widths = read(args.models/'intervals.npz')['widths']
     for n in range(10):
         for m, family in enumerate(FAMILIES):
@@ -194,13 +202,15 @@ def main():
                 for h, size in enumerate((1, 10, 50, 100)): ee[h].extend(np.abs(delta[1:, :size].mean(axis=1)-truth[1:, :size].mean(axis=1)).ravel())
             np.testing.assert_allclose(widths[n, m], [np.quantile(e, .95, method='higher') for e in ee], atol=1e-10)
         for r, rep in enumerate((29, 30)):
-            pred = read(args.models/f'n{n}_r{rep}.npz')
+            pred = read(args.models/f'n{n}_r{rep}.npz'); half_pred = read(args.models/f'n{n}_r{rep}_half.npz')
             for s, stratum in enumerate(('LOW', 'HIGH')):
                 yy = np.array([read(args.raw/f'n{n}_r{rep}'/stratum/f'{name}.npz')['rates'] for name in NAMES]); truth = yy-yy[0]
                 for h, size in enumerate((1, 10, 50, 100)):
                     np.testing.assert_allclose(data['actual'][n, r, s, :, h], truth[:, :size].mean(axis=1), atol=1e-12)
                     errors[n, r, :, s, :, h] = (pred['delta'][:, s, :, :size].mean(axis=2)-truth[:, :size].mean(axis=1))**2
+                    half_errors[n, r, :, s, :, h] = (half_pred['delta'][:, s, :, :size].mean(axis=2)-truth[:, :size].mean(axis=1))**2
                     abs_errors[n, r, :, s, :, h] = (pred['absolute'][:, s, :, :size].mean(axis=2)-yy[:, :size].mean(axis=1))**2
+    np.testing.assert_allclose(half_errors, data['half_errors'], atol=1e-12)
     np.testing.assert_allclose(errors, data['errors'], atol=1e-12); np.testing.assert_allclose(abs_errors, data['absolute_errors'], atol=1e-12)
     network = errors[:, :, :, :, 1:].mean(axis=(1, 3, 4, 6)); np.testing.assert_array_equal(network, data['network'])
     delta = network[:, 0, 2]-network[:, 1, 2]; relative = delta/np.maximum(network[:, 0, 2], .04)

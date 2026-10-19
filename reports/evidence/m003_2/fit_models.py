@@ -77,6 +77,8 @@ def main():
     from neuromancer.diagnostic import provenance
     source = provenance()
     source['script_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    source['protocol_sha256'] = hashlib.sha256(Path('docs/research/007_M003_2_STATE_DEPENDENCE_PROTOCOL.md').read_bytes()).hexdigest()
+    source['evaluated_split'] = 'fit26/27, selection28; forecast origins/plans only29/30 and null31, networks0-9'
     save_json(args.output/'provenance.json', source)
     candidates = {}; scores = {family: [] for family in FAMILIES}
     for n in range(10):

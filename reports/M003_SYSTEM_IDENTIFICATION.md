@@ -181,3 +181,26 @@ Before using identification success to justify a controller, preregister a **new
 M003 stops here. No PI,MPC,RLS,RL,neural retuning,plasticity,CL1 integration or dashboard was implemented.
 
 The curated evidence/source inventory contains637 hashed files totaling35,680,791 logical bytes (34.03MiB). Measured allocated disk across the evidence and all local raw/model/reanalysis directories was92,954,624 bytes (88.65MiB), before writing the small final manifest. Both are actual filesystem measurements, not compressed-size projections.
+
+## Revision closure and implementation inventory
+
+The verified implementation/evidence revision is **`4b1e9c4ac16c99d288834db0f67a28eac55c366f`**, on `research/m003-system-identification`; its working tree was clean after commit. Starting revision was **`1a58bedbcceab6c71408b0357dd5515e65d5c25f`**. This closure is published in a documentation-only child commit; that publication's exact HEAD is returned in the final mission response (a committed document cannot contain its own Git object hash). No executable code, frozen numerical evidence or protocol changes in the publication commit.
+
+The complete difference from the starting revision contains639 added paths and zero modifications/deletions of the210 historical files. Main additions:
+
+| Path | Responsibility |
+| --- | --- |
+| `src/neuromancer/identify.py` | Pure observation/current linear predictors, ridge estimation, fit-only normalization, network bootstrap/gates |
+| `src/neuromancer/identification_experiment.py` | Fixed balanced excitation, admissible delivery, checkpoints, paired acquisition and gated stage CLI |
+| `tests/test_identify.py` | Eleven analytical, causality, constraint, separation and evaluator tests |
+| `docs/research/005_M003_IDENTIFICATION_PROTOCOL.md` | Frozen hypotheses, schedules, models, cohorts, budgets and decisions |
+| `reports/evidence/m003/PREREGISTRATION_CLARIFICATION_001.md` | Pre-acquisition warm-up/shared-history correction |
+| `reports/evidence/m003/fit_models.py` | Prefix-only global selection/per-trial fitting, saved forecasts before reserved evaluation; frozen-model stress reuse |
+| `reports/evidence/m003/analyze.py` | Evaluator-only paired effects, ordinary predictions, intervals, stress and hierarchical inference |
+| `reports/evidence/m003/verify.py` | Independent numerical/lineage audit |
+| `reports/evidence/m003/{figures,summarize,reproduce}.py` | Deterministic figures, descriptive exports and byte-for-byte reanalysis |
+| `reports/evidence/m003/results/{D,V,G}/` | Every raw trial/plan/receipt, selected/candidate coefficient, prediction, metric and figure |
+| `reports/evidence/m003/{README,commands}.md` | Reproduction steps, schema, units and actual command record |
+| `reports/evidence/m003/verification_manifest.json` | Complete637-file source/artifact hash inventory and final checks |
+
+The offline audit instructions restore the exact original relative evidence references without rerunning neurons; reproducing neural trajectories is separately available through the acquisition CLI. Neither was confused with external scientific replication. No automatic merge, controller implementation or subsequent mission follows this report.

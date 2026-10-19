@@ -74,6 +74,10 @@ def loss(record, origins):
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument('--raw', type=Path, required=True); parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args(); args.output.mkdir(parents=True, exist_ok=False); began = time.perf_counter()
+    from neuromancer.diagnostic import provenance
+    source = provenance()
+    source['script_sha256'] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+    save_json(args.output/'provenance.json', source)
     candidates = {}; scores = {family: [] for family in FAMILIES}
     for n in range(10):
         validation = load_origins(args.raw, n, 28, True)

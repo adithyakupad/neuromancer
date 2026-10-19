@@ -95,3 +95,43 @@ def test_origin_checkpoint_replay_and_receipt_timing():
         assert first['time_us'][0].tolist() == [100000, 120000, 120000]
         assert not set(engine.parameters['recording'].ravel()) & set(engine.parameters['stimulation'].ravel())
     finally: engine.close()
+
+
+def test_reserved_origin_loader_never_opens_outcomes(tmp_path):
+    import importlib.util
+    from pathlib import Path
+    path = Path(__file__).parents[1]/'reports/evidence/m003_2/fit_models.py'
+    spec = importlib.util.spec_from_file_location('state_fit_test', path)
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    trial = tmp_path/'n0_r29'; trial.mkdir()
+    np.savez(trial/'plans.npz', planned=np.zeros((7, 100, 4)))
+    for s in ('LOW', 'HIGH'):
+        sub = trial/s; sub.mkdir()
+        np.savez(sub/'origin.npz', history=np.ones((50, 4)), rate=1., time_us=26000000)
+        # Invalid future archives prove the origin-only path cannot read them.
+        for name in module.NAMES: (sub/f'{name}.npz').write_bytes(b'future forbidden')
+    observations = module.load_origins(tmp_path, 0, 29, False)
+    assert len(observations) == 2 and all('y' not in o for o in observations)
+    with pytest.raises(ValueError): module.load_origins(tmp_path, 0, 29, True)
+
+
+def test_training_state_shuffle_and_separation(monkeypatch):
+    import importlib.util
+    from pathlib import Path
+    path = Path(__file__).parents[1]/'reports/evidence/m003_2/fit_models.py'
+    spec = importlib.util.spec_from_file_location('state_fit_shuffle_test', path)
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    rng = np.random.default_rng(63); u = rng.uniform(0, 1, (7, 100, 4)); y = u.copy()
+    low = dict(rate=1., plan=u, y=y, history=np.ones((50, 4)))
+    high = dict(rate=3., plan=u, y=y, history=np.full((50, 4), 3.))
+    seen = []
+    def load(raw, n, rep, outcomes):
+        seen.append(rep); assert rep in (26, 27) and outcomes
+        return [low, high]
+    monkeypatch.setattr(module, 'load_origins', load)
+    x, target, mean, sd = module.training(None, 0, (26, 27), 'STATE')
+    shuffled, target2, _, _ = module.training(None, 0, (26, 27), 'STATE_SHUFFLED')
+    np.testing.assert_array_equal(target, target2)
+    np.testing.assert_array_equal(x[:, :40], shuffled[:, :40])
+    np.testing.assert_array_equal(x[:, 40:], -shuffled[:, 40:])
+    assert (mean, sd) == (2., 1.) and set(seen) == {26, 27}

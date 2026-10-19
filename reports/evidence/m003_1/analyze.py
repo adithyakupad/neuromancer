@@ -43,7 +43,7 @@ def main(raw,models,output):
         for mi,family in enumerate(FAMILIES):
             for a in range(6):
                 for k in range(100):
-                    history=np.vstack([prefix['rates'][-4:],rates[a,:k]]);past=np.vstack([prefix['delivered'][-50:],actual['delivered'][a,:k]])
+                    history=np.vstack([prefix['rates'][-50:],rates[a,:k]]);past=np.vstack([prefix['delivered'][-50:],actual['delivered'][a,:k]])
                     ordinary[mi,a,k]=forecast(selected[family],history,past,plans[a,k:k+1])[0]
         error=rates[None]-ordinary;mse=[];bias=[];absolute=[];coverage=[];dynamic=[]
         for hi,h in enumerate((1,10,50,100)):

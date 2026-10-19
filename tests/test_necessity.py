@@ -97,3 +97,13 @@ def test_future_plan_mutation_cannot_change_earlier_forecasts():
         model=fit(y,u,family,size,.001)
         np.testing.assert_array_equal(forecast(model,y,u,plans[1])[:1],forecast(model,y,u,plans[2])[:1])
         np.testing.assert_array_equal(forecast(model,y,u,plans[3])[:10],forecast(model,y,u,plans[4])[:10])
+
+
+def test_equal_length_caller_histories_for_ablation_and_teacher_forcing():
+    y,u=data();rng=np.random.default_rng(731);y+=rng.normal(0,.1,y.shape);m=fit(y,u,'ARX',1,.001)
+    plan=np.zeros((100,4));replacement=np.tile(y[800:2350].mean(axis=0),(len(y),1))
+    forecast(m,replacement,u,plan)
+    for k in (0,1,49,99):
+        history=np.vstack([y[-50:],np.zeros((k,4))]);past=np.vstack([u[-50:],plan[:k]])
+        assert history.shape==past.shape
+        np.testing.assert_array_equal(forecast(m,history,past,plan[k:k+1]),forecast(m,history[-4:],past[-4:],plan[k:k+1]))

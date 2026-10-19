@@ -69,7 +69,7 @@ def main(raw,output):
         selected=output/folder.name;save(selected/'selected.json',models)
         if candidates[folder.name]:save(selected/'candidates.json',candidates[folder.name])
         predicted=np.array([[forecast(m,d['rates'],d['delivered'],plan) for plan in plans] for m in models.values()])
-        replaced=np.tile(d['rates'][800:2350].mean(axis=0),(4,1));model=models['ARX']
+        replaced=np.tile(d['rates'][800:2350].mean(axis=0),(len(d['rates']),1));model=models['ARX']
         ablation=np.array([forecast(model,replaced,d['delivered'],plan) for plan in plans])
         np.testing.assert_allclose(predicted[2]-predicted[2,0],ablation-ablation[0],rtol=0,atol=1e-9)
         np.savez_compressed(selected/'forecasts.npz',rates=predicted,widths=np.array(widths),ARX_mean_history=ablation,calibration_mae=np.array(calibration_mae),calibration_coverage=np.array(calibration_coverage))

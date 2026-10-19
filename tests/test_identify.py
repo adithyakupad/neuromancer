@@ -94,3 +94,64 @@ def test_filter_initialization_warmup_is_identical_for_all_candidates():
     for family in ('AR','ARX','SHUFFLED'):
         for p in (1,4):assert fit(y,u,family,p,.001).diagnostics['valid']
     assert FIT.start==753 and FIT.stop-FIT.start==1597
+
+
+def script(name):
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).resolve().parents[1]/f'reports/evidence/m003/{name}.py'
+    spec=importlib.util.spec_from_file_location(name,path);module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
+def test_shared_lag_is_chosen_by_ar_not_arx_or_reserved_outcomes():
+    stage=script('fit_models')
+    scores={f:[dict(p=p,**{'lambda':lam},mean=(1 if p==1 else 2) if f=='AR' else (2 if p==1 else .1)) for p,lam in GRID] for f in ('AR','ARX','SHUFFLED')}
+    selected=stage.shared_selection(scores)
+    assert {x['p'] for x in selected.values()}=={1}
+    assert all(x['lambda']==.1 for x in selected.values())
+    source=inspect.getsource(stage)
+    assert "'confirmation.npz'" not in source and 'group.gain' not in source
+    y,u=linear_data();data=dict(rates=y,delivered=u.copy(),planned=u.copy())
+    model=fit(y,u,'ARX',1,.001)
+    expected=stage.errors(model,data,[3000],50)
+    data['delivered'][3000:]=999
+    np.testing.assert_array_equal(stage.errors(model,data,[3000],50),expected)
+
+
+def test_null_software_end_to_end_analysis(tmp_path):
+    """All-zero contrast, stable constant forecasts; not simulated-neural evidence."""
+    import hashlib,json
+    from pathlib import Path
+    stage=script('analyze');raw=tmp_path/'raw';models=tmp_path/'models';raw.mkdir();models.mkdir()
+    jobs=[]
+    for n in range(10):
+        for rep in (18,19,20):
+            folder=raw/f'n{n}_r{rep}';folder.mkdir();target=models/folder.name;target.mkdir();jobs.append([n,rep,1])
+            rates=np.full((3350,4),13.)
+            np.savez_compressed(folder/'prefix.npz',counts=np.zeros((3350,20),dtype=np.int32),rates=rates,
+                delivered=np.zeros((3350,4)),planned=np.zeros((3350,4)),desired=np.zeros((3350,4)))
+            np.savez_compressed(folder/'plans.npz',planned=np.zeros((6,100,4)),desired=np.zeros((6,100,4)))
+            np.savez_compressed(folder/'confirmation.npz',counts=np.zeros((6,100,20),dtype=np.int32),rates=np.full((6,100,4),13.),
+                delivered=np.zeros((6,100,4)),neurons=np.zeros((6,1000),dtype=np.int32),recording=np.zeros((20,5),dtype=int),stimulation=np.zeros((4,50),dtype=int))
+            (folder/'trial.json').write_text(json.dumps(dict(network_id=n,replicate_id=rep,peak_rss_bytes=0,receipts=[dict(violations=0)]*6)))
+            model=fit(rates,np.zeros((3350,4)),'CONSTANT')
+            (target/'selected.json').write_text(json.dumps({f:model.record() for f in ('CONSTANT','AR','ARX','SHUFFLED')}))
+            np.savez_compressed(target/'forecasts.npz',rates=np.full((4,6,100,4),13.),widths_hz=np.ones((4,3,4)),residual_lower05_hz=np.full(4,-1.))
+    (raw/'provenance.json').write_text(json.dumps(dict(stage='D',jobs=jobs)))
+    (raw/'summary.json').write_text(json.dumps(dict(status='complete',trials=jobs,wall_ns=0)))
+    (models/'manifest.json').write_text(json.dumps(dict(artifact_sha256={},trial_count=30,predictor_sha256='fixture',source_sha256='fixture')))
+    (models/'selection.json').write_text('{}')
+    output=tmp_path/'analysis';stage.main(raw,models,output)
+    result=json.loads((output/'comparison.json').read_text())
+    assert result['scientific_gate']=='FAIL' and result['trials']==30 and result['branches']==180
+    assert result['comparisons']['AR']['floor_count']==10
+    assert len((output/'all_predictions.csv').read_text().splitlines())==721
+
+
+def test_inconclusive_precision_is_hold_without_weakening_effect_size():
+    stage=script('analyze')
+    comparisons={name:dict(absolute=dict(mean=.1,lower=-.01),relative=dict(mean=.2),positive_networks=8) for name in ('AR','SHUFFLED')}
+    assert stage.classify_precision(dict(scientific_gate='FAIL',comparisons=comparisons),10)['scientific_gate']=='HOLD'
+    comparisons['AR']['absolute']['mean']=.001
+    assert stage.classify_precision(dict(scientific_gate='FAIL',comparisons=comparisons),10)['scientific_gate']=='FAIL'

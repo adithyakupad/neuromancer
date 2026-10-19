@@ -87,3 +87,13 @@ def test_independent_ridge_and_forecast_equations():
         np.testing.assert_allclose(forecast(m,y[:3000],u[:3000],u[3000:3010]),audit_module.predict(m,y[:3000],u[:3000],u[3000:3010]),atol=1e-9,rtol=0)
         expected=forecast(m,y[:3000],u[:3000],u[3000:3010]);changed=y.copy();changed[3000:]=999
         np.testing.assert_array_equal(expected,forecast(m,changed[:3000],u[:3000],u[3000:3010]))
+
+
+def test_future_plan_mutation_cannot_change_earlier_forecasts():
+    y,u=data();rng=np.random.default_rng(812);y+=rng.normal(0,.1,y.shape)
+    plans=schedules(Config(network_id=0,replicate_id=22))[3]
+    np.testing.assert_array_equal(plans[1,:1],plans[2,:1]);np.testing.assert_array_equal(plans[3,:10],plans[4,:10])
+    for family,size in [('STATIC',1),('FIR',10),('FIR',50),('ARX',1),('AR',1)]:
+        model=fit(y,u,family,size,.001)
+        np.testing.assert_array_equal(forecast(model,y,u,plans[1])[:1],forecast(model,y,u,plans[2])[:1])
+        np.testing.assert_array_equal(forecast(model,y,u,plans[3])[:10],forecast(model,y,u,plans[4])[:10])

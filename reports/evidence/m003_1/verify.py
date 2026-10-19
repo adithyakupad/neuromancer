@@ -104,6 +104,10 @@ def main(raw,models,analysis):
             if a in (1,2,3,4):assert abs(data['delivered'][i,a].sum()*.02-24)<1e-10
             if r==25:
                 for key in ('counts','rates','neurons'):np.testing.assert_array_equal(data[key][i,a],data[key][i,0])
+        for a,b,stop in ((1,2,1),(3,4,10)):
+            np.testing.assert_array_equal(data['delivered'][i,a,:stop],data['delivered'][i,b,:stop])
+            for key in ('counts','rates'):np.testing.assert_array_equal(data[key][i,a,:stop],data[key][i,b,:stop])
+            np.testing.assert_allclose(data['forecast'][i,:,a,:stop],data['forecast'][i,:,b,:stop],atol=1e-12,rtol=0)
         selected=json.load(open(modeldir/'selected.json'));actual=data['rates'][i];own=np.empty((7,6,100,4))
         for mi,family in enumerate(FAMILIES):
             model=selected[family];coefficient(model,y,u,cache);coefficients+=1

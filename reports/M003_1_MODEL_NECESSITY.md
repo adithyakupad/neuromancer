@@ -261,3 +261,24 @@ Limitations, in priority order:
 Preregister a state-dependence identification experiment using the same action under prospectively defined, observation-based low/high origin-rate strata, with matched evaluator-only sham branches. Compare the frozen best input kernel with a transparent origin-rate×input interaction model. Ask whether completed observable state predicts a change in the causal response beyond a stationary input kernel on fresh development noise; failure would further support a state-independent kernel within that regime. Freeze interventions, strata, splits and a meaningful-effect gate before running it. No hidden-state labels or future observations may choose strata. This is proposed only, not implemented; locked100–119 remains unopened.
 
 M003.1 stops here. No PI,MPC,RLS,RL,change-point controller,neural retuning,plasticity,CL1/hardware integration,frontend or automatic merge.
+
+## Revision closure and implementation inventory
+
+Starting revision: **`22547cfe37e81e66bccb67cbc90d96186a73a964`**, clean `research/m003-system-identification`. Verified implementation/evidence revision: **`ae8f0cbda1a0a1a90932bd3b8e94d096171fbc97`**, clean `research/m003-1-model-necessity` after commit. This closure is a documentation-only child publication; its exact final HEAD is returned in the final mission response (a document cannot contain its own Git object hash). No executable, frozen numerical data, protocol or test changes in that publication.
+
+All **849 historical files are unchanged**. Difference from starting revision:404 added paths, zero historical modifications/deletions. The402-file source/evidence inventory totals44,989,198 logical bytes (42.90MiB); measured allocated study disk including original raw/model/failed/reanalysis copies was103,251,968bytes (98.47MiB), before writing the small final manifest. This excludes the shared Git object store and pre-existing Python environment. The600MiB study budget was respected. Every hashed artifact is tracked, including133 intentionally curated NPZ archives; ignored scratch/cache files are not substituted for committed evidence.
+
+| Added path | Responsibility |
+| --- | --- |
+| `docs/research/006_M003_1_MODEL_NECESSITY_PROTOCOL.md` | Complete preregistration, new engineering gates, bank/splits and structural identifiability proof |
+| `src/neuromancer/necessity.py` | Static/FIR fits, unchanged-form AR/ARX adapter, transparent selection/gate |
+| `src/neuromancer/necessity_experiment.py` | Fixed schedule adapter and bounded33-trial acquisition CLI |
+| `tests/test_necessity.py` | Nine new analytical, causality, alignment and network-statistics fixtures |
+| `reports/evidence/m003_1/{fit_models,analyze,verify}.py` | Prefix-only selection, reserved evaluator, independent equations |
+| `reports/evidence/m003_1/{figures,reproduce,bundle_audit,cost}.py` | Deterministic figures/reanalysis, whole-network archive checks and measured API costs |
+| `reports/evidence/m003_1/results/{raw,models,failed_fit_001}/` | Every raw trial/receipt/seed/source/config, successful coefficients and failed attempted fit |
+| `reports/evidence/m003_1/results/` | Numeric arrays, every model/network/noise/condition/sector metric, figures and verification |
+| `reports/evidence/m003_1/{README,commands,FAILED_FIT_001,RESOURCE_DEVIATION_001}.md` | Reproduction/schema, actual command record and transparent limitations |
+| `reports/evidence/m003_1/verification_manifest.json` | Complete hash inventory, final checks, separate execution/scientific decisions |
+
+All code/evidence is committed on the review branch. No merge, push, locked-network acquisition, controller or automatic follow-on study.

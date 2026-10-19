@@ -1,0 +1,5 @@
+# Resource-control disclosure001: Accelerate thread count unverified
+
+Post-run `numpy.show_config(mode='dicts')` reports the NumPy BLAS backend as Apple Accelerate, not OpenBLAS. Scientific commands set OPENBLAS_NUM_THREADS=1 and OMP_NUM_THREADS=1 as recorded. Those settings do not establish Accelerate's actual thread count; none was measured. The preregistration requested single-thread BLAS, so that resource-control claim cannot be verified and is explicitly a deviation/limitation. The actual three spawned workers, measured wall limits, disk and per-worker peak RSS remain recorded.
+
+No new neural acquisition, seed replacement, parameter change or scientific endpoint adjustment was made. All pre-score repeated model/selection artifacts and scientific reanalysis reproduce exactly in the existing environment. Execution PASS refers to complete reproducible causal experiments and independent analytical verification, with this disclosed resource-control limitation. Report API costs only as local warm-cache measurements, never as verified single-thread benchmarks or cross-platform guarantees. Historical documents are unchanged; this disclosure applies to M003.1.

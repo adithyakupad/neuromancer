@@ -16,9 +16,9 @@ Actual interpreter `/tmp/neuromancer-audit/venv/bin/python`, existing pinned Pyt
 python -m pytest -q tests/test_necessity.py
 python -m pytest -q --junitxml=reports/evidence/m003_1/final_tests.xml
 python -m neuromancer.necessity_experiment --output runs/m003-1-01
-python reports/evidence/m003_1/fit_models.py runs/m003-1-01 runs/m003-1-models-01
-python reports/evidence/m003_1/analyze.py runs/m003-1-01 runs/m003-1-models-01 runs/m003-1-analysis-01
-python reports/evidence/m003_1/verify.py runs/m003-1-01 runs/m003-1-models-01 runs/m003-1-analysis-01
+python reports/evidence/m003_1/fit_models.py runs/m003-1-01 runs/m003-1-models-02
+python reports/evidence/m003_1/analyze.py runs/m003-1-01 runs/m003-1-models-02 runs/m003-1-analysis-01
+python reports/evidence/m003_1/verify.py runs/m003-1-01 runs/m003-1-models-02 runs/m003-1-analysis-01
 python reports/evidence/m003_1/figures.py runs/m003-1-analysis-01
 python -m pip check
 ```
@@ -50,3 +50,11 @@ Calibration origins55..62s and the preregistered2s horizon imply final calibrati
 `all_predictions.csv` retains every model/condition/sector/noise; `trial_metrics.json` retains all scalar/horizon statistics, nulls and failures; `network_metrics.csv` is the primary network means. `comparison.json` contains equal-network hierarchical bootstrap intervals and frozen primary decision. `conditioning.json`, all candidate coefficient files and selected model manifests retain full singular spectra, rank, conditions, parameter counts and effective history. `delivered_exposure.csv` records actual bounds/slew/charge: structured four conditions each24pA*s summed commands, multiplied by50cells/channel gives1200pC total injected model charge; this is not biological charge-density safety evidence.
 
 Bootstrap seed20261101; root20261018; unchanged network roles0–3, independent neural noise22–24/25 role4 absolute-time blocks, action role5 blocks0/1/2/4. No validation IDs10–14 or test100–119 acquired. `verification.json` is an independent analytical implementation in this session, not an external investigator or second simulator. Prior source remains available and hash-verifiable.
+
+The latest complete regression run is `qualification_tests.txt/xml`:74 passed (65 historical+9 new). Earlier71/72-test outputs are retained. `FAILED_FIT_001.md` and `caller_repair_replay.json` explain the preserved pre-confirmation caller-alignment failure; all33 already-produced model/selection files matched exactly on repaired deterministic rerun, without repeating neurons. `results/failed_fit_001/` preserves that entire attempted fit. Successful model directory is `runs/m003-1-models-02`.
+
+`bundle_audit.py DIRECTORY` independently checks all whole-network bootstrap fields/relative intervals and exact original memberships, checks every new R sequence, and exports declared per-condition descriptive metrics. It changes no frozen scientific endpoint. `cost.py RAW MODELS ANALYSIS` runs the fixed five-refit/50-forecast probe on n0/noise22; it never reads confirmation outcomes. `reproduce.py RAW MODELS ORIGINAL NEW` verifies every scientific field/archive/figure again, excluding only measured analysis time. For offline verification on a fresh checkout use `verify.py reports/evidence/m003_1/results/raw reports/evidence/m003_1/results/models reports/evidence/m003_1/results`; no original ignored runs path is required.
+
+Resource disclosure: NumPy uses Apple Accelerate. OPENBLAS_NUM_THREADS/OMP_NUM_THREADS were requested as1, but actual BLAS thread count was not measured/verified. See `RESOURCE_DEVIATION_001.md`; these are local-machine performance measurements, not verified single-thread results. No package was changed to rescue outcomes.
+
+Charge semantics: `model_charge_pC` in the inherited receipt/exposure schema is nominal command-equivalent charge across50 targets/channel, before the effective-coupling multiplier. It is1200pC for structured primary g=1 actions. Null g=0 retains the same delivered command/exposure ledger but has zero effective injected current/charge. Do not interpret the nominal null field as actual effective injection or hardware charge.

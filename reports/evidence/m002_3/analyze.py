@@ -96,7 +96,8 @@ def main(raw,output):
             for gi,gain in enumerate(GAINS):
                 for ai,name in enumerate(NAMES):
                     ledger=trial['receipt_ledger'][gi*4+ai]
-                    entry=dict(network_id=n,replicate_id=rep,gain=gain,condition=name,
+                    assert ledger['gain']==gain
+                    entry=dict(network_id=n,replicate_id=rep,condition=name,
                         whole_rate_hz=whole[gi,ai],late_rate_hz=late[gi,ai],paired_late_response_hz=late[gi,ai]-late[gi,0],
                         target_hz=target[ai-2] if ai>=2 else None,
                         signed_error_hz=error[gi,ai-2] if ai>=2 else None,

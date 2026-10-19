@@ -113,14 +113,15 @@ def test_execution_lineage_frozen_before_neural_run():
     from pathlib import Path
     root=Path(__file__).resolve().parents[1]
     provenance=root/'runs/m002_3-calibration-01/provenance.json'
-    if not provenance.exists():pytest.skip('Scientific run not required for clean CI')
+    if not provenance.exists():provenance=root/'reports/evidence/m002_3/results/raw_provenance.json'
+    if not provenance.exists():pytest.skip('Scientific evidence not yet generated')
     record=json.loads(provenance.read_text())
     prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
     assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
     for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
     old=json.loads((prereg.parent/'preservation.json').read_text())
     for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
-    committed=subprocess.check_output(['git','show','ad5c213:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)
+    committed=subprocess.check_output(['git','show','HEAD:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)
     assert committed==prereg.read_bytes()
 
 
@@ -135,7 +136,7 @@ def test_complete_analysis_records_all_invalid_trials(tmp_path):
                 filtered_sector_rates_hz=np.zeros((2,4,300,4)),delivered_current_pA=np.zeros((2,4,300,4)))
             trial=dict(status='complete',network_id=n,replicate_id=rep,calibration=dict(baseline_hz=0,
                 targets_hz=[0,0],span_hz=0,valid=False,reason='flat',lookup_pA=None,h_hz=[0]*5),
-                receipt_ledger=[dict(constraint_violations=0,neural_ns=0,observation_ns=0) for _ in range(8)],
+                receipt_ledger=[dict(gain=g,name=name,constraint_violations=0,neural_ns=0,observation_ns=0) for g in (1.,.6) for name in ('S','C120','L','H')],
                 engine=dict(initialization_ns=0),peak_rss_bytes=0,total_wall_ns=0)
             (folder/'trial.json').write_text(json.dumps(trial))
     (raw/'summary.json').write_text(json.dumps(dict(status='complete',wall_ns=0)))

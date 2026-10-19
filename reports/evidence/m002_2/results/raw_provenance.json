@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "experiment_kind": "simulation",
+  "head": "e5c0f4dd6bac8a7cc93a6fed4531db32597acd51",
+  "branch": "research/m002-2-reachability",
+  "working_tree": "",
+  "source_hashes": {
+    "neuromancer/__init__.py": "4c74fc568665ec777cb051d3a09428493a36dd00e0a06bf789b2e1feaa9a92ed",
+    "neuromancer/_brian.py": "5e20f00b496c310018421cf200dfd2f767f63c12e84a7eab0af1880a23323519",
+    "neuromancer/authority_diagnosis.py": "ab78622f6579a671feb65ac03cc5f71b247cb33be9fd25f15977825f321ac468",
+    "neuromancer/diagnostic.py": "e62b3339b76ec34123a41237aaadd9c751750c3c554478a73872627bc4fc2dce",
+    "neuromancer/observation.py": "e057226622cfb65bc4e644cf25e190e3d880cb0e77829c27a29ff4de06e26f5b",
+    "neuromancer/reachability.py": "ace1b964b4f774aaf4322adc1925def3802dc15d48471621140e78147f8129bf",
+    "neuromancer/substrate.py": "45771e521ee3a66c2c4046ebbc0eeb5dce576abfe993f36821b9cea33a6b89e9"
+  },
+  "protocol_sha256": "e747c6ce67dfea86bc3f32e2d66fc85b226d3504a00925bb699e2b6fb67c0833",
+  "root_seed": 20261018,
+  "seed_roles": {
+    "0": "membrane/init",
+    "1": "connectivity",
+    "2": "weights/delays",
+    "3": "channels",
+    "4": "OU",
+    "5": "calibration",
+    "6": "masks",
+    "7": "reserved Brian"
+  },
+  "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "package_versions": {
+    "neuromancer": "0.2.0",
+    "brian2": "2.10.1",
+    "numpy": "2.5.4",
+    "sympy": "1.14.0",
+    "cython": "3.1.3"
+  },
+  "cli": [
+    "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/reachability.py",
+    "--output",
+    "runs/m002_2-reachability-01"
+  ],
+  "clock": "integer us; 100 us neural grid and 20000 us control bins",
+  "evaluated_split": "training only; IDs 0-9, or 0-2 for convergence",
+  "preregistration_files_sha256": {
+    "PREREGISTRATION.md": "d83b4cb4871e28ce8fa8684c759652489fe8b9894d39281e6717fc69f50dea16",
+    "PREREGISTRATION_AMENDMENT_001.md": "7df25ed11896d0813ca676c5bd35c68b91a8ad9f9a1780fdf94b748461e16511"
+  },
+  "preregistration_sha256": "d83b4cb4871e28ce8fa8684c759652489fe8b9894d39281e6717fc69f50dea16",
+  "design": {
+    "network_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "replicate_ids": [
+      5,
+      6,
+      7
+    ],
+    "gains": [
+      1.0,
+      0.6
+    ],
+    "action_names": [
+      "S",
+      "D6",
+      "D15",
+      "D30",
+      "D60",
+      "C30",
+      "C60",
+      "C90",
+      "C120",
+      "PERIODIC",
+      "ALTERNATE",
+      "PULSE"
+    ],
+    "duration_us": 6000000,
+    "baseline_stop_us": 15000000,
+    "workers": 3,
+    "simulated_seconds": 4770
+  }
+}

@@ -115,8 +115,32 @@ def main(raw,models,analysis):
                     np.testing.assert_allclose(predict(model,history,past,data['planned'][i,a,k:k+1])[0],data['ordinary'][i,mi,a,k],atol=1e-8,rtol=0)
             for hi,h in enumerate((1,10,50,100)):
                 errors=np.array([predict(model,y[:k],u[:k],u[k:k+h]).mean(axis=0)-y[k:k+h].mean(axis=0) for k in range(2750,3101,10)])
-                np.testing.assert_allclose(np.quantile(np.abs(errors),.95,axis=0,method='higher'),data['width'][i,mi,hi],atol=1e-8,rtol=0)
+                width=np.quantile(np.abs(errors),.95,axis=0,method='higher')
+                np.testing.assert_allclose(width,data['width'][i,mi,hi],atol=1e-8,rtol=0)
+                assert abs(np.abs(errors).mean()-trials[i]['calibration_mae'][mi][hi])<1e-8
+                assert abs((np.abs(errors)<=width).mean()-trials[i]['calibration_coverage'][mi][hi])<1e-10
         effects=own-own[:,0,None];truth=actual-actual[0]
+        for hi,h in enumerate((1,10,50,100)):
+            pe=effects[:,:,:h].mean(axis=2);tr=truth[:,:h].mean(axis=1);err=pe-tr[None]
+            np.testing.assert_allclose((err[:,1:]**2).mean(axis=(1,2)),np.array(trials[i]['evoked_mse'])[:,hi],atol=1e-8,rtol=0)
+            np.testing.assert_allclose(err[:,1:].mean(axis=(1,2)),np.array(trials[i]['evoked_bias'])[:,hi],atol=1e-8,rtol=0)
+            absolute=(own[:,:,:h].mean(axis=2)-actual[None,:,:h].mean(axis=2))
+            np.testing.assert_allclose((absolute**2).mean(axis=(1,2)),np.array(trials[i]['absolute_mse'])[:,hi],atol=1e-8,rtol=0)
+            np.testing.assert_allclose((np.abs(absolute)<=data['width'][i,:,hi,None,:]).mean(axis=(1,2)),np.array(trials[i]['coverage'])[:,hi],atol=1e-10,rtol=0)
+            dynamic=np.array([np.mean(((pe[:,a]-pe[:,b])-(tr[a]-tr[b]))**2,axis=1) for a,b in ((1,2),(3,4))]).T
+            np.testing.assert_allclose(dynamic,np.array(trials[i]['dynamic_contrast_mse'])[:,hi],atol=1e-8,rtol=0)
+        residual=actual[None]-data['ordinary'][i]
+        np.testing.assert_allclose((residual**2).mean(axis=(1,2,3)),trials[i]['ordinary_mse'],atol=1e-8,rtol=0)
+        np.testing.assert_allclose(residual.mean(axis=(1,2,3)),trials[i]['residual_mean'],atol=1e-8,rtol=0)
+        correlations=[]
+        for mi in range(7):
+            values=[]
+            for a in range(6):
+                for c in range(4):
+                    left=residual[mi,a,:-1,c];right=residual[mi,a,1:,c];left=left-left.mean();right=right-right.mean();den=np.linalg.norm(left)*np.linalg.norm(right)
+                    values.append(float(left@right/den) if den else 0.)
+            correlations.append(np.mean(values))
+        np.testing.assert_allclose(correlations,trials[i]['residual_lag1_acf'],atol=1e-10,rtol=0)
         own_mse=((effects[:,1:,:50].mean(axis=2)-truth[None,1:,:50].mean(axis=2))**2).mean(axis=(1,2))
         np.testing.assert_allclose(own_mse,np.array(trials[i]['evoked_mse'])[:,2],atol=1e-8,rtol=0)
         for a in range(6):

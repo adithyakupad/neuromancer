@@ -35,6 +35,11 @@ def test_feature_timing_and_common_origin_no_input_contrast():
         np.testing.assert_array_equal(model.forecast(y[:3000],u[:3000],plan),model.forecast(y[:3000],u[:3000],active))
     model=fit(y,u,'ARX',1,.001)
     assert np.abs(model.forecast(y[:3000],u[:3000],plan)-model.forecast(y[:3000],u[:3000],active)).mean()>.1
+    co=np.zeros((21,4));co[13:17]=np.eye(4)
+    delayed=Predictor('ARX',1,co,np.zeros(20),np.ones(20),np.zeros(4),dict(valid=True))
+    pulse=np.zeros((5,4));pulse[0,0]=1
+    np.testing.assert_array_equal(delayed.forecast(np.zeros((4,4)),np.zeros((4,4)),pulse)[:,0],[0,0,1,0,0])
+
 
 
 def test_fit_scaling_and_shuffling_never_cross_evaluation_boundary():

@@ -7,9 +7,9 @@ from neuromancer.identification_experiment import schedules,audit,bank
 from neuromancer.substrate import Config
 
 
-def linear_data():
+def linear_data(noise=.0001):
     rng=np.random.default_rng(811);u=rng.uniform(0,60,(3350,4));y=np.zeros_like(u)
-    for k in range(1,len(y)):y[k]=2+.7*y[k-1]+.01*u[k]+rng.normal(0,.0001,4)
+    for k in range(1,len(y)):y[k]=2+.7*y[k-1]+.01*u[k]+rng.normal(0,noise,4)
     return y,u
 
 
@@ -155,3 +155,15 @@ def test_inconclusive_precision_is_hold_without_weakening_effect_size():
     assert stage.classify_precision(dict(scientific_gate='FAIL',comparisons=comparisons),10)['scientific_gate']=='HOLD'
     comparisons['AR']['absolute']['mean']=.001
     assert stage.classify_precision(dict(scientific_gate='FAIL',comparisons=comparisons),10)['scientific_gate']=='FAIL'
+
+
+def test_noisy_linear_recovery_respects_known_sampling_uncertainty():
+    y,u=linear_data(noise=.01);model=fit(y,u,'ARX',1,1e-12)
+    k=np.arange(753,2350)
+    x=np.column_stack([np.ones(len(k)),y[k-1],u[k],u[k-1],u[k-2],u[k-3]])
+    _,r=np.linalg.qr(x,mode='reduced');inverse_r=np.linalg.solve(r,np.eye(r.shape[0]))
+    standard_error=.01*np.sqrt(np.diag(inverse_r@inverse_r.T))
+    w=model.coef[1:]/model.scale[:,None]
+    observed=np.vstack([model.output_mean+model.coef[0]-model.mean@w,w])
+    truth=np.zeros((21,4));truth[0]=2;truth[1:5]=.7*np.eye(4);truth[5:9]=.01*np.eye(4)
+    assert np.all(np.abs(observed-truth)<=4.5*standard_error[:,None]+1e-6)

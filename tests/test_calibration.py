@@ -74,3 +74,75 @@ def test_original_bounds_slew_and_prefix_budget():
         desired=np.zeros((300,4));desired[:,::2]=q;actual=ramp(desired)
         assert actual.sum()*.02<=12*q
         assert np.abs(np.diff(np.vstack([np.zeros(4),actual]),axis=0)).max()<=30
+
+
+def analysis_module():
+    import importlib.util
+    from pathlib import Path
+    spec=importlib.util.spec_from_file_location('m0023_analysis',Path(__file__).resolve().parents[1]/'reports/evidence/m002_3/analyze.py')
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    return module
+
+
+def test_network_gate_does_not_pool_bins_or_ignore_bad_replicates():
+    a=analysis_module();base=np.full(5,13.);sector=np.full((5,4),13.)
+    span=np.full(5,1.2);noise=np.full(5,.2);margin=np.full(5,.2);errors=np.full((5,2,2),.2);valid=np.ones(5,dtype=bool)
+    assert a.gate(base,sector,span,noise,margin,errors,valid,True)['qualified']
+    assert not a.gate(base,sector,span*.5,noise,margin,errors,valid,True)['qualified']
+    errors[0,1,1]=.5
+    assert not a.gate(base,sector,span,noise,margin,errors,valid,True)['components']['error_g0.6_H']
+    errors[:]=.2;valid[-1]=False
+    assert not a.gate(base,sector,span,noise,margin,errors,valid,True)['qualified']
+    valid[:]=True;margin[:]=[.1,.1,.1,.1,-.1]
+    assert not a.gate(base,sector,span,noise,margin,errors,valid,True)['components']['headroom']
+    assert a.network_bootstrap(np.ones((10,2)))==dict(mean=[1,1],lower=[1,1],upper=[1,1])
+    assert a.ci(np.full(5,2.))==dict(mean=2.,lower=2.,upper=2.)
+
+
+def test_new_noise_ids_independent_and_network_parameters_fixed():
+    from neuromancer._brian import stream,realization,digest
+    from neuromancer.substrate import Config
+    configs=[Config(network_id=0,replicate_id=r) for r in range(8,13)]
+    assert len({digest(stream(c,4,block=51).normal(size=100)) for c in configs})==5
+    identities=[{k:digest(v) for k,v in realization(c).items()} for c in configs]
+    assert all(x==identities[0] for x in identities)
+
+
+def test_execution_lineage_frozen_before_neural_run():
+    import hashlib,json,subprocess
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[1]
+    provenance=root/'runs/m002_3-calibration-01/provenance.json'
+    if not provenance.exists():pytest.skip('Scientific run not required for clean CI')
+    record=json.loads(provenance.read_text())
+    prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
+    assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
+    for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
+    old=json.loads((prereg.parent/'preservation.json').read_text())
+    for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+    committed=subprocess.check_output(['git','show','ad5c213:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)
+    assert committed==prereg.read_bytes()
+
+
+def test_complete_analysis_records_all_invalid_trials(tmp_path):
+    import json
+    a=analysis_module();raw=tmp_path/'raw';raw.mkdir()
+    for n in range(10):
+        for rep in range(8,13):
+            folder=raw/f'network_{n}_replicate_{rep}';folder.mkdir()
+            np.savez_compressed(folder/'numerical.npz',prefix_counts=np.zeros((2550,20),dtype=np.int32),
+                observed_counts=np.zeros((2,4,300,20),dtype=np.int32),
+                filtered_sector_rates_hz=np.zeros((2,4,300,4)),delivered_current_pA=np.zeros((2,4,300,4)))
+            trial=dict(status='complete',network_id=n,replicate_id=rep,calibration=dict(baseline_hz=0,
+                targets_hz=[0,0],span_hz=0,valid=False,reason='flat',lookup_pA=None,h_hz=[0]*5),
+                receipt_ledger=[dict(constraint_violations=0,neural_ns=0,observation_ns=0) for _ in range(8)],
+                engine=dict(initialization_ns=0),peak_rss_bytes=0,total_wall_ns=0)
+            (folder/'trial.json').write_text(json.dumps(trial))
+    (raw/'summary.json').write_text(json.dumps(dict(status='complete',wall_ns=0)))
+    (raw/'provenance.json').write_text('{}')
+    output=tmp_path/'analysis';a.main(raw,output)
+    result=json.loads((output/'comparison.json').read_text())
+    assert result['completed_branches']==400 and result['qualified_networks']==0
+    assert result['calibration_invalid_count']==50 and result['scientific_qualification']=='HOLD'
+    assert len((output/'calibration_trials.csv').read_text().splitlines())==51
+    assert len((output/'confirmation_trials.csv').read_text().splitlines())==401

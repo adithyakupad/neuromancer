@@ -1,0 +1,9 @@
+# M003 pre-acquisition clarification001 — causal warm-up and matched histories
+
+Frozen before any new neural scientific experiment. The original005 protocol remains preserved. This clarification overrides only the two specifications below; all phases, seeds, gates, budgets and model grids otherwise remain unchanged.
+
+1. The original causal filter becomes initialized at15s. Four completed rate lags are not available for the first three fit targets. Use exactly1597 target rows k=753..2349, corresponding to bins starting[15.06,47)s, for **every** candidate and the constant mean. The physical fit phase still starts15s and lasts32s. No zero padding, backfilled filter, discarded later outcome or model change. All p=1/p=4 models share identical target rows.
+
+2. Independently selecting p for AR and ARX would violate the mission's matched-observation-history requirement. Fit/save all original8 candidates per family. Select(p,lambda_AR) globally by the smallest development AR-only hypervalidation1s mean-rate MSE, tie fewer parameters then larger lambda. Lock this shared p for AR,ARX and SHUFFLED. Select lambda_ARX and lambda_SHUFFLED separately from their four original penalties at that same p, on the same validation data. This gives AR its best history choice and makes the comparison conservative for ARX. Neither ARX nor reserved outcomes chooses the observation lag order. Validation/null/stress inherit the same shared p. Models then have identical observation histories/training targets/evaluation times, while ARX alone adds four delivered/planned current lags.
+
+Both are concrete timing/comparison-contract corrections discovered during software-only tests and source review, before neural acquisition or scientific outcome inspection. They do not alter historical M001–M002.3 or rescue a new result. Execution manifests hash this clarification alongside005.

@@ -90,6 +90,9 @@ def main():
                     for n in range(10) for m, family in enumerate(FAMILIES) for h, size in enumerate(HORIZONS)]
     interaction = (actual[:, :, 1, 1:]-actual[:, :, 0, 1:]).mean(axis=(1, 2))
     summary = dict(scientific_gate=decision, model_mean_mse_hz2={f: network[:, m].mean(axis=0).tolist() for m, f in enumerate(FAMILIES)},
+                   model_mse_ci_hz2={f: interval(network[:, m]) for m, f in enumerate(FAMILIES)},
+                   input_shuffle_minus_fir_ci_hz2=interval(network[:, 3]-network[:, 0]),
+                   half_minus_full_ci_hz2={f: interval(half_network[:, m]-network[:, m]) for m, f in enumerate(FAMILIES)},
                    absolute_mean_mse_hz2={f: absolute_network[:, m].mean(axis=0).tolist() for m, f in enumerate(FAMILIES)},
                    half_data_mean_mse_hz2={f: half_network[:, m].mean(axis=0).tolist() for m, f in enumerate(FAMILIES)},
                    interaction_mean_hz=interaction.mean(axis=0).tolist(), interaction_ci=interval(interaction),

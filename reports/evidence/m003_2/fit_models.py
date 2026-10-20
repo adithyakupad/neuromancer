@@ -93,7 +93,10 @@ def main():
     for family in FAMILIES:
         for lam in LAMBDAS:
             scores[family].append(dict(lam=lam, mse=float(np.mean([candidates[f'n{n}_{family}_{lam}']['validation_mse'] for n in range(10)]))))
-    chosen = {family: sorted(rows, key=lambda r: (round(r['mse'], 12), -r['lam']))[0]['lam'] for family, rows in scores.items()}
+    chosen = {}
+    for family, rows in scores.items():
+        best = min(r['mse'] for r in rows)
+        chosen[family] = max(r['lam'] for r in rows if r['mse'] <= best+1e-12)
     save_json(args.output/'candidates.json', candidates); save_json(args.output/'selection.json', dict(chosen=chosen, scores=scores))
     models = {}; half = {}; widths = np.zeros((10, 5, 4))
     for n in range(10):

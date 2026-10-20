@@ -181,7 +181,8 @@ def main():
             x, y, _, _ = training(args.raw, n, (26,), family); estimate(x, y, half[f'n{n}_{family}']); coefficient_checks += 1
     for family in FAMILIES:
         scored = [(float(np.mean(validations[(family, lam)])), -lam, lam) for lam in LAMBDAS]
-        chosen = sorted(scored, key=lambda r: (round(r[0], 12), r[1]))[0][2]; assert chosen == choices['chosen'][family]
+        minimum = min(r[0] for r in scored)
+        chosen = max(r[2] for r in scored if r[0] <= minimum+1e-12); assert chosen == choices['chosen'][family]
         for n in range(10): assert selected[f'n{n}_{family}'] == candidates[f'n{n}_{family}_{chosen}']['model']
     forecast_checks = 0
     for n in range(10):

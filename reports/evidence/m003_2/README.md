@@ -39,3 +39,9 @@ Analysis data.npz: actual axes network10,noise2,stratum2,branch7,horizon4,sector
 Empirical interval validation reused selectionnoise28; dependence/limited calibration prevents certified coverage. State label control swaps two strata within each fitreplicate; its information-inversion limitation was preregistered. Report all results rather than interpreting a useful absolute forecast as causal-state identification.
 
 Independent verify.py implements separate lags, normal equations, recursion, event/count filters, origin selector, selection and scoring/bootstrap; it is not external investigator replication. Deterministic figures fix SVG hash salt/metadata. Reanalysis comparison excludes only measured runtime. Final hash manifest inventories every artifact; historical protocols/results are unchanged.
+
+Deterministic reanalysis into another exclusive directory:
+
+    python reports/evidence/m003_2/reproduce.py --raw reports/evidence/m003_2/results/raw --models reports/evidence/m003_2/results/models --original reports/evidence/m003_2/results/analysis --output runs/m003-2-reanalysis-01
+
+It checks every regenerated numerical/CSV/PNG/SVG byte and every scientific JSON field; only measured analysis runtime differs. No simulation is rerun and no hyperparameter is reselected.

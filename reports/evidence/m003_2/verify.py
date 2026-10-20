@@ -119,10 +119,15 @@ def main():
         assert hashlib.sha256((Path('src')/name).read_bytes()).hexdigest() == digest
     seal = json.loads((args.models/'forecast_seal.json').read_text())
     for name, digest in seal['artifact_sha256'].items(): assert hashlib.sha256((args.models/name).read_bytes()).hexdigest() == digest
+    expected = {f'n{n}_r{rep}' for n in range(10) for rep in range(26, 31)} | {f'n{n}_r31' for n in range(3)}
+    assert {p.name for p in args.raw.glob('n*_r*')} == expected
     observation_checks = 0; trials = 0; unique_noise = set()
     for n in range(10):
         for rep in ((26, 27, 28, 29, 30, 31) if n < 3 else (26, 27, 28, 29, 30)):
             trial = args.raw/f'n{n}_r{rep}'; report = json.loads((trial/'trial.json').read_text()); assert report['status'] == 'complete'
+            assert report['engine']['config']['network_id'] == n and report['engine']['config']['replicate_id'] == rep
+            assert report['engine']['config']['root_seed'] == 20261018 and report['engine']['config']['dt_us'] == 100
+            assert report['engine']['config']['efficacy'] == (0. if rep == 31 else 1.)
             old = json.loads(Path(f'reports/evidence/m003_1/results/raw/n{n}_r22/trial.json').read_text())
             assert report['engine']['metadata']['parameter_hashes'] == old['engine']['metadata']['parameter_hashes']
             assert report['recording'] == read(Path(f'reports/evidence/m003_1/results/raw/n{n}_r22/confirmation.npz'))['recording'].tolist()

@@ -1,0 +1,139 @@
+{
+  "trials": 53,
+  "origins": 106,
+  "restored_branches": 742,
+  "simulated_s": 3339,
+  "acquisition_wall_s": 1618.028513959,
+  "aggregate_simulated_s_per_wall_s": 2.063622470923036,
+  "peak_worker_rss_bytes": 1339768832,
+  "initialization_s_range": [
+    0.015713792,
+    0.078659291
+  ],
+  "constraint_violations": 0,
+  "models": {
+    "FIR": {
+      "primary_bias_hz": -0.03885876512560742,
+      "coverage": 0.9333333333333333,
+      "interval_halfwidth_hz": 0.6564143671771042,
+      "rank_range": [
+        40,
+        40
+      ],
+      "condition_range": [
+        100.56685826357516,
+        207.46759236114752
+      ],
+      "augmented_condition_max": 38.64187410936453,
+      "parameters": 160,
+      "null_one_second_false_response_rms_hz_range": [
+        0.6215962476945522,
+        0.8789889097017848
+      ]
+    },
+    "STATE": {
+      "primary_bias_hz": -0.0472653572939845,
+      "coverage": 0.9177083333333333,
+      "interval_halfwidth_hz": 0.6500836076929275,
+      "rank_range": [
+        80,
+        80
+      ],
+      "condition_range": [
+        112.00380156540602,
+        228.97302235663525
+      ],
+      "augmented_condition_max": 13.314165097602942,
+      "parameters": 320,
+      "null_one_second_false_response_rms_hz_range": [
+        0.5174507838936107,
+        0.9257513074646622
+      ]
+    },
+    "STATE_SHUFFLED": {
+      "primary_bias_hz": -0.04250464633298058,
+      "coverage": 0.93125,
+      "interval_halfwidth_hz": 0.6839773899050542,
+      "rank_range": [
+        80,
+        80
+      ],
+      "condition_range": [
+        112.00380156540609,
+        228.97302235663523
+      ],
+      "augmented_condition_max": 13.314165097602944,
+      "parameters": 320,
+      "null_one_second_false_response_rms_hz_range": [
+        0.49997193961714487,
+        0.9809733093163545
+      ]
+    },
+    "FIR_SHUFFLED": {
+      "primary_bias_hz": -0.2529943404734033,
+      "coverage": 0.9135416666666667,
+      "interval_halfwidth_hz": 0.8864801374406324,
+      "rank_range": [
+        40,
+        40
+      ],
+      "condition_range": [
+        100.5668582635752,
+        207.46759236114704
+      ],
+      "augmented_condition_max": 182.43530802786276,
+      "parameters": 160,
+      "null_one_second_false_response_rms_hz_range": [
+        0.26348184486659754,
+        0.5341588568890792
+      ]
+    },
+    "ARX": {
+      "primary_bias_hz": -0.04394253394624071,
+      "coverage": 0.934375,
+      "interval_halfwidth_hz": 0.6610236231539292,
+      "rank_range": [
+        33,
+        33
+      ],
+      "condition_range": [
+        66.72977428028436,
+        101.2623069747152
+      ],
+      "augmented_condition_max": 10.583737625725892,
+      "parameters": 132,
+      "null_one_second_false_response_rms_hz_range": [
+        0.6052386399706361,
+        0.8447241604899339
+      ]
+    }
+  },
+  "reserved_origins": {
+    "LOW": {
+      "rate_hz_range": [
+        10.509720700257475,
+        14.44372902267583
+      ],
+      "time_s_range": [
+        25.2,
+        26.8
+      ]
+    },
+    "HIGH": {
+      "rate_hz_range": [
+        12.131397793257221,
+        15.873268873901463
+      ],
+      "time_s_range": [
+        25.2,
+        28.4
+      ]
+    }
+  },
+  "pooled_high_minus_low_hz": -0.04066280991727891,
+  "pooled_high_minus_low_ci": [
+    -0.11126935349731955,
+    0.03271844580339827
+  ],
+  "descriptive_only": "Aggregation of frozen endpoints; no new gate or model selection"
+}

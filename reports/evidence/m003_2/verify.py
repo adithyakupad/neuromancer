@@ -121,7 +121,7 @@ def main():
     for name, digest in seal['artifact_sha256'].items(): assert hashlib.sha256((args.models/name).read_bytes()).hexdigest() == digest
     expected = {f'n{n}_r{rep}' for n in range(10) for rep in range(26, 31)} | {f'n{n}_r31' for n in range(3)}
     assert {p.name for p in args.raw.glob('n*_r*')} == expected
-    observation_checks = 0; trials = 0; unique_noise = set()
+    observation_checks = 0; trials = 0; zero_prefix_checks = 0; unique_noise = set()
     for n in range(10):
         for rep in ((26, 27, 28, 29, 30, 31) if n < 3 else (26, 27, 28, 29, 30)):
             trial = args.raw/f'n{n}_r{rep}'; report = json.loads((trial/'trial.json').read_text()); assert report['status'] == 'complete'
@@ -147,6 +147,11 @@ def main():
                 assert set(o) == {'history', 'input_history', 'rate', 'bounds', 'time_us'}
                 np.testing.assert_array_equal(o['history'], backbone['rates'][stop-50:stop])
                 assert float(o['rate']) == candidate_rates[index] and not o['input_history'].any()
+                sham_prefix = read(trial/s/'S.npz')
+                random_prefix = read(trial/s/'R.npz')
+                for field in ('counts', 'rates', 'sector'):
+                    np.testing.assert_array_equal(sham_prefix[field][:5], random_prefix[field][:5])
+                zero_prefix_checks += 1
                 null = None
                 for a, name in enumerate(NAMES):
                     d = read(trial/s/f'{name}.npz'); check_observations(d, o['history'][-1]); observation_checks += 1
@@ -223,12 +228,22 @@ def main():
     draws = np.random.Generator(np.random.PCG64(20261102)).integers(0, 10, (10000, 10))
     ci = np.quantile(delta[draws].mean(axis=1), [.025, .975]); control = network[:, 2, 2]-network[:, 1, 2]
     control_ci = np.quantile(control[draws].mean(axis=1), [.025, .975]); summary = json.loads((args.analysis/'comparison.json').read_text())
+    for m, family in enumerate(FAMILIES):
+        np.testing.assert_array_equal(summary['model_mean_mse_hz2'][family], network[:, m].mean(axis=0))
+        np.testing.assert_array_equal(summary['model_mse_ci_hz2'][family], np.quantile(network[:, m][draws].mean(axis=1), [.025, .975], axis=0))
+        half_net = half_errors[:, :, :, :, 1:].mean(axis=(1, 3, 4, 6))
+        np.testing.assert_array_equal(summary['half_data_mean_mse_hz2'][family], half_net[:, m].mean(axis=0))
+        np.testing.assert_array_equal(summary['absolute_mean_mse_hz2'][family], abs_errors.mean(axis=(1, 3, 4, 6))[:, m].mean(axis=0))
+    interaction = (data['actual'][:, :, 1, 1:]-data['actual'][:, :, 0, 1:]).mean(axis=(1, 2))
+    np.testing.assert_array_equal(interaction, data['interaction'])
+    np.testing.assert_array_equal(summary['interaction_mean_hz'], interaction.mean(axis=0))
+    np.testing.assert_array_equal(summary['interaction_ci'], np.quantile(interaction[draws].mean(axis=1), [.025, .975], axis=0))
     g = summary['scientific_gate']; np.testing.assert_array_equal(ci, g['absolute_ci']); np.testing.assert_array_equal(control_ci, g['shuffled_improvement_ci'])
     magnitude = delta.mean() >= .04 and relative.mean() >= .1 and (delta > 0).sum() >= 8
     decision = 'PASS' if magnitude and ci[0] > 0 and control_ci[0] > 0 else 'HOLD' if magnitude else 'FAIL'
     assert decision == g['decision']
     report = dict(execution='PASS', scientific=decision, historical_files_preserved=len(preserved), complete_trials=trials,
-                  observation_archives_checked=observation_checks, independent_coefficients=coefficient_checks,
+                  observation_archives_checked=observation_checks, identical_zero_prefix_checks=zero_prefix_checks, independent_coefficients=coefficient_checks,
                   independent_common_origin_forecasts=forecast_checks, wall_s=time.perf_counter()-began,
                   limitation='Independent equations in this session; not external replication or alternate simulator')
     args.output.write_text(json.dumps(report, indent=2)+'\n'); print(json.dumps(report, indent=2))

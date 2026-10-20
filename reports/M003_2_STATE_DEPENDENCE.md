@@ -126,3 +126,14 @@ Main limits: only four fitting origins/network; one scalar masks sector/synchron
 Next falsifiable experiment: preregister network-disjoint confirmation of a FIR learned from **observation-only randomized calibration, without paired-sham training labels**, scoring evaluator-only held-out intervention contrasts on fresh noise. Test whether the simple kernel retains useful prediction under that deployable information constraint and stationary versus hidden efficacy change. Freeze cohort, meaningful errors and controls first; do not add controllers or retrospectively engineer another target. This experiment is proposed only, not started.
 
 M003.2 stops here. No merge or automatic follow-on implementation.
+
+
+## Revision closure and implementation inventory
+
+Verified complete implementation/evidence revision: **`46ed04d18d4d613d1a933bb473a5ca79b6bcb725`**, clean `research/m003-2-state-dependence` after commit. This closure and manifest-accounting annotation are a publication-only child: no executable, protocol, test, model, prediction or scientific-data changes. Exact final publication HEAD is supplied in the final mission response; a file cannot contain its own Git commit hash.
+
+Compared with startingfd003766d2dc1774e4ba2fce086f092e2736d41d: **1228 added paths, zero modified/deleted historical paths**;2481total tracked paths. The1226-file hash inventory totals41,288,801logical bytes (39.38MiB), excluding the self-referential final manifest/report closure. All1002curated NPZ archives are tracked. Allocated file-block sum for curated evidence plus original raw/model/analysis/reanalysis copies was92,479,488bytes (88.20MiB), measured before the small final manifest write, below400MiB budget; shared Git objects/existing environment excluded. This is a file-block accounting measurement, not unique APFS physical allocation.
+
+Added implementation: `src/neuromancer/{state_dependence,state_experiment}.py`; nine new tests in `tests/test_state_dependence.py`; frozen protocol007; acquisition/selection/evaluator/independent-verifier/reproduction/figure/aggregation scripts and all evidence under `reports/evidence/m003_2`. No existing callers, exports, dependency configuration, original neural backend or CI needed changes; existing test discovery covers the additions. Complete schema/reproduction instructions and actual command ledger are in that evidence directory.
+
+The full inventory, preservation hashes, numerical comparisons, negative controls, all failed scientific gates, software verification, deterministic figures and precision limits are committed on the review branch. No merge, push or follow-on experiment.

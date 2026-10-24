@@ -1,0 +1,133 @@
+{
+  "frozen": true,
+  "tuning_access": "networks0-9/noise32 STATIC and LOSS public observations and sealed online outputs only",
+  "adaptation": {
+    "index": 4,
+    "name": "RLS999",
+    "loss_mse": 0.30576085763164307,
+    "stationary_harm": 0.0008541503233970751,
+    "pre_harm": -0.029020042270405867,
+    "eligible": true
+  },
+  "adaptation_candidates": [
+    {
+      "index": 1,
+      "name": "SW250",
+      "loss_mse": 0.3227727395957049,
+      "stationary_harm": 0.9644154663974142,
+      "pre_harm": 0.54589378353184,
+      "eligible": false
+    },
+    {
+      "index": 2,
+      "name": "SW500",
+      "loss_mse": 0.2530497631065567,
+      "stationary_harm": 0.21271251893088006,
+      "pre_harm": 0.16150251024061382,
+      "eligible": false
+    },
+    {
+      "index": 3,
+      "name": "RLS995",
+      "loss_mse": 0.24749806476323558,
+      "stationary_harm": 0.24213615609937053,
+      "pre_harm": 0.05005936699768131,
+      "eligible": false
+    },
+    {
+      "index": 4,
+      "name": "RLS999",
+      "loss_mse": 0.30576085763164307,
+      "stationary_harm": 0.0008541503233970751,
+      "pre_harm": -0.029020042270405867,
+      "eligible": true
+    }
+  ],
+  "detector": {
+    "index": 5,
+    "nu": 0.5,
+    "threshold": 5,
+    "false_alarms_per_minute": 0.75,
+    "sensitivity": 1.0,
+    "median_censored_delay_s": 4.0,
+    "eligible": true
+  },
+  "detector_candidates": [
+    {
+      "index": 0,
+      "nu": 0.25,
+      "threshold": 3,
+      "false_alarms_per_minute": 2.7,
+      "sensitivity": 1.0,
+      "median_censored_delay_s": 3.0,
+      "eligible": false
+    },
+    {
+      "index": 1,
+      "nu": 0.25,
+      "threshold": 5,
+      "false_alarms_per_minute": 1.2000000000000002,
+      "sensitivity": 1.0,
+      "median_censored_delay_s": 3.0,
+      "eligible": false
+    },
+    {
+      "index": 2,
+      "nu": 0.25,
+      "threshold": 8,
+      "false_alarms_per_minute": 0.44999999999999996,
+      "sensitivity": 1.0,
+      "median_censored_delay_s": 5.0,
+      "eligible": true
+    },
+    {
+      "index": 3,
+      "nu": 0.25,
+      "threshold": 12,
+      "false_alarms_per_minute": 0.15000000000000002,
+      "sensitivity": 0.9,
+      "median_censored_delay_s": 6.5,
+      "eligible": true
+    },
+    {
+      "index": 4,
+      "nu": 0.5,
+      "threshold": 3,
+      "false_alarms_per_minute": 1.9500000000000002,
+      "sensitivity": 1.0,
+      "median_censored_delay_s": 3.5,
+      "eligible": false
+    },
+    {
+      "index": 5,
+      "nu": 0.5,
+      "threshold": 5,
+      "false_alarms_per_minute": 0.75,
+      "sensitivity": 1.0,
+      "median_censored_delay_s": 4.0,
+      "eligible": true
+    },
+    {
+      "index": 6,
+      "nu": 0.5,
+      "threshold": 8,
+      "false_alarms_per_minute": 0.15000000000000002,
+      "sensitivity": 0.9,
+      "median_censored_delay_s": 5.5,
+      "eligible": true
+    },
+    {
+      "index": 7,
+      "nu": 0.5,
+      "threshold": 12,
+      "false_alarms_per_minute": 0.0,
+      "sensitivity": 0.8,
+      "median_censored_delay_s": 7.5,
+      "eligible": true
+    }
+  ],
+  "replay_seal_sha256": "8bf77a3208a2b6c96b36f7345134b59d249e1d58d47deb98bc82f07e325e5ee5",
+  "source_sha256": "a6d18b178163d81a763836de734587beecbefca1fde89fe2ba7b258a8430669a",
+  "protocol_sha256": "21b56a348c95524a5c971eed534f873af424a4685b08634bc3f28e7ebad10af1",
+  "timing_clarification_sha256": "e75bb1c7cec9231200db7ef0e66482e79a25f2c42fc3f2310fa829bea788c831"
+}

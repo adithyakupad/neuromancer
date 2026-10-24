@@ -70,7 +70,7 @@ def network_gates(rows, selected):
         relevant=[r for r in rows if r['network']==n]
         valid=all(r['calibration_valid'] and 1<=r['baseline_hz']<=30 and r['fallback_decisions']==0 for r in relevant)
         # Duplicated rows across policies/windows do not change this replicate RMS.
-        noise=np.sqrt(np.mean([r['noise_hz']**2 for r in relevant]))
+        noise=float(np.sqrt(np.mean([r['noise_hz']**2 for r in relevant])))
         for condition,window in [('STATIC','stationary'),('LOSS','late')]:
             mae=lookup(rows,n,selected,condition,window,'mae_hz');zero=lookup(rows,n,'ZERO',condition,window,'mae_hz')
             fixed=lookup(rows,n,'FIXED',condition,window,'mae_hz');bias=lookup(rows,n,selected,condition,window,'bias_hz')
@@ -96,7 +96,7 @@ def main():
             candidates[name]=dict(mean_score=float(np.mean(values)),network_scores=values)
     if args.selection is None:
         chosen=min(candidates,key=lambda k:(round(candidates[k]['mean_score'],12),int(k[2:].split('_')[0])))
-        save(args.output/'selection.json',dict(frozen=True,controller=chosen,candidates=candidates,stage='TUNE',raw_source_revision=meta['git_revision']))
+        save(args.output/'selection.json',dict(frozen=True,controller=chosen,candidates=candidates,stage='TUNE',raw_source_revision=meta['head']))
     else: chosen=json.loads(args.selection.read_text())['controller']
     gates=network_gates(rows,chosen);csvout(args.output/'network_qualification.csv',gates)
     summary=dict(stage=meta['stage'],selected=chosen,models={},regimes={},recovery_advantage={},wall_s=0.)

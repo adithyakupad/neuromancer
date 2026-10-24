@@ -121,6 +121,9 @@ def test_neural_tick_replay_isolation_and_receipts():
             results.append(r)
         assert results[0]==results[1]
         assert results[0][0][1]==(30.,0.,30.,0.)
+        e.restore('origin')
+        batch=e.run_commands(schedule(e,[u for _,u in results[0]]))
+        assert [(z.observation.counts,z.receipt.delivered_current_pA) for z in batch]==results[0]
     finally: e.close()
 
 
@@ -142,3 +145,26 @@ def test_calibration_exact_math_and_future_rejection():
     assert c.slope_hz_per_pA==pytest.approx(1/3) and c.feedforward_pA==pytest.approx(3)
     assert c.valid and c.noise_hz==0
     with pytest.raises(ValueError): calibrate(os+[obs(47000000)],rs)
+
+
+def test_network_replication_and_mean_gate():
+    import importlib.util
+    from pathlib import Path
+    path=Path(__file__).parents[1]/'reports/evidence/m005a/analyze.py'
+    spec=importlib.util.spec_from_file_location('m005a_statistics',path);a=importlib.util.module_from_spec(spec);spec.loader.exec_module(a)
+    rows=[]
+    for n in range(10):
+        for r in (41,42):
+            for cond in ('STATIC','LOSS'):
+                for name,rate,mae in [('ZERO',10.,1.),('MAX',11.5,.5),('FIXED',10.6,.4),('PI20_10',10.9,.2)]:
+                    for window in ('stationary','late'):
+                        rows.append(dict(network=n,replicate=r,condition=cond,controller=name,window=window,
+                                         rate_hz=rate,mae_hz=mae,bias_hz=-.1,noise_hz=.25,baseline_hz=10.,
+                                         calibration_valid=True,fallback_decisions=0))
+    gates=a.network_gates(rows,'PI20_10')
+    assert len(gates)==20 and all(g['qualified'] for g in gates)
+    import json
+    json.dumps(gates,allow_nan=False)
+    duplicated=a.network_gates(rows+rows,'PI20_10')
+    assert gates==duplicated
+    assert a.ci(np.ones(10))==[1.,1.]

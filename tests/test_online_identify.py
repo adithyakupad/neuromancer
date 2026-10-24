@@ -77,3 +77,26 @@ def test_schedules_and_sham_from_nonzero_prior():
             prev=u[k-1];sham=np.maximum(prev[None]-30*np.arange(1,51)[:,None],0)
             assert branch_audit(sham,prev)['violations']==0
     _,weak=actions(Config(),True);assert not weak.any()
+
+
+def test_unexcited_initialization_and_finite_serialization():
+    import json
+    rng=np.random.default_rng(47);u=np.zeros((2000,4));y=12+rng.normal(0,.1,(2000,4))
+    rec,z,t,p=initialize(y,u);json.dumps(rec,allow_nan=False)
+    assert rec['diagnostics']['rank']==1
+    np.testing.assert_allclose(np.array(rec['coef'])[1:],0,atol=1e-12)
+    m=OnlineFIR(rec,z,t,p,'RLS995');assert np.isfinite(m.forecast(np.zeros((50,40)),39_000_000)).all()
+
+
+def test_detector_event_boundary_is_strictly_post_change():
+    import importlib.util,sys
+    from pathlib import Path
+    directory=Path(__file__).parents[1]/'reports/evidence/m004';sys.path.insert(0,str(directory))
+    try:
+        spec=importlib.util.spec_from_file_location('m004_selection_test',directory/'select_models.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        alarms=np.zeros(40);alarms[19]=1
+        assert module.detection(alarms)['miss']
+        alarms[20]=1;event=module.detection(alarms)
+        assert event['delay_s']==1 and event['timely'] and event['pre_alarms']==1
+    finally:sys.path.remove(str(directory))

@@ -161,7 +161,12 @@ def main():
         a=read(base/'public.npz');b=read(args.raw/f'n{n}_r{r}_{c}'/'public.npz')
         for field in ('counts','rates','sector'):np.testing.assert_array_equal(a[field][:2950],b[field][:2950])
         ma=json.loads((base/'trial.json').read_text());mb=json.loads((args.raw/f'n{n}_r{r}_{c}'/'trial.json').read_text())
-        assert ma['engine']['noise_hashes']==mb['engine']['noise_hashes'];pairs+=1
+        assert ma['engine']['noise_hashes']==mb['engine']['noise_hashes']
+        oa=read(args.replay/f'n{n}_r{r}_STATIC'/'online.npz');ob=read(args.replay/f'n{n}_r{r}_{c}'/'online.npz')
+        np.testing.assert_array_equal(oa['theta'][:,:21],ob['theta'][:,:21])
+        np.testing.assert_array_equal(oa['rolling'][:,:21],ob['rolling'][:,:21])
+        np.testing.assert_array_equal(oa['one_step'][:,:1001],ob['one_step'][:,:1001])
+        np.testing.assert_array_equal(oa['detector'][:,:20],ob['detector'][:,:20]);pairs+=1
     result=dict(execution='PASS',trials=len(expected),matched_future_change_prefix_pairs=pairs,historical_files_unchanged=len(preserve),
         checks=counts,wall_s=time.perf_counter()-began,limitation='Separate equations in this session, not external/biological replication')
     args.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

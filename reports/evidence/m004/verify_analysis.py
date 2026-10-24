@@ -3,6 +3,7 @@ import argparse
 import csv
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 import numpy as np
 from verify import read,xmatrix
@@ -25,7 +26,13 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--dev',type=Path,required=True);p.add_argument('--dev-replay',type=Path,required=True)
     p.add_argument('--validation',type=Path,required=True);p.add_argument('--validation-replay',type=Path,required=True)
     p.add_argument('--selection',type=Path,required=True);p.add_argument('--analysis',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
-    args=p.parse_args();choice=json.loads(args.selection.read_text());summary=json.loads((args.analysis/'comparison.json').read_text());cache={};checks=0
+    args=p.parse_args();choice=json.loads(args.selection.read_text())
+    vp=json.loads((args.validation/'provenance.json').read_text())
+    expected_hash=hashlib.sha256(args.selection.read_bytes()).hexdigest()
+    assert vp['selection_sha256']==expected_hash
+    committed=subprocess.check_output(['git','show',vp['head']+':reports/evidence/m004/selection.json'])
+    assert hashlib.sha256(committed).hexdigest()==expected_hash
+    summary=json.loads((args.analysis/'comparison.json').read_text());cache={};checks=0
     for raw,replay in ((args.dev,args.dev_replay),(args.validation,args.validation_replay)):
         for trial in raw.glob('n*_r*'):
             d=read(trial/'public.npz');o=read(replay/trial.name/'online.npz');rec=json.loads((replay/trial.name/'initial.json').read_text())['fir']

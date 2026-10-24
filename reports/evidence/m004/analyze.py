@@ -89,7 +89,7 @@ def main():
             dd=detection(online['detector'][det,:,2]);fa=float(online['detector'][det,:,2].sum()*1.5)
             window=any(59<t<=69 for t in dd['alarms']);detmetrics[identity]=dict(**dd,false_alarms_per_minute=fa,window_probability=float(window),n=n,rep=rep,condition=condition)
             alarm_rows.append(dict(stage=stage,network=n,replicate=rep,condition=condition,**{k:v for k,v in dd.items() if k!='alarms'},
-                alarms_s=json.dumps(dd['alarms']),stationary_alarms_per_minute=fa if condition in ('STATIC','NULL') else '',
+                event_present=condition in ('LOSS','UP','WEAK'),pre_change_false_alarms_per_minute=dd['pre_alarms']*3,alarms_s=json.dumps(dd['alarms']),stationary_alarms_per_minute=fa if condition in ('STATIC','NULL') else '',
                 event_precision=(float(not dd['miss'])/len(dd['alarms']) if dd['alarms'] and condition=='LOSS' else 0.),total_alarms=len(dd['alarms'])))
             residual=prediction[0].mean(axis=(1,2))-truth.mean(axis=(1,2))
             for b in range(40):

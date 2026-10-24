@@ -28,6 +28,8 @@ def test_projection_arbitrary_transitions_kkt():
             alternative, _ = project(rng.uniform(0,120,4), previous)
             assert (request-result)@(alternative-result) <= 1e-7
         previous = result
+    corner,_=project([0.,80.,80.,80.],[120.,40.,40.,40.])
+    np.testing.assert_allclose(corner,[90.,50.,50.,50.],rtol=0,atol=1e-12)
     p = np.array([120.,120.,0.,0.])
     for _ in range(4): p, _ = project([0,0,120,120], p)
     np.testing.assert_array_equal(p,[0,0,120,120])

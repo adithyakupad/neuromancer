@@ -116,7 +116,7 @@ def audit(raw_root,analysis):
         for name in meta['names']:
             a,b=cached['STATIC',name],cached['LOSS',name]
             for field in ('counts','rates','sector','delivered','decisions','intent'):
-                close(a[field][:(16 if field=='decisions' else 800)],b[field][:(16 if field=='decisions' else 800)])
+                close(a[field][:(17 if field=='decisions' else 800)],b[field][:(17 if field=='decisions' else 800)])
         for field in ('counts','rates','sector','delivered','intent'):
             close(cached['STATIC','ZERO'][field],cached['LOSS','ZERO'][field])
         trials.append((n,r))

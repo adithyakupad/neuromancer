@@ -21,9 +21,13 @@ def main():
             raw=d['counts'].reshape(1600,4,5)[:,:,:4].sum(axis=(1,2)).reshape(32,50).sum(axis=1)/80.
             e=raw-c['target_hz'];hits=[k for k in range(16,30) if (abs(e[k:k+3])<=.35).all()]
             first=(hits[0]+1-16) if hits else None;confirmed=(first+2) if first is not None else None
-            u=d['delivered'];entries.append(dict(network=m['network_id'],replicate=m['replicate_id'],condition=b['condition'],
+            u=d['delivered'];gain=np.ones(1600)
+            if b['condition']=='LOSS':gain[800:]=.6
+            prefix_u=np.load(folder/'prefix.npz')['delivered']
+            entries.append(dict(network=m['network_id'],replicate=m['replicate_id'],condition=b['condition'],
                 first_recovery_endpoint_s=first,causal_recovery_confirmation_s=confirmed,miss=first is None,
-                online_charge_pC=float(u.sum()*.02*50),total_charge_pC=float((u.sum()*.02+m['prefix_audit']['exposure_pA_s'])*50),
+                online_charge_pC=float(u.sum()*.02*50),effective_online_charge_pC=float((u*gain[:,None]).sum()*.02*50),
+                total_current_squared_pA2_s=float(((u*u).sum()+(prefix_u*prefix_u).sum())*.02),total_charge_pC=float((u.sum()*.02+m['prefix_audit']['exposure_pA_s'])*50),
                 q_mean_pA=float(u[:,0].mean()),saturation_fraction=float(d['decisions'][:,5].mean()),
                 integral_blocked_fraction=float(d['decisions'][:,4].mean()),fallback_decisions=int(d['decisions'][:,6].sum()),
                 filtered_mae_hz=float(abs(d['rates'].mean(axis=1)[1000:]-c['target_hz']).mean())))

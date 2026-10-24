@@ -82,6 +82,12 @@ def network_gates(rows, selected):
     return out
 
 
+def select_candidate(candidates):
+    best=min(v['mean_score'] for v in candidates.values())
+    tied=[k for k,v in candidates.items() if v['mean_score']<=best+1e-12]
+    return min(tied,key=lambda k:tuple(map(int,k[2:].split('_'))))
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('raw',type=Path);p.add_argument('output',type=Path)
     p.add_argument('--selection',type=Path);args=p.parse_args();args.output.mkdir(exist_ok=False,parents=True);started=time.perf_counter()
@@ -95,7 +101,7 @@ def main():
             values=[.5*(lookup(rows,n,name,'STATIC','stationary','mae_hz')+lookup(rows,n,name,'LOSS','late','mae_hz')) for n in range(10)]
             candidates[name]=dict(mean_score=float(np.mean(values)),network_scores=values)
     if args.selection is None:
-        chosen=min(candidates,key=lambda k:(round(candidates[k]['mean_score'],12),int(k[2:].split('_')[0])))
+        chosen=select_candidate(candidates)
         save(args.output/'selection.json',dict(frozen=True,controller=chosen,candidates=candidates,stage='TUNE',raw_source_revision=meta['head']))
     else: chosen=json.loads(args.selection.read_text())['controller']
     gates=network_gates(rows,chosen);csvout(args.output/'network_qualification.csv',gates)

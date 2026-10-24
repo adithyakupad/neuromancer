@@ -170,6 +170,7 @@ def test_network_replication_and_mean_gate():
     duplicated=a.network_gates(rows+rows,'PI20_10')
     assert gates==duplicated
     assert a.ci(np.ones(10))==[1.,1.]
+    assert a.select_candidate({'PI10_5':{'mean_score':.2+5e-13},'PI20_10':{'mean_score':.2}})=='PI10_5'
 
 
 def test_projection_strict_floating_point_slew_contract():
@@ -182,3 +183,11 @@ def test_projection_strict_floating_point_slew_contract():
         u,_=project(request,p)
         assert np.all(abs(u-p)<=30.),(p,request,u,abs(u-p))
         assert u.sum()<=240
+
+
+def test_absolute_resource_deadline_counts_clock_gap():
+    from neuromancer.control_experiment import check_deadline
+    check_deadline(3600.,3599.);check_deadline(3600.,3600.)
+    with pytest.raises(TimeoutError):check_deadline(3600.,3600.001)
+    with pytest.raises(TimeoutError):check_deadline(3600.,9000.)
+    check_deadline(None,9000.)

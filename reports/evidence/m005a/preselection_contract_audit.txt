@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a/verify.py", line 19, in inspect_public
+    d=dict(np.load(path)); times=start+20000*np.arange(bins)
+           ^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m004-venv/lib/python3.12/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'STATIC_ZERO.npz'

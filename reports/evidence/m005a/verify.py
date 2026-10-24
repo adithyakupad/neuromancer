@@ -158,7 +158,8 @@ def audit(raw_root,analysis):
         for name in ('PI10_5','PI20_10','PI30_15'):
             scores[name]=np.mean([.5*(mean(n,'STATIC',name,'stationary',0)+mean(n,'LOSS',name,'late',0)) for n in range(10)])
             close(scores[name],selected_record['candidates'][name]['mean_score'])
-        assert min(scores,key=lambda k:(round(scores[k],12),int(k[2:].split('_')[0])))==selected
+        minimum=min(scores.values())
+        assert min((k for k in scores if scores[k]-minimum<=1e-12),key=lambda k:tuple(map(int,k[2:].split('_'))))==selected
     return dict(status='PASS',stage=meta['stage'],trials=len(trials),branches=branches,metric_rows=len(rows),
                 verified='event counts/filter/calibration/causal PI/actions/cost/matched prefixes/OU samples/parameters/allnetworkgates/selection',wall_s=time.perf_counter()-started)
 

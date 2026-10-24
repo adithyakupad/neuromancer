@@ -187,3 +187,6 @@ Next falsifiable experiment, proposed only: a new reviewed protocol may explicit
 ## Revision closure
 
 Exact starting revision is recorded above. Acquisition source is d17017b13fa55ed7173500044b5ce57da5dd3b2d; all later resource-guard changes are explicitly post-acquisition and not claimed scientifically exercised. The verified complete evidence commit and final publication child are recorded at closure/final response. A report cannot embed its own Git commit hash. Review branch remains unmerged; all historical source/evidence stays byte-identical.
+
+
+Verified implementation/evidence revision: **`d942ef19ea306b7d487902be2c34eed667b1e369`**, clean review branch after commit. This publication child changes only this closure and its hash manifest; its exact finalHEAD is supplied in the final mission response. Relative to the start: **252added paths, zero modified/deleted historical paths,4140total tracked paths**. All150curatedNPZ files are tracked. The251-file inventory is approximately39.2MiB logical data; allocated curated+original-run files are approximately80.6MiB, below500MiB (sharedGitobjects/existing environment excluded; notuniqueAPFSphysicalallocation). No merge or push.

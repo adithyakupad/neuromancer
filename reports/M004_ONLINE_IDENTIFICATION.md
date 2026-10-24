@@ -155,3 +155,27 @@ Limits in priority order: validationpaired-effectCI crosseszero; sustained recov
 Next falsifiable experiment: preregister bias-only versus input-kernel-only versus fullRLS updates on fresh observation-based calibration/streams, retaining paired evaluator-only contrasts. Test whether kernel updating is necessary for replicated intervention-effect improvement beyond adapting the baseline. Freeze meaningful contrast/stationarity/uncertainty gates before acquisition. This is proposed only; no controller or follow-on study started.
 
 M004 stops after review/report/commit. No merge, push, controller, target engineering, plasticity, hardware or locked-network experiment.
+
+
+## Revision closure and complete implementation inventory
+
+Verified complete implementation/evidence revision: **`3e3db3cdf159b25f2ab822cf353711ca5e542609`**, clean `research/m004-online-identification` after commit. This report closure and manifest annotation are a publication-only child: no executable, scientific data, protocol, test, model, prediction, threshold or selection changes. Exact final publication HEAD is supplied in the final mission response; a document cannot contain its own Git object hash.
+
+Compared with starting1fe8f6bd0a1e057b8bbe10cd7d10d49e33c1a2d2: **1407added paths, zero modified/deleted historical paths**,3888tracked total. All2481starting files are hash-identical. All**1071curated NPZ** archives are tracked, including explicitly segregated softwarefixtures; ignored scratch is not substituted for committed evidence.
+
+The1405-file source/evidence SHA inventory totals122,047,409logical bytes (116.39MiB), excluding the self-referential manifest/final report closure. Measured allocated file-block sum for curated plus all originalM004scratch/reanalysis/softwarefixture copies was257,712,128bytes (245.77MiB), before the small final manifest write, below500MiB. Shared Git objects/Python environment excluded; not a unique APFS physical-allocation measurement.
+
+| Added path | Responsibility |
+|---|---|
+|docs/research/008_M004_ONLINE_IDENTIFICATION_PROTOCOL.md|Frozen hypotheses, numerical design, boundaries, model/detection rules and gates|
+|src/neuromancer/online_identify.py|FIR initialization/update, timing/invalidity/numerical contracts, causal CUSUM|
+|src/neuromancer/online_experiment.py|Uninterrupted acquisition, private gain schedules, deferred matched probes, bounded CLI|
+|tests/test_online_identify.py|Nine independent analytical/causality/error-handling fixtures|
+|reports/evidence/m004/{replay,select_models,analyze}.py|Public-only chronology, development-only selection, separate retrospective evaluator|
+|reports/evidence/m004/{verify,verify_analysis,verify_lineage}.py|Independent model/observation/statistic/seed/membership equations|
+|reports/evidence/m004/{figures,reproduce,summary_tables,archive_oracle}.py|Deterministic scientific publication and derived archival reproduction|
+|reports/evidence/m004/results/{dev_raw,dev_replay,validation_raw,validation_replay,analysis}/|Complete original observations, requests/deliveries, seeds, models, forecasts, all results and figures|
+|reports/evidence/m004/results/software_fixtures/|Isolated synthetic-mutation and repeat-replay verification data|
+|reports/evidence/m004/{selection,verification_manifest}.json|Committed pre-confirmation choices and full verification/hash inventory|
+
+Actual commands, source/environment identity, timing clarification, schema, both cohort decisions, all failed candidate guards, late/false/repeated alarms, uncertain paired validation result, calibration/recovery failures and latency outliers remain reviewable. Work is committed on the review branch; no merge/push or automatic follow-on study.

@@ -1,0 +1,34 @@
+.........F                                                               [100%]
+=================================== FAILURES ===================================
+_____________ test_projection_strict_floating_point_slew_contract ______________
+
+    def test_projection_strict_floating_point_slew_contract():
+        rng=np.random.default_rng(280)
+        for _ in range(5000):
+            p=rng.uniform(0,120,4);p*=min(1.,240/p.sum())
+            # Opposite corners force subtraction/addition at the exact slew edge.
+            request=rng.choice([0.,120.],4)
+>           u,_=project(request,p)
+                ^^^^^^^^^^^^^^^^^^
+
+tests/test_control.py:179: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+request = array([  0., 120.,   0., 120.])
+previous = array([73.21024373, 30.60431645, 56.83069658, 79.35474325])
+
+    def project(request, previous):
+        """Euclidean projection onto the box/slew/total-budget intersection.
+    
+        Invalid requests receive a labeled nearest-zero fallback. Invalid actuator
+        state raises: it cannot be made retrospectively valid by this projector.
+        """
+        p = np.asarray(previous, dtype=float)
+        if p.shape != (4,) or not np.isfinite(p).all() or np.any(p < 0) or np.any(p > 120) or p.sum() > 240:
+>           raise ValueError('Previous current is not feasible')
+E           ValueError: Previous current is not feasible
+
+src/neuromancer/control.py:25: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_control.py::test_projection_strict_floating_point_slew_contract
+1 failed, 9 passed in 5.39s

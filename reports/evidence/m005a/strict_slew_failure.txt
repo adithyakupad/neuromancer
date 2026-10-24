@@ -1,0 +1,22 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_projection_strict_floating_point_slew_contract ______________
+
+    def test_projection_strict_floating_point_slew_contract():
+        rng=np.random.default_rng(280)
+        for _ in range(5000):
+            p=rng.uniform(0,120,4);p*=min(1.,240/p.sum())
+            # Opposite corners force subtraction/addition at the exact slew edge.
+            request=rng.choice([0.,120.],4)
+            u,_=project(request,p)
+>           assert np.all(abs(u-p)<=30.),(p,request,u,abs(u-p))
+E           AssertionError: (array([39.84211533, 29.42476363, 89.32791757,  2.33493167]), array([120.,   0.,   0., 120.]), array([69.84211533,  0.        , 59.32791757, 32.33493167]), array([30.        , 29.42476363, 30.        , 30.        ]))
+E           assert np.False_
+E            +  where np.False_ = <function all at 0x10accd3b0>(array([30.        , 29.42476363, 30.        , 30.        ]) <= 30.0)
+E            +    where <function all at 0x10accd3b0> = np.all
+E            +    and   array([30.        , 29.42476363, 30.        , 30.        ]) = abs((array([69.84211533,  0.        , 59.32791757, 32.33493167]) - array([39.84211533, 29.42476363, 89.32791757,  2.33493167])))
+
+tests/test_control.py:180: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_control.py::test_projection_strict_floating_point_slew_contract
+1 failed, 9 deselected in 0.17s

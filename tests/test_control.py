@@ -168,3 +168,15 @@ def test_network_replication_and_mean_gate():
     duplicated=a.network_gates(rows+rows,'PI20_10')
     assert gates==duplicated
     assert a.ci(np.ones(10))==[1.,1.]
+
+
+def test_projection_strict_floating_point_slew_contract():
+    rng=np.random.default_rng(280)
+    for _ in range(5000):
+        p=rng.uniform(0,120,4);p*=min(1.,240/p.sum())
+        while p.sum()>240: p=np.nextafter(p,np.zeros(4))
+        # Opposite corners force subtraction/addition at the exact slew edge.
+        request=rng.choice([0.,120.],4)
+        u,_=project(request,p)
+        assert np.all(abs(u-p)<=30.),(p,request,u,abs(u-p))
+        assert u.sum()<=240

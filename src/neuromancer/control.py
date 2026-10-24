@@ -24,6 +24,16 @@ def project(request, previous):
     if p.shape != (4,) or not np.isfinite(p).all() or np.any(p < 0) or np.any(p > 120) or p.sum() > 240:
         raise ValueError('Previous current is not feasible')
     low, high = np.maximum(0., p-30), np.minimum(120., p+30)
+    # Round endpoints inward only when subtraction would violate the backend's
+    # exact floating-point slew check. Never loosen the physical constraint.
+    for _ in range(64):
+        lower_bad = p-low > 30.; upper_bad = high-p > 30.
+        if not (lower_bad.any() or upper_bad.any()):
+            break
+        low[lower_bad] = np.nextafter(low[lower_bad], p[lower_bad])
+        high[upper_bad] = np.nextafter(high[upper_bad], p[upper_bad])
+    else:
+        raise ArithmeticError('Cannot represent feasible slew endpoints')
     try:
         r = np.asarray(request, dtype=float)
         valid = r.shape == (4,) and np.isfinite(r).all()

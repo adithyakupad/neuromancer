@@ -79,6 +79,9 @@ def verify_trial(folder,replay):
             previous.check_observations(branch,y[k-1]);delta=np.diff(np.vstack([prev,branch['delivered']]),axis=0)
             assert (abs(delta)<=30).all() and (branch['delivered'].sum(axis=1)<=240).all()
         for field in ('counts','rates','sector','delivered'):np.testing.assert_array_equal(active[field],d[field][k:k+50])
+        left,right=d['event_offset'][k],d['event_offset'][k+50]
+        np.testing.assert_array_equal(active['event_time_us'],d['event_time_us'][left:right])
+        np.testing.assert_array_equal(active['event_channel'],d['event_channel'][left:right])
         if condition in ('NULL','WEAK'):
             for field in ('counts','rates','sector','event_time_us','event_channel'):np.testing.assert_array_equal(active[field],sham[field])
     init=json.loads((replay/'initial.json').read_text());online=read(replay/'online.npz')

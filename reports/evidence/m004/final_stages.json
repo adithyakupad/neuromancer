@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/replay.py",
+      "--raw",
+      "runs/m004-validation-01",
+      "--output",
+      "runs/m004-validation-replay-01"
+    ],
+    "returncode": 0,
+    "wall_s": 14.57830695802113
+  },
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/verify.py",
+      "--raw",
+      "runs/m004-validation-01",
+      "--replay",
+      "runs/m004-validation-replay-01",
+      "--output",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/validation_verification.json"
+    ],
+    "returncode": 0,
+    "wall_s": 4.830835165979806
+  },
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/analyze.py",
+      "--dev",
+      "runs/m004-dev-01",
+      "--dev-replay",
+      "runs/m004-dev-replay-01",
+      "--validation",
+      "runs/m004-validation-01",
+      "--validation-replay",
+      "runs/m004-validation-replay-01",
+      "--selection",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/selection.json",
+      "--output",
+      "runs/m004-analysis-01"
+    ],
+    "returncode": 0,
+    "wall_s": 9.255181208020076
+  },
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/verify_analysis.py",
+      "--dev",
+      "runs/m004-dev-01",
+      "--dev-replay",
+      "runs/m004-dev-replay-01",
+      "--validation",
+      "runs/m004-validation-01",
+      "--validation-replay",
+      "runs/m004-validation-replay-01",
+      "--selection",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/selection.json",
+      "--analysis",
+      "runs/m004-analysis-01",
+      "--output",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/analysis_verification.json"
+    ],
+    "returncode": 0,
+    "wall_s": 5.835485999996308
+  },
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/figures.py",
+      "--analysis",
+      "runs/m004-analysis-01"
+    ],
+    "returncode": 0,
+    "wall_s": 1.8579704590374604
+  }
+]

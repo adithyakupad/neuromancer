@@ -40,7 +40,7 @@ def main():
             beta=np.array(rec['coef']);base=np.array(rec['output_mean'])+beta[0]-(np.array(rec['mean'])/rec['scale'])@beta[1:];b=beta[1:]/np.array(rec['scale'])[:,None]
             oracle=np.array([(base+xmatrix(u,np.arange(k,k+50))@b).mean(axis=0) for k in range(1950,3950,50)])
             pred=np.concatenate([o['rolling'].mean(axis=2),oracle[None]],axis=0);mse=np.square(pred-yy).mean(axis=2)
-            cache[trial.name]=dict(mse=mse,events=[event(s) for s in o['detector']],pred=pred,actual=yy,o=o)
+            cache[trial.name]=dict(public_y=d['rates'],gain=actual_gain,initial=json.loads((replay/trial.name/'initial.json').read_text()),mse=mse,events=[event(s) for s in o['detector']],pred=pred,actual=yy,o=o)
     # Recompute adaptation tuning using only noise32 and the four registered candidates.
     tuning=[]
     for m in range(1,5):
@@ -66,7 +66,33 @@ def main():
         key=f"n{row['network']}_r{row['replicate']}_{row['condition']}";item=cache[key];m=NAMES.index(row['model']);k=int(float(row['origin_s']))-39
         er=item['pred'][m,k]-item['actual'][k]
         np.testing.assert_allclose(float(row['mse_hz2']),np.dot(er,er)/4,atol=1e-11)
-        np.testing.assert_allclose(float(row['bias_hz']),sum(er)/4,atol=1e-11);checks+=1
+        np.testing.assert_allclose(float(row['bias_hz']),sum(er)/4,atol=1e-11)
+        np.testing.assert_allclose(float(row['mae_hz']),sum(abs(er))/4,atol=1e-11)
+        assert float(row['coverage'])==float(np.mean(abs(er)<=item['o']['width']));checks+=1
+    secondary_checks=0
+    for filename in ('one_step.csv','windows.csv'):
+        for row in csv.DictReader((args.analysis/filename).open()):
+            key=f"n{row['network']}_r{row['replicate']}_{row['condition']}";item=cache[key];m=NAMES.index(row['model'])
+            if filename=='one_step.csv':
+                sl=slice(0,1000) if row['window']=='pre' else slice(1000,2000)
+                er=item['o']['one_step'][m,sl]-item['public_y'][1950:][sl]
+            else:
+                sl={'pre':slice(0,20),'post0-5':slice(20,25),'post5-10':slice(25,30),'post10-20':slice(30,40)}[row['window']]
+                er=item['pred'][m,sl]-item['actual'][sl]
+                assert float(row['coverage'])==float(np.mean(abs(er)<=item['o']['width']))
+            np.testing.assert_allclose(float(row['mse_hz2']),np.mean(er**2),atol=1e-11)
+            np.testing.assert_allclose(float(row['bias_hz']),np.mean(er),atol=1e-11);secondary_checks+=1
+    coefficient_checks=0
+    for row in csv.DictReader((args.analysis/'coefficients.csv').open()):
+        key=f"n{row['network']}_r{row['replicate']}_{row['condition']}";item=cache[key];m=NAMES.index(row['model']);b=int(row['time_s'])-39
+        theta=item['o']['theta'][m,b];record=item['initial']['shuffled' if m==5 else 'fir']
+        scale=np.array(record['scale']);original=np.array(record['coef'])[1:]/scale[:,None];current=theta[1:]/scale[:,None]
+        denominator=np.sum(original**2)
+        if denominator<1e-12:assert row['kernel_gain_proxy']==''
+        else:np.testing.assert_allclose(float(row['kernel_gain_proxy']),np.sum(current*original)/denominator,atol=1e-11)
+        baseline=np.array(record['output_mean'])+theta[0]-np.array(record['mean'])@current
+        np.testing.assert_allclose(float(row['baseline_hz']),baseline.mean(),atol=1e-11)
+        assert int(row['updates'])==(0 if m in (0,5) else 50*b);coefficient_checks+=1
     effect_checks=0
     for raw,replay in ((args.dev,args.dev_replay),(args.validation,args.validation_replay)):
         for trial in raw.glob('n*_r*'):
@@ -102,8 +128,8 @@ def main():
         np.testing.assert_allclose(d['false_alarm_ci'],bounds(false),atol=1e-12);np.testing.assert_allclose(d['sensitivity_minus_stationary_window_ci'],bounds(sensitivity-window),atol=1e-12)
         h2='PASS' if sensitivity.mean()>=.8 and np.median(delay)<=10 and false.mean()<=1 and bounds(false)[1]<=2 and bounds(sensitivity-window)[0]>0 else 'FAIL'
         assert h2==d['decision'];gates[stage]=dict(adaptation=h1,detection=h2)
-    result=dict(status='PASS',selection_verified=True,rolling_rows=checks,effect_rows=effect_checks,cohort_decisions=gates,
-        selection_sha256=hashlib.sha256(args.selection.read_bytes()).hexdigest(),limitation='Independent equations, same session')
+    result=dict(status='PASS',selection_verified=True,rolling_rows=checks,effect_rows=effect_checks,secondary_window_rows=secondary_checks,coefficient_rows=coefficient_checks,cohort_decisions=gates,
+        selection_sha256=hashlib.sha256(args.selection.read_bytes()).hexdigest(),source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),limitation='Independent equations, same session')
     args.output.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 
 

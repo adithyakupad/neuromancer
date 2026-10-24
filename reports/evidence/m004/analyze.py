@@ -39,7 +39,7 @@ def main():
     p.add_argument('--validation',type=Path,required=True);p.add_argument('--validation-replay',type=Path,required=True)
     p.add_argument('--selection',type=Path,required=True);p.add_argument('--output',type=Path,required=True);args=p.parse_args();began=time.perf_counter()
     choice=json.loads(args.selection.read_text());model=choice['adaptation']['index'];det=choice['detector']['index']
-    args.output.mkdir(parents=True,exist_ok=False);rows=[];effect_rows=[];alarm_rows=[];block_rows=[];failure_rows=[];metrics={};detmetrics={};coefficient_rows=[]
+    args.output.mkdir(parents=True,exist_ok=False);rows=[];effect_rows=[];alarm_rows=[];block_rows=[];failure_rows=[];metrics={};detmetrics={};coefficient_rows=[];one_rows=[];window_rows=[];recovery_rows=[]
     for raw,replay,stage in ((args.dev,args.dev_replay,'D'),(args.validation,args.validation_replay,'V')):
         seal=json.loads((replay/'seal.json').read_text())
         for name,h in seal['artifact_sha256'].items():assert hashlib.sha256((replay/name).read_bytes()).hexdigest()==h
@@ -58,6 +58,21 @@ def main():
                         mse_hz2=float(mse[m,b]),bias_hz=float(err[m,b].mean()),mae_hz=float(abs(err[m,b]).mean()),
                         coverage=float(np.mean(abs(err[m,b])<=online['width'])),interval_mean_halfwidth_hz=float(online['width'].mean()),
                         mean_total_pA=float(u[k:k+50].sum(axis=1).mean())))
+            for m,name in enumerate(NAMES):
+                for label,sl in (('pre',slice(0,1000)),('post',slice(1000,2000))):
+                    er=online['one_step'][m,sl]-y[1950:][sl]
+                    one_rows.append(dict(stage=stage,network=n,replicate=rep,condition=condition,model=name,window=label,mse_hz2=float(np.mean(er**2)),bias_hz=float(er.mean()),mae_hz=float(abs(er).mean())))
+            for m,name in enumerate(ALL_NAMES):
+                for label,sl in (('pre',slice(0,20)),('post0-5',slice(20,25)),('post5-10',slice(25,30)),('post10-20',slice(30,40))):
+                    er=err[m,sl]
+                    window_rows.append(dict(stage=stage,network=n,replicate=rep,condition=condition,model=name,window=label,mse_hz2=float(np.mean(er**2)),bias_hz=float(er.mean()),coverage=float(np.mean(abs(er)<=online['width']))))
+            if condition=='LOSS':
+                recovered=False;delay=20.
+                for end in range(25,41):
+                    sl=slice(end-5,end)
+                    if (abs(err[model,sl].mean(axis=1))<=.2).all() and mse[model,sl].mean()<=mse[0,sl].mean():
+                        recovered=True;delay=float(end-20);break
+                recovery_rows.append(dict(stage=stage,network=n,replicate=rep,model=ALL_NAMES[model],recovered=recovered,delay_s=delay))
             for j,origin in enumerate((54,64,74)):
                 k=origin*50;active=np.load(folder/f'probe{origin}_active.npz');sham=np.load(folder/f'probe{origin}_sham.npz')
                 np.testing.assert_array_equal(active['rates'],y[k:k+50]);actual=(active['rates']-sham['rates']).mean(axis=0)
@@ -111,10 +126,11 @@ def main():
         for j,n in enumerate(ns):
             for m,name in enumerate(ALL_NAMES):network_rows.append(dict(stage=stage,network=n,model=name,post_mse_hz2=float(post[j,m]),stationary_mse_hz2=float(static[j,m]),pre_mse_hz2=float(pre[j,m]),
                 loss_detection_by10s=float(sensitivity[j]),censored_delay_s=float(delays[j]),stationary_false_alarms_per_minute=float(false[j])))
-    summary['adaptation_decision']='PASS' if all(summary[s]['adaptation']['decision']=='PASS' for s in ('D','V')) else 'FAIL'
+    decisions=[summary[s]['adaptation']['decision'] for s in ('D','V')]
+    summary['adaptation_decision']='FAIL' if 'FAIL' in decisions else 'HOLD' if 'HOLD' in decisions else 'PASS'
     summary['detection_decision']='PASS' if all(summary[s]['detection']['decision']=='PASS' for s in ('D','V')) else 'FAIL'
     summary['selected_model']=NAMES[model];summary['selected_detector']=choice['detector'];summary['analysis_wall_s']=time.perf_counter()-began
-    for name,table in (('rolling',rows),('effects',effect_rows),('detections',alarm_rows),('detector_blocks',block_rows),('failures',failure_rows),('coefficients',coefficient_rows),('networks',network_rows)):
+    for name,table in (('rolling',rows),('effects',effect_rows),('detections',alarm_rows),('detector_blocks',block_rows),('failures',failure_rows),('coefficients',coefficient_rows),('networks',network_rows),('one_step',one_rows),('windows',window_rows),('recovery',recovery_rows)):
         write_csv(args.output/f'{name}.csv',table)
     save_json(args.output/'comparison.json',summary);print(json.dumps(summary,indent=2))
 

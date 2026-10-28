@@ -1,5 +1,5 @@
 """Immutable combined view: original three plus exactly seventeen new trials."""
-import hashlib,json,os,subprocess
+import hashlib,json,shutil,subprocess
 from pathlib import Path
 from neuromancer.supervisor import Deadline,atomic_json
 r=Path(__file__).resolve().parent;Deadline.from_environment().check()
@@ -16,7 +16,7 @@ for pair in [(n,k) for n in range(10) for k in (41,42)]:
     dest=combined/source.name;dest.mkdir();hashes={}
     for f in source.iterdir():
         assert f.is_file() and f.suffix!='.tmp' and f.name not in ('partial.npz','failure.json')
-        os.link(f,dest/f.name);hashes[f.name]=hashlib.sha256(f.read_bytes()).hexdigest()
+        shutil.copy2(f,dest/f.name);hashes[f.name]=hashlib.sha256(f.read_bytes()).hexdigest()
     source_meta=json.loads(((old if session=='original' else new)/'provenance.json').read_text())
     lineage.append(dict(network=n,replicate=k,session=session,source=str(source),source_revision=source_meta['head'],sha256=hashes))
 meta=json.loads((new/'provenance.json').read_text());meta.update(simulated_seconds=6140,trial_pairs=[[n,k] for n in range(10) for k in (41,42)],combined_view=True,acquisition_sessions=['original','continuation'],interpretation='One ten-network cohort, two noise repeats; chronological sessions are not independent cohorts')

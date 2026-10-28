@@ -1,0 +1,447 @@
+{
+  "status": "PASS",
+  "controller": "PI10_5",
+  "simulated_seconds": 83,
+  "exact_arrays": 25,
+  "wall_s": 116.59973016695585,
+  "source": {
+    "schema_version": 1,
+    "experiment_kind": "simulation",
+    "head": "8802ed2029bb8658118fc62553d14f158f63eaa0",
+    "branch": "research/m005a-5-confirmation",
+    "working_tree": "M reports/evidence/m005a_5/audit_original.py\n M reports/evidence/m005a_5/confirmation_verification.json\n M reports/evidence/m005a_5/reconcile.py\n M reports/evidence/m005a_5/verification_config.json\n?? reports/evidence/m005a_5/acquisition.log\n?? reports/evidence/m005a_5/acquisition_closure.json\n?? reports/evidence/m005a_5/acquisition_launch.json\n?? reports/evidence/m005a_5/causality_verification.json\n?? reports/evidence/m005a_5/confirmation/\n?? reports/evidence/m005a_5/confirmation_analysis/\n?? reports/evidence/m005a_5/continuation/\n?? reports/evidence/m005a_5/extra_verification.json\n?? reports/evidence/m005a_5/finalize.py\n?? reports/evidence/m005a_5/historical_verification.json\n?? reports/evidence/m005a_5/lineage.json\n?? reports/evidence/m005a_5/observed_sleep_wake.txt\n?? reports/evidence/m005a_5/resource_samples.jsonl\n?? reports/evidence/m005a_5/resource_verification.json\n?? reports/evidence/m005a_5/timing_gap_audit.json\n?? reports/evidence/m005a_5/verification_stage.log\n?? reports/evidence/m005a_5/verification_supervision/\n?? reports/evidence/m005a_5/verify_extra.py\n?? reports/evidence/m005a_5/write_report.py",
+    "source_hashes": {
+      "neuromancer/__init__.py": "4c74fc568665ec777cb051d3a09428493a36dd00e0a06bf789b2e1feaa9a92ed",
+      "neuromancer/_brian.py": "5e20f00b496c310018421cf200dfd2f767f63c12e84a7eab0af1880a23323519",
+      "neuromancer/authority_diagnosis.py": "ab78622f6579a671feb65ac03cc5f71b247cb33be9fd25f15977825f321ac468",
+      "neuromancer/calibration.py": "8fe18c34fcb5b59504e827f3a233bd4d4bd6465b3c771c82f4ad2dca31fec657",
+      "neuromancer/calibration_diagnostic.py": "1930bb4d63f84eff2e7e238518ba833880efe31b90db64ed43f73679efef45b3",
+      "neuromancer/clocks.py": "925ffa2afce5be2a5d5f2409f835f68a15351654803666f00968d030d45408d4",
+      "neuromancer/control.py": "e7f63a8b150d4ddbff0f647399043f5f36fcd0d7239108e5c97dfc3d38612876",
+      "neuromancer/control_experiment.py": "c610e19df2df626ef31d8ba70522deb12e7df284491f2b0a87fb397966e8ab59",
+      "neuromancer/diagnostic.py": "e62b3339b76ec34123a41237aaadd9c751750c3c554478a73872627bc4fc2dce",
+      "neuromancer/identification_experiment.py": "c5eb49a606fe02355e70765ea5fa9de5454f72b585617d4dde41c67c60d686ef",
+      "neuromancer/identify.py": "fd3c4aa489f16514ab1f6a99fb1ccd45622ef661c3a6693cc0fc956e65342b34",
+      "neuromancer/necessity.py": "ada3d8a7ed1667b69b5d8c5b3ba12d574c48bb15004dcb259ecc77135c41e602",
+      "neuromancer/necessity_experiment.py": "d9bbe6cfe98d8837e940ee65effe01b399e9cc109df1df64bef27079fb61dedb",
+      "neuromancer/observation.py": "e057226622cfb65bc4e644cf25e190e3d880cb0e77829c27a29ff4de06e26f5b",
+      "neuromancer/online_experiment.py": "8a5d7d5c555df4e1b8c901d44b874f81f8440af72f6d8610093ad03b6ad2fc11",
+      "neuromancer/online_identify.py": "b4d225effd81107874d1914b1dee384b74c99f90003955a4b176bf4134a4aa57",
+      "neuromancer/reachability.py": "ace1b964b4f774aaf4322adc1925def3802dc15d48471621140e78147f8129bf",
+      "neuromancer/state_dependence.py": "5220e237b11673d6e3a0e61ff66c797f91b6c9b682610d4a4a966f5913cf4334",
+      "neuromancer/state_experiment.py": "058ac550d10a986065cc95953377bd1b2f1f564c44ce0842164dc3516645de8f",
+      "neuromancer/substrate.py": "45771e521ee3a66c2c4046ebbc0eeb5dce576abfe993f36821b9cea33a6b89e9",
+      "neuromancer/supervisor.py": "c8030aa414c8430adcca8cce39fcae8bff7b585c82e07deda039b5fca5f30d33"
+    },
+    "protocol_sha256": "0a2526ef4b6d9da37e4d65395f5ce264cc01c36bfd8c4bcbbe0e8399fbd404d6",
+    "root_seed": 20261018,
+    "seed_roles": {
+      "0": "membrane/init",
+      "1": "connectivity",
+      "2": "weights/delays",
+      "3": "channels",
+      "4": "OU",
+      "5": "calibration",
+      "6": "masks",
+      "7": "reserved Brian"
+    },
+    "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "package_versions": {
+      "neuromancer": "0.2.0",
+      "brian2": "2.10.1",
+      "numpy": "2.5.4",
+      "sympy": "1.14.0",
+      "cython": "3.1.3"
+    },
+    "cli": [
+      "reports/evidence/m005a_5/replay_check.py",
+      "reports/evidence/m005a_5/confirmation",
+      "reports/evidence/m005a_5/replay_fixture",
+      "reports/evidence/m005a_3/tuning_analysis/selection.json"
+    ],
+    "clock": "integer us; 100 us neural grid and 20000 us control bins",
+    "evaluated_split": "training only; IDs 0-9, or 0-2 for convergence"
+  },
+  "engine": {
+    "config": {
+      "network_id": 0,
+      "replicate_id": 41,
+      "root_seed": 20261018,
+      "trial_id": "m005a-n0-r41",
+      "dt_us": 100,
+      "efficacy": 1.0,
+      "retain_spikes": false
+    },
+    "metadata": {
+      "schema_version": 1,
+      "experiment_kind": "simulation",
+      "trial_id": "m005a-n0-r41",
+      "network_id": 0,
+      "replicate_id": 41,
+      "engine": "brian2",
+      "engine_version": "2.10.1",
+      "dt_us": 100,
+      "control_us": 20000,
+      "recording_channels": 20,
+      "neurons_per_recording_channel": 5,
+      "current_unit": "pA",
+      "time_unit": "us",
+      "parameter_hashes": {
+        "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+        "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+        "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+        "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+        "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+        "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+        "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+        "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+      }
+    },
+    "numpy_version": "2.5.4",
+    "generator": "PCG64 / SeedSequence",
+    "role_key": "(network_id,role_id,replicate_id[,block_index])",
+    "parameter_replicate": 0,
+    "ou_fine_dt_us": 50,
+    "noise_block_us": 1000000,
+    "noise_hashes": {
+      "0": {
+        "fine": "184ce82497a5d1c2d7e36227b93b75ae1b541e9d4ee8c7a044effd2705e65b23",
+        "effective": "a1665948a54dc39ad7502e2dab1920d201f15faf99340eec3fad38c8c77ec7f2"
+      },
+      "1": {
+        "fine": "d8e965ce6ab9b8c59f07d9aa41da8f5f52460b716763b95397586901c2b5ef1c",
+        "effective": "1a1211799048ca8b178acbfdbe99d33cac17414c429891dfea511206d303dbfb"
+      },
+      "2": {
+        "fine": "fbbc1d2583892bf542e6cdef521385490ccdd62d48b944973f98c3b5bf96cdfa",
+        "effective": "61e682448840c9330251c792fb0d4e288d34d0593cd7996cca2d30f70f4077c0"
+      },
+      "3": {
+        "fine": "d14d66bc69eea4bde13875c0ddfc134a2ed39d4b55e719bdf0ae76e2f60dda54",
+        "effective": "677e838e4908df9a940b5cf7a601d382059e15c0fda45878d1e46743b2db040b"
+      },
+      "4": {
+        "fine": "08d373dd4a571079aac24b59181d3f3a87f625140291662bc7ff89edea99db12",
+        "effective": "758ce1f0e123c44326f232ace96b9b4e1a9e2ec9fd9c2c0d7df8909c9a212e0e"
+      },
+      "5": {
+        "fine": "9050abc3260dae1b56fd382386a3947426f1076bfaf447c27a9093b6e704760d",
+        "effective": "167ce7234661d7aba61d4263657917e3252c3a6931c311d0de0e2b3ff8561760"
+      },
+      "6": {
+        "fine": "7bd8ceb64dac3dceed84c6437edf8df70cc120438a11c102d487bbaba041bb74",
+        "effective": "145b3bdaa65704ba2ab26d44710a1caf9f038e0e0263fc9666e90b8873b95ad3"
+      },
+      "7": {
+        "fine": "2d136ba95d9c7196a8ebe56c192d894bb3b2cf32ad870f6eb1eb7e5d701c3846",
+        "effective": "3dc3725d0a81ef6a94a8887588624df079dd527a01c3cab1c7b4fc43aa80ca4e"
+      },
+      "8": {
+        "fine": "edc34157330bac23e31860c12befcdc4d771605a47d0dc4f667e6a053f96ee14",
+        "effective": "8f0eb16cd4284d54950334d76fea96419a6318ba5fb86cb9cb9195647c05ab51"
+      },
+      "9": {
+        "fine": "2ae57e84b9aeef6589d7d22692f807902f50e39a7818a66594bd76b48f5af87a",
+        "effective": "d648ceadc06131e83f86d41453f795ba25902613b668132e5eeaddadfb6cca6e"
+      },
+      "10": {
+        "fine": "903d58b54c0d8aa9bfa4639a066ec957fd9c72f7561092593866b23c54a93ecc",
+        "effective": "bf0d1b0adb65a41afb75beb2e1ed3fd91851eef6209550382a88e567337cb294"
+      },
+      "11": {
+        "fine": "9c4e83e6d8606886884d7a5dac773e6dd315f62d43c1bbfb9916cffeb4ca2ee8",
+        "effective": "42de57c16eb2019d84ed42affaad5341ac04d03622c2dc0270717eab2df9e11b"
+      },
+      "12": {
+        "fine": "201409736da522993303baf0a207ff18b39d6b3337763010dadc143940765267",
+        "effective": "db63cafd355a3f71bf888ae1b211c23243075f39314ca8cb4c6f89a3ed788efc"
+      },
+      "13": {
+        "fine": "8262b4c794a38f7d98e3bacd2b106bdffed84913dace6fdb70c553738eca5bdd",
+        "effective": "94e9c2dfcdf3a6ce3e4b04ff0a8ad8e48edbb7063139fea0d2a5513cf9a1c483"
+      },
+      "14": {
+        "fine": "75d12113809747f6d300ed216edd0bc4ed3329985461567ed726ae7c1e268c07",
+        "effective": "304290c03353995274343b61ca272d45e679b3fa7a40ccc1e0a186f26e889615"
+      },
+      "15": {
+        "fine": "bb6d7dc505ed18ac9105ea2777be0b8014fdccff9fcddcdd878d1417e8e6f07a",
+        "effective": "49e3c4652c731f2d2455911a1f509773ad7b68642204acb566ab17113ae55f7c"
+      },
+      "16": {
+        "fine": "afd98739d7b99f20475a91fc2dfcca20533237ccc7f0d9d3ce3e09b1284e486e",
+        "effective": "adc9f322c53272fc0456f6158d5d47ac6100ff2fa231dcb00e402e0dc5d9691b"
+      },
+      "17": {
+        "fine": "db3c4fb3f4d9d0b3821b3c8e4a98011272aa0b08cb0ee772412aa2cfddf727e0",
+        "effective": "878ffc33e41d2e468dc802732f1e52031e9e49c36180a9c30f6e7d6aa3bb40f4"
+      },
+      "18": {
+        "fine": "f829fed98af06a683960037df569f2fd1359733e7bf7ce2e512aa36cd5ee5b72",
+        "effective": "b0ee8507076fc89b023aaa812534590bc1183b3864332edd0359fb71c7c3ed56"
+      },
+      "19": {
+        "fine": "ef58df4f7a9bd6769f126fe7a624570b6890c739992badbdd7be3e169a4f75aa",
+        "effective": "0b0eeb62da13d46fa8fed63b5353cbc5e56a1b80f3ede84d4302fadda1f568b1"
+      },
+      "20": {
+        "fine": "1404c43687e426ada16850772b53ff25d7d486dc6c2214fe833fb2dc43a1d2ad",
+        "effective": "d0e42284b2cefb0bd33b679aaf7ade96155d2d7deb21426efe24735230e2c039"
+      },
+      "21": {
+        "fine": "a0591dc85a92171141f5e7d5eb157da6358700c27a8663bafbf543b9b353449e",
+        "effective": "1f3ffe16460b5b19fd4430d5ea21255bce51705963e729d197bbbeb4cdec38f5"
+      },
+      "22": {
+        "fine": "6abe8f3ae723bc97de71423fc6b750a847577463436181d852e79c0408266ab3",
+        "effective": "20681805b8f7b628596bab7bfdd12cc374f65b7e8a2010f1e1984cedb28b513a"
+      },
+      "23": {
+        "fine": "504d2d7c5f59c77468c61b98f24cbe8689aa347f08f75c50afc4b4dfc9926558",
+        "effective": "ea80428a65244962b60fd75998c3e0271e048c594b80a8e17a2f35246f1ca69e"
+      },
+      "24": {
+        "fine": "1697130c7a9f8bb8577537fd1ce9c83db6199b545d5c24a393d70980f56f21a2",
+        "effective": "25b124d4ad7740d91064d45066d6bff5266190957c3962d7c2cc860be95fa619"
+      },
+      "25": {
+        "fine": "8ce11526d030c75359e7e2034447e6c2cf29d0b7e53ef47ae36cf739b73ddd9f",
+        "effective": "5d13b4a9e4a594bc2b4bc2e71503f637df41840963aef77da65964e6656a8663"
+      },
+      "26": {
+        "fine": "70ea83c19acd19b67b40f3e38af5fe0d1b27fa8f0715a9bbfa3b2a80c3c231b0",
+        "effective": "e35b0761f98d42dc70384f9599c2a29992015fdcb92aa1afdc06dbeee7528aeb"
+      },
+      "27": {
+        "fine": "f3f0514e60a1dfc098f81ecd251bf8fa2de937631d848a667b6f17903ad9cb1a",
+        "effective": "8551b316963e8c103c27f663e4a9a5bf31b082ad92258043eee84bd8803f8654"
+      },
+      "28": {
+        "fine": "5e0056f64d09c3b04e7b92ac049bcde7f93b3c6b2847b223b013498866c4bff8",
+        "effective": "b0de5cb29c7e413d763ddd636cb53ff16e91c959335ad1cfecf4fcd2d8841789"
+      },
+      "29": {
+        "fine": "2dca79d55a391425f3d3fb96e52e25643072811604d5111040a4c59abab64a0e",
+        "effective": "95b93742b5d66be930ec355ef46a3743c774eb17931473f994d328b33341893e"
+      },
+      "30": {
+        "fine": "6f7adf12766690c4e5f61dae0d2f2e9bc3639a58855a2a240bf9e3667a65fbc5",
+        "effective": "57d3b74e5f13cad121a967bff48ef0899557eecabc7bc9a3a767f24204744739"
+      },
+      "31": {
+        "fine": "30b0d711b1fa6dc227b6589de482cfab96dbacc071ba03db3d5b8b5bef00f5f9",
+        "effective": "1bfc2a959c037a93fc42e638cd96cf0c633e73d6437ad37c8b040ca512b13af0"
+      },
+      "32": {
+        "fine": "001c406dc51be4d2e209b50d16b0680f71fe2262b41c5d86bea068e9b17512cf",
+        "effective": "084da721df92e77053d05dddc9746d27107b49eeefbd4221fe170765b01f6705"
+      },
+      "33": {
+        "fine": "de2782f131547cc599baa6a8585f0083b2bfd7f599fa905360163f48810d257f",
+        "effective": "de08a806c9900ddf0fe5871c9b260858634dd3b2465a963323a6b44a667e62ed"
+      },
+      "34": {
+        "fine": "041521c129abe87cbba7b175a42af54a2dab0a0286f88fe4d8fdefcff6afa3cf",
+        "effective": "2e4c474bcc88e5f9bbc8b5542494839ab1058a63841c7dbdfecd04b7b6b8a770"
+      },
+      "35": {
+        "fine": "c5dde5b57679f9c2f0136cb246b16f7447c7a960de9940d6fc910e18cb5f455e",
+        "effective": "21dabfb4b4cfb4a78e003efb06376727eed422406667c808a73288ba216739eb"
+      },
+      "36": {
+        "fine": "11385afd95dab6a16121791887383addf3076f1c0b32fbdd999fbf859f64b033",
+        "effective": "a2fa53bfcf6abdb40db59b985c941108b43a4d304a05a9c60e64d97b267bca6e"
+      },
+      "37": {
+        "fine": "eadf7886cd4ee6a9f1f6648a2aa25006cb84478b115b3d0eaf3a2ce884857b3a",
+        "effective": "fdf503b17e87ca8f8ab0073ad144f00585dadf4de88f0f1c6ad6e338f8c6a39a"
+      },
+      "38": {
+        "fine": "8304a5cd8a2d2f2ab2c4b76f1199f3996dc92cd44ea52209b53eababe6087953",
+        "effective": "c83005b3f92d133707af84dec2a97e9232b378e3c7250bfc5a2928b4f8973c71"
+      },
+      "39": {
+        "fine": "ad18d3de91f81da5c18da3ac549159a562eca95779a27e45d3294ac41d2b9173",
+        "effective": "d3863127e86c99a47021a1b88dcc418a19245eff43b892d38fe79e88d76db041"
+      },
+      "40": {
+        "fine": "926110386bef392b64818fc0f70f4b0b1b3807bb1f7771320f8ab81ba8ee62c3",
+        "effective": "c22dfa92f8821276018e45fa48a940f477c8229d75cce7ec05657474164204ed"
+      },
+      "41": {
+        "fine": "07b08dece003b1cd872b944e2c210fff06a1c1155368322b9ece6b36335ba9b3",
+        "effective": "cb883820b168556604225286a70901136e40a850276b32af875f484360bb1e58"
+      },
+      "42": {
+        "fine": "e9a2555d4362ddba0e5007ffb577dc6b171e6bef8529ac43060cf3061c5cce20",
+        "effective": "ad116d6d2910fe00afc80ffc3e8ffd2d7586eeab629817332542736b6d642d1f"
+      },
+      "43": {
+        "fine": "ba3f7a1bd03c6f86473ddd89972b764ba03b60cd6e26432a55a575355e283829",
+        "effective": "7c3f2b40e30c556d9860c54906076099c16a0d81ae6a72b6d6a3d3bf36c727ee"
+      },
+      "44": {
+        "fine": "f849cefc3a16928d2fc0874408be03a58b27ba73d6f98b6e0a8377aee9038478",
+        "effective": "0c6a4194a9025791d54f063327f995759babe423b6261af89a47812bf1f14223"
+      },
+      "45": {
+        "fine": "69ae2da863cb105a22954c71e454e09e867df36da5caabae27d6107074576d47",
+        "effective": "8b0344a992945aeeb85fe2326a018604163a39df504630fef7fd70edb4f74067"
+      },
+      "46": {
+        "fine": "243f2e33ed0829f528025e1799576b3f889d7b480f0a3a749419be79bdc6f06f",
+        "effective": "180bf785fe2242e2fae44e073b22346810be580c1086692a79e1b4b089e3fc0b"
+      },
+      "47": {
+        "fine": "995489c93c9d43f7d24d887fe10046206b94c4abef66952248f850b9e8fbe4fb",
+        "effective": "db7d079b02eaf565e9569430c8e079e601cc8cbff9ea2a06fa4a9b49bbc1528b"
+      },
+      "48": {
+        "fine": "4cfc27198f98b22a79040b739b91cf59db81febfe599e509492ab8bb655cf340",
+        "effective": "a42e8a48e7d3ebb5ff28dbedabf9117ef99ff3e2f3bcb1514b6a859842b10c57"
+      },
+      "49": {
+        "fine": "9a0f9e0db10b6ff8866caea386a4f98c7bb4c5d9fe9d3d9de0d529f4ac4041d0",
+        "effective": "d3860dfe7efdefc0472058c57b0b9a67f115d1de9df0535eb930ad60a45f603b"
+      },
+      "50": {
+        "fine": "d1435b88e9785c7fe0da5849b2a6759b3f01a01108dbb7782a02f4b3ab763432",
+        "effective": "0b6f8ed4aa1fa88ab9863e9a96d3a854331dde70aa82d385ddb2000eeb495928"
+      },
+      "51": {
+        "fine": "4feaa28c3d61975dd30cd99ccc1783615b67455c15fd21715fad4cfa42b72885",
+        "effective": "2acd102fa9eedeff4142a94bf11b679f37837dc6acd1ecc0e6698f9df5512c83"
+      },
+      "52": {
+        "fine": "8b82839d3466292b541234306c6f09596d079e360105723b3e5faadc12d4ed43",
+        "effective": "bb92afd154fa44024df48a4333d1bea5aa96107c6d4ed530cfddcd7b03b8ee09"
+      },
+      "53": {
+        "fine": "16e7fb662a156fe56ba48b7da85fd8e0f94c2a124ba6c1ad177c4ddf3b328f82",
+        "effective": "32f77f8aa63236b92885806be5cc65ab91c453fe6014ebe2525a2fc0aa91c56c"
+      },
+      "54": {
+        "fine": "13594d4ede23f90f0bcfecdcd3da72a7e08b8a78b490c3e32a6fa3bcbb630f03",
+        "effective": "ebd7d09951282095a8e505285dda939120ed87bebcd86c5cbf20dcd90c7aa937"
+      },
+      "55": {
+        "fine": "6ac8cedd5c02377f709e904c27940a980d907fcefec924094601a0f27861c8a6",
+        "effective": "eff54809c759efa97b907464ed829d4a29e822f2c016360691e2198b2fd29acb"
+      },
+      "56": {
+        "fine": "294cf047685463581680186b862b9c94707375aa31acde30e581ac5b055373ac",
+        "effective": "e05ccd7595a2a14f38ebf32bd7a728044a6cdec2219d85d56ccf746e38b996d2"
+      },
+      "57": {
+        "fine": "293040e8f9c6d5514f7e87e619bcc43ed39abbb1f18560b99ed780d3f03c88b9",
+        "effective": "0d4089ce6bb3c44a5adb71115c3c0e4b8ee60eb2ff37bcf1ab75e97e2e29b599"
+      },
+      "58": {
+        "fine": "e7b063a164464b4299bed4d01627a3993303998622901ca7a0744d6d60049a3a",
+        "effective": "13349ec062238b8257fd71103ac936dcbece4b230441ef754eba6cf5043d9d5c"
+      },
+      "59": {
+        "fine": "a7a47f663ad2fa90f4b8939aa25a6cf538b8061362c3560bda6d8302e238c632",
+        "effective": "5c4c3214eaa5b62c924568faa368494e830ee316fd3b30159d2b1de74310d575"
+      },
+      "60": {
+        "fine": "a36aa65a8ab58fb90e6da8fd9fc13a9e03cff6f16835f676a2642b23a36a0a30",
+        "effective": "c8594e623ba6c760e3ca33a0e09821082b32491238fa4b21d29a6ca6a8821eb7"
+      },
+      "61": {
+        "fine": "ac018dcb194dfbffb1504ef514de009dc4b26bca1680d3e3dfc7f710998afbf0",
+        "effective": "e96f06eb06ec603a228dfe35411af12a75f488993f4d1d7253791ebe37de52fd"
+      },
+      "62": {
+        "fine": "7dcc73169fab32ddcfd4304f3d1ded9e4a97b1943e84c9054af304251284e855",
+        "effective": "125981c5e511347437e2581a34faa8ac5ddcaee7e6f7d7e6a8af54dd03d21dbe"
+      },
+      "63": {
+        "fine": "a1ff059de96837c54d3f39c6ab80e2fbe36fc041845d720654c6af54d2550696",
+        "effective": "2fd3e11916eee63a438afc5a76d89409dfd9af8b6097537ed9166b9c83053de1"
+      },
+      "64": {
+        "fine": "8ca98c04753955fc504843ac8d44674834619f8d21be24608927d4577e5e013c",
+        "effective": "0f23b332c877453d92f250fecce5531512a98e1581be0f87c262cd40b5a5fac6"
+      },
+      "65": {
+        "fine": "e05f86882dae98e6d052d7558ee1c69ccc55da1a54eabaa22f77cd76d8aee7dc",
+        "effective": "1652f030c191d91e845cfe8406ee07a51c9c75ecfb8bac27ee08c247209f6f07"
+      },
+      "66": {
+        "fine": "72d03542bb99939a9f8e959a47152ca5b787dd0bd5b61143d97c7c00560357e2",
+        "effective": "a397dc921a588cdec1ba821c02e12e168e1fbe613fc4811fbb46d60492e1e29b"
+      },
+      "67": {
+        "fine": "4f38f037522be8dbb4266276d5aef25b634bfbcaa676d39f10b08d0fa9f6f021",
+        "effective": "dd16139e593f397aa50dfcfdd7a253bbc9222eb61db41f3bcd6149aaf2f5618c"
+      },
+      "68": {
+        "fine": "bd32fa388a5e7831e39a35fc68aecf2626dd91909162939f80c536786d239b4c",
+        "effective": "ee9977497e6a7476ad549cf859157629e1a135e7f7d22af0c1c3745486a61a41"
+      },
+      "69": {
+        "fine": "24edc0b28b4704107b6a1dd1e0dd85430e53dc36f147cee535684557066ee0bf",
+        "effective": "9064f75fe74914f025408e1752f3e064ab99e8b4d49309993f9bb89be9579341"
+      },
+      "70": {
+        "fine": "b20ab3e6bc3b550d10c36f949a210573741b654f2c293c8ce162624da89586cc",
+        "effective": "261955263600426936cc310850bbcacf3759587db976572c3065d19fca64ce73"
+      },
+      "71": {
+        "fine": "b27ffa291f452dc7f8539843dad7498408c67f982acaef9bb14fe13a5632fdc7",
+        "effective": "13c94d82008f88494de5eb817bfc5327087d93be5c7256c969ecedb84a796d8f"
+      },
+      "72": {
+        "fine": "09e8f67dfefc9b11ef3fcfc359a860678fe3060b4ae3ffc37c8cad7bea2715ae",
+        "effective": "f2324b043e986f219a5a64abade908507f4594b9e2b8f3f5510fbd265227d215"
+      },
+      "73": {
+        "fine": "5f2f8a87a4166386f444418248417e2bec73e228a8de5ba80f773183cd51d86b",
+        "effective": "82e82ea9f8c07225fd345d5498e16def74150aa5341afd541a4624a0af01a8f3"
+      },
+      "74": {
+        "fine": "9c1385dd43f958136f093c25d9c3ffb53238b5224634edc02daeeaa30839d31d",
+        "effective": "81108394be693411dc20c3e65d17a240999fa9b9033e51541f2b56bf6231d8dd"
+      },
+      "75": {
+        "fine": "157001ab7e516ded2e23bad24e51e5e14e8c0f8be32a405eb3013abdd17ee05d",
+        "effective": "bc1a9f03ecd49eadf73644116154488f227a2b1c50b8c4c3cc473d660eac4e14"
+      },
+      "76": {
+        "fine": "2ec10bb89670c6df88288853aed6fe5923939a61428ccc1cc147e87e4c81f880",
+        "effective": "f667c6e79013223eae531f455c181029b1a7102816b54f533a07e07ee2c3c96c"
+      },
+      "77": {
+        "fine": "1a3b05e4dcb03e7e5c0f2d43016d34571c7de009971e6f5cc8c36489461765bd",
+        "effective": "85a8cdde88f6247c68321cf844d8564160781c35fd9e9db951881a48b271f3b9"
+      },
+      "78": {
+        "fine": "2b9d7f79de723d0a8048b86735a3535f5f81b57375a46a61b406f657bdb2b891",
+        "effective": "bd84716da296d7b9e8457afe5a3fb49bb9a36a2831656b5ab0ebe1c1c1d40afa"
+      },
+      "79": {
+        "fine": "dd203d715b7c1e49a39367517384fdffc82619ccc19036a52a4be06f5ec99193",
+        "effective": "47c8bd48bc1c75a0e2da7cab4fea3bfaccf05499571b1e3346128bf3962ca6b7"
+      },
+      "80": {
+        "fine": "ee14e856a141cb4a2cc19e30d929c6ff133a6db8e88874daa74566de076b38f3",
+        "effective": "66d66a70c3956691ddc551d78c6abdc4ab75954a36906dac88914ce45e3a79db"
+      },
+      "81": {
+        "fine": "fa12d161a4e5276bb06ae8341b1254dce43c71feb2e73ad9b8861880b421b41a",
+        "effective": "46e904f3c588018974f45c6bf0e3cd46909026d4cae568f2f9720862f79543f5"
+      },
+      "82": {
+        "fine": "49081ea5ea8840bc6b640211ec1bd010eed0d181e90a42c44a99a8adaae7678f",
+        "effective": "871df50152ee26aeb9afe70f4a175ba2cc675fd774c4031f0dc321cbd0e51261"
+      }
+    },
+    "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+    "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+    "initialization_ns": 47599584
+  },
+  "interpretation": "duplicate technical replay, not a new statistical replicate"
+}

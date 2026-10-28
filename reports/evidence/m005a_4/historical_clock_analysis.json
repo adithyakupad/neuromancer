@@ -1,0 +1,51 @@
+{
+  "clocks": {
+    "calendar": "CLOCK_REALTIME via time.time()",
+    "awake": "mach_absolute_time via CPython monotonic/perf_counter"
+  },
+  "samples": [
+    {
+      "epoch_s": 1793162092.3740191,
+      "calendar_elapsed_s": 29.796072244644165,
+      "awake_elapsed_s": 29.947945917,
+      "residual_s": -0.15187367235583338,
+      "delta_residual_s": null
+    },
+    {
+      "epoch_s": 1793162160.436766,
+      "calendar_elapsed_s": 97.85881900787354,
+      "awake_elapsed_s": 98.009798834,
+      "residual_s": -0.15097982612645922,
+      "delta_residual_s": 0.0008938462293741622
+    },
+    {
+      "epoch_s": 1793162249.47218,
+      "calendar_elapsed_s": 186.89423298835754,
+      "awake_elapsed_s": 187.04404525,
+      "residual_s": -0.14981226164246664,
+      "delta_residual_s": 0.001167564483992578
+    },
+    {
+      "epoch_s": 1793162349.487104,
+      "calendar_elapsed_s": 286.909157037735,
+      "awake_elapsed_s": 287.057660125,
+      "residual_s": -0.1485030872649986,
+      "delta_residual_s": 0.0013091743774680253
+    },
+    {
+      "epoch_s": 1793162513.258307,
+      "calendar_elapsed_s": 450.68036007881165,
+      "awake_elapsed_s": 416.8153695,
+      "residual_s": 33.86499057881167,
+      "delta_residual_s": 34.01349366607667
+    }
+  ],
+  "largest_intersample_offset_step_s": 34.01349366607667,
+  "calendar_duration_s": 542.8625130653381,
+  "awake_duration_s": 508.84405225,
+  "observed_deadline_exceeded": false,
+  "primary_explanation": "Different documented suspend semantics, temporally corroborated by OS clamshell log",
+  "limits": "Historical continuous clock was not measured; minor wall-clock correction/measurement skew cannot be excluded. Old epoch start was captured after setup, so initial offset is not a suspend estimate.",
+  "old_stop_decision": "Preserved: required by the then-frozen discrepancy gate",
+  "new_scientific_acquisition": false
+}

@@ -17,6 +17,7 @@ from .reachability import state_hashes
 from .state_experiment import arrays
 from .substrate import Config
 from .supervisor import Deadline, atomic_json, supervise
+from .clocks import now_ns, clock_domain
 
 save_json = atomic_json
 
@@ -37,7 +38,7 @@ def check_deadline(deadline_epoch_s, now_epoch_s=None):
         raise TimeoutError('Absolute acquisition wall-time cap exceeded')
 
 
-def run_trial(n, rep, names, output, deadline_ns=None):
+def run_trial(n, rep, names, output, deadline_ns):
     from ._brian import BrianEngine
     folder = Path(output)/f'n{n}_r{rep}'; folder.mkdir(exist_ok=False)
     engine = None; began = time.perf_counter_ns()
@@ -101,15 +102,14 @@ def run_trial(n, rep, names, output, deadline_ns=None):
 
 
 def _check_worker(deadline_ns):
-    if deadline_ns is not None:
-        Deadline(deadline_ns).check()
+    Deadline.from_environment(deadline_ns).check()
     stop = os.environ.get('NEUROMANCER_STOP_FILE')
     if stop and Path(stop).exists():
         raise TimeoutError('Supervisor requested cooperative stop')
 
 
 def main():
-    began_ns = time.monotonic_ns()
+    began_ns = now_ns()
     p = argparse.ArgumentParser(); p.add_argument('--stage', choices=('TUNE', 'CONFIRM'), required=True)
     p.add_argument('--output', type=Path, required=True); p.add_argument('--selection', type=Path); args = p.parse_args()
     names = ('ZERO', 'FIXED', 'MAX', *GAINS)
@@ -118,10 +118,14 @@ def main():
         if args.selection is None: raise SystemExit('Committed selection required')
         selection = json.loads(args.selection.read_text()); assert selection['frozen']
         names = ('ZERO', 'FIXED', 'MAX', selection['controller']); reps = (41, 42); limit = 5400
-    deadline = Deadline(began_ns + int(limit*1e9))
+    stage_end = began_ns + int(limit*1e9)
+    deadline = (Deadline.from_environment() if 'NEUROMANCER_DEADLINE_NS' in os.environ
+                else Deadline(stage_end, clock_domain()))
+    if deadline.end_ns > stage_end:
+        raise ValueError('Inherited deadline exceeds the frozen stage cap')
     args.output.mkdir(parents=True, exist_ok=False)
     record = provenance(); record.update(started_epoch_s=time.time(), started_monotonic_ns=began_ns,
-        deadline_monotonic_ns=deadline.end_ns, stage=args.stage, names=names, replicates=reps,
+        deadline_monotonic_ns=deadline.end_ns, deadline_clock_id=deadline.clock_id, worker_performance_clock='perf_counter_ns: system uptime, excludes suspension on macOS', stage=args.stage, names=names, replicates=reps,
         networks=list(range(10)), wall_limit_s=limit,
         simulated_seconds=(51+32*2*len(names))*10*len(reps),
         protocol_sha256=hashlib.sha256(Path('docs/research/009_M005A_CONTROL_PROTOCOL.md').read_bytes()).hexdigest())
@@ -141,7 +145,7 @@ def main():
         raise SystemExit('Incomplete acquisition')
     deadline.check()
     atomic_json(args.output/'summary.json', dict(status='complete', trials=trials,
-                wall_ns=time.monotonic_ns()-began_ns))
+                wall_ns=now_ns()-began_ns))
     try:
         deadline.check()
     except TimeoutError:

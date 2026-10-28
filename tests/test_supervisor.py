@@ -15,7 +15,7 @@ WORKER = Path(__file__).with_name('supervisor_worker.py')
 
 def test_deadline_shared_and_calendar_independent(monkeypatch):
     now = 100
-    monkeypatch.setattr(time, 'monotonic_ns', lambda: now)
+    monkeypatch.setattr('neuromancer.supervisor.now_ns', lambda: now)
     d = Deadline.after(1)
     assert d.end_ns == 1000000100
     monkeypatch.setattr(time, 'time', lambda: -1e20)
@@ -176,6 +176,8 @@ r=supervise(commands,p/'supervision',d,workers=2)
 
 def test_acquisition_uses_supervisor_fail_closed(tmp_path,monkeypatch):
     import neuromancer.control_experiment as c
+    monkeypatch.delenv('NEUROMANCER_DEADLINE_NS',raising=False)
+    monkeypatch.delenv('NEUROMANCER_DEADLINE_CLOCK',raising=False)
     def fake(commands,output,deadline):
         assert len(commands)==10
         assert all(int(command[-1])==deadline.end_ns for command in commands)

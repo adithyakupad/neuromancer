@@ -2,6 +2,7 @@
 from dataclasses import dataclass
 import json
 import math
+from .clocks import now_ns, clock_domain, ClockError
 import os
 from pathlib import Path
 import signal
@@ -14,18 +15,28 @@ from typing import Sequence
 @dataclass(frozen=True)
 class Deadline:
     end_ns: int
+    clock_id: str
+
+    def __post_init__(self):
+        if type(self.end_ns) is not int or self.end_ns <= 0 or self.clock_id != clock_domain():
+            raise ClockError("Missing, foreign-boot or mixed-domain deadline")
+
+    @classmethod
+    def from_environment(cls, end_ns: int | None = None):
+        return cls(int(os.environ["NEUROMANCER_DEADLINE_NS"]) if end_ns is None else end_ns,
+                   os.environ.get("NEUROMANCER_DEADLINE_CLOCK", ""))
 
     @classmethod
     def after(cls, seconds: float) -> 'Deadline':
         if not math.isfinite(seconds) or seconds <= 0:
             raise ValueError('Positive finite budget required')
-        return cls(time.monotonic_ns() + int(seconds * 1e9))
+        return cls(now_ns() + int(seconds * 1e9), clock_domain())
 
     def remaining(self) -> float:
-        return max(0., (self.end_ns - time.monotonic_ns()) / 1e9)
+        return max(0., (self.end_ns - now_ns()) / 1e9)
 
     def check(self) -> None:
-        if time.monotonic_ns() >= self.end_ns:
+        if now_ns() >= self.end_ns:
             raise TimeoutError('Monotonic global deadline exceeded')
 
 
@@ -72,7 +83,7 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
     if workers < 1 or any(not math.isfinite(s) or s <= 0 for s in
                           (cooperative_s, terminate_s, reap_s)):
         raise ValueError('Positive worker count and grace periods required')
-    started = time.monotonic_ns()
+    started = now_ns()
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     reserve_ns = int((cooperative_s + terminate_s + reap_s)*1e9)
@@ -88,7 +99,11 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
 
     def event(r, state):
         r['state'] = state
-        r['events'].append(dict(state=state, monotonic_ns=time.monotonic_ns()))
+        try:
+            stamp = now_ns()
+        except ClockError:
+            stamp = None
+        r['events'].append(dict(state=state, monotonic_ns=stamp))
 
     def persist():
         # Failure to persist never bypasses process cleanup.
@@ -112,16 +127,12 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                     r['cause'] = cause or ('normal exit' if code == 0 else f'exit {code}')
                     del active[i]
 
-    def pause_until(end_ns):
-        while active and time.monotonic_ns() < end_ns:
-            poll()
-            time.sleep(min(.01, max(0., (end_ns-time.monotonic_ns())/1e9)))
 
     try:
         persist()
         next_job = 0
         while next_job < len(records) or active:
-            if time.monotonic_ns() >= work_end:
+            if now_ns() >= work_end:
                 cause = 'DEADLINE_EXCEEDED'
                 break
             poll()
@@ -132,12 +143,13 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                 cause = 'WORKER_FAILURE'
                 break
             while next_job < len(records) and len(active) < workers:
-                if time.monotonic_ns() >= work_end:
+                if now_ns() >= work_end:
                     break
                 i = next_job; r = records[i]
                 stop_file = output/f'stop-{i}'
                 env = dict(os.environ, NEUROMANCER_STOP_FILE=str(stop_file),
-                           NEUROMANCER_DEADLINE_NS=str(deadline.end_ns))
+                           NEUROMANCER_DEADLINE_NS=str(deadline.end_ns),
+                           NEUROMANCER_DEADLINE_CLOCK=deadline.clock_id)
                 log = (output/f'worker-{i}.log').open('wb'); handles.append(log)
                 proc = subprocess.Popen(r['command'], stdin=subprocess.DEVNULL,
                     stdout=log, stderr=subprocess.STDOUT, env=env, start_new_session=True)
@@ -145,21 +157,35 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                 r.update(pid=proc.pid, pgid=proc.pid, stop_file=str(stop_file))
                 event(r, 'RUNNING'); next_job += 1
                 persist()
-            if time.monotonic_ns() >= work_end:
+            if now_ns() >= work_end:
                 cause = 'DEADLINE_EXCEEDED'
                 break
             if not active and next_job == len(records):
                 break
-            time.sleep(min(.01, max(0., (work_end-time.monotonic_ns())/1e9)))
+            time.sleep(min(.01, max(0., (work_end-now_ns())/1e9)))
         # Completion observed after cutoff is conservatively non-success.
-        if time.monotonic_ns() >= work_end:
+        if now_ns() >= work_end:
             cause = 'DEADLINE_EXCEEDED'
     except BaseException as exc:
-        cause = 'SUPERVISOR_FAILURE'
+        cause = 'CLOCK_FAILURE' if isinstance(exc, ClockError) else 'SUPERVISOR_FAILURE'
         error = repr(exc)
     finally:
-        # Grace windows are clamped to the original hard deadline. They never
-        # receive a fresh global budget, including on early worker failures.
+        # Experiment deadlines never move. If resume happens after expiry,
+        # cleanup alone gets a declared bounded post-deadline allowance.
+        cleanup_reader = now_ns
+        clock_failed = cause == 'CLOCK_FAILURE'
+        try:
+            cleanup_started = now_ns()
+        except ClockError as exc:
+            clock_failed = True; cause = 'CLOCK_FAILURE'; error = repr(exc)
+            cleanup_reader = time.monotonic_ns  # Cleanup-only, never trial success.
+            cleanup_started = cleanup_reader()
+        late_cleanup = clock_failed or cleanup_started >= deadline.end_ns
+        cleanup_end = (cleanup_started+reserve_ns if late_cleanup else deadline.end_ns)
+        def drain(end):
+            while active and cleanup_reader() < end:
+                poll()
+                time.sleep(min(.01,max(0.,(end-cleanup_reader())/1e9)))
         try:
             if active:
                 for i in active:
@@ -168,24 +194,34 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                         Path(records[i]['stop_file']).touch(exist_ok=False)
                     except OSError as exc:
                         persistence_errors.append(repr(exc))
-                pause_until(min(deadline.end_ns-int((terminate_s+reap_s)*1e9),
-                                time.monotonic_ns()+int(cooperative_s*1e9)))
+                if not late_cleanup:
+                    drain(min(cleanup_end-int((terminate_s+reap_s)*1e9),
+                              cleanup_reader()+int(cooperative_s*1e9)))
                 for i, proc in active.items():
                     event(records[i], 'TERMINATING')
                     records[i].setdefault('signal_errors', []).append(_signal(proc.pid, signal.SIGTERM))
-                pause_until(min(deadline.end_ns-int(reap_s*1e9),
-                                time.monotonic_ns()+int(terminate_s*1e9)))
+                drain(min(cleanup_end-int(reap_s*1e9),cleanup_reader()+int(terminate_s*1e9)))
                 for i, proc in active.items():
                     event(records[i], 'KILLING')
                     records[i].setdefault('signal_errors', []).append(_signal(proc.pid, signal.SIGKILL))
-                pause_until(min(deadline.end_ns-publication_ns, time.monotonic_ns()+int(reap_s*1e9)))
+                drain(min(cleanup_end-publication_ns,cleanup_reader()+int(reap_s*1e9)))
                 poll()
         except BaseException as exc:
-            cause = 'SUPERVISOR_FAILURE'
+            cause = 'CLOCK_FAILURE' if isinstance(exc, ClockError) else 'SUPERVISOR_FAILURE'
+            clock_failed = clock_failed or isinstance(exc, ClockError)
             error = repr(exc)
-            # Best-effort emergency kill; never an unbounded wait.
             for proc in active.values():
-                _signal(proc.pid, signal.SIGKILL)
+                try: _signal(proc.pid, signal.SIGKILL)
+                except OSError as signal_exc: persistence_errors.append(repr(signal_exc))
+            # Clock-independent emergency reaping remains bounded and fail-closed.
+            emergency_end = time.monotonic_ns()+int(reap_s*1e9)
+            while active and time.monotonic_ns()<emergency_end:
+                for i,proc in list(active.items()):
+                    code=proc.poll()
+                    if code is not None and not group_exists(proc.pid):
+                        records[i].update(returncode=code,parent_reaped=True,state='REAPED',terminal='FORCED_TERMINATION',cause=cause)
+                        del active[i]
+                time.sleep(.005)
         for log in handles:
             log.close()
 
@@ -195,7 +231,7 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
         status = cause
     elif persistence_errors:
         status = 'SUPERVISOR_FAILURE'
-    elif time.monotonic_ns() >= work_end:
+    elif cleanup_started >= work_end:
         status = cause = 'DEADLINE_EXCEEDED'
     else:
         status = 'COMPLETED'
@@ -210,9 +246,17 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
             r['terminal'] = ('FORCED_TERMINATION' if any(e['state'] in ('TERMINATING','KILLING')
                                for e in r['events']) else cause)
             r['cause'] = cause
+    try:
+        finished = now_ns() if not clock_failed else None
+    except ClockError as exc:
+        finished = None; clock_failed = True
+        status = cause = 'CLOCK_FAILURE'; error = repr(exc)
     result = dict(status=status, cause=cause or 'normal completion', error=error, workers=records,
                   started_ns=started, deadline_ns=deadline.end_ns,
-                  work_cutoff_ns=work_end, finished_ns=time.monotonic_ns(),
+                  work_cutoff_ns=work_end, finished_ns=finished,
+                  deadline_clock_id=deadline.clock_id,post_deadline_cleanup=late_cleanup,
+                  cleanup_clock_id='uptime-emergency-only' if clock_failed else deadline.clock_id,
+                  cleanup_deadline_ns=cleanup_end,
                   persistence_errors=persistence_errors,
                   cleanup_verified=not active)
     # Progress retains evidence if this final write fails. Never return success.
@@ -223,7 +267,16 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
         persistence_errors.append(repr(exc))
         print(json.dumps(result), file=sys.stderr, flush=True)
         return result
-    if time.monotonic_ns() >= deadline.end_ns and result['status'] == 'COMPLETED':
-        result.update(status='DEADLINE_EXCEEDED', cause='terminal publication exceeded deadline')
-        atomic_json(output/'terminal.json', result)
+    if result['status'] == 'COMPLETED':
+        try:
+            checked = now_ns()
+            if checked >= deadline.end_ns:
+                result.update(status='DEADLINE_EXCEEDED', cause='terminal publication exceeded deadline', publication_checked_ns=checked)
+        except ClockError as exc:
+            result.update(status='CLOCK_FAILURE', cause='clock failed during terminal publication', error=repr(exc), finished_ns=None)
+        if result['status'] != 'COMPLETED':
+            try: atomic_json(output/'terminal.json', result)
+            except Exception as exc:
+                result.update(status='SUPERVISOR_FAILURE', error=repr(exc))
+                print(json.dumps(result), file=sys.stderr, flush=True)
     return result

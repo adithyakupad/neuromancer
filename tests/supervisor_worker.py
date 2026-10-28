@@ -6,20 +6,22 @@ import signal
 import subprocess
 import sys
 import time
+from neuromancer.clocks import now_ns, clock_domain
+assert os.environ['NEUROMANCER_DEADLINE_CLOCK']==clock_domain()
 
 mode, folder = sys.argv[1:3]
 p = Path(folder); p.mkdir(exist_ok=True)
-(p/'pid.json').write_text(json.dumps({'pid':os.getpid(), 'pgid':os.getpgrp(), 'deadline_ns':int(os.environ['NEUROMANCER_DEADLINE_NS']), 'started_ns':time.monotonic_ns()}))
+(p/'pid.json').write_text(json.dumps({'pid':os.getpid(), 'pgid':os.getpgrp(), 'deadline_ns':int(os.environ['NEUROMANCER_DEADLINE_NS']), 'started_ns':now_ns()}))
 if mode in ('ignore_term', 'descendant', 'shutdown_block'):
     signal.signal(signal.SIGTERM, signal.SIG_IGN)
 (p/'partial.txt').write_text('completed checkpoint\n')
 if mode == 'complete':
     pass
 elif mode == 'before':
-    cutoff = int(sys.argv[3]); delay = (cutoff-time.monotonic_ns())/1e9-.2
+    cutoff = int(sys.argv[3]); delay = (cutoff-now_ns())/1e9-.2
     if delay > 0: time.sleep(delay)
 elif mode == 'race':
-    cutoff = int(sys.argv[3]); delay = (cutoff-time.monotonic_ns())/1e9
+    cutoff = int(sys.argv[3]); delay = (cutoff-now_ns())/1e9
     if delay > 0: time.sleep(delay)
 elif mode == 'exception':
     raise RuntimeError('injected worker exception')

@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "case": "cooperative",
+      "elapsed_s": 2.2541561250109226,
+      "returncode": 1,
+      "external_watchdog_required": false,
+      "worker_pids": [
+        83375,
+        83375,
+        83376,
+        83374
+      ],
+      "resource_stop": {
+        "status": "partial",
+        "reason": "absolute wall-time cap",
+        "deadline_epoch_s": 1793163217.244257,
+        "observed_epoch_s": 1793163220.338861,
+        "completed": [
+          {
+            "status": "complete",
+            "network_id": 0
+          }
+        ]
+      },
+      "summary_exists": false,
+      "persisted_partial_count": 3
+    },
+    {
+      "case": "resistant",
+      "elapsed_s": 8.006444667000324,
+      "returncode": -9,
+      "external_watchdog_required": true,
+      "worker_pids": [
+        83400,
+        83400,
+        83401,
+        83402
+      ],
+      "resource_stop": {
+        "status": "partial",
+        "reason": "absolute wall-time cap",
+        "deadline_epoch_s": 1793163219.4962869,
+        "observed_epoch_s": 1793163222.575329,
+        "completed": [
+          {
+            "status": "complete",
+            "network_id": 0
+          }
+        ]
+      },
+      "summary_exists": false,
+      "persisted_partial_count": 3
+    }
+  ],
+  "backward_epoch_counterexample_accepted": true,
+  "scientific_acquisition": false,
+  "guard_qualified": false,
+  "restart_rejected": true
+}

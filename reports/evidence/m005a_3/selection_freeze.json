@@ -1,0 +1,21 @@
+{
+  "frozen": true,
+  "controller": "PI10_5",
+  "Kp_pA_per_Hz": 10,
+  "Ki_pA_per_Hz_s": 5,
+  "selection_sha256": "076604e732e1f97d02195c6d3798f0fba1998f4e9605c9492480cf51f794da36",
+  "amendment_revision": "afdb987a189171b6b14f23ac6acd8bd1d763cb6e",
+  "original_protocol_sha256": "0a2526ef4b6d9da37e4d65395f5ce264cc01c36bfd8c4bcbbe0e8399fbd404d6",
+  "raw_tuning_revision": "d17017b13fa55ed7173500044b5ce57da5dd3b2d",
+  "candidate_mean_scores": {
+    "PI10_5": 0.24229166666666666,
+    "PI20_10": 0.24944010416666665,
+    "PI30_15": 0.35478515625
+  },
+  "required_tuning_trials": 10,
+  "required_tuning_branches": 120,
+  "independently_verified": true,
+  "reserved_outcomes_opened": false,
+  "selection_rule": "Original global .5*(STATIC last24s MAE + LOSS last12s MAE), mean over10networks, ties1e-12 then lowerKp/Ki",
+  "selection_commit_note": "The commit introducing this seal is the exact selection revision; capture its hash in acquisition provenance."
+}

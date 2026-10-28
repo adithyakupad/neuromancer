@@ -1,0 +1,61 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/neuromancer-m004-venv/bin/python",
+        "reports/evidence/m005a_5/preflight.py"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 701785561276041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 701785564132333
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 701797931768291
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 3263,
+      "pgid": 3263,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_5/preflight_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/tmp/neuromancer-m004-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/evidence/m005a_5/preflight_trials",
+        "--junitxml=reports/evidence/m005a_5/preflight_tests.xml"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 701785561276041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 701797936778041
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 3314,
+      "pgid": 3314,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_5/preflight_supervision/stop-1"
+    }
+  ]
+}

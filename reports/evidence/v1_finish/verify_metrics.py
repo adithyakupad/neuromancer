@@ -35,6 +35,11 @@ def verify(root,analysis,out):
   passed=bool(sum(qualifications)>=(8 if N==10 else 4) and ci(biases)[0]>=-.2 and ci(biases)[1]<=.2);assert passed==summary['H3'][reg+'_RLS-MPC']['pass_gate'];required.append(passed)
   lo=0 if reg=='STATIC' else 16;den=values(reg,'PI10_5',lambda z:z['current'][lo*50:].sum()*.02);num=values(reg,'RLS-MPC',lambda z:z['current'][lo*50:].sum()*.02);passed=bool((den>0).all() and (num/den).mean()<=1.1 and ci(num/den)[1]<=1.15);assert passed==summary['H4'][reg]['pass_gate'];required.append(passed)
   lo,hi=(0,64) if reg=='STATIC' else (0,16);ref=values(reg,'PI10_5',lambda z:iae(z,lo,hi));ada=values(reg,'RLS-MPC',lambda z:iae(z,lo,hi));harm=(ada-ref)/np.maximum(ref,.01);passed=bool(harm.mean()<=.05 and ci(harm)[1]<=.10);assert passed==summary['H5'][reg]['pass_gate'];required.append(passed)
+ def delay(z):
+  e=z['error'];good=[]
+  for end in range(32,65):good.append(all(abs(e[a:b].mean())<=.2 and abs(e[a:b]).mean()<=.35 for a,b in ((end-16,end-8),(end-8,end))))
+  indices=[i for i in range(33) if all(good[i:])];return indices[0]+16 if indices else 48
+ delays=values('LOSS','PI10_5',delay)-values('LOSS','RLS-MPC',delay);np.testing.assert_allclose(summary['H2']['absolute']['network_values'],delays);np.testing.assert_allclose(summary['H2']['absolute']['ci95'],ci(delays));assert summary['H2']['pass_gate']==bool(delays.mean()>=4 and ci(delays)[0]>0 and (delays>0).sum()>=(8 if N==10 else 4))
  safety=all(not z['branch']['safe_bins'] and not z['branch']['violations'] and not z['branch']['model_failure'] for z in data.values());assert safety==summary['safety_pass'];required.append(safety);assert all(required)==summary['scientific_pass'];d.check();atomic_json(out,dict(status='PASS',networks=nets,trials=len(meta['jobs']),raw_metric_checks=checks,scientific_pass_independently_reproduced=bool(all(required)),calibration_reconstructed=True,bootstrap_draws=10000,bootstrap_seed=20261105))
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('root');p.add_argument('analysis');p.add_argument('out');a=p.parse_args();verify(a.root,a.analysis,a.out)

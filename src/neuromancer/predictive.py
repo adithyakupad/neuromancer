@@ -141,7 +141,7 @@ class PredictiveController:
     def accept(self,observation: Observation | None,receipt: Receipt,now_us: int):
         if self.pending is None or type(now_us) is not int or now_us!=self.time_us+BIN_US:raise ValueError('Nonsequential completion')
         c,x,prediction=self.pending
-        if not isinstance(receipt,Receipt) or (receipt.trial_id,receipt.command_id,receipt.requested_start_us,receipt.delivered_start_us,receipt.delivered_stop_us)!=(self.trial_id,c.command_id,c.start_us,c.start_us,now_us) or receipt.delivered_current_pA!=c.current_pA or receipt.requested_current_pA!=c.current_pA:
+        if not isinstance(receipt,Receipt) or receipt.status!='delivered' or any(type(t) is not int for t in (receipt.requested_start_us,receipt.delivered_start_us,receipt.delivered_stop_us)) or type(receipt.delivered_current_pA) is not tuple or type(receipt.requested_current_pA) is not tuple or (receipt.trial_id,receipt.command_id,receipt.requested_start_us,receipt.delivered_start_us,receipt.delivered_stop_us)!=(self.trial_id,c.command_id,c.start_us,c.start_us,now_us) or receipt.delivered_current_pA!=c.current_pA or receipt.requested_current_pA!=c.current_pA:
             self._fail('Invalid/unknown delivery receipt');raise ValueError('Invalid receipt; cannot advance known input history')
         began=self.clock();valid=True;y=None
         try:y=raw_observation(observation,self.time_us,self.trial_id)
@@ -174,7 +174,7 @@ class PIReference:
 
     def accept(self,observation,receipt,now_us):
         c=self.pending
-        if c is None or (receipt.trial_id,receipt.command_id,receipt.delivered_start_us,receipt.delivered_stop_us,receipt.delivered_current_pA)!=(self.trial_id,c.command_id,c.start_us,now_us,c.current_pA):raise ValueError('Invalid PI receipt')
+        if c is None or not isinstance(receipt,Receipt) or receipt.status!='delivered' or any(type(t) is not int for t in (receipt.requested_start_us,receipt.delivered_start_us,receipt.delivered_stop_us)) or receipt.requested_start_us!=c.start_us or receipt.requested_current_pA!=c.current_pA or (receipt.trial_id,receipt.command_id,receipt.delivered_start_us,receipt.delivered_stop_us,receipt.delivered_current_pA)!=(self.trial_id,c.command_id,c.start_us,now_us,c.current_pA):raise ValueError('Invalid PI receipt')
         if observation is None:self.policy.missing(now_us)
         else:self.policy.accept(observation,now_us)
         self.previous=np.array(receipt.delivered_current_pA);self.pending=None

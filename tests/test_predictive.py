@@ -119,3 +119,14 @@ def test_deadline_and_invalid_plan_latch_without_unchecked_action():
     p=PredictiveController(init,clock=Clock());c=p.command(p.time_us);assert p.failure is not None and c.current_pA==(0.,0.,0.,0.)
     p=PredictiveController(init);p.history[:,1]=1;c=p.command(p.time_us);assert p.failure is not None and abs(c.current_pA[1]-1)<=30
     p=PredictiveController(init);p.model.theta[:]=1e5;c=p.command(p.time_us);assert p.failure is not None and c.current_pA==(0.,0.,0.,0.)
+
+@pytest.mark.parametrize('field,value',[('status','fallback'),('delivered_start_us',51_000_000.),('requested_current_pA',None)])
+def test_receipt_status_units_and_missing_request_are_fatal(field,value):
+    init,*_=fixture();p=PredictiveController(init);c=p.command(p.time_us)
+    with pytest.raises(ValueError):p.accept(observation(p.time_us),replace(receipt(c),**{field:value}),p.time_us+20000)
+    assert p.failure is not None and p.time_us==51_000_000
+
+
+def test_failed_original_calibration_delivers_only_safe_zero():
+    init,*_=fixture();init=replace(init,calibration=replace(init.calibration,valid=False));p=PredictiveController(init,'RLS');c=p.command(p.time_us)
+    assert p.failure=='Invalid original calibration' and c.current_pA==(0.,0.,0.,0.)

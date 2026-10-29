@@ -52,3 +52,7 @@ The initial51s prefix is shared computationally across branches, but its physica
 The causal codec retains delivered input, observed output, validity/counters, per20ms model-state hashes and dense1s snapshots. Replaying this information reconstructs all intermediate coefficients/information. Each plan retains all625 scores, origin coefficients/history and chosen forecast; omitted alternate forecasts can be reconstructed. This avoids redundant storage without changing numerical updates.
 
 Retain every incomplete attempt, failure cause and historical negative result. A process exit is not a scientific PASS. Full adaptive scientific success requires improvement against both PI and fixed predictive control plus cost, stationary, final-bias and safety guards. Biological validity, generalization to unseen preparations and hardware timing are unvalidated.
+
+## Continuous integration
+
+The additional V1 qualification workflow installs requirements-v1, checks imports/dependencies, executes the complete test suite and a non-confirmatory smoke fixture, then builds an unpublished wheel on Linux/macOS runners. It never launches M005B acquisition, validation or locked tests. These local review commits have not been pushed or run on hosted CI; inspect actual job results before claiming cross-platform qualification.

@@ -5,7 +5,7 @@ import numpy as np
 from neuromancer.supervisor import Deadline,atomic_json
 
 def run(analysis,out):
- d=Deadline.from_environment();analysis=Path(analysis);records=json.loads((analysis/'model_diagnostics.json').read_text());nets=sorted({r['network'] for r in records});draws=np.random.Generator(np.random.PCG64(20261105)).integers(len(nets),size=(10000,len(nets)));result=[]
+ d=Deadline.from_environment();analysis=Path(analysis);out=Path(out);records=json.loads((analysis/'model_diagnostics.json').read_text());nets=sorted({r['network'] for r in records});draws=np.random.Generator(np.random.PCG64(20261105)).integers(len(nets),size=(10000,len(nets)));result=[]
  for reg in ('STATIC','LOSS'):
   for kind in ('FIXED-MPC','RLS-MPC','BIAS-MPC'):
    for key in ('own_post_mse','frozen_on_same_inputs_post_mse','prospective_first_second_post_mse','terminal_kernel_scale_proxy'):

@@ -6,7 +6,7 @@ from neuromancer.supervisor import Deadline,atomic_json
 
 def read(p):return json.loads(Path(p).read_text())
 def verify(root,analysis,out):
- root=Path(root);analysis=Path(analysis);d=Deadline.from_environment();meta=read(root/'provenance.json');summary=read(analysis/'summary.json');nets=sorted({n for n,r in meta['jobs']});N=len(nets);assert N in (5,10);rows=list(csv.DictReader((analysis/'trial_metrics.csv').open()));data={};checks=0
+ root=Path(root);analysis=Path(analysis);out=Path(out);d=Deadline.from_environment();meta=read(root/'provenance.json');summary=read(analysis/'summary.json');nets=sorted({n for n,r in meta['jobs']});N=len(nets);assert N in (5,10);rows=list(csv.DictReader((analysis/'trial_metrics.csv').open()));data={};checks=0
  for n,r in meta['jobs']:
   f=root/f'n{n}_r{r}';c=read(f/'initial.json')['calibration'];p=np.load(f/'prefix.npz');u=p['delivered'];counts=p['counts'].reshape(2550,4,5)[:,:,:4].sum((1,2));raw=counts/1.6;b=raw[350:750].mean();h=np.r_[0.,[raw[1000+400*j:1150+400*j].mean()-raw[800+400*j:950+400*j].mean() for j in range(4)]];q=np.arange(0,121,30);slope=q@h/(q@q);ff=1/slope if slope>0 else 0.;noise=(counts[350:750].reshape(8,50).sum(1)/80).std(ddof=1);valid=bool(1<=b<=30 and slope>0 and np.max(abs(q*slope-h))<=.5 and np.min(np.diff(h))>=-.3 and 0<=ff<=120)
   for key,value in dict(baseline_hz=b,target_hz=b+1,noise_hz=noise,slope_hz_per_pA=slope,feedforward_pA=ff).items():np.testing.assert_allclose(c[key],value,rtol=1e-12,atol=1e-12)

@@ -25,4 +25,4 @@ def test_full_cohort_gates_independently_reconstructed(tmp_path,monkeypatch,qual
   for p in base.iterdir():os.link(p,folder/p.name)
   (folder/'trial.json').write_text(json.dumps(dict(status='complete',network=n,replicate=r,branches=branches)))
  analysis=tmp_path/'analysis';analyze(root,analysis);s=json.loads((analysis/'summary.json').read_text());assert s['scientific_pass']==qualified and s['H1a']['pass_gate']==qualified and s['H1b']['pass_gate']==qualified
- p=Path(__file__).resolve().parents[1]/'reports/evidence/v1_finish/verify_metrics.py';spec=importlib.util.spec_from_file_location('independent_stats',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);m.verify(root,analysis,tmp_path/'verified.json');assert json.loads((tmp_path/'verified.json').read_text())['status']=='PASS'
+ p=Path(__file__).resolve().parents[1]/'reports/evidence/v1_finish/verify_metrics.py';spec=importlib.util.spec_from_file_location('independent_stats',p);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);m.verify(root,analysis,str(tmp_path/'verified.json'));assert json.loads((tmp_path/'verified.json').read_text())['status']=='PASS'

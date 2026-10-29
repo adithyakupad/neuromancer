@@ -28,10 +28,14 @@ Run from a clean committed checkout. Use unique empty output directories: incomp
 
 ```sh
 export VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
-.venv/bin/python -m neuromancer.m005b_study acquire --phase primary --output reports/evidence/v1_finish/m005b/primary
+RUN_ROOT=runs/v1-independent-reproduction
+.venv/bin/python -m neuromancer.m005b_study acquire --phase primary --output "$RUN_ROOT/primary"
+.venv/bin/python reports/evidence/v1_finish/finish_development.py --root "$RUN_ROOT"
 ```
 
 The CLI launches three owned workers, uses a shared boot-scoped suspend-inclusive deadline, preserves16s segments, checks memory/storage and marks complete branches/trials explicitly. It inhibits idle sleep but cannot enforce user-space deadlines while the host is suspended. Physical sleep/resume was not deliberately exercised during this study. Expiry/resume/clock faults stop rather than reset budgets.
+
+The committed finish_development.py sequence creates one analysis deadline after primary completion, independently verifies and freezes its decision, and runs the prescribed secondary faults under the inherited development deadline. It never opens validation. Use a fresh root; the committed evidence paths below identify this mission’s saved results and are not empty rerun destinations.
 
 Analysis must run under a single2,400s boot-scoped `Deadline` shared by its nested commands; see the saved analysis launch and exact command manifest. Set `NEUROMANCER_DEADLINE_NS` and `NEUROMANCER_DEADLINE_CLOCK` from that launch, never from a different boot. Main analysis:
 

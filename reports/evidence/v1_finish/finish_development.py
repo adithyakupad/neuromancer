@@ -1,5 +1,5 @@
 """Prospective post-acquisition sequence. No controller change or selection."""
-import json,os,subprocess,sys,time,hashlib
+import argparse,json,os,subprocess,sys,time,hashlib
 from pathlib import Path
 from neuromancer.clocks import now_ns
 from neuromancer.supervisor import Deadline,supervise,atomic_json
@@ -34,6 +34,7 @@ def main():
  if result['status']!='COMPLETED':raise RuntimeError('Secondary analysis incomplete')
  d.check();atomic_json(B/'development_finished.json',dict(status='COMPLETE',scientific_pass=summary['scientific_pass'],validation_permitted=summary['scientific_pass'],locked_networks_opened=False,finished_ns=now_ns(),analysis_deadline_ns=d.end_ns))
 if __name__=='__main__':
+ parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--root',default=str(B));args=parser.parse_args();B=Path(args.root)
  try:main()
  except BaseException as exc:
   atomic_json(B/'post_acquisition_failure.json',dict(status='PARTIAL',error=repr(exc)));raise

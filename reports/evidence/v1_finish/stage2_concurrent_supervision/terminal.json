@@ -1,0 +1,107 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/concurrent_profile.py",
+        "FIXED"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 788373395216541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 788373401021750
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 788486901053958
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 58746,
+      "pgid": 58746,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/stage2_concurrent_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/concurrent_profile.py",
+        "RLS"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 788373395216541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 788373405962625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 788486938185458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 58747,
+      "pgid": 58747,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/stage2_concurrent_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/concurrent_profile.py",
+        "BIAS"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 788373395216541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 788373413747875
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 788486853902541
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 58748,
+      "pgid": 58748,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/stage2_concurrent_supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 788373395216541,
+  "deadline_ns": 789094380710875,
+  "work_cutoff_ns": 789093580710875,
+  "finished_ns": 788486938645458,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 789094380710875,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -1,0 +1,250 @@
+{
+  "status": "PASS",
+  "all_project_modules_imported": [
+    "neuromancer._brian",
+    "neuromancer.authority_diagnosis",
+    "neuromancer.calibration",
+    "neuromancer.calibration_diagnostic",
+    "neuromancer.clocks",
+    "neuromancer.control",
+    "neuromancer.control_experiment",
+    "neuromancer.diagnostic",
+    "neuromancer.extended_recovery",
+    "neuromancer.identification_experiment",
+    "neuromancer.identify",
+    "neuromancer.m005b_analysis",
+    "neuromancer.m005b_study",
+    "neuromancer.necessity",
+    "neuromancer.necessity_experiment",
+    "neuromancer.observation",
+    "neuromancer.online_experiment",
+    "neuromancer.online_identify",
+    "neuromancer.predictive",
+    "neuromancer.predictive_planner",
+    "neuromancer.reachability",
+    "neuromancer.recovery_metrics",
+    "neuromancer.research_codec",
+    "neuromancer.state_dependence",
+    "neuromancer.state_experiment",
+    "neuromancer.substrate",
+    "neuromancer.supervisor",
+    "neuromancer.tick_execution"
+  ],
+  "protocol_sha256": "ebf21d71496813d1839db2a50e910203b6d24b066fe76968da37726dad451559",
+  "controller_source_unchanged": true,
+  "primary_jobs": [
+    [
+      0,
+      47
+    ],
+    [
+      0,
+      48
+    ],
+    [
+      1,
+      47
+    ],
+    [
+      1,
+      48
+    ],
+    [
+      2,
+      47
+    ],
+    [
+      2,
+      48
+    ],
+    [
+      3,
+      47
+    ],
+    [
+      3,
+      48
+    ],
+    [
+      4,
+      47
+    ],
+    [
+      4,
+      48
+    ],
+    [
+      5,
+      47
+    ],
+    [
+      5,
+      48
+    ],
+    [
+      6,
+      47
+    ],
+    [
+      6,
+      48
+    ],
+    [
+      7,
+      47
+    ],
+    [
+      7,
+      48
+    ],
+    [
+      8,
+      47
+    ],
+    [
+      8,
+      48
+    ],
+    [
+      9,
+      47
+    ],
+    [
+      9,
+      48
+    ]
+  ],
+  "validation_jobs": [
+    [
+      10,
+      49
+    ],
+    [
+      10,
+      50
+    ],
+    [
+      11,
+      49
+    ],
+    [
+      11,
+      50
+    ],
+    [
+      12,
+      49
+    ],
+    [
+      12,
+      50
+    ],
+    [
+      13,
+      49
+    ],
+    [
+      13,
+      50
+    ],
+    [
+      14,
+      49
+    ],
+    [
+      14,
+      50
+    ]
+  ],
+  "fault_jobs": [
+    [
+      0,
+      49
+    ],
+    [
+      1,
+      49
+    ],
+    [
+      2,
+      49
+    ]
+  ],
+  "branch_bank": [
+    [
+      "STATIC",
+      "PI10_5"
+    ],
+    [
+      "STATIC",
+      "FIXED-MPC"
+    ],
+    [
+      "STATIC",
+      "RLS-MPC"
+    ],
+    [
+      "STATIC",
+      "BIAS-MPC"
+    ],
+    [
+      "STATIC",
+      "FIXED"
+    ],
+    [
+      "STATIC",
+      "ZERO"
+    ],
+    [
+      "LOSS",
+      "PI10_5"
+    ],
+    [
+      "LOSS",
+      "FIXED-MPC"
+    ],
+    [
+      "LOSS",
+      "RLS-MPC"
+    ],
+    [
+      "LOSS",
+      "BIAS-MPC"
+    ],
+    [
+      "LOSS",
+      "FIXED"
+    ],
+    [
+      "LOSS",
+      "ZERO"
+    ],
+    [
+      "LOSS",
+      "MAX"
+    ]
+  ],
+  "control_s": 64,
+  "prefix_s": 51,
+  "gain_change_s": 16,
+  "model": {
+    "q": 10,
+    "regularization": 0.1,
+    "rho": 0.999
+  },
+  "PI": {
+    "kp": 10,
+    "ki": 5
+  },
+  "horizon_s": 2,
+  "candidates": 625,
+  "workers": 3,
+  "budgets": {
+    "development_s": 10800,
+    "validation_s": 5400,
+    "analysis_s": 2400
+  },
+  "scientific_gates_unchanged": true,
+  "no_selection_permitted": true,
+  "scientific_outcomes_opened": false
+}

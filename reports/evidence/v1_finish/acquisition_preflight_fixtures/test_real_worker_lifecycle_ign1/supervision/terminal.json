@@ -1,0 +1,65 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_fixtures/test_real_worker_lifecycle_ign1/worker",
+        "789474795610416"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 789473795664041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 789473798705125
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 789474795740916
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 789474997618125
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 789475196458333
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 789475209101666
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 59801,
+      "pgid": 59801,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_fixtures/test_real_worker_lifecycle_ign1/supervision/stop-0",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 789473795664041,
+  "deadline_ns": 789475595610416,
+  "work_cutoff_ns": 789474795610416,
+  "finished_ns": 789475221683875,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 789475595610416,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

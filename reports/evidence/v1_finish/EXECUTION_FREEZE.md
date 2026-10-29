@@ -1,0 +1,11 @@
+# M005B scientific execution freeze, before acquisition
+
+Protocol011 and scientific software in prior qualified modules remain unchanged. New scheduling, codec and cohort/analysis modules are orchestration/recording only. Three scientific workers are selected: measured four-worker contention was slower and failed the chosen15% margin; no increased scientific worker count is used. Original10,800s development (including secondary faults),5,400s validation,2,400s analysis/cohort caps remain.
+
+Exact model-state codec: initialTheta/P/bias state plus every actual delivered input/completed observation/validity/counter record deterministically reconstructs every model update; compare SHA256 per20ms state and dense1s snapshots. All625 cost components are saved at every origin; chosen forecasts plus originTheta/history reconstruct other forecasts. Removing consumed plan caches was byte-exact tested on300 archived controller/model updates. This changes no controller numerical operation.
+
+Model/target initialization failure or numerical/planner latch remains visible and produces the original safe behavior, not an exclusion or silent PI substitution. Fatal backend/clock/resource errors stop acquisition and preserve incomplete evidence. Complete primary data with any mandatory safety/model-failure event cannot qualify scientifically. No point-estimate failure permits validation. Secondary faults are acquired only after the primary decision is frozen, under the SAME original development deadline; they cannot rescue primary science.
+
+If a PI dose denominator is zero, its dose ratio is undefined and the H4 guard fails; never insert a favorable epsilon. IAE ratios retain original.01Hz*s floor. Nonfinite prediction diagnostics are reported missing with failure status, never imputed as success. No hyperparameters are selected: fixed values were preregistered. Network means average both repeats first; all uncertainty uses paired whole-network resampling, seed20261105/10,000 draws. Primary gates require BOTH comparators. H2 delay has only its specified absolute4s/count/CI rule, no added relative requirement.
+
+Primary/validation/fault jobs and seed identities remain exactly protocol011. Only the separately labeled engineering CLI phase uses network0/noise60 and2s branches. It cannot be scored by the scientific analyzer. No locked100–119 jobs exist.

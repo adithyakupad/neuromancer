@@ -35,7 +35,8 @@ def main():
      for key in ('counts','delivered','requested','time_us','valid','coverage_us','frames','pre_prediction','state_hashes'):
       assert np.array_equal(one[key][:800],two[key][:800],equal_nan=True),(phase,n,r,kind,key,'pre-loss mismatch')
      if kind in ('FIXED','FIXED-MPC','ZERO'):assert np.array_equal(one['delivered'],two['delivered']),(phase,n,r,kind,'frozen-action mismatch')
-     if kind=='ZERO':assert np.array_equal(one['counts'],two['counts']),(phase,n,r,'zero-input gain had neural effect')
+     if kind=='ZERO':
+      for key in ('counts','event_time_us','event_channel','event_offset','sector','rates'):assert np.array_equal(one[key],two[key],equal_nan=True),(phase,n,r,key,'zero-input gain had neural effect')
    d.check()
   close=read(B/(phase+'_closure.json'));assert close['status']=='COMPLETE' and close['finished_ns']<close['deadline']['end_ns'] and close['deadline']['clock_id']==clock_domain();samples=[json.loads(x) for x in (B/(phase+'_resource.jsonl')).read_text().splitlines()];ns=np.array([x['ns'] for x in samples],dtype=np.int64);gaps=np.diff(ns)/1e9
   phases[phase]=dict(trials=len(actual),branches=branches,wall_s=close['elapsed_s'],peak_live_aggregate_rss_bytes=max(x['aggregate_rss_bytes'] for x in samples),peak_worker_rss_bytes=max([max(x['rss_bytes'].values(),default=0) for x in samples]+[x['completed_peak_rss_bytes'] for x in samples]),maximum_allocated_bytes=max(x['mission_allocated_bytes'] for x in samples),maximum_combined_allocated_bytes=max(x['combined_allocated_bytes'] for x in samples),poll_cadence_s=dict(nominal=1.,p50=float(np.median(gaps)),p95=float(np.quantile(gaps,.95)),maximum=float(gaps.max()),over2s=int((gaps>2).sum())),native_clock_domain=close['deadline']['clock_id']);totalbranches+=branches;d.check()

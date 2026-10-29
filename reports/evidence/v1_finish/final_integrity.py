@@ -22,6 +22,7 @@ def main():
  for phase in ('primary','faults','validation'):
   root=B/phase
   if not root.exists():continue
+  terminal=read(root/'supervision/terminal.json');assert terminal['status']=='COMPLETED' and terminal['cleanup_verified'] and not terminal['post_deadline_cleanup'] and all(w['parent_reaped'] and w['state']=='REAPED' and w['terminal']=='COMPLETED' for w in terminal['workers'])
   meta=read(root/'provenance.json');actual={(int(f.name.split('_')[0][1:]),int(f.name.split('_')[1][1:])) for f in root.glob('n*_r*') if f.is_dir()};assert actual==set(map(tuple,meta['jobs'])) and not any(n>=100 for n,r in actual);branches=0
   for n,r in meta['jobs']:
    t=read(root/f'n{n}_r{r}'/'trial.json');assert t['status']=='complete'

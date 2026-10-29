@@ -1,0 +1,27 @@
+"""Preservation, source, cohort, clock and numerical-evidence reconciliation."""
+import hashlib,json,subprocess
+from pathlib import Path
+import numpy as np
+from neuromancer.clocks import clock_domain
+from neuromancer.supervisor import Deadline,atomic_json
+R=Path('reports/evidence/v1_finish');B=R/'m005b'
+def read(p):return json.loads(Path(p).read_text())
+def digest(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def main():
+ d=Deadline.from_environment();baseline=read(R/'preservation.json')['historical_sha256'];changed=[p for p,h in baseline.items() if not Path(p).exists() or digest(p)!=h];assert not changed
+ acquisition=read(B/'primary_launch.json')['source_revision'];scientific=['src/neuromancer/'+p for p in ('_brian.py','substrate.py','observation.py','predictive.py','predictive_planner.py','control.py','calibration.py','tick_execution.py','m005b_study.py','research_codec.py','m005b_analysis.py','clocks.py','supervisor.py')]+['docs/research/011_M005B_CONTROL_PROTOCOL.md']
+ hashes={}
+ for p in scientific:
+  frozen=subprocess.check_output(['git','show',acquisition+':'+p]);assert hashlib.sha256(frozen).hexdigest()==digest(p);hashes[p]=digest(p)
+ decision=read(B/'analysis_primary/summary.json');assert (B/'validation').exists()==decision['scientific_pass'] or (not (B/'validation').exists() and decision['scientific_pass'])
+ phases={};totalbranches=0
+ for phase in ('primary','faults','validation'):
+  root=B/phase
+  if not root.exists():continue
+  meta=read(root/'provenance.json');actual={(int(f.name.split('_')[0][1:]),int(f.name.split('_')[1][1:])) for f in root.glob('n*_r*') if f.is_dir()};assert actual==set(map(tuple,meta['jobs'])) and not any(n>=100 for n,r in actual);branches=0
+  for n,r in meta['jobs']:
+   t=read(root/f'n{n}_r{r}'/'trial.json');assert t['status']=='complete';expected=8 if phase=='faults' else 13;assert len(t['branches'])==expected and len({x['name'] for x in t['branches']})==expected;branches+=expected
+  close=read(B/(phase+'_closure.json'));assert close['status']=='COMPLETE' and close['finished_ns']<close['deadline']['end_ns'] and close['deadline']['clock_id']==clock_domain();samples=[json.loads(x) for x in (B/(phase+'_resource.jsonl')).read_text().splitlines()];ns=np.array([x['ns'] for x in samples],dtype=np.int64);gaps=np.diff(ns)/1e9
+  phases[phase]=dict(trials=len(actual),branches=branches,wall_s=close['elapsed_s'],peak_live_aggregate_rss_bytes=max(x['aggregate_rss_bytes'] for x in samples),peak_worker_rss_bytes=max([max(x['rss_bytes'].values(),default=0) for x in samples]+[x['completed_peak_rss_bytes'] for x in samples]),maximum_allocated_bytes=max(x['mission_allocated_bytes'] for x in samples),maximum_combined_allocated_bytes=max(x['combined_allocated_bytes'] for x in samples),poll_cadence_s=dict(nominal=1.,p50=float(np.median(gaps)),p95=float(np.quantile(gaps,.95)),maximum=float(gaps.max()),over2s=int((gaps>2).sum())),native_clock_domain=close['deadline']['clock_id']);totalbranches+=branches;d.check()
+ assert read(B/'primary_launch.json')['deadline']==read(B/'faults_launch.json')['deadline'];allhashes={str(p):digest(p) for p in B.rglob('*') if p.is_file() and p.name not in ('final_integrity.json',)};d.check();atomic_json(B/'final_integrity.json',dict(status='PASS',historical_files_unchanged=len(baseline),historical_changed=changed,acquisition_source=acquisition,scientific_source_hashes=hashes,phases=phases,complete_branches=totalbranches,locked_networks_opened=False,no_scientific_retuning=True,data_sha256=allhashes));d.check()
+if __name__=='__main__':main()

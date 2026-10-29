@@ -8,6 +8,8 @@ def test_frozen_primary_thresholds_and_both_comparators():
  assert superiority(pi,adaptive,.10,1.2)['pass_gate']
  assert not superiority(fixed,adaptive,.05,.6)['pass_gate']
  assert not superiority(pi,pi-.1,.10,1.2)['pass_gate']
+ uncertain=superiority(np.full(10,10.),np.full(10,10.)-np.r_[np.full(8,3.),np.full(2,-5.)],.10,1.2)
+ assert uncertain['decision']=='HOLD' and uncertain['positive_networks']==8
 
 
 def test_network_replication_and_floor_are_explicit():

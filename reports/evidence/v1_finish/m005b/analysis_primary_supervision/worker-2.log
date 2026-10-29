@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/verify_metrics.py", line 45, in <module>
+    p=argparse.ArgumentParser();p.add_argument('root');p.add_argument('analysis');p.add_argument('out');a=p.parse_args();verify(a.root,a.analysis,a.out)
+                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/verify_metrics.py", line 43, in verify
+    safety=all(not z['branch']['safe_bins'] and not z['branch']['violations'] and not z['branch']['model_failure'] for z in data.values());assert safety==summary['safety_pass'];required.append(safety);assert all(required)==summary['scientific_pass'];d.check();atomic_json(out,dict(status='PASS',networks=nets,trials=len(meta['jobs']),raw_metric_checks=checks,scientific_pass_independently_reproduced=bool(all(required)),calibration_reconstructed=True,bootstrap_draws=10000,bootstrap_seed=20261105))
+                                                                                                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 45, in atomic_json
+    temp = path.with_name(path.name + '.tmp')
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'with_name'

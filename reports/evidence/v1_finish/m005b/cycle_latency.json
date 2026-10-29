@@ -1,0 +1,55 @@
+{
+  "units": "ms",
+  "definition": "At fixed1s origins: prior completed-bin controller accept time plus next command time; first command excludes prefix fit. Excludes neural wait, observation construction and archival.250ms cap applies to planner release, not this descriptive sum.",
+  "controllers": {
+    "PI10_5": {
+      "count": 2560,
+      "p50": 0.058416,
+      "p95": 0.10084549999999994,
+      "p99": 0.17253993999999967,
+      "maximum": 2.737917
+    },
+    "FIXED-MPC": {
+      "count": 2560,
+      "p50": 5.2401035,
+      "p95": 9.88865654999998,
+      "p99": 16.47246284,
+      "maximum": 109.9995
+    },
+    "RLS-MPC": {
+      "count": 2560,
+      "p50": 5.417333,
+      "p95": 9.578623549999994,
+      "p99": 16.96098890999993,
+      "maximum": 84.656499
+    },
+    "BIAS-MPC": {
+      "count": 2560,
+      "p50": 5.247605,
+      "p95": 9.964746499999993,
+      "p99": 18.598491969999944,
+      "maximum": 66.874
+    },
+    "FIXED": {
+      "count": 2560,
+      "p50": 0.047604,
+      "p95": 0.08513844999999992,
+      "p99": 0.1360648799999999,
+      "maximum": 1.179958
+    },
+    "ZERO": {
+      "count": 2560,
+      "p50": 0.047041,
+      "p95": 0.08242229999999996,
+      "p99": 0.13759780999999993,
+      "maximum": 16.295541
+    },
+    "MAX": {
+      "count": 1280,
+      "p50": 0.0479375,
+      "p95": 0.08375625,
+      "p99": 0.14640221000000017,
+      "maximum": 10.756
+    }
+  }
+}

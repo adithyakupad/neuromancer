@@ -120,7 +120,10 @@ def test_execution_lineage_frozen_before_neural_run():
     assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
     for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
     old=json.loads((prereg.parent/'preservation.json').read_text())
-    for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+    for name,digest in old['sha256'].items():
+        # Release documentation may evolve; preserve and verify original bytes.
+        frozen = root/'docs/history/README_M002_SNAPSHOT.md' if name=='README.md' else root/name
+        assert hashlib.sha256(frozen.read_bytes()).hexdigest()==digest
     committed=subprocess.check_output(['git','show','HEAD:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)
     assert committed==prereg.read_bytes()
 

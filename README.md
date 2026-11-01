@@ -26,12 +26,12 @@ Use Python **3.12**, a POSIX host and a fresh environment. Native macOS qualific
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-v1.txt
 .venv/bin/python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
-.venv/bin/python -m pip install --no-deps dist/neuromancer-0.2.0-py3-none-any.whl
+.venv/bin/python -m pip install --no-deps dist/neuromancer-1.0.0-py3-none-any.whl
 .venv/bin/python -m pip check
 .venv/bin/neuromancer-diagnostic --mode smoke --output runs/my-smoke
 ```
 
-The smoke example simulates 200 ms on development network 0 with ten legal commands and writes observations, receipts, provenance and a completion marker. It is an integration example, not a controller-efficacy result. Use a new output directory for each run. Current package metadata is **0.2.0**; a future v1.0.0 release title is proposed, not already published.
+The smoke example simulates 200 ms on development network 0 with ten legal commands and writes observations, receipts, provenance and a completion marker. It is an integration example, not a controller-efficacy result. Use a new output directory for each run. Package metadata is **1.0.0**, with the MIT license. No Git tag or GitHub release has been published.
 
 The complete research stack includes plotting/test/verification tools. Minimal package runtime dependencies are Brian2 and NumPy; the diagnostic CLI and plotting require the declared diagnostic extra or the full pinned research stack. The scientific acquisition launcher is macOS-specific (`caffeinate`); Linux regression support is not a claim that the full acquisition launcher is portable.
 
@@ -77,4 +77,4 @@ Read the [V1 research report](reports/NEUROMANCER_V1_RESEARCH_REPORT.md), [M007 
 
 ## Release and roadmap
 
-This repository is a review candidate. Publication, license/version selection and actual hosted CI results must be reviewed before release. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.
+This repository is a review candidate. MIT license and v1.0.0 metadata are prepared on the release branch. Final hosted CI for this branch and publication approval remain required. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.

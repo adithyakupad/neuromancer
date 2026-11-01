@@ -12,12 +12,12 @@ In a fresh environment, install exact pins and build/install the wheel:
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-v1.txt
 .venv/bin/python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
-.venv/bin/python -m pip install --no-deps dist/neuromancer-0.2.0-py3-none-any.whl
+.venv/bin/python -m pip install --no-deps dist/neuromancer-1.0.0-py3-none-any.whl
 .venv/bin/python -m pip check
 .venv/bin/python -c 'import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)'
 ```
 
-Expected versions: NumPy2.5.4, Brian2 2.10.1, SciPy1.18.0, pytest9.1.1. `requirements-v1.txt` includes all original `requirements-m002.txt` pins and the verification-only SciPy pin. No original version upgrade is part of reproduction. Core runtime is Brian2/NumPy; the diagnostic CLI (including smoke) requires the declared Matplotlib diagnostic extra. Use the full research stack for all modules, plots and tests. The package remains0.2.0; no1.0tag has been published.
+Expected versions: NumPy2.5.4, Brian2 2.10.1, SciPy1.18.0, pytest9.1.1. `requirements-v1.txt` includes all original `requirements-m002.txt` pins and the verification-only SciPy pin. No original version upgrade is part of reproduction. Core runtime is Brian2/NumPy; the diagnostic CLI (including smoke) requires the declared Matplotlib diagnostic extra. Use the full research stack for all modules, plots and tests. The package remains1.0.0; no1.0tag has been published.
 
 ## Smoke example and software tests
 

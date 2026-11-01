@@ -19,6 +19,6 @@ Post-loss IAE (Hz·s): PI 11.46875, RLS-MPC 13.12922, fixed MPC 18.97781. RLS's 
 
 ## Publication status
 
-This is a suggested future release, not an existing tag or GitHub release. The audited package metadata remains version **0.2.0**; align version metadata with a chosen publication version during final release preparation. No license grant is invented by this audit: the repository currently has no LICENSE file, so maintainers must explicitly settle redistribution/reuse terms before public release. Neither issue changes the measured scientific results.
+This is a suggested future release, not an existing tag or GitHub release. The M007 audit originally inspected package metadata version **0.2.0** and no LICENSE file. Release-preparation changes now set package metadata to **1.0.0** and add an **MIT LICENSE** on a dedicated branch. Those changes require clean installation and hosted CI qualification before merging or publishing. Scientific evidence is unchanged. Neither issue changes the measured scientific results.
 
 See the [M007 audit](../reports/M007_FINAL_RELEASE_AUDIT.md), [scientific limitations](V1_SCIENTIFIC_LIMITATIONS.md) and [reproduction guide](V1_REPRODUCIBILITY.md). No merge, tag, locked experiment or publication follows automatically.

@@ -14,19 +14,19 @@ jobs:
       VECLIB_MAXIMUM_THREADS: '1'
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
-      MPLCONFIGDIR: ${{ github.workspace }}/.matplotlib-ci
+      MPLCONFIGDIR: ${{ runner.temp }}/neuromancer-mpl
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install -r requirements-v1.txt
-      - run: python -m pip install --no-build-isolation --no-deps -e .
+      - run: python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+      - run: python -m pip install --no-deps dist/*.whl
       - run: python -m pip check
       - run: python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
       - run: python -m pytest -q --junitxml=runs/v1-ci-tests.xml
       - run: neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
-      - run: python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,117 +1,80 @@
-# Neuromancer
+# NEUROMANCER — in silico neural-control research
 
-> Build a programmable, stimulation-responsive neural system for closed-loop biological-computing experiments.
+NEUROMANCER investigates whether constrained stimulation and partial spike recordings can support identification, prediction and regulation of a noisy neural population. V1 is a **simulation research candidate**, not a biological computer or a validated hardware system.
 
-## Thesis
+The platform includes a 1,000-cell recurrent Brian2 E/I leaky-integrate-and-fire substrate, causal stimulation/observation interfaces, FIR/ARX identification, online RLS and residual-shift experiments, PI and finite-bank predictive controllers, deterministic replay contracts and bounded POSIX process supervision.
 
-Build a programmable, stimulation-responsive neural system for closed-loop biological-computing experiments.
+## Main research result
 
-## Planned stack
+The frozen M005B development experiment compared ten network identities with two noise replicates each. All 20 primary trials/260 branches and three separate fault trials/24 branches completed.
 
-- Python
-- Cortical Labs SDK
-- electrophysiology
-- spiking models
-- plasticity
-- closed-loop control
+| Controller | Mean cumulative post-loss error (Hz·s) |
+|---|---:|
+| Frozen PI, Kp=10, Ki=5 |11.46875|
+| RLS-adaptive predictive control |13.12922|
+| Fixed-model predictive control |18.97781|
 
-## Milestones
+RLS improved on fixed predictive control but lost to PI on every development network. **Adaptive superiority FAILS.** Lower current expenditure and better final-window MAE do not replace the preregistered primary endpoint. New controller validation networks 10–14 and locked networks 100–119 were not evaluated; M006 remains HOLD.
 
-- [x] Define neural state and stimulation interfaces
-- [ ] Implement a model-backed simulator source
-- [ ] Add plasticity / state adaptation
-- [ ] Benchmark closed-loop controllers
-- [ ] Design a CL1-compatible experiment interface
+These results concern the tested simulated task. They do not demonstrate neural plasticity, biological learning, living-neuron control, hardware-safe stimulation, hard real-time CL1 compatibility or general adaptive-control superiority.
 
-## Status
+## Install and run a minimal example
 
-**Brian2 substrate implemented; frozen V0 control-authority gate failed.**
-
-Mission 002 separates passing software qualification from insufficient measured
-control authority. System identification and controller evaluation have not begun.
-
-This repository is part of an ongoing research-engineering project backlog. Claims, results, and benchmarks will be added only when supported by reproducible experiments.
-
-## Principles
-
-- Start with explicit scientific or engineering questions.
-- Establish simple baselines before adding complex models.
-- Use quantitative evaluation and documented failure modes.
-- Preserve reproducibility through versioned data, configuration, and experiment outputs.
-- Separate demonstrated results from planned capabilities.
-
-## Mission 002: simulation substrate
-
-The first implementation provides the frozen 1,000-cell Brian2 E/I LIF model,
-process-isolated trials, constrained held-current actions, partial spike counts,
-and exact same-environment replay. It does not implement identification or control.
-Qualification and scientific feasibility are separate: see
-[Mission 002 report](reports/M002_BRIAN_SUBSTRATE.md) for the measured decision.
-
-Python **3.12** is required. Keep environments separate from historical audits:
+Use Python **3.12**, a POSIX host and a fresh environment. Native macOS qualification is documented; hosted Linux/macOS audit status is reported separately. Keep all scientific dependencies pinned:
 
 ```sh
-python3.12 -m venv /tmp/neuromancer-m002
-/tmp/neuromancer-m002/bin/python -m pip install -r requirements-m002.txt
-/tmp/neuromancer-m002/bin/python -m pip install --no-build-isolation --no-deps -e .
-/tmp/neuromancer-m002/bin/python -m pip check
-/tmp/neuromancer-m002/bin/python -m pytest -q
-/tmp/neuromancer-m002/bin/neuromancer-diagnostic --mode smoke --output runs/my-smoke
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-v1.txt
+.venv/bin/python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+.venv/bin/python -m pip install --no-deps dist/neuromancer-0.2.0-py3-none-any.whl
+.venv/bin/python -m pip check
+.venv/bin/neuromancer-diagnostic --mode smoke --output runs/my-smoke
 ```
 
-The dependency lock includes optional plotting/test tools. The minimal installed
-runtime needs only the dependencies in pyproject.toml. Public use:
+The smoke example simulates 200 ms on development network 0 with ten legal commands and writes observations, receipts, provenance and a completion marker. It is an integration example, not a controller-efficacy result. Use a new output directory for each run. Current package metadata is **0.2.0**; a future v1.0.0 release title is proposed, not already published.
 
-```python
-from neuromancer import Command, Config, Trial
+The complete research stack includes plotting/test/verification tools. Minimal package runtime dependencies are Brian2 and NumPy; plotting requires the declared diagnostic extra or the full pinned research stack. The scientific acquisition launcher is macOS-specific (`caffeinate`); Linux regression support is not a claim that the full acquisition launcher is portable.
 
-# Use a script with this guard: trials use spawned worker processes.
-if __name__ == "__main__":
-    with Trial(Config(trial_id="example")) as trial:
-        action = Command("example", "pulse-0", 0, (30.0, 30.0, 30.0, 30.0))
-        result = trial.advance(action, stop_us=20_000)
-        print(result.observation.counts)  # 20 virtual recording channels
-```
+## Inspect and reproduce existing evidence
 
-Currents are pA of model-injected current, never electrode µA. Actions start only
-at the current trial boundary. Invalid actions raise ValueError atomically;
-`advance(None, ...)` ramps the previous current toward zero by at most30 pA per
-channel. Each step returns a delivery receipt and completed half-open spike bin.
-`reset()` restores the fresh episode; `close()` is idempotent. Returned tuples are
-immutable and contain no hidden neural state or neuron identities. Python private
-attributes are not an adversarial security sandbox; the state boundary is the
-separate worker process and its restricted message protocol.
-
-The 100 µs neural clock and20 ms stimulation/observation clock are distinct.
-Spike times refer to Brian's threshold scheduler slot, not a substep estimate of
-continuous threshold crossing. The causal100 ms rate filter is unavailable (NaN)
-until the prescribed baseline ends at15 s, when it initializes from [7,15) s.
-Raw channel counts/rates remain available from the first bin. Missing recording
-coverage uses masks, -1 counts and NaN rates in evaluator fixtures; zero spikes
-with full coverage remain valid zeros. No raw analog signal is synthesized.
-
-Evaluator-only diagnostics (fresh output directory required):
+Run from the repository root with the installed wheel:
 
 ```sh
-neuromancer-diagnostic --mode authority --output runs/my-authority
-neuromancer-diagnostic --mode convergence --output runs/my-convergence
-neuromancer-diagnostic --mode performance --output runs/my-performance
+VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  .venv/bin/python -m pytest -q
+.venv/bin/python scripts/reproduce_v1_evidence.py --output runs/my-evidence-reproduction
 ```
 
-Authority uses all ten training networks and paired5 s sham/stimulation holds
-following the frozen5 s burn-in and10 s baseline. It does not fit a controller.
-Convergence uses nested OU innovations at100/50 µs; performance measures four
-fresh-process retention/chunking cases. These take longer than the smoke test.
-Each run writes provenance, numerical outputs and terminal status; figures use
-fixed styles and no generation date. The worker's default spike storage is
-cleared after each integration segment; evaluator retention is explicitly opt-in.
-Large NPZ arrays remain under ignored runs/. Curated numerical summaries and
-figures are committed under reports/evidence/m002/.
+The second command reads committed trajectories, reconstructs model states/planner scores and regenerates tables/figures. **It does not acquire new neural trajectories or open validation/locked networks.** Tables must be byte-identical; figure byte identity is reported separately because OS/font differences can affect rendering. Seeds, windows, bootstrap rules and scientific gates remain those in [protocol011](docs/research/011_M005B_CONTROL_PROTOCOL.md).
 
-Random streams use SeedSequence roles0–7 from V0. Roles0–3 always use replicate0.
-OU blocks use key(network,4,replicate,one-second-block) and PCG64;50 µs innovations
-are paired into the100 µs stream by the exact OU composition rule. Thus different
-commands/spike histories cannot alter exogenous noise consumption. Brian has no
-implicit random expression in this model; role7 is reserved rather than mutating
-a global generator. Exact replay is qualified within the recorded environment;
-bitwise cross-version or cross-platform equivalence is not promised.
+See [reproducibility instructions](docs/V1_REPRODUCIBILITY.md) for exact outputs, clocks, resource limits and the distinction between evidence reproduction and fresh acquisition.
+
+## Architecture and model
+
+```mermaid
+flowchart LR
+  S[Constrained held-current commands] --> N[Brian2 recurrent E/I LIF network]
+  N --> O[Completed partial spike bins]
+  O --> I[FIR / RLS identification]
+  O --> C[PI or predictive policy]
+  I --> C
+  C --> S
+  S --> E[Receipts and experiment evidence]
+  O --> E
+```
+
+Neural integration is 100 µs, public stimulation/observation bins are 20 ms, and M005B aggregation/planning is 1 s. Four stimulation channels and twenty virtual recording channels have disjoint memberships. M005B uses C02 currents `(q,0,q,0)`: 0–120 pA per active channel, 240 pA total and 30 pA/channel/tick slew. These are model-injected currents, not electrode µA or hardware charge-density limits. Controllers consume completed observations and confirmed deliveries, never true efficacy or hidden neural state.
+
+## Scientific record and limitations
+
+- Original V0.1/V0.2 feasibility failures remain failures.
+- M003.1/M003.2 did not establish added observation-state value for their specified intervention-response tasks.
+- M004 prediction/residual-shift results are distinct from later realized-control results; causal-effect validation and uncertainty calibration remained limited.
+- M005A.7's extended PI recovery does not revise M005A.5's shorter-horizon failure.
+- M005B adaptive superiority failed against a competitive PI reference.
+
+Read the [V1 research report](reports/NEUROMANCER_V1_RESEARCH_REPORT.md), [M007 release audit](reports/M007_FINAL_RELEASE_AUDIT.md), [scientific limitations](docs/V1_SCIENTIFIC_LIMITATIONS.md), [negative-result index](docs/V1_NEGATIVE_RESULT_INDEX.md) and [proposed release notes](docs/V1_RELEASE_NOTES.md). Historical reports and numerical archives are preserved.
+
+## Release and roadmap
+
+This repository is a review candidate. Publication, license/version selection and actual hosted CI results must be reviewed before release. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.

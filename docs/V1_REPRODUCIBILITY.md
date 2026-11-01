@@ -1,58 +1,70 @@
-# Reproducing the NEUROMANCER V1 research instrument
+# Reproducing the V1 simulation research instrument
 
-This is a simulated recurrent spiking-network research platform. It is not a biological experiment, a model of living-neuron learning, or hard real-time hardware software. Scientific release scope and actual qualification decisions are in `reports/NEUROMANCER_V1_RESEARCH_REPORT.md`; historical reports retain their original decisions.
+Use this guide from the repository root. It distinguishes a small smoke example, **source-artifact reproduction** and a fresh scientific acquisition. None establishes biological or hard-real-time hardware validation.
 
-## Environment
+## Supported installation
 
-Use CPython3.12 on a machine with sufficient memory; all original package pins are in `requirements-m002.txt`. `requirements-v1.txt` adds the explicitly qualified SciPy verification dependency. No automatic version upgrade is part of reproduction.
+The audited local host is macOS arm64 with CPython 3.12; package metadata requires Python >=3.12,<3.13. The clock/supervisor also implements Linux CLOCK_BOOTTIME/POSIX support, but consult actual [M007 CI results](../reports/M007_FINAL_RELEASE_AUDIT.md) before claiming hosted qualification. Windows is not qualified. Full M005B acquisition currently requires macOS because the launcher invokes `/usr/bin/caffeinate`.
+
+In a fresh environment, install exact pins and build/install the wheel:
 
 ```sh
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-v1.txt
-.venv/bin/python -m pip install --no-build-isolation --no-deps -e .
+.venv/bin/python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+.venv/bin/python -m pip install --no-deps dist/neuromancer-0.2.0-py3-none-any.whl
 .venv/bin/python -m pip check
-VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python -m pytest -q
+.venv/bin/python -c 'import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)'
 ```
 
-Thread environment variables request a limit; they do not prove the operating BLAS thread count. Retain measured thread-pool metadata where available. The numerical stream contract is deterministic for the qualified platform/software stack; cross-platform bitwise reproducibility requires a fresh comparison and is not assumed.
+Expected versions: NumPy2.5.4, Brian2 2.10.1, SciPy1.18.0, pytest9.1.1. `requirements-v1.txt` includes all original `requirements-m002.txt` pins and the verification-only SciPy pin. No original version upgrade is part of reproduction. Core runtime is Brian2/NumPy; use the full research stack for all modules, plots and tests. The package remains0.2.0; no1.0tag has been published.
 
-## Scientific contract
-
-`docs/research/011_M005B_CONTROL_PROTOCOL.md` is the authoritative frozen experiment. Read it before acquisition. It fixes the neural model, original51s calibration,64s regulation, hidden efficacy loss at relative16s, FIR structure, RLS policy,625-candidate planner, PI10/5, trial identities, budgets and network-level inference. The scheduling/encoding qualification in documents012/013 does not change scientific settings. Never use calibration or held-out outcomes to retune the frozen study.
-
-Development uses networks0–9/noise47–48. Validation10–14/noise49–50 is conditional on all development primary gates passing. Locked100–119 are excluded and require a separate authorized protocol. Development secondary faults use0–2/noise49 only after the primary decision is frozen; they cannot rescue a failed gate.
-
-## Execution
-
-Run from a clean committed checkout. Use unique empty output directories: incomplete attempts are evidence and must not be overwritten. Acquire only after all engineering readiness checks and resource forecasts pass.
+## Smoke example and software tests
 
 ```sh
-export VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1
-RUN_ROOT=runs/v1-independent-reproduction
-.venv/bin/python -m neuromancer.m005b_study acquire --phase primary --output "$RUN_ROOT/primary"
-.venv/bin/python reports/evidence/v1_finish/finish_development.py --root "$RUN_ROOT"
+.venv/bin/neuromancer-diagnostic --mode smoke --output runs/my-smoke
+VECLIB_MAXIMUM_THREADS=1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 \
+  .venv/bin/python -m pytest -q
 ```
 
-The CLI launches three owned workers, uses a shared boot-scoped suspend-inclusive deadline, preserves16s segments, checks memory/storage and marks complete branches/trials explicitly. It inhibits idle sleep but cannot enforce user-space deadlines while the host is suspended. Physical sleep/resume was not deliberately exercised during this study. Expiry/resume/clock faults stop rather than reset budgets.
+Smoke uses development network0, default noise0,200ms and ten20ms steps. Expected outputs: `steps.jsonl`, `smoke.json`, `provenance.json`, `summary.json` with `status=complete`. Choose an unused output path. This is not reserved controller evaluation. M007 reports actual test/warning counts and installation details.
 
-The committed finish_development.py sequence creates one analysis deadline after primary completion, independently verifies and freezes its decision, and runs the prescribed secondary faults under the inherited development deadline. It never opens validation. Use a fresh root; the committed evidence paths below identify this mission’s saved results and are not empty rerun destinations.
-
-Analysis must run under a single2,400s boot-scoped `Deadline` shared by its nested commands; see the saved analysis launch and exact command manifest. Set `NEUROMANCER_DEADLINE_NS` and `NEUROMANCER_DEADLINE_CLOCK` from that launch, never from a different boot. Main analysis:
+## Reproduce the committed scientific evidence (recommended)
 
 ```sh
-.venv/bin/python -m neuromancer.m005b_analysis reports/evidence/v1_finish/m005b/primary reports/evidence/v1_finish/m005b/analysis_primary
+.venv/bin/python scripts/reproduce_v1_evidence.py --output runs/my-evidence-reproduction
 ```
 
-Independent verification scripts in `reports/evidence/v1_finish/` reconstruct counts/receipts/model states/planner scores (`verify_study.py`), raw targets/statistics/gates (`verify_metrics.py`), and weak-excitation shadow predictions (`shadow_controls.py`). They are analysis-only and receive no authority to choose new actions. Pass explicit fresh output paths. They fail on incomplete cohorts. Failed scientific gates leave validation closed; no result-dependent replacement is allowed.
+This bounded, evidence-only helper creates a **fresh1200s current-boot deadline**, or inherits an enclosing deadline when one is explicitly set. It reads only the committed M005B primary evidence and never calls a neural acquisition runner. Do not import historical expired deadline timestamps from a previous run or boot.
 
-## Evidence and interpretation
+Expected output tree:
 
-The initial51s prefix is shared computationally across branches, but its physical-current exposure is counted for every arm. Each branch restores the exact same neural checkpoint and common absolute-time OU stream. Diverged closed-loop branches do not have identical later neural states. Noise repeats are averaged within network before inference; bins are not independent network replicates.
+- `analysis/`: repeat-level metrics,1s time courses, network qualification and frozen scientific summary.
+- `model_verification.json`: reconstructed observed events/counts, delivered actions, FIR/RLS state digests and candidate scores.
+- `statistics_verification.json`: separate raw-count/target/bootstrap gate calculations.
+- `figures/`: tracking/cumulative and network/cost PNG/SVG figures, sector and computation summaries.
+- `commands.json`, `supervision/`, `reproduction.json`: actual commands, worker outcomes and byte comparisons.
 
-The causal codec retains delivered input, observed output, validity/counters, per20ms model-state hashes and dense1s snapshots. Replaying this information reconstructs all intermediate coefficients/information. Each plan retains all625 scores, origin coefficients/history and chosen forecast; omitted alternate forecasts can be reconstructed. This avoids redundant storage without changing numerical updates.
+The four canonical tables/summary files must be byte-identical to `reports/evidence/v1_finish/m005b/analysis_primary`. Figure identity is separately reported: byte equality is expected on the pinned qualified host; font/backend/OS differences can change pixels, so retain both outputs and verify identical underlying numeric tables. The original research evidence is never overwritten. For general numerical comparisons, the independently audited primary statistics agree within1e-12; FIR/weighted-batch reconstruction uses the verifier's declared2e-8 relative/absolute tolerance, while state digests and event/count/action equality are exact on the qualified stack.
 
-Retain every incomplete attempt, failure cause and historical negative result. A process exit is not a scientific PASS. Full adaptive scientific success requires improvement against both PI and fixed predictive control plus cost, stationary, final-bias and safety guards. Biological validity, generalization to unseen preparations and hardware timing are unvalidated.
+Expected primary post-loss IAE: PI11.46875, RLS13.12921875, fixed MPC18.9778125Hz·s. Primary adaptive superiority is **FAIL**, despite a positive adaptive-versus-fixed comparison. Validation remains closed; locked100–119 are not read.
 
-## Continuous integration
+## Frozen model, configuration and provenance
 
-The additional V1 qualification workflow installs requirements-v1, checks imports/dependencies, executes the complete test suite and a non-confirmatory smoke fixture, then builds an unpublished wheel on Linux/macOS runners. It never launches M005B acquisition, validation or locked tests. These local review commits have not been pushed or run on hosted CI; inspect actual job results before claiming cross-platform qualification.
+[Protocol011](research/011_M005B_CONTROL_PROTOCOL.md) fixes the neural substrate, calibration, controller definitions,625candidates, targets, cohorts, endpoints and statistics. The acquisition source is `457491390e8d3f25ad79b5cbe44bed03975805f6`; completed V1 evidence/report revision is `6420f8529289ec31f0237eb69a705c64d8467ed7`. Operation V1's output-path repair is separately preserved; it changed no scientific arithmetic or neural data.
+
+Primary: networks0–9/noise47,48; faults: networks0–2/noise49. Root seed20261018 and SeedSequence roles remain frozen. Parameter roles0–3 use replicate0; OU uses `(network,4,replicate,absolute1sblock)` and PCG64. Same-origin arms restore neural queues/clocks/filter/cursors and share absolute-time exogenous noise. Different feedback arms diverge afterward. Repeats average within network before10,000paired network-bootstrap draws with PCG64seed20261105; bins are not independent networks.
+
+Every trial has51s calibration and13×64s primary branches. LOSS changes hidden efficacy from1 to.6 at16s of control. Target=original calibration baseline+1Hz. Raw1s observed E80 rate is the primary statistic;20ms counts remain archived. Primary scoring is the full16–64s window. Integration100µs, actuation/observation20ms, planning1s. No future observations, evaluator gain or sham data enter controllers.
+
+See [evidence schema](V1_EVIDENCE_SCHEMA.md), source/config/seed hashes and `release_manifest.json` under `reports/evidence/v1_finish`. M007 verifies historical snapshots before intentionally updating README/this guide; authorized documentation changes are recorded separately, never treated as numerical amendments.
+
+## Fresh acquisition is a different operation
+
+The current audit does **not** authorize rerunning the complete study. A future authorized reproduction must first qualify environment, source, current-boot clock, resource forecast and unique output roots. Do not run acquisition merely to regenerate figures or tables.
+
+For an independently authorized fresh run on the supported host, the existing CLI is `python -m neuromancer.m005b_study acquire --phase primary --output NEW_ROOT/primary`, followed by `python reports/evidence/v1_finish/finish_development.py --root NEW_ROOT`. These commands are intentionally not part of the evidence-only quickstart. They preserve the frozen10,800s development cap including faults and conditional5,400s validation cap; analysis uses2,400s. Validation requires development gates to pass. Locked100–119 require independent authorization and remain absent from this runner.
+
+The source records16s partial segments and complete markers only after full branches/trials. Failed attempts, unfavorable outcomes and partial files must remain; no replacement seeds, target clipping or retrospective budget extension. Budget expiry or boot/clock mismatch is failure, not completion. The original successful workload measured5639.339s primary and509.778s faults on the reported M5 host, not a portable runtime guarantee. Limits:3scientific workers,<2GiB/worker,750MiB new evidence,1.2GiB combined. Nominal1s monitoring had measured overhead; inspect actual cadence. Suspend consumes the deadline, but user-space cannot enforce cleanup while asleep. No physical sleep test or hard-real-time guarantee is asserted.
+
+Thread environment variables request BLAS limits; they do not establish actual thread count. Bitwise reproducibility is qualified only within the reported stack/platform. No biological, plasticity, hardware-safe or broad controller-generalization claim follows from successful reproduction.

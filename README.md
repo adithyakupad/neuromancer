@@ -33,7 +33,7 @@ python3.12 -m venv .venv
 
 The smoke example simulates 200 ms on development network 0 with ten legal commands and writes observations, receipts, provenance and a completion marker. It is an integration example, not a controller-efficacy result. Use a new output directory for each run. Current package metadata is **0.2.0**; a future v1.0.0 release title is proposed, not already published.
 
-The complete research stack includes plotting/test/verification tools. Minimal package runtime dependencies are Brian2 and NumPy; plotting requires the declared diagnostic extra or the full pinned research stack. The scientific acquisition launcher is macOS-specific (`caffeinate`); Linux regression support is not a claim that the full acquisition launcher is portable.
+The complete research stack includes plotting/test/verification tools. Minimal package runtime dependencies are Brian2 and NumPy; the diagnostic CLI and plotting require the declared diagnostic extra or the full pinned research stack. The scientific acquisition launcher is macOS-specific (`caffeinate`); Linux regression support is not a claim that the full acquisition launcher is portable.
 
 ## Inspect and reproduce existing evidence
 

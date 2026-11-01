@@ -2,20 +2,20 @@
 
 Audit requested 2026-11-01 (America/New_York). Starting clean `codex/v1-finish` at **6420f8529289ec31f0237eb69a705c64d8467ed7**; review branch **release/v1-audit**. No merge, tag, release, controller tuning, scientific acquisition, validation or locked-network access is authorized or performed by this audit.
 
-**Provisional release recommendation: PARTIAL.** The local package and scientific evidence are qualified; hosted CI is being verified. Explicit license/reuse terms and alignment of package0.2.0 metadata with a proposed v1.0.0 publication remain prepublication decisions. A negative adaptive finding does not block a correctly scoped research release.
+**Final release recommendation: PARTIAL.** Local installation, software, numerical evidence and hosted CI qualify the scoped research candidate. Explicit license/reuse terms and alignment of package0.2.0 metadata with a proposed v1.0.0 publication remain prepublication decisions. A negative adaptive finding does not block a correctly scoped research release.
 
 ## Independent gates
 
 | Gate | Current decision | Evidence |
 |---|---|---|
 | A Repository/provenance |PASS|Expected revision/clean start; original16417-file preservation and16275-file release manifests verified before authorized documentation changes. Scientific source/data remain unchanged.|
-| B Clean installation |PASS|Fresh isolated CPython3.12 environment; exact pins; wheel build/install; all29source modules match; imports and pip check; actual installed-wheel200ms smoke.|
-| C Local regression |PASS|183passed,25warnings,0failures/errors/skips in63.43s; no hidden flaky reruns.|
-| D Numerical reproduction |PASS|New raw-count implementation plus fresh existing analytical replay; complete20/260primary and3/24fault cohorts.|
-| E Claim validity |PASS with limitations|Stale README corrected; scoped development-only claims and mechanism uncertainty explicit. Claim catalog includes unsupported broad claims as exclusions, not release assertions.|
+| B Clean installation |PASS|Fresh isolated CPython3.12 environment; exact pins; wheel build/install; all29 source modules match; imports and pip check; actual installed-wheel200ms smoke.|
+| C Local regression |PASS|183 passed,25 warnings,0 failures/errors/skips in63.43 s before documentation changes; after the provenance-path repair,183 passed again with25 warnings in62.77 s. All hosted failures are retained below.|
+| D Numerical reproduction |PASS|New raw-count implementation plus fresh existing analytical replay; complete20/260 primary and3/24fault cohorts.|
+| E Claim validity |PASS|Stale README corrected; scoped development-only claims and mechanism uncertainty explicit. Claim catalog includes unsupported broad claims as exclusions, not release assertions.|
 | F Documentation |PASS|Updated README/guide, evidence-only CLI, scientific limitations and suggested release notes; documented fresh-output/current-boot deadlines.|
-| G Hosted CI |NOT VERIFIED|Dedicated-branch push/execution is pending; configuration alone is not evidence.|
-| H Final release readiness |PARTIAL|No numerical discrepancy; public publication still requires completed CI review and license/version choices.|
+| G Hosted CI |PASS|V1 Linux/macOS wheel jobs and substrate workflow passed atf76c09d0; exact run links and earlier failures below.|
+| H Final release readiness |PARTIAL|No numerical discrepancy; public publication still requires license/version choices and final maintainer review.|
 
 ## Clean installation and executed software checks
 
@@ -27,9 +27,9 @@ Commands and fresh1800s same-domain audit deadline are retained in `reports/evid
 
 ## Scientific numerical reproduction
 
-The M007 implementation `reproduce.py` independently reads raw E80 spike counts, reconstructs baseline from[7,15)s of the51s prefix, sets target=baseline+1Hz, aggregates nonoverlapping1s rates and scores **all[16,64)s** after loss. It verifies receipts, timestamps, event/channel counts, exact cohorts, current bounds/budget/slew, fallback flags and original resource closures. It does not fit/select new models or substitute an analysis.
+The M007 implementation `reproduce.py` independently reads raw E80 spike counts, reconstructs baseline from[7,15)s of the51s prefix, sets target=baseline+1 Hz, aggregates nonoverlapping1s rates and scores **all[16,64)s** after loss. It verifies receipts, timestamps, event/channel counts, exact cohorts, current bounds/budget/slew, fallback flags and original resource closures. It does not fit/select new models or substitute an analysis.
 
-Each independent network averages noise47/48 first. Paired percentile-bootstrap resampling uses PCG64seed20261105 and10000whole-network draws, exactly as protocol011. Relative benefits are formed per network with the frozen.01Hz·s denominator floor; no floor activates.
+Each independent network averages noise47/48 first. Paired percentile-bootstrap resampling uses PCG64seed20261105 and10000 whole-network draws, exactly as protocol011. Relative benefits are formed per network with the frozen.01 Hz·s denominator floor; no floor activates.
 
 | Controller | Recomputed post-loss IAE (Hz·s) |
 |---|---:|
@@ -47,7 +47,7 @@ Each independent network averages noise47/48 first. Paired percentile-bootstrap 
 
 Both comparisons are required. **Final adaptive-superiority FAIL independently reproduced.** H3 late feasibility and H4/H5 cost/stationary guards reproduce their original PASS; they cannot rescue failed H1a. There is no numerical discrepancy requiring neural reacquisition. Per-network values, all284branch rows, costs, biases and guards are in `independent_results.json` and `independent_trials.csv`.
 
-All260primary branches have zero unexpected fallback/model-failure/constraint events. The24fault branches are checked separately: deliberate safe bins are53perPI branch and100perRLS branch; no constraint or model failure. DELAY and DROP expose the same missing on-time data after stale discard; no asynchronous transport fidelity is inferred. Completed worker cleanup and original10800s development/shared-fault budgets are verified from original launch/closure records, sampled memory/storage and high-water evidence. Nominal1s polling had documented overhead; sampled checks do not prove continuous hard limits or hard-real-time behavior.
+All260 primary branches have zero unexpected fallback/model-failure/constraint events. The24fault branches are checked separately: deliberate safe bins are53 perPI branch and100 perRLS branch; no constraint or model failure. DELAY and DROP expose the same missing on-time data after stale discard; no asynchronous transport fidelity is inferred. Completed worker cleanup and original10800s development/shared-fault budgets are verified from original launch/closure records, sampled memory/storage and high-water evidence. Nominal1s polling had documented overhead; sampled checks do not prove continuous hard limits or hard-real-time behavior.
 
 ## Interpretation and claim audit
 
@@ -67,16 +67,33 @@ The old guide incorrectly suggested reusing an existing analysis directory and h
 
 ## Hosted CI and publication boundary
 
-Authorized GitHub access was confirmed without retaining credential values. Only `release/v1-audit` may be pushed; main remains untouched. The V1 workflow now builds/installs the wheel before tests, matching the clean-install audit; pins are unchanged and scientific acquisition is absent from CI. Hosted execution/results will be recorded here when available. Failure or missing access remains explicit, never converted into PASS.
+Authorized GitHub access was confirmed without retaining credential values. Only `release/v1-audit` may be pushed; main remains untouched. The V1 workflow now builds/installs the wheel before tests, matching the clean-install audit; pins are unchanged and scientific acquisition is absent from CI. Hosted source revision **f76c09d0f18850f063aad43ffa2dc09d313ba7b5** passed the [V1 matrix](https://github.com/adithyakupad/neuromancer/actions/runs/41344770135) and [substrate workflow](https://github.com/adithyakupad/neuromancer/actions/runs/41344770098). Linux JUnit records183 tests/0 failures/errors/skips in67.408 s; macOS records183/0/0/0 in81.658 s. Both report25pytest warnings, plus retained Brian unused-object notices. The V1 jobs built/installed wheels, passed pip check/imports and executed the smoke. Downloaded JUnit, wheel/smoke artifacts and full logs are committed; wheel source bytes and smoke hashes verified. Linux regression qualification does not qualify the macOS-specific full acquisition launcher or cross-platform bitwise replay.
+
+Earlier attempts are not erased: run41344138785 failed workflow parsing after M007 introduced runner.temp at job env scope. [GitHub context availability](https://docs.github.com/en/actions/reference/workflows-and-actions/contexts) excludes runner there; a literal temporary path repaired it. The substrate run41344142135 and matrix41344361424 then reported182passes/1failure because the authorized README update conflicted with an old immutable-file check. The exact starting README was archived as docs/history/README_M002_SNAPSHOT.md and the test now checks that snapshot against the **unchanged** historical digest. No expected hash, scientific source or data was changed; no assertion or test was skipped. Both repairs have separate source/log records. Node20-action deprecation/forcedNode24 notices are retained as non-blocking maintenance warnings. A report/evidence-only closing commit retains identical tested package/test/workflow bytes; its CI status can be checked independently.
 
 The repository has no LICENSE file and package metadata remains0.2.0. Maintainers must settle reuse terms and align any eventual publication version; this audit does not invent a license, create a tag or publish a release. Suggested future title: **NEUROMANCER v1.0.0 — In Silico Neural Dynamics and Closed-Loop Control**. Suggested description is in `docs/V1_RELEASE_NOTES.md`.
 
 ## Change inventory and closure
 
-Authorized modifications: README.md, docs/V1_REPRODUCIBILITY.md and .github/workflows/v1-qualification.yml. New files: this report; docs/V1_SCIENTIFIC_LIMITATIONS.md; docs/V1_RELEASE_NOTES.md; scripts/reproduce_v1_evidence.py; audit source, logs, wheel, numerical comparisons and verification evidence under reports/evidence/m007. Starting-snapshot hashes and explicit before/after hashes are in authorized_changes.json. No frozen scientific source, protocol, report or numerical file is modified.
+Authorized modifications: README.md, docs/V1_REPRODUCIBILITY.md, .github/workflows/v1-qualification.yml and the README snapshot lookup in tests/test_calibration.py. New files: this report; docs/V1_SCIENTIFIC_LIMITATIONS.md; docs/V1_RELEASE_NOTES.md; scripts/reproduce_v1_evidence.py; docs/history/README.md and the exact README snapshot; audit source, logs, wheel, numerical comparisons and verification evidence under reports/evidence/m007. Starting-snapshot hashes and explicit before/after hashes are in authorized_changes.json. No frozen scientific source, protocol, report or numerical file is modified.
 
-The final Git revision is the commit containing the closed audit report, supplied in the handoff. A later report/evidence-only commit may follow a CI-tested source revision; exact tested revision and source equivalence must remain explicit. Final working-tree cleanliness and branch identity are required before handoff.
+The final Git revision is the commit containing the closed audit report, supplied in the handoff. A later report/evidence-only commit may follow a CI-tested source revision; exact tested revision and source equivalence must remain explicit. The final handoff supplies the exact closing revision and clean-tree verification. Complete changed-path inventory and before/after hashes accompany the audit evidence.
 
 ## Historical procedural caveat
 
 The V1 report discloses that explicit storage-projection arithmetic was persisted during acquisition rather than as a separate pre-launch artifact. M007 verifies actual sampled caps and final allocation records, but cannot certify undocumented prospective checking or retrospectively repair that gap. The original reporting-publication failure and resource/clock stops remain preserved. This limits any blanket assertion that every historical procedural requirement was perfectly satisfied; it does not change the reproduced scientific endpoint or justify new neural acquisition.
+
+
+## Remaining publication choices and proposed release
+
+No numerical discrepancy remains. A–G pass with the explicitly scoped limitations above; H remains PARTIAL until maintainers select explicit license/reuse terms and align publication-version metadata (currently0.2.0) with a chosen release label. Historical pre-launch storage documentation cannot be retroactively perfected and remains a declared caveat. These are not reasons to reinterpret adaptiveFAIL or open new evaluation networks.
+
+Suggested title: **NEUROMANCER v1.0.0 — In Silico Neural Dynamics and Closed-Loop Control**.
+
+Suggested description: Reproducible simulated neural dynamics, constrained stimulation, partial spike observation and transparent identification/control comparisons. Includes complete evidence and negative findings: adaptive predictive control improved on a frozen model but lost to PI in the tested development task. No biological, plasticity, hard-real-time or held-out controller-generalization claim.
+
+This audit is complete without merging main, creating tags, publishing a GitHub release or executing validation/locked networks. M006 remains HOLD. Final publication requires maintainer review rather than additional target engineering.
+
+Complete path inventory is retained in `reports/evidence/m007/file_inventory.txt`. `authorized_changes_final.json` records the four modified pre-existing paths and verifies all production source, scientific dependency pins, frozen protocols and prior numerical/report evidence unchanged. Qualified production/test/workflow bytes match hosted-tested revisionf76c09d0; closing changes are documentation and audit evidence only.
+
+Fresh numerical reproduction in M007 focuses on M005B. Earlier missions were reviewed for historical integrity and correct interpretation, with their algorithm tests executed; M007 does not claim a new complete reanalysis or neural reacquisition of every earlier mission.

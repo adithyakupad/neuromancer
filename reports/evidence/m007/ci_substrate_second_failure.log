@@ -1,0 +1,59 @@
+test	Run python -m pytest -q	﻿2026-11-01T19:58:11.1382325Z ##[group]Run python -m pytest -q
+test	Run python -m pytest -q	2026-11-01T19:58:11.1382538Z ^[[36;1mpython -m pytest -q^[[0m
+test	Run python -m pytest -q	2026-11-01T19:58:11.1407194Z shell: /usr/bin/bash -e {0}
+test	Run python -m pytest -q	2026-11-01T19:58:11.1407337Z env:
+test	Run python -m pytest -q	2026-11-01T19:58:11.1407491Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q	2026-11-01T19:58:11.1407731Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run python -m pytest -q	2026-11-01T19:58:11.1407960Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q	2026-11-01T19:58:11.1408180Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q	2026-11-01T19:58:11.1408395Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q	2026-11-01T19:58:11.1408608Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run python -m pytest -q	2026-11-01T19:58:11.1408792Z ##[endgroup]
+test	Run python -m pytest -q	2026-11-01T19:58:28.5945378Z ..........F............................................................. [ 39%]
+test	Run python -m pytest -q	2026-11-01T19:59:03.4213882Z ........................................................................ [ 78%]
+test	Run python -m pytest -q	2026-11-01T19:59:19.5962187Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+test	Run python -m pytest -q	2026-11-01T19:59:19.5963022Z The object was created here (most recent call only):
+test	Run python -m pytest -q	2026-11-01T19:59:19.5963353Z   File '/home/runner/work/neuromancer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+test	Run python -m pytest -q	2026-11-01T19:59:19.5964219Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+test	Run python -m pytest -q	2026-11-01T19:59:19.5965173Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+test	Run python -m pytest -q	2026-11-01T19:59:19.5965690Z The object was created here (most recent call only):
+test	Run python -m pytest -q	2026-11-01T19:59:19.5966377Z   File '/home/runner/work/neuromancer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+test	Run python -m pytest -q	2026-11-01T19:59:19.5966854Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+test	Run python -m pytest -q	2026-11-01T19:59:19.5967272Z .......................................                                  [100%]
+test	Run python -m pytest -q	2026-11-01T19:59:19.5967496Z =================================== FAILURES ===================================
+test	Run python -m pytest -q	2026-11-01T19:59:19.5967747Z _______________ test_execution_lineage_frozen_before_neural_run ________________
+test	Run python -m pytest -q	2026-11-01T19:59:19.5967910Z 
+test	Run python -m pytest -q	2026-11-01T19:59:19.5968005Z     def test_execution_lineage_frozen_before_neural_run():
+test	Run python -m pytest -q	2026-11-01T19:59:19.5968211Z         import hashlib,json,subprocess
+test	Run python -m pytest -q	2026-11-01T19:59:19.5968385Z         from pathlib import Path
+test	Run python -m pytest -q	2026-11-01T19:59:19.5968556Z         root=Path(__file__).resolve().parents[1]
+test	Run python -m pytest -q	2026-11-01T19:59:19.5968778Z         provenance=root/'runs/m002_3-calibration-01/provenance.json'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5969090Z         if not provenance.exists():provenance=root/'reports/evidence/m002_3/results/raw_provenance.json'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5969422Z         if not provenance.exists():pytest.skip('Scientific evidence not yet generated')
+test	Run python -m pytest -q	2026-11-01T19:59:19.5969680Z         record=json.loads(provenance.read_text())
+test	Run python -m pytest -q	2026-11-01T19:59:19.5969891Z         prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5970172Z         assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
+test	Run python -m pytest -q	2026-11-01T19:59:19.5970561Z         for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
+test	Run python -m pytest -q	2026-11-01T19:59:19.5970911Z         old=json.loads((prereg.parent/'preservation.json').read_text())
+test	Run python -m pytest -q	2026-11-01T19:59:19.5971240Z >       for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+test	Run python -m pytest -q	2026-11-01T19:59:19.5971563Z                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test	Run python -m pytest -q	2026-11-01T19:59:19.5972056Z E       AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5972297Z E         
+test	Run python -m pytest -q	2026-11-01T19:59:19.5972485Z E         - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+test	Run python -m pytest -q	2026-11-01T19:59:19.5972757Z E         + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+test	Run python -m pytest -q	2026-11-01T19:59:19.5973083Z 
+test	Run python -m pytest -q	2026-11-01T19:59:19.5988420Z tests/test_calibration.py:123: AssertionError
+test	Run python -m pytest -q	2026-11-01T19:59:19.5988693Z =============================== warnings summary ===============================
+test	Run python -m pytest -q	2026-11-01T19:59:19.5988903Z tests/test_control.py: 22 warnings
+test	Run python -m pytest -q	2026-11-01T19:59:19.5989079Z tests/test_substrate.py: 3 warnings
+test	Run python -m pytest -q	2026-11-01T19:59:19.5989513Z   /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5989981Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+test	Run python -m pytest -q	2026-11-01T19:59:19.5990115Z 
+test	Run python -m pytest -q	2026-11-01T19:59:19.5990254Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+test	Run python -m pytest -q	2026-11-01T19:59:19.5990521Z =========================== short test summary info ============================
+test	Run python -m pytest -q	2026-11-01T19:59:19.5990995Z FAILED tests/test_calibration.py::test_execution_lineage_frozen_before_neural_run - AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+test	Run python -m pytest -q	2026-11-01T19:59:19.5991376Z   
+test	Run python -m pytest -q	2026-11-01T19:59:19.5991548Z   - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+test	Run python -m pytest -q	2026-11-01T19:59:19.5991814Z   + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+test	Run python -m pytest -q	2026-11-01T19:59:19.5992054Z 1 failed, 182 passed, 25 warnings in 68.21s (0:01:08)
+test	Run python -m pytest -q	2026-11-01T19:59:19.7919280Z ##[error]Process completed with exit code 1.

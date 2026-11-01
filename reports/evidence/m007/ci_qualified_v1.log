@@ -1,0 +1,1015 @@
+qualification (macos-latest)	Set up job	﻿2026-11-01T20:02:31.4942180Z Current runner version: '2.338.2'
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4963130Z ##[group]Runner Image Provisioner
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4963880Z Hosted Compute Agent
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4964340Z Version: 20261021.618
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4964840Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4965410Z Build Date: 2026-10-21T00:45:21Z
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4965960Z Worker ID: {1137bb5d-9f10-40d6-b593-e7741547ef86}
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4966470Z Region: westus
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4966900Z Cloud: MacCloud
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4967370Z ##[endgroup]
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4968520Z ##[group]Operating System
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4969000Z macOS
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4969420Z 26.6.2
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4969830Z 25G83
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4970240Z ##[endgroup]
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4970680Z ##[group]Runner Image
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4971160Z Image: macos-26-arm64
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4971630Z Version: 20261026.0455.2
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4972520Z Included Software: https://github.com/actions/runner-images/blob/macos-26-arm64/20261026.0455/images/macos/macos-26-arm64-Readme.md
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4973980Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-26-arm64%2F20261026.0455
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4974760Z ##[endgroup]
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4975630Z ##[group]GITHUB_TOKEN Permissions
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4977470Z Contents: read
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4978070Z Metadata: read
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4978540Z ##[endgroup]
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4980350Z Secret source: Actions
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4980920Z Cache mode: write
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.4981400Z Prepare workflow directory
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.6430310Z Prepare all required actions
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.6484640Z Getting action download info
+qualification (macos-latest)	Set up job	2026-11-01T20:02:31.9865940Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+qualification (macos-latest)	Set up job	2026-11-01T20:02:32.3999600Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+qualification (macos-latest)	Set up job	2026-11-01T20:02:32.5361270Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+qualification (macos-latest)	Set up job	2026-11-01T20:02:32.8296970Z Complete job name: qualification (macos-latest)
+qualification (macos-latest)	Run actions/checkout@v4	﻿2026-11-01T20:02:32.9945510Z ##[group]Run actions/checkout@v4
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9946150Z with:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9946530Z   repository: adithyakupad/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9949550Z   token: ***
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9949890Z   ssh-strict: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9950240Z   ssh-user: git
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9950600Z   persist-credentials: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9950980Z   clean: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9951390Z   sparse-checkout-cone-mode: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9951890Z   fetch-depth: 1
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9952230Z   fetch-tags: false
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9952590Z   show-progress: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9952970Z   lfs: false
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9953310Z   submodules: false
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9953670Z   set-safe-directory: true
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9954100Z   allow-unsafe-pr-checkout: false
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9954640Z env:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9954980Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9955400Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9955770Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9956160Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.9956640Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4246580Z Syncing repository: adithyakupad/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4248570Z ##[group]Getting Git version info
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4249350Z Working directory is '/Users/runner/work/neuromancer/neuromancer'
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4250170Z [command]/opt/homebrew/bin/git version
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4571770Z git version 2.56.0
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4589300Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4597910Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/45d2b719-1ec7-4a25-8f94-73bbaa823443/.gitconfig'
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4606180Z Temporarily overriding HOME='/Users/runner/work/_temp/45d2b719-1ec7-4a25-8f94-73bbaa823443' before making global git config changes
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4610220Z Adding repository directory to the temporary git global config as a safe directory
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4612030Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/neuromancer/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4730650Z Deleting the contents of '/Users/runner/work/neuromancer/neuromancer'
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4733870Z ##[group]Initializing the repository
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4737550Z [command]/opt/homebrew/bin/git init /Users/runner/work/neuromancer/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4975660Z hint: Using 'master' as the name for the initial branch. This default branch name
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4976600Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4977370Z hint: to use in all of your new repositories, which will suppress this warning,
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4978120Z hint: call:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4978490Z hint:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4978970Z hint: 	git config --global init.defaultBranch <name>
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4979450Z hint:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4979990Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4980830Z hint: 'development'. The just-created branch can be renamed via this command:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4981430Z hint:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4981780Z hint: 	git branch -m <name>
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4982170Z hint:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4982710Z hint: Disable this message with "git config set advice.defaultBranchName false"
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4983610Z Initialized empty Git repository in /Users/runner/work/neuromancer/neuromancer/.git/
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.4988430Z [command]/opt/homebrew/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5057460Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5058160Z ##[group]Disabling automatic garbage collection
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5059510Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5120470Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5121170Z ##[group]Setting up auth
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5125260Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.5185390Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.6270930Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.6318610Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.7191930Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.7260170Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.8140640Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.8222640Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.8224820Z ##[group]Fetching the repository
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.8232220Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f76c09d0f18850f063aad43ffa2dc09d313ba7b5:refs/remotes/origin/release/v1-audit
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3535260Z From https://github.com/adithyakupad/neuromancer
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3537150Z  * [new ref]           f76c09d0f18850f063aad43ffa2dc09d313ba7b5 -> origin/release/v1-audit
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3555920Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3556810Z ##[group]Determining the checkout info
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3561100Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3576920Z [command]/opt/homebrew/bin/git sparse-checkout disable
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3811160Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3899920Z ##[group]Checking out the ref
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:02.3903950Z [command]/opt/homebrew/bin/git checkout --progress --force -B release/v1-audit refs/remotes/origin/release/v1-audit
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:03.7173120Z Updating files:   3% (1130/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:03.9060680Z Updating files:   4% (1422/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:04.1244360Z Updating files:   5% (1777/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:04.3014780Z Updating files:   6% (2132/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:04.4593590Z Updating files:   7% (2488/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:04.5570900Z Updating files:   7% (2736/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:04.9146720Z Updating files:   8% (2843/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:05.4508980Z Updating files:   9% (3198/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:05.4596130Z Updating files:   9% (3543/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:05.7296500Z Updating files:  10% (3553/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.2322390Z Updating files:  11% (3909/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.3085080Z Updating files:  12% (4264/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.4206960Z Updating files:  13% (4619/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.4506270Z Updating files:  14% (4975/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.4873630Z Updating files:  14% (5125/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.5679020Z Updating files:  15% (5330/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.6768290Z Updating files:  16% (5685/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.8084630Z Updating files:  17% (6041/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:06.9034990Z Updating files:  18% (6396/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.0860570Z Updating files:  19% (6751/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.1617230Z Updating files:  20% (7106/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.2449140Z Updating files:  21% (7462/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.3095440Z Updating files:  22% (7817/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.3715930Z Updating files:  23% (8172/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.4322710Z Updating files:  24% (8528/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.4505720Z Updating files:  25% (8883/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:07.8871650Z Updating files:  25% (8969/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.3484640Z Updating files:  26% (9238/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.4228010Z Updating files:  27% (9594/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.4517870Z Updating files:  28% (9949/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.4992130Z Updating files:  28% (10067/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.5685470Z Updating files:  29% (10304/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.6497100Z Updating files:  30% (10659/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.7123750Z Updating files:  31% (11015/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.7989770Z Updating files:  32% (11370/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.9118640Z Updating files:  33% (11725/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:08.9691370Z Updating files:  34% (12081/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:09.0612880Z Updating files:  35% (12436/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:09.3971050Z Updating files:  36% (12791/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:09.4721020Z Updating files:  37% (13147/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.4104900Z Updating files:  37% (13168/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.4525520Z Updating files:  38% (13502/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.6575020Z Updating files:  38% (13525/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.7673240Z Updating files:  39% (13857/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.8573680Z Updating files:  40% (14212/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:10.9609360Z Updating files:  41% (14568/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.0295150Z Updating files:  42% (14923/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.0853070Z Updating files:  43% (15278/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.1799120Z Updating files:  44% (15634/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.2716000Z Updating files:  45% (15989/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.3782360Z Updating files:  46% (16344/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.4367250Z Updating files:  47% (16700/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.4543060Z Updating files:  48% (17055/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.5116370Z Updating files:  48% (17144/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.5657740Z Updating files:  49% (17410/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.6327550Z Updating files:  50% (17765/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.6872970Z Updating files:  51% (18121/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.7278600Z Updating files:  52% (18476/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.7827690Z Updating files:  53% (18831/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.8435770Z Updating files:  54% (19187/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.8987290Z Updating files:  55% (19542/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:11.9639820Z Updating files:  56% (19897/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.0127360Z Updating files:  57% (20253/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.0697130Z Updating files:  58% (20608/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.1426210Z Updating files:  59% (20963/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.2213710Z Updating files:  60% (21318/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.2871730Z Updating files:  61% (21674/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.3616560Z Updating files:  62% (22029/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.4533280Z Updating files:  63% (22384/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.4646580Z Updating files:  63% (22730/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.7048940Z Updating files:  64% (22740/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:12.9592000Z Updating files:  65% (23095/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:13.2379420Z Updating files:  66% (23450/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:13.4562890Z Updating files:  67% (23806/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:13.4611390Z Updating files:  67% (24150/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:13.6483640Z Updating files:  68% (24161/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:13.8606830Z Updating files:  69% (24516/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.1224360Z Updating files:  70% (24871/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.3422460Z Updating files:  71% (25227/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.4539840Z Updating files:  72% (25582/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.5218070Z Updating files:  72% (25806/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.7129810Z Updating files:  73% (25937/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:14.8859140Z Updating files:  74% (26293/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:15.1282280Z Updating files:  75% (26648/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:15.2879770Z Updating files:  76% (27003/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:15.4581660Z Updating files:  77% (27359/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:15.4938670Z Updating files:  77% (27634/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:15.8054010Z Updating files:  78% (27714/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.0175470Z Updating files:  79% (28069/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.2600760Z Updating files:  80% (28424/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.4557480Z Updating files:  81% (28780/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.4654090Z Updating files:  81% (29117/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.6722010Z Updating files:  82% (29135/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:16.8520060Z Updating files:  83% (29490/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.0157910Z Updating files:  84% (29846/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.2549150Z Updating files:  85% (30201/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.4406020Z Updating files:  86% (30556/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.4545090Z Updating files:  87% (30912/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.6233600Z Updating files:  87% (30950/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:17.8473410Z Updating files:  88% (31267/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.0409830Z Updating files:  89% (31622/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.2708720Z Updating files:  90% (31977/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.4565770Z Updating files:  91% (32333/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.5451670Z Updating files:  91% (32584/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.6187220Z Updating files:  92% (32688/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.6685690Z Updating files:  93% (33043/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.7210630Z Updating files:  94% (33399/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.7651320Z Updating files:  95% (33754/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.8133820Z Updating files:  96% (34109/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.8657230Z Updating files:  97% (34465/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.9121800Z Updating files:  98% (34820/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.9495190Z Updating files:  99% (35175/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.9496090Z Updating files: 100% (35530/35530)
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:18.9496870Z Updating files: 100% (35530/35530), done.
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:19.0154460Z Switched to a new branch 'release/v1-audit'
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:19.0169190Z branch 'release/v1-audit' set up to track 'origin/release/v1-audit'.
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:19.0313970Z ##[endgroup]
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:19.0563890Z [command]/opt/homebrew/bin/git log -1 --format=%H
+qualification (macos-latest)	Run actions/checkout@v4	2026-11-01T20:03:19.0679330Z f76c09d0f18850f063aad43ffa2dc09d313ba7b5
+qualification (macos-latest)	Run actions/setup-python@v5	﻿2026-11-01T20:03:19.1975400Z ##[group]Run actions/setup-python@v5
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1975630Z with:
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1975760Z   python-version: 3.12
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1975910Z   check-latest: false
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978090Z   token: ***
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978270Z   update-environment: true
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978490Z   allow-prereleases: false
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978710Z   freethreaded: false
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978860Z env:
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1978990Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1986390Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1986600Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1986820Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.1987060Z ##[endgroup]
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.4895790Z ##[group]Installed versions
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.5053640Z (node:1573) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.5055030Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.5055610Z Successfully set up CPython (3.12.10)
+qualification (macos-latest)	Run actions/setup-python@v5	2026-11-01T20:03:19.5056350Z ##[endgroup]
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	﻿2026-11-01T20:03:19.5411970Z ##[group]Run python -m pip install -r requirements-v1.txt
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5412360Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5618340Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5618540Z env:
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5618720Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5618890Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5619150Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5619330Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5619630Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5620040Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5620430Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5620820Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5621170Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:19.5621440Z ##[endgroup]
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.2707470Z Collecting Brian2==2.10.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.3762020Z   Downloading brian2-2.10.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (6.7 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.4507210Z Collecting contourpy==1.4.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.4666070Z   Downloading contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (3.8 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.4974720Z Collecting cycler==0.12.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.5135480Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.6857650Z Collecting Cython==3.1.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.7134400Z   Downloading cython-3.1.3-cp312-cp312-macosx_11_0_arm64.whl.metadata (4.7 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.8332840Z Collecting fonttools==4.67.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.8576480Z   Downloading fonttools-4.67.0-cp312-cp312-macosx_10_13_universal2.whl.metadata (137 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.9076740Z Collecting iniconfig==2.3.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.9326070Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.9591190Z Collecting Jinja2==3.1.6 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:21.9726730Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.0303090Z Collecting kiwisolver==1.5.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.0552320Z   Downloading kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl.metadata (5.2 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.1232920Z Collecting MarkupSafe==3.0.4 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.1515510Z   Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.2497180Z Collecting matplotlib==3.10.8 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.2681800Z   Downloading matplotlib-3.10.8-cp312-cp312-macosx_11_0_arm64.whl.metadata (52 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.3005490Z Collecting mpmath==1.3.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.3194210Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.4734160Z Collecting numpy==2.5.4 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.4885730Z   Downloading numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl.metadata (6.6 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.5209260Z Collecting packaging==26.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.5393610Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.6544470Z Collecting pillow==13.0.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.6690760Z   Downloading pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.7068930Z Collecting pluggy==1.7.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.7240800Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.7625970Z Collecting Pygments==2.21.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.7796670Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.8382440Z Collecting pyparsing==3.3.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.8528350Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.8862550Z Collecting pytest==9.1.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.9003560Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.9264680Z Collecting python-dateutil==2.9.0.post0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.9391750Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:22.9961990Z Collecting setuptools==84.0.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.0325130Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.0592630Z Collecting six==1.17.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.0724010Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.0964280Z Collecting sympy==1.14.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.1096550Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.2239290Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.2562950Z   Downloading scipy-1.18.0-cp312-cp312-macosx_14_0_arm64.whl.metadata (62 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.3157720Z Downloading brian2-2.10.1-cp312-cp312-macosx_11_0_arm64.whl (1.1 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.3483900Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 47.3 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.3653570Z Downloading cython-3.1.3-cp312-cp312-macosx_11_0_arm64.whl (2.8 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.4180030Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.8/2.8 MB 54.8 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.4324210Z Downloading contourpy-1.4.0-cp312-cp312-macosx_11_0_arm64.whl (284 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.4514230Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.4765940Z Downloading fonttools-4.67.0-cp312-cp312-macosx_10_13_universal2.whl (3.1 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.5428800Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 46.2 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.5575080Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.5791790Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.6187080Z Downloading kiwisolver-1.5.1-cp312-cp312-macosx_11_0_arm64.whl (64 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.6460500Z Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl (12 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.6678280Z Downloading matplotlib-3.10.8-cp312-cp312-macosx_11_0_arm64.whl (8.1 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.8758060Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 39.0 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.8973200Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.9092000Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 32.3 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.9280800Z Downloading numpy-2.5.4-cp312-cp312-macosx_14_0_arm64.whl (5.5 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:23.9971380Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.5/5.5 MB 80.9 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.0367580Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.0739770Z Downloading pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl (4.9 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.1833750Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 45.0 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.2061300Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.2281660Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.2428980Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 75.3 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.2597950Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.2861980Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.3187750Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.3428350Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.3649250Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 30.7 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.3816740Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.4253500Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.4903730Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 98.0 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.5184290Z Downloading scipy-1.18.0-cp312-cp312-macosx_14_0_arm64.whl (20.4 MB)
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:24.8253290Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.4/20.4 MB 66.2 MB/s  0:00:00
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:25.1729240Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:42.7716040Z 
+qualification (macos-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:42.7756160Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	﻿2026-11-01T20:03:43.0276480Z ##[group]Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0277690Z ^[[36;1mpython -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist^[[0m
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0354010Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0354310Z env:
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0354510Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0354770Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0354940Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0355120Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0355420Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0355890Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0356310Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0356670Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0357100Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.0357420Z ##[endgroup]
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.7095620Z Processing ./.
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.7122940Z   Preparing metadata (pyproject.toml): started
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.9783420Z   Preparing metadata (pyproject.toml): finished with status 'done'
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.9814470Z Building wheels for collected packages: neuromancer
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:43.9827410Z   Building wheel for neuromancer (pyproject.toml): started
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:44.2860690Z   Building wheel for neuromancer (pyproject.toml): finished with status 'done'
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:44.2872150Z   Created wheel for neuromancer: filename=neuromancer-0.2.0-py3-none-any.whl size=82694 sha256=79b9a1cefb409a4d4c30d5eec168e6ae55f5de5ea711521688231ee6d48734be
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:44.2875020Z   Stored in directory: /private/var/folders/n6/hn37q6pj7sj_9dmqqc2113800000gn/T/pip-ephem-wheel-cache-wa8xwn7m/wheels/e2/8a/0b/09fe4cff2b32ebb0db92d402fc2d3d03c3a742307afa13b222
+qualification (macos-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:44.2897220Z Successfully built neuromancer
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	﻿2026-11-01T20:03:44.3371310Z ##[group]Run python -m pip install --no-deps dist/*.whl
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3371740Z ^[[36;1mpython -m pip install --no-deps dist/*.whl^[[0m
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3412840Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3413070Z env:
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3413250Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3413470Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3413630Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3413820Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3414120Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3414530Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3415010Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3415390Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3415810Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.3416080Z ##[endgroup]
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.6910880Z Processing ./dist/neuromancer-0.2.0-py3-none-any.whl
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.7061420Z Installing collected packages: neuromancer
+qualification (macos-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:44.7692440Z Successfully installed neuromancer-0.2.0
+qualification (macos-latest)	Run python -m pip check	﻿2026-11-01T20:03:44.8191180Z ##[group]Run python -m pip check
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8191500Z ^[[36;1mpython -m pip check^[[0m
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8228900Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8229140Z env:
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8229300Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8229480Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8229640Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8229820Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8230110Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8230520Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8230910Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8231270Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8231680Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:44.8232000Z ##[endgroup]
+qualification (macos-latest)	Run python -m pip check	2026-11-01T20:03:45.0844600Z No broken requirements found.
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	﻿2026-11-01T20:03:45.1169510Z ##[group]Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1170390Z ^[[36;1mpython -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"^[[0m
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1212590Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1212830Z env:
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1213010Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1213210Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1213370Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1213550Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1213890Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1214340Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1215070Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1215420Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1216340Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:45.1216770Z ##[endgroup]
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:50.7793210Z Matplotlib is building the font cache; this may take a moment.
+qualification (macos-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:04:06.4514580Z 2.5.4 2.10.1 1.18.0 9.1.1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	﻿2026-11-01T20:04:06.6888890Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6889520Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml^[[0m
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6939580Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6939830Z env:
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6940000Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6940190Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6940390Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6940600Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6940990Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6943830Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6944980Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6945970Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6946950Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:06.6947730Z ##[endgroup]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:29.5207460Z ........................................................................ [ 39%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:09.2825440Z ........................................................................ [ 78%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9464000Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9467100Z .......................................                                  [100%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9672120Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9796200Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9797070Z =============================== warnings summary ===============================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9797500Z tests/test_control.py: 22 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9798310Z tests/test_substrate.py: 3 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9807860Z   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9808880Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9810360Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9814350Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9825940Z 183 passed, 25 warnings in 81.67s (0:01:21)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:28.9923940Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:29.0207290Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:29.0309230Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:29.0410930Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:05:29.0512720Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	﻿2026-11-01T20:05:29.3902680Z ##[group]Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.3904100Z ^[[36;1mneuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke^[[0m
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4212350Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4213160Z env:
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4213390Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4213650Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4213910Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4214170Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4214570Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4215060Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4215490Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4215860Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4216240Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:05:29.4217000Z ##[endgroup]
+qualification (macos-latest)	Run actions/upload-artifact@v4	﻿2026-11-01T20:05:34.3181480Z ##[group]Run actions/upload-artifact@v4
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3181930Z with:
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3182120Z   name: v1-qualification-macos-latest
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3182420Z   path: runs/v1-ci-tests.xml
+qualification (macos-latest)	Run actions/upload-artifact@v4	runs/v1-ci-smoke
+qualification (macos-latest)	Run actions/upload-artifact@v4	dist/*.whl
+qualification (macos-latest)	Run actions/upload-artifact@v4	
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3182680Z   if-no-files-found: warn
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3182840Z   compression-level: 6
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183000Z   overwrite: false
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183150Z   include-hidden-files: false
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183330Z env:
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183460Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183620Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183780Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3183950Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3184320Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3184770Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3185220Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3186030Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3186440Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.3186700Z ##[endgroup]
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7886170Z (node:3953) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7887010Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7945480Z Multiple search paths detected. Calculating the least common ancestor of all paths
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7947810Z The least common ancestor is /Users/runner/work/neuromancer/neuromancer. This will be the root directory of the artifact
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7948490Z With the provided path, there will be 8 files uploaded
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7949140Z Artifact name is valid!
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:34.7949450Z Root directory input is valid!
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.0864340Z Beginning upload of artifact content to blob storage
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.1207810Z (node:3953) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.3341110Z Uploaded bytes 159387
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.3729950Z Finished uploading artifact content to blob storage!
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.3730660Z SHA256 digest of uploaded artifact zip is b01f86a68a0aa5217bd2282d2a0db7a584bea4f2cc2c03eb5656450599e3dae8
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.3732320Z Finalizing artifact upload
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.7922630Z Artifact v1-qualification-macos-latest.zip successfully finalized. Artifact ID 13099080617
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.7923390Z Artifact v1-qualification-macos-latest has been successfully uploaded! Final size is 159387 bytes. Artifact ID is 13099080617
+qualification (macos-latest)	Run actions/upload-artifact@v4	2026-11-01T20:05:35.7929700Z Artifact download URL: https://github.com/adithyakupad/neuromancer/actions/runs/41344770135/artifacts/13099080617
+qualification (macos-latest)	Post Run actions/setup-python@v5	﻿2026-11-01T20:05:35.8228420Z Post job cleanup.
+qualification (macos-latest)	Post Run actions/setup-python@v5	2026-11-01T20:05:35.9716520Z (node:3955) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-latest)	Post Run actions/setup-python@v5	2026-11-01T20:05:35.9717710Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-latest)	Post Run actions/checkout@v4	﻿2026-11-01T20:05:36.0107770Z Post job cleanup.
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1549080Z [command]/opt/homebrew/bin/git version
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1716480Z git version 2.56.0
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1742590Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/22131a44-0891-4d5f-9d47-353d47446cfc/.gitconfig'
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1752550Z Temporarily overriding HOME='/Users/runner/work/_temp/22131a44-0891-4d5f-9d47-353d47446cfc' before making global git config changes
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1753890Z Adding repository directory to the temporary git global config as a safe directory
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1757780Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/neuromancer/neuromancer
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.1920630Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.2007890Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.3695810Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.3764720Z http.https://github.com/.extraheader
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.3774520Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.3864000Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.5334820Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (macos-latest)	Post Run actions/checkout@v4	2026-11-01T20:05:36.5410070Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (macos-latest)	Complete job	﻿2026-11-01T20:05:36.7014670Z Cleaning up orphan processes
+qualification (macos-latest)	Complete job	2026-11-01T20:05:39.0809200Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+qualification (ubuntu-latest)	Set up job	﻿2026-11-01T20:02:31.9031568Z Current runner version: '2.338.2'
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9051956Z ##[group]Runner Image Provisioner
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9052576Z Hosted Compute Agent
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9053048Z Version: 20261021.618
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9053459Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9053914Z Build Date: 2026-10-21T00:45:21Z
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9054602Z Worker ID: {60cb5063-9e77-4720-9d69-b3a24ee41a31}
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9055046Z Region: westus2
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9055390Z Cloud: Azure
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9055822Z ##[endgroup]
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9056675Z ##[group]Operating System
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9057103Z Ubuntu
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9057485Z 26.04.1
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9057837Z LTS
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9058217Z ##[endgroup]
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9058568Z ##[group]Runner Image
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9058964Z Image: ubuntu-26.04
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9059340Z Version: 20261025.179.1
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9060024Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9061642Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9062272Z ##[endgroup]
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9062999Z ##[group]GITHUB_TOKEN Permissions
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9064643Z Contents: read
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9065029Z Metadata: read
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9065373Z ##[endgroup]
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9066905Z Secret source: Actions
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9067523Z Cache mode: write
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9068050Z Prepare workflow directory
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:31.9995096Z Prepare all required actions
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:32.0030247Z Getting action download info
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:32.3253125Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:32.3991354Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:32.4773993Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+qualification (ubuntu-latest)	Set up job	2026-11-01T20:02:32.6994477Z Complete job name: qualification (ubuntu-latest)
+qualification (ubuntu-latest)	Run actions/checkout@v4	﻿2026-11-01T20:02:32.8294075Z ##[group]Run actions/checkout@v4
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8294733Z with:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8294998Z   repository: adithyakupad/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8297228Z   token: ***
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8297471Z   ssh-strict: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8297724Z   ssh-user: git
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8297976Z   persist-credentials: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8298263Z   clean: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8298521Z   sparse-checkout-cone-mode: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8298819Z   fetch-depth: 1
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8299067Z   fetch-tags: false
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8299323Z   show-progress: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8299615Z   lfs: false
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8299856Z   submodules: false
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8300116Z   set-safe-directory: true
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8300405Z   allow-unsafe-pr-checkout: false
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8300768Z env:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8301004Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8301305Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8301574Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8301861Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:32.8302219Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0618020Z Syncing repository: adithyakupad/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0619819Z ##[group]Getting Git version info
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0620520Z Working directory is '/home/runner/work/neuromancer/neuromancer'
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0621519Z [command]/usr/bin/git version
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0621981Z git version 2.56.0
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0638282Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0643357Z Temporarily overriding HOME='/home/runner/work/_temp/cecc4f8d-31da-4ef0-afe8-5deb603428df' before making global git config changes
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0644784Z Adding repository directory to the temporary git global config as a safe directory
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0648828Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0712877Z Deleting the contents of '/home/runner/work/neuromancer/neuromancer'
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0716245Z ##[group]Initializing the repository
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0718309Z [command]/usr/bin/git init /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0823523Z hint: Using 'master' as the name for the initial branch. This default branch name
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0824651Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0825570Z hint: to use in all of your new repositories, which will suppress this warning,
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0826315Z hint: call:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0826687Z hint:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0827154Z hint: 	git config --global init.defaultBranch <name>
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0827714Z hint:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0828233Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0829128Z hint: 'development'. The just-created branch can be renamed via this command:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0829855Z hint:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0830237Z hint: 	git branch -m <name>
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0830699Z hint:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0831250Z hint: Disable this message with "git config set advice.defaultBranchName false"
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0837659Z Initialized empty Git repository in /home/runner/work/neuromancer/neuromancer/.git/
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0846682Z [command]/usr/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0894982Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0895714Z ##[group]Disabling automatic garbage collection
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0898263Z [command]/usr/bin/git config --local gc.auto 0
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0928892Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0929564Z ##[group]Setting up auth
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0934974Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.0964937Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1370133Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1400802Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1624618Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1653197Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1876951Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1912567Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1913159Z ##[group]Fetching the repository
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:33.1919789Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +f76c09d0f18850f063aad43ffa2dc09d313ba7b5:refs/remotes/origin/release/v1-audit
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4510968Z From https://github.com/adithyakupad/neuromancer
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4512734Z  * [new ref]           f76c09d0f18850f063aad43ffa2dc09d313ba7b5 -> origin/release/v1-audit
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4515882Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4516919Z ##[group]Determining the checkout info
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4518005Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4522662Z [command]/usr/bin/git sparse-checkout disable
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4577420Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4605548Z ##[group]Checking out the ref
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:48.4608992Z [command]/usr/bin/git checkout --progress --force -B release/v1-audit refs/remotes/origin/release/v1-audit
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.4926086Z Updating files:  20% (7229/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.5049666Z Updating files:  21% (7462/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.5191343Z Updating files:  22% (7817/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.5320708Z Updating files:  23% (8172/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.5459527Z Updating files:  24% (8528/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.6537849Z Updating files:  25% (8883/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.7971935Z Updating files:  26% (9238/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8108865Z Updating files:  27% (9594/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8223425Z Updating files:  28% (9949/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8362350Z Updating files:  29% (10304/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8576589Z Updating files:  30% (10659/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8717256Z Updating files:  31% (11015/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.8944661Z Updating files:  32% (11370/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.9090585Z Updating files:  33% (11725/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.9220878Z Updating files:  34% (12081/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:49.9361843Z Updating files:  35% (12436/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.0088893Z Updating files:  36% (12791/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.1875424Z Updating files:  37% (13147/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.2488288Z Updating files:  38% (13502/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.2602109Z Updating files:  39% (13857/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.3668043Z Updating files:  40% (14212/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.3780524Z Updating files:  41% (14568/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.3918624Z Updating files:  42% (14923/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4029802Z Updating files:  43% (15278/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4246297Z Updating files:  44% (15634/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4364951Z Updating files:  45% (15989/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4591530Z Updating files:  46% (16344/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4723380Z Updating files:  47% (16700/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4830531Z Updating files:  48% (17055/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4850647Z Updating files:  49% (17410/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.4939257Z Updating files:  49% (17481/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5082210Z Updating files:  50% (17765/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5188390Z Updating files:  51% (18121/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5290017Z Updating files:  52% (18476/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5397975Z Updating files:  53% (18831/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5541398Z Updating files:  54% (19187/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5653742Z Updating files:  55% (19542/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5800607Z Updating files:  56% (19897/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.5902613Z Updating files:  57% (20253/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6009013Z Updating files:  58% (20608/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6125417Z Updating files:  59% (20963/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6276191Z Updating files:  60% (21318/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6391027Z Updating files:  61% (21674/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6540902Z Updating files:  62% (22029/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.6742683Z Updating files:  63% (22384/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.7313582Z Updating files:  64% (22740/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.7850052Z Updating files:  65% (23095/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.8497369Z Updating files:  66% (23450/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.9039966Z Updating files:  67% (23806/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:50.9623382Z Updating files:  68% (24161/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.0154046Z Updating files:  69% (24516/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.0762914Z Updating files:  70% (24871/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.1308130Z Updating files:  71% (25227/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.1825056Z Updating files:  72% (25582/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.2367675Z Updating files:  73% (25937/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.2867426Z Updating files:  74% (26293/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.3458878Z Updating files:  75% (26648/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.4017767Z Updating files:  76% (27003/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.4829466Z Updating files:  77% (27359/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.4855826Z Updating files:  78% (27714/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.5395131Z Updating files:  78% (27730/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.5877781Z Updating files:  79% (28069/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.6458478Z Updating files:  80% (28424/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.7000606Z Updating files:  81% (28780/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.7508084Z Updating files:  82% (29135/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.8066003Z Updating files:  83% (29490/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.8588280Z Updating files:  84% (29846/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.9184374Z Updating files:  85% (30201/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:51.9745367Z Updating files:  86% (30556/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.0275963Z Updating files:  87% (30912/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.0826281Z Updating files:  88% (31267/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.1333192Z Updating files:  89% (31622/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.1937143Z Updating files:  90% (31977/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.2790453Z Updating files:  91% (32333/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.2933015Z Updating files:  92% (32688/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.3040228Z Updating files:  93% (33043/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.3142218Z Updating files:  94% (33399/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.3289444Z Updating files:  95% (33754/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.3430802Z Updating files:  96% (34109/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.3582860Z Updating files:  97% (34465/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5295517Z Updating files:  98% (34820/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5431575Z Updating files:  98% (34840/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5544329Z Updating files:  99% (35175/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5544860Z Updating files: 100% (35530/35530)
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5550292Z Updating files: 100% (35530/35530), done.
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5799433Z Switched to a new branch 'release/v1-audit'
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.5804373Z branch 'release/v1-audit' set up to track 'origin/release/v1-audit'.
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.6002051Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.6047290Z [command]/usr/bin/git log -1 --format=%H
+qualification (ubuntu-latest)	Run actions/checkout@v4	2026-11-01T20:02:52.6069694Z f76c09d0f18850f063aad43ffa2dc09d313ba7b5
+qualification (ubuntu-latest)	Run actions/setup-python@v5	﻿2026-11-01T20:02:52.6609716Z ##[group]Run actions/setup-python@v5
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6609900Z with:
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6610026Z   python-version: 3.12
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6610159Z   check-latest: false
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6611521Z   token: ***
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6611648Z   update-environment: true
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6611794Z   allow-prereleases: false
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6611934Z   freethreaded: false
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612057Z env:
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612174Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612319Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612451Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612611Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.6612777Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.7502460Z ##[group]Installed versions
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.7627711Z (node:2437) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.7628143Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.7628793Z Successfully set up CPython (3.12.15)
+qualification (ubuntu-latest)	Run actions/setup-python@v5	2026-11-01T20:02:52.7629229Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	﻿2026-11-01T20:02:52.7922295Z ##[group]Run python -m pip install -r requirements-v1.txt
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7922631Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7963851Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7964017Z env:
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7964435Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7964582Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7964720Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7964869Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7965092Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7977286Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7977594Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7977837Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7978090Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7978321Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:52.7978552Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.7951791Z Collecting Brian2==2.10.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.8666028Z   Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.9121178Z Collecting contourpy==1.4.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.9199318Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.9349791Z Collecting cycler==0.12.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:53.9435664Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.0735001Z Collecting Cython==3.1.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.0844408Z   Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.1683351Z Collecting fonttools==4.67.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.1829408Z   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.2125840Z Collecting iniconfig==2.3.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.2329049Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.2481159Z Collecting Jinja2==3.1.6 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.2572334Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.3106203Z Collecting kiwisolver==1.5.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.3189728Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.3518595Z Collecting MarkupSafe==3.0.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.3583377Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.4468590Z Collecting matplotlib==3.10.8 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.4549988Z   Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.5993127Z Collecting mpmath==1.3.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.6056692Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.7287649Z Collecting numpy==2.5.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.7360375Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.7512702Z Collecting packaging==26.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.7583225Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.8677291Z Collecting pillow==13.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.8752752Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.8893311Z Collecting pluggy==1.7.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.8975617Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9125027Z Collecting Pygments==2.21.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9192955Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9365167Z Collecting pyparsing==3.3.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9449957Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9739882Z Collecting pytest==9.1.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:54.9817499Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0028612Z Collecting python-dateutil==2.9.0.post0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0127252Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0551003Z Collecting setuptools==84.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0638613Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0787855Z Collecting six==1.17.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0857577Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.0993944Z Collecting sympy==1.14.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.1117752Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.1827068Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.1908588Z   Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.2243947Z Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.2706879Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 54.0 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.2852812Z Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.3504230Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 48.3 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.3582638Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.3671053Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.3865926Z Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.4607838Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 72.7 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.4683539Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.4771766Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.4854757Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.4940872Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 170.7 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.5011855Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.5098247Z Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.6215884Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 78.2 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.6363274Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.6597495Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 22.6 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.6669070Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.8107787Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 115.8 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.8182954Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.8269704Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.8997447Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 97.7 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9073587Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9175148Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9232662Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 238.1 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9319766Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9401445Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9493870Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9604406Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9662481Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 134.2 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9737478Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:55.9835892Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:56.0287541Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 140.1 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:56.0360002Z Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:56.6782966Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 55.1 MB/s  0:00:00
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:02:56.8836489Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:09.4260554Z 
+qualification (ubuntu-latest)	Run python -m pip install -r requirements-v1.txt	2026-11-01T20:03:09.4276896Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	﻿2026-11-01T20:03:09.5529450Z ##[group]Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5529839Z ^[[36;1mpython -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist^[[0m
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557086Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557242Z env:
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557362Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557518Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557657Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5557806Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5558027Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5558277Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5558519Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5558739Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5558967Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5559192Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.5559414Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.8376911Z Processing ./.
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:09.8388137Z   Preparing metadata (pyproject.toml): started
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.0674870Z   Preparing metadata (pyproject.toml): finished with status 'done'
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.0692339Z Building wheels for collected packages: neuromancer
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.0698181Z   Building wheel for neuromancer (pyproject.toml): started
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.2559167Z   Building wheel for neuromancer (pyproject.toml): finished with status 'done'
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.2565597Z   Created wheel for neuromancer: filename=neuromancer-0.2.0-py3-none-any.whl size=82694 sha256=1e34c1d34a4986ecddaf6d29ac53fec8b5782dc991243448516ff8485e29372f
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.2566540Z   Stored in directory: /tmp/pip-ephem-wheel-cache-dsl_sln7/wheels/5b/be/0c/f3c68bcae6b907cf7d005d256ee3f8974bc9b52a9ea2bee757
+qualification (ubuntu-latest)	Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist	2026-11-01T20:03:10.2583337Z Successfully built neuromancer
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	﻿2026-11-01T20:03:10.3471550Z ##[group]Run python -m pip install --no-deps dist/*.whl
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3471838Z ^[[36;1mpython -m pip install --no-deps dist/*.whl^[[0m
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3498409Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3498559Z env:
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3498679Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3498822Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3498964Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3499110Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3499311Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3499707Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3499950Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3500167Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3500387Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3500609Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.3500835Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.5733067Z Processing ./dist/neuromancer-0.2.0-py3-none-any.whl
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.5844591Z Installing collected packages: neuromancer
+qualification (ubuntu-latest)	Run python -m pip install --no-deps dist/*.whl	2026-11-01T20:03:10.7635712Z Successfully installed neuromancer-0.2.0
+qualification (ubuntu-latest)	Run python -m pip check	﻿2026-11-01T20:03:11.2127758Z ##[group]Run python -m pip check
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2127980Z ^[[36;1mpython -m pip check^[[0m
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2153538Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2153687Z env:
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2153811Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2153970Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2154208Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2154362Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2154563Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2154808Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2155078Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2155298Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2155515Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2155739Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.2155925Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pip check	2026-11-01T20:03:11.3778428Z No broken requirements found.
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	﻿2026-11-01T20:03:11.4033203Z ##[group]Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4033773Z ^[[36;1mpython -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"^[[0m
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060173Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060324Z env:
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060447Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060591Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060727Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4060873Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4061074Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4061317Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4061557Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4061771Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4062013Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4062235Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:11.4062448Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"	2026-11-01T20:03:12.4995882Z 2.5.4 2.10.1 1.18.0 9.1.1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	﻿2026-11-01T20:03:12.6536135Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6536443Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml^[[0m
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563058Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563224Z env:
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563359Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563506Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563641Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563788Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6563987Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6564329Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6564576Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6564795Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6565016Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6565395Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:12.6565627Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:03:29.5920261Z ........................................................................ [ 39%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:04.2440476Z ........................................................................ [ 78%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3144719Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3146848Z The object was created here (most recent call only):
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3147221Z   File '/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3147804Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3148530Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3149052Z The object was created here (most recent call only):
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3149399Z   File '/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3149900Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3150313Z .......................................                                  [100%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3150539Z =============================== warnings summary ===============================
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3150740Z tests/test_control.py: 22 warnings
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3150903Z tests/test_substrate.py: 3 warnings
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3151324Z   /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3151787Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3151920Z 
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3152070Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T20:04:20.3152312Z 183 passed, 25 warnings in 67.41s (0:01:07)
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	﻿2026-11-01T20:04:20.6257338Z ##[group]Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6257890Z ^[[36;1mneuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke^[[0m
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6290639Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6290808Z env:
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6290930Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6291075Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6291221Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6291390Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6291598Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6291853Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6292100Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6292320Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6292539Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6292765Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke	2026-11-01T20:04:20.6292992Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	﻿2026-11-01T20:04:23.3821870Z ##[group]Run actions/upload-artifact@v4
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3822063Z with:
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3822205Z   name: v1-qualification-ubuntu-latest
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3822410Z   path: runs/v1-ci-tests.xml
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	runs/v1-ci-smoke
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	dist/*.whl
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3822620Z   if-no-files-found: warn
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3822871Z   compression-level: 6
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823222Z   overwrite: false
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823356Z   include-hidden-files: false
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823496Z env:
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823617Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823762Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3823899Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3824047Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3824439Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3824687Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3824929Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3825147Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3825392Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3825615Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.3825806Z ##[endgroup]
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.4986931Z (node:2640) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.4987639Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.5058308Z Multiple search paths detected. Calculating the least common ancestor of all paths
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.5060539Z The least common ancestor is /home/runner/work/neuromancer/neuromancer. This will be the root directory of the artifact
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.5061072Z With the provided path, there will be 8 files uploaded
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.5063734Z Artifact name is valid!
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.5064266Z Root directory input is valid!
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.8641301Z Beginning upload of artifact content to blob storage
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:23.8959324Z (node:2640) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.3814503Z Uploaded bytes 163837
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.4593935Z Finished uploading artifact content to blob storage!
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.4594756Z SHA256 digest of uploaded artifact zip is c94d1d9dbc862ae6b544ef8d48ca86bf5ca51df98d5388b4c8fc212a9c04a4d8
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.4595303Z Finalizing artifact upload
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.9523285Z Artifact v1-qualification-ubuntu-latest.zip successfully finalized. Artifact ID 13098796898
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.9524070Z Artifact v1-qualification-ubuntu-latest has been successfully uploaded! Final size is 163837 bytes. Artifact ID is 13098796898
+qualification (ubuntu-latest)	Run actions/upload-artifact@v4	2026-11-01T20:04:24.9528633Z Artifact download URL: https://github.com/adithyakupad/neuromancer/actions/runs/41344770135/artifacts/13098796898
+qualification (ubuntu-latest)	Post Run actions/setup-python@v5	﻿2026-11-01T20:04:24.9816590Z Post job cleanup.
+qualification (ubuntu-latest)	Post Run actions/setup-python@v5	2026-11-01T20:04:25.0675464Z (node:2653) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	Post Run actions/setup-python@v5	2026-11-01T20:04:25.0675964Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	﻿2026-11-01T20:04:25.1060471Z Post job cleanup.
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1665609Z [command]/usr/bin/git version
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1701193Z git version 2.56.0
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1726974Z Temporarily overriding HOME='/home/runner/work/_temp/1cbdb9a2-80ee-451d-923d-377055f8db48' before making global git config changes
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1727692Z Adding repository directory to the temporary git global config as a safe directory
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1730507Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1769925Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.1806048Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2127726Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2156341Z http.https://github.com/.extraheader
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2165796Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2202816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2487440Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (ubuntu-latest)	Post Run actions/checkout@v4	2026-11-01T20:04:25.2517247Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (ubuntu-latest)	Complete job	﻿2026-11-01T20:04:25.2941854Z Cleaning up orphan processes
+qualification (ubuntu-latest)	Complete job	2026-11-01T20:04:25.3181466Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

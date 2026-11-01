@@ -20,7 +20,7 @@ The substrate is a simplified recurrent E/I LIF network with exponential synapti
 
 Observation, stimulation and integration clocks differ: 20 ms public bins, 1 s controller aggregation/planning, and 100 µs neural integration. Virtual-time causality is qualified; physical hardware real-time execution is not. Measured planner latencies on one host do not establish worst-case execution bounds or CL1 compatibility. macOS suspend-inclusive timing uses qualified APIs and injected-clock tests; no deliberate physical sleep/resume qualification was performed.
 
-DELAY/DROP diagnostics withhold due observations and discard stale data. Their identical online absence does not validate a network transport implementation, arbitrary delays or hardware buffering. POSIX process-group supervision does not contain malicious descendants that escape their group. Linux support requires actual hosted qualification; Windows is outside the qualified supervisor scope.
+DELAY/DROP diagnostics withhold due observations and discard stale data. Their identical online absence does not validate a network transport implementation, arbitrary delays or hardware buffering. POSIX process-group supervision does not contain malicious descendants that escape their group. M007 hosted Linux/macOS regressions passed; the full acquisition launcher remains macOS-specific, and cross-platform bitwise replay is not established. Windows is outside the qualified supervisor scope.
 
 ## Historical negative findings remain valid
 

@@ -1,4 +1,4 @@
-> **Publication HOLD:** a later V1.1 macOS run failed the supervisor before-cutoff fixture shared with V1. Exact V1 PR checks remain green, but publication awaits diagnosis of that new evidence. No scientific result changed.
+> **Unpublished V1 release candidate:** original V1 plus the M008/M009 reliability correction. Optional personal-style and V1.1 performance work remains HOLD and is excluded. Exact reviewed-revision checks and final maintainer authorization are required. See the [M011 isolation audit](reports/engineering/M011_RELEASE_ISOLATION.md).
 
 # NEUROMANCER — in silico neural-control research
 
@@ -79,4 +79,4 @@ Read the [V1 research report](reports/NEUROMANCER_V1_RESEARCH_REPORT.md), [M007 
 
 ## Release and roadmap
 
-This repository is a review candidate. MIT license and v1.0.0 metadata are prepared on the release branch. Hosted CI passed for release-preparation commit `abd811a053e10ad7ee5126efbc95fefd73e55c8d` on Linux and macOS. Final maintainer authorization to merge, tag and publish remains required. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.
+This is the isolated V1 review candidate, based on `86ad99f6956c76a5bb6d169e21544684f57c9270`, with only release-status documentation added by M011. MIT licensing, version 1.0.0 and the original scientific implementation/evidence are preserved. No optional style, M010 fixture, V1.1 optimization or new scientific experiment is included. All mandatory checks must pass on the exact reviewed candidate revision; earlier checks do not substitute for it. Final maintainer authorization to merge, tag and publish remains required. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.

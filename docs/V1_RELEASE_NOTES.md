@@ -22,3 +22,18 @@ Post-loss IAE (Hz·s): PI 11.46875, RLS-MPC 13.12922, fixed MPC 18.97781. RLS's 
 This is a suggested future release, not an existing tag or GitHub release. The M007 audit originally inspected package metadata version **0.2.0** and no LICENSE file. Release-preparation changes now set package metadata to **1.0.0** and add an **MIT LICENSE** on a dedicated branch. The release-preparation commit `abd811a053e10ad7ee5126efbc95fefd73e55c8d` passed Linux/macOS hosted CI, and its wheel was built and inspected again during FINALIZE & OPTIMIZE. Publication still requires final maintainer authorization. Scientific evidence is unchanged. Neither issue changes the measured scientific results.
 
 See the [M007 audit](../reports/M007_FINAL_RELEASE_AUDIT.md), [scientific limitations](V1_SCIENTIFIC_LIMITATIONS.md) and [reproduction guide](V1_REPRODUCIBILITY.md). No merge, tag, locked experiment or publication follows automatically.
+
+## Isolated V1 review (M011)
+
+The current release review branch starts at M009 reliability-only commit
+`86ad99f6956c76a5bb6d169e21544684f57c9270`. It includes the qualified M008/M009
+supervisor correction, original scientific implementation/evidence, MIT licensing
+and version1.0.0. M011 changes release-facing status documentation only. It does
+not include personal-style refactoring, M010's failed fixture follow-up or V1.1
+performance changes. Their HOLD/failed targets remain separate historical results.
+
+See the [M011 isolation audit](../reports/engineering/M011_RELEASE_ISOLATION.md).
+Fresh full qualification and Linux/macOS checks on the exact containing candidate
+commit are required before approval; no earlier unrelated green run substitutes.
+A proposed release is not authorization to merge, tag or publish. The earlier
+M007 and release-preparation observations above remain historical records.

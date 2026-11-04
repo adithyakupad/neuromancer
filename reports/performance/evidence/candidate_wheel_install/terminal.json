@@ -1,0 +1,144 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--force-reinstall",
+        "--no-deps",
+        "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/wheel/neuromancer-1.1.0rc1-py3-none-any.whl"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261563706091416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261563707470958
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261563907557833
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88941,
+      "pgid": 88941,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/candidate_wheel_install/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261563706091416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261563908958750
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261564020489791
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88943,
+      "pgid": 88943,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/candidate_wheel_install/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-c",
+        "import neuromancer,numpy,brian2,scipy,pytest,importlib.metadata; print(neuromancer.__file__); print(importlib.metadata.version(\"neuromancer\"))"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261563706091416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261564021775875
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261564591368125
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88945,
+      "pgid": 88945,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/candidate_wheel_install/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/neuromancer-diagnostic",
+        "--mode",
+        "smoke",
+        "--output",
+        "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/candidate_wheel_smoke"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261563706091416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261564592756125
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261566165328666
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88955,
+      "pgid": 88955,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/candidate_wheel_install/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1261563706091416,
+  "deadline_ns": 1261860816372708,
+  "work_cutoff_ns": 1261860016372708,
+  "finished_ns": 1261566165419083,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1261860816372708,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

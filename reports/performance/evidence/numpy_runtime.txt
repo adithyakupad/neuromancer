@@ -1,0 +1,86 @@
+WARNING: `threadpoolctl` not found in system! Install it by `pip install threadpoolctl`. Once installed, try `np.show_runtime` again for more detailed build information
+[{'numpy_version': '2.5.4',
+  'python': '3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 '
+            '(clang-2100.3.34.2)]',
+  'uname': uname_result(system='Darwin', node='Adithyas-MacBook-Pro.local', release='25.5.0', version='Darwin Kernel Version 25.5.0: Tue Jun  9 22:28:17 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8142', machine='arm64')},
+ {'simd_extensions': {'baseline': ['NEON', 'NEON_FP16', 'NEON_VFPV4', 'ASIMD'],
+                      'found': ['ASIMDHP', 'ASIMDDP'],
+                      'not_found': ['ASIMDFHM']}},
+ {'ignore_floating_point_errors_in_matmul': True}]
+{
+  "Compilers": {
+    "c": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "15.0.0",
+      "commands": "cc"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.3.0",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "15.0.0",
+      "commands": "c++"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "aarch64",
+      "family": "aarch64",
+      "endian": "little",
+      "system": "darwin"
+    },
+    "build": {
+      "cpu": "aarch64",
+      "family": "aarch64",
+      "endian": "little",
+      "system": "darwin"
+    }
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    },
+    "lapack": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    }
+  },
+  "Python Information": {
+    "path": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/build-env-b5_gj3sx/bin/python",
+    "version": "3.12"
+  },
+  "SIMD Extensions": {
+    "baseline": [
+      "NEON",
+      "NEON_FP16",
+      "NEON_VFPV4",
+      "ASIMD"
+    ],
+    "found": [
+      "ASIMDHP",
+      "ASIMDDP"
+    ],
+    "not found": [
+      "ASIMDFHM"
+    ]
+  }
+}

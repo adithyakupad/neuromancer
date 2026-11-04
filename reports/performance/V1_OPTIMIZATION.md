@@ -27,3 +27,18 @@ oversubscription or BLAS claims. P5 final rerun/evidence reproduction follows th
 All25 warnings are retained Brian2/pyparsing deprecations. No suppressed/skipped tests.
 Physical suspend not tested; qualified native continuous clock and bounded process groups
 remain the existing resource contract. No hard real-time or hardware qualification.
+
+## Final measured decision
+
+Final199tests passed in41.74s with25warnings; four source-evidence tables and four figures
+reproduced byte-for-byte. Final shared900s qualification closed with737.611s remaining.
+Preserved benchmark signatures and original-source causal workflow match exactly.
+Final peak neural RSS1.014GB to0.538GB; noise traced peak480MB to240MB.
+No2x runtime goal achieved. Interleaved planner p95 improves10.46%, but its maximum worsens;
+separate final-matrix p95 regresses45.9%. All samples retained. The full30% goal FAILS.
+Bank optimization is a local computation saving, not a universal whole-planner/tail guarantee.
+No new variant or parameter search was added to chase the unfavorable timing run.
+
+V1.1.0rc1 is a numerically qualified review candidate, not a performance-success or published
+release. Publication HOLD; final comparison report includes all costs, tradeoffs and gaps.
+Scientific proposals remain on the separate research branch. No merge/tag/publication.

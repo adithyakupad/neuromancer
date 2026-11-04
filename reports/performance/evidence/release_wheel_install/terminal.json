@@ -1,0 +1,144 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--force-reinstall",
+        "--no-deps",
+        "/tmp/neuromancer-v1-release-wheel/neuromancer-1.0.0-py3-none-any.whl"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261560816561291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261560818504125
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261561065179583
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88906,
+      "pgid": 88906,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/release_wheel_install/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261560816561291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261561066659916
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261561178855125
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88907,
+      "pgid": 88907,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/release_wheel_install/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-c",
+        "import neuromancer,numpy,brian2,scipy,pytest,importlib.metadata; print(neuromancer.__file__); print(importlib.metadata.version(\"neuromancer\"))"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261560816561291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261561180225458
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261561824927875
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88908,
+      "pgid": 88908,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/release_wheel_install/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/neuromancer-diagnostic",
+        "--mode",
+        "smoke",
+        "--output",
+        "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/release_wheel_smoke"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1261560816561291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1261561826197583
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1261563704003125
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 88919,
+      "pgid": 88919,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/release_wheel_install/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1261560816561291,
+  "deadline_ns": 1261860816372708,
+  "work_cutoff_ns": 1261860016372708,
+  "finished_ns": 1261563704096541,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1261860816372708,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

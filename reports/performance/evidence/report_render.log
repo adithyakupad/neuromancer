@@ -1,0 +1,14 @@
+| Component | Baseline | Candidate | Unit | Baseline/candidate |
+|---|---:|---:|---|---:|
+| 1s block |0.729837|0.729312|s|1.001|
+| 1s stepped20ms |1.83207|1.75667|s|1.043|
+| representative workflow |2.06153|2.03454|s|1.013|
+| noise generation |0.131536|0.140962|s|0.933|
+| planner bank p95 |0.613245|0.212498|ms|2.886|
+| planner final-matrix p95 |4.71142|6.87516|ms|0.685|
+| planner interleaved p95 |5.61722|5.02974|ms|1.117|
+| planner interleaved maximum |12.1687|27.0716|ms|0.450|
+| neural peak RSS |1.01392e+09|5.38083e+08|bytes|1.884|
+| noise traced peak |4.80003e+08|2.40068e+08|bytes|1.999|
+
+retention {"reference": {"False": {"median_wall_s": 0.79945025, "retained_payload_bytes": 0}, "True": {"median_wall_s": 0.705212875, "retained_payload_bytes": 230232}}, "final": {"False": {"median_wall_s": 0.744454875, "retained_payload_bytes": 0}, "True": {"median_wall_s": 0.725849, "retained_payload_bytes": 230232}}}

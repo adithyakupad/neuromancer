@@ -1,0 +1,116 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "venv",
+        "/tmp/neuromancer-m011-v1-env"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1318241918857958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1318241920495208
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1318243048669875
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19456,
+      "pgid": 19456,
+      "stop_file": "/private/tmp/neuromancer-m011-v1/reports/engineering/evidence/m011/release/installation/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--timeout",
+        "30",
+        "--retries",
+        "1",
+        "-r",
+        "requirements-v1.txt"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1318241918857958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1318243049979375
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1318251962744875
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19461,
+      "pgid": 19461,
+      "stop_file": "/private/tmp/neuromancer-m011-v1/reports/engineering/evidence/m011/release/installation/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1318241918857958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1318251964199458
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1318252075937916
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19467,
+      "pgid": 19467,
+      "stop_file": "/private/tmp/neuromancer-m011-v1/reports/engineering/evidence/m011/release/installation/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1318241918857958,
+  "deadline_ns": 1318841918670208,
+  "work_cutoff_ns": 1318841118670208,
+  "finished_ns": 1318252076008083,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1318841918670208,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

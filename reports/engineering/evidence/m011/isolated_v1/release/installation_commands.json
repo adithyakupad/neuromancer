@@ -1,0 +1,26 @@
+[
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "venv",
+    "/tmp/neuromancer-m011-v1-env"
+  ],
+  [
+    "/tmp/neuromancer-m011-v1-env/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--timeout",
+    "30",
+    "--retries",
+    "1",
+    "-r",
+    "requirements-v1.txt"
+  ],
+  [
+    "/tmp/neuromancer-m011-v1-env/bin/python",
+    "-m",
+    "pip",
+    "check"
+  ]
+]

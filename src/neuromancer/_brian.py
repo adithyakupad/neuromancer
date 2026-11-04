@@ -80,7 +80,10 @@ def innovations(config: Config, block: int):
     if config.dt_us == 50:
         return fine, fine_hash
     a = math.exp(-.05 / 5)
-    coarse = (a * fine[::2] + fine[1::2]) / math.sqrt(1 + a*a)
+    # Preserve multiplication, addition and division order; reuse their output.
+    coarse = a * fine[::2]
+    np.add(coarse, fine[1::2], out=coarse)
+    np.divide(coarse, math.sqrt(1 + a*a), out=coarse)
     return coarse, fine_hash
 
 

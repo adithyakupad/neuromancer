@@ -1,3 +1,5 @@
+> **Publication HOLD:** a later V1.1 macOS run failed the supervisor before-cutoff fixture shared with V1. Exact V1 PR checks remain green, but publication awaits diagnosis of that new evidence. No scientific result changed.
+
 # NEUROMANCER — in silico neural-control research
 
 NEUROMANCER investigates whether constrained stimulation and partial spike recordings can support identification, prediction and regulation of a noisy neural population. V1 is a **simulation research candidate**, not a biological computer or a validated hardware system.

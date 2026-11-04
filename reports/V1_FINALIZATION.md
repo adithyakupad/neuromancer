@@ -52,3 +52,13 @@ wheel83.6KiB intentionally omits archives. Do not migrate/delete historical data
 
 No authorization for these publication mutations is inferred from routine engineering authorization.
 Performance changes live on separate branches and must not be included in v1.0.0.
+
+## Later engineering stop —2026-11-04
+
+The final V1.1 review commit f79538f1 failed macOS run41788028586:198passed,1failed.
+The unchanged shared supervisor before-cutoff fixture returned DEADLINE_EXCEEDED instead
+of COMPLETED. Exact V1 PR7d63b1f5CI remains green; its earlier outcome is not rewritten.
+Nevertheless current V1 publication readiness is HOLD pending bounded diagnosis of the
+shared timing contract. No code,deadline,test expectation or scientific result changed.
+No manual rerun or publication performed. Failure logs/design diagnosis live on the separate
+performance review branch. Final authorization is premature until this gate is resolved.

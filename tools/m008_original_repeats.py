@@ -4,6 +4,8 @@ from pathlib import Path
 from neuromancer.supervisor import Deadline,atomic_json
 
 def main():
+ expected=json.loads(Path('reports/engineering/evidence/m008/original/source.json').read_text())['sha256']
+ if any(hashlib.sha256(Path(n).read_bytes()).hexdigest()!=h for n,h in expected.items()):raise RuntimeError('Original fixture requires checkout db454102; do not label corrected-source runs unchanged')
  out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=False);d=Deadline.after(900);rows=[]
  hashes={p:hashlib.sha256(Path(p).read_bytes()).hexdigest() for p in ('src/neuromancer/supervisor.py','src/neuromancer/clocks.py','tests/test_supervisor.py','tests/supervisor_worker.py')}
  atomic_json(out/'source.json',dict(revision=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),sha256=hashes,python=sys.version,platform=platform.platform(),clock_id=d.clock_id,deadline_ns=d.end_ns))

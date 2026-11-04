@@ -1,0 +1,35 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_supervisor_boundaries.py",
+        "tests/test_suspend_clock.py",
+        "tests/test_supervisor.py",
+        "--basetemp=reports/engineering/evidence/m008/focused_tmp",
+        "--junitxml=reports/engineering/evidence/m008/focused.xml"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1263955924871916
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1263955926418875
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 93278,
+      "pgid": 93278,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m008/focused_supervision/stop-0"
+    }
+  ]
+}

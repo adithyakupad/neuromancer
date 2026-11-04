@@ -1,12 +1,12 @@
 """Frozen diagnostic conditions; every trial retained regardless of status."""
-import json,os,signal,subprocess,sys,time
+import hashlib,json,os,signal,subprocess,sys,time
 from pathlib import Path
 from neuromancer.supervisor import Deadline,atomic_json
 
 def main():
  out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=False);d=Deadline.after(900);rows=[]
  conditions=['ordinary']*20+['immediate']*3+[c for c in ('wake_delay','parent_delay','import_delay','persist_delay') for _ in range(3)]
- atomic_json(out/'manifest.json',dict(conditions=conditions,clock_id=d.clock_id,deadline_ns=d.end_ns))
+ atomic_json(out/'manifest.json',dict(conditions=conditions,clock_id=d.clock_id,deadline_ns=d.end_ns,source_revision=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),sha256={n:hashlib.sha256(Path(n).read_bytes()).hexdigest() for n in ('src/neuromancer/supervisor.py','src/neuromancer/clocks.py','tests/supervisor_worker.py','tests/supervisor_timing.py','tools/m008_trial.py')}))
  for i,condition in enumerate(conditions):
   d.check();folder=out/f'{i:02d}_{condition}';began=time.monotonic_ns();watchdog=False
   with (out/f'{i:02d}.log').open('wb') as log:

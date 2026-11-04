@@ -38,10 +38,11 @@ def main():
     rss=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*(1 if sys.platform=='darwin' else 1024)
     assert rss<=1024**3
     assert r['cleanup_verified'] and r['finished_ns']<=r['deadline_ns'],r
-    for f in (a.output/'worker').rglob('pid.json'):
-        pid=json.loads(f.read_text())['pid']
+    owned={w['pid'] for w in r['workers'] if 'pid' in w}
+    owned.update(json.loads(f.read_text())['pid'] for f in (a.output/'worker').rglob('pid.json'))
+    for pid in owned:
         try:os.kill(pid,0)
         except ProcessLookupError:pass
         else:raise AssertionError(f'Owned PID still present: {pid}')
-    s.atomic_json(a.output/'checked.json',dict(cleanup_verified=True,rss_bytes=rss,perturbation_applied=stall_done))
+    s.atomic_json(a.output/'checked.json',dict(cleanup_verified=True,rss_bytes=rss,parent_stall_applied=stall_done,worker_injection_requested=a.condition if a.condition in ('wake_delay','import_delay') else None))
 if __name__=='__main__':main()

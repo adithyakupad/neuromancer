@@ -1,0 +1,17 @@
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <http://brian.discourse.group/>, or to the issue tracker at <https://github.com/brian-team/brian2/issues>. Please include this file with debug information in your report: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_debug_8sn778f5.log  Additionally, you can also include a copy of the script that was run, available at: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_script_ex19bgnk.py Thanks! [brian2]
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/benchmarks/closed_loop.py", line 35, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/benchmarks/closed_loop.py", line 20, in main
+    result=engine.advance(Command('trial',str(k),t,tuple(current)),t+20000)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/neuromancer-v1-reference/src/neuromancer/_brian.py", line 188, in advance
+    return self.run_commands([command])[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/neuromancer-v1-reference/src/neuromancer/_brian.py", line 205, in run_commands
+    currents = self._validate(command, timestamp, previous, ids)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/neuromancer-v1-reference/src/neuromancer/_brian.py", line 175, in _validate
+    raise ValueError('Expected four numerical currents in pA')
+ValueError: Expected four numerical currents in pA

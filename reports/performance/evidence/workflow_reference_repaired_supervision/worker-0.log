@@ -1,0 +1,9 @@
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <http://brian.discourse.group/>, or to the issue tracker at <https://github.com/brian-team/brian2/issues>. Please include this file with debug information in your report: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_debug_kfynoglx.log  Additionally, you can also include a copy of the script that was run, available at: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_script_zum3fg1s.py Thanks! [brian2]
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/benchmarks/closed_loop.py", line 35, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/benchmarks/closed_loop.py", line 20, in main
+    result=engine.advance(Command('trial',str(k),t,tuple(map(float,current))),t+20000)
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: only 0-dimensional arrays can be converted to Python scalars

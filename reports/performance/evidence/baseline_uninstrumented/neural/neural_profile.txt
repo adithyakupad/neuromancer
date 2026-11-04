@@ -1,0 +1,68 @@
+         8585051 function calls (7923301 primitive calls) in 2.272 seconds
+
+   Ordered by: cumulative time
+   List reduced from 589 to 60 due to restriction <60>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.592    2.592 /Users/adithyaupad/Developer/neuromancer/src/neuromancer/diagnostic.py:26(run_hold)
+        1    0.002    0.002    2.592    2.592 /Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py:190(run_commands)
+  850/400    0.001    0.000    2.426    0.006 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/base.py:342(device_override_decorated_function)
+   252/52    0.001    0.000    2.425    0.047 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/units/fundamentalunits.py:2580(new_f)
+       50    0.022    0.000    2.424    0.048 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/network.py:1047(run)
+       50    0.001    0.000    0.965    0.019 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/network.py:935(before_run)
+      400    0.000    0.000    0.939    0.002 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/groups/group.py:1491(before_run)
+      400    0.002    0.000    0.916    0.002 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/groups/group.py:1455(create_default_code_object)
+      400    0.008    0.000    0.857    0.002 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/codeobject.py:272(create_runner_codeobj)
+     2050    0.005    0.000    0.683    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:89(cached_func)
+531750/7450    0.290    0.000    0.677    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:122(_hashable)
+       50    0.667    0.013    0.667    0.013 {built-in method gc.collect}
+    31600    0.007    0.000    0.659    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:130(<genexpr>)
+     1200    0.006    0.000    0.596    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/translation.py:55(analyse_identifiers)
+   100050    0.018    0.000    0.584    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/base.py:237(run)
+      300    0.000    0.000    0.577    0.002 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/groups/group.py:1482(create_code_objects)
+    90050    0.027    0.000    0.566    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/codeobject.py:126(__call__)
+    91050    0.012    0.000    0.542    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/runtime/numpy_rt/numpy_rt.py:271(run_block)
+    90050    0.010    0.000    0.530    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/codeobject.py:148(run)
+    90200    0.019    0.000    0.530    0.000 {built-in method builtins.exec}
+465400/368150    0.046    0.000    0.444    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:136(<genexpr>)
+      100    0.000    0.000    0.362    0.004 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/synapses/synapses.py:370(before_run)
+      100    0.000    0.000    0.339    0.003 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/synapses/synapses.py:374(create_code_objects)
+      400    0.005    0.000    0.241    0.001 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/devices/device.py:285(code_object)
+        1    0.078    0.078    0.132    0.132 /Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py:73(innovations)
+    61000    0.053    0.000    0.128    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:34(_state_tuple)
+  1839900    0.123    0.000    0.123    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:116(_of_type)
+   973138    0.050    0.000    0.120    0.000 {built-in method builtins.hasattr}
+      400    0.001    0.000    0.116    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/generators/base.py:266(translate)
+    10050    0.005    0.000    0.102    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/network.py:1040(_nextclocks)
+        2    0.005    0.002    0.080    0.040 /Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py:36(digest)
+    20100    0.021    0.000    0.076    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/clocks.py:431(same_time)
+    10050    0.027    0.000    0.072    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/input/timedarray.py:324(unitless_timed_array_func)
+        2    0.068    0.034    0.068    0.034 {built-in method _hashlib.openssl_sha256}
+      350    0.001    0.000    0.061    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/equations/unitcheck.py:49(check_units_statements)
+       50    0.000    0.000    0.054    0.001 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/groups/neurongroup.py:259(update_abstract_code)
+   125254    0.015    0.000    0.053    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/variables.py:516(get_value)
+   770800    0.046    0.000    0.046    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/caching.py:38(<genexpr>)
+     2702    0.002    0.000    0.044    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/logger.py:395(_log)
+    51504    0.014    0.000    0.041    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/clocks.py:327(_get_dt_)
+   125554    0.020    0.000    0.039    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/devices/device.py:529(get_value)
+    10050    0.010    0.000    0.038    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/clocks.py:315(advance)
+    20350    0.005    0.000    0.038    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:48(_wrapfunc)
+     2702    0.002    0.000    0.037    0.000 /opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1594(log)
+     2702    0.002    0.000    0.035    0.000 /opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/logging/__init__.py:1660(_log)
+     2502    0.001    0.000    0.034    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/utils/logger.py:439(diagnostic)
+      400    0.001    0.000    0.034    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/generators/base.py:128(translate_statement_sequence)
+      800    0.002    0.000    0.033    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/generators/numpy_generator.py:304(translate_one_statement_sequence)
+    10100    0.004    0.000    0.032    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/numpy/_core/fromnumeric.py:2245(clip)
+     2200    0.030    0.000    0.030    0.000 {built-in method builtins.compile}
+478204/447554    0.026    0.000    0.029    0.000 {built-in method builtins.hash}
+    65000    0.028    0.000    0.028    0.000 {built-in method builtins.sorted}
+      400    0.001    0.000    0.027    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/templates.py:223(__call__)
+    20000    0.016    0.000    0.025    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/functions.py:771(timestep)
+    10050    0.004    0.000    0.025    0.000 {method 'clip' of 'numpy.generic' objects}
+      150    0.001    0.000    0.025    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/network.py:880(sorted_objects)
+      400    0.000    0.000    0.025    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/codeobject.py:122(compile)
+     1200    0.000    0.000    0.024    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/codegen/runtime/numpy_rt/numpy_rt.py:265(compile_block)
+    32649    0.006    0.000    0.023    0.000 {built-in method builtins.min}
+      550    0.000    0.000    0.022    0.000 /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/core/base.py:219(before_run)
+
+

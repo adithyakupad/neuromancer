@@ -22,7 +22,7 @@ def child(out,kind):
         from neuromancer.predictive import FIRModel
         from neuromancer._brian import innovations
         from neuromancer.substrate import Config
-        (rec,z,v,p,u,y),fit=measured(fixture);times=[];bank_times=[];update=[];pred=[];dig=hashlib.sha256();model=FIRModel(rec,p,'RLS');prof=cProfile.Profile();prof.enable()
+        (rec,z,v,p,u,y),fit=measured(fixture);times=[];bank_times=[];update=[];pred=[];dig=hashlib.sha256();model=FIRModel(rec,p,'RLS');prof=cProfile.Profile()
         for i in range(100):
             d.check();h=np.zeros((9,4));h[:,::2]=float((i*17)%121)
             result,t=measured(lambda:plan(rec,rec['coef'],h,9.+i%3*.1,51_000_000));times.append(t)
@@ -31,7 +31,7 @@ def child(out,kind):
             _,t=measured(lambda:model.update(x,y[2400+i]));update.append(t)
             for name in ('predictions','cost','bank','first'):dig.update(np.ascontiguousarray(result[name]).tobytes())
             dig.update(str(result['chosen']).encode());dig.update(model.theta.tobytes());dig.update(model.p.tobytes())
-        prof.disable();prof.dump_stats(out/'micro.prof');pstats.Stats(prof,stream=(out/'micro_profile.txt').open('w')).sort_stats('cumtime').print_stats(35)
+        prof.enable();plan(rec,rec['coef'],h,9.,51_000_000);prof.disable();prof.dump_stats(out/'micro.prof');pstats.Stats(prof,stream=(out/'micro_profile.txt').open('w')).sort_stats('cumtime').print_stats(35)
         noise=[]
         for k in range(3):
             d.check();tracemalloc.start();(a,h),t=measured(lambda:innovations(Config(),k));_,peak=tracemalloc.get_traced_memory();tracemalloc.stop();noise.append(dict(**t,peak_traced_bytes=peak,effective=sha(a),fine=h))
@@ -54,9 +54,12 @@ def child(out,kind):
             engine,init=measured(lambda:BrianEngine(Config(retain_spikes=True)));prof=cProfile.Profile()
             for rep in range(3):
                 for chunk in (False,True):
-                    d.check();engine.reset();prof.enable();result,t=measured(lambda:run_hold(engine,1,60,chunked=chunk));prof.disable();rs,_=result
+                    d.check();engine.reset();result,t=measured(lambda:run_hold(engine,1,60,chunked=chunk));rs,_=result
                     a=np.array([r.observation.counts for r in rs]);events=np.c_[np.asarray(engine.monitor.i),np.rint(np.asarray(engine.monitor.t)*1e6).astype(np.int64)];signature=sha(events)+sha(a);signatures.append(signature)
                     rows.append(dict(rep=rep,chunked=chunk,**t,simulated_s=1,neural_s=sum(r.neural_wall_ns for r in rs)/1e9,observation_s=sum(r.observation_wall_ns for r in rs)/1e9,signature=signature,events=len(events)))
+            engine.reset();prof.enable();run_hold(engine,1,60,chunked=True);prof.disable();engine.reset();original=engine.net.run
+            def profile_run(*args,**kwargs):return original(*args,profile=True,**kwargs)
+            engine.net.run=profile_run;run_hold(engine,1,60);atomic_json(out/'brian_codeobjects.json',[(name,float(value)) for name,value in engine.net.profiling_info]);engine.net.run=original
             _,save=measured(lambda:engine.save('bench'));_,restore=measured(lambda:engine.restore('bench'));engine.close();assert len(set(signatures))==1
             prof.dump_stats(out/'neural.prof');pstats.Stats(prof,stream=(out/'neural_profile.txt').open('w')).sort_stats('cumtime').print_stats(60)
             atomic_json(out/'checkpoint.json',dict(initialization=init,save=save,restore=restore))

@@ -1,0 +1,83 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/benchmarks/v1_1.py",
+        "--child",
+        "ipc",
+        "--output",
+        "reports/performance/evidence/baseline_uninstrumented/workers2_0"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1260671082844000
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1260671085584875
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1260674886366416
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 86124,
+      "pgid": 86124,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/baseline_uninstrumented/workers2_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/benchmarks/v1_1.py",
+        "--child",
+        "ipc",
+        "--output",
+        "reports/performance/evidence/baseline_uninstrumented/workers2_1"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1260671082844000
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1260671086811291
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1260674886373875
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 86125,
+      "pgid": 86125,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/baseline_uninstrumented/workers2_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1260671082844000,
+  "deadline_ns": 1261548175704041,
+  "work_cutoff_ns": 1261547375704041,
+  "finished_ns": 1260674886420833,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1261548175704041,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

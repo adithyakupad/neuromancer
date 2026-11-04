@@ -1,0 +1,65 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/benchmarks/v1_1.py",
+        "--child",
+        "ipc",
+        "--output",
+        "reports/performance/evidence/baseline_uninstrumented/workers1_0"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1260664599281083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1260664600873833
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1260667743549958
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 86042,
+      "pgid": 86042,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/baseline_uninstrumented/workers1_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/benchmarks/v1_1.py",
+        "--child",
+        "ipc",
+        "--output",
+        "reports/performance/evidence/baseline_uninstrumented/workers1_1"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1260664599281083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1260667745069125
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 86083,
+      "pgid": 86083,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/performance/evidence/baseline_uninstrumented/workers1_supervision/stop-1"
+    }
+  ]
+}

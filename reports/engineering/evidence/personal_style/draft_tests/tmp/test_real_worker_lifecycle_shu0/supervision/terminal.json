@@ -1,0 +1,67 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "shutdown_block",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_real_worker_lifecycle_shu0/worker",
+        "1305076433847083"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305075433897708
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1305075436740791
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1305076434497958
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1305076635784000
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1305076834322166
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1305076846210666
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 7174,
+      "pgid": 7174,
+      "stop_file": "/private/tmp/neuromancer-style-draft-tests/tmp/test_real_worker_lifecycle_shu0/supervision/stop-0",
+      "last_running_poll_ns": 1305076834368541,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 1305076846186666,
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1305075433897708,
+  "deadline_ns": 1305077233847083,
+  "work_cutoff_ns": 1305076433847083,
+  "finished_ns": 1305076858793875,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1305077233847083,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

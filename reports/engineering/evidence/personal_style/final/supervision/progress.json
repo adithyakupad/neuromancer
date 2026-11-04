@@ -1,0 +1,163 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306013769272958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306013772912458
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306014140141833
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 8438,
+      "pgid": 8438,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/engineering/evidence/personal_style/final/test_tmp",
+        "--junitxml=reports/engineering/evidence/personal_style/final/tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306013769272958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306014142714041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306080362715166
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 8441,
+      "pgid": 8441,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "tools/personal_style_probe.py",
+        "reports/engineering/evidence/personal_style/final/probe",
+        "--neural",
+        "--reference",
+        "reports/engineering/evidence/personal_style/reference"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306013769272958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306080372324041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306087424886333
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9017,
+      "pgid": 9017,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "scripts/reproduce_v1_evidence.py",
+        "--output",
+        "reports/engineering/evidence/personal_style/final/scientific_reproduction"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306013769272958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306087426803583
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306245226839083
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9038,
+      "pgid": 9038,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/supervision/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 4,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        ".",
+        "--wheel-dir",
+        "reports/engineering/evidence/personal_style/final/wheel"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306013769272958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306245229353541
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 9192,
+      "pgid": 9192,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/supervision/stop-4"
+    }
+  ]
+}

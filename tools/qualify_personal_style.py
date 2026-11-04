@@ -1,4 +1,5 @@
 """Readability candidate qualification, one1200s budget; no study acquisition."""
+import argparse
 import os
 import sys
 from pathlib import Path
@@ -7,7 +8,9 @@ from neuromancer.supervisor import Deadline, atomic_json, supervise
 
 
 def main():
-    root = Path("reports/engineering/evidence/personal_style/final")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True)
+    root = parser.parse_args().output
     root.mkdir(parents=True, exist_ok=False)
     deadline = Deadline.after(1200)
     python = sys.executable

@@ -1,0 +1,67 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/test_tmp/test_real_worker_lifecycle_ign1/worker",
+        "1306065758228916"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306064758277916
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306064760962250
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1306065759534500
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1306065959437583
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1306066158642250
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306066171281583
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 8830,
+      "pgid": 8830,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/test_tmp/test_real_worker_lifecycle_ign1/supervision/stop-0",
+      "last_running_poll_ns": 1306066158693416,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 1306066171260083,
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1306064758277916,
+  "deadline_ns": 1306066558228916,
+  "work_cutoff_ns": 1306065758228916,
+  "finished_ns": 1306066183421375,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1306066558228916,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

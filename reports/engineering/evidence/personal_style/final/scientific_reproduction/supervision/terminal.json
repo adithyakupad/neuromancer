@@ -1,0 +1,144 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "neuromancer.m005b_analysis",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/analysis"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306087543992041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306087546834750
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306098283359958
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9041,
+      "pgid": 9041,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/model_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306087543992041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306098287373500
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306206731236583
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9051,
+      "pgid": 9051,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_metrics.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/analysis",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/statistics_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306087543992041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306206734678583
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306207436477708
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9140,
+      "pgid": 9140,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/research_figures.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/analysis",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/figures"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306087543992041
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306207439282416
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306245198035166
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9141,
+      "pgid": 9141,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/scientific_reproduction/supervision/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1306087543992041,
+  "deadline_ns": 1307213768602625,
+  "work_cutoff_ns": 1307212968602625,
+  "finished_ns": 1306245198098375,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1307213768602625,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

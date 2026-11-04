@@ -1,0 +1,28 @@
+[
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--force-reinstall",
+    "reports/engineering/evidence/personal_style/final/wheel/neuromancer-1.0.0-py3-none-any.whl"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "reports/engineering/evidence/personal_style/final/installed_import_check.py"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/neuromancer-diagnostic",
+    "--mode",
+    "smoke",
+    "--output",
+    "reports/engineering/evidence/personal_style/final/installed_smoke"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "check"
+  ]
+]

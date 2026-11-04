@@ -1,0 +1,169 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/worker0"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305082992880458
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1305082995865916
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1305083993295625
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1305084193082958
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1305084393134541
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1305084405258041
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 7233,
+      "pgid": 7233,
+      "stop_file": "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/supervision/stop-0",
+      "last_running_poll_ns": 1305084393273750,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 1305084405192958,
+      "returncode": -9,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/worker1"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305082992880458
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1305082999886916
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1305083993640541
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1305084193131958
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1305084393197208
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1305084405322833
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 7234,
+      "pgid": 7234,
+      "stop_file": "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/supervision/stop-1",
+      "last_running_poll_ns": 1305084393299125,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 1305084405299458,
+      "returncode": -9,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/worker2"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305082992880458
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/worker3"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305082992880458
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    },
+    {
+      "index": 4,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/private/tmp/neuromancer-style-draft-tests/tmp/test_multiworker_shared_budget0/worker4"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1305082992880458
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    }
+  ],
+  "started_ns": 1305082992880458,
+  "deadline_ns": 1305084792798125,
+  "work_cutoff_ns": 1305083992798125,
+  "finished_ns": 1305084418021000,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1305084792798125,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

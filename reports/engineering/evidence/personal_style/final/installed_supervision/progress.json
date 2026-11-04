@@ -1,0 +1,125 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--force-reinstall",
+        "reports/engineering/evidence/personal_style/final/wheel/neuromancer-1.0.0-py3-none-any.whl"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306332577287250
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306332580584750
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306333223080958
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9321,
+      "pgid": 9321,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/installed_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/engineering/evidence/personal_style/final/installed_import_check.py"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306332577287250
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306333226196458
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306333606258166
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9325,
+      "pgid": 9325,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/installed_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/neuromancer-diagnostic",
+        "--mode",
+        "smoke",
+        "--output",
+        "reports/engineering/evidence/personal_style/final/installed_smoke"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306332577287250
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306333608756666
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1306351272339250
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 9327,
+      "pgid": 9327,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/installed_supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1306332577287250
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1306351275214375
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 9384,
+      "pgid": 9384,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/personal_style/final/installed_supervision/stop-3"
+    }
+  ]
+}

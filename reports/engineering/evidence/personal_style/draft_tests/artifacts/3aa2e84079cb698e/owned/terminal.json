@@ -1,0 +1,48 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "terminal publication exceeded deadline",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "controlled"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1000000000
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1000000000
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1100000000
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 101001,
+      "pgid": 101001,
+      "stop_file": "/private/tmp/neuromancer-style-draft-tests/tmp/test_timely_exit_then_global_p0/owned/stop-0",
+      "last_running_poll_ns": 1090000000,
+      "first_observed_exit_ns": 1100000000,
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1000000000,
+  "deadline_ns": 2800000000,
+  "work_cutoff_ns": 2000000000,
+  "finished_ns": 1100000000,
+  "deadline_clock_id": "m008.synthetic",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "m008.synthetic",
+  "cleanup_deadline_ns": 2800000000,
+  "persistence_errors": [],
+  "cleanup_verified": true,
+  "publication_checked_ns": 2800000001
+}

@@ -1,6 +1,6 @@
 # V1 versus V1.1 candidate — measured comparison
 
-2026-11-04. **Correctness qualification PASS on executed fixtures. Performance target
+2026-11-04. **Local exact-equivalence PASS; final hosted qualification FAIL/HOLD. Performance target
 qualification PARTIAL:2x workflow/neural and30% p95 goals NOT MET. V1.1 publication HOLD.**
 No scientific claim changed. No controller study, validation/locked-network acquisition,
 backend replacement, retuning, merge, tag or release was performed.
@@ -185,3 +185,18 @@ or label trajectory changes explicitly. Preserve transparent FIR/PI baselines.
 Scientific roadmap is committed separately at research/v1-1-proposals: first audit multistep
 forecast bias/uncertainty; then prospectively separate disturbance rejection,planner objective
 and excitation mechanisms. No future experiment is authorized by this optimization audit.
+
+## Final-head CI stop addendum
+
+Exact f79538f1 matrix41788028586:LinuxPASS,macOS198PASS/1FAIL/25warnings/92.34s;legacyPASS.
+The failure is the unchanged supervisor real-worker `before` deadline fixture, which returned
+DEADLINE_EXCEEDED rather than COMPLETED. Earlier source-identical success is preserved,
+not substituted. Full failure logs and CI_FINAL_FAILURE_DIAGNOSIS.md are retained. Actual
+worker/cutoff timestamps and cleanup evidence were not uploaded, so root cause is unresolved.
+No timeout/assertion change or manual rerun was made. Stop condition applied.
+
+This supersedes earlier readiness rows:V1.1 hosted qualification FAIL;V1.1 publication HOLD.
+V1 publication preparation also HOLD for review of the shared supervisor timing failure,
+although exact release PR CI remains green. No scientific or numerical conclusion changes.
+Next step is bounded failure instrumentation/diagnosis,not release authorization or more
+optimization. No gate is bypassed and no main merge/tag/publication occurs.

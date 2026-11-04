@@ -1,0 +1,86 @@
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	﻿2026-11-04T06:50:35.5239140Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5239770Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml^[[0m
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5304080Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5304490Z env:
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5304750Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5305080Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5305320Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5305670Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5306040Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5306630Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5307610Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5308250Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5308810Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:50:35.5309190Z ##[endgroup]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:51:03.8677730Z ........................................................................ [ 36%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:51:43.4140740Z ........................................................................ [ 72%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4588520Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4590970Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4591870Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4593850Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4595200Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4596400Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4597070Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4598030Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4598830Z ........................F..............................                  [100%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4600180Z =================================== FAILURES ===================================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4600610Z ______________________ test_real_worker_lifecycle[before] ______________________
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4600910Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4601260Z tmp_path = PosixPath('/private/var/folders/n6/hn37q6pj7sj_9dmqqc2113800000gn/T/pytest-of-runner/pytest-0/test_real_worker_lifecycle_bef0')
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4601840Z mode = 'before'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4602020Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4602210Z     @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4602790Z         'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4603280Z         'write_failure','before','race'])
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4603580Z     def test_real_worker_lifecycle(tmp_path, mode):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4604020Z         # The test process is an independent outer watchdog. Its fallback addresses
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4604450Z         # each recorded owned group, not just the supervisor session.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4604840Z         code = '''
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4605060Z     import json, sys
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4605340Z     from pathlib import Path
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4605630Z     from neuromancer.supervisor import Deadline, supervise
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4606600Z     root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4606970Z     d=Deadline.after(1.8)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4607210Z     cutoff=d.end_ns-800000000
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4607610Z     command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4607970Z     r=supervise([command],root/'supervision',d)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4608340Z     (root/'returned.json').write_text(json.dumps(r))
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4608620Z     '''
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4609030Z         p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4609540Z                              start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4610100Z         began=time.monotonic()
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4610860Z         try:
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4612090Z             stdout,stderr=p.communicate(timeout=6)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4612890Z         except subprocess.TimeoutExpired:
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4613700Z             for f in tmp_path.rglob('pid.json'):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4614210Z                 pgid=json.loads(f.read_text())['pgid']
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4614590Z                 try: os.killpg(pgid,signal.SIGKILL)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4616130Z                 except ProcessLookupError: pass
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4616700Z             os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4618180Z             pytest.fail('Independent outer watchdog intervened')
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4618710Z         assert p.returncode == 0,stderr.decode()
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4619210Z         r=json.loads((tmp_path/'returned.json').read_text())
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4620150Z         assert time.monotonic()-began < 4
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4620770Z         assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4622170Z         if mode in ('complete','before'):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4622650Z >           assert r['status']=='COMPLETED'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4623240Z E           AssertionError: assert 'DEADLINE_EXCEEDED' == 'COMPLETED'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4623670Z E             
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4624090Z E             - COMPLETED
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4624790Z E             + DEADLINE_EXCEEDED
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4624970Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4625140Z tests/test_supervisor.py:71: AssertionError
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4625680Z =============================== warnings summary ===============================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4626050Z tests/test_control.py: 22 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4626460Z tests/test_substrate.py: 3 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4627200Z   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4628910Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4629200Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4629380Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4629930Z =========================== short test summary info ============================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4630940Z FAILED tests/test_supervisor.py::test_real_worker_lifecycle[before] - AssertionError: assert 'DEADLINE_EXCEEDED' == 'COMPLETED'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4631490Z   
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4632240Z   - COMPLETED
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4632490Z   + DEADLINE_EXCEEDED
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.4632890Z 1 failed, 198 passed, 25 warnings in 92.34s (0:01:32)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-04T06:52:08.7604660Z ##[error]Process completed with exit code 1.

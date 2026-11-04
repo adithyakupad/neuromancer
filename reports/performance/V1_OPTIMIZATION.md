@@ -42,3 +42,12 @@ No new variant or parameter search was added to chase the unfavorable timing run
 V1.1.0rc1 is a numerically qualified review candidate, not a performance-success or published
 release. Publication HOLD; final comparison report includes all costs, tradeoffs and gaps.
 Scientific proposals remain on the separate research branch. No merge/tag/publication.
+
+## Mandatory final CI stop
+
+Final f79538f1 macOS CI failed the unchanged real-worker before-cutoff completion fixture:
+198passed/1failed/25warnings. Linux and legacy passed. Root cause unresolved; cleanup
+evidence for the failing case was not retained by CI. No threshold or production code
+changed,no manual rerun. Final engineering qualification FAIL/HOLD supersedes earlier
+local/previous-host PASS for release-readiness purposes. V1 publication also HOLD pending
+shared-supervisor review. See CI_FINAL_FAILURE_DIAGNOSIS.md.

@@ -1,3 +1,5 @@
+> Final hosted engineering gate FAIL/HOLD: one unchanged supervisor real-worker timing fixture failed on macOS. Local199PASS and prior CI199PASS are retained, not substituted. See the comparison report final addendum.
+
 # V1.1 performance review candidate
 
 This branch is `1.1.0rc1`, not a published release. V1.0.0 preparation remains isolated

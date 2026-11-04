@@ -1,3 +1,5 @@
+> **Publication HOLD:** final candidate macOS CI failed one shared supervisor deadline fixture. See the [failure addendum](reports/performance/V1_BENCHMARK_COMPARISON.md#final-head-ci-stop-addendum). No timeout was changed or result replaced.
+
 > Performance review branch: package **1.1.0rc1**. See [V1.1 performance scope](docs/V1_1_PERFORMANCE.md). The V1 scientific results below are unchanged; V1.0.0 publication preparation remains in PR #1.
 
 # NEUROMANCER — in silico neural-control research

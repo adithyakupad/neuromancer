@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "source_baseline": "abd811a053e10ad7ee5126efbc95fefd73e55c8d",
+  "purpose": "engineering only; no scientific endpoints or reserved outcomes",
+  "network_ids": [0], "noise_ids": [0], "root_seed": 20261018,
+  "neural_seconds": 1, "repetitions": 3, "planner_repetitions": 100,
+  "worker_counts": [1, 2], "schedule": "C02 ramp 30,60,90,120 then hold; 20ms bins",
+  "budget_seconds_per_stage": 900, "max_variants": 3,
+  "memory_limit_bytes": 4294967296,
+  "targets": {"workflow_speedup": 2, "neural_speedup": 2, "planner_p95_reduction": 0.30},
+  "equivalence": "exact spikes, observations, innovation hashes, predictions, coefficients, candidate scores and selected actions; timing fields excluded",
+  "failure": "retain partial artifacts; stop promotion on correctness failure; report unattained targets"
+}

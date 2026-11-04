@@ -1,9 +1,9 @@
 # M008 — supervisor timing failure diagnosis and qualification
 
 2026-11-04. **Case B: an invalid fixture scheduling assumption, not evidence justifying a
-relaxed supervisor deadline.** Local engineering qualification PASS. Final hosted qualification
-must pass on the final review source; exact closing revision/check IDs are in the mission
-handoff. No merge,tag,publish,scientific acquisition or performance optimization follows.
+relaxed supervisor deadline.** Engineering qualification PASS on source6e152bce after local and hosted independent
+verification. Closing documentation/evidence revision must also pass exact-head CI; its
+revision/check IDs are in the mission handoff. No merge,tag,publish,scientific acquisition or performance optimization follows.
 
 ## Source and preservation
 
@@ -228,8 +228,8 @@ honest about initial verifier interval-bound refinement and missing old historic
 ## Decision and residual risks
 
 The corrected fixture and unchanged deadline decisions are locally qualified,with successful
-hosted source12366a2c qualification and independent raw-artifact verification. **M008 PASS is
-conditional on successful exact-final-source Linux/macOS CI; otherwise retain HOLD.** The
+hosted source12366a2c qualification and independent raw-artifact verification. **M008 engineering PASS on implementation6e152bce: final-source
+Linux/macOS matrix41795885780 and legacy41795885783 both PASS.** The
 closing handoff supplies that definitive result/revision. No lost historical timestamps are
 invented. No successful process result is accepted after cutoff because it intended to finish early.
 
@@ -261,3 +261,26 @@ digest metadata identifies the upstream artifacts; it is not compared to the dif
 formatted local tar.gz hash. Pytest alias directories/copies are not additional trials.
 All natural failures are included. This reproduces evidence verification,not a claim of
 repeating the same OS scheduling history.
+
+## Closing source qualification
+
+Exact implementation/report source `6e152bce7756a6b1a9286c243152c291bbf8f631`:
+[Linux/macOS matrix41795885780](https://github.com/adithyakupad/neuromancer/actions/runs/41795885780)
+PASS;[legacy41795885783](https://github.com/adithyakupad/neuromancer/actions/runs/41795885783)PASS.
+Linux216passed/25warnings/72.68s;macOS216passed/25warnings/82.88s. All35diagnostic records
+per platform independently passed timing/classification verification. Full fixture audit
+again verifies20real supervisor records,58finalizer snapshots,zero unexpected cleanup
+failures or watchdog interventions. The deliberately injected cleanup-failure record
+remains explicit. Complete closing artifacts preserved as ci_6e_linux.tar.gz and
+ci_6e_macos.tar.gz; initial qualification artifacts and failures remain separate.
+
+The closing evidence-only commit changes no package,test,clock,workflow or diagnostic
+execution source. Its exact-head Linux/macOS checks must also pass; the final handoff
+records them,not a substitution of the earlier green run. Publication still requires
+reviewed integration and release-candidate CI; no merge/tag/publish is performed in M008.
+
+Closing-source diagnostic ordinary cohorts remained macOS18COMPLETED/2DEADLINE_EXCEEDED,
+Linux20COMPLETED. These are retained diagnostic outcomes,not unexpected failures of the
+corrected handshake success test. All controlled delay outcomes stayed non-success. Both
+platforms' independent final timing and cleanup verifications PASS. The closing per-file
+source continuity manifest proves no executable/test/workflow changes after6e152bce.

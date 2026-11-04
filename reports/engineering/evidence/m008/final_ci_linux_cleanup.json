@@ -1,0 +1,138 @@
+{
+  "status": "PASS",
+  "real_supervisor_cases": 20,
+  "statuses": {
+    "COMPLETED": 2,
+    "WORKER_FAILURE": 4,
+    "DEADLINE_EXCEEDED": 11,
+    "CLEANUP_FAILURE": 1,
+    "SUPERVISOR_FAILURE": 1,
+    "CLOCK_FAILURE": 1
+  },
+  "expected_injected_cleanup_failure": 1,
+  "unexpected_cleanup_failures": 0,
+  "fixture_finalizer_snapshots": 58,
+  "expected_nested_failure_sentinels": 2,
+  "rows": [
+    {
+      "file": "test_real_worker_lifecycle_com0/returned.json",
+      "status": "COMPLETED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_wri0/returned.json",
+      "status": "WORKER_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_une0/returned.json",
+      "status": "WORKER_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_workers_after_inject0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_cleanup_failure_is_explic0/returned.json",
+      "status": "CLEANUP_FAILURE",
+      "cleanup_verified": false,
+      "expected_injected_cleanup_failure": true
+    },
+    {
+      "file": "test_real_workers_after_inject1/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_des0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_exc0/returned.json",
+      "status": "WORKER_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_supervisor_failure_cleanu0/returned.json",
+      "status": "SUPERVISOR_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_workers_after_inject3/returned.json",
+      "status": "CLOCK_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_tim0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_shu0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_coo0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_workers_after_inject2/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_multiworker_shared_budget0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_ign0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_orp0/returned.json",
+      "status": "WORKER_FAILURE",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_bef0/returned.json",
+      "status": "COMPLETED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_ign1/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    },
+    {
+      "file": "test_real_worker_lifecycle_rac0/returned.json",
+      "status": "DEADLINE_EXCEEDED",
+      "cleanup_verified": true,
+      "expected_injected_cleanup_failure": false
+    }
+  ]
+}

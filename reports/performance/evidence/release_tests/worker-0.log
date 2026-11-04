@@ -1,0 +1,19 @@
+........................................................................ [ 39%]
+........................................................................ [ 78%]
+.......................................                                  [100%]WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+The object was created here (most recent call only):
+  File '/Users/adithyaupad/Developer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+    self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+The object was created here (most recent call only):
+  File '/Users/adithyaupad/Developer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+    self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+
+=============================== warnings summary ===============================
+tests/test_control.py: 22 warnings
+tests/test_substrate.py: 3 warnings
+  /private/tmp/neuromancer-m007-20261101/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+    parsed = STATEMENT.parse_string(code, parseAll=True)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+183 passed, 25 warnings in 41.46s

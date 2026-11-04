@@ -35,8 +35,11 @@ def stream(config: Config, role: int, *, block: int | None = None):
 
 def digest(array) -> str:
     value = np.ascontiguousarray(array)
-    return hashlib.sha256(str(value.dtype).encode() + str(value.shape).encode()
-                          + value.tobytes()).hexdigest()
+    # Stream the same C-order payload without allocating another full array.
+    h = hashlib.sha256(str(value.dtype).encode() + str(value.shape).encode())
+    payload = value.tobytes() if value.dtype.hasobject else value.reshape(-1).view(np.uint8)
+    h.update(payload)
+    return h.hexdigest()
 
 
 def realization(config: Config):

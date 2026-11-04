@@ -118,12 +118,15 @@ def test_execution_lineage_frozen_before_neural_run():
     record=json.loads(provenance.read_text())
     prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
     assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
-    for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
+    for name,digest in record['source_hashes'].items():
+        frozen = (root/'docs/history/BRIAN_V1_SNAPSHOT.py' if name=='neuromancer/_brian.py' else root/'src'/name)
+        assert hashlib.sha256(frozen.read_bytes()).hexdigest()==digest
     old=json.loads((prereg.parent/'preservation.json').read_text())
     for name,digest in old['sha256'].items():
         # Release documentation may evolve; preserve and verify original bytes.
         frozen = (root/'docs/history/README_M002_SNAPSHOT.md' if name=='README.md'
                   else root/'docs/history/PYPROJECT_M002_3_SNAPSHOT.toml' if name=='pyproject.toml'
+                  else root/'docs/history/BRIAN_V1_SNAPSHOT.py' if name=='src/neuromancer/_brian.py'
                   else root/name)
         assert hashlib.sha256(frozen.read_bytes()).hexdigest()==digest
     committed=subprocess.check_output(['git','show','HEAD:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)

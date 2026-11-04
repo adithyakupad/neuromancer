@@ -9,6 +9,11 @@ for record in subprocess.check_output(['git','ls-tree','-rz',base]).split(b'\0')
  if actual!=meta.split()[2].decode():changed[name]=hashlib.sha256(data).hexdigest()
 assert set(changed)==allowed,changed
 m=json.loads(Path('reports/engineering/evidence/m009/backport_manifest.json').read_text())
-assert all(hashlib.sha256(Path(n).read_bytes()).hexdigest()==h for n,h in m['exact_copies'].items())
-result=dict(status='PASS',base=base,starting_files=count,unchanged=count-len(changed),engineering_changes=changed,all_numeric_source_and_scientific_evidence='unchanged',m008_exact_copies=True)
+for n,h in m['exact_copies'].items():
+ if n=='.github/workflows/v1-qualification.yml':
+  original=subprocess.check_output(['git','show','4e180c35:'+n])
+  assert hashlib.sha256(original).hexdigest()==h
+  assert Path(n).read_bytes()==original.replace(b'macos-latest',b'macos-15-intel')
+ else:assert hashlib.sha256(Path(n).read_bytes()).hexdigest()==h
+result=dict(status='PASS',base=base,starting_files=count,unchanged=count-len(changed),engineering_changes=changed,all_numeric_source_and_scientific_evidence='unchanged',m008_exact_copies_except_declared_runner_label=True,runner_clarification='CI_RUNNER_CLARIFICATION.md')
 Path('reports/engineering/evidence/m009/preservation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

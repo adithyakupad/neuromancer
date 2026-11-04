@@ -37,7 +37,7 @@ def test_atomic_artifact_survives_failed_replace(tmp_path, monkeypatch):
 
 @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
     'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
-    'write_failure','before','race'])
+    'write_failure','write_failure_late','before','race'])
 def test_real_worker_lifecycle(tmp_path, mode):
     # The test process is an independent outer watchdog. Its fallback addresses
     # each recorded owned group, not just the supervisor session.
@@ -51,8 +51,11 @@ d=Deadline.after(1.8)
 cutoff=d.end_ns-800000000
 command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
 thread=None;errors=[]
-if mode=='before':
- command=[sys.executable,str(Path(worker).with_name('supervisor_handshake_worker.py')),str(root/'worker')]
+if mode in ('before','write_failure','write_failure_late'):
+ if mode=='before':
+  command=[sys.executable,str(Path(worker).with_name('supervisor_handshake_worker.py')),str(root/'worker')]
+ else:
+  command=[sys.executable,str(Path(worker).with_name('supervisor_failure_worker.py')),str(root/'worker'),'late' if mode=='write_failure_late' else 'timely']
  def release():
   try:
    import time
@@ -95,6 +98,26 @@ if thread is not None:
         assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
     else:
         assert r['status']=='DEADLINE_EXCEEDED',r
+    if mode in ('write_failure', 'write_failure_late'):
+        import errno
+        report=json.loads((tmp_path/'worker/failure.json').read_text())
+        events=[json.loads(line) for line in (tmp_path/'worker/events.jsonl').read_text().splitlines()]
+        ticks={e['kind']:e['monotonic_ns'] for e in events}
+        release=json.loads((tmp_path/'worker/release.json').read_text())
+        assert report['clock_id']==r['deadline_clock_id']==release['clock_id']
+        assert report['exception_type']=='NotADirectoryError' and report['errno']==errno.ENOTDIR
+        assert report['scientific_success'] is False
+        assert ticks['ready']<=release['released_ns']<=ticks['release_seen']<=report['operation_ns']<=report['caught_ns']<=ticks['failure_record_written']<r['work_cutoff_ns']
+        assert not (tmp_path/'worker/completion.json').exists()
+        if mode=='write_failure':
+            assert r['status']=='WORKER_FAILURE'  # Stronger than the original status set.
+            assert r['workers'][0]['returncode']==23
+            assert ticks['failure_record_written']<=ticks['failure_exit_intent']<=r['workers'][0]['first_observed_exit_ns']<r['work_cutoff_ns']
+            assert r['workers'][0]['events'][-1]['monotonic_ns']<r['work_cutoff_ns']
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED'
+            assert r['workers'][0]['first_observed_exit_ns']>=r['work_cutoff_ns']
+            assert r['workers'][0]['returncode']==-signal.SIGTERM
     if mode != 'orphan':
         assert r['cleanup_verified'],r
         assert r['workers'][0]['state']=='REAPED'

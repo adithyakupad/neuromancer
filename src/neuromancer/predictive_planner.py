@@ -6,16 +6,22 @@ GRID=np.arange(0.,121.,5.)
 def bank(previous):
     """Vectorized C02 delivery, inward endpoints match original projector."""
     if not np.isfinite(previous) or not 0<=previous<=120:raise ValueError('Invalid actuator state')
-    q0=np.repeat(GRID,len(GRID));q1=np.tile(GRID,len(GRID));hold=np.c_[np.repeat(q0[:,None],50,axis=1),np.repeat(q1[:,None],50,axis=1)]
-    delivered=np.empty_like(hold);p=np.full(len(hold),previous)
-    for k in range(100):
-        lo=np.maximum(0.,p-30);hi=np.minimum(120.,p+30)
-        for _ in range(64):
-            a=p-lo>30;b=hi-p>30
-            if not(a.any() or b.any()):break
-            lo[a]=np.nextafter(lo[a],p[a]);hi[b]=np.nextafter(hi[b],p[b])
-        else:raise ArithmeticError('Unrepresentable bounds')
-        p=np.clip(hold[:,k],lo,hi);delivered[:,k]=p
+    q0=np.repeat(GRID,len(GRID));q1=np.tile(GRID,len(GRID))
+    delivered=np.empty((len(q0),100));p=np.full(len(q0),previous)
+    # After all rows reach a held command, subsequent projections are identical.
+    # Keep the original inward-bound correction for every actual ramp step.
+    for start,target in ((0,q0),(50,q1)):
+        for k in range(start,start+50):
+            lo=np.maximum(0.,p-30);hi=np.minimum(120.,p+30)
+            for _ in range(64):
+                a=p-lo>30;b=hi-p>30
+                if not(a.any() or b.any()):break
+                lo[a]=np.nextafter(lo[a],p[a]);hi[b]=np.nextafter(hi[b],p[b])
+            else:raise ArithmeticError('Unrepresentable bounds')
+            p=np.clip(target,lo,hi);delivered[:,k]=p
+            if np.array_equal(p,target):
+                delivered[:,k+1:start+50]=p[:,None]
+                break
     return q0,q1,delivered
 
 

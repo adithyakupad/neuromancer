@@ -22,3 +22,31 @@ def test_noise_operations_match_original_bit_for_bit(replicate,block):
     actual,fine_hash=innovations(config,block)
     np.testing.assert_array_equal(actual,expected)
     assert fine_hash==digest(fine)
+
+def reference_planner():
+    import types
+    from pathlib import Path
+    p=Path(__file__).resolve().parents[1]/'docs/history/PLANNER_V1_SNAPSHOT.py'
+    module=types.ModuleType('neuromancer._v1_planner_reference');module.__package__='neuromancer'
+    exec(compile(p.read_text(),str(p),'exec'),module.__dict__)
+    return module
+
+@pytest.mark.parametrize('previous',[0.,np.nextafter(30.,0.),np.nextafter(30.,120.),37.3,60.,119.99999999999999,120.])
+def test_bank_ramp_and_all625_candidates_exactly_equal_v1(previous):
+    from neuromancer.predictive_planner import bank
+    a=bank(previous);b=reference_planner().bank(previous)
+    for x,y in zip(a,b,strict=True):np.testing.assert_array_equal(x,y)
+    a[2][0,0]=-999
+    assert bank(previous)[2][0,0]>=0 # no shared mutable output cache
+
+
+def test_all_candidate_scores_predictions_and_action_ties_equal_v1():
+    from neuromancer.predictive_planner import plan
+    old=reference_planner();rng=np.random.default_rng(20261106)
+    rec=dict(mean=np.full(40,20.),scale=np.full(40,10.),output_mean=np.full(4,8.))
+    for i in range(25):
+        theta=rng.normal(0,.002,(41,4));h=np.zeros((9,4));h[:,::2]=i*5
+        for th in (theta,np.zeros((41,4))):
+            a=plan(rec,th,h,9.,51_000_000,limit_s=10);b=old.plan(rec,th,h,9.,51_000_000,limit_s=10)
+            for name in a:
+                if name!='elapsed_ns':np.testing.assert_array_equal(a[name],b[name],err_msg=name)

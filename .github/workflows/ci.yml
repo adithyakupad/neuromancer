@@ -15,6 +15,7 @@ jobs:
       - run: python -m pip install -r requirements-m002.txt
       - run: python -m pip install --no-build-isolation --no-deps -e .
       - run: python -m pip check
+      - run: mkdir -p runs
       - run: python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml
       - run: neuromancer-diagnostic --mode smoke --output runs/ci-smoke
       - uses: actions/upload-artifact@v4

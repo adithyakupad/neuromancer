@@ -27,6 +27,7 @@ jobs:
       - run: python -m pip install --no-deps dist/*.whl
       - run: python -m pip check
       - run: python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+      - run: mkdir -p runs
       - run: python -m pytest -q --junitxml=runs/v1-ci-tests.xml --basetemp=runs/pytest-tmp
       - run: python tools/m008_traced_repeats.py runs/m008-traced
       - run: neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke

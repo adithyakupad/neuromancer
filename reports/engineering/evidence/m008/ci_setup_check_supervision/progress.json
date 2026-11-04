@@ -1,0 +1,33 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_supervisor_boundaries.py",
+        "--basetemp=/tmp/m008-ci-setup-check/runs/pytest-tmp",
+        "--junitxml=reports/engineering/evidence/m008/ci_setup_check.xml"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1264921484754666
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1264921488264958
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 95106,
+      "pgid": 95106,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m008/ci_setup_check_supervision/stop-0"
+    }
+  ]
+}

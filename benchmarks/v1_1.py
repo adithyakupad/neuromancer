@@ -70,7 +70,7 @@ def child(out,kind):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--output',type=Path,required=True);p.add_argument('--child');a=p.parse_args()
     if a.child:return child(a.output,a.child)
-    a.output.mkdir(parents=True,exist_ok=False);d=Deadline.after(900);os.environ.update(NEUROMANCER_DEADLINE_NS=str(d.end_ns),NEUROMANCER_DEADLINE_CLOCK=d.clock_id,OPENBLAS_NUM_THREADS='1',VECLIB_MAXIMUM_THREADS='1',OMP_NUM_THREADS='1',MPLCONFIGDIR='/tmp/neuromancer-perf-mpl')
+    a.output.mkdir(parents=True,exist_ok=False);d=Deadline.from_environment() if "NEUROMANCER_DEADLINE_NS" in os.environ else Deadline.after(900);os.environ.update(NEUROMANCER_DEADLINE_NS=str(d.end_ns),NEUROMANCER_DEADLINE_CLOCK=d.clock_id,OPENBLAS_NUM_THREADS='1',VECLIB_MAXIMUM_THREADS='1',OMP_NUM_THREADS='1',MPLCONFIGDIR='/tmp/neuromancer-perf-mpl')
     atomic_json(a.output/'environment.json',dict(python=sys.version,platform=platform.platform(),cpu=platform.processor(),logical_cpu=os.cpu_count(),packages={x:importlib.metadata.version(x) for x in ('numpy','brian2','scipy','pytest')},thread_requests='1; actual OS/BLAS threads not established',source=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),manifest=json.loads(Path('benchmarks/v1_1_manifest.json').read_text())))
     for kind in ('micro','neural','ipc'):
         r=supervise([[sys.executable,__file__,'--child',kind,'--output',str(a.output/kind)]],a.output/(kind+'_supervision'),d,workers=1);assert r['status']=='COMPLETED',r

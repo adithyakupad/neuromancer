@@ -16,8 +16,8 @@ def main():
   d.check();engine,init=measured(lambda:BrianEngine(Config()));policy=Policy(cal,'PI10_5',start_us=0,aggregate_bins=5);previous=np.zeros(4);decisions=[];observations=[];commands=[];states=[];start=time.perf_counter();cpu=time.process_time()
   for k in range(50):
    d.check();t=engine.time_us
-   current,lat=measured(lambda:project(policy.desired(),previous));decisions.append(lat)
-   result=engine.advance(Command('trial',str(k),t,tuple(current)),t+20000)
+   (current,status),lat=measured(lambda:project(policy.desired(),previous));decisions.append(lat)
+   result=engine.advance(Command('trial',str(k),t,tuple(map(float,current))),t+20000)
    policy.accept(result.observation,t+20000);previous=current;commands.append(current);observations.append(result.observation.counts);states.append(policy.record())
   wall=time.perf_counter()-start;cpu=time.process_time()-cpu
   path=a.output/f'workflow{rep}.npz';_,write=measured(lambda:np.savez_compressed(path,observations=observations,commands=commands,states=states));loaded,read=measured(lambda:dict(np.load(path)))

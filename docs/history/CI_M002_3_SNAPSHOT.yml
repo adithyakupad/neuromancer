@@ -1,0 +1,20 @@
+name: substrate qualification
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-m002.txt
+      - run: python -m pip install --no-build-isolation --no-deps -e .
+      - run: python -m pip check
+      - run: python -m pytest -q
+      - run: neuromancer-diagnostic --mode smoke --output runs/ci-smoke
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smoke-evidence
+          path: runs/ci-smoke

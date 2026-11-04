@@ -1,0 +1,31 @@
+name: M011 persistence diagnostics
+on: [push, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    env:
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/neuromancer-m011-ci-mpl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-v1.txt
+      - run: python -m pip install --no-deps --no-build-isolation -e .
+      - run: mkdir -p runs
+      - run: python tools/m011_persistence.py runs/m011-persistence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m011-persistence-${{ matrix.os }}
+          path: runs/m011-persistence

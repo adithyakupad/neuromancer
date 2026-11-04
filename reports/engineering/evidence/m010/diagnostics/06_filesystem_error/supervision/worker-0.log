@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/tools/m010_worker.py", line 70, in <module>
+    (root / "partial.txt" / "impossible").write_text("must not publish")
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py", line 1047, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NotADirectoryError: [Errno 20] Not a directory: 'reports/engineering/evidence/m010/diagnostics/06_filesystem_error/worker/partial.txt/impossible'

@@ -1,0 +1,111 @@
+{
+  "workloads": {
+    "fir_1000_predictions": {
+      "reference": {
+        "p50_ms": 10.215271000000001,
+        "p95_ms": 12.3789375,
+        "max_ms": 13.19025,
+        "samples": 54
+      },
+      "current": {
+        "p50_ms": 10.412604,
+        "p95_ms": 16.03971204999999,
+        "max_ms": 27.73225,
+        "samples": 54
+      },
+      "median_ratio": 1.0193174512942436,
+      "p95_ratio": 1.2957260709976113,
+      "passed": false
+    },
+    "rls_100_updates": {
+      "reference": {
+        "p50_ms": 4.4271455,
+        "p95_ms": 5.0178898,
+        "max_ms": 6.079708,
+        "samples": 54
+      },
+      "current": {
+        "p50_ms": 4.5045835,
+        "p95_ms": 6.178466999999995,
+        "max_ms": 10.364084,
+        "samples": 54
+      },
+      "median_ratio": 1.0174916320233884,
+      "p95_ratio": 1.2312879011412317,
+      "passed": false
+    },
+    "planner_625_candidates": {
+      "reference": {
+        "p50_ms": 10.354916500000002,
+        "p95_ms": 12.3936228,
+        "max_ms": 12.58325,
+        "samples": 54
+      },
+      "current": {
+        "p50_ms": 9.143479,
+        "p95_ms": 10.260904499999999,
+        "max_ms": 13.394083,
+        "samples": 54
+      },
+      "median_ratio": 0.8830084723522394,
+      "p95_ratio": 0.8279180886479779,
+      "passed": true
+    },
+    "pi_1000_observations": {
+      "reference": {
+        "p50_ms": 6.1947495,
+        "p95_ms": 10.133189149999996,
+        "max_ms": 12.947208,
+        "samples": 54
+      },
+      "current": {
+        "p50_ms": 5.9147085,
+        "p95_ms": 6.64360165,
+        "max_ms": 7.367375,
+        "samples": 54
+      },
+      "median_ratio": 0.9547938136965828,
+      "p95_ratio": 0.6556279125609732,
+      "passed": true
+    },
+    "arx_fit": {
+      "reference": {
+        "p50_ms": 4.021021,
+        "p95_ms": 4.64395395,
+        "max_ms": 5.279417,
+        "samples": 54
+      },
+      "current": {
+        "p50_ms": 4.254687499999999,
+        "p95_ms": 4.8531601,
+        "max_ms": 5.122958,
+        "samples": 54
+      },
+      "median_ratio": 1.0581112359273923,
+      "p95_ratio": 1.045049143951998,
+      "passed": true
+    }
+  },
+  "rss_native_units": {
+    "reference": [
+      935460864,
+      935460864,
+      937721856,
+      948682752,
+      909328384,
+      929693696
+    ],
+    "current": [
+      954368000,
+      982564864,
+      963379200,
+      904052736,
+      936919040,
+      966180864
+    ]
+  },
+  "rss_max_ratio": 1.035714902509369,
+  "current_max_rss_bytes": 982564864,
+  "all_exact": true,
+  "passed": false
+}

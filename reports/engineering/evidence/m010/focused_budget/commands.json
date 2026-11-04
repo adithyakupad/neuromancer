@@ -1,0 +1,18 @@
+[
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp=reports/engineering/evidence/m010/focused_budget/test_tmp",
+    "--junitxml=reports/engineering/evidence/m010/focused_budget/tests.xml",
+    "tests/test_supervisor.py",
+    "tests/test_supervisor_boundaries.py",
+    "tests/test_suspend_clock.py"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "tools/m010_repeats.py",
+    "reports/engineering/evidence/m010/focused_budget/repeats"
+  ]
+]

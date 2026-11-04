@@ -1,0 +1,65 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/engineering/evidence/m010/focused_budget/test_tmp",
+        "--junitxml=reports/engineering/evidence/m010/focused_budget/tests.xml",
+        "tests/test_supervisor.py",
+        "tests/test_supervisor_boundaries.py",
+        "tests/test_suspend_clock.py"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1309458231865541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1309458235450416
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1309480550526416
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 14497,
+      "pgid": 14497,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m010/focused_budget/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "tools/m010_repeats.py",
+        "reports/engineering/evidence/m010/focused_budget/repeats"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1309458231865541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1309480553214750
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 14835,
+      "pgid": 14835,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m010/focused_budget/supervision/stop-1"
+    }
+  ]
+}

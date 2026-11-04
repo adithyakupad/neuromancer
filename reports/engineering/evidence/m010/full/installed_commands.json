@@ -1,0 +1,24 @@
+[
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--force-reinstall",
+    "reports/engineering/evidence/m010/full/wheel/neuromancer-1.0.0-py3-none-any.whl"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "check"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/neuromancer-diagnostic",
+    "--mode",
+    "smoke",
+    "--output",
+    "reports/engineering/evidence/m010/full/installed_smoke"
+  ]
+]

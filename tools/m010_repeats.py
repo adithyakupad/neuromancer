@@ -1,5 +1,6 @@
 """Frozen20timely/5late failure-fixture repeats, independently watchdog bounded."""
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -12,6 +13,9 @@ from supervisor_test_support import communicate
 root = Path(sys.argv[1])
 root.mkdir(parents=True, exist_ok=False)
 deadline = Deadline.after(240)
+if "NEUROMANCER_DEADLINE_NS" in os.environ:
+    enclosing = Deadline.from_environment()
+    deadline = Deadline(min(deadline.end_ns, enclosing.end_ns), enclosing.clock_id)
 conditions = ["fixed_failure"] * 20 + ["late_failure"] * 5
 atomic_json(root / "manifest.json", dict(conditions=conditions, deadline_ns=deadline.end_ns,
     clock_id=deadline.clock_id, source_revision=subprocess.check_output(
@@ -19,6 +23,8 @@ atomic_json(root / "manifest.json", dict(conditions=conditions, deadline_ns=dead
 rows = []
 for index, condition in enumerate(conditions):
     deadline.check()
+    if deadline.remaining() < 6.5:
+        raise TimeoutError("Insufficient enclosing budget for original fixture/watchdog")
     folder = root / f"{index:02}_{condition}"
     folder.mkdir()
     process = subprocess.Popen([sys.executable, "tools/m010_case.py", str(folder), condition],

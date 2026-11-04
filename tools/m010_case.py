@@ -1,5 +1,6 @@
 """One original-budget subprocess diagnostic, called under an outer watchdog."""
 import json
+import os
 from pathlib import Path
 import resource
 import sys
@@ -13,6 +14,8 @@ resource.setrlimit(resource.RLIMIT_FSIZE, (16 * 1024**2, 16 * 1024**2))
 root = Path(sys.argv[1])
 mode = sys.argv[2]
 deadline = Deadline.after(1.8)
+if "NEUROMANCER_DEADLINE_NS" in os.environ:
+    assert deadline.end_ns <= Deadline.from_environment().end_ns
 cutoff = deadline.end_ns - 800_000_000
 thread = None
 errors = []

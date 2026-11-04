@@ -14,6 +14,9 @@ from supervisor_test_support import communicate
 root = Path(sys.argv[1])
 root.mkdir(parents=True, exist_ok=False)
 deadline = Deadline.after(240)
+if "NEUROMANCER_DEADLINE_NS" in os.environ:
+    enclosing = Deadline.from_environment()
+    deadline = Deadline(min(deadline.end_ns, enclosing.end_ns), enclosing.clock_id)
 conditions = (["original"] * 5 + ["filesystem_error"] * 5
               + ["python_exception"] * 3 + ["caught_exit"] * 3
               + ["traceback_delay"] * 2 + ["normal_exit"] * 3
@@ -31,6 +34,8 @@ rows = []
 os.environ["M008_WORKER_TRACE"] = "1"
 for index, condition in enumerate(conditions):
     deadline.check()
+    if deadline.remaining() < 6.5:
+        raise TimeoutError("Insufficient enclosing budget for original fixture/watchdog")
     folder = root / f"{index:02}_{condition}"
     folder.mkdir()
     process = subprocess.Popen([sys.executable, "tools/m010_case.py", str(folder), condition],

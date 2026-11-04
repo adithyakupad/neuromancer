@@ -2,8 +2,8 @@
 
 **Overall decision: PARTIAL / HOLD.** The local fixture repair, numerical and
 preservation checks pass. The prespecified performance repeat fails two p95
-bounds; that failure is retained. Hosted reliability qualification is a separate
-remaining gate, not a way to override performance HOLD. No merge/tag/publication.
+bounds; that failure is retained. Hosted macOS repeated qualification is also incomplete; see the closing
+appendix. Passing unit tests are not a way to override either HOLD. No merge/tag/publication.
 
 ## Repository and evidence
 
@@ -74,6 +74,8 @@ All25have verified cleanup, surviving partials, matching qualified-clock domains
 no watchdog intervention, reaped leaders and independently absent owned groups.
 Per-event timelines and source manifests are retained. Custom traceback hooks are
 explicitly diagnostic instrumentation and are not identical to native display.
+Filesystem-exception creation is bounded between operation-begin and catch, not
+claimed as an exact C-runtime timestamp. Atexit markers precede actual process exit.
 
 ## Repair and constraints
 
@@ -186,3 +188,68 @@ performance qualification if justified. Do not silently drop tail samples, lower
 a threshold, run further retries or start a broad optimization/neural campaign.
 The historical exact A/BOS-latency subcause also remains unrecoverable from its
 partial trace; the justified fixture repair does not claim to recover it.
+
+## Hosted closing results and final HOLD
+
+Exact tested implementation: `88218246dab76819fffa95d2710601c3096db51b`.
+[Package matrix41902323443](https://github.com/adithyakupad/neuromancer/actions/runs/41902323443):
+LinuxPASS, macOS15IntelFAIL. [LegacyLinux41902323625](https://github.com/adithyakupad/neuromancer/actions/runs/41902323625):PASS.
+No failed job was rerun. Full logs, all three complete artifactZIPs and SHA256s
+are preserved under `hosted/`. The final documentation commit changes evidence
+only; production/helper/test/workflow code remains that exact tested version.
+
+| Hosted job | Full regression | Diagnostic bank | Corrected repeat bank |
+| --- | --- | --- | --- |
+| Linux package |201passed/25warnings/81.38s|25complete, independently verified|25complete, independently verified|
+| LegacyLinux |201passed/25warnings/72.50s|25complete, same-host live checks PASS|25complete, same-host live checks PASS|
+| macOS15Intel |201passed/25warnings/296.71s|25complete, independently verified|21complete; index21failed; indices22–24not started|
+
+Local and Linux banks met intended real-error/exit assertions. macOS completed
+all20timely cases and one late case, then its second late case aborted because
+release missed the ORIGINAL work cutoff. This is not a qualified error-control
+trial: the deliberate filesystem operation never ran. Its absent failure.json
+is retained, not replaced or treated as evidence of an executed error.
+
+Independent original-clock timeline for failed macOS index21:
+
+| Event/envelope | ms relative to supervisor start |
+| --- | ---: |
+| Initial progress-publication envelope duration |954.701|
+| Process creation begins |955.858|
+| Process creation returns |960.877|
+| Original work cutoff |999.279|
+| Worker ready |1045.388|
+| Prepared finished record |1249.698|
+
+The5.019msprocess-creation call is not the955msdelay: initial progress publication
+consumed most of the work window before launch. That envelope includes JSON
+encoding, flush/fsync/replace and possible scheduling delays; the trace does not
+isolate a particular syscall. Readiness missed cutoff by46.109ms. The driver
+correctly withheld release, the supervisor returned DEADLINE_EXCEEDED, the worker
+was reaped after TERM, cleanup_verified=true and the6souter watchdog did not
+intervene. The separate post-bank live-group verification was not executed on
+this aborted case; it must not be claimed. No production deadline defect is
+demonstrated, but the required bank is incomplete, so reliability qualification
+cannot pass. macOS used CPython3.12.10; local/Linux used3.12.15. All are within
+the existing3.12package range; no patch-version change was introduced by M010.
+
+**Final M010: PARTIAL / HOLD.** Blockers:
+
+1. Hosted macOS cannot complete the frozen repeated-error bank under this observed
+   persistence/startup latency. New fixture logic passes all201regressions and
+   responsive-host banks, but universal scheduling/durability latency is not bounded.
+2. Serialized same-source performance comparison misses FIR/RLS p95limits. Numerical
+   equivalence and unchanged source do not justify silently changing those limits.
+
+Earlier green checks and any automatic later green documentation-only run do
+not resolve these findings. V1 and personal-style integration remain HOLD. All
+production/scientific files and prior results remain unchanged; no merge/tag/release.
+
+Smallest next discriminating reliability investigation (proposed only): instrument
+initial progress persistence with in-memory timestamps around encoding, flush,
+fsync and replace, then persist diagnostics after the measured operation. Freeze
+count/budgets in a separate review; retain the original deadline and every stall.
+Determine whether a compliant fixture-environment strategy is possible without
+moving budget start or weakening artifact durability. Do not simply grant more
+time, skip the operation or accept missing error evidence. Address performance
+measurement uncertainty separately; M010 performs no further probes or optimization.

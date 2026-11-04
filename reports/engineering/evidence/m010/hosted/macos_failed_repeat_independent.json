@@ -1,0 +1,28 @@
+{
+  "status": "HOLD_INCOMPLETE_BANK",
+  "revision": "88218246dab76819fffa95d2710601c3096db51b",
+  "planned": 25,
+  "completed": 21,
+  "failed_case": 21,
+  "not_started": [
+    22,
+    23,
+    24
+  ],
+  "work_cutoff_ms": 999.278845,
+  "progress_publication_envelope_ms": 954.701138,
+  "process_creation_begin_ms": 955.857861,
+  "process_creation_end_ms": 960.876689,
+  "ready_ms": 1045.387615,
+  "ready_after_cutoff_ms": 46.10877,
+  "finished_ms": 1249.698296,
+  "release_errors": [
+    "Release missed original work cutoff"
+  ],
+  "failure_operation_executed": false,
+  "cleanup_verified": true,
+  "watchdog_intervened": false,
+  "independent_live_group_check": "NOT_EXECUTED_ON_ABORTED_CASE",
+  "qualification": "Do not count a missing operation as a qualified late-error control",
+  "limitations": "Publication envelope does not isolate JSON encoding, flush, fsync, replace or scheduling without further instrumentation"
+}

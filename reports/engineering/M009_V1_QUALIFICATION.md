@@ -28,3 +28,26 @@ qualification evidence. No prior M008 green check substitutes for this V1 candid
 Once qualified,this candidate is independently reviewable/releasable without cosmetic changes.
 The style branch is a separate descendant and is not a prerequisite for V1 publication.
 No validation/locked cohort or new controller study is authorized.
+
+## Closing qualification
+
+Engineering PASS at exact implementation/workflow revision
+`24f043900b5a7b36b90a19aa81114bb4a5b3e458`. Hosted run41891009863 passed both
+ubuntu-latest and macos-15-intel, including all200tests,35process probes,wheel,
+pip check and installed CLI smoke. Legacy run41891009861 also passed. Raw job
+metadata/logs retained. The macos-latest arm64 attempt41887694865 failed to acquire
+a runner; this infrastructure failure is preserved, not called a test PASS.
+The prospective CI_RUNNER_CLARIFICATION changes only the standard runner label.
+Local Apple M5/macOS26.5.2 qualification remains separate from hosted Intel macOS15.
+No hosted-arm64 claim is made for this candidate.
+
+Independent evidence-only reproduction completed under the shared1200s budget,
+with1038.245s remaining: four canonical numerical outputs and four figures are
+byte-identical. Complete copied outputs retain their original execution paths.
+PI11.46875,RLS13.12921875,fixed MPC18.9778125Hz·s and adaptive superiority FAIL
+remain unchanged. No new scientific trajectories beyond engineering smoke/tests.
+
+This closing commit adds documentation/evidence only; all qualified production,
+workflow and test bytes match24f04390. It does not merge or publish V1. The separate
+style branch may now be created from this qualified candidate. Cosmetic changes
+are not a prerequisite to reviewing/releasing this reliability-only branch.

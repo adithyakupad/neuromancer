@@ -34,17 +34,25 @@ def isolation(worktree):
         assert release[name] == tree("08a956ce")[name]
     for optional in ("ce147866", "72824e6c", "4a8e91ee"):
         assert subprocess.run(["git", "merge-base", "--is-ancestor", optional, V1]).returncode == 1
-    assert subprocess.check_output(["git", "-C", str(worktree), "rev-parse", "HEAD"], text=True).strip() == V1
+    candidate = subprocess.check_output(["git", "-C", str(worktree), "rev-parse", "HEAD"], text=True).strip()
+    assert candidate in (V1, "42e20ada6e737c37f616950056c3444cfa99d400")
+    candidate_tree = tree(candidate)
+    documentation_changes = {name for name in release if release[name] != candidate_tree.get(name)}
+    added = set(candidate_tree) - set(release)
+    if candidate != V1:
+        assert documentation_changes == {"README.md", "docs/V1_RELEASE_NOTES.md"}
+        assert added == {"reports/engineering/M011_RELEASE_ISOLATION.md"}
     assert not subprocess.check_output(["git", "-C", str(worktree), "status", "--porcelain"])
     checked = 0
-    for name, expected in release.items():
+    for name, expected in candidate_tree.items():
         path = worktree / name
         data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
         actual = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
         assert actual == expected, name
         checked += 1
-    return dict(status="PASS", candidate=V1, physical_files_checked=checked,
+    return dict(status="PASS", candidate=candidate, reliability_base=V1, physical_files_checked=checked,
                 licensed_base=LICENSED, changed_existing_paths=sorted(changed),
+                documentation_integration=sorted(documentation_changes), added_documentation=sorted(added),
                 scientific_implementation_and_evidence="unchanged from licensed V1",
                 M010_fixture_and_optional_style_and_performance="excluded")
 

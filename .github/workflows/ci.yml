@@ -17,6 +17,8 @@ jobs:
       - run: python -m pip check
       - run: mkdir -p runs
       - run: python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml
+      - run: python tools/m010_diagnose.py runs/m010-diagnostics
+      - run: python tools/m010_repeats.py runs/m010-repeats
       - run: neuromancer-diagnostic --mode smoke --output runs/ci-smoke
       - uses: actions/upload-artifact@v4
         if: always()
@@ -27,3 +29,5 @@ jobs:
             runs/tests.xml
             runs/supervisor-artifacts
             runs/pytest-tmp
+            runs/m010-diagnostics
+            runs/m010-repeats

@@ -2,6 +2,7 @@
 import hashlib
 import io
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -13,7 +14,8 @@ from neuromancer.supervisor import Deadline, atomic_json, supervise
 BASE = "72824e6cb48e714e11a398f2787146099daec397"
 root = Path(sys.argv[1]).resolve()
 root.mkdir(parents=True, exist_ok=False)
-deadline = Deadline.after(600)
+deadline = Deadline.from_environment() if "NEUROMANCER_DEADLINE_NS" in os.environ else Deadline.after(600)
+deadline.check()
 reference = root / "reference_source"
 reference.mkdir()
 archive = subprocess.check_output(["git", "archive", BASE, "src/neuromancer"])

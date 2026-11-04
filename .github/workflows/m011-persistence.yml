@@ -24,8 +24,11 @@ jobs:
       - run: python -m pip install --no-deps --no-build-isolation -e .
       - run: mkdir -p runs
       - run: python tools/m011_persistence.py runs/m011-persistence
+      - run: python tools/m011_verify.py persistence runs/m011-persistence runs/m011-verification.json --live-groups
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: m011-persistence-${{ matrix.os }}
-          path: runs/m011-persistence
+          path: |
+            runs/m011-persistence
+            runs/m011-verification.json

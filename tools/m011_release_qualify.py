@@ -7,13 +7,16 @@ import sys
 
 from neuromancer.supervisor import Deadline, atomic_json, supervise
 
-SOURCE = "86ad99f6956c76a5bb6d169e21544684f57c9270"
+BASE = "86ad99f6956c76a5bb6d169e21544684f57c9270"
+SOURCE = os.environ.get("M011_EXPECTED_SOURCE", BASE)
 output = Path(sys.argv[1]).resolve()
 output.mkdir(parents=True, exist_ok=False)
 tools = Path(__file__).resolve().parent
 reference = tools.parent / "reports/engineering/evidence/m011/isolated_v1/release/reference"
 assert subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() == SOURCE
 assert not subprocess.check_output(["git", "diff", "--name-only", SOURCE])
+for name in Path("src/neuromancer").glob("*.py"):
+    assert name.read_bytes() == subprocess.check_output(["git", "show", f"{BASE}:{name}"]), str(name)
 deadline = Deadline.after(1200)
 python = sys.executable
 os.environ.update(VECLIB_MAXIMUM_THREADS="1", OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1",
@@ -22,7 +25,7 @@ os.environ.update(VECLIB_MAXIMUM_THREADS="1", OPENBLAS_NUM_THREADS="1", OMP_NUM_
 commands = [
     [python, "-m", "pip", "check"],
     [python, "-m", "pip", "wheel", "--no-deps", "--no-build-isolation", ".", "--wheel-dir", str(output / "wheel")],
-    ["/usr/bin/env", "-u", "PYTHONPATH", python, "-m", "pip", "install", "--no-deps", str(output / "wheel/neuromancer-1.0.0-py3-none-any.whl")],
+    ["/usr/bin/env", "-u", "PYTHONPATH", python, "-m", "pip", "install", "--no-deps", "--force-reinstall", str(output / "wheel/neuromancer-1.0.0-py3-none-any.whl")],
     ["/usr/bin/env", "-u", "PYTHONPATH", python, str(tools / "m011_installed_check.py"), str(output)],
     ["/usr/bin/env", "-u", "PYTHONPATH", str(Path(python).parent / "neuromancer-diagnostic"),
      "--mode", "smoke", "--output", str(output / "installed_smoke")],

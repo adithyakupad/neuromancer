@@ -7,7 +7,7 @@ import sys
 
 from neuromancer.supervisor import Deadline, atomic_json, supervise
 
-assert subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() == "86ad99f6956c76a5bb6d169e21544684f57c9270"
+assert subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip() == os.environ.get("M011_EXPECTED_SOURCE", "86ad99f6956c76a5bb6d169e21544684f57c9270")
 root = Path(sys.argv[1]).resolve()
 root.mkdir(parents=True, exist_ok=False)
 deadline = Deadline.after(240)

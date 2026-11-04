@@ -213,3 +213,35 @@ skills require the user's independent review. These do not revise the historical
 scientific outcomes. Review FIR lag construction, the old-state RLS update,
 anti-windup, partial observations and network-level replication before modifying
 this instrument. The next step is review, not a new controller experiment.
+
+## Hosted closing gate and final recommendation
+
+**Engineering PASS** for implementation commit
+`d028b089aebee1369b7beffb0122851bd7df1bac`, on
+`refactor/personal-code-style`. Hosted package/regression run
+[41893766820](https://github.com/adithyakupad/neuromancer/actions/runs/41893766820)
+passed ubuntu-latest and macos-15-intel, with all200tests,35real-process probes,
+pinned dependency checks, wheel installation and installed smoke. Legacy run
+[41893766843](https://github.com/adithyakupad/neuromancer/actions/runs/41893766843)
+also passed. Full raw logs and structured job results are retained in `hosted/`.
+The separate M009 closing revision86ad99f6 passed run41892453628 on both platforms.
+The two arm64 runner-acquisition failures remain preserved and are not counted
+as successful hosted-arm64 tests.
+
+This closing commit changes evidence/reporting only; all production and helper
+source hashes remain identical to the fully qualified implementation. Final
+closing-revision CI is independently required before merge, and its exact commit
+and checks are provided in the handoff. The report cannot embed its own containing
+commit hash without changing that hash; use `git rev-parse HEAD` on this branch.
+
+Review the four-file code change with:
+
+```sh
+git diff 86ad99f6..HEAD -- src/neuromancer docs/development/CODING_STYLE.md
+```
+
+Raw verification archives are isolated under `evidence/personal_style/`; they are
+synthetic/development instrument evidence, not additional independent research
+cohorts. No numerical finding, controller superiority claim, publication state or
+V1 scientific scope changed. Ready for independent review, not automatic merge,
+tag or publication. User comprehension and authorship are not inferred from PASS.

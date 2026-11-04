@@ -18,7 +18,9 @@ jobs:
       - run: mkdir -p runs
       - run: python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml
       - run: python tools/m010_diagnose.py runs/m010-diagnostics
+      - run: python tools/m010_verify.py diagnostics runs/m010-diagnostics runs/m010-diagnostics-verification.json --live-groups
       - run: python tools/m010_repeats.py runs/m010-repeats
+      - run: python tools/m010_verify.py repeats runs/m010-repeats runs/m010-repeats-verification.json --live-groups
       - run: neuromancer-diagnostic --mode smoke --output runs/ci-smoke
       - uses: actions/upload-artifact@v4
         if: always()
@@ -31,3 +33,4 @@ jobs:
             runs/pytest-tmp
             runs/m010-diagnostics
             runs/m010-repeats
+            runs/m010-*-verification.json

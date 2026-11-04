@@ -1,0 +1,62 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_stop",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m008/full_repaired_tmp/test_real_worker_lifecycle_ign0/worker",
+        "1264576085757541"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1264575085782541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1264575087597833
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1264576094342458
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1264576288432541
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1264576303531833
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 94655,
+      "pgid": 94655,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m008/full_repaired_tmp/test_real_worker_lifecycle_ign0/supervision/stop-0",
+      "last_running_poll_ns": 1264576288478625,
+      "signal_errors": [
+        null
+      ],
+      "first_observed_exit_ns": 1264576303513125,
+      "returncode": -15,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1264575085782541,
+  "deadline_ns": 1264576885757541,
+  "work_cutoff_ns": 1264576085757541,
+  "finished_ns": 1264576315228500,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1264576885757541,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

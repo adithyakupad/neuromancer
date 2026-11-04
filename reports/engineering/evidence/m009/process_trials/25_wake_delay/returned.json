@@ -1,0 +1,55 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "tests/supervisor_worker.py",
+        "before",
+        "reports/engineering/evidence/m009/process_trials/25_wake_delay/worker",
+        "1298866581953291"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298865592914083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298865595215666
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1298866583744041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298866708985958
+        }
+      ],
+      "terminal": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 5027,
+      "pgid": 5027,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/process_trials/25_wake_delay/supervision/stop-0",
+      "last_running_poll_ns": 1298866696423666,
+      "first_observed_exit_ns": 1298866708959708,
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1298865592914083,
+  "deadline_ns": 1298867381953291,
+  "work_cutoff_ns": 1298866581953291,
+  "finished_ns": 1298866721549458,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1298867381953291,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

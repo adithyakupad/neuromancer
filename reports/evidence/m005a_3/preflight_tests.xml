@@ -1,0 +1,3095 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="13" skipped="0" tests="125" time="52.918" timestamp="2026-10-28T00:26:33.189520-04:00" hostname="Adithyas-MacBook-Pro.local"><testcase classname="tests.test_authority_diagnosis" name="test_frozen_bank_and_ramp_exposure" time="0.009" /><testcase classname="tests.test_authority_diagnosis" name="test_fixed_evaluator_memberships_do_not_change_observable" time="0.017" /><testcase classname="tests.test_authority_diagnosis" name="test_analysis_pairing_and_global_selection_use_only_calibration" time="0.030" /><testcase classname="tests.test_authority_diagnosis" name="test_full_analysis_synthetic_zero_fixture" time="2.725" /><testcase classname="tests.test_calibration" name="test_exact_prefix_target_math_and_blind_inverse" time="0.057" /><testcase classname="tests.test_calibration" name="test_causal_inputs_and_test_data_separation" time="0.052" /><testcase classname="tests.test_calibration" name="test_monotonicity_unreachable_and_ill_conditioned_maps" time="0.042" /><testcase classname="tests.test_calibration" name="test_original_bounds_slew_and_prefix_budget" time="0.012" /><testcase classname="tests.test_calibration" name="test_network_gate_does_not_pool_bins_or_ignore_bad_replicates" time="0.004" /><testcase classname="tests.test_calibration" name="test_new_noise_ids_independent_and_network_parameters_fixed" time="0.061" /><testcase classname="tests.test_calibration" name="test_execution_lineage_frozen_before_neural_run" time="0.075" /><testcase classname="tests.test_calibration" name="test_complete_analysis_records_all_invalid_trials" time="0.276" /><testcase classname="tests.test_control" name="test_projection_arbitrary_transitions_kkt" time="0.089" /><testcase classname="tests.test_control" name="test_aggregation_timing_no_gain_and_future" time="0.001" /><testcase classname="tests.test_control" name="test_antiwindup_saturation_and_release" time="0.001" /><testcase classname="tests.test_control" name="test_missing_delayed_invalid_and_rearm" time="0.000" /><testcase classname="tests.test_control" name="test_future_mutation_and_independent_memory" time="0.001" /><testcase classname="tests.test_control" name="test_observation_before_subsequent_action_fake_trial" time="0.000" /><testcase classname="tests.test_control" name="test_neural_tick_replay_isolation_and_receipts" time="3.860" /><testcase classname="tests.test_control" name="test_calibration_exact_math_and_future_rejection" time="0.044" /><testcase classname="tests.test_control" name="test_network_replication_and_mean_gate" time="0.013" /><testcase classname="tests.test_control" name="test_projection_strict_floating_point_slew_contract" time="0.514" /><testcase classname="tests.test_control" name="test_absolute_resource_deadline_counts_clock_gap" time="0.001" /><testcase classname="tests.test_identify" name="test_known_linear_recovery_serialization_and_dimensions" time="0.029" /><testcase classname="tests.test_identify" name="test_feature_timing_and_common_origin_no_input_contrast" time="0.016" /><testcase classname="tests.test_identify" name="test_fit_scaling_and_shuffling_never_cross_evaluation_boundary" time="0.020" /><testcase classname="tests.test_identify" name="test_predictions_do_not_use_future_observations_or_out_of_horizon_actions" time="0.013" /><testcase classname="tests.test_identify" name="test_input_design_constraints_rank_seeds_and_guard_exposure" time="0.430" /><testcase classname="tests.test_identify" name="test_reject_numerically_unidentified_model_and_guard_absolute_gate" time="0.009" /><testcase classname="tests.test_identify" name="test_filter_initialization_warmup_is_identical_for_all_candidates" time="0.025" /><testcase classname="tests.test_identify" name="test_shared_lag_is_chosen_by_ar_not_arx_or_reserved_outcomes" time="0.020" /><testcase classname="tests.test_identify" name="test_null_software_end_to_end_analysis" time="0.717" /><testcase classname="tests.test_identify" name="test_inconclusive_precision_is_hold_without_weakening_effect_size" time="0.001" /><testcase classname="tests.test_identify" name="test_noisy_linear_recovery_respects_known_sampling_uncertainty" time="0.016" /><testcase classname="tests.test_necessity" name="test_static_coefficients_and_input_only_api" time="0.001" /><testcase classname="tests.test_necessity" name="test_fir_recovery_delayed_impulse_and_independent_convolution" time="0.006" /><testcase classname="tests.test_necessity" name="test_fitting_and_forecast_data_separation_and_shuffling" time="0.011" /><testcase classname="tests.test_necessity" name="test_linear_arx_contrast_does_not_use_origin_observation_state" time="0.015" /><testcase classname="tests.test_necessity" name="test_registered_plans_exposure_and_input_rank" time="0.965" /><testcase classname="tests.test_necessity" name="test_network_gate_and_selection" time="0.004" /><testcase classname="tests.test_necessity" name="test_independent_ridge_and_forecast_equations" time="0.097" /><testcase classname="tests.test_necessity" name="test_future_plan_mutation_cannot_change_earlier_forecasts" time="0.073" /><testcase classname="tests.test_necessity" name="test_equal_length_caller_histories_for_ablation_and_teacher_forcing" time="0.004" /><testcase classname="tests.test_online_identify" name="test_original_fir_scaling_and_lags" time="0.005" /><testcase classname="tests.test_online_identify" name="test_rls_weighted_batch_equivalence" time="0.007" /><testcase classname="tests.test_online_identify" name="test_window_sample_budget_and_ordering" time="0.006" /><testcase classname="tests.test_online_identify" name="test_delay_missing_invalid_and_numerical_failure" time="0.003" /><testcase classname="tests.test_online_identify" name="test_detector_causality_information_and_refractory" time="0.000" /><testcase classname="tests.test_online_identify" name="test_future_observation_and_input_mutation" time="0.007" /><testcase classname="tests.test_online_identify" name="test_schedules_and_sham_from_nonzero_prior" time="0.128" /><testcase classname="tests.test_online_identify" name="test_unexcited_initialization_and_finite_serialization" time="0.002" /><testcase classname="tests.test_online_identify" name="test_detector_event_boundary_is_strictly_post_change" time="0.004" /><testcase classname="tests.test_reachability" name="test_bank_constraints_and_exact_charge_matches" time="0.012" /><testcase classname="tests.test_reachability" name="test_analysis_noise_hierarchy_and_nontrivial_target_floor" time="0.016" /><testcase classname="tests.test_reachability" name="test_readout_holds_out_noise_and_time_metrics_are_causal_bins" time="0.008" /><testcase classname="tests.test_reachability" name="test_complete_analysis_synthetic_zero_fixture" time="1.396" /><testcase classname="tests.test_state_dependence" name="test_state_causal_and_history_mutations" time="0.004" /><testcase classname="tests.test_state_dependence" name="test_interaction_analytical_recovery_and_zero" time="0.006" /><testcase classname="tests.test_state_dependence" name="test_fir_future_mutation_and_no_state_access" time="0.001" /><testcase classname="tests.test_state_dependence" name="test_exact_schedule_exposure_and_constraints" time="0.147" /><testcase classname="tests.test_state_dependence" name="test_network_gate_and_no_pseudoreplication" time="0.003" /><testcase classname="tests.test_state_dependence" name="test_arx_timestamp_and_recursive_alignment" time="0.002" /><testcase classname="tests.test_state_dependence" name="test_origin_checkpoint_replay_and_receipt_timing" time="1.459" /><testcase classname="tests.test_state_dependence" name="test_reserved_origin_loader_never_opens_outcomes" time="0.006" /><testcase classname="tests.test_state_dependence" name="test_training_state_shuffle_and_separation" time="0.003" /><testcase classname="tests.test_substrate" name="test_frozen_distributions_memberships_and_parameter_roles" time="0.048" /><testcase classname="tests.test_substrate" name="test_noise_roles_block_independence_and_nested_ou" time="1.601" /><testcase classname="tests.test_substrate" name="test_continuous_chunked_reset_and_cross_block_replay" time="7.000" /><testcase classname="tests.test_substrate" name="test_causal_responsive_fixture_and_zero_coupling" time="1.703" /><testcase classname="tests.test_substrate" name="test_pending_delay_snapshot_and_synaptic_arrival" time="0.246" /><testcase classname="tests.test_substrate" name="test_membrane_decay_synaptic_signs_and_refractory" time="0.564" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change0]" time="0.027" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change1]" time="0.025" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change2]" time="0.026" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change3]" time="0.029" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change4]" time="0.025" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change5]" time="0.026" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change6]" time="0.025" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change7]" time="0.027" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change8]" time="0.025" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change9]" time="0.026" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change10]" time="0.025" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change11]" time="0.039" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change12]" time="0.026" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change13]" time="0.027" /><testcase classname="tests.test_substrate" name="test_invalid_actions_atomic[change14]" time="0.025" /><testcase classname="tests.test_substrate" name="test_total_slew_duplicate_and_missing_commands" time="0.578" /><testcase classname="tests.test_substrate" name="test_half_open_channels_masks_and_filter" time="0.004" /><testcase classname="tests.test_substrate" name="test_actual_ou_order_no_spike_dependent_stream_and_retention" time="1.142" /><testcase classname="tests.test_substrate" name="test_process_isolation_public_firewall_and_reset" time="4.096" /><testcase classname="tests.test_substrate" name="test_zero_coupling_default_network_and_actual_channel_counts" time="1.243" /><testcase classname="tests.test_substrate" name="test_ou_precedes_membrane_update_on_first_sample" time="0.357" /><testcase classname="tests.test_substrate" name="test_config_validation[change0]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change1]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change2]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change3]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change4]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change5]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change6]" time="0.000" /><testcase classname="tests.test_substrate" name="test_config_validation[change7]" time="0.000" /><testcase classname="tests.test_substrate" name="test_future_commands_cannot_mutate_previous_observations" time="0.878" /><testcase classname="tests.test_substrate" name="test_record_policy_cannot_change_scientific_observations" time="1.003" /><testcase classname="tests.test_substrate" name="test_inhibitory_event_path_and_exact_allowed_current_boundary" time="0.514" /><testcase classname="tests.test_supervisor" name="test_deadline_shared_and_calendar_independent" time="0.000" /><testcase classname="tests.test_supervisor" name="test_atomic_artifact_survives_failed_replace" time="0.002" /><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[complete]" time="0.180"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_com0')
+mode = 'complete'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[timeout]" time="1.353"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_tim0')
+mode = 'timeout'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[cooperative]" time="1.159"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_coo0')
+mode = 'cooperative'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[ignore_stop]" time="1.346"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_ign0')
+mode = 'ignore_stop'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[ignore_term]" time="1.546"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_ign1')
+mode = 'ignore_term'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[shutdown_block]" time="1.543"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_shu0')
+mode = 'shutdown_block'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[exception]" time="0.165"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_exc0')
+mode = 'exception'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[unexpected]" time="0.151"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_une0')
+mode = 'unexpected'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[descendant]" time="1.359"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_des0')
+mode = 'descendant'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[orphan]" time="0.636"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_orp0')
+mode = 'orphan'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[write_failure]" time="0.161"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_wri0')
+mode = 'write_failure'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[before]" time="0.934"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_bef0')
+mode = 'before'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_real_worker_lifecycle[race]" time="1.144"><failure message="PermissionError: [Errno 1] Operation not permitted: 'ps'">tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-47/test_real_worker_lifecycle_rac0')
+mode = 'race'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+        assert p.returncode == 0,stderr.decode()
+        r=json.loads((tmp_path/'returned.json').read_text())
+        assert time.monotonic()-began &lt; 4
+        assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
+        if mode in ('complete','before'):
+            assert r['status']=='COMPLETED'
+        elif mode in ('exception','unexpected','write_failure','orphan'):
+            assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
+        else:
+            assert r['status']=='DEADLINE_EXCEEDED',r
+        if mode != 'orphan':
+            assert r['cleanup_verified'],r
+            assert r['workers'][0]['state']=='REAPED'
+        assert r['finished_ns'] &lt;= r['deadline_ns'],r
+        if mode in ('ignore_term','shutdown_block'):
+            assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
+        # Independent process-table check includes descendants, separately from leader.
+&gt;       table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_supervisor.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:466: in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:548: in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1026: in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;Popen: returncode: 255 args: ['ps', '-axo', 'pid=,stat=']&gt;
+args = ['ps', '-axo', 'pid=,stat='], executable = b'ps', preexec_fn = None
+close_fds = True, pass_fds = (), cwd = None, env = None, startupinfo = None
+creationflags = 0, shell = False, p2cread = -1, p2cwrite = -1, c2pread = 12
+c2pwrite = 13, errread = -1, errwrite = -1, restore_signals = True, gid = None
+gids = None, uid = None, umask = -1, start_new_session = False
+process_group = -1
+
+    def _execute_child(self, args, executable, preexec_fn, close_fds,
+                       pass_fds, cwd, env,
+                       startupinfo, creationflags, shell,
+                       p2cread, p2cwrite,
+                       c2pread, c2pwrite,
+                       errread, errwrite,
+                       restore_signals,
+                       gid, gids, uid, umask,
+                       start_new_session, process_group):
+        """Execute program (POSIX version)"""
+    
+        if isinstance(args, (str, bytes)):
+            args = [args]
+        elif isinstance(args, os.PathLike):
+            if shell:
+                raise TypeError('path-like args is not allowed when '
+                                'shell is true')
+            args = [args]
+        else:
+            args = list(args)
+    
+        if shell:
+            # On Android the default shell is at '/system/bin/sh'.
+            unix_shell = ('/system/bin/sh' if
+                      hasattr(sys, 'getandroidapilevel') else '/bin/sh')
+            args = [unix_shell, "-c"] + args
+            if executable:
+                args[0] = executable
+    
+        if executable is None:
+            executable = args[0]
+    
+        sys.audit("subprocess.Popen", executable, args, cwd, env)
+    
+        if (_USE_POSIX_SPAWN
+                and os.path.dirname(executable)
+                and preexec_fn is None
+                and not close_fds
+                and not pass_fds
+                and cwd is None
+                and (p2cread == -1 or p2cread &gt; 2)
+                and (c2pwrite == -1 or c2pwrite &gt; 2)
+                and (errwrite == -1 or errwrite &gt; 2)
+                and not start_new_session
+                and process_group == -1
+                and gid is None
+                and gids is None
+                and uid is None
+                and umask &lt; 0):
+            self._posix_spawn(args, executable, env, restore_signals,
+                              p2cread, p2cwrite,
+                              c2pread, c2pwrite,
+                              errread, errwrite)
+            return
+    
+        orig_executable = executable
+    
+        # For transferring possible exec failure from child to parent.
+        # Data format: "exception name:hex errno:description"
+        # Pickle is not used; it is complex and involves memory allocation.
+        errpipe_read, errpipe_write = os.pipe()
+        # errpipe_write must not be in the standard io 0, 1, or 2 fd range.
+        low_fds_to_close = []
+        while errpipe_write &lt; 3:
+            low_fds_to_close.append(errpipe_write)
+            errpipe_write = os.dup(errpipe_write)
+        for low_fd in low_fds_to_close:
+            os.close(low_fd)
+        try:
+            try:
+                # We must avoid complex work that could involve
+                # malloc or free in the child process to avoid
+                # potential deadlocks, thus we do all this here.
+                # and pass it to fork_exec()
+    
+                if env is not None:
+                    env_list = []
+                    for k, v in env.items():
+                        k = os.fsencode(k)
+                        if b'=' in k:
+                            raise ValueError("illegal environment variable name")
+                        env_list.append(k + b'=' + os.fsencode(v))
+                else:
+                    env_list = None  # Use execv instead of execve.
+                executable = os.fsencode(executable)
+                if os.path.dirname(executable):
+                    executable_list = (executable,)
+                else:
+                    # This matches the behavior of os._execvpe().
+                    executable_list = tuple(
+                        os.path.join(os.fsencode(dir), executable)
+                        for dir in os.get_exec_path(env))
+                fds_to_keep = set(pass_fds)
+                fds_to_keep.add(errpipe_write)
+                self.pid = _fork_exec(
+                        args, executable_list,
+                        close_fds, tuple(sorted(map(int, fds_to_keep))),
+                        cwd, env_list,
+                        p2cread, p2cwrite, c2pread, c2pwrite,
+                        errread, errwrite,
+                        errpipe_read, errpipe_write,
+                        restore_signals, start_new_session,
+                        process_group, gid, gids, uid, umask,
+                        preexec_fn, _USE_VFORK)
+                self._child_created = True
+            finally:
+                # be sure the FD is closed no matter what
+                os.close(errpipe_write)
+    
+            self._close_pipe_fds(p2cread, p2cwrite,
+                                 c2pread, c2pwrite,
+                                 errread, errwrite)
+    
+            # Wait for exec to fail or succeed; possibly raising an
+            # exception (limited in size)
+            errpipe_data = bytearray()
+            while True:
+                part = os.read(errpipe_read, 50000)
+                errpipe_data += part
+                if not part or len(errpipe_data) &gt; 50000:
+                    break
+        finally:
+            # be sure the FD is closed no matter what
+            os.close(errpipe_read)
+    
+        if errpipe_data:
+            try:
+                pid, sts = os.waitpid(self.pid, 0)
+                if pid == self.pid:
+                    self._handle_exitstatus(sts)
+                else:
+                    self.returncode = sys.maxsize
+            except ChildProcessError:
+                pass
+    
+            try:
+                exception_name, hex_errno, err_msg = (
+                        errpipe_data.split(b':', 2))
+                # The encoding here should match the encoding
+                # written in by the subprocess implementations
+                # like _posixsubprocess
+                err_msg = err_msg.decode()
+            except ValueError:
+                exception_name = b'SubprocessError'
+                hex_errno = b'0'
+                err_msg = 'Bad exception data from child: {!r}'.format(
+                              bytes(errpipe_data))
+            child_exception_type = getattr(
+                    builtins, exception_name.decode('ascii'),
+                    SubprocessError)
+            if issubclass(child_exception_type, OSError) and hex_errno:
+                errno_num = int(hex_errno, 16)
+                if err_msg == "noexec:chdir":
+                    err_msg = ""
+                    # The error must be from chdir(cwd).
+                    err_filename = cwd
+                elif err_msg == "noexec":
+                    err_msg = ""
+                    err_filename = None
+                else:
+                    err_filename = orig_executable
+                if errno_num != 0:
+                    err_msg = os.strerror(errno_num)
+                if err_filename is not None:
+&gt;                   raise child_exception_type(errno_num, err_msg, err_filename)
+E                   PermissionError: [Errno 1] Operation not permitted: 'ps'
+
+/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/subprocess.py:1955: PermissionError</failure></testcase><testcase classname="tests.test_supervisor" name="test_supervisor_failure_cleanup_and_restart" time="0.546" /><testcase classname="tests.test_supervisor" name="test_final_artifact_failure_never_success" time="0.002" /><testcase classname="tests.test_supervisor" name="test_nested_stages_use_remaining_deadline" time="0.220" /><testcase classname="tests.test_supervisor" name="test_multiworker_shared_budget_with_queue" time="1.549" /><testcase classname="tests.test_supervisor" name="test_acquisition_uses_supervisor_fail_closed" time="0.003" /><testcase classname="tests.test_supervisor" name="test_atomic_neural_archive_preservation" time="0.002" /><testcase classname="tests.test_supervisor" name="test_cleanup_failure_is_explicit" time="1.906" /></testsuite></testsuites>

@@ -1,0 +1,37 @@
+# M005A.5 — prospective reserved-confirmation continuation, version 1
+
+Date 2026-10-28. Starting clean revision bb1a7bc056cd6a36414cb2ca74d74059801de7f9; branch research/m005a-5-confirmation. Commit this amendment and executable plan before any new neural execution, including neural regression fixtures. This is an execution continuation, not a new hypothesis or controller-design study. Protocol009 is authoritative; amendment010, original resource failures and the M005A.3 clock stop remain unchanged.
+
+## Exact cohort and evidence eligibility
+
+Accept complete historical n0/r41, n0/r42 and n1/r41 following M005A.4 independent audit, without regard to favorability; recheck all hashes and numerical provenance before acquisition. Do not rerun these statistical trials. Acquire exactly these missing pairs, in this order:
+
+(1,42), (2,41), (2,42), (3,41), (3,42), (4,41), (4,42), (5,41), (5,42), (6,41), (6,42), (7,41), (7,42), (8,41), (8,42), (9,41), (9,42).
+
+Three aborted M005A.3 workers published no complete neural prefix/branch. They remain aborted records; this prospective authorization permits acquiring those same missing identities, not treating their unknown partial buffers as complete. No replacements, exclusions or scientific retry following a new failure. Reuse plus continuation constitutes the same ten-network/two-noise cohort, not two independent cohorts. Validation10–14 and locked100–119 remain untouched.
+
+## Frozen scientific definitions
+
+PI globally selected at 604302e9eecc491b8855a6ccbcaf4e195cb2adb2: Kp10 pA/Hz, Ki5 pA/(Hz*s); selection SHA256 076604e732e1f97d02195c6d3798f0fba1998f4e9605c9492480cf51f794da36. No new tuning, feedforward change, gain-dependent information, action allocation or scientific source changes.
+
+For every pair: original root20261018/SeedSequence roles, Brian2 2.10.1, 1000 E/I neurons, original topology/weights/inhibition/background/current efficacy coupling, disjoint recording/stimulation membership,100us integration/20ms observations. Original51s causal calibration prefix; exact checkpoint; eight32s branches ZERO,FIXED,MAX,PI10_5 × STATIC/LOSS in original order. STATICg1; LOSSg1 until relative16s then.6, evaluator-only. Original pooled E80 raw count means over nonoverlapping1s feedback intervals; fixed target baseline+1Hz; original calibration validity, calibrated feedforward, PI anti-windup and fallback. Exact common noise at matched absolute times, fresh policy per branch. Original four-channel limits120pA each,240pA total,30pA/tick slew; all calibration and ramps included. No observations from the future, hidden state or actual gain enter controllers.
+
+New acquisition:17prefixes/136branches/5219simulatedseconds. Full cohort:20prefixes/160branches/6140simulatedseconds. A later technical replay of the already completed n0/r41 prefix+LOSS_PI10_5 (83s) is permitted only as original independent reproducibility verification, never a new stochastic replicate or replacement outcome.
+
+All protocol009 scientific gates remain exact: per-network averaging of noise41/42; separate STATIC[8,32) and LOSS[20,32) MAE; >=8/10 joint calibration/baseline/noise/authority/error/bias/ZERO-benefit gates; noise1Hz>=2*RMS1sSD, MAX−ZERO late authority>=1.2Hz, MAE<=.35Hz, |bias|<=.2Hz, >=30% MAE improvement vsZERO; network bootstrap positive ZERO-benefit lower95% bound. LOSS additionally >=20% mean paired relative and >=.1Hz mean absolute PI-vs-FIXED benefit, lower95% bound>0, positive>=8/10, denominator floor.1Hz. PCG64 seed20261025,10000 network draws. No fallback in scientific base cases; invalidity not excluded. No gate changes based on outcomes. Report harm versus calibrated FIXED at stationarity. Original recovery descriptor, full/pre/immediate windows, saturation/current/current²/model-charge and FIR-design excitation diagnostics remain descriptive.
+
+## Resource contract and stop behavior
+
+Preflight: one suspend-inclusive1200s stage, supervisor/failure-injection and full neural/controller regressions plus native clock qualification and historical audit. New confirmation: one **4800s suspend-inclusive deadline** starting at continuation capture entry, including startup/imports,17jobs, collection/publication. Maximum3workers. Historical542.862513065calendarseconds plus4800s is5342.862513065s, below original5400s; this conservative new bound does not retroactively extend or relabel the old run. It is not a fresh90-minute allowance. Budget is prospective, fixed and independent of outcomes. Prior active-time measurements inform feasibility only, not guaranteed throughput.
+
+Use qualified boot-scoped Mach continuous clock, native API consistency and exact inherited deadline. Reserve .2s cooperative/.2sTERM/.4s final cleanup inside work budget; separately labeled cleanup-only at-most.8s after detecting expiration during suspension, never scientific success. Outer independent watchdog4805s is cleanup-only, never permission to qualify beyond4800s. Inhibit idle sleep during acquisition with caffeinate; do not deliberately suspend machine. If continuous-clock consistency or boot-domain validation fails, stop and retain failure. Expected continuous-minus-uptime growth alone is not a discontinuity; no clock substitution or deadline reset.
+
+Sample actual worker RSS and mission evidence allocation at most every5s plus completed trial peakRSS; each worker<2GiB, all M005A experiment/evidence/run allocation<=500MiB. Aggregate memory not qualified. Any worker/resource fault stops all remaining work. Partial outputs persist atomically; only trial.json status complete with all8complete branches qualifies. No resume within a partially published new trial, no retry, no success inferred from a missing terminal record. Qualified supervisor reaps process groups; outer watchdog removes descendants if supervisor fails. Preserve every outcome and failed run.
+
+Post-acquisition: one shared1200s stage for full analysis, independent metrics/lineage/reconciliation, causality mutations,83s technical replay, repeat deterministic analysis/figures and full regressions. Nested commands inherit deadline. No extension after adverse outcomes or slow execution. Terminal completion/resource records are mandatory beyond passing tests. Explicitly disclose if resource or scientific prerequisites fail.
+
+## Analysis, chronology and reporting
+
+Reuse original scorer and independent verifier unchanged for scientific calculations. Build a combined archive view that preserves original bytes and records each source session; this is analysis reconciliation, not new acquisition. Verify20unique pairs/160unique branch identities, all counts/events, delivery/exposure, causal PI/target math, checkpoints/OU/parameter hashes and source Git lineage across the two revisions. Independently reconstruct bootstrap/gates; average replicates within network before inference. Preserve coefficient-free PI state and requested/projected/delivered histories. Fit no new model or controller.
+
+Execution PASS requires complete valid acquisition/reconciliation and all software/resource/audit gates. Scientific stationary and loss PASS are separate; full scientific PASS requires both and no fallback. M005B READY only if execution PASS and both original regimes PASS; READY is a readiness judgment, not authorization to implement another mission. Otherwise HOLD/STOP as appropriate. Negative complete scientific outcomes remain valid evidence. Stop after M005A.5; no adaptive control, plasticity, hardware integration, locked cohort or merge.

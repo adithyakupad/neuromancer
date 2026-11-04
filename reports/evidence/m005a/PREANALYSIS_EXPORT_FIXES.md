@@ -1,0 +1,5 @@
+# Exporter corrections before scientific analysis
+
+Before any tuning scores or reserved outcomes were inspected, source review found two serialization issues in the preregistered analysis exporter: inherited provenance calls the Git field `head`, not `git_revision`; NumPy scalar noise produced a NumPy boolean not accepted by strict JSON. Corrected the field lookup and converted the noise summary to a plainfloat. Added JSON serialization to the analytical network-gate fixture. No hypothesis, equation, comparison, gate, seed, trial, controller or neural source changes. Neither defect reached a scientific analysis attempt; all original source retained in commit2de1365.
+
+Before any scientificscoring, review additionally replaced decimal-rounding tie approximation with the protocol's exact `score<=minimum+1e-12` rule, then lowerKp/Ki. Analyticalfixture tests a5e-13 tie. Independentverifier applies the same declared threshold through a separate formulation. No outcomes had been scored/inspected; this aligns implementation with the frozenrule and changes no threshold/grid.

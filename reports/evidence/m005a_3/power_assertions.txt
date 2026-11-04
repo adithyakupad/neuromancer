@@ -1,0 +1,21 @@
+2026-10-28 00:42:45 -0400 
+Assertion status system-wide:
+   BackgroundTask                 0
+   ApplePushServiceTask           0
+   UserIsActive                   1
+   PreventUserIdleDisplaySleep    0
+   SoftwareUpdateTask             0
+   PreventSystemSleep             0
+   ExternalMedia                  0
+   PreventUserIdleSystemSleep     1
+   NetworkClientActive            0
+Listed by owning process:
+   pid 89211(caffeinate): [0x0007a2da00018865] 00:08:23 PreventUserIdleSystemSleep named: "caffeinate command-line tool"  
+	Details: caffeinate asserting on behalf of Process ID 89210
+	Created for PID: 89210. 
+	Localized=THE CAFFEINATE TOOL IS PREVENTING SLEEP.
+   pid 409(WindowServer): [0x00077eb80009a30b] 00:01:09 UserIsActive named: "com.apple.iohideventsystem.queue.tickle serviceID:100000c6e service:AppleHIDKeyboardEventDriverV2 product:Apple Internal Keyboard / Trackpad eventType:3"  
+   pid 350(powerd): [0x0007a466000188d8] 00:01:13 PreventUserIdleSystemSleep named: "Powerd - Prevent sleep while display is on"  
+   pid 350(powerd): [0x00077eb80009a30c] 00:01:13 UserIsActive named: "com.apple.powermanagement.lidopen"  
+   pid 350(powerd): [0x00077e170009a242] 02:54:15 UserIsActive named: "com.apple.powermanagement.kernel.useractive AppleM68Buttons:sleepDisplayTickle kIOMessageSystemWillSleep"  
+No kernel assertions.

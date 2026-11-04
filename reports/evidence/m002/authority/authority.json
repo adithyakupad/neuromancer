@@ -1,0 +1,1439 @@
+{
+  "networks": [
+    {
+      "network_id": 0,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 12.6984375,
+      "maximum_sector_8s_mean_hz": 16.06875,
+      "maximum_sector_20ms_bin_hz": 30.0,
+      "sham_hz": 12.75,
+      "stimulus_g1_hz": 15.2025,
+      "stimulus_g06_hz": 14.245,
+      "contrast_g1_hz": 2.4525000000000006,
+      "contrast_g06_hz": 1.4949999999999992,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 27217410458,
+      "provenance": {
+        "config": {
+          "network_id": 0,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-0",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-0",
+          "network_id": 0,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+            "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+            "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+            "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+            "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+            "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+            "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+            "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+            "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+          },
+          "1": {
+            "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+            "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+          },
+          "2": {
+            "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+            "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+          },
+          "3": {
+            "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+            "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+          },
+          "4": {
+            "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+            "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+          },
+          "5": {
+            "fine": "dc2dc700d9e01820c6dee23406e8b80535b9b617a152111721532a37f6141614",
+            "effective": "2fd9a70357b33f29e1400c60cfb9af0de84c9d2d83abe5bb512eb9ccfceb58c0"
+          },
+          "6": {
+            "fine": "0382e9fc9444e51215a142afefa79b0176b956a2c00877160d5ae00558bcd959",
+            "effective": "0edfa994796663b642fbb0b424f8252c7cee71d7e8e3003fc585535b74423215"
+          },
+          "7": {
+            "fine": "b714a8981040d2828909009f76dcc672a245d643fa8871d57038ea2dd25fea64",
+            "effective": "7d7c85405625bbd47f08eb1bcfe8ffa2f8cd6a84185d6d432cbfc70e8db9f267"
+          },
+          "8": {
+            "fine": "4b392ceac0da847f9e65128231b946b7eb880a296477a630caf2d6f765c1cb95",
+            "effective": "2e0ba3aead2ce741c6d254158a4d24353ddd6ff286d830b6ce0e593e83c079e0"
+          },
+          "9": {
+            "fine": "4fac8e21fb9816c4b6cb99b489e8c1ee15b9e644c69dc83ff39c1e4f2452b370",
+            "effective": "e5c74f25186e6d3562c19e0f4524c7248814d18f963cd358a9fa7f2bd36c8606"
+          },
+          "10": {
+            "fine": "75501cebbda8886a19f3d7d702c8e04166bd3f4c97b95c082a5fee49ee82207c",
+            "effective": "cff8a6e29cdc59a2b79371f57f4fa10e0032cd1991e8756b2c350bae22b9018b"
+          },
+          "11": {
+            "fine": "c322cfbf374e8e6b7cb6f5df0d13bd1acd96c2bccd7fd252e342409371f9ee2b",
+            "effective": "103716cc8de61fbd81ccc72f4765d1ffb5cd3be05142ed19f2589b2ff9e90a86"
+          },
+          "12": {
+            "fine": "543b63c131e3985fc80648678fbde7c890df643ee75515c39af8a491ab5ec8f9",
+            "effective": "2cfe82ae8700a21f5795e8da0dd3bee674c248196bae0bd190c353763b7bd1eb"
+          },
+          "13": {
+            "fine": "96c43c81dd5c6842ee130d304a399aa4502426b7697eede85e41e9d1cfc27709",
+            "effective": "7a03f861190971e834971e2b2999026176268c191c7c22b0a49bf67e9794ef23"
+          },
+          "14": {
+            "fine": "508cd62995a1e0dc30749f19d7cc23f266d55890e996e1ce0f7e04ef8575e67c",
+            "effective": "4926a2d21673ec1ffb8b5d4259ad4ce0774a3681695de527d1a1c3727b5b39a1"
+          },
+          "15": {
+            "fine": "5c5485018ee8c78ab26d786ca5494ac7d2f810d224a327de4ccb076b8f28a6d0",
+            "effective": "64a6eb5bd462192600014943cb5a44bcdfc49b4a9d48af246d215db62491db4e"
+          },
+          "16": {
+            "fine": "a4ab2092e4ba0cb45ebe74947589cc539bc9e87202edb15ba2cda6135c298236",
+            "effective": "6b94b9eaeff6f0e03fe013ea3fba1c82d2aee11cd2b9b22efbae7d5c237ccd53"
+          },
+          "17": {
+            "fine": "77c14dd949b047e0b539b7a6d6ff751948d0638af18c3d01537171759788469f",
+            "effective": "a1d70bd852af061641009cc1a5b58ab60a2fc5a5a9f43600853da83582037262"
+          },
+          "18": {
+            "fine": "2b1958d0213e31c209a82bd75d3facb2455893d9bda34ed50919c7b2d8f03ae9",
+            "effective": "dbb015fc5b8c213fea5337836eb3c23c5a40352e8b92765abde55e47502a5c66"
+          },
+          "19": {
+            "fine": "1b0fd5350f999cb5f7df74e0ee1c5eb43d7b3bf5e616b10e447d1047408b9dc3",
+            "effective": "e575578ab3eadd62085e75be429ec077553d257e71170fe68b1a3920e16398d1"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 41945917
+      }
+    },
+    {
+      "network_id": 1,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 14.646875,
+      "maximum_sector_8s_mean_hz": 15.41875,
+      "maximum_sector_20ms_bin_hz": 32.5,
+      "sham_hz": 14.795,
+      "stimulus_g1_hz": 17.6275,
+      "stimulus_g06_hz": 16.295,
+      "contrast_g1_hz": 2.8325000000000014,
+      "contrast_g06_hz": 1.5000000000000018,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 20738475125,
+      "provenance": {
+        "config": {
+          "network_id": 1,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-1",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-1",
+          "network_id": 1,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "2824caa3e4612ecfc9a3b512f54df33dd04d8827297817f283eab4d6f96300e9",
+            "initial_mV": "272eebb9e146a8b4ff3d663527d21d1f54afa0dbff35fbee784bd27008504cfe",
+            "pre": "2050ad8ed89519219a713d04aac89350e886b0e543b31da32f91242414b2a289",
+            "post": "178441aa58f08b5963972a39ae410da0d6979134a197fe6bfa544e7197025058",
+            "weight_pA": "02ad8e6340a03d17617d8c87ef39ff341288243730ac962248a93069c84f5b6a",
+            "delay_us": "9bb1eb975c47fa7b382451ac047150fee02d6c0a79d3fdd12224cf7046703701",
+            "stimulation": "b8ae0b6bc3e9e42fbeeca9d2dba7fe46214b1db900648009d9373278c24fe843",
+            "recording": "b9a0705f1554099bae3d296508c6fcdf40c09f4664599b82ff81785452f540c1"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "3e09f469f1dfa08ca9dddafa78e85d74e4a823c0f25fbea2bef5bf1995aa18c0",
+            "effective": "8aa80487cd8240c99d1451fe89cb194309439514b236ad61b6673d8ff3668dfc"
+          },
+          "1": {
+            "fine": "0259d8fadd345b74371f593be37bcc0f4c4574ba7bf656688fb99afadfafd805",
+            "effective": "dd2983236be52519ecb108bf6cf0ecad67eb9c73bb5e4f204e1fa64f9845a19d"
+          },
+          "2": {
+            "fine": "083f9e6b927a972b96586eea280208a309cafc494f5175e50b81a90d63eedea0",
+            "effective": "830e1bcfa4a46a5e92751897682428df6dd0ffa3e87b5e1631b47e08647cc4db"
+          },
+          "3": {
+            "fine": "8fc53e113f46c12b3e4d61af7df05de36313e1b1ea5c5575693e854115fddc04",
+            "effective": "ad4f6838f859b60f01fb7341569c4915b5db84afe8e7912a392347f29384dc90"
+          },
+          "4": {
+            "fine": "26c73f50db243a3e0f03db1e8c9abc7281b59a3d587dadd671cc6c866d45f78c",
+            "effective": "a01c45b7f98670fe63880c8a872e3f0db04cd942938b1c2b1e916d0ada547f45"
+          },
+          "5": {
+            "fine": "a255d7632e2585f46fe4dba8a92a7b836ec1798e164e4edcc5f93a29afa7d1a8",
+            "effective": "97667d3b7341c5b5c13979f98c959623c2b5d743435f13bc47725c3955b86748"
+          },
+          "6": {
+            "fine": "798291b3a0405d8f88d45d4efe3dc785456d73f00654c075e78213a23eb13955",
+            "effective": "7cda35ae92617cd590f671b71f6e4879a3350e4b046b9039850103a0a2d8930e"
+          },
+          "7": {
+            "fine": "5d7b83730debe469d569a901475b61ce8f017bbbf4452eaf31f3b586161b30fa",
+            "effective": "2ec69ebf42baaf9333dd7d57f4f2c4ce1028f11c107483f52e946489f43d52a1"
+          },
+          "8": {
+            "fine": "56c7612890c4ad9b235b85cbdbb91c2d5ca992e9975b3cd2f5dfa3ff5459cfae",
+            "effective": "c5c0f8fd97ee65e57d38a9198794ffdb8394b67df095d1c2f36a7fc5e7f7bef8"
+          },
+          "9": {
+            "fine": "9ab98cbb49133b91216d70c7ce06dc794f77d7ded8257196c6b2a5c0a1cfcec8",
+            "effective": "2eeaa1fd3b5097183c6d3f343d21cbf253b0e77f6a03019becd3768c9b722ebd"
+          },
+          "10": {
+            "fine": "0560b0aec9740c859e5b979b14a10227f61a9d573904934cf5ffc0236d4e4e23",
+            "effective": "0eecdaa94e5cb5366bd12b36bcbec0f9f7191cef4cc31c7113e905ef7fd80a5d"
+          },
+          "11": {
+            "fine": "aae69b231a3d4c3fc26a8b784a0c181f37f51782400d92e207bc63acb9691f3c",
+            "effective": "4fe84e82facf053de4194d48eada3dbb0341cf633142c0396c1aa40883b22867"
+          },
+          "12": {
+            "fine": "39c6fa7113e5f77f2a5b98aeb917c7e84ecaf80b4d7b2018840af653004af24f",
+            "effective": "c1a579c373d7bc58158ee142c22e7e5439a173687677f0b55775f15678f84fa5"
+          },
+          "13": {
+            "fine": "3b8b6e61cfefdb606cf8fddb6fcb59f47150db8439c68875acfddd37d2f4bd0b",
+            "effective": "eac30b00a7be9424e5d01467782922b5b576e512bf95cbae712ca578845b5f14"
+          },
+          "14": {
+            "fine": "e32576275a874a7ea59991eac58f9d7b52ee801c40fe96d6e40a0fe1ef8352dd",
+            "effective": "4f0092d1c879c10fb3a73d0894cbfb4fbb3e0cf4205cdd9fffe246cbe615e78a"
+          },
+          "15": {
+            "fine": "c51f0b19bb6102033bb70149fc3c87fc2c8860bed858a7ce0dd8e8cd21666aa3",
+            "effective": "ffb846e97223ea19cea4b0a62e04300021fc6ad81ce2701f72885a06d156d25d"
+          },
+          "16": {
+            "fine": "e80f147d930d4b6d3bd38622a214385b84d92515924a5f9bf4a4d140d71ee9dd",
+            "effective": "b132fa8191bfda36b6230e83d97ba955dbbcbc433fef2b09af601d9ef59ea951"
+          },
+          "17": {
+            "fine": "aef56eff32bd06ec6d28e34e6851a140aa821eaf9fc27d80e8c4749974331e60",
+            "effective": "5f2d57e9a1dd692e4a8293092f175d602bc0d98268346ce885b1b80e46507101"
+          },
+          "18": {
+            "fine": "f3014e4420d2ff4af6d9741f45055537a76532222484421a6c59fa91f371d695",
+            "effective": "af0665ac3e88a3fe7bed227600c664d6399de9e100791ecc8dec536134bc9a28"
+          },
+          "19": {
+            "fine": "c904051e7e93ddca360511aba7cb0b58853cc78d4f0f04fd58d373b573db785a",
+            "effective": "003023375306a10d7268a620753a87bdf0a05f4ed77d35e484f9d5b9aff93bf6"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                   object                     |            part of            |         Clock dt         |    when    | order | active\n----------------------------------------------+-------------------------------+--------------------------+------------+-------+-------\nneurongroup_1_run_regularly (CodeRunner)      | neurongroup_1 (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_1_run_regularly_1 (CodeRunner)    | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_1_stateupdater (StateUpdater)     | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_1_spike_thresholder (Thresholder) | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor_1 (SpikeMonitor)                 | spikemonitor_1 (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_2_pre (SynapticPathway)              | synapses_2 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_3_pre (SynapticPathway)              | synapses_3 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_1_spike_resetter (Resetter)       | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 14160458
+      }
+    },
+    {
+      "network_id": 2,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 11.7578125,
+      "maximum_sector_8s_mean_hz": 13.14375,
+      "maximum_sector_20ms_bin_hz": 30.0,
+      "sham_hz": 11.895,
+      "stimulus_g1_hz": 14.1025,
+      "stimulus_g06_hz": 13.24,
+      "contrast_g1_hz": 2.2074999999999996,
+      "contrast_g06_hz": 1.3450000000000006,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 22235363375,
+      "provenance": {
+        "config": {
+          "network_id": 2,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-2",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-2",
+          "network_id": 2,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "e66ab40c184b17c950fc83c4c9b286cdc0358b742d0a39bbd9f506331e04a764",
+            "initial_mV": "e9f3d4cad66b6fbc582edc47a5b77fde17782eda012a1e45e3c1f425376d8e78",
+            "pre": "42af10cf7cd45eaed0c4de79f85ec603d7b4c3c18c80e878c6297a7ffda48733",
+            "post": "182456e42c2a7c4bb4bad7f0717dc48b73249a7726240a5e4a9c31e58895f090",
+            "weight_pA": "2bceaf3d7a1ee1415e533e463443731f5235937ebb95ce3996b25181e3cb473a",
+            "delay_us": "a52793e1e6d271a68f7fc5cbe0dc7708c74d7b8144c83df957def6fdcdd295e4",
+            "stimulation": "931055c0225664087b0849d171ac4bd120f4bb3ee7c9859a9f8a90c5da7e7c6c",
+            "recording": "1f582c536b21d3096995822621d36b8c539a9fca11e81eec1dfb35d8609092d7"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "4b907902c5aca71e8605d1c056538415e56f7231554bd0207c70d691db157e2c",
+            "effective": "55d73f677cf0585d3326bee3f09c5ca0c8ecee5db8359900ddd09f2915bb3005"
+          },
+          "1": {
+            "fine": "d93b89e1926fc6fca47c7d568be6e0d8f2786670e211e831f0a259d2c1a4abdc",
+            "effective": "fc68d491cced44c19debda2d714034d72ce2dfca91259a29b3f042d0e2e79914"
+          },
+          "2": {
+            "fine": "05378c183de6626e75dba20041793fac8359b627b3486a7efd26f0b72b746dbe",
+            "effective": "5d919d62b049c10302bd1aeb02b4d8f8e293982e0260134458621c52b95b0ee0"
+          },
+          "3": {
+            "fine": "fc8468ec7389edfc97cd48d8027b5366eeaee3d3bc395cc040fa43f1359f6baa",
+            "effective": "e77187f6637b4514d9b7545971613f943bea92f060d2ac106e6d6e6dede931b6"
+          },
+          "4": {
+            "fine": "5f08c504deea2a77229f979d0a5cd55e2965f36bc83d270ee71664369ac24da6",
+            "effective": "a010f3c3299c46d629d3b18ec632c642382a09f5636cd99307b1a3602d76d0dc"
+          },
+          "5": {
+            "fine": "8a5fc5ff6b5ae2ded79502b9355239a797270c5917cdb6432be1d435585c698f",
+            "effective": "963a528da39d286014506c76bdf2a4814611ee871444fcadf4d410174ff63b88"
+          },
+          "6": {
+            "fine": "b572a0c64b87193f62b68ebed35ceb42fa721e4ec6ef3a91571cb4e8fd5a8da9",
+            "effective": "17e27a6ef7f915543353204ce4d27ffd391ca944bf407a95bd356825cde4085c"
+          },
+          "7": {
+            "fine": "24d04f3a802a561305a02fc006ec0177020251386e8985e832578d5ae6fdf3ea",
+            "effective": "709d7ac536e12e8890605c5b6fd1918a44116954794741347967394c7d620a7c"
+          },
+          "8": {
+            "fine": "a9df7622554c8c79aee88557614bac4c36cfe387ecb0a9dc1152a5e1ab66dabf",
+            "effective": "a76770dcaf75da3ce2f25a56e5836bd233987400fb3f4ed65404c38e6135efa8"
+          },
+          "9": {
+            "fine": "e99e2a120f08f9ae0b10aa5065673f6124c4cb7b6c9dce9b4a9fb23ea923070c",
+            "effective": "dad29ca7a8e523fa834f68493ffe326a390c5cf099bee1daedb51bd13c74f706"
+          },
+          "10": {
+            "fine": "d2a92198dba048b4c84217d5a5c2e316495a885b6b3428a7087e4706ac92ea10",
+            "effective": "7bd31db638f096af17955ae299641957f0d49b332a38891dbb38f0409483031e"
+          },
+          "11": {
+            "fine": "00b8e0e768ca8cb2175742ece5a286f79bcbf02297984f41f9b9a0da1f7b110a",
+            "effective": "cc3511843298b62ca0877bf389a7520454bd9c6acf5f247a89b39a9a5b77b17c"
+          },
+          "12": {
+            "fine": "ccc74a0f38212dca05be6bc96d388cc3d1b2323f38b9cf37c7a5895b013cb87c",
+            "effective": "9f193fa3da68691f66c59962801ce3fe8d6c76f03623a66d15d910015d2b0227"
+          },
+          "13": {
+            "fine": "a09ee07f69f0add5dce0d57d8571cc0a336032898513025c5ff24eadc9b5ae85",
+            "effective": "e2f5b9768ded31519730db02e3e8d39db236145ff24db139bf0f4e7e4f373d5a"
+          },
+          "14": {
+            "fine": "34fec1063a9ee90760577179e195850f0fbb9dabba5d8de76696b8b9391dd61b",
+            "effective": "a7aa6def331eb4e60e478f6a4c3187fae777dceef55e8950856c62c79646a2ad"
+          },
+          "15": {
+            "fine": "ba06749c4a6f823fc238cbec92649c7aea445ec6e8710c1f6e5c4d998c0e0f2d",
+            "effective": "2e676ff2564e49542c83701d107785744a107547b10bbe2a0b7b7ad728ca9e69"
+          },
+          "16": {
+            "fine": "63532a48c2d260855cff203bcad23da03fa79ab5452094d68cdab0be590a3955",
+            "effective": "4bbb89d168c05eb631351189b9ac931be18f040efbef251d4fc29b83607080f4"
+          },
+          "17": {
+            "fine": "9b79acafae83d177dc201aa89aa680b68aa1b789870138d97e3ae8cc7616c831",
+            "effective": "9e5b92148008f7f01a73ad5a0421d65579289004cd774c442444461cca8c968f"
+          },
+          "18": {
+            "fine": "cfb2a13fab5546c2b803e4f260511b043230e424fb3e5850c7eef486b82ea27e",
+            "effective": "8da30a591a338e85eb13ae81e7fbc9f1fe3104bd0237968b748946f10a0861ca"
+          },
+          "19": {
+            "fine": "c48355e2d44aebc06b0ac0126704728c5272d9388070d12ba6605c3655936ae8",
+            "effective": "592ebee2add944bf2671f68472753338b3924c00e1bdee6742b10c9d99c88d3b"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 13829041
+      }
+    },
+    {
+      "network_id": 3,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 14.759375,
+      "maximum_sector_8s_mean_hz": 15.65,
+      "maximum_sector_20ms_bin_hz": 35.0,
+      "sham_hz": 14.66,
+      "stimulus_g1_hz": 17.605,
+      "stimulus_g06_hz": 16.48,
+      "contrast_g1_hz": 2.9450000000000003,
+      "contrast_g06_hz": 1.8200000000000003,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 22502156542,
+      "provenance": {
+        "config": {
+          "network_id": 3,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-3",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-3",
+          "network_id": 3,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "b92abe3da9bc8764dde284da69f575303d8f8d7b2d515106d0bd79bd2628f4c5",
+            "initial_mV": "1c83e03630a820f36c85c0b5198a4a48a7e5f7a01cf0309c292966681d5a5b4d",
+            "pre": "da1301868f4984c8185e06ec11c49a30863be7493f329d870dfe92d71063eba8",
+            "post": "f2228ebe11fb93d34b6907978fdac0dcaa1a2e5a983b22511bda0e5e2156c4a9",
+            "weight_pA": "cb6b28088aebaca2ec5c4123ee8fc2f584b64eb9fb8fc1c3e5634b6597f988c7",
+            "delay_us": "9b59b4bab3b21fcbba25755060947e1dd07596bbfa2f12e4b60f8664ecbf6a1d",
+            "stimulation": "95d6745205cd84ada139c97147a5363052f3b165162a029df9d4c6b0f5a6d0ca",
+            "recording": "052ade2029b89af7017a01d85eeadf536c8f8e986828d593a57f36c19a239da3"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "4d886e10ed1e4cc69a2f22a7475fd635c0be83afb3a575ed5120863979945fca",
+            "effective": "35b2615320c7ddcac617266258f27194a0bc7a76f233a2a654ac80c18a043863"
+          },
+          "1": {
+            "fine": "bcaedfe216bdbef4a33b0f9c86b918cfe86434d21a62634ad082368bea723227",
+            "effective": "8496b4b9466d7057f6c77bafb989280dc7c936175f537439aebe4cf87799ef81"
+          },
+          "2": {
+            "fine": "566565bccacaad0769937fdbe75eb78f19f20bb0044c4c214eb1c732b18b97ba",
+            "effective": "ffe9ded659be2b3be66c0e31a6e35ffb2c3ef3e6785ac4d939cb2f42a521d3be"
+          },
+          "3": {
+            "fine": "0d8abccb894c7083748d9ccccf85f38d89f46bbc51ca2861c683067cb29d653d",
+            "effective": "9d47c4bc26340bcb7483d3d1cce9d960921738ba3117356a5b7ec7f24fe691b9"
+          },
+          "4": {
+            "fine": "b8bccae8e109deaf1fdcd2d5943ac7158ddfb391d515075b720f5ea29e2ade41",
+            "effective": "42809a2aa01d422dd4b86219e3f6cfc1c1bd856658853a8927d293a8d91127cf"
+          },
+          "5": {
+            "fine": "db7f1316a4d742969b8b67bc027bb3e270139d391bbcc4aeb325e11c804f08ee",
+            "effective": "1f08ca85323004fa8175389eec99dbb1547a113a042770f3423753ed95c0f053"
+          },
+          "6": {
+            "fine": "b9e76237beaa2c7bd388b2ddc6abdda128c01feb189ce79759123c79357d6e9b",
+            "effective": "0ca507b2a7440774da3dffe3c8cc1de1baed622cb2b564666bc608c86946ac43"
+          },
+          "7": {
+            "fine": "1e20cb15e82ec4b9fa613a05faf3ad769337cb45ec7e72015472e8ea3cac1965",
+            "effective": "f1c8c2b3e077b24651bafd9e77087b17922ca2f2c5076c8429ebddcfbd42a9d2"
+          },
+          "8": {
+            "fine": "00bf7ea265906d09fd1326919eb185d03023a8f70ecf11422edb7c8651db550f",
+            "effective": "6414549649d1aae1665f14f7612aeae998767e47e43ecc3bd3574ddc9ab02892"
+          },
+          "9": {
+            "fine": "4268e92598de9c2ae938066142980ee0a07f4b5e33c819cd218824aa0633efec",
+            "effective": "b2154b0eed7282e11a59c4080ca113cdbea4909f19a49d781fbe263400583d51"
+          },
+          "10": {
+            "fine": "d458364551106c07c210580d72b8c3cceba6950fe70bbd343165cb3a7f7ed7f6",
+            "effective": "fffa41263f5440c2c1414146250c44a72b74d665c1dbe286e45d99e05c6c3b9d"
+          },
+          "11": {
+            "fine": "4f32c6ea5b3d6335ab0100c06a68268222a1777a343070f8979236476724263e",
+            "effective": "7212a8b981748c70384f029c161683e83f7990fc4455d904c5770c9e910918b9"
+          },
+          "12": {
+            "fine": "544f6f5cd8bb2e588caadc4382c1dbdd28aea2ee4148bfab2b7ba4796b2a6c2e",
+            "effective": "626a35d47ffe83a8e99fd7f3170ee14619c9d8b4872c562c4ca7475b4d70c27e"
+          },
+          "13": {
+            "fine": "683af1fdc763a113dd3ea8d2fcb62d2a300aec197a1915acaf75692834a1a12f",
+            "effective": "3ace790601496a4e40e8b07724fb8b35216d6dfbc74d1e3b1c95567d0bea0efa"
+          },
+          "14": {
+            "fine": "321ab59e4c257e8b318717b4071c1f2b3aa79a275312c7eea6e88b1133c7d572",
+            "effective": "da8e6991cb0d5ef6ccb768a8484ca7c89472278fba604e9c5a6d0a1dbe042fc6"
+          },
+          "15": {
+            "fine": "f44f793e0af1b00b347ec129132185ddb4901d53cb6064b1ca4d33be9c42901c",
+            "effective": "3a1495cd9a57af7f902c6be472dad2aa9dce6234f07b0d5bbd48a5c326304b2d"
+          },
+          "16": {
+            "fine": "feffc4e06c5ddeb4f0d672e1e5a31b2e6d6961d65d2802a73de98db40cdc537d",
+            "effective": "d581a39388290b53b0bb3cc34cbc3fc985f66be0a667fe5343ec95347912b966"
+          },
+          "17": {
+            "fine": "a59a60b7e048beb64205be622c207cea07243265b31721e9364e2b5984f92b58",
+            "effective": "bb3e726ce1fa7e6785ea8ec8c668f546cb91adfee892ba3ea75e0010e5f83cf6"
+          },
+          "18": {
+            "fine": "0a1ee86b522849115b3199600b2c81bf832e28c7ac0c91863d95ba7037768946",
+            "effective": "2fbb0b4a0e409b8d8ee48d0e64dc68d133a5e2d21070eb553f83d0a250358ca5"
+          },
+          "19": {
+            "fine": "268e7f5fd470d748bdcf722899ee1915e6ed0b6ad8dffeb44e19a5e490eb32cc",
+            "effective": "51f11f8c22cbc55c986494adf6f4793e3e885cfd41f261ff0b6457fb71e59e60"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                   object                     |            part of            |         Clock dt         |    when    | order | active\n----------------------------------------------+-------------------------------+--------------------------+------------+-------+-------\nneurongroup_1_run_regularly (CodeRunner)      | neurongroup_1 (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_1_run_regularly_1 (CodeRunner)    | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_1_stateupdater (StateUpdater)     | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_1_spike_thresholder (Thresholder) | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor_1 (SpikeMonitor)                 | spikemonitor_1 (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_2_pre (SynapticPathway)              | synapses_2 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_3_pre (SynapticPathway)              | synapses_3 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_1_spike_resetter (Resetter)       | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 18013458
+      }
+    },
+    {
+      "network_id": 4,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 15.065625,
+      "maximum_sector_8s_mean_hz": 15.86875,
+      "maximum_sector_20ms_bin_hz": 32.5,
+      "sham_hz": 14.9,
+      "stimulus_g1_hz": 17.725,
+      "stimulus_g06_hz": 16.6125,
+      "contrast_g1_hz": 2.825000000000001,
+      "contrast_g06_hz": 1.7125000000000004,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 22585949792,
+      "provenance": {
+        "config": {
+          "network_id": 4,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-4",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-4",
+          "network_id": 4,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "d9ccb91498dd64c3d6b6b9bf17cf922c7de52812234a5decb180d7c62226c210",
+            "initial_mV": "bb44b206a373b81d43f0ad3014e0f462da5f4a8e594b2d0fd1e52058f53083b3",
+            "pre": "3a1930ef1534e80a9cbb8d59839a547ca6cd7434bb6fe38a87e0da5b5f5bb37e",
+            "post": "dcb609068760340c16928805b2947f7049361035db6b3085479a919ac5b49891",
+            "weight_pA": "5978f0f5b47d6e5b0efff496ed91c452f53181990a353f22c4ada1e9864f3375",
+            "delay_us": "a76a58e04dd4631b337de8b03f1974117b4f7e85f5c232cdf678386fc4a5d928",
+            "stimulation": "b5a7cd80926b22f1c65db146a700b8f674f16fb50dddbcab94fbe7deeadc13ab",
+            "recording": "b8573fba6d3549aaaff80cc1d5f84b80c025652163559ce7fa71384ce9ced265"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "1fd45d345752997b8b24c42efe465b53d2f54a8e0da8b9f1ecf948512ec573e0",
+            "effective": "6dd4168a58136de3180b4cce80c282a633c1125fc1d00027bc3574890eea7d36"
+          },
+          "1": {
+            "fine": "f49977ddbf7465825bb6946e48a571c712df0672dcf90dfd6fc178d0ea2636e8",
+            "effective": "05ca396a225dc3239f45069477f3f7a2ca8b7ccc646ece44e0fe6974ea60feee"
+          },
+          "2": {
+            "fine": "ec57b5ad4450c93ea673491baca13398952e96fa0e146cc052422f0e95f3d089",
+            "effective": "0fb018d37db9c213fceb2aa5829101d5a9a2ad5a2a86a87ce8f94a42bf18a629"
+          },
+          "3": {
+            "fine": "c11bf4afaf660585a3d1a6880c85392581cfc26cd3c0dce797ada1b367dcbf1f",
+            "effective": "780cecb6acb80985f9d9c1335f187b9490f61120a8baacf910fce19e3bd6107b"
+          },
+          "4": {
+            "fine": "0cc2efa4b0162f96392590a891fa45f5e599810c343a1ad8837cad8846ce69a8",
+            "effective": "b2912cc40a77ac4a34f5339a207e9fb6372f32f48c361f3a5ed18a60e4f947d1"
+          },
+          "5": {
+            "fine": "392574462b3f975ad25e1f6177fc1344e3dcc1e3061133708cf38e15b0c0f9a7",
+            "effective": "3d4d681f696c8aac292a65c9687269a33c948c45d8b5811fce0d80bab1880faa"
+          },
+          "6": {
+            "fine": "691daa4827a540234bebcb96b10b4b5f2497ae3a393022a4b3e5d5ec4bf93646",
+            "effective": "9dbbb59fa2259203a3efda339510b74d20322da6d9096bf9735fd555d39687cc"
+          },
+          "7": {
+            "fine": "21d11be751a4b8b58fd8daf3465b0595fbcdac22bf5aaf11160f22228d35a1a1",
+            "effective": "4428cd6c2d2114040714c4592ed7e12d43a52d872a211f32b95ed1dd2065be12"
+          },
+          "8": {
+            "fine": "4a3fe89a209764b67a112b1cc312a8e21b64a67e12e3c5724dd3694017da88ca",
+            "effective": "4829d2494530d70556436b71f4553448ee748a0cca854499d66cbd899ddc66a4"
+          },
+          "9": {
+            "fine": "ebb77ed27585d991b8161585ba27f57bbe7cd38a788163020857e9b7e1bbd418",
+            "effective": "7c142051fc8334714e7d897a89433689bbebe7068e81f03590b6c1ea0d32a385"
+          },
+          "10": {
+            "fine": "9dacae33baf7d11417b43cf717f61cc9a3b4db462248e5aa44ae538215e5d792",
+            "effective": "671bd0e88c4348ea72fb2b07eda63652482f7c70eab0a231f7918f8c27a9bf33"
+          },
+          "11": {
+            "fine": "39e9ffd4888235a10a0223016babcf71677d2be7b95b3e7b8ee785d7e4866cb6",
+            "effective": "2616975080268b706097364e5f90f19b1a168f5586b6dd2f8961f898632a71e9"
+          },
+          "12": {
+            "fine": "56e818804423402d6ad2113eddfa3ffb09f4fc863ee8ad69db027a78343137eb",
+            "effective": "9d5e1431d8cbca7e891c684e0d405b34e32d6bde5d03fb234f72f0ef413bd3cf"
+          },
+          "13": {
+            "fine": "18ddc5af1d0a62ca962ea1e2ec63e7aaaeadd1c3c8eec3138a9cb442193c06f9",
+            "effective": "a82a6c8ada7d52ed43f017de2da40fa6f87b3ff49e1849f0ec42d02a04d4c122"
+          },
+          "14": {
+            "fine": "3895cf5326f46596a5174a2da449f33e47cf8a9fb91a1f8f902ef3e54b239d33",
+            "effective": "26179a9fc5d088573f00b2f205b4f7c35da1e2fb71ba4023fd7b801cd0aae61a"
+          },
+          "15": {
+            "fine": "444a91e9e9da254f0539c8c6914670870cac128d2e34476c4a40065f96303a37",
+            "effective": "9b46ab1f485b16df4830dcd74d899b62951d97a5eb43b8e2c3ffafe468b26132"
+          },
+          "16": {
+            "fine": "057c97b898f5b943efa25d8782cf41a2721c69d3f02f8e0f29719f611539c936",
+            "effective": "917a822d57d8f37b2c066904238f711f02a7be9bf3ba90b7a420803e595deeec"
+          },
+          "17": {
+            "fine": "50256b70580a076a33de9b0934ab04a0463e500b2bcefb00833ba379a175dcdc",
+            "effective": "85475bf27ec6dada12d436ede5204fe2cc059c4da15ba52cbde10128d68571e8"
+          },
+          "18": {
+            "fine": "ab97bdada24905861a4319e250382947e40586a6cea6fbc76c565d4de05c1a98",
+            "effective": "f550a03143a256c599228479fa8a24502dd65e505229cce065803d59ffb51793"
+          },
+          "19": {
+            "fine": "c2b1deb815ae4b2ea62e4086393e0201e71c9f0e1f2df503ab3c6366abc2fb97",
+            "effective": "6f0c24fe89748bd26c5095741013de71d743ad8120765d2c08eb3719eb8d25a0"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 14347458
+      }
+    },
+    {
+      "network_id": 5,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 12.4875,
+      "maximum_sector_8s_mean_hz": 13.95,
+      "maximum_sector_20ms_bin_hz": 30.0,
+      "sham_hz": 12.505,
+      "stimulus_g1_hz": 14.3125,
+      "stimulus_g06_hz": 13.7,
+      "contrast_g1_hz": 1.8074999999999992,
+      "contrast_g06_hz": 1.1949999999999985,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 24158442791,
+      "provenance": {
+        "config": {
+          "network_id": 5,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-5",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-5",
+          "network_id": 5,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "d4915cb1c9d316d6d4af8d79ae94b8f3a7bf82d32e1405c73879bbc82b25302c",
+            "initial_mV": "6f793f90e0b60b0e9a59891d86c7e87b1431ce995fd47fb62dbafb3b4cec6b6f",
+            "pre": "1247f078f22cd37d2cc4fae24533beadc99d13335f36ffff2d4210043e29c339",
+            "post": "b85d3d278384696b46ffcd294749e9b6efad7d8f940a904a29b9836299d4d1e2",
+            "weight_pA": "9a811a4a2ffbab566e147f4fc98d79c4acc567fe62ab2793b091f244d4433c1f",
+            "delay_us": "53b905d3b9fc9e838e50d8f502ade00a09fdcbe57bb6e4e5d7be853109c6f3a8",
+            "stimulation": "a2887317f9dfd86e21eeeeb166fa1a4535c2a53e88f36bde0310923ad58b2473",
+            "recording": "f36b711a424debfb571e3dbc099e81a73d6f7225f9e8831ec01e9c2f68c34ce5"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "ade3602dcf2c0c8511b7d5f5062b0305738f172dae258cb15dc21a18033b48a6",
+            "effective": "d48f948bc91aaf6b525a1fed9cc6d32245819fe3409839f81bd8b6d063317e90"
+          },
+          "1": {
+            "fine": "0bfecebee2710a6e97217b7879235df697be164e6d76250f05b5319f22e116b7",
+            "effective": "e32a3d051769f4d34c5dd88ccf938b89b4c7b0431b397b2e50d8c8ed858498df"
+          },
+          "2": {
+            "fine": "48e612e21adf6308706e5e85c4e139cbca0bd4f7da0b4484a7f8ad93425a12e2",
+            "effective": "52a48a355c378e4158d45ca675ff7132cb13d3933799321fe1215c4dd230b161"
+          },
+          "3": {
+            "fine": "7cba2862917ff50e50c7c1c65e0822004bfbff2b14fdac936d3099f8e3271e5f",
+            "effective": "4231ad4bcd1d0245c135a419ccaa0a5bd9558f9d4d770d89ae615b7b7d3e0d22"
+          },
+          "4": {
+            "fine": "6c4be5b76dcd0601471d09ea659b59fdd92e0a1d45abdd403e76d48b3a8cabb5",
+            "effective": "1dcad897312e29919cf11b48dae79c0a0b40c575cbde4d9c0c9efb0d975c86b9"
+          },
+          "5": {
+            "fine": "b3205f74221a3b21d1fc80418728bebfb0cbf924f8cd8392e51065d3fa47acfa",
+            "effective": "5b1062d18de162042b80e1c20e06609dd0b7f2109b4e5a417ca8a774432450ec"
+          },
+          "6": {
+            "fine": "3892423c98c67b3db8078b7cb2fc96a55b9f2063f03e2ad8d9739ba51c5a5eb3",
+            "effective": "21e978ec9c3f13accbce6272e684a4603fbdfb7b0514d071f26cb8f8951b02dc"
+          },
+          "7": {
+            "fine": "91b4c8c42f81847f0099b9b25d4533afb8a8dc8042057ffe4d74423870ec8d2b",
+            "effective": "909b015d50e5b288ae403b3792f52f8dc322e065f52d9eb65b5291d811957ee0"
+          },
+          "8": {
+            "fine": "423c1ea191ebebfb76d08e22f89af378213a3ecf657c6ff008a25ccda4bdeb92",
+            "effective": "bd688df9b6019666422c000bbee94a9b88dc48440a6cdb2720fd1e43236cdc7f"
+          },
+          "9": {
+            "fine": "3f104faf296c9e043b20da8adff9ae0b11316975553fd637fa3d39d6129eae2b",
+            "effective": "78229181ff8f7db7a1d4bf1b54641285d67f17e260aa4fa681376f1ace30393d"
+          },
+          "10": {
+            "fine": "d3dcb5a19d3ef07bcdfe403ee7b76fdcfca5caaf84e8566f0c40d31374842220",
+            "effective": "fc445ee5310b73a0bb64a1ab806087c553f26586451a16169b0a183e1ad283f9"
+          },
+          "11": {
+            "fine": "bb785a73034c8d1f8f91890f119f10d23ff6b92a4826b3b36b9299ea721f85ee",
+            "effective": "831172eed8dc20203892a48655e7cbe3a4d8d1a019e2afcd7ca72ba87d723133"
+          },
+          "12": {
+            "fine": "13aa8c6e913a6bcb007f45aa3c07fb9a85b282861640adb11e57dbbf08d5b0d6",
+            "effective": "4c13dc7be19249b5a5a3ac390fa8f3a4f3e7f24e0f145d483d5cd9fd0062df98"
+          },
+          "13": {
+            "fine": "ec2c28e7ac73cea3bb2b9877b6a7c703cbc1773415982f80f80e4b0949070552",
+            "effective": "03bafed13427c73a1387c51a8b5b6beb975316cbd43007a9ac22dd9ed87995d1"
+          },
+          "14": {
+            "fine": "ee844cc27cd4ed7bcc9c52f77ccc6a2fc0db2a20a25910ffc9a3036387813cb2",
+            "effective": "ae2c56c7048e6b50ec50834181208acadc727d2891c9101280ef7d26c7a3276c"
+          },
+          "15": {
+            "fine": "ee4e0399002506b26e7469f5593e729f974676bf522fee163ca07495d9f069f2",
+            "effective": "ee73698ecfbcd443ba7968c5e2b0762dea22060a2405c4b3e11b5263c05e593f"
+          },
+          "16": {
+            "fine": "512efb0f810bbded599bc7435bb945478193738c21e5d15a135c8d64b2207954",
+            "effective": "0c529ec6e52794afa5c15eb5d410d682b2fe8ffba0d6a2c6247ab5d4d806fe6e"
+          },
+          "17": {
+            "fine": "eacbe00e67706b51bb74692eac2e608ce0efc6d7d0f8512155df6145eddc4735",
+            "effective": "0d06ae640fe6b598acfe183fa9342093d89040870a4effa8467527630c2d84d5"
+          },
+          "18": {
+            "fine": "9d53e96cdc514b7df79980118daba4d445d745a8e414c839ee7a0471121ee274",
+            "effective": "83ac3d82bb1be592151d8f8c9a39d666155a9b059a3541c08a8874b7863e2c1e"
+          },
+          "19": {
+            "fine": "4a7868368a6086c37a911d4ca8a883b9c9d88af43965c54997b6f30a42fd8264",
+            "effective": "bcf764de127f14aa87a681204116467d7b0eacbd6e1830e9fae586ef339a282e"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                   object                     |            part of            |         Clock dt         |    when    | order | active\n----------------------------------------------+-------------------------------+--------------------------+------------+-------+-------\nneurongroup_1_run_regularly (CodeRunner)      | neurongroup_1 (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_1_run_regularly_1 (CodeRunner)    | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_1_stateupdater (StateUpdater)     | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_1_spike_thresholder (Thresholder) | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor_1 (SpikeMonitor)                 | spikemonitor_1 (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_2_pre (SynapticPathway)              | synapses_2 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_3_pre (SynapticPathway)              | synapses_3 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_1_spike_resetter (Resetter)       | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 18884667
+      }
+    },
+    {
+      "network_id": 6,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 14.0453125,
+      "maximum_sector_8s_mean_hz": 18.2375,
+      "maximum_sector_20ms_bin_hz": 37.5,
+      "sham_hz": 13.9475,
+      "stimulus_g1_hz": 16.365,
+      "stimulus_g06_hz": 15.425,
+      "contrast_g1_hz": 2.4174999999999986,
+      "contrast_g06_hz": 1.477500000000001,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 26274262125,
+      "provenance": {
+        "config": {
+          "network_id": 6,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-6",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-6",
+          "network_id": 6,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "58ab7c70c92727241beea36ca4a7890f4261e81e8cf253b30cf0134a0a801b18",
+            "initial_mV": "b199be1da798e5447cee1dad93742b79f847bc37aface5843efc94e9aae987bf",
+            "pre": "71a74f764210c7d55307ba570e8bd3fbe02d39a41f8caea94fc37acd2e89527d",
+            "post": "c3ea38d1050d698758734f4958430c56ac750a2903287b7b241792848b1cdacd",
+            "weight_pA": "d7b97c69de386476b1be8038039a296e77d74e5a1bfcb2491ea506f1b7e9a004",
+            "delay_us": "49de26037d73da7134b9e741c6aec59ea887754b2a643ec390290af0b6b12924",
+            "stimulation": "396029f669773451005ad413329011fcfa0c211a5a02bc5b1bcbc4ee9d100744",
+            "recording": "427220ee8904ba847fb3f5b4cee0e173a314fb3eeb970139a26718b43e7360b1"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "e132ad4729b7452c8e412032a3a8b1d7e29225c4a752bb46a7b98ca56c906329",
+            "effective": "f4118dbe45589fd44c98ac45237fb618477487ae167b17d8c296551c636a757a"
+          },
+          "1": {
+            "fine": "b3c6329ab80da9ee51d0452135633184353d56091b02d53f48d1a7e3ef1e6912",
+            "effective": "03ef9e72c7ac58bbf34c195913fae45296a808c5ff040fa461f4841bcefb9741"
+          },
+          "2": {
+            "fine": "20acc4118e6991e0f077d96f43f41d8a160859f11140f29b5d6f80e9f128f1ea",
+            "effective": "91c9287817a26d0debb9afcd57d6a94e17ebdd599e7630047dfc423af72393c9"
+          },
+          "3": {
+            "fine": "ac7abee43f46579eb1ed8b802a907439274be52d19d2661c29f5ff6332512e21",
+            "effective": "08b797190f9f4025cf2821f6b7bed286fb9a681a1f3dc49fc6b8c53f0b4ce242"
+          },
+          "4": {
+            "fine": "6ff598d5a5b4060dd3f447efaaa7e7b86989349b90e11fc080141b6747654d82",
+            "effective": "132eb6f8209481b2da6dd0c2573e12556c756d6fbdba9e7315b3bf4340ebd093"
+          },
+          "5": {
+            "fine": "cb3c9cd429c3e398e21a628ed5723d6949e37d5618f241cfb9d1c1fa7036d9c7",
+            "effective": "23e27b482aea7fc002338d9a4f4e2157203aaaae98e5c891a5a051288e6ac788"
+          },
+          "6": {
+            "fine": "829bdb25bcbc3056f814b463b00f6132f607881bc107faa264309e5ecd84ffa6",
+            "effective": "450b1aac54fe8001732091ae77c479e8ab3bf753d085a2d43ebabfb5919746bf"
+          },
+          "7": {
+            "fine": "a57b07cc54ea660fc804e50ba51e96ae4041242a0ad3da9af791392524d70ade",
+            "effective": "33d41b8bb2a43dbbbb83d33b9ddec73a14741177ad985f0f571af0699c92fff3"
+          },
+          "8": {
+            "fine": "241eab03e355fd6e28fae2fc636c996967b4c301ac9caf4fe820bf36b197545a",
+            "effective": "5cc95c1c6ac651ce5226ec291ed9d29673cabc95d5208bb6cef4d69d32ef250b"
+          },
+          "9": {
+            "fine": "2beb486cf43b673497753b0f774c705a23938faa8ed33c44677b249d62c507b4",
+            "effective": "e3b261700231818d41343e8c64a2097570e3224766cad0051e172859e30ba792"
+          },
+          "10": {
+            "fine": "6b7bd379f714ae977159119bf96e6cc13fd53c4245157b57e75f854a1ee7b712",
+            "effective": "29b6fcf02c5211520fb1eb64834afdb5f6f85203e5ad3ad0c92f27f673713970"
+          },
+          "11": {
+            "fine": "7263899e9e0d6e44ef31ac0dd7255c4bca561723f3ba778200614d735698c75f",
+            "effective": "f47078e3d6dc6d1426dba247af582292b3add945cd4e7c5d598a82d93dcd4f37"
+          },
+          "12": {
+            "fine": "debb6b796ea1d0b59144968b9f8e89745c4f5308c0903dced7e0f8b4f57c380c",
+            "effective": "ebc0246c90ca6a5f51056961b28d25051bf0ff5703a92f285d09f6f31845eef9"
+          },
+          "13": {
+            "fine": "a024067159a666413a17f33f88f50961eb91a69420e5ca5c22a97671059c999f",
+            "effective": "2d494322f2835566efb502ab75c2f76caf497be7d0cece114b7332b91613438d"
+          },
+          "14": {
+            "fine": "88e49fde7bf52089c525642a10825adce4e89c6627c4bb347c5b50d8a7c4b484",
+            "effective": "e689fb6bd7e4ffca2416d419736b4a21448f7a2abe573495893aeef3a5b606c3"
+          },
+          "15": {
+            "fine": "88afccba4142aab7b25e3a4439a0f43541774f34d4dec73986f0c665e42906a3",
+            "effective": "52562739510259bfac8962a942322a69bfdf0e1784085c6160491819572a1160"
+          },
+          "16": {
+            "fine": "e5597fd9d80e3364b1e2c0c8890a8ed7501746ec7a8a67f1de0b01182d49c667",
+            "effective": "d9aee56d4243c9bb19ed659ea2fb1169ce86117116391dd8c52d163e40d26833"
+          },
+          "17": {
+            "fine": "ce470d628088564db379902b9a3a5445cbcc1c4ab2bed89c46c73dead86effdc",
+            "effective": "9fd6d4850436ca516dcced41b350aeea51476bf4387427c8b188b5c212a032ef"
+          },
+          "18": {
+            "fine": "c8f30bde739c82c3aa648b2f2eb798a8598b80beab825b7be50ced1dd100da56",
+            "effective": "46edbda6c00f59708b194ca645c52b54a1910a072e47b1afacf777b7853f9d80"
+          },
+          "19": {
+            "fine": "97843b19124928bab97a31f63244075f47856744f492a448913469ce06da4edb",
+            "effective": "84ddd66a2eecdb6d7d1988c1ecb702361c85608f23c1f11be8bc3625de649175"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 16437750
+      }
+    },
+    {
+      "network_id": 7,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 13.0578125,
+      "maximum_sector_8s_mean_hz": 16.4375,
+      "maximum_sector_20ms_bin_hz": 30.0,
+      "sham_hz": 13.1475,
+      "stimulus_g1_hz": 15.8825,
+      "stimulus_g06_hz": 14.7875,
+      "contrast_g1_hz": 2.7349999999999994,
+      "contrast_g06_hz": 1.6399999999999988,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 25965616000,
+      "provenance": {
+        "config": {
+          "network_id": 7,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-7",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-7",
+          "network_id": 7,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "e7397e16d7eb42586428c6b234b819e6a4afdd5cfab0b06ccc1c78d8bcfc660d",
+            "initial_mV": "170affd05fd13f26d85a18684a3c10bb476744c66f865dfadcc3bf1c2ce3b70e",
+            "pre": "aaf6b09eda2d823f448cf693fd913ccf43a667a5e1b42bd61e0d65460c3d6bbc",
+            "post": "2821310eb0d2c73a354160f2c5121517f13e37698a461048d8eec2a8c8a1046d",
+            "weight_pA": "806bfb32fab8597586b907cbbe41f145f2a03f5ba1c860a0a7ca3d36b5471283",
+            "delay_us": "5aa9aa751b6724440e889372500fe2cc2b5a21f45d31eaeee55aa60ee25a7100",
+            "stimulation": "c4e28d8a13357ee93adbb3012d74efa589bb896fa3d561f44c9319479c010b32",
+            "recording": "387c32d40f50f1e8091fbd737e6d909b32a57ba220bff6ef87389be15e20aff9"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "0c1f1c89f37360eba0ba57fd70d3ac84f01847d7bb328ce4b966649df8770d34",
+            "effective": "4ee2d9ce7fffc6bb6b1b8ae03a3d02551e44f1c85acd7ac415522e5e67992aa3"
+          },
+          "1": {
+            "fine": "edd210f6ed2dd2c761428f82f4d8a021ca9e1919d4767facba30709838d5c782",
+            "effective": "e00df0bf01481c93f759db74738a82564b13adc09d34804dd8f1fd76c51ed4cc"
+          },
+          "2": {
+            "fine": "b5bd478de582f005d999d157d2ad0ee6283cc9b36e5c833053ac91cef0b3dcbd",
+            "effective": "023b978cb95d83968fd1cd68724cd62f659a43d79c4ee1985e3a1480c2272efd"
+          },
+          "3": {
+            "fine": "a7f3be24f94c5f45596a93ff475c6a91677ea4866260f090950c280e1afbc509",
+            "effective": "d215a6400dbc147a135ab3b0dbd695858a720dfc25516ca36f2c321ad2b43216"
+          },
+          "4": {
+            "fine": "9c51684ba9d5e20c260a096728fae0c3f25a01fb81cfaeb0021cc739fe78e020",
+            "effective": "2dfeca1093070a984baa0bf055608d5f977d0f8c63ac1095e1c33dc3a5020e7e"
+          },
+          "5": {
+            "fine": "367fb1f2423a932fe4ed5a8c055b48e5e144003317d32816836a8c93b821fbc4",
+            "effective": "64644532babd128491edc3fa1b951fb188c10bbcea57d71bc7c60d9553405b6a"
+          },
+          "6": {
+            "fine": "e3166988241181359f0c3cc02487c006e01c00a7726e34c2fa456badf79e67cb",
+            "effective": "de8366f19d700d8395493eaf86aa027182af473fa1c9b2c59f60515ba2265cca"
+          },
+          "7": {
+            "fine": "324c17a7a97620d6d5319f9b516ee61d9200aefe4d269741ea6550c4837869b5",
+            "effective": "b63effedb3ec36ceec2225460bfd9b40065af224ca951716045ccf96be6a9016"
+          },
+          "8": {
+            "fine": "3a44a09b76db8072b7d4d22c669f35c20efeb552354b0785500005ac22daf6e7",
+            "effective": "7acaa59fd089bf51180e378d3304f6a494e8fbc675375304f2f49b4f1468da0a"
+          },
+          "9": {
+            "fine": "209a93a5068d914039fcdab9699e04938c20b5dc449a651051cac553d8bd42d7",
+            "effective": "fd084ca68e954de59363a0a9636597e15ed00d2d85427887fe2543bccb6e2711"
+          },
+          "10": {
+            "fine": "ebdd1bbe56fc35de908649d81f7c71365e445c5165254ab5d4d7bf949e97462e",
+            "effective": "ab5ca9f96e59c0a833aa498a0149c7d6703bd36ea547a0c590f83c6ad67f177d"
+          },
+          "11": {
+            "fine": "93b02269049dff516b7d33e5cf583643964b660ebda437bb6fda2bb6b5b765da",
+            "effective": "15d45750ad7a6dd268712b03ba387612d60be847dffec594931242a6472e4c09"
+          },
+          "12": {
+            "fine": "1a0bfb0c2df01067314552fea6d288de2f067f0929a7508bf54cf86f7e9c1acd",
+            "effective": "55005156d85af135694664ad77828c4b1524460712959bd549f56f82b5a05f62"
+          },
+          "13": {
+            "fine": "6a5f62a5c0bfb38585199617e344580a83649c82029d4568cc9a2aec3bf36366",
+            "effective": "74ab01b67adb9c7ce20cee880f621ef680c5bd395b74775cd37387b49036e2b8"
+          },
+          "14": {
+            "fine": "a05fce799871e3da2665c34dd3226137369c220b95ab4684e968539f6038e3af",
+            "effective": "55941897947cec9cce97549bbe8a6dd0c1a182da33e1c3f434e19e701048ceb1"
+          },
+          "15": {
+            "fine": "f36fbb6bd14144940bcc9e933d3e6c344db4638ff154513cb540d6404aee1445",
+            "effective": "f393afc6acaf2a0a26bb5c715f5efe687c432171b4c9aada224b3c03eaa0030f"
+          },
+          "16": {
+            "fine": "46e12967f187d0d121c8e2e7e894f1c258ad0ca4f3408ed7165134797f3297f8",
+            "effective": "7df4d90482da4357f164eaadc6fa02184cd16f272c9f7e8ddb5021ab471814fa"
+          },
+          "17": {
+            "fine": "af10408eb207759c7a5ee22e91e33ddcfd2e624974b018af59d92ba5d7d1fd1a",
+            "effective": "d4768c24a6dde077ec1ed70007926c7fb1996df541fdd53dd8482a4c2a223d6b"
+          },
+          "18": {
+            "fine": "06ef33ddaff99c3f1cf54acdfbed472d17d753d909c86889fe52bfbb9f53af58",
+            "effective": "14c2070fcf1756dc180564c358c2f60c5972e1ad55457d55134c0c77322cf4d6"
+          },
+          "19": {
+            "fine": "02c878c761ed6aec8fbbf3f8fd507128e9be5f2ad2db19e9e5fb130ba8dca5e2",
+            "effective": "6972e8be54e1fbfbc8b69e40f79a819ff7bb5715469af0996c596d96e22608ed"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                   object                     |            part of            |         Clock dt         |    when    | order | active\n----------------------------------------------+-------------------------------+--------------------------+------------+-------+-------\nneurongroup_1_run_regularly (CodeRunner)      | neurongroup_1 (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_1_run_regularly_1 (CodeRunner)    | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_1_stateupdater (StateUpdater)     | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_1_spike_thresholder (Thresholder) | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor_1 (SpikeMonitor)                 | spikemonitor_1 (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_2_pre (SynapticPathway)              | synapses_2 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_3_pre (SynapticPathway)              | synapses_3 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_1_spike_resetter (Resetter)       | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 18431583
+      }
+    },
+    {
+      "network_id": 8,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 12.6171875,
+      "maximum_sector_8s_mean_hz": 13.91875,
+      "maximum_sector_20ms_bin_hz": 30.0,
+      "sham_hz": 12.465,
+      "stimulus_g1_hz": 14.7675,
+      "stimulus_g06_hz": 13.8925,
+      "contrast_g1_hz": 2.3025,
+      "contrast_g06_hz": 1.4275000000000002,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 21828205542,
+      "provenance": {
+        "config": {
+          "network_id": 8,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-8",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-8",
+          "network_id": 8,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "aa557163ccbc629ae07d90959cd43423f3f627c82a963b359af29568e4751938",
+            "initial_mV": "1f8624a9c3b336330daabe6586530a3e6685fc3b87d726b472d7a5c5a179341e",
+            "pre": "0bd517b850e4b82a22d38a305403309d32dd4c56dab6d57a45baf778613659d0",
+            "post": "5d5234ae4eb72c2ab8b82d27162b8e5f0028f293d7936cb2d00d4b16ea4d617c",
+            "weight_pA": "74c4a689467647303f13ca5b15ef46dc4872de3452c623a4c4210397453a7d09",
+            "delay_us": "b6735198b9b512c2969117d75b5ac56ebddfbafc8330f010de4864f05b365a36",
+            "stimulation": "9090352bca7e26adeea4fd3068e7cd5951e6df49b10dca06745b70bd3a4e2172",
+            "recording": "cc40be8a17b938910804046ca5624df8196c24f090664386d21460224bfc779d"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "bf981b985948558b64c2b843dd0df689f20bb537c81160dcc1500089c209b0c7",
+            "effective": "97b603c4390eb346fa3730fd77fbbcc6d8c5c06e22c32730e09b88d5c2833634"
+          },
+          "1": {
+            "fine": "ed31218ed27905646e0aea110365149ec023af39e967ddc9410d25e8b127378d",
+            "effective": "9c3587c4a9c98e10ed4457f3dc0b5ae4f3c270560cb38576f4311cba078f859c"
+          },
+          "2": {
+            "fine": "e377bf00c76cbe9092c08ad16de2da4c0b6943de432b7ea72ba283bfe55bb252",
+            "effective": "1a902daed7b59e6d97d923f8d66ee7d32fe3d72426a5aea945d35da0134c166a"
+          },
+          "3": {
+            "fine": "4b96a33cf69b77f3e603b3cd2d03c0798e7c7ec5ace867117418cd6532e51d80",
+            "effective": "93df8a39f96255bb387470a04cf1141337cc4bbf683ac7710d87dafd7b691d6d"
+          },
+          "4": {
+            "fine": "2068081adb7ef2c9faa96f905cdc6f08faea4ee65a74167d18bb8884b49732f2",
+            "effective": "66d9188144f3f9d82678bbcc537bfaf22096f51e0f60e1bca5fcc544f12398ed"
+          },
+          "5": {
+            "fine": "27d2a1546266a7e9693355c58877d6f0c2e11317a1c7f399c0f873ca4585dba4",
+            "effective": "dca170c42d2e3a336f9b07360e8f8a4f1f62d22a165e9ca0b1e4e4a9692fa810"
+          },
+          "6": {
+            "fine": "148b0aa0da38327966956b685d8777d915f7fc744d8fe0119c9d1b6c4ef0dfd2",
+            "effective": "a3007a7816ebae15789e3597f5d20d6b8c2764fcbfafa245da96c2bd34d8411e"
+          },
+          "7": {
+            "fine": "60406ce5fbd6348c0511fbeea1a3e426574b99ae8e4eb80c9c66aa99beb64aa1",
+            "effective": "0bd197ba0b2c1dfb6fad6581608ace33c36238d396fa6890f8da16f318636cfa"
+          },
+          "8": {
+            "fine": "ce9fc55583ab7a5c35b2d573cfa945c0241447a8aa77f9a819f39b208621ea0c",
+            "effective": "f905435836c3ba84fefaa3db73460a6321f8a3a4dfe3b88aa6d83374b2018823"
+          },
+          "9": {
+            "fine": "f39ab9b398b7414df81eeda84c6a900c5dba62bbf12e39116ccf5fb4a2e3254b",
+            "effective": "5afe7f14bbb9d60213f5c7249ac2ecb5e96e4dceaf6e4287ff8b3c6729c672ac"
+          },
+          "10": {
+            "fine": "dd3faaed9139ca751fec90c1f79e81ae56ff240f51c96688e3d9e633b968bfeb",
+            "effective": "cea286b75b37cfb7b13617604ee44fa80fd845b52f1d4f488c5fce3151469621"
+          },
+          "11": {
+            "fine": "db99ea9655e8959a0ab14907c04e6deac0bec5af5febce340d10fb029302cf9f",
+            "effective": "7dfe0acab6c6b6257eba93da8d075b23bee15ee6133adaf4d4f766e9dbcbd4ed"
+          },
+          "12": {
+            "fine": "093c60bfe975107d594eb3642a66b6e7ef5d693208cae01061c488bc93603969",
+            "effective": "92ec913b9621b618aac7bce83907c293c8c85344234e4abff5f41463e67c8207"
+          },
+          "13": {
+            "fine": "4014011017d6cc548d39b7a650fb4964a07cd4a22641d896a02dfd37d29cd6ee",
+            "effective": "d2e49bcebc97137e0605fabdb926d43aefe0f43be591564ceccb04a23be177cb"
+          },
+          "14": {
+            "fine": "63cf0ed93a7a42f5a4a5a043ff643566733812c1536f84017260c305f1618be8",
+            "effective": "a097f279a3c0fa4955add7244adb98406fb8d439018626d36470908799174fee"
+          },
+          "15": {
+            "fine": "b848e5bca849914951e9c41e7dc7c29051b0e9d91d470eb190c459de2e4c6fae",
+            "effective": "2eee5f0ab7425b8b1c29ed77c72d5184a54dc4533dfda60a0f64d575000650af"
+          },
+          "16": {
+            "fine": "fb13e6540caf9605bfac2a7282b84d08edea7d5a2bb4ff186d59decd12478477",
+            "effective": "f7e84c24b369ea26ddac200ef734597f1b3433c9b72deef92e86b3847d5615db"
+          },
+          "17": {
+            "fine": "0961a97cb9c14b256d1b39ff0270aa5794b707ea7a8629701c8b5585615e4147",
+            "effective": "8256e52ec736428458f879f3b9bfc92d053439b4ee944752a49c6e9ecdf5eb7a"
+          },
+          "18": {
+            "fine": "7aade81c534d8ba97575660b3b4011294a8b1f423d52580c72ab607a4fd24704",
+            "effective": "d7d2934de3c4d09c14c1776ec333423090d696f58182adfd6b88061a0ddd1677"
+          },
+          "19": {
+            "fine": "44eadc592839db31b3e983e6088c9f9aacb0ae65603f68d1a0b9afdf2305610c",
+            "effective": "3ab2241323cd08ff68d42e271f0e232f2f8f7802c2938edcf1b6ff60dd863367"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 16686917
+      }
+    },
+    {
+      "network_id": 9,
+      "replicate_id": 0,
+      "baseline_recorded_E_hz": 11.259375,
+      "maximum_sector_8s_mean_hz": 14.13125,
+      "maximum_sector_20ms_bin_hz": 32.5,
+      "sham_hz": 11.0625,
+      "stimulus_g1_hz": 13.775,
+      "stimulus_g06_hz": 12.755,
+      "contrast_g1_hz": 2.7125000000000004,
+      "contrast_g06_hz": 1.6925000000000008,
+      "activity_gate": true,
+      "authority_4hz_at_g06": false,
+      "finite_state": true,
+      "wall_ns": 19834054125,
+      "provenance": {
+        "config": {
+          "network_id": 9,
+          "replicate_id": 0,
+          "root_seed": 20261018,
+          "trial_id": "train-9",
+          "dt_us": 100,
+          "efficacy": 1.0,
+          "retain_spikes": false
+        },
+        "metadata": {
+          "schema_version": 1,
+          "experiment_kind": "simulation",
+          "trial_id": "train-9",
+          "network_id": 9,
+          "replicate_id": 0,
+          "engine": "brian2",
+          "engine_version": "2.10.1",
+          "dt_us": 100,
+          "control_us": 20000,
+          "recording_channels": 20,
+          "neurons_per_recording_channel": 5,
+          "current_unit": "pA",
+          "time_unit": "us",
+          "parameter_hashes": {
+            "tau_ms": "4bc9eae5208fa2f624f4fa5760ab5382423f39924203f477ace9598b1a783025",
+            "initial_mV": "6aa29d26a64f20c7d398a871b432fd9398f86235e6c31b6b7f3cb16127ed5564",
+            "pre": "77ded99e47d33b907cca0b3e83d86d76367bf3cb6ed5e036b40ec082a5bfca96",
+            "post": "c953f1a511b3f013f18a60a23c28bda4186ac49337ad503277e10914e89fba15",
+            "weight_pA": "5049885d7cd9088913a7f17cf5dd8493520b811ddef05ef98b54fb6787a20ceb",
+            "delay_us": "06e1377e01066575465e6ecd7a34872f15ab7333c23ce5ac43891500f8445007",
+            "stimulation": "78cf1da7e9e706cd86ac9b66267046ead3ad5ef46bf0ea12897ea2c8fd38850f",
+            "recording": "6294f66509454905e6f785b31ddd1727386283bcd168711d8215ac02d80d45b3"
+          }
+        },
+        "numpy_version": "2.5.4",
+        "generator": "PCG64 / SeedSequence",
+        "role_key": "(network_id,role_id,replicate_id[,block_index])",
+        "parameter_replicate": 0,
+        "ou_fine_dt_us": 50,
+        "noise_block_us": 1000000,
+        "noise_hashes": {
+          "0": {
+            "fine": "5df2852527e9c214c80cadf179813bb66b10aef0bb84263bd2fadc1386d35cad",
+            "effective": "41ee61839bbb81dd306b5c83b37240970c6601811eeac957162e19ea7393f5da"
+          },
+          "1": {
+            "fine": "a5e6fe05368f39376d497c49565e29ee1ecbcde8b1b4531ab408cb310974c92d",
+            "effective": "fa613d79759dadce6547dc7d32e1d3e47fcc5f329a21568d5436b1857be7f160"
+          },
+          "2": {
+            "fine": "bbb3b02c2cf35a8c39285dcc28ffb5aa71be649644c9c2a6f150e615c87303a3",
+            "effective": "23b29e089c5a0f759eb2bdb956d43e22408437b08cb0f0c6c730a95a57b0de59"
+          },
+          "3": {
+            "fine": "a1f24e69c51c3ff4735b307b666bfc0569e2188b5b14470342709a6db9f20a02",
+            "effective": "6824eda868db8e60d762ab755cfed92b2bc343376b167c556a887ee83d6d36c1"
+          },
+          "4": {
+            "fine": "1d70e52971e1b4e22cff1452b220c235bc19614750107e30b62027f4c58bb64c",
+            "effective": "de50e72ff0b28de91188b9505288005d8990a016afc01b22b3555855b0707bc5"
+          },
+          "5": {
+            "fine": "18ecdc252e318e88c91468993ae571e72420e90546126b4ed61b12533a2c7725",
+            "effective": "8e9ad53604757455762b353c8ea230d612209595bef57572275f18ad17e3195d"
+          },
+          "6": {
+            "fine": "4f976ccd9a7c94e43f0d541a757cf21a1925f03d0aa717d67ceeb13446eefab1",
+            "effective": "03abc60f20f27690feece3f8e5477c2789accbec31ffe17c50da00a1078aa743"
+          },
+          "7": {
+            "fine": "5f262a8b3f162e8e374dc1867a0fe3dd3de0182caacf5a4be80f9cabdc866974",
+            "effective": "4696de8efe81a1c11a0b25c9717741294f67d5293f68573527f22b9005e2b03d"
+          },
+          "8": {
+            "fine": "b487e8ec8ec72f4fc4ac27193a9e2223c630e8b4e13b75336f7de0e1bfa9eb4d",
+            "effective": "8f4b46e49af7d73e563a6b43c08d062294771d119ad7bbd150dc8686e878d59b"
+          },
+          "9": {
+            "fine": "12cfccb67769d8851e51de93e9f853b9414553bb8752c4254d02c2cd408398ce",
+            "effective": "bff5531bd55651e5465a1005e1f2153294146bffa50e47c5b374b939decb3af9"
+          },
+          "10": {
+            "fine": "86870f84e0bf3aaf8314dd04ecada84388a9817067652d8c0b1b859df8db7cb5",
+            "effective": "2edb677743cacf4ff8adcb6a4d52866ed4db102cb8dcf539bb38bcb6f20ef309"
+          },
+          "11": {
+            "fine": "3bae41b4469391a9512106b26bcfbb7326f57d015ac1e55d02e260ee5e0cc94a",
+            "effective": "85e2470fac6ce451982ab49b2cb6244a2bb482f03d48e60b9113c2f406c3aed6"
+          },
+          "12": {
+            "fine": "1b3c7d58b45659a8dea961ec0b4db969a27556a0d6db49c38792cb20627919d5",
+            "effective": "a5b3c48a64c78876adeae0064a123cc26957b5637a87c8e50199ce3e4501ac71"
+          },
+          "13": {
+            "fine": "51f54cd5a95c1deb8cbe79205af007f6611a93ce007b68ab5aef13e80540a7ce",
+            "effective": "221b66ac5d83b2914cb21a7398b7f9702b0ed90cd1466f04fd270c15682298c4"
+          },
+          "14": {
+            "fine": "eefe53a6f89173d81131c8aa4c3ddbc94286a3d251bb267ee99277b10d678334",
+            "effective": "5002f4e52ad08d57237651e1cdd0a1a0798706270d5aaa111a1923b8aa776a42"
+          },
+          "15": {
+            "fine": "837b598c6dd13ecf7d28e566a1f4d7345f3bee4a95006663a9e20532de3ea114",
+            "effective": "a9fb4de7bee66c59a7afca9430992f4154e7ea180f5f8aff95599e2a4ab0abc3"
+          },
+          "16": {
+            "fine": "35e6a5dca491129b3447212b4689546d799e67f7ede35ce16c474b5dc7ca448b",
+            "effective": "0acebb7da23c37358b12cbd5ebe4b2e13d32f0fadc46857a4f3b745b7cc5933c"
+          },
+          "17": {
+            "fine": "28224ab0eed413a4442f38663aa823c8d4e9d7e8fc2115e689e633299605584d",
+            "effective": "2737a7d385252056f4a5598bf806f15329af8b73096fb2de61eecf515f3ab564"
+          },
+          "18": {
+            "fine": "310a784ed87e68af52bacc65d5e6b3a8e3d5abd5a99cba886038254340f7e21e",
+            "effective": "d32322d32da939aaebf24fcfd73ba806d2359f5dfc6f79dba61f7eabfde84f82"
+          },
+          "19": {
+            "fine": "2ea9bc07a355a3a8b5fb48a8f15714d293a46611e19fe6cb5f8ac861c67255ec",
+            "effective": "7cda339ff910bff5a12fef58400c705bf75de687e038ca2ad16fccdbb94d78bf"
+          }
+        },
+        "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+        "schedule": "                   object                     |            part of            |         Clock dt         |    when    | order | active\n----------------------------------------------+-------------------------------+--------------------------+------------+-------+-------\nneurongroup_1_run_regularly (CodeRunner)      | neurongroup_1 (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_1_run_regularly_1 (CodeRunner)    | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_1_stateupdater (StateUpdater)     | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_1_spike_thresholder (Thresholder) | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor_1 (SpikeMonitor)                 | spikemonitor_1 (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_2_pre (SynapticPathway)              | synapses_2 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_3_pre (SynapticPathway)              | synapses_3 (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_1_spike_resetter (Resetter)       | neurongroup_1 (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+        "initialization_ns": 14056875
+      }
+    }
+  ],
+  "authority_pass_count": 0,
+  "gate": "FAIL",
+  "activity_pass_count": 10,
+  "inference": "Descriptive paired same-noise 5 s holds, one noise replicate/network; no independent-replicate confidence intervals.",
+  "positive_randomized_input_ci_gate": "NOT RUN: fixed-hold authority is a prerequisite; no CI over correlated bins is substituted."
+}

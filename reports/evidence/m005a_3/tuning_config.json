@@ -1,0 +1,20 @@
+{
+  "budget_s": 1200,
+  "workers": 1,
+  "supervision_output": "reports/evidence/m005a_3/tuning_supervision",
+  "commands": [
+    [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a/analyze.py",
+      "reports/evidence/m005a/results/tune",
+      "reports/evidence/m005a_3/tuning_analysis"
+    ],
+    [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a/verify.py",
+      "reports/evidence/m005a/results/tune",
+      "reports/evidence/m005a_3/tuning_analysis",
+      "reports/evidence/m005a_3/tuning_verification.json"
+    ]
+  ]
+}

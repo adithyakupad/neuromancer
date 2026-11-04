@@ -1,0 +1,15 @@
+import csv,json
+from pathlib import Path
+import numpy as np
+from neuromancer.supervisor import Deadline
+r=Path(__file__).resolve().parent;Deadline.from_environment().check()
+read=lambda p:list(csv.DictReader((r/p).open()))
+t={(int(v['network']),int(v['replicate']),v['condition'],v['controller'],int(v['second'])):float(v['signed_error_hz']) for v in read('timecourses.csv')}
+w={(int(v['network']),int(v['replicate']),v['condition'],v['controller'],v['window']):v for v in read('windows.csv')}
+for v in read('calibration_diagnostic.csv'):
+ n=int(v['network']);s=np.mean([float(w[n,k,'STATIC','FIXED','late']['rate_hz'])-float(w[n,k,'STATIC','ZERO','late']['rate_hz']) for k in (41,42)]);l=np.mean([float(w[n,k,'LOSS','FIXED','late']['rate_hz'])-float(w[n,k,'LOSS','ZERO','late']['rate_hz']) for k in (41,42)])
+ np.testing.assert_allclose([v['fixed_static_evoked_hz'],v['fixed_loss_evoked_hz'],v['scaling_residual_hz']],[s,l,l-.6*s],atol=2e-12,rtol=1e-11)
+curves=read('timecourse_intervals.csv');assert len(curves)==256
+for v in curves:
+ name,c,sec=v['controller'],v['condition'],int(v['second']);x=np.array([(t[n,41,c,name,sec]+t[n,42,c,name,sec])/2 for n in range(10)]);g=np.random.Generator(np.random.PCG64(20261025));lo,hi=np.percentile(x[g.integers(0,10,(10000,10))].mean(1),[2.5,97.5]);np.testing.assert_allclose([float(v['mean_error_hz']),float(v['ci_low_hz']),float(v['ci_high_hz'])],[x.mean(),lo,hi],atol=2e-12,rtol=1e-11)
+(r/'supplement_verification.json').write_text(json.dumps(dict(status='PASS',calibration_networks=10,timecourse_intervals=256,method='Indexed repeat means, independently derived evoked responses and network resampling'),indent=2)+'\n');Deadline.from_environment().check()

@@ -1,0 +1,62 @@
+{
+  "status": "SUPERVISOR_FAILURE",
+  "cause": "SUPERVISOR_FAILURE",
+  "error": "OSError('injected progress write failure')",
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_2/final_trials/test_supervisor_failure_cleanu0/worker"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 498590560148958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 498590564261541
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 498590564337291
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 498590764809333
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 498590965261666
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 498590977895333
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "SUPERVISOR_FAILURE",
+      "pid": 86330,
+      "pgid": 86330,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_2/final_trials/test_supervisor_failure_cleanu0/owned/stop-0",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 498590560148958,
+  "deadline_ns": 498592560135958,
+  "work_cutoff_ns": 498591760135958,
+  "finished_ns": 498590989621916,
+  "persistence_errors": [
+    "OSError('injected progress write failure')"
+  ],
+  "cleanup_verified": true
+}

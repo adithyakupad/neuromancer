@@ -1,0 +1,110 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/evidence/v1_finish/frozen_source_fixtures",
+        "--junitxml=reports/evidence/v1_finish/frozen_source_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792455294926625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792492907890333
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 62245,
+      "pgid": 62245,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/runner_smoke",
+        "reports/evidence/v1_finish/frozen_runner_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792492909540125
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792493095414541
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 62460,
+      "pgid": 62460,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/freeze_acquisition.py"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792493096736041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792494482012166
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 62461,
+      "pgid": 62461,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 792455291970125,
+  "deadline_ns": 793172802325041,
+  "work_cutoff_ns": 793172002325041,
+  "finished_ns": 792494482071125,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 793172802325041,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

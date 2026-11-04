@@ -1,0 +1,37 @@
+name: V1 package and regression qualification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  qualification:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    env:
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-v1.txt
+      - run: python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+      - run: python -m pip install --no-deps dist/*.whl
+      - run: python -m pip check
+      - run: python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+      - run: python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+      - run: neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v1-qualification-${{ matrix.os }}
+          path: |
+            runs/v1-ci-tests.xml
+            runs/v1-ci-smoke
+            dist/*.whl

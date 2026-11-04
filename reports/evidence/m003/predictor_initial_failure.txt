@@ -1,0 +1,33 @@
+F.....                                                                   [100%]
+=================================== FAILURES ===================================
+___________ test_known_linear_recovery_serialization_and_dimensions ____________
+
+    def test_known_linear_recovery_serialization_and_dimensions():
+        y,u=linear_data();model=fit(y,u,'ARX',1,1e-8)
+        assert model.diagnostics['valid'] and model.coef.shape==(21,4)
+>       np.testing.assert_allclose((model.coef[1:5]/model.scale[:4,None]).T,.7*np.eye(4),atol=.001)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0.001
+E       
+E       Mismatched elements: 11 / 16 (68.8%)
+E       First 5 mismatches are at indices:
+E        [0, 0]: 0.6941452579868616 (ACTUAL), 0.7 (DESIRED)
+E        [0, 1]: 0.002044831746533592 (ACTUAL), 0.0 (DESIRED)
+E        [0, 2]: -0.0010160897824093578 (ACTUAL), 0.0 (DESIRED)
+E        [0, 3]: -0.0015711267943888541 (ACTUAL), 0.0 (DESIRED)
+E        [1, 2]: 0.0025290368133798133 (ACTUAL), 0.0 (DESIRED)
+E       Max absolute difference among violations: 0.0071739
+E       Max relative difference among violations: 0.00836392
+E        ACTUAL: array([[ 6.941453e-01,  2.044832e-03, -1.016090e-03, -1.571127e-03],
+E              [-4.572224e-04,  7.007679e-01,  2.529037e-03,  7.173902e-03],
+E              [-2.441809e-03, -3.026473e-03,  6.998840e-01,  2.015694e-03],
+E              [ 2.364910e-03,  1.540562e-03,  9.249845e-04,  6.991792e-01]])
+E        DESIRED: array([[0.7, 0. , 0. , 0. ],
+E              [0. , 0.7, 0. , 0. ],
+E              [0. , 0. , 0.7, 0. ],
+E              [0. , 0. , 0. , 0.7]])
+
+tests/test_identify.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_identify.py::test_known_linear_recovery_serialization_and_dimensions
+1 failed, 5 passed in 0.90s

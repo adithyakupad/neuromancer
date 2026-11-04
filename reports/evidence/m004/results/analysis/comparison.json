@@ -1,0 +1,331 @@
+{
+  "D": {
+    "adaptation": {
+      "decision": "PASS",
+      "absolute_benefit_hz2": 0.13457671291917767,
+      "absolute_ci": [
+        0.10756756725129535,
+        0.1627362702708297
+      ],
+      "relative_benefit": 0.30639429396633394,
+      "relative_ci": [
+        0.27290550199202457,
+        0.33941790852061576
+      ],
+      "positive_networks": 10,
+      "stationary_relative_harm": -0.037556990532268235,
+      "stationary_harm_ci": [
+        -0.08690340046656836,
+        0.00644605897609232
+      ],
+      "prechange_relative_harm": -0.027784966350869945,
+      "denominator_floors": 0
+    },
+    "detection": {
+      "decision": "PASS",
+      "sensitivity_by10s": 0.9,
+      "sensitivity_ci": [
+        0.7,
+        1.0
+      ],
+      "median_network_mean_censored_delay_s": 3.0,
+      "stationary_false_alarms_per_minute": 0.6,
+      "false_alarm_ci": [
+        0.15,
+        1.05
+      ],
+      "stationary_window_probability": 0.0,
+      "sensitivity_minus_stationary_window_ci": [
+        0.7,
+        1.0
+      ]
+    },
+    "post_mean_mse_hz2": {
+      "FROZEN": 0.42964333971515184,
+      "SW250": 0.34798675934882733,
+      "SW500": 0.2585123018259332,
+      "RLS995": 0.2517962642505368,
+      "RLS999": 0.29506662679597406,
+      "SHUFFLED": 0.507127161790878,
+      "ARX": 0.3937533489056161,
+      "ORACLE": 0.1788253101455077
+    },
+    "stationary_mean_mse_hz2": {
+      "FROZEN": 0.17522639409033053,
+      "SW250": 0.3037551778483613,
+      "SW500": 0.20751619997301063,
+      "RLS995": 0.20105954284345237,
+      "RLS999": 0.16861400751031605,
+      "SHUFFLED": 0.4254521468705687,
+      "ARX": 0.17072265204766285,
+      "ORACLE": 0.17522639409033053
+    },
+    "pre_mean_mse_hz2": {
+      "FROZEN": 0.19751169779183508,
+      "SW250": 0.306321643440188,
+      "SW500": 0.2161620265623163,
+      "RLS995": 0.2020037882089535,
+      "RLS999": 0.1923477121102378,
+      "SHUFFLED": 0.4646061586166498,
+      "ARX": 0.18620064787029383,
+      "ORACLE": 0.19751169779183508
+    },
+    "individual_adaptation": {
+      "SW250": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.08165658036632449,
+        "absolute_ci": [
+          0.03251180088926824,
+          0.13130321788947275
+        ],
+        "relative_benefit": 0.16695687410049123,
+        "relative_ci": [
+          0.06486274124428018,
+          0.2640995433446225
+        ],
+        "positive_networks": 7,
+        "stationary_relative_harm": 0.7393843635085452,
+        "stationary_harm_ci": [
+          0.5842925754411277,
+          0.9266493413111329
+        ],
+        "prechange_relative_harm": 0.5809488356551644,
+        "denominator_floors": 0
+      },
+      "SW500": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.17113103788921863,
+        "absolute_ci": [
+          0.13317080026094122,
+          0.2112191796704316
+        ],
+        "relative_benefit": 0.3865668340958831,
+        "relative_ci": [
+          0.3372918657686882,
+          0.4372527451051424
+        ],
+        "positive_networks": 10,
+        "stationary_relative_harm": 0.1834554761308141,
+        "stationary_harm_ci": [
+          0.10448678816718218,
+          0.2505419703975613
+        ],
+        "prechange_relative_harm": 0.09685008708544811,
+        "denominator_floors": 0
+      },
+      "RLS995": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.17784707546461503,
+        "absolute_ci": [
+          0.1427827502545156,
+          0.21604197468540565
+        ],
+        "relative_benefit": 0.40402528500746754,
+        "relative_ci": [
+          0.36373180701171764,
+          0.4464521225665086
+        ],
+        "positive_networks": 10,
+        "stationary_relative_harm": 0.15034271665216492,
+        "stationary_harm_ci": [
+          0.06172014806542473,
+          0.24446419584238546
+        ],
+        "prechange_relative_harm": 0.025770399985649395,
+        "denominator_floors": 0
+      },
+      "RLS999": {
+        "decision": "PASS",
+        "absolute_benefit_hz2": 0.13457671291917767,
+        "absolute_ci": [
+          0.10756756725129535,
+          0.1627362702708297
+        ],
+        "relative_benefit": 0.30639429396633394,
+        "relative_ci": [
+          0.27290550199202457,
+          0.33941790852061576
+        ],
+        "positive_networks": 10,
+        "stationary_relative_harm": -0.037556990532268235,
+        "stationary_harm_ci": [
+          -0.08690340046656836,
+          0.00644605897609232
+        ],
+        "prechange_relative_harm": -0.027784966350869945,
+        "denominator_floors": 0
+      }
+    }
+  },
+  "V": {
+    "adaptation": {
+      "decision": "PASS",
+      "absolute_benefit_hz2": 0.09446609406229388,
+      "absolute_ci": [
+        0.07567835441852358,
+        0.10827184473549885
+      ],
+      "relative_benefit": 0.24058127141715588,
+      "relative_ci": [
+        0.20945126690991195,
+        0.27093487536226224
+      ],
+      "positive_networks": 5,
+      "stationary_relative_harm": -0.008713847316649263,
+      "stationary_harm_ci": [
+        -0.03530656767346972,
+        0.01734874179165898
+      ],
+      "prechange_relative_harm": -0.015562397835679562,
+      "denominator_floors": 0
+    },
+    "detection": {
+      "decision": "PASS",
+      "sensitivity_by10s": 1.0,
+      "sensitivity_ci": [
+        1.0,
+        1.0
+      ],
+      "median_network_mean_censored_delay_s": 4.0,
+      "stationary_false_alarms_per_minute": 0.15,
+      "false_alarm_ci": [
+        0.0,
+        0.45
+      ],
+      "stationary_window_probability": 0.1,
+      "sensitivity_minus_stationary_window_ci": [
+        0.7,
+        1.0
+      ]
+    },
+    "post_mean_mse_hz2": {
+      "FROZEN": 0.3919781400696986,
+      "SW250": 0.36601601204446954,
+      "SW500": 0.29104994880473833,
+      "RLS995": 0.28461517979608597,
+      "RLS999": 0.2975120460074048,
+      "SHUFFLED": 0.4555025135355956,
+      "ARX": 0.3553209290373276,
+      "ORACLE": 0.19680536773466883
+    },
+    "stationary_mean_mse_hz2": {
+      "FROZEN": 0.19912897975921046,
+      "SW250": 0.35396569684756785,
+      "SW500": 0.2412994956473816,
+      "RLS995": 0.2464377590538856,
+      "RLS999": 0.1971395077104945,
+      "SHUFFLED": 0.438265165944071,
+      "ARX": 0.18938865066960764,
+      "ORACLE": 0.19912897975921046
+    },
+    "pre_mean_mse_hz2": {
+      "FROZEN": 0.18675447354877237,
+      "SW250": 0.29112108507674817,
+      "SW500": 0.21825895754631439,
+      "RLS995": 0.19488838147108672,
+      "RLS999": 0.18358221662285928,
+      "SHUFFLED": 0.42663369538015916,
+      "ARX": 0.17675836051837684,
+      "ORACLE": 0.18675447354877237
+    },
+    "individual_adaptation": {
+      "SW250": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.025962128025229025,
+        "absolute_ci": [
+          -0.005936709422237974,
+          0.06919784853877979
+        ],
+        "relative_benefit": 0.052529171015511446,
+        "relative_ci": [
+          -0.0197896993228233,
+          0.1446433623998642
+        ],
+        "positive_networks": 2,
+        "stationary_relative_harm": 0.7808985229444255,
+        "stationary_harm_ci": [
+          0.7229237388086842,
+          0.8582345409520824
+        ],
+        "prechange_relative_harm": 0.5690756250934728,
+        "denominator_floors": 0
+      },
+      "SW500": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.10092819126496026,
+        "absolute_ci": [
+          0.06924448839505667,
+          0.13202893032523416
+        ],
+        "relative_benefit": 0.25022147829151503,
+        "relative_ci": [
+          0.19766461710594513,
+          0.29436280138483406
+        ],
+        "positive_networks": 5,
+        "stationary_relative_harm": 0.21265987185446572,
+        "stationary_harm_ci": [
+          0.180191419655499,
+          0.2518749454245443
+        ],
+        "prechange_relative_harm": 0.16606565218969704,
+        "denominator_floors": 0
+      },
+      "RLS995": {
+        "decision": "FAIL",
+        "absolute_benefit_hz2": 0.10736296027361267,
+        "absolute_ci": [
+          0.0773117102401417,
+          0.13759904118600286
+        ],
+        "relative_benefit": 0.2672146164263961,
+        "relative_ci": [
+          0.22316372256616185,
+          0.3126671561118401
+        ],
+        "positive_networks": 5,
+        "stationary_relative_harm": 0.2382815663278314,
+        "stationary_harm_ci": [
+          0.21692587447157724,
+          0.26106920695653785
+        ],
+        "prechange_relative_harm": 0.048486209141119695,
+        "denominator_floors": 0
+      },
+      "RLS999": {
+        "decision": "PASS",
+        "absolute_benefit_hz2": 0.09446609406229388,
+        "absolute_ci": [
+          0.07567835441852358,
+          0.10827184473549885
+        ],
+        "relative_benefit": 0.24058127141715588,
+        "relative_ci": [
+          0.20945126690991195,
+          0.27093487536226224
+        ],
+        "positive_networks": 5,
+        "stationary_relative_harm": -0.008713847316649263,
+        "stationary_harm_ci": [
+          -0.03530656767346972,
+          0.01734874179165898
+        ],
+        "prechange_relative_harm": -0.015562397835679562,
+        "denominator_floors": 0
+      }
+    }
+  },
+  "adaptation_decision": "PASS",
+  "detection_decision": "PASS",
+  "selected_model": "RLS999",
+  "selected_detector": {
+    "index": 5,
+    "nu": 0.5,
+    "threshold": 5,
+    "false_alarms_per_minute": 0.75,
+    "sensitivity": 1.0,
+    "median_censored_delay_s": 4.0,
+    "eligible": true
+  },
+  "analysis_wall_s": 8.801795999985188
+}

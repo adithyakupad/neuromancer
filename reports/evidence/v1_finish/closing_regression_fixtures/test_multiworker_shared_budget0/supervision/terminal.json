@@ -1,0 +1,165 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/worker0"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799239657980958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799239659735666
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 799240658247916
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 799240865860125
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 799241057964208
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799241069424750
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 20912,
+      "pgid": 20912,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/supervision/stop-0",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/worker1"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799239657980958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799239661093375
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 799240658394541
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 799240865916333
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 799241057982875
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799241069431958
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 20913,
+      "pgid": 20913,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/supervision/stop-1",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/worker2"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799239657980958
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    },
+    {
+      "index": 3,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/worker3"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799239657980958
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    },
+    {
+      "index": 4,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/closing_regression_fixtures/test_multiworker_shared_budget0/worker4"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799239657980958
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    }
+  ],
+  "started_ns": 799239657980958,
+  "deadline_ns": 799241457940000,
+  "work_cutoff_ns": 799240657940000,
+  "finished_ns": 799241079846500,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 799241457940000,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

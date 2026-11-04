@@ -1,0 +1,5 @@
+# Reporting fix001 — no scientific or protocol amendment
+
+After all50 neural trials/400 branches completed, the first analysis invocation stopped before producing results: Python `dict(gain=gain, **ledger)` rejects the duplicate gain key already in the actual receipt ledger. The software-only fixture had omitted gain/name ledger fields and did not catch this export error. The failure is retained in `analysis_initial_failure.txt`.
+
+The frozen d3190d6 numerical-analysis source is preserved byte-identically as `analyze_frozen.py`. The sole analysis change removes the duplicate explicit gain keyword and asserts that the receipt's gain matches its loop condition. The fixture now includes the real ledger gain/name fields. No target, metric, numerical equation, threshold, cohort, seed or neural result changes. The source hash of the repaired analysis is recorded in its output lineage, and verification independently reconstructs all gates. No neural experiments are repeated or added. This is a reporting-code defect, not a scientific outcome or an amendment to the preregistered protocol.

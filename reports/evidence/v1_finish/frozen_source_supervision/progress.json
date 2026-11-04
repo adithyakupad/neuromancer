@@ -1,0 +1,92 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/evidence/v1_finish/frozen_source_fixtures",
+        "--junitxml=reports/evidence/v1_finish/frozen_source_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792455294926625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792492907890333
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 62245,
+      "pgid": 62245,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/runner_smoke",
+        "reports/evidence/v1_finish/frozen_runner_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792492909540125
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792493095414541
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 62460,
+      "pgid": 62460,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/freeze_acquisition.py"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792455291970125
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792493096736041
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 62461,
+      "pgid": 62461,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_supervision/stop-2"
+    }
+  ]
+}

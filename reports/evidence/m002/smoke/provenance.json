@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "experiment_kind": "simulation",
+  "head": "11929aff3ea1ee2329faf3fe635715b6f3343812",
+  "branch": "research/m002-brian-substrate",
+  "working_tree": "M src/neuromancer/diagnostic.py\n M tests/test_substrate.py",
+  "source_hashes": {
+    "neuromancer/__init__.py": "4c74fc568665ec777cb051d3a09428493a36dd00e0a06bf789b2e1feaa9a92ed",
+    "neuromancer/_brian.py": "5e20f00b496c310018421cf200dfd2f767f63c12e84a7eab0af1880a23323519",
+    "neuromancer/diagnostic.py": "e62b3339b76ec34123a41237aaadd9c751750c3c554478a73872627bc4fc2dce",
+    "neuromancer/observation.py": "e057226622cfb65bc4e644cf25e190e3d880cb0e77829c27a29ff4de06e26f5b",
+    "neuromancer/substrate.py": "45771e521ee3a66c2c4046ebbc0eeb5dce576abfe993f36821b9cea33a6b89e9"
+  },
+  "protocol_sha256": "e747c6ce67dfea86bc3f32e2d66fc85b226d3504a00925bb699e2b6fb67c0833",
+  "root_seed": 20261018,
+  "seed_roles": {
+    "0": "membrane/init",
+    "1": "connectivity",
+    "2": "weights/delays",
+    "3": "channels",
+    "4": "OU",
+    "5": "calibration",
+    "6": "masks",
+    "7": "reserved Brian"
+  },
+  "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "package_versions": {
+    "neuromancer": "0.2.0",
+    "brian2": "2.10.1",
+    "numpy": "2.5.4",
+    "sympy": "1.14.0",
+    "cython": "3.1.3"
+  },
+  "cli": [
+    "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/diagnostic.py",
+    "--mode",
+    "smoke",
+    "--output",
+    "runs/m002-smoke-01"
+  ],
+  "clock": "integer us; 100 us neural grid and 20000 us control bins",
+  "evaluated_split": "training only; IDs 0-9, or 0-2 for convergence"
+}

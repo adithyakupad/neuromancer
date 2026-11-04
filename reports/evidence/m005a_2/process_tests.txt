@@ -1,0 +1,66 @@
+...........F...                                                          [100%]
+=================================== FAILURES ===================================
+______________________ test_real_worker_lifecycle[orphan] ______________________
+
+tmp_path = PosixPath('/private/var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/pytest-of-adithyaupad/pytest-46/test_real_worker_lifecycle_orp0')
+mode = 'orphan'
+
+    @pytest.mark.parametrize('mode', ['complete','timeout','cooperative','ignore_stop',
+        'ignore_term','shutdown_block','exception','unexpected','descendant','orphan',
+        'write_failure','before','race'])
+    def test_real_worker_lifecycle(tmp_path, mode):
+        # The test process is an independent outer watchdog. Its fallback addresses
+        # each recorded owned group, not just the supervisor session.
+        code = '''
+    import json, sys
+    from pathlib import Path
+    from neuromancer.supervisor import Deadline, supervise
+    root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
+    d=Deadline.after(1.8)
+    cutoff=d.end_ns-800000000
+    command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
+    r=supervise([command],root/'supervision',d)
+    (root/'returned.json').write_text(json.dumps(r))
+    '''
+        p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
+                             start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+        began=time.monotonic()
+        try:
+            stdout,stderr=p.communicate(timeout=6)
+        except subprocess.TimeoutExpired:
+            for f in tmp_path.rglob('pid.json'):
+                pgid=json.loads(f.read_text())['pgid']
+                try: os.killpg(pgid,signal.SIGKILL)
+                except ProcessLookupError: pass
+            os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
+            pytest.fail('Independent outer watchdog intervened')
+>       assert p.returncode == 0,stderr.decode()
+E       AssertionError: Traceback (most recent call last):
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 173, in supervise
+E             pause_until(min(deadline.end_ns, time.monotonic_ns()+int(reap_s*1e9)))
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 111, in pause_until
+E             poll()
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 103, in poll
+E             if not group_exists(proc.pid):
+E                    ^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 43, in group_exists
+E             os.killpg(pgid, 0)
+E         PermissionError: [Errno 1] Operation not permitted
+E         
+E         During handling of the above exception, another exception occurred:
+E         
+E         Traceback (most recent call last):
+E           File "<string>", line 9, in <module>
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 180, in supervise
+E             _signal(proc.pid, signal.SIGKILL)
+E           File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 51, in _signal
+E             os.killpg(pgid, sig)
+E         PermissionError: [Errno 1] Operation not permitted
+E         
+E       assert 1 == 0
+E        +  where 1 = <Popen: returncode: 1 args: ['/private/tmp/neuromancer-m004-venv/bin/python'...>.returncode
+
+tests/test_supervisor.py:66: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_supervisor.py::test_real_worker_lifecycle[orphan] - Asserti...
+1 failed, 14 passed in 12.68s

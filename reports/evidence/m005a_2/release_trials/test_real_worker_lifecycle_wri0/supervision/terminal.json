@@ -1,0 +1,45 @@
+{
+  "status": "WORKER_FAILURE",
+  "cause": "WORKER_FAILURE",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "write_failure",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_2/release_trials/test_real_worker_lifecycle_wri0/worker",
+        "498807320691333"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 498806320732500
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 498806323232416
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 498806371354708
+        }
+      ],
+      "terminal": "WORKER_FAILURE",
+      "cause": "exit 1",
+      "pid": 87296,
+      "pgid": 87296,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_2/release_trials/test_real_worker_lifecycle_wri0/supervision/stop-0",
+      "returncode": 1,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 498806320732500,
+  "deadline_ns": 498808120691333,
+  "work_cutoff_ns": 498807320691333,
+  "finished_ns": 498806371431708,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

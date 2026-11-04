@@ -1,0 +1,430 @@
+{
+  "D": {
+    "post_effect_mse_hz2": {
+      "FROZEN": 0.21315899000185512,
+      "RLS999": 0.13667528564028988,
+      "ARX": 0.21146989626254986,
+      "ORACLE": 0.07858364350135535,
+      "SHUFFLED": 0.5121197969738294
+    },
+    "post_effect_absolute_benefit_hz2": 0.07648370436156528,
+    "post_effect_benefit_ci": [
+      0.039972631030670745,
+      0.11789341446537487
+    ],
+    "late_events": 1,
+    "missed_events": 0,
+    "event_precision": 0.25,
+    "loss_total_alarms": 40,
+    "loss_prechange_false_alarms": 3,
+    "stationary_total_false_alarms": 4,
+    "ordinary_post_mse_hz2": {
+      "FROZEN": 1.5868029677738513,
+      "RLS999": 1.3312429273066246,
+      "ARX": 0.753525451293545
+    },
+    "rolling": [
+      {
+        "condition": "STATIC",
+        "model": "FROZEN",
+        "phase": "pre",
+        "bias_hz": 0.044346349332280946,
+        "mae_hz": 0.3507440860947561,
+        "coverage": 0.86875,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "STATIC",
+        "model": "FROZEN",
+        "phase": "post",
+        "bias_hz": 0.015761336752652847,
+        "mae_hz": 0.33481369328249244,
+        "coverage": 0.89125,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "STATIC",
+        "model": "RLS999",
+        "phase": "pre",
+        "bias_hz": 0.03201273224459523,
+        "mae_hz": 0.34501653948371414,
+        "coverage": 0.8875,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "STATIC",
+        "model": "RLS999",
+        "phase": "post",
+        "bias_hz": -0.011716107071908151,
+        "mae_hz": 0.3332645242553335,
+        "coverage": 0.89,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "STATIC",
+        "model": "ARX",
+        "phase": "pre",
+        "bias_hz": 0.04511449686865973,
+        "mae_hz": 0.3415658004930879,
+        "coverage": 0.8825,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "STATIC",
+        "model": "ARX",
+        "phase": "post",
+        "bias_hz": 0.019060799519572638,
+        "mae_hz": 0.3315382962690219,
+        "coverage": 0.89,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "FROZEN",
+        "phase": "pre",
+        "bias_hz": 0.044346349332280946,
+        "mae_hz": 0.3507440860947561,
+        "coverage": 0.86875,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "FROZEN",
+        "phase": "post",
+        "bias_hz": 0.4653347026899903,
+        "mae_hz": 0.5376907695480846,
+        "coverage": 0.71375,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "RLS999",
+        "phase": "pre",
+        "bias_hz": 0.03201273224459523,
+        "mae_hz": 0.34501653948371414,
+        "coverage": 0.8875,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "RLS999",
+        "phase": "post",
+        "bias_hz": 0.29756846618093397,
+        "mae_hz": 0.4316690874597123,
+        "coverage": 0.80375,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "ARX",
+        "phase": "pre",
+        "bias_hz": 0.04511449686865973,
+        "mae_hz": 0.3415658004930879,
+        "coverage": 0.8825,
+        "halfwidth_hz": 0.7630534399109317
+      },
+      {
+        "condition": "LOSS",
+        "model": "ARX",
+        "phase": "post",
+        "bias_hz": 0.4312955524092428,
+        "mae_hz": 0.510448201621121,
+        "coverage": 0.72875,
+        "halfwidth_hz": 0.7630534399109317
+      }
+    ],
+    "mean_final_kernel_proxy": 0.6395832596878708,
+    "mean_baseline_change_hz": -0.02796120139504854,
+    "recovery_fraction": 0.1,
+    "recovery_censored_median_s": 20.0
+  },
+  "V": {
+    "post_effect_mse_hz2": {
+      "FROZEN": 0.12404793498171914,
+      "RLS999": 0.09535902634691298,
+      "ARX": 0.1209384760953001,
+      "ORACLE": 0.11106833574217519,
+      "SHUFFLED": 0.43694178661370786
+    },
+    "post_effect_absolute_benefit_hz2": 0.028688908634806137,
+    "post_effect_benefit_ci": [
+      -0.0038937808742173065,
+      0.07249454359491929
+    ],
+    "late_events": 0,
+    "missed_events": 0,
+    "event_precision": 0.30303030303030304,
+    "loss_total_alarms": 33,
+    "loss_prechange_false_alarms": 0,
+    "stationary_total_false_alarms": 1,
+    "ordinary_post_mse_hz2": {
+      "FROZEN": 1.505171057672658,
+      "RLS999": 1.3007125772423054,
+      "ARX": 0.7517911754886976
+    },
+    "rolling": [
+      {
+        "condition": "STATIC",
+        "model": "FROZEN",
+        "phase": "pre",
+        "bias_hz": 0.0037243856626321147,
+        "mae_hz": 0.3435239990276665,
+        "coverage": 0.8925,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "STATIC",
+        "model": "FROZEN",
+        "phase": "post",
+        "bias_hz": -0.003675715382010376,
+        "mae_hz": 0.3586134681179169,
+        "coverage": 0.895,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "STATIC",
+        "model": "RLS999",
+        "phase": "pre",
+        "bias_hz": 0.0014494290952297738,
+        "mae_hz": 0.3400644918958918,
+        "coverage": 0.88875,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "STATIC",
+        "model": "RLS999",
+        "phase": "post",
+        "bias_hz": -0.008744682430142516,
+        "mae_hz": 0.3571407687616677,
+        "coverage": 0.895,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "STATIC",
+        "model": "ARX",
+        "phase": "pre",
+        "bias_hz": 0.00810873685196041,
+        "mae_hz": 0.3336887683210449,
+        "coverage": 0.9025,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "STATIC",
+        "model": "ARX",
+        "phase": "post",
+        "bias_hz": -0.003920001596156998,
+        "mae_hz": 0.34971015906961883,
+        "coverage": 0.8975,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "FROZEN",
+        "phase": "pre",
+        "bias_hz": 0.0037243856626321147,
+        "mae_hz": 0.3435239990276665,
+        "coverage": 0.8925,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "FROZEN",
+        "phase": "post",
+        "bias_hz": 0.39716810890108817,
+        "mae_hz": 0.5061351165704365,
+        "coverage": 0.74875,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "RLS999",
+        "phase": "pre",
+        "bias_hz": 0.0014494290952297738,
+        "mae_hz": 0.3400644918958918,
+        "coverage": 0.88875,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "RLS999",
+        "phase": "post",
+        "bias_hz": 0.26738460104965145,
+        "mae_hz": 0.43972152638388956,
+        "coverage": 0.82875,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "ARX",
+        "phase": "pre",
+        "bias_hz": 0.00810873685196041,
+        "mae_hz": 0.3336887683210449,
+        "coverage": 0.9025,
+        "halfwidth_hz": 0.7938777075226762
+      },
+      {
+        "condition": "LOSS",
+        "model": "ARX",
+        "phase": "post",
+        "bias_hz": 0.36690634590492793,
+        "mae_hz": 0.48272526624981793,
+        "coverage": 0.76875,
+        "halfwidth_hz": 0.7938777075226762
+      }
+    ],
+    "mean_final_kernel_proxy": 0.5970153865505345,
+    "mean_baseline_change_hz": -0.025675381283650368,
+    "recovery_fraction": 0.0,
+    "recovery_censored_median_s": 20.0
+  },
+  "controls": {
+    "UP": {
+      "trials": 10,
+      "post_change_alarms": 0,
+      "all_alarms": 2,
+      "armed_fraction": 0.94,
+      "post_mean_mse_hz2": {
+        "FROZEN": 0.3986907981289686,
+        "RLS999": 0.2824418819434096,
+        "ARX": 0.3603252253761183
+      }
+    },
+    "NULL": {
+      "trials": 3,
+      "post_change_alarms": 0,
+      "all_alarms": 0,
+      "armed_fraction": 0.9166666666666666,
+      "post_mean_mse_hz2": {
+        "FROZEN": 0.16357913531374027,
+        "RLS999": 0.160648540206874,
+        "ARX": 0.15645497071623254
+      }
+    },
+    "WEAK": {
+      "trials": 3,
+      "post_change_alarms": 0,
+      "all_alarms": 0,
+      "armed_fraction": 0.0,
+      "post_mean_mse_hz2": {
+        "FROZEN": 0.1693618243937588,
+        "RLS999": 0.17130454413290905,
+        "ARX": 0.1614235303206458
+      }
+    }
+  },
+  "performance": {
+    "D": {
+      "acquisition_wall_s": 1272.448075167,
+      "simulated_s": 4760,
+      "peak_worker_rss_bytes": 1178599424,
+      "initialization_s_range": [
+        0.013058542,
+        0.147977709
+      ]
+    },
+    "V": {
+      "acquisition_wall_s": 888.680087708,
+      "simulated_s": 1700,
+      "peak_worker_rss_bytes": 1326202880,
+      "initialization_s_range": [
+        0.024945666,
+        0.049910625
+      ]
+    },
+    "latency_us": {
+      "FROZEN": {
+        "forecast": {
+          "median": 23.2295,
+          "p95": 38.671149999999976,
+          "maximum": 4241.792,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 2.375,
+          "p95": 3.167,
+          "maximum": 4207.542,
+          "over20ms_fraction": 0.0
+        }
+      },
+      "SW250": {
+        "forecast": {
+          "median": 24.416,
+          "p95": 29.087199999999974,
+          "maximum": 183.083,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 13.166,
+          "p95": 21.958,
+          "maximum": 70492.375,
+          "over20ms_fraction": 1.9736842105263158e-05
+        }
+      },
+      "SW500": {
+        "forecast": {
+          "median": 23.375,
+          "p95": 27.458,
+          "maximum": 131.333,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 13.041,
+          "p95": 21.208,
+          "maximum": 67839.625,
+          "over20ms_fraction": 1.3157894736842106e-05
+        }
+      },
+      "RLS995": {
+        "forecast": {
+          "median": 22.875,
+          "p95": 27.167,
+          "maximum": 1120.042,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 35.667,
+          "p95": 50.959,
+          "maximum": 92982.25,
+          "over20ms_fraction": 1.3157894736842106e-05
+        }
+      },
+      "RLS999": {
+        "forecast": {
+          "median": 22.583,
+          "p95": 26.875,
+          "maximum": 1801.625,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 35.5,
+          "p95": 48.458,
+          "maximum": 91657.542,
+          "over20ms_fraction": 1.9736842105263158e-05
+        }
+      },
+      "SHUFFLED": {
+        "forecast": {
+          "median": 22.375,
+          "p95": 27.002099999999988,
+          "maximum": 3323.041,
+          "over20ms_fraction": 0.0
+        },
+        "update": {
+          "median": 2.333,
+          "p95": 2.875,
+          "maximum": 3476.875,
+          "over20ms_fraction": 0.0
+        }
+      },
+      "ARX": {
+        "forecast": {
+          "median": 669.292,
+          "p95": 983.7118499999998,
+          "maximum": 43837.208,
+          "over20ms_fraction": 0.0003289473684210526
+        }
+      }
+    }
+  },
+  "extra_gates": "None; descriptive aggregation only"
+}

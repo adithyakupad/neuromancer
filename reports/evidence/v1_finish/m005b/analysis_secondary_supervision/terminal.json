@@ -1,0 +1,143 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/m005b/faults",
+        "reports/evidence/v1_finish/m005b/fault_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799089186723083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799089189350291
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799095585734458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19618,
+      "pgid": 19618,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/m005b/analysis_secondary_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "neuromancer.m005b_analysis",
+        "reports/evidence/v1_finish/m005b/faults",
+        "reports/evidence/v1_finish/m005b/analysis_faults"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799089186723083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799095586899583
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799096079208125
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19787,
+      "pgid": 19787,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/m005b/analysis_secondary_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/shadow_controls.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "reports/evidence/v1_finish/m005b/shadows"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799089186723083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799096080314541
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799112167281208
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19788,
+      "pgid": 19788,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/m005b/analysis_secondary_supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/research_figures.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "reports/evidence/v1_finish/m005b/analysis_primary",
+        "reports/evidence/v1_finish/m005b/figures_primary"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 799089186723083
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 799112168457291
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 799126907234791
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 19981,
+      "pgid": 19981,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/m005b/analysis_secondary_supervision/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 799089186723083,
+  "deadline_ns": 800828544621625,
+  "work_cutoff_ns": 800827744621625,
+  "finished_ns": 799126907268666,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 800828544621625,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -1,0 +1,39 @@
+# M005A.3 — prospective execution continuation amendment
+
+Date: 2026-10-28 (client America/New_York). Starting revision `8dd104f232078cf1271688ab3c287f0b0c2a9490`; branch `research/m005a-3-pi-qualification`. This amendment must be committed before any reserved acquisition. It changes execution authorization and provenance only. Frozen scientific protocol009 and all prior reports/results remain immutable.
+
+## Historical failure and complete-data reuse
+
+M005A remains execution PARTIAL because corrected TUNE exceeded its original60-minute absolute-wall allowance. M005A.1 remains resource-qualification FAIL. M005A.2 qualified the POSIX active-machine supervisor, not scientific control. The historical elapsed/calendar discrepancy is unexplained; no favorable clock is chosen retrospectively.
+
+The complete corrected archive comprises10 original network/noise40 prefixes and all120 required branches,4350simulatedseconds. There are no missing tuning combinations. It is explicitly accepted as **development data for the original global selection rule in this continuation**, after independent reconstruction. This does not rehabilitate its failed resource stage. The failed first attempt remains separate and unused. No fresh tuning acquisition, replacement seed or new controller candidate is authorized.
+
+The selection is exactly the minimum across the three original pairs of mean across networks0–9 of .5*(STATIC MAE[8,32)+LOSS MAE[20,32)); ties within1e-12 choose smallerKp thenKi. Use all original branches, target definitions and calibration validity. Reconstruct every metric independently, record all candidate scores, and commit the frozen selected pair before confirmation. No per-network selection or favorable-network exclusion.
+
+## Unchanged reserved experiment
+
+Confirmation remains networks0–9 × noise41,42, with one51s calibration prefix and eight32s branches per network/noise: ZERO,FIXED,MAX,one selectedPI × STATIC/LOSS. Total20prefixes,160branches,6140simulatedseconds. No networks10–14 or100–119. The reserved trial archive was absent at initial audit. Existing prospective seed specifications are not acquired outcomes.
+
+All numerical substrate/model/OU/seed/channel/timing specifications and protocol009 equations remain unchanged: targetb+1Hz; original calibrated feedforward; three original PI pairs;1s completed raw-observation feedback;20ms legal ramps; gain1→.6 at relative16s only in LOSS. Exact prefix restoration between independent branches; uninterrupted trajectories within each branch. All four policies share calibration, constraints and exogenous noise. Invalid calibrations/fallbacks remain labeled scientific failures, not exclusions. All outcomes retained; no outcome-based early success or retry.
+
+Every original authority/noise/error/bias/benefit/component/bootstrap gate remains unchanged, including≥8/10 joint networks separately by regime,≥1.2Hz authority,≤.35Hz MAE,|bias|≤.2Hz,≥30%benefit vsZERO, and additional LOSS advantage overFIXED≥20%relative/≥.1Hzabsolute/positive in≥8networks/lower95%CI>0. Average noise replicates within network first; PCG64bootstrapseed20261025,10000draws. Scientific negative findings are retained even with execution PASS.
+
+## Prospective resource contract
+
+No retrospective enlargement of the exhausted TUNE budget. This continuation authorizes no more tuning simulations. It uses the original **unspent confirmation90-minute allowance**, measured from acquisition CLI entry with a single absolute `time.monotonic_ns()` deadline shared by all workers. Maximum3workers. Qualified supervisor reserves .2s cooperative + .2s TERM + .4s final kill/reap/publication **inside** that allowance; work cutoff is .8s before the hard deadline. Every child startup/import, prefix, branch, collection and summary belongs to that same allowance. No nested scientific command receives a fresh deadline. Partial/timeout/cleanup failure cannot be scored as complete qualification.
+
+Initial engineering regression preflight:≤20minutes, qualified supervisor, synthetic resource fixtures independently watchdog-bounded. Complete-data scoring plus independent selection verification: one shared≤20-minute stage, no neural acquisition. Post-confirmation analysis, independent numerical audit, public causality mutation fixtures, one exact duplicate replay and final regression suite: one shared≤20-minute stage (stricter than separate original analysis/verification20-minute allowances). No extension or retry of a scientific acquisition is authorized. Each of these declared independent stages has its own start/deadline; operations nested inside it inherit that deadline without reset.
+
+Historical measured elapsed throughput suggests about3500seconds for6140simulatedseconds by simple scaling; this is only planning, not a new benchmark. Original calendar gaps make that estimate uncertain. Record both calendar and monotonic start/finish. Confirmation resource PASS also requires nonnegative calendar duration≤5400s; a clock/suspend discrepancy does not excuse a calendar overrun. Suspend-inclusive enforcement is not qualified by the supervisor: stop/HOLD on an observed discrepancy, never retroactively choose the favorable clock. Use macOS caffeinate to inhibit idle sleep only during the acquisition command; this is an execution condition, not evidence about the historical gap or protection against forced suspension. User-space timing is conditional on responsive OS/filesystem; actual deadline/lifecycle evidence and process cleanup must pass.
+
+Worker high-water RSS must remain<2GiB; aggregate memory is not qualified. Monitor owned acquisition worker RSS and evidence allocation; published trial peakRSS is independently checked. Curated+raw mission experiment evidence≤500MiB, with actual duplication accounted. A resource-limit violation, worker fault, core causality/replay violation or supervisor failure stops acquisition/qualification; no seed replacement or budget extension. Fully published artifacts survive; killed in-memory buffers may be lost and remain a disclosed limitation. Use original current budgets and account for all calibration exposure.
+
+## Evidence, decisions and stop
+
+Retain source hashes, exact selection commit, supervisor states/deadlines/exit codes, calendar checks, requested/projected/delivered currents, complete recordings, seed/OU/checkpoint/parameter hashes, all network/replicate metrics and gates. Reuse original scoring/independent-audit implementations unchanged. Distinguish tuning descriptions from reserved confirmation. Public-only mutation checks establish causal use of past records; evaluator-only state and gain never enter Policy. A duplicate replay is a technical check, not another stochastic replicate.
+
+A complete valid continuation can be execution PASS with scientific FAIL. M005B READY only if continuation execution passes and BOTH original stationary and recovery scientific gates pass. Original M005A resource failure remains unchanged even then. Otherwise retain HOLD/STOP with the exact failed components. Stop after the M005A.3 decision; no adaptive control, model/target tuning, plasticity, hardware or locked-cohort work follows.
+
+### Capture and safety details frozen with selection
+
+The mission capture wrapper executes the unchanged qualified acquisition CLI and records immediate child exit, both clocks, selection/source revision and summary hash. A separate5405s outer watchdog exists solely to kill a stalled supervisor and its recorded worker groups; any intervention or duration beyond5400s is resource failure, never a scientific success or budget extension. Idle sleep inhibition ends with the acquisition parent. Postprocessing uses one1200s shared supervisor deadline across all commands, including exact replay and regression tests. No reserved acquisition retry is authorized.

@@ -1,0 +1,63 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "controlled-worker"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1000000000
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1000000000
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 2000000000
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 2200000000
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 2400000000
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 2400000000
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 101001,
+      "pgid": 101001,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m008/final_local_tmp/test_cutoff_classification_exa11/owned/stop-0",
+      "last_running_poll_ns": 2390000000,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 2400000000,
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1000000000,
+  "deadline_ns": 2800000000,
+  "work_cutoff_ns": 2000000000,
+  "finished_ns": 2410000000,
+  "deadline_clock_id": "m008.synthetic",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "m008.synthetic",
+  "cleanup_deadline_ns": 2800000000,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

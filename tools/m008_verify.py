@@ -34,7 +34,17 @@ def verify_traced(root):
         if 'imports_completed' in by:row['imports_ms']=(by['imports_completed']['monotonic_ns']-by['imports_begin']['monotonic_ns'])/1e6
         if 'sleep_wake' in by:row['sleep_envelope_overshoot_ms']=(by['sleep_wake']['monotonic_ns']-by['sleep_request']['monotonic_ns'])/1e6-by['sleep_request']['requested_s']*1000
         if 'worker_atexit' in by:row['atexit_to_observation_upper_ms']=(w['first_observed_exit_ns']-by['worker_atexit']['monotonic_ns'])/1e6
-        if w.get('last_running_poll_ns') is not None:row['exit_to_observation_bound_ms']=(w['first_observed_exit_ns']-w['last_running_poll_ns'])/1e6
+        if w.get('last_running_poll_ns') is not None:
+            # A None result is sampled after waitpid; use the preceding poll BEGIN
+            # as the conservative kernel-exit lower bound, not its result timestamp.
+            begin=None;last_running_begin=None
+            for e in trace['events']:
+                if e.get('worker')!=0:continue
+                if e['kind']=='poll_begin':begin=e['monotonic_ns']
+                if e['kind']=='poll_result' and e['returncode'] is None:last_running_begin=begin
+                if e['kind']=='poll_result' and e['returncode'] is not None:break
+            assert last_running_begin is not None
+            row['exit_to_observation_bound_ms']=(w['first_observed_exit_ns']-last_running_begin)/1e6
         for kind in ('progress','terminal'):
             starts=[e['monotonic_ns'] for e in trace['events'] if e['kind']==kind+'_write_begin'];ends=[e['monotonic_ns'] for e in trace['events'] if e['kind']==kind+'_write_end'];assert len(starts)==len(ends)
             row[kind+'_write_max_ms']=max((b-a)/1e6 for a,b in zip(starts,ends,strict=True))
@@ -73,9 +83,36 @@ def preservation():
     assert set(changed)==allowed,changed
     return dict(status='PASS',starting_files=count,unchanged=count-len(changed),authorized_engineering_changes=changed,scientific_source_protocols_and_archives='unchanged')
 
+def verify_fixtures(root):
+    rows=[];sentinels=0
+    for f in root.rglob('returned.json'):
+        if any(part.endswith('current') for part in f.relative_to(root).parts):continue
+        r=load(f)
+        if 'workers' not in r:
+            assert r=={'status':'fixture-failure'} and 'test_assertion_failure_still' in str(f)
+            sentinels+=1;continue
+        assert all(w['state']=='REAPED' or w['terminal']=='NOT_STARTED' or 'test_cleanup_failure_is_explic' in str(f) for w in r['workers'])
+        injected='test_cleanup_failure_is_explic' in str(f)
+        if injected:assert r['status']=='CLEANUP_FAILURE' and not r['cleanup_verified']
+        else:assert r['cleanup_verified'],f
+        terminal=f.parent/'supervision/terminal.json'
+        if not terminal.exists():terminal=f.parent/'owned/terminal.json'
+        assert terminal.exists(),f
+        assert all(r[k]==v for k,v in load(terminal).items())
+        rows.append(dict(file=str(f.relative_to(root)),status=r['status'],cleanup_verified=r['cleanup_verified'],expected_injected_cleanup_failure=injected))
+    assert len(rows)==20,len(rows)
+    snapshots=list((root.parent/'supervisor-artifacts').glob('*/pytest_evidence.json'))
+    if snapshots:
+        assert len(snapshots)==58,len(snapshots)
+        for f in snapshots:
+            r=load(f);assert r['reports']['call']=='passed',f
+            assert not r['owned_process_check'].get('owned_process_rows','').strip(),f
+    return dict(status='PASS',real_supervisor_cases=len(rows),statuses=dict(collections.Counter(r['status'] for r in rows)),expected_injected_cleanup_failure=sum(r['expected_injected_cleanup_failure'] for r in rows),unexpected_cleanup_failures=0,fixture_finalizer_snapshots=len(snapshots),expected_nested_failure_sentinels=sentinels,rows=rows)
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path('reports/engineering/evidence/m008'));parser.add_argument('--traced',type=Path);parser.add_argument('--output',type=Path,required=True);a=parser.parse_args();assert not a.output.exists(),a.output
-    if a.traced:r=verify_traced(a.traced)
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path('reports/engineering/evidence/m008'));parser.add_argument('--traced',type=Path);parser.add_argument('--fixtures',type=Path);parser.add_argument('--output',type=Path,required=True);a=parser.parse_args();assert not a.output.exists(),a.output
+    if a.fixtures:r=verify_fixtures(a.fixtures)
+    elif a.traced:r=verify_traced(a.traced)
     else:r=dict(status='PASS',original=verify_repeats(a.root/'original'),traced=verify_traced(a.root/'traced'),corrected=verify_repeats(a.root/'handshake',True),preservation=preservation())
     a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(r,indent=2)+'\n')
     rows=r.get('rows',r.get('traced',{}).get('rows',[]))

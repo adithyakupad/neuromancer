@@ -1,0 +1,998 @@
+{
+  "status": "PASS",
+  "trials": 35,
+  "summary": {
+    "immediate": {
+      "statuses": {
+        "COMPLETED": 3
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 3,
+          "median": 51.577459,
+          "p95": 61.8409834,
+          "maximum": 62.981375,
+          "minimum": 49.234583
+        },
+        "imports_ms": {
+          "n": 3,
+          "median": 71.606291,
+          "p95": 81.1884038,
+          "maximum": 82.253083,
+          "minimum": 70.776208
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 0,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "minimum": null
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 3,
+          "median": 29.94425,
+          "p95": 31.2333497,
+          "maximum": 31.376583,
+          "minimum": 26.637125
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 3,
+          "median": 46.353125,
+          "p95": 82.663625,
+          "maximum": 86.698125,
+          "minimum": 18.486625
+        },
+        "observed_exit_margin_ms": {
+          "n": 3,
+          "median": 811.22,
+          "p95": 820.4074628000001,
+          "maximum": 821.428292,
+          "minimum": 808.819625
+        },
+        "cleanup_ms": {
+          "n": 3,
+          "median": 0.036375,
+          "p95": 0.0389994,
+          "maximum": 0.039291,
+          "minimum": 0.022917
+        },
+        "total_supervision_ms": {
+          "n": 3,
+          "median": 164.020333,
+          "p95": 167.7042958,
+          "maximum": 168.113625,
+          "minimum": 152.359792
+        },
+        "progress_write_max_ms": {
+          "n": 3,
+          "median": 1.494833,
+          "p95": 1.667858,
+          "maximum": 1.687083,
+          "minimum": 1.446583
+        },
+        "terminal_write_max_ms": {
+          "n": 3,
+          "median": 1.650875,
+          "p95": 2.1662744,
+          "maximum": 2.223541,
+          "minimum": 1.435292
+        }
+      }
+    },
+    "import_delay": {
+      "statuses": {
+        "DEADLINE_EXCEEDED": 3
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 3,
+          "median": 56.559625,
+          "p95": 61.800775,
+          "maximum": 62.383125,
+          "minimum": 52.9945
+        },
+        "imports_ms": {
+          "n": 0,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "minimum": null
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 0,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "minimum": null
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 0,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "minimum": null
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 3,
+          "median": 41.697,
+          "p95": 65.37675060000001,
+          "maximum": 68.007834,
+          "minimum": 12.914916
+        },
+        "observed_exit_margin_ms": {
+          "n": 3,
+          "median": -270.915292,
+          "p95": -228.0171286,
+          "maximum": -223.250666,
+          "minimum": -297.784166
+        },
+        "cleanup_ms": {
+          "n": 3,
+          "median": 289.430625,
+          "p95": 329.3173875,
+          "maximum": 333.74925,
+          "minimum": 250.740667
+        },
+        "total_supervision_ms": {
+          "n": 3,
+          "median": 1298.866708,
+          "p95": 1314.4602205,
+          "maximum": 1316.192833,
+          "minimum": 1217.651959
+        },
+        "progress_write_max_ms": {
+          "n": 3,
+          "median": 2.110167,
+          "p95": 11.425616999999999,
+          "maximum": 12.460667,
+          "minimum": 0.771708
+        },
+        "terminal_write_max_ms": {
+          "n": 3,
+          "median": 6.518417,
+          "p95": 18.889516399999998,
+          "maximum": 20.264083,
+          "minimum": 3.886666
+        }
+      }
+    },
+    "ordinary": {
+      "statuses": {
+        "COMPLETED": 18,
+        "DEADLINE_EXCEEDED": 2
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 20,
+          "median": 54.109521,
+          "p95": 67.8442774,
+          "maximum": 77.66225,
+          "minimum": 33.930584
+        },
+        "imports_ms": {
+          "n": 20,
+          "median": 77.64587449999999,
+          "p95": 119.38043090000008,
+          "maximum": 234.002166,
+          "minimum": 58.259958
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 20,
+          "median": 90.85535450000009,
+          "p95": 147.6618011500001,
+          "maximum": 148.66979200000003,
+          "minimum": 10.096250000000055
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 20,
+          "median": 53.5640205,
+          "p95": 101.67593305,
+          "maximum": 102.178959,
+          "minimum": 21.248166
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 20,
+          "median": 81.147521,
+          "p95": 99.8258673,
+          "maximum": 102.363,
+          "minimum": 11.001583
+        },
+        "observed_exit_margin_ms": {
+          "n": 20,
+          "median": 32.8638335,
+          "p95": 115.10936665000001,
+          "maximum": 128.416333,
+          "minimum": -50.697166
+        },
+        "cleanup_ms": {
+          "n": 20,
+          "median": 0.0386665,
+          "p95": 25.11120145000002,
+          "maximum": 55.397875,
+          "minimum": 0.024167
+        },
+        "total_supervision_ms": {
+          "n": 20,
+          "median": 919.3949375,
+          "p95": 1045.52133125,
+          "maximum": 1053.01125,
+          "minimum": 832.026084
+        },
+        "progress_write_max_ms": {
+          "n": 20,
+          "median": 1.21775,
+          "p95": 2.7917770500000008,
+          "maximum": 3.789791,
+          "minimum": 0.804083
+        },
+        "terminal_write_max_ms": {
+          "n": 20,
+          "median": 3.4037295,
+          "p95": 9.946804150000007,
+          "maximum": 19.454958,
+          "minimum": 1.917958
+        }
+      }
+    },
+    "parent_delay": {
+      "statuses": {
+        "DEADLINE_EXCEEDED": 3
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 3,
+          "median": 38.957,
+          "p95": 47.8822622,
+          "maximum": 48.873958,
+          "minimum": 35.454209
+        },
+        "imports_ms": {
+          "n": 3,
+          "median": 61.697417,
+          "p95": 68.8887545,
+          "maximum": 69.687792,
+          "minimum": 57.225125
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 3,
+          "median": 117.45404200000007,
+          "p95": 143.63335450000005,
+          "maximum": 146.54216700000006,
+          "minimum": 45.58749899999998
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 3,
+          "median": 426.581041,
+          "p95": 440.0688919,
+          "maximum": 441.567542,
+          "minimum": 419.476083
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 3,
+          "median": 504.717083,
+          "p95": 511.38585800000004,
+          "maximum": 512.126833,
+          "minimum": 446.740125
+        },
+        "observed_exit_margin_ms": {
+          "n": 3,
+          "median": -345.140333,
+          "p95": -294.23569580000003,
+          "maximum": -288.579625,
+          "minimum": -367.917333
+        },
+        "cleanup_ms": {
+          "n": 3,
+          "median": 0.016625,
+          "p95": 0.026336899999999996,
+          "maximum": 0.027416,
+          "minimum": 0.014916
+        },
+        "total_supervision_ms": {
+          "n": 3,
+          "median": 1327.738666,
+          "p95": 1345.8647038,
+          "maximum": 1347.878708,
+          "minimum": 1268.384041
+        },
+        "progress_write_max_ms": {
+          "n": 3,
+          "median": 1.470708,
+          "p95": 2.0180952,
+          "maximum": 2.078916,
+          "minimum": 0.690167
+        },
+        "terminal_write_max_ms": {
+          "n": 3,
+          "median": 1.979875,
+          "p95": 2.573875,
+          "maximum": 2.639875,
+          "minimum": 1.882834
+        }
+      }
+    },
+    "persist_delay": {
+      "statuses": {
+        "DEADLINE_EXCEEDED": 3
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 3,
+          "median": 43.851167,
+          "p95": 46.523717,
+          "maximum": 46.820667,
+          "minimum": 41.667625
+        },
+        "imports_ms": {
+          "n": 3,
+          "median": 69.409292,
+          "p95": 92.5245923,
+          "maximum": 95.092959,
+          "minimum": 63.677
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 3,
+          "median": 107.77016700000013,
+          "p95": 113.23901700000003,
+          "maximum": 113.84666700000002,
+          "minimum": 11.08770800000002
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 3,
+          "median": 274.018458,
+          "p95": 313.1796333,
+          "maximum": 317.530875,
+          "minimum": 212.794083
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 0,
+          "median": null,
+          "p95": null,
+          "maximum": null,
+          "minimum": null
+        },
+        "observed_exit_margin_ms": {
+          "n": 3,
+          "median": -128.496583,
+          "p95": -90.3364705,
+          "maximum": -86.096458,
+          "minimum": -227.102625
+        },
+        "cleanup_ms": {
+          "n": 3,
+          "median": 34.80675,
+          "p95": 84.61469939999999,
+          "maximum": 90.148916,
+          "minimum": 17.023875
+        },
+        "total_supervision_ms": {
+          "n": 3,
+          "median": 1189.251708,
+          "p95": 1238.4649833,
+          "maximum": 1243.933125,
+          "minimum": 1084.294834
+        },
+        "progress_write_max_ms": {
+          "n": 3,
+          "median": 1079.280542,
+          "p95": 1193.0007917,
+          "maximum": 1205.636375,
+          "minimum": 1063.789583
+        },
+        "terminal_write_max_ms": {
+          "n": 3,
+          "median": 2.573666,
+          "p95": 2.9993668999999996,
+          "maximum": 3.046667,
+          "minimum": 2.543916
+        }
+      }
+    },
+    "wake_delay": {
+      "statuses": {
+        "DEADLINE_EXCEEDED": 3
+      },
+      "metrics": {
+        "startup_ms": {
+          "n": 3,
+          "median": 35.257,
+          "p95": 42.233162799999995,
+          "maximum": 43.008292,
+          "minimum": 33.480125
+        },
+        "imports_ms": {
+          "n": 3,
+          "median": 63.254458,
+          "p95": 68.7864961,
+          "maximum": 69.401167,
+          "minimum": 51.225875
+        },
+        "sleep_envelope_overshoot_ms": {
+          "n": 3,
+          "median": 75.36658399999999,
+          "p95": 82.14962119999997,
+          "maximum": 82.90329199999996,
+          "minimum": 14.162790999999856
+        },
+        "atexit_to_observation_upper_ms": {
+          "n": 2,
+          "median": 20.046333500000003,
+          "p95": 20.18437055,
+          "maximum": 20.199708,
+          "minimum": 19.892959
+        },
+        "exit_to_observation_bound_ms": {
+          "n": 3,
+          "median": 19.39475,
+          "p95": 59.87048779999999,
+          "maximum": 64.367792,
+          "minimum": 18.421625
+        },
+        "observed_exit_margin_ms": {
+          "n": 3,
+          "median": -255.574125,
+          "p95": -160.6546872,
+          "maximum": -150.108083,
+          "minimum": -256.660083
+        },
+        "cleanup_ms": {
+          "n": 3,
+          "median": 265.398583,
+          "p95": 336.0735958,
+          "maximum": 343.926375,
+          "minimum": 121.470083
+        },
+        "total_supervision_ms": {
+          "n": 3,
+          "median": 1256.845083,
+          "p95": 1323.8550708,
+          "maximum": 1331.300625,
+          "minimum": 1141.707667
+        },
+        "progress_write_max_ms": {
+          "n": 3,
+          "median": 1.770834,
+          "p95": 3.0972459,
+          "maximum": 3.244625,
+          "minimum": 0.830833
+        },
+        "terminal_write_max_ms": {
+          "n": 3,
+          "median": 3.645,
+          "p95": 4.0490253,
+          "maximum": 4.093917,
+          "minimum": 2.151583
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "index": 0,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 58.700209,
+      "imports_ms": 234.002166,
+      "sleep_envelope_overshoot_ms": 61.868875,
+      "atexit_to_observation_upper_ms": 58.323334,
+      "exit_to_observation_bound_ms": 99.692334,
+      "observed_exit_margin_ms": 78.974125,
+      "cleanup_ms": 0.030333,
+      "total_supervision_ms": 903.960583,
+      "progress_write_max_ms": 1.592958,
+      "terminal_write_max_ms": 2.252958
+    },
+    {
+      "index": 1,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 54.000417,
+      "imports_ms": 72.93225,
+      "sleep_envelope_overshoot_ms": 130.17312500000003,
+      "atexit_to_observation_upper_ms": 21.248166,
+      "exit_to_observation_bound_ms": 12.377583,
+      "observed_exit_margin_ms": 47.162375,
+      "cleanup_ms": 0.025083,
+      "total_supervision_ms": 877.718458,
+      "progress_write_max_ms": 1.630791,
+      "terminal_write_max_ms": 3.756959
+    },
+    {
+      "index": 2,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 77.66225,
+      "imports_ms": 72.755083,
+      "sleep_envelope_overshoot_ms": 91.82745900000009,
+      "atexit_to_observation_upper_ms": 82.218292,
+      "exit_to_observation_bound_ms": 84.453459,
+      "observed_exit_margin_ms": 23.615791,
+      "cleanup_ms": 0.052917,
+      "total_supervision_ms": 943.373625,
+      "progress_write_max_ms": 2.73925,
+      "terminal_write_max_ms": 3.385917
+    },
+    {
+      "index": 3,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 54.970084,
+      "imports_ms": 74.775958,
+      "sleep_envelope_overshoot_ms": 78.567001,
+      "atexit_to_observation_upper_ms": 93.296541,
+      "exit_to_observation_bound_ms": 84.802041,
+      "observed_exit_margin_ms": 23.966875,
+      "cleanup_ms": 0.036708,
+      "total_supervision_ms": 906.046125,
+      "progress_write_max_ms": 0.924167,
+      "terminal_write_max_ms": 8.602417
+    },
+    {
+      "index": 4,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 56.181916,
+      "imports_ms": 58.259958,
+      "sleep_envelope_overshoot_ms": 130.64991699999996,
+      "atexit_to_observation_upper_ms": 50.701041,
+      "exit_to_observation_bound_ms": 88.478291,
+      "observed_exit_margin_ms": 16.977542,
+      "cleanup_ms": 0.041291,
+      "total_supervision_ms": 962.793333,
+      "progress_write_max_ms": 1.673041,
+      "terminal_write_max_ms": 4.15275
+    },
+    {
+      "index": 5,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 42.948583,
+      "imports_ms": 113.347708,
+      "sleep_envelope_overshoot_ms": 94.46662499999991,
+      "atexit_to_observation_upper_ms": 91.054458,
+      "exit_to_observation_bound_ms": 92.170166,
+      "observed_exit_margin_ms": 13.283209,
+      "cleanup_ms": 0.024167,
+      "total_supervision_ms": 962.757209,
+      "progress_write_max_ms": 1.133084,
+      "terminal_write_max_ms": 1.917958
+    },
+    {
+      "index": 6,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 56.980417,
+      "imports_ms": 64.773833,
+      "sleep_envelope_overshoot_ms": 89.88325000000009,
+      "atexit_to_observation_upper_ms": 102.178959,
+      "exit_to_observation_bound_ms": 102.363,
+      "observed_exit_margin_ms": 6.9715,
+      "cleanup_ms": 0.043875,
+      "total_supervision_ms": 932.74375,
+      "progress_write_max_ms": 0.926334,
+      "terminal_write_max_ms": 5.732375
+    },
+    {
+      "index": 7,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 36.641167,
+      "imports_ms": 75.817583,
+      "sleep_envelope_overshoot_ms": 16.343334000000027,
+      "atexit_to_observation_upper_ms": 80.053791,
+      "exit_to_observation_bound_ms": 81.750625,
+      "observed_exit_margin_ms": 101.90375,
+      "cleanup_ms": 0.028584,
+      "total_supervision_ms": 832.026084,
+      "progress_write_max_ms": 1.958916,
+      "terminal_write_max_ms": 1.988917
+    },
+    {
+      "index": 8,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 39.355542,
+      "imports_ms": 79.3465,
+      "sleep_envelope_overshoot_ms": 56.02045799999985,
+      "atexit_to_observation_upper_ms": 44.932208,
+      "exit_to_observation_bound_ms": 45.99375,
+      "observed_exit_margin_ms": 98.088042,
+      "cleanup_ms": 0.061541,
+      "total_supervision_ms": 881.857083,
+      "progress_write_max_ms": 1.419375,
+      "terminal_write_max_ms": 3.950916
+    },
+    {
+      "index": 9,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 57.68,
+      "imports_ms": 95.779625,
+      "sleep_envelope_overshoot_ms": 88.70850099999984,
+      "atexit_to_observation_upper_ms": 46.533167,
+      "exit_to_observation_bound_ms": 78.494792,
+      "observed_exit_margin_ms": 63.432083,
+      "cleanup_ms": 0.050125,
+      "total_supervision_ms": 895.396458,
+      "progress_write_max_ms": 1.201125,
+      "terminal_write_max_ms": 2.547708
+    },
+    {
+      "index": 10,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 52.49675,
+      "imports_ms": 67.175833,
+      "sleep_envelope_overshoot_ms": 44.078750000000014,
+      "atexit_to_observation_upper_ms": 40.454041,
+      "exit_to_observation_bound_ms": 85.904583,
+      "observed_exit_margin_ms": 114.409,
+      "cleanup_ms": 0.028042,
+      "total_supervision_ms": 863.633084,
+      "progress_write_max_ms": 1.110667,
+      "terminal_write_max_ms": 2.228542
+    },
+    {
+      "index": 11,
+      "condition": "ordinary",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 55.048833,
+      "imports_ms": 90.106541,
+      "sleep_envelope_overshoot_ms": 148.66979200000003,
+      "atexit_to_observation_upper_ms": 59.500667,
+      "exit_to_observation_bound_ms": 47.658,
+      "observed_exit_margin_ms": -10.105334,
+      "cleanup_ms": 55.397875,
+      "total_supervision_ms": 1045.127125,
+      "progress_write_max_ms": 1.234375,
+      "terminal_write_max_ms": 6.967917
+    },
+    {
+      "index": 12,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 54.218625,
+      "imports_ms": 83.974417,
+      "sleep_envelope_overshoot_ms": 146.20295800000008,
+      "atexit_to_observation_upper_ms": 28.357583,
+      "exit_to_observation_bound_ms": 11.001583,
+      "observed_exit_margin_ms": 24.1745,
+      "cleanup_ms": 0.02575,
+      "total_supervision_ms": 954.626167,
+      "progress_write_max_ms": 1.119458,
+      "terminal_write_max_ms": 2.395458
+    },
+    {
+      "index": 13,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 33.930584,
+      "imports_ms": 85.877958,
+      "sleep_envelope_overshoot_ms": 129.1248750000001,
+      "atexit_to_observation_upper_ms": 54.134458,
+      "exit_to_observation_bound_ms": 72.071667,
+      "observed_exit_margin_ms": 15.947375,
+      "cleanup_ms": 0.046917,
+      "total_supervision_ms": 963.931792,
+      "progress_write_max_ms": 3.789791,
+      "terminal_write_max_ms": 2.706125
+    },
+    {
+      "index": 14,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 44.728416,
+      "imports_ms": 76.849667,
+      "sleep_envelope_overshoot_ms": 10.096250000000055,
+      "atexit_to_observation_upper_ms": 54.65525,
+      "exit_to_observation_bound_ms": 45.107459,
+      "observed_exit_margin_ms": 128.416333,
+      "cleanup_ms": 0.027916,
+      "total_supervision_ms": 850.236458,
+      "progress_write_max_ms": 0.979167,
+      "terminal_write_max_ms": 3.421542
+    },
+    {
+      "index": 15,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 39.275667,
+      "imports_ms": 82.067125,
+      "sleep_envelope_overshoot_ms": 126.50987400000008,
+      "atexit_to_observation_upper_ms": 30.626,
+      "exit_to_observation_bound_ms": 80.544417,
+      "observed_exit_margin_ms": 41.553167,
+      "cleanup_ms": 0.026666,
+      "total_supervision_ms": 940.554541,
+      "progress_write_max_ms": 0.981791,
+      "terminal_write_max_ms": 19.454958
+    },
+    {
+      "index": 16,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 43.069875,
+      "imports_ms": 77.248666,
+      "sleep_envelope_overshoot_ms": 28.255708000000027,
+      "atexit_to_observation_upper_ms": 52.993583,
+      "exit_to_observation_bound_ms": 90.164708,
+      "observed_exit_margin_ms": 81.689125,
+      "cleanup_ms": 0.031041,
+      "total_supervision_ms": 898.310916,
+      "progress_write_max_ms": 1.158042,
+      "terminal_write_max_ms": 2.700125
+    },
+    {
+      "index": 17,
+      "condition": "ordinary",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 48.242625,
+      "imports_ms": 78.043083,
+      "sleep_envelope_overshoot_ms": 146.787375,
+      "atexit_to_observation_upper_ms": 101.649458,
+      "exit_to_observation_bound_ms": 89.545875,
+      "observed_exit_margin_ms": -50.697166,
+      "cleanup_ms": 23.517166,
+      "total_supervision_ms": 1053.01125,
+      "progress_write_max_ms": 0.804083,
+      "terminal_write_max_ms": 9.446375
+    },
+    {
+      "index": 18,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 67.327542,
+      "imports_ms": 69.725125,
+      "sleep_envelope_overshoot_ms": 75.1892079999999,
+      "atexit_to_observation_upper_ms": 36.283209,
+      "exit_to_observation_bound_ms": 79.747209,
+      "observed_exit_margin_ms": 84.724125,
+      "cleanup_ms": 0.075,
+      "total_supervision_ms": 872.172667,
+      "progress_write_max_ms": 2.177167,
+      "terminal_write_max_ms": 6.437417
+    },
+    {
+      "index": 19,
+      "condition": "ordinary",
+      "status": "COMPLETED",
+      "startup_ms": 60.227666,
+      "imports_ms": 91.706125,
+      "sleep_envelope_overshoot_ms": 147.6087490000001,
+      "atexit_to_observation_upper_ms": 44.960792,
+      "exit_to_observation_bound_ms": 46.533458,
+      "observed_exit_margin_ms": 5.797292,
+      "cleanup_ms": 0.040625,
+      "total_supervision_ms": 965.944042,
+      "progress_write_max_ms": 1.702292,
+      "terminal_write_max_ms": 2.436709
+    },
+    {
+      "index": 20,
+      "condition": "immediate",
+      "status": "COMPLETED",
+      "startup_ms": 62.981375,
+      "imports_ms": 70.776208,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": 31.376583,
+      "exit_to_observation_bound_ms": 86.698125,
+      "observed_exit_margin_ms": 808.819625,
+      "cleanup_ms": 0.036375,
+      "total_supervision_ms": 168.113625,
+      "progress_write_max_ms": 1.687083,
+      "terminal_write_max_ms": 1.650875
+    },
+    {
+      "index": 21,
+      "condition": "immediate",
+      "status": "COMPLETED",
+      "startup_ms": 51.577459,
+      "imports_ms": 71.606291,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": 26.637125,
+      "exit_to_observation_bound_ms": 46.353125,
+      "observed_exit_margin_ms": 821.428292,
+      "cleanup_ms": 0.022917,
+      "total_supervision_ms": 152.359792,
+      "progress_write_max_ms": 1.446583,
+      "terminal_write_max_ms": 1.435292
+    },
+    {
+      "index": 22,
+      "condition": "immediate",
+      "status": "COMPLETED",
+      "startup_ms": 49.234583,
+      "imports_ms": 82.253083,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": 29.94425,
+      "exit_to_observation_bound_ms": 18.486625,
+      "observed_exit_margin_ms": 811.22,
+      "cleanup_ms": 0.039291,
+      "total_supervision_ms": 164.020333,
+      "progress_write_max_ms": 1.494833,
+      "terminal_write_max_ms": 2.223541
+    },
+    {
+      "index": 23,
+      "condition": "wake_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 43.008292,
+      "imports_ms": 63.254458,
+      "sleep_envelope_overshoot_ms": 14.162790999999856,
+      "atexit_to_observation_upper_ms": 20.199708,
+      "exit_to_observation_bound_ms": 18.421625,
+      "observed_exit_margin_ms": -150.108083,
+      "cleanup_ms": 121.470083,
+      "total_supervision_ms": 1141.707667,
+      "progress_write_max_ms": 0.830833,
+      "terminal_write_max_ms": 4.093917
+    },
+    {
+      "index": 24,
+      "condition": "wake_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 35.257,
+      "imports_ms": 69.401167,
+      "sleep_envelope_overshoot_ms": 82.90329199999996,
+      "atexit_to_observation_upper_ms": null,
+      "exit_to_observation_bound_ms": 19.39475,
+      "observed_exit_margin_ms": -256.660083,
+      "cleanup_ms": 265.398583,
+      "total_supervision_ms": 1256.845083,
+      "progress_write_max_ms": 3.244625,
+      "terminal_write_max_ms": 2.151583
+    },
+    {
+      "index": 25,
+      "condition": "wake_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 33.480125,
+      "imports_ms": 51.225875,
+      "sleep_envelope_overshoot_ms": 75.36658399999999,
+      "atexit_to_observation_upper_ms": 19.892959,
+      "exit_to_observation_bound_ms": 64.367792,
+      "observed_exit_margin_ms": -255.574125,
+      "cleanup_ms": 343.926375,
+      "total_supervision_ms": 1331.300625,
+      "progress_write_max_ms": 1.770834,
+      "terminal_write_max_ms": 3.645
+    },
+    {
+      "index": 26,
+      "condition": "parent_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 35.454209,
+      "imports_ms": 57.225125,
+      "sleep_envelope_overshoot_ms": 117.45404200000007,
+      "atexit_to_observation_upper_ms": 426.581041,
+      "exit_to_observation_bound_ms": 512.126833,
+      "observed_exit_margin_ms": -345.140333,
+      "cleanup_ms": 0.016625,
+      "total_supervision_ms": 1327.738666,
+      "progress_write_max_ms": 2.078916,
+      "terminal_write_max_ms": 1.882834
+    },
+    {
+      "index": 27,
+      "condition": "parent_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 38.957,
+      "imports_ms": 69.687792,
+      "sleep_envelope_overshoot_ms": 146.54216700000006,
+      "atexit_to_observation_upper_ms": 419.476083,
+      "exit_to_observation_bound_ms": 504.717083,
+      "observed_exit_margin_ms": -367.917333,
+      "cleanup_ms": 0.014916,
+      "total_supervision_ms": 1347.878708,
+      "progress_write_max_ms": 0.690167,
+      "terminal_write_max_ms": 2.639875
+    },
+    {
+      "index": 28,
+      "condition": "parent_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 48.873958,
+      "imports_ms": 61.697417,
+      "sleep_envelope_overshoot_ms": 45.58749899999998,
+      "atexit_to_observation_upper_ms": 441.567542,
+      "exit_to_observation_bound_ms": 446.740125,
+      "observed_exit_margin_ms": -288.579625,
+      "cleanup_ms": 0.027416,
+      "total_supervision_ms": 1268.384041,
+      "progress_write_max_ms": 1.470708,
+      "terminal_write_max_ms": 1.979875
+    },
+    {
+      "index": 29,
+      "condition": "import_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 62.383125,
+      "imports_ms": null,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": null,
+      "exit_to_observation_bound_ms": 68.007834,
+      "observed_exit_margin_ms": -270.915292,
+      "cleanup_ms": 289.430625,
+      "total_supervision_ms": 1298.866708,
+      "progress_write_max_ms": 0.771708,
+      "terminal_write_max_ms": 20.264083
+    },
+    {
+      "index": 30,
+      "condition": "import_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 56.559625,
+      "imports_ms": null,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": null,
+      "exit_to_observation_bound_ms": 12.914916,
+      "observed_exit_margin_ms": -223.250666,
+      "cleanup_ms": 250.740667,
+      "total_supervision_ms": 1217.651959,
+      "progress_write_max_ms": 12.460667,
+      "terminal_write_max_ms": 3.886666
+    },
+    {
+      "index": 31,
+      "condition": "import_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 52.9945,
+      "imports_ms": null,
+      "sleep_envelope_overshoot_ms": null,
+      "atexit_to_observation_upper_ms": null,
+      "exit_to_observation_bound_ms": 41.697,
+      "observed_exit_margin_ms": -297.784166,
+      "cleanup_ms": 333.74925,
+      "total_supervision_ms": 1316.192833,
+      "progress_write_max_ms": 2.110167,
+      "terminal_write_max_ms": 6.518417
+    },
+    {
+      "index": 32,
+      "condition": "persist_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 43.851167,
+      "imports_ms": 95.092959,
+      "sleep_envelope_overshoot_ms": 113.84666700000002,
+      "atexit_to_observation_upper_ms": 212.794083,
+      "exit_to_observation_bound_ms": null,
+      "observed_exit_margin_ms": -128.496583,
+      "cleanup_ms": 90.148916,
+      "total_supervision_ms": 1189.251708,
+      "progress_write_max_ms": 1079.280542,
+      "terminal_write_max_ms": 2.543916
+    },
+    {
+      "index": 33,
+      "condition": "persist_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 41.667625,
+      "imports_ms": 63.677,
+      "sleep_envelope_overshoot_ms": 107.77016700000013,
+      "atexit_to_observation_upper_ms": 317.530875,
+      "exit_to_observation_bound_ms": null,
+      "observed_exit_margin_ms": -227.102625,
+      "cleanup_ms": 34.80675,
+      "total_supervision_ms": 1243.933125,
+      "progress_write_max_ms": 1205.636375,
+      "terminal_write_max_ms": 2.573666
+    },
+    {
+      "index": 34,
+      "condition": "persist_delay",
+      "status": "DEADLINE_EXCEEDED",
+      "startup_ms": 46.820667,
+      "imports_ms": 69.409292,
+      "sleep_envelope_overshoot_ms": 11.08770800000002,
+      "atexit_to_observation_upper_ms": 274.018458,
+      "exit_to_observation_bound_ms": null,
+      "observed_exit_margin_ms": -86.096458,
+      "cleanup_ms": 17.023875,
+      "total_supervision_ms": 1084.294834,
+      "progress_write_max_ms": 1063.789583,
+      "terminal_write_max_ms": 3.046667
+    }
+  ],
+  "clock_id": "darwin.mach_continuous_time.ns.v1@71E5EE4C-6FF7-4CCC-85E0-962512BB32C7",
+  "limitations": "Actual kernel exit time is interval-censored; atexit-to-observation includes remaining interpreter teardown. Sleep envelope includes trace writes. Trace publication envelope includes trace persistence."
+}

@@ -102,8 +102,10 @@ if thread is not None:
     if mode in ('ignore_term','shutdown_block'):
         assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
     # Independent process-table check includes descendants, separately from leader.
-    table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
-    states={int(line.split()[0]):line.split()[1] for line in table.splitlines()}
+    owned=sorted({json.loads(f.read_text())['pid'] for f in tmp_path.rglob('pid.json')})
+    query=subprocess.run(['ps','-p',','.join(map(str,owned)),'-o','pid=,stat='],capture_output=True,text=True,timeout=2)
+    assert query.returncode in (0,1) and not query.stderr,query.stderr
+    states={int(line.split()[0]):line.split()[1] for line in query.stdout.splitlines()}
     for f in tmp_path.rglob('pid.json'):
         pid=json.loads(f.read_text())['pid']
         assert pid not in states or states[pid].startswith('Z'),(pid,states.get(pid))

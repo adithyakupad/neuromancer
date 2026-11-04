@@ -1,0 +1,32 @@
+{
+  "v1-qualification-macos-latest": {
+    "actual_supervisor_cases": 20,
+    "statuses": {
+      "COMPLETED": 2,
+      "WORKER_FAILURE": 4,
+      "DEADLINE_EXCEEDED": 11,
+      "CLEANUP_FAILURE": 1,
+      "SUPERVISOR_FAILURE": 1,
+      "CLOCK_FAILURE": 1
+    },
+    "expected_injected_unprovable_cleanup": [
+      "runs/pytest-tmp/test_cleanup_failure_is_explic0/returned.json"
+    ],
+    "unexpected_cleanup_failures": []
+  },
+  "v1-qualification-ubuntu-latest": {
+    "actual_supervisor_cases": 20,
+    "statuses": {
+      "COMPLETED": 2,
+      "WORKER_FAILURE": 4,
+      "DEADLINE_EXCEEDED": 11,
+      "CLEANUP_FAILURE": 1,
+      "SUPERVISOR_FAILURE": 1,
+      "CLOCK_FAILURE": 1
+    },
+    "expected_injected_unprovable_cleanup": [
+      "runs/pytest-tmp/test_cleanup_failure_is_explic0/returned.json"
+    ],
+    "unexpected_cleanup_failures": []
+  }
+}

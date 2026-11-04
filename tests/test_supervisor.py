@@ -9,6 +9,7 @@ import time
 
 import pytest
 from neuromancer.supervisor import Deadline, atomic_json
+from supervisor_test_support import communicate
 
 WORKER = Path(__file__).with_name('supervisor_worker.py')
 
@@ -41,34 +42,55 @@ def test_real_worker_lifecycle(tmp_path, mode):
     # The test process is an independent outer watchdog. Its fallback addresses
     # each recorded owned group, not just the supervisor session.
     code = '''
-import json, sys
+import json, sys, threading
 from pathlib import Path
-from neuromancer.supervisor import Deadline, supervise
+from neuromancer.clocks import now_ns,clock_domain
+from neuromancer.supervisor import Deadline, supervise, atomic_json
 root=Path(sys.argv[1]); mode=sys.argv[2]; worker=sys.argv[3]
 d=Deadline.after(1.8)
 cutoff=d.end_ns-800000000
 command=[sys.executable,worker,mode,str(root/'worker'),str(cutoff)]
-r=supervise([command],root/'supervision',d)
+thread=None;errors=[]
+if mode=='before':
+ command=[sys.executable,str(Path(worker).with_name('supervisor_handshake_worker.py')),str(root/'worker')]
+ def release():
+  try:
+   import time
+   ready=root/'worker/ready.json'
+   while now_ns()<cutoff:
+    if ready.exists():
+     value=json.loads(ready.read_text());assert value['clock_id']==d.clock_id
+     released=now_ns();atomic_json(root/'worker/release.json',dict(clock_id=d.clock_id,released_ns=released))
+     return
+    time.sleep(.001)
+   errors.append('ready/release missed original cutoff')
+  except Exception as exc:errors.append(repr(exc))
+ thread=threading.Thread(target=release,daemon=True);thread.start()
+r=supervise([command],root/'supervision',d,trace=True)
 (root/'returned.json').write_text(json.dumps(r))
+if thread is not None:
+ thread.join(timeout=.1)
+ (root/'handshake_driver.json').write_text(json.dumps(dict(errors=errors,thread_alive=thread.is_alive(),clock_id=d.clock_id)))
+ assert not errors and not thread.is_alive()
+
 '''
     p = subprocess.Popen([sys.executable,'-c',code,str(tmp_path),mode,str(WORKER)],
                          start_new_session=True, stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     began=time.monotonic()
-    try:
-        stdout,stderr=p.communicate(timeout=6)
-    except subprocess.TimeoutExpired:
-        for f in tmp_path.rglob('pid.json'):
-            pgid=json.loads(f.read_text())['pgid']
-            try: os.killpg(pgid,signal.SIGKILL)
-            except ProcessLookupError: pass
-        os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
-        pytest.fail('Independent outer watchdog intervened')
+    stdout,stderr=communicate(p,tmp_path)
     assert p.returncode == 0,stderr.decode()
     r=json.loads((tmp_path/'returned.json').read_text())
     assert time.monotonic()-began < 4
     assert (tmp_path/'worker'/'partial.txt').read_text() == 'completed checkpoint\n'
     if mode in ('complete','before'):
         assert r['status']=='COMPLETED'
+        assert r['workers'][0]['first_observed_exit_ns']<r['work_cutoff_ns']
+        assert r['workers'][0]['events'][-1]['monotonic_ns']<r['work_cutoff_ns']
+        if mode=='before':
+            events=[json.loads(line) for line in (tmp_path/'worker/events.jsonl').read_text().splitlines()]
+            ticks={e['kind']:e['monotonic_ns'] for e in events}
+            release=json.loads((tmp_path/'worker/release.json').read_text())
+            assert ticks['ready']<=release['released_ns']<=ticks['release_seen']<=ticks['completion_intent']<=ticks['worker_atexit']<=r['workers'][0]['first_observed_exit_ns']
     elif mode in ('exception','unexpected','write_failure','orphan'):
         assert r['status'] in ('WORKER_FAILURE','CLEANUP_FAILURE')
     else:
@@ -80,8 +102,10 @@ r=supervise([command],root/'supervision',d)
     if mode in ('ignore_term','shutdown_block'):
         assert 'KILLING' in [e['state'] for e in r['workers'][0]['events']]
     # Independent process-table check includes descendants, separately from leader.
-    table=subprocess.check_output(['ps','-axo','pid=,stat='],text=True)
-    states={int(line.split()[0]):line.split()[1] for line in table.splitlines()}
+    owned=sorted({json.loads(f.read_text())['pid'] for f in tmp_path.rglob('pid.json')})
+    query=subprocess.run(['ps','-p',','.join(map(str,owned)),'-o','pid=,stat='],capture_output=True,text=True,timeout=2)
+    assert query.returncode in (0,1) and not query.stderr,query.stderr
+    states={int(line.split()[0]):line.split()[1] for line in query.stdout.splitlines()}
     for f in tmp_path.rglob('pid.json'):
         pid=json.loads(f.read_text())['pid']
         assert pid not in states or states[pid].startswith('Z'),(pid,states.get(pid))
@@ -101,20 +125,14 @@ def injected(path,value):
  if count==2: raise OSError('injected progress write failure')
  return original(path,value)
 s.atomic_json=injected
-r=s.supervise([[sys.executable,sys.argv[2],'ignore_term',str(p/'worker')]],p/'owned',s.Deadline.after(2))
+r=s.supervise([[sys.executable,sys.argv[2],'ignore_term',str(p/'worker')]],p/'owned',s.Deadline.after(2),trace=True)
 (p/'returned.json').write_text(json.dumps(r))
 try: s.supervise([],p/'owned',s.Deadline.after(1))
 except FileExistsError: (p/'restart_rejected').touch()
 """
     proc=subprocess.Popen([sys.executable,'-c',code,str(tmp_path),str(WORKER)],
                           start_new_session=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    try: out,err=proc.communicate(timeout=6)
-    except subprocess.TimeoutExpired:
-        for f in tmp_path.rglob('pid.json'):
-            try: os.killpg(json.loads(f.read_text())['pgid'],signal.SIGKILL)
-            except ProcessLookupError: pass
-        os.killpg(proc.pid,signal.SIGKILL);proc.communicate(timeout=1)
-        pytest.fail('Outer watchdog intervened')
+    out,err=communicate(proc,tmp_path)
     assert proc.returncode==0,err.decode()
     result=json.loads((tmp_path/'returned.json').read_text())
     assert result['status']=='SUPERVISOR_FAILURE' and result['cleanup_verified']
@@ -151,18 +169,12 @@ from pathlib import Path
 from neuromancer.supervisor import Deadline,supervise
 p=Path(sys.argv[1]);w=sys.argv[2];d=Deadline.after(1.8)
 commands=[[sys.executable,w,'ignore_term',str(p/f'worker{i}')] for i in range(5)]
-r=supervise(commands,p/'supervision',d,workers=2)
+r=supervise(commands,p/'supervision',d,workers=2,trace=True)
 (p/'returned.json').write_text(json.dumps(r))
 '''
     p=subprocess.Popen([sys.executable,'-c',code,str(tmp_path),str(WORKER)],
                        start_new_session=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    try: stdout,stderr=p.communicate(timeout=6)
-    except subprocess.TimeoutExpired:
-        for f in tmp_path.rglob('pid.json'):
-            try: os.killpg(json.loads(f.read_text())['pgid'],signal.SIGKILL)
-            except ProcessLookupError: pass
-        os.killpg(p.pid,signal.SIGKILL);p.communicate(timeout=1)
-        pytest.fail('Outer watchdog intervened')
+    stdout,stderr=communicate(p,tmp_path)
     assert p.returncode==0,stderr.decode()
     r=json.loads((tmp_path/'returned.json').read_text())
     assert r['status']=='DEADLINE_EXCEEDED' and r['cleanup_verified']
@@ -212,18 +224,12 @@ import json,sys
 from pathlib import Path
 import neuromancer.supervisor as s
 p=Path(sys.argv[1]);s.group_exists=lambda pgid: True
-r=s.supervise([[sys.executable,sys.argv[2],'ignore_term',str(p/'worker')]],p/'supervision',s.Deadline.after(1.8))
+r=s.supervise([[sys.executable,sys.argv[2],'ignore_term',str(p/'worker')]],p/'supervision',s.Deadline.after(1.8),trace=True)
 (p/'returned.json').write_text(json.dumps(r))
 '''
     proc=subprocess.Popen([sys.executable,'-c',code,str(tmp_path),str(WORKER)],
                           start_new_session=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-    try: out,err=proc.communicate(timeout=6)
-    except subprocess.TimeoutExpired:
-        for f in tmp_path.rglob('pid.json'):
-            try: os.killpg(json.loads(f.read_text())['pgid'],signal.SIGKILL)
-            except ProcessLookupError: pass
-        os.killpg(proc.pid,signal.SIGKILL);proc.communicate(timeout=1)
-        pytest.fail('Outer watchdog intervened')
+    out,err=communicate(proc,tmp_path)
     assert proc.returncode==0,err.decode()
     r=json.loads((tmp_path/'returned.json').read_text())
     assert r['status']=='CLEANUP_FAILURE' and r['cause']=='DEADLINE_EXCEEDED'

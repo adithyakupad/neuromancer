@@ -124,6 +124,7 @@ def test_execution_lineage_frozen_before_neural_run():
         # Release documentation may evolve; preserve and verify original bytes.
         frozen = (root/'docs/history/README_M002_SNAPSHOT.md' if name=='README.md'
                   else root/'docs/history/PYPROJECT_M002_3_SNAPSHOT.toml' if name=='pyproject.toml'
+                  else root/'docs/history/CI_M002_3_SNAPSHOT.yml' if name=='.github/workflows/ci.yml'
                   else root/name)
         assert hashlib.sha256(frozen.read_bytes()).hexdigest()==digest
     committed=subprocess.check_output(['git','show','HEAD:reports/evidence/m002_3/PREREGISTRATION.md'],cwd=root)

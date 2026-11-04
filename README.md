@@ -77,4 +77,4 @@ Read the [V1 research report](reports/NEUROMANCER_V1_RESEARCH_REPORT.md), [M007 
 
 ## Release and roadmap
 
-This repository is a review candidate. MIT license and v1.0.0 metadata are prepared on the release branch. Final hosted CI for this branch and publication approval remain required. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.
+This repository is a review candidate. MIT license and v1.0.0 metadata are prepared on the release branch. Hosted CI passed for release-preparation commit `abd811a053e10ad7ee5126efbc95fefd73e55c8d` on Linux and macOS. Final maintainer authorization to merge, tag and publish remains required. No tag or GitHub release is created by the audit. Future independent network confirmation or biological integration requires separately satisfied scientific gates, documented hardware APIs and approved experimental access. No locked evaluation or biological experiment is automatically authorized.

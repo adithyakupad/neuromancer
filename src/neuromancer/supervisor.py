@@ -71,7 +71,8 @@ def _signal(pgid: int, sig: int) -> str | None:
 
 def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadline,
               *, workers: int = 3, cooperative_s: float = .2,
-              terminate_s: float = .2, reap_s: float = .4) -> dict:
+              terminate_s: float = .2, reap_s: float = .4,
+              trace: bool = False) -> dict:
     """All startup, jobs and cleanup share deadline; no deadline is reset here.
 
     Workers inherit NEUROMANCER_STOP_FILE for cooperative cancellation and
@@ -96,6 +97,30 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
     cause = None
     error = None
     persistence_errors = []
+    lifecycle = []
+    trace_error = None
+
+    def tracepoint(kind, *, at_ns=None, **fields):
+        # Opt-in diagnostics; no extra clock reads or I/O on the default path.
+        nonlocal trace_error
+        if not trace:
+            return None
+        try:
+            stamp = now_ns() if at_ns is None else at_ns
+        except Exception as exc:
+            stamp = None
+            trace_error = exc
+        lifecycle.append(dict(kind=kind, monotonic_ns=stamp, clock_id=deadline.clock_id,
+            remaining_ns=None if stamp is None else deadline.end_ns-stamp,
+            work_remaining_ns=None if stamp is None else work_end-stamp, **fields))
+        return stamp
+
+    def write_trace():
+        if trace:
+            atomic_json(output/'lifecycle.json', dict(clock_id=deadline.clock_id,
+                deadline_ns=deadline.end_ns, work_cutoff_ns=work_end, events=lifecycle))
+
+    tracepoint('supervisor_start', at_ns=started)
 
     def event(r, state):
         r['state'] = state
@@ -104,18 +129,27 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
         except ClockError:
             stamp = None
         r['events'].append(dict(state=state, monotonic_ns=stamp))
+        tracepoint('worker_state', at_ns=stamp, worker=r['index'], state=state)
 
     def persist():
         # Failure to persist never bypasses process cleanup.
         try:
+            tracepoint('progress_write_begin')
             atomic_json(output/'progress.json', dict(cause=cause, workers=records))
+            tracepoint('progress_write_end')
         except Exception as exc:
             persistence_errors.append(repr(exc))
             raise
 
     def poll():
         for i, proc in list(active.items()):
+            tracepoint('poll_begin', worker=i)
             code = proc.poll()  # waitpid(WNOHANG): reaps only our direct child.
+            observed = tracepoint('poll_result', worker=i, returncode=code)
+            if trace and code is None:
+                records[i]['last_running_poll_ns'] = observed
+            if trace and code is not None and 'first_observed_exit_ns' not in records[i]:
+                records[i]['first_observed_exit_ns'] = observed
             if code is not None:
                 r = records[i]
                 r['returncode'] = code
@@ -132,7 +166,9 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
         persist()
         next_job = 0
         while next_job < len(records) or active:
-            if now_ns() >= work_end:
+            checked = now_ns()
+            tracepoint('cutoff_check', at_ns=checked, phase='loop')
+            if checked >= work_end:
                 cause = 'DEADLINE_EXCEEDED'
                 break
             poll()
@@ -143,7 +179,9 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                 cause = 'WORKER_FAILURE'
                 break
             while next_job < len(records) and len(active) < workers:
-                if now_ns() >= work_end:
+                checked = now_ns()
+                tracepoint('cutoff_check', at_ns=checked, phase='launch')
+                if checked >= work_end:
                     break
                 i = next_job; r = records[i]
                 stop_file = output/f'stop-{i}'
@@ -151,20 +189,26 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                            NEUROMANCER_DEADLINE_NS=str(deadline.end_ns),
                            NEUROMANCER_DEADLINE_CLOCK=deadline.clock_id)
                 log = (output/f'worker-{i}.log').open('wb'); handles.append(log)
+                tracepoint('process_create_begin', worker=i)
                 proc = subprocess.Popen(r['command'], stdin=subprocess.DEVNULL,
                     stdout=log, stderr=subprocess.STDOUT, env=env, start_new_session=True)
+                tracepoint('process_create_return', worker=i, pid=proc.pid, pgid=proc.pid)
                 active[i] = proc
                 r.update(pid=proc.pid, pgid=proc.pid, stop_file=str(stop_file))
                 event(r, 'RUNNING'); next_job += 1
                 persist()
-            if now_ns() >= work_end:
+            checked = now_ns()
+            tracepoint('cutoff_check', at_ns=checked, phase='loop')
+            if checked >= work_end:
                 cause = 'DEADLINE_EXCEEDED'
                 break
             if not active and next_job == len(records):
                 break
             time.sleep(min(.01, max(0., (work_end-now_ns())/1e9)))
         # Completion observed after cutoff is conservatively non-success.
-        if now_ns() >= work_end:
+        checked = now_ns()
+        tracepoint('cutoff_check', at_ns=checked, phase='after_loop')
+        if checked >= work_end:
             cause = 'DEADLINE_EXCEEDED'
     except BaseException as exc:
         cause = 'CLOCK_FAILURE' if isinstance(exc, ClockError) else 'SUPERVISOR_FAILURE'
@@ -180,6 +224,7 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
             clock_failed = True; cause = 'CLOCK_FAILURE'; error = repr(exc)
             cleanup_reader = time.monotonic_ns  # Cleanup-only, never trial success.
             cleanup_started = cleanup_reader()
+        tracepoint('cleanup_begin', late_clock=clock_failed)
         late_cleanup = clock_failed or cleanup_started >= deadline.end_ns
         cleanup_end = (cleanup_started+reserve_ns if late_cleanup else deadline.end_ns)
         def drain(end):
@@ -251,6 +296,10 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
     except ClockError as exc:
         finished = None; clock_failed = True
         status = cause = 'CLOCK_FAILURE'; error = repr(exc)
+    tracepoint('result_prepared', status=status)
+    if trace_error is not None:
+        status = cause = 'CLOCK_FAILURE' if isinstance(trace_error, ClockError) else 'SUPERVISOR_FAILURE'
+        error = repr(trace_error)
     result = dict(status=status, cause=cause or 'normal completion', error=error, workers=records,
                   started_ns=started, deadline_ns=deadline.end_ns,
                   work_cutoff_ns=work_end, finished_ns=finished,
@@ -261,10 +310,17 @@ def supervise(commands: Sequence[Sequence[str]], output: Path, deadline: Deadlin
                   cleanup_verified=not active)
     # Progress retains evidence if this final write fails. Never return success.
     try:
+        tracepoint('terminal_write_begin', status=result['status'])
+        write_trace()
         atomic_json(output/'terminal.json', result)
+        tracepoint('terminal_write_end', status=result['status'])
+        write_trace()
     except Exception as exc:
         result.update(status='SUPERVISOR_FAILURE', cause='terminal artifact write failed', error=repr(exc))
         persistence_errors.append(repr(exc))
+        if trace:
+            try: atomic_json(output/'terminal.json', result)
+            except Exception: pass
         print(json.dumps(result), file=sys.stderr, flush=True)
         return result
     if result['status'] == 'COMPLETED':

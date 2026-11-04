@@ -1,4 +1,14 @@
 """Synthetic workers only; run by test_supervisor under an outer watchdog."""
+import sys as _sys
+import os as _os
+from supervisor_timing import WorkerTrace
+_trace=WorkerTrace(_sys.argv[2],_os.environ.get('M008_WORKER_TRACE')=='1')
+_trace.event('imports_begin')
+if _os.environ.get('M008_PREIMPORT_DELAY_S'):
+    import time as _time
+    _trace.event('preimport_delay_begin')
+    _time.sleep(float(_os.environ['M008_PREIMPORT_DELAY_S']))
+    _trace.event('preimport_delay_end')
 import json
 import os
 from pathlib import Path
@@ -8,6 +18,9 @@ import sys
 import time
 from neuromancer.clocks import now_ns, clock_domain
 assert os.environ['NEUROMANCER_DEADLINE_CLOCK']==clock_domain()
+_trace.event('imports_completed')
+import atexit
+atexit.register(lambda:_trace.event('worker_atexit'))
 
 mode, folder = sys.argv[1:3]
 p = Path(folder); p.mkdir(exist_ok=True)
@@ -19,7 +32,11 @@ if mode == 'complete':
     pass
 elif mode == 'before':
     cutoff = int(sys.argv[3]); delay = (cutoff-now_ns())/1e9-.2
+    _trace.event('sleep_request',requested_s=max(0.,delay),nominal_target_ns=cutoff-200000000)
     if delay > 0: time.sleep(delay)
+    _trace.event('sleep_wake')
+    if os.environ.get('M008_WAKE_DELAY_S'):
+        _trace.event('wake_delay_begin');time.sleep(float(os.environ['M008_WAKE_DELAY_S']));_trace.event('wake_delay_end')
 elif mode == 'race':
     cutoff = int(sys.argv[3]); delay = (cutoff-now_ns())/1e9
     if delay > 0: time.sleep(delay)
@@ -50,3 +67,8 @@ elif mode == 'shutdown_block':
     while True: time.sleep(60)
 else:  # timeout, ignore_stop and ignore_term
     time.sleep(60)
+
+_trace.event('completion_intent')
+if _trace.enabled:
+    (p/'completion.json').write_text(json.dumps(dict(clock_id=clock_domain(),intent_ns=now_ns())))
+    _trace.event('completion_record_written')

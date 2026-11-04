@@ -22,7 +22,7 @@ os.environ.update(VECLIB_MAXIMUM_THREADS="1", OPENBLAS_NUM_THREADS="1", OMP_NUM_
 commands = [
     [python, "-m", "pip", "check"],
     [python, "-m", "pip", "wheel", "--no-deps", "--no-build-isolation", ".", "--wheel-dir", str(output / "wheel")],
-    [python, "-m", "pip", "install", "--no-deps", str(output / "wheel/neuromancer-1.0.0-py3-none-any.whl")],
+    ["/usr/bin/env", "-u", "PYTHONPATH", python, "-m", "pip", "install", "--no-deps", str(output / "wheel/neuromancer-1.0.0-py3-none-any.whl")],
     ["/usr/bin/env", "-u", "PYTHONPATH", python, str(tools / "m011_installed_check.py"), str(output)],
     ["/usr/bin/env", "-u", "PYTHONPATH", str(Path(python).parent / "neuromancer-diagnostic"),
      "--mode", "smoke", "--output", str(output / "installed_smoke")],

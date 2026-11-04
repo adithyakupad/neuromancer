@@ -18,6 +18,7 @@ for index in range(10):
     deadline.check()
     folder = root / f"repeat_{index:02}"
     folder.mkdir()
+    os.environ["NEUROMANCER_TEST_ARTIFACTS"] = str(folder / "artifacts")
     command = [sys.executable, "-m", "pytest", "-q",
                "tests/test_supervisor.py::test_real_worker_lifecycle[write_failure]",
                f"--basetemp={folder / 'tmp'}", f"--junitxml={folder / 'tests.xml'}"]

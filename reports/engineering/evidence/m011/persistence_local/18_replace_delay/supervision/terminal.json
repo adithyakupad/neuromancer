@@ -1,0 +1,35 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "tests/supervisor_failure_worker.py",
+        "reports/engineering/evidence/m011/persistence_local/18_replace_delay/worker",
+        "timely"
+      ],
+      "state": "CREATED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1319192229519375
+        }
+      ],
+      "terminal": "NOT_STARTED",
+      "cause": "DEADLINE_EXCEEDED"
+    }
+  ],
+  "started_ns": 1319192229519375,
+  "deadline_ns": 1319194029394166,
+  "work_cutoff_ns": 1319193229394166,
+  "finished_ns": 1319193285594583,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1319194029394166,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

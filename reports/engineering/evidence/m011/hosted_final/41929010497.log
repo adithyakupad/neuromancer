@@ -1,0 +1,470 @@
+test	Set up job	﻿2026-11-04T22:52:26.6478763Z Current runner version: '2.338.2'
+test	Set up job	2026-11-04T22:52:26.6499913Z ##[group]Runner Image Provisioner
+test	Set up job	2026-11-04T22:52:26.6500653Z Hosted Compute Agent
+test	Set up job	2026-11-04T22:52:26.6501143Z Version: 20261021.618
+test	Set up job	2026-11-04T22:52:26.6501821Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+test	Set up job	2026-11-04T22:52:26.6502427Z Build Date: 2026-10-21T00:45:21Z
+test	Set up job	2026-11-04T22:52:26.6503035Z Worker ID: {3beddca4-99d5-4f9a-91a8-9d3e366f27a5}
+test	Set up job	2026-11-04T22:52:26.6503626Z Region: westus3
+test	Set up job	2026-11-04T22:52:26.6504072Z Cloud: Azure
+test	Set up job	2026-11-04T22:52:26.6504791Z ##[endgroup]
+test	Set up job	2026-11-04T22:52:26.6505877Z ##[group]Operating System
+test	Set up job	2026-11-04T22:52:26.6506441Z Ubuntu
+test	Set up job	2026-11-04T22:52:26.6506894Z 26.04.1
+test	Set up job	2026-11-04T22:52:26.6507327Z LTS
+test	Set up job	2026-11-04T22:52:26.6507864Z ##[endgroup]
+test	Set up job	2026-11-04T22:52:26.6508326Z ##[group]Runner Image
+test	Set up job	2026-11-04T22:52:26.6508845Z Image: ubuntu-26.04
+test	Set up job	2026-11-04T22:52:26.6509336Z Version: 20261025.179.1
+test	Set up job	2026-11-04T22:52:26.6510200Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261025.179/images/ubuntu/Ubuntu2604-Readme.md
+test	Set up job	2026-11-04T22:52:26.6511668Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261025.179
+test	Set up job	2026-11-04T22:52:26.6512473Z ##[endgroup]
+test	Set up job	2026-11-04T22:52:26.6513429Z ##[group]GITHUB_TOKEN Permissions
+test	Set up job	2026-11-04T22:52:26.6515579Z Contents: read
+test	Set up job	2026-11-04T22:52:26.6516116Z Metadata: read
+test	Set up job	2026-11-04T22:52:26.6516590Z Packages: read
+test	Set up job	2026-11-04T22:52:26.6517099Z ##[endgroup]
+test	Set up job	2026-11-04T22:52:26.6518809Z Secret source: Actions
+test	Set up job	2026-11-04T22:52:26.6519702Z Cache mode: write
+test	Set up job	2026-11-04T22:52:26.6520277Z Prepare workflow directory
+test	Set up job	2026-11-04T22:52:26.6925911Z Prepare all required actions
+test	Set up job	2026-11-04T22:52:26.6965014Z Getting action download info
+test	Set up job	2026-11-04T22:52:26.9759162Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+test	Set up job	2026-11-04T22:52:27.1767797Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+test	Set up job	2026-11-04T22:52:27.2872713Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+test	Set up job	2026-11-04T22:52:27.5065368Z Complete job name: test
+test	Run actions/checkout@v4	﻿2026-11-04T22:52:27.5761526Z ##[group]Run actions/checkout@v4
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5762198Z with:
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5762562Z   repository: adithyakupad/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5765794Z   token: ***
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5766149Z   ssh-strict: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5766506Z   ssh-user: git
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5766905Z   persist-credentials: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5767296Z   clean: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5767649Z   sparse-checkout-cone-mode: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5768061Z   fetch-depth: 1
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5768400Z   fetch-tags: false
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5768753Z   show-progress: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5769106Z   lfs: false
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5769440Z   submodules: false
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5769792Z   set-safe-directory: true
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5770196Z   allow-unsafe-pr-checkout: false
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5770771Z env:
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5771182Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5771720Z   M008_WORKER_TRACE: 1
+test	Run actions/checkout@v4	2026-11-04T22:52:27.5772079Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:27.9977791Z Syncing repository: adithyakupad/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:27.9979646Z ##[group]Getting Git version info
+test	Run actions/checkout@v4	2026-11-04T22:52:27.9980439Z Working directory is '/home/runner/work/neuromancer/neuromancer'
+test	Run actions/checkout@v4	2026-11-04T22:52:27.9981550Z [command]/usr/bin/git version
+test	Run actions/checkout@v4	2026-11-04T22:52:27.9987468Z git version 2.56.0
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0005593Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0017729Z Temporarily overriding HOME='/home/runner/work/_temp/2494b8a2-8202-4f9c-878f-5446cd76227b' before making global git config changes
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0019464Z Adding repository directory to the temporary git global config as a safe directory
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0021674Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0081907Z Deleting the contents of '/home/runner/work/neuromancer/neuromancer'
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0085187Z ##[group]Initializing the repository
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0088725Z [command]/usr/bin/git init /home/runner/work/neuromancer/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0164876Z hint: Using 'master' as the name for the initial branch. This default branch name
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0166266Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0167399Z hint: to use in all of your new repositories, which will suppress this warning,
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0168236Z hint: call:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0168564Z hint:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0168985Z hint: 	git config --global init.defaultBranch <name>
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0169492Z hint:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0170146Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0171173Z hint: 'development'. The just-created branch can be renamed via this command:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0171930Z hint:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0172375Z hint: 	git branch -m <name>
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0172881Z hint:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0173650Z hint: Disable this message with "git config set advice.defaultBranchName false"
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0183708Z Initialized empty Git repository in /home/runner/work/neuromancer/neuromancer/.git/
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0196030Z [command]/usr/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0243978Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0245460Z ##[group]Disabling automatic garbage collection
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0247995Z [command]/usr/bin/git config --local gc.auto 0
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0277046Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0278011Z ##[group]Setting up auth
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0282944Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Run actions/checkout@v4	2026-11-04T22:52:28.0311868Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2326633Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2356033Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2590026Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2619998Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2848567Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2883305Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2883968Z ##[group]Fetching the repository
+test	Run actions/checkout@v4	2026-11-04T22:52:28.2892435Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +42e20ada6e737c37f616950056c3444cfa99d400:refs/remotes/origin/release/m011-v1-isolated
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5667817Z From https://github.com/adithyakupad/neuromancer
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5668959Z  * [new ref]           42e20ada6e737c37f616950056c3444cfa99d400 -> origin/release/m011-v1-isolated
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5681123Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5681850Z ##[group]Determining the checkout info
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5682528Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5683974Z [command]/usr/bin/git sparse-checkout disable
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5729663Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5758863Z ##[group]Checking out the ref
+test	Run actions/checkout@v4	2026-11-04T22:52:39.5759476Z [command]/usr/bin/git checkout --progress --force -B release/m011-v1-isolated refs/remotes/origin/release/m011-v1-isolated
+test	Run actions/checkout@v4	2026-11-04T22:52:40.6747763Z Updating files:  17% (6524/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.6879572Z Updating files:  18% (6851/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7026226Z Updating files:  19% (7231/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7140478Z Updating files:  20% (7612/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7288151Z Updating files:  21% (7992/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7414667Z Updating files:  22% (8373/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7554532Z Updating files:  23% (8753/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.7919578Z Updating files:  24% (9134/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.8059898Z Updating files:  25% (9514/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.8182681Z Updating files:  26% (9895/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.8325224Z Updating files:  27% (10276/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.8454571Z Updating files:  28% (10656/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:40.8589109Z Updating files:  29% (11037/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.0153814Z Updating files:  30% (11417/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.1398021Z Updating files:  31% (11798/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.1537483Z Updating files:  32% (12178/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.1689621Z Updating files:  33% (12559/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.1811010Z Updating files:  34% (12940/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.2069228Z Updating files:  35% (13320/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.3276334Z Updating files:  36% (13701/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.3546368Z Updating files:  37% (14081/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.3686931Z Updating files:  38% (14462/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.3843507Z Updating files:  39% (14842/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.4481319Z Updating files:  40% (15223/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.6047158Z Updating files:  41% (15603/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.6689815Z Updating files:  41% (15876/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.7431778Z Updating files:  42% (15984/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.7554239Z Updating files:  43% (16365/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.7716033Z Updating files:  44% (16745/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.7832771Z Updating files:  45% (17126/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.7985446Z Updating files:  46% (17506/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8191043Z Updating files:  47% (17887/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8340016Z Updating files:  48% (18267/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8575675Z Updating files:  49% (18648/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8724162Z Updating files:  50% (19028/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8839161Z Updating files:  51% (19409/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.8955959Z Updating files:  52% (19790/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9086676Z Updating files:  53% (20170/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9222186Z Updating files:  54% (20551/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9337290Z Updating files:  55% (20931/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9453889Z Updating files:  56% (21312/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9608102Z Updating files:  57% (21692/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9728501Z Updating files:  58% (22073/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:41.9888517Z Updating files:  59% (22454/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0003817Z Updating files:  60% (22834/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0119495Z Updating files:  61% (23215/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0240290Z Updating files:  62% (23595/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0388860Z Updating files:  63% (23976/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0521804Z Updating files:  64% (24356/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.0661852Z Updating files:  65% (24737/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.1202143Z Updating files:  66% (25117/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.1939641Z Updating files:  67% (25498/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.2612350Z Updating files:  68% (25879/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.3303820Z Updating files:  69% (26259/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.3975477Z Updating files:  70% (26640/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.4671512Z Updating files:  71% (27020/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.5382573Z Updating files:  72% (27401/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.6045861Z Updating files:  73% (27781/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.6054577Z Updating files:  73% (28153/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.6738180Z Updating files:  74% (28162/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.7349882Z Updating files:  75% (28542/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.8030151Z Updating files:  76% (28923/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.8671442Z Updating files:  77% (29304/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:42.9347121Z Updating files:  78% (29684/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.0050114Z Updating files:  79% (30065/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.0718177Z Updating files:  80% (30445/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.1359779Z Updating files:  81% (30826/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.1954670Z Updating files:  82% (31206/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.2742151Z Updating files:  83% (31587/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.3398365Z Updating files:  84% (31968/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.4072614Z Updating files:  85% (32348/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.4769891Z Updating files:  86% (32729/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.5464789Z Updating files:  87% (33109/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.6054982Z Updating files:  88% (33490/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.6138636Z Updating files:  88% (33843/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.6737017Z Updating files:  89% (33870/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:43.7425734Z Updating files:  90% (34251/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.3888130Z Updating files:  91% (34631/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.4716348Z Updating files:  92% (35012/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.4839932Z Updating files:  93% (35393/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.4955673Z Updating files:  94% (35773/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5071207Z Updating files:  95% (36154/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5272795Z Updating files:  96% (36534/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5438887Z Updating files:  97% (36915/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5607412Z Updating files:  98% (37295/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5742818Z Updating files:  99% (37676/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5743480Z Updating files: 100% (38056/38056)
+test	Run actions/checkout@v4	2026-11-04T22:52:44.5743877Z Updating files: 100% (38056/38056), done.
+test	Run actions/checkout@v4	2026-11-04T22:52:44.6093482Z Switched to a new branch 'release/m011-v1-isolated'
+test	Run actions/checkout@v4	2026-11-04T22:52:44.6095480Z branch 'release/m011-v1-isolated' set up to track 'origin/release/m011-v1-isolated'.
+test	Run actions/checkout@v4	2026-11-04T22:52:44.6246366Z ##[endgroup]
+test	Run actions/checkout@v4	2026-11-04T22:52:44.6288180Z [command]/usr/bin/git log -1 --format=%H
+test	Run actions/checkout@v4	2026-11-04T22:52:44.6310494Z 42e20ada6e737c37f616950056c3444cfa99d400
+test	Run actions/setup-python@v5	﻿2026-11-04T22:52:44.7199537Z ##[group]Run actions/setup-python@v5
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7199781Z with:
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7199952Z   python-version: 3.12
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7200143Z   check-latest: false
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202017Z   token: ***
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202197Z   update-environment: true
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202394Z   allow-prereleases: false
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202581Z   freethreaded: false
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202765Z env:
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7202961Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7203221Z   M008_WORKER_TRACE: 1
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.7203397Z ##[endgroup]
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.8251803Z ##[group]Installed versions
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.8325019Z (node:2162) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.8325845Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.8338698Z Successfully set up CPython (3.12.15)
+test	Run actions/setup-python@v5	2026-11-04T22:52:44.8339306Z ##[endgroup]
+test	Run python -m pip install -r requirements-m002.txt	﻿2026-11-04T22:52:44.8500469Z ##[group]Run python -m pip install -r requirements-m002.txt
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8501100Z ^[[36;1mpython -m pip install -r requirements-m002.txt^[[0m
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8555593Z shell: /usr/bin/bash -e {0}
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8556056Z env:
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8556374Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8556751Z   M008_WORKER_TRACE: 1
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8557163Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8557720Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8558231Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8558726Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8559205Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8559694Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:44.8560108Z ##[endgroup]
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0003262Z Collecting Brian2==2.10.1 (from -r requirements-m002.txt (line 1))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0242296Z   Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0680222Z Collecting contourpy==1.4.0 (from -r requirements-m002.txt (line 2))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0708367Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0798541Z Collecting cycler==0.12.1 (from -r requirements-m002.txt (line 3))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.0827820Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.2358515Z Collecting Cython==3.1.3 (from -r requirements-m002.txt (line 4))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.2401404Z   Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.3505950Z Collecting fonttools==4.67.0 (from -r requirements-m002.txt (line 5))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.3545872Z   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8008194Z Collecting iniconfig==2.3.1 (from -r requirements-m002.txt (line 6))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8036506Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8133464Z Collecting Jinja2==3.1.6 (from -r requirements-m002.txt (line 7))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8162178Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8605819Z Collecting kiwisolver==1.5.1 (from -r requirements-m002.txt (line 8))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8636241Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.8992087Z Collecting MarkupSafe==3.0.4 (from -r requirements-m002.txt (line 9))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.9020809Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.9900278Z Collecting matplotlib==3.10.8 (from -r requirements-m002.txt (line 10))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:46.9953628Z   Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.0128863Z Collecting mpmath==1.3.0 (from -r requirements-m002.txt (line 11))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.0158336Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.1620776Z Collecting numpy==2.5.4 (from -r requirements-m002.txt (line 12))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.1649968Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.1760597Z Collecting packaging==26.3 (from -r requirements-m002.txt (line 13))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.1788325Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.2928792Z Collecting pillow==13.0.0 (from -r requirements-m002.txt (line 14))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.2960417Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3067839Z Collecting pluggy==1.7.0 (from -r requirements-m002.txt (line 15))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3094345Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3210016Z Collecting Pygments==2.21.0 (from -r requirements-m002.txt (line 16))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3237078Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3386322Z Collecting pyparsing==3.3.3 (from -r requirements-m002.txt (line 17))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3414326Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3655855Z Collecting pytest==9.1.1 (from -r requirements-m002.txt (line 18))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3686121Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3788659Z Collecting python-dateutil==2.9.0.post0 (from -r requirements-m002.txt (line 19))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.3816262Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.4280589Z Collecting setuptools==84.0.0 (from -r requirements-m002.txt (line 20))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.4309995Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.4428025Z Collecting six==1.17.0 (from -r requirements-m002.txt (line 21))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.4455322Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.5062838Z Collecting sympy==1.14.0 (from -r requirements-m002.txt (line 22))
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.5089819Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:47.5382538Z Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.1008493Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 3.9 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.1064298Z Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.3481350Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 12.7 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.3511126Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.4097665Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.4572960Z Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5406279Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 63.2 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5437232Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5488545Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5535500Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5640524Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 141.0 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5671957Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.5713387Z Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.6352829Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 136.4 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.6385250Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.6436821Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 76.9 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.6465191Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.7840739Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 121.3 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.7872450Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.7919431Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8429568Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 140.3 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8461107Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8501911Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8598237Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 124.1 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8626217Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8669493Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8716928Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8798251Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8877164Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 89.0 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8906240Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.8946097Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:48.9358545Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 152.6 MB/s  0:00:00
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:52:49.1081303Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:53:02.6594091Z 
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:53:02.6614213Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:53:02.6621894Z 
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:53:02.6622203Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+test	Run python -m pip install -r requirements-m002.txt	2026-11-04T22:53:02.6622545Z [notice] To update, run: pip install --upgrade pip
+test	Run python -m pip install --no-build-isolation --no-deps -e .	﻿2026-11-04T22:53:02.7633876Z ##[group]Run python -m pip install --no-build-isolation --no-deps -e .
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7634324Z ^[[36;1mpython -m pip install --no-build-isolation --no-deps -e .^[[0m
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7663786Z shell: /usr/bin/bash -e {0}
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7664003Z env:
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7664224Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7664717Z   M008_WORKER_TRACE: 1
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7664956Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7665401Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7665734Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7666043Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7666355Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7666649Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:02.7666904Z ##[endgroup]
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.0466920Z Obtaining file:///home/runner/work/neuromancer/neuromancer
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.0475100Z   Checking if build backend supports build_editable: started
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.2697378Z   Checking if build backend supports build_editable: finished with status 'done'
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.2705508Z   Preparing editable metadata (pyproject.toml): started
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.4932268Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.4965278Z Building wheels for collected packages: neuromancer
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.4971288Z   Building editable for neuromancer (pyproject.toml): started
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7321318Z   Building editable for neuromancer (pyproject.toml): finished with status 'done'
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7326529Z   Created wheel for neuromancer: filename=neuromancer-1.0.0-0.editable-py3-none-any.whl size=2565 sha256=6e5e358f350578bf8d0b8563cda56c07b31690640f295d216e82af12dc1cdd62
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7327775Z   Stored in directory: /tmp/pip-ephem-wheel-cache-l9is7jcp/wheels/5b/be/0c/f3c68bcae6b907cf7d005d256ee3f8974bc9b52a9ea2bee757
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7344966Z Successfully built neuromancer
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7432523Z Installing collected packages: neuromancer
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7972277Z Successfully installed neuromancer-1.0.0
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7979447Z 
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7979673Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+test	Run python -m pip install --no-build-isolation --no-deps -e .	2026-11-04T22:53:03.7980053Z [notice] To update, run: pip install --upgrade pip
+test	Run python -m pip check	﻿2026-11-04T22:53:03.8367812Z ##[group]Run python -m pip check
+test	Run python -m pip check	2026-11-04T22:53:03.8368083Z ^[[36;1mpython -m pip check^[[0m
+test	Run python -m pip check	2026-11-04T22:53:03.8395797Z shell: /usr/bin/bash -e {0}
+test	Run python -m pip check	2026-11-04T22:53:03.8395998Z env:
+test	Run python -m pip check	2026-11-04T22:53:03.8396209Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run python -m pip check	2026-11-04T22:53:03.8396483Z   M008_WORKER_TRACE: 1
+test	Run python -m pip check	2026-11-04T22:53:03.8396721Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip check	2026-11-04T22:53:03.8397060Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run python -m pip check	2026-11-04T22:53:03.8397386Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip check	2026-11-04T22:53:03.8397687Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip check	2026-11-04T22:53:03.8397984Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pip check	2026-11-04T22:53:03.8398277Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run python -m pip check	2026-11-04T22:53:03.8398529Z ##[endgroup]
+test	Run python -m pip check	2026-11-04T22:53:04.0205877Z No broken requirements found.
+test	Run mkdir -p runs	﻿2026-11-04T22:53:04.0464122Z ##[group]Run mkdir -p runs
+test	Run mkdir -p runs	2026-11-04T22:53:04.0464374Z ^[[36;1mmkdir -p runs^[[0m
+test	Run mkdir -p runs	2026-11-04T22:53:04.0491796Z shell: /usr/bin/bash -e {0}
+test	Run mkdir -p runs	2026-11-04T22:53:04.0492005Z env:
+test	Run mkdir -p runs	2026-11-04T22:53:04.0492218Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run mkdir -p runs	2026-11-04T22:53:04.0492643Z   M008_WORKER_TRACE: 1
+test	Run mkdir -p runs	2026-11-04T22:53:04.0492881Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run mkdir -p runs	2026-11-04T22:53:04.0493219Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run mkdir -p runs	2026-11-04T22:53:04.0493542Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run mkdir -p runs	2026-11-04T22:53:04.0493840Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run mkdir -p runs	2026-11-04T22:53:04.0494132Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run mkdir -p runs	2026-11-04T22:53:04.0494631Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run mkdir -p runs	2026-11-04T22:53:04.0494923Z ##[endgroup]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	﻿2026-11-04T22:53:04.0609604Z ##[group]Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0610085Z ^[[36;1mpython -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml^[[0m
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0634248Z shell: /usr/bin/bash -e {0}
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0634622Z env:
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0634851Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0635117Z   M008_WORKER_TRACE: 1
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0635346Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0635679Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0636014Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0636313Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0636599Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0636893Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:04.0637150Z ##[endgroup]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:53:30.4776825Z ........................................................................ [ 36%]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:12.9081892Z ........................................................................ [ 72%]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0956348Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0957698Z The object was created here (most recent call only):
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0958230Z   File '/home/runner/work/neuromancer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0959155Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0960201Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0961240Z The object was created here (most recent call only):
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0961673Z   File '/home/runner/work/neuromancer/neuromancer/src/neuromancer/tick_execution.py', line 17, in __init__
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0962520Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0963420Z ........................................................                 [100%]
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0963858Z =============================== warnings summary ===============================
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0964254Z tests/test_control.py: 22 warnings
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0964735Z tests/test_substrate.py: 3 warnings
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0965618Z   /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0966590Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0966859Z 
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0967109Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+test	Run python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml	2026-11-04T22:54:30.0967552Z 200 passed, 25 warnings in 85.55s (0:01:25)
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	﻿2026-11-04T22:54:30.3056668Z ##[group]Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3057106Z ^[[36;1mneuromancer-diagnostic --mode smoke --output runs/ci-smoke^[[0m
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3083986Z shell: /usr/bin/bash -e {0}
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3084189Z env:
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3084499Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3084763Z   M008_WORKER_TRACE: 1
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3084994Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3085348Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3085684Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3085986Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3086278Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3086566Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run neuromancer-diagnostic --mode smoke --output runs/ci-smoke	2026-11-04T22:54:30.3086821Z ##[endgroup]
+test	Run actions/upload-artifact@v4	﻿2026-11-04T22:54:34.1764211Z ##[group]Run actions/upload-artifact@v4
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1764696Z with:
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1764866Z   name: smoke-evidence
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1765153Z   path: runs/ci-smoke
+test	Run actions/upload-artifact@v4	runs/tests.xml
+test	Run actions/upload-artifact@v4	runs/supervisor-artifacts
+test	Run actions/upload-artifact@v4	runs/pytest-tmp
+test	Run actions/upload-artifact@v4	
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1765489Z   if-no-files-found: warn
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1765685Z   compression-level: 6
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1765865Z   overwrite: false
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1766038Z   include-hidden-files: false
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1766229Z env:
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1766427Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1766675Z   M008_WORKER_TRACE: 1
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1766895Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1767228Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1767550Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1767848Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1768153Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1768468Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.1768718Z ##[endgroup]
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.3133733Z (node:2543) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.3134830Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.7576341Z Multiple search paths detected. Calculating the least common ancestor of all paths
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.7578638Z The least common ancestor is /home/runner/work/neuromancer/neuromancer/runs. This will be the root directory of the artifact
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.7579229Z With the provided path, there will be 3071 files uploaded
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.7583837Z Artifact name is valid!
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:34.7584598Z Root directory input is valid!
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:35.1519805Z Beginning upload of artifact content to blob storage
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:36.2731491Z (node:2543) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:36.9214377Z Uploaded bytes 3141181
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:36.9790826Z Finished uploading artifact content to blob storage!
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:36.9792906Z SHA256 digest of uploaded artifact zip is 5b14bc24b3c98e0d9d4f389042a2c69d9bbb54593625e746facd813f78ddc171
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:36.9795242Z Finalizing artifact upload
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:37.4621597Z Artifact smoke-evidence.zip successfully finalized. Artifact ID 13369459722
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:37.4622284Z Artifact smoke-evidence has been successfully uploaded! Final size is 3141181 bytes. Artifact ID is 13369459722
+test	Run actions/upload-artifact@v4	2026-11-04T22:54:37.4629892Z Artifact download URL: https://github.com/adithyakupad/neuromancer/actions/runs/41929010497/artifacts/13369459722
+test	Post Run actions/setup-python@v5	﻿2026-11-04T22:54:37.4937873Z Post job cleanup.
+test	Post Run actions/setup-python@v5	2026-11-04T22:54:37.5940709Z (node:2555) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+test	Post Run actions/setup-python@v5	2026-11-04T22:54:37.5941420Z (Use `node --trace-deprecation ...` to show where the warning was created)
+test	Post Run actions/checkout@v4	﻿2026-11-04T22:54:37.6109283Z Post job cleanup.
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6843343Z [command]/usr/bin/git version
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6882810Z git version 2.56.0
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6916350Z Temporarily overriding HOME='/home/runner/work/_temp/0ce32ffd-3eb6-47b5-a292-138ff2e3f638' before making global git config changes
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6917098Z Adding repository directory to the temporary git global config as a safe directory
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6920849Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6957308Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.6988566Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7348851Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7376735Z http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7389259Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7425498Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7756290Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+test	Post Run actions/checkout@v4	2026-11-04T22:54:37.7787394Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+test	Complete job	﻿2026-11-04T22:54:37.8240273Z Cleaning up orphan processes
+test	Complete job	2026-11-04T22:54:37.8543798Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

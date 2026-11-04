@@ -1,0 +1,113 @@
+{
+  "status": "HOLD",
+  "source": "86ad99f6956c76a5bb6d169e21544684f57c9270",
+  "remaining_s": 1058.601806834,
+  "stages": [
+    {
+      "index": 0,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ]
+    },
+    {
+      "index": 1,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        ".",
+        "--wheel-dir",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/wheel"
+      ]
+    },
+    {
+      "index": 2,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/wheel/neuromancer-1.0.0-py3-none-any.whl"
+      ]
+    },
+    {
+      "index": 3,
+      "status": "WORKER_FAILURE",
+      "command": [
+        "/usr/bin/env",
+        "-u",
+        "PYTHONPATH",
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tools/m011_installed_check.py",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification"
+      ]
+    },
+    {
+      "index": 4,
+      "status": "WORKER_FAILURE",
+      "command": [
+        "/usr/bin/env",
+        "-u",
+        "PYTHONPATH",
+        "/private/tmp/neuromancer-m011-v1-env/bin/neuromancer-diagnostic",
+        "--mode",
+        "smoke",
+        "--output",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/installed_smoke"
+      ]
+    },
+    {
+      "index": 5,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tools/m011_v1_probe.py",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/probe",
+        "--neural",
+        "--reference",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/isolated_v1/release/reference"
+      ]
+    },
+    {
+      "index": 6,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "scripts/reproduce_v1_evidence.py",
+        "--output",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/reproduction"
+      ]
+    },
+    {
+      "index": 7,
+      "status": "COMPLETED",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/pytest_tmp",
+        "--junitxml=/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/tests.xml"
+      ]
+    },
+    {
+      "index": 8,
+      "status": "WORKER_FAILURE",
+      "command": [
+        "/private/tmp/neuromancer-m011-v1-env/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tools/m011_original_repeats.py",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m011/v1_qualification/original_repeats"
+      ]
+    }
+  ]
+}

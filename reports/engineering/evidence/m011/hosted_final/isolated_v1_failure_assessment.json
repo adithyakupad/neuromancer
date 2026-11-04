@@ -1,0 +1,29 @@
+{
+  "run": 41929010204,
+  "source": "42e20ada6e737c37f616950056c3444cfa99d400",
+  "test": "tests/test_suspend_clock.py::test_real_workers_after_injected_resume[clock_failure]",
+  "status": "CLOCK_FAILURE",
+  "cleanup_verified": true,
+  "worker_returncode": -15,
+  "worker_events_ms_after_deadline_creation": [
+    {
+      "kind": "worker_entry",
+      "monotonic_ns": 478826988241,
+      "clock_id": "darwin.mach_continuous_time.ns.v1@1D62D4A9-D88F-4235-9389-01F44A421797",
+      "remaining_ns": 1706157452,
+      "elapsed_ms": 93.842548
+    },
+    {
+      "kind": "imports_begin",
+      "monotonic_ns": 478827507198,
+      "clock_id": "darwin.mach_continuous_time.ns.v1@1D62D4A9-D88F-4235-9389-01F44A421797",
+      "remaining_ns": 1705638495,
+      "elapsed_ms": 94.361505
+    }
+  ],
+  "worker_imports_completed": false,
+  "partial_artifact_present": false,
+  "outer_watchdog_intervened": false,
+  "real_active_elapsed_s": 0.488752274,
+  "interpretation": "Clock failure handled fail closed; partial-publication opportunity not established before injected fault; exact import/scheduling cause unresolved."
+}

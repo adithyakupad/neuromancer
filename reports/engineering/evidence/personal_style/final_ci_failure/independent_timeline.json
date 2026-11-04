@@ -1,0 +1,32 @@
+{
+  "status": "INDEPENDENT_TIMELINE_VERIFIED",
+  "final_qualification": "HOLD",
+  "failed_revision": "3cf88af1f8397fa268595efd2fb04dbdc0a66207",
+  "run": 41895058114,
+  "tests": {
+    "passed": 199,
+    "failed": 1,
+    "warnings": 25
+  },
+  "relative_timing_ms": {
+    "work_cutoff_ns": 999.95335,
+    "deadline_ns": 1799.95335,
+    "finished_ns": 1220.522082,
+    "imports_completed_ms": 101.763533,
+    "first_observed_exit_ms": 1210.368639,
+    "last_running_poll_ms": 1200.211831,
+    "term_ms": 1200.106102
+  },
+  "cleanup_verified": true,
+  "watchdog_intervened": false,
+  "partial_preserved": true,
+  "source_unchanged": {
+    "src/neuromancer/supervisor.py": "b14c741537c33836511c6cb626f3301d2167bd033300a1550974ddba8c92fd34",
+    "src/neuromancer/clocks.py": "925ffa2afce5be2a5d5f2409f835f68a15351654803666f00968d030d45408d4",
+    "tests/test_supervisor.py": "53bd51905a319a1858ed918576058d6d0c7a2a0409fbf3bfd265cd3293141010",
+    "tests/supervisor_worker.py": "c19982062ba119b1a86db187d62c2ee9b1f25725398a526a36e60072250b2fef",
+    "tests/supervisor_timing.py": "10ef112ef7e8a6bfe9f6abfc1ccca532e80df47f20d49cf13c8831372e74e2e1"
+  },
+  "interpretation": "The worker was still observed running after cutoff and required TERM. Deadline classification matches fail-closed contract. Exact reason for delayed exception/exit is unestablished; traceback is incomplete and no atexit event exists. Do not infer a timely exit from an exception attempt.",
+  "artifact_sha256": "58dd90e3eaba87dc23c109db33c0893b4222e5af3ce32fddec283b0dcf9dd206"
+}

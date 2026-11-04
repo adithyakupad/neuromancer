@@ -1,0 +1,62 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+        "/home/runner/work/neuromancer/neuromancer/tests/supervisor_worker.py",
+        "write_failure",
+        "/home/runner/work/neuromancer/neuromancer/runs/pytest-tmp/test_real_worker_lifecycle_wri0/worker",
+        "134179791601"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 133179838251
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 133183098301
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 134179939252
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 134379944353
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 134390235173
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 2398,
+      "pgid": 2398,
+      "stop_file": "/home/runner/work/neuromancer/neuromancer/runs/pytest-tmp/test_real_worker_lifecycle_wri0/supervision/stop-0",
+      "last_running_poll_ns": 134380050082,
+      "signal_errors": [
+        null
+      ],
+      "first_observed_exit_ns": 134390206890,
+      "returncode": -15,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 133179838251,
+  "deadline_ns": 134979791601,
+  "work_cutoff_ns": 134179791601,
+  "finished_ns": 134400360333,
+  "deadline_clock_id": "linux.CLOCK_BOOTTIME.ns.v1@3fd3545e-4f5c-4697-9e53-795fef6ba76c",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "linux.CLOCK_BOOTTIME.ns.v1@3fd3545e-4f5c-4697-9e53-795fef6ba76c",
+  "cleanup_deadline_ns": 134979791601,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -1,5 +1,9 @@
 # Personal coding style and readability refactor
 
+**FINAL ACCEPTANCE: PARTIAL / HOLD.** A later mandatory legacy CI failure
+supersedes the earlier passing-run recommendation. See the final section; do
+not interpret historical green checks below as current release qualification.
+
 ## Scope and lineage
 
 This is an engineering readability study, not a new scientific experiment.
@@ -245,3 +249,67 @@ synthetic/development instrument evidence, not additional independent research
 cohorts. No numerical finding, controller superiority claim, publication state or
 V1 scientific scope changed. Ready for independent review, not automatic merge,
 tag or publication. User comprehension and authorship are not inferred from PASS.
+
+## Later mandatory failure: superseding HOLD decision
+
+Final evidence-only revision `3cf88af1f8397fa268595efd2fb04dbdc0a66207`
+failed mandatory legacy Linux run
+[41895058114](https://github.com/adithyakupad/neuromancer/actions/runs/41895058114):
+**199 passed, 1 failed, 25 warnings, 85.75s**. Failing case:
+`tests/test_supervisor.py::test_real_worker_lifecycle[write_failure]`.
+Expected WORKER_FAILURE/CLEANUP_FAILURE; actual DEADLINE_EXCEEDED.
+This is retained as a failed qualification, not rerun until green. Passing
+matrix runs and earlier local200test results do not override it.
+
+Complete3MBhosted artifact ZIP, failed-step log, XML, owned worker files,
+outer watchdog, returned/terminal/progress/lifecycle records and an independently
+computed timeline are preserved under `final_ci_failure/`. ZIP SHA256:
+`58dd90e3eaba87dc23c109db33c0893b4222e5af3ce32fddec283b0dcf9dd206`.
+
+Relative to supervisor start:
+
+| Event | ms |
+| --- | ---: |
+| Worker imports completed |101.764|
+| Work cutoff |999.953|
+| TERM sent |1200.106|
+| Last running poll |1200.212|
+| First observed exit, returncode -15 |1210.369|
+| Prepared finished record |1220.522|
+| Original global deadline |1799.953|
+
+The preserved traceback is incomplete, no worker atexit event is recorded,
+and the parent continues observing a running process after cutoff. Partial
+checkpoint survives, cleanup_verified=true, parent_reaped=true and the independent
+outer watchdog did **not** intervene. There is no evidence of a timely successful
+or failed process exit that the parent misclassified. For this trace, the
+supervisor's conservative deadline result matches its contract. The precise
+reason the exception/traceback/exit path did not complete promptly is unresolved;
+filesystem, exception finalization and scheduling are possibilities, not findings.
+
+Supervisor, clocks, test and worker hashes are byte-identical to M009 base86ad99f6;
+this fixture does not import the four style modules. This observation does not
+prove every system-level cause is independent of the full test workload. No
+reliability code or assertions were changed on the style branch, no timeout was
+extended, and no late worker was accepted as successful.
+
+**Final decision: readability implementation and local numerical/performance gates
+PASS; complete mandatory engineering/release qualification PARTIAL/HOLD.** The
+known failure blocks merging this refactor or claiming final V1 release readiness.
+Earlier M009 green runs remain accurate historical records, but the new counter-
+evidence requires a separately reviewed reliability follow-up. An automatic
+subsequent green CI run without a justified repair does not resolve this finding.
+
+Smallest next discriminating engineering experiment (proposed, not executed):
+on a separate reliability branch, freeze a bounded repetition count and original
+1.8s/1.0s deadline/cutoff; record pre/post artifact-error, exception-handling,
+traceback and actual-exit observations under an outer watchdog. Compare the
+original write-failure path with an explicitly recorded nonzero-exit fault,
+preserving every outcome. Determine whether fixture finalization or supervisor
+semantics need repair; do not simply accept DEADLINE_EXCEEDED or increase the
+budget to make the expected result pass. Requalify that reliability candidate
+before integrating the independently preserved style work.
+
+No scientific gate, numerical result, controller behavior, source snapshot or
+historical negative result changed. Stop at this mandatory gate; do not perform
+new neural experiments, merge, tag or publish.

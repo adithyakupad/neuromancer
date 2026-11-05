@@ -112,3 +112,13 @@ record actual construction/trial throughput; require2x forecast+60s <=900s. No c
 extension or outcome-dependent reduction. Full confirmation forecast separately.
 All failed attempts retained, no replace-seed reruns. Stage resources never reset
 inside a stage. No merge/tag/publication or automatic Day3.
+
+### Development timing probe specification (before execution)
+Measure one original-network construction and three independent-reset D80trials,
+replicate IDs149000,149001,149002; no decoder fitting/scoring. Forecast uses MAX
+observed whole-trial time, not the fastest repetition. Four reservoir constructions,
+640primary trajectories plus20.48simulated seconds of lag probes; conservative
+lag throughput from the same measured trial. Required pilot forecast:
+2*(4*construction + 640*max_trial + 20.48*max_trial/.36)+60 <=900s.
+Full confirmation uses64*2*4*224trials (114688) and the same conservative cost,
+compared with3600s. Qualification may finish while acquisition remains HOLD.

@@ -66,7 +66,7 @@ def test_frozen_active_clock_but_advancing_continuous(monkeypatch):
     assert d.remaining()==0
 
 
-@pytest.mark.parametrize('mode',['short_suspend','expired_suspend','expired_suspend_descendant','clock_failure'])
+@pytest.mark.parametrize('mode',['short_suspend','expired_suspend','expired_suspend_descendant','clock_failure_pre_ready','clock_failure'])
 def test_real_workers_after_injected_resume(tmp_path,mode):
     worker=Path(__file__).with_name('supervisor_worker.py')
     code='''
@@ -78,16 +78,25 @@ p=Path(sys.argv[1]);mode=sys.argv[2];native=s.now_ns;active=time.monotonic_ns
 started=active();triggered=False;resume_at=None
 def injected():
  global triggered,resume_at
- if active()-started>350000000:
+ if mode=='clock_failure_pre_ready':
+  # A fault before readiness must never invent a successful checkpoint.
+  if (p/'supervision/worker-0.log').exists() and not (p/'worker/ready.json').exists():
+   triggered=True
+   raise ClockError('injected pre-ready inconsistency')
+ elif mode=='clock_failure':
+  # Inject only after the worker published a real checkpoint and ready marker.
+  if (p/'worker/ready.json').exists() and (p/'worker/partial.txt').exists():
+   triggered=True
+   raise ClockError('injected post-ready inconsistency')
+ if mode not in ('clock_failure','clock_failure_pre_ready') and active()-started>350000000:
   triggered=True
-  if mode=='clock_failure':raise ClockError('injected API inconsistency')
   value=native()+(10000000000 if mode.startswith('expired_suspend') else 200000000)
   if resume_at is None:resume_at=value
   return value
  return native()
 s.now_ns=injected
 d=s.Deadline.after(1.8)
-command=[sys.executable,sys.argv[3],'descendant' if mode.endswith('descendant') else 'ignore_term',str(p/'worker')]
+command=([sys.executable,str(Path(sys.argv[3]).with_name('supervisor_handshake_worker.py')),str(p/'worker')] if mode.startswith('clock_failure') else [sys.executable,sys.argv[3],'descendant' if mode.endswith('descendant') else 'ignore_term',str(p/'worker')])
 r=s.supervise([command],p/'supervision',d)
 r['injection_triggered']=triggered
 r['injected_resume_ns']=resume_at
@@ -106,11 +115,12 @@ r['real_active_elapsed_s']=(active()-started)/1e9
     assert p.returncode==0,err.decode()
     r=json.loads((tmp_path/'returned.json').read_text())
     assert r['injection_triggered'] and r['cleanup_verified'],r
-    assert r['status']==('CLOCK_FAILURE' if mode=='clock_failure' else 'DEADLINE_EXCEEDED')
+    assert r['status']==('CLOCK_FAILURE' if mode.startswith('clock_failure') else 'DEADLINE_EXCEEDED')
     assert (tmp_path/'worker/partial.txt').read_text()=='completed checkpoint\n'
     states=[e['state'] for e in r['workers'][0]['events']]
-    assert 'TERMINATING' in states and states[-1]=='REAPED'
-    if not mode.endswith('descendant'):assert 'KILLING' in states
+    assert states[-1]=='REAPED' if r['workers'][0].get('pid') else r['workers'][0]['terminal']=='NOT_STARTED'
+    if r['workers'][0].get('pid'):assert 'TERMINATING' in states
+    if not mode.endswith('descendant') and r['workers'][0].get('pid'):assert 'KILLING' in states
     if mode.startswith('expired_suspend'):
         assert r['post_deadline_cleanup']
         assert r['real_active_elapsed_s']<1.5
@@ -118,7 +128,10 @@ r['real_active_elapsed_s']=(active()-started)/1e9
         first_stop=next(e['monotonic_ns'] for e in r['workers'][0]['events'] if e['state']=='STOP_REQUESTED')
         assert 0<=first_stop-r['injected_resume_ns']<100000000
     if mode=='short_suspend':assert not r['post_deadline_cleanup']
-    pid=r['workers'][0]['pid']
+    pid=r['workers'][0].get('pid')
+    if pid is None:
+        assert mode=='clock_failure_pre_ready'
+        return
     # Repeating cleanup is harmless after the owned group is gone.
     from neuromancer.supervisor import _signal,group_exists
     assert _signal(pid,signal.SIGTERM) is None

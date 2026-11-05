@@ -80,7 +80,7 @@ def injected():
  global triggered,resume_at
  if mode=='clock_failure_pre_ready':
   # A fault before readiness must never invent a successful checkpoint.
-  if (p/'supervision/worker-0.log').exists() and not (p/'worker/ready.json').exists():
+  if (p/'supervision/progress.json').exists() and not (p/'worker/ready.json').exists():
    triggered=True
    raise ClockError('injected pre-ready inconsistency')
  elif mode=='clock_failure':
@@ -116,11 +116,21 @@ r['real_active_elapsed_s']=(active()-started)/1e9
     r=json.loads((tmp_path/'returned.json').read_text())
     assert r['injection_triggered'] and r['cleanup_verified'],r
     assert r['status']==('CLOCK_FAILURE' if mode.startswith('clock_failure') else 'DEADLINE_EXCEEDED')
-    assert (tmp_path/'worker/partial.txt').read_text()=='completed checkpoint\n'
+    if mode=='clock_failure_pre_ready':
+        assert not (tmp_path/'worker/partial.txt').exists()
+        assert not (tmp_path/'worker/ready.json').exists()
+    else:
+        assert (tmp_path/'worker/partial.txt').read_text()=='completed checkpoint\n'
+    if mode=='clock_failure':
+        assert (tmp_path/'worker/ready.json').exists()
     states=[e['state'] for e in r['workers'][0]['events']]
-    assert states[-1]=='REAPED' if r['workers'][0].get('pid') else r['workers'][0]['terminal']=='NOT_STARTED'
+    if r['workers'][0].get('pid'):
+        assert states[-1]=='REAPED'
+    else:
+        assert r['workers'][0]['terminal']=='NOT_STARTED'
     if r['workers'][0].get('pid'):assert 'TERMINATING' in states
-    if not mode.endswith('descendant') and r['workers'][0].get('pid'):assert 'KILLING' in states
+    if mode not in ('clock_failure','clock_failure_pre_ready') and not mode.endswith('descendant') and r['workers'][0].get('pid'):
+        assert 'KILLING' in states
     if mode.startswith('expired_suspend'):
         assert r['post_deadline_cleanup']
         assert r['real_active_elapsed_s']<1.5

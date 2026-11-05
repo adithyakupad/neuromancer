@@ -75,3 +75,24 @@ semantics. Forecast with2x measured margin plus60s cleanup/analysis; if>900s do 
 launch pilot, report resource HOLD/NOT RUN. No budget extension or smaller post-hoc
 study. Complete historical regression suite before final engineering decision.
 No neural scientific acquisition before committed protocol and all gates.
+
+## Prospective implementation clarification before pilot acquisition
+Training and probe decoders use 0/1 labels and threshold0.5; the initially zero
+training prediction chooses class0. Ridge penalizes the intercept as well as
+coefficients (same for every condition). C3 permutes four actual rewards within
+each completed minibatch; eligibility is retained from each trial endpoint, not
+counterfactually recomputed. C4 permutes balanced training labels once. Evaluation
+weights freeze after32trials. C7 uses within-trial sector-mean subtraction, not
+between-condition activity matching or a causal firing-rate intervention.
+All conditions carry identical non-delivering eligibility instrumentation.
+Reserved split labels are read only for scoring/archives after predictions.
+
+Executed resource probe: construction0.569703s,1s neural integration1.048650s,
+32020E/E traces,4arrays*8bytes=1024640bytes trace-state estimate (excludes Brian
+indices/queues), measured process peak874823680bytes on macOS. Forecast447.230s
+using179.2simulated seconds across10conditions and2xmargin+60s. Forecast accepted
+for fixed900s pilot. It is an estimate, not a completed-workflow benchmark.
+Mechanism/task tests10pass; initial complete suite205pass. No confirmation cohort
+is opened. All failed development commands remain archived, including an invalid
+Brian identifier and a test comparison of NaN-initialized public filter fields;
+field-wise numerical equality including NaN masks replaced Python NaN equality.

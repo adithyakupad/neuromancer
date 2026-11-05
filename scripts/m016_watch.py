@@ -29,18 +29,24 @@ def main():
     timeout=False
     try:
         while launcher.poll() is None:
-            for child in psutil.Process(launcher.pid).children(recursive=True):
+            sampled_rss=0
+            try:
+                children=psutil.Process(launcher.pid).children(recursive=True)
+            except psutil.NoSuchProcess:
+                children=[]
+            for child in children:
                 try:
                     identity=(child.pid,child.create_time())
                     row=tracked.setdefault(identity,dict(pid=child.pid,created=identity[1],
                         name=child.name(),peak_rss_bytes=0,cpu_seconds=0.))
-                    row['peak_rss_bytes']=max(row['peak_rss_bytes'],child.memory_info().rss)
+                    rss=child.memory_info().rss
+                    sampled_rss+=rss
+                    row['peak_rss_bytes']=max(row['peak_rss_bytes'],rss)
                     cpu=child.cpu_times()
                     row['cpu_seconds']=max(row['cpu_seconds'],cpu.user+cpu.system)
                 except psutil.NoSuchProcess:
                     continue
-            sampled_peak=max(sampled_peak,sum(process.memory_info().rss
-                for process in (living(*identity) for identity in tracked) if process is not None))
+            sampled_peak=max(sampled_peak,sampled_rss)
             if time.monotonic()-start>budget+6:
                 timeout=True
                 break

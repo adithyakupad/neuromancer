@@ -90,7 +90,7 @@ def run_case(output,name,enabled=True,delay=0):
                 atomic_json(directory/'ticks.json',rows)
         with sdk.RecordingView(recording.file['path']) as view:
             recorded=dict(shape=list(view.samples.shape),spikes=len(view.spikes),
-                stims=len(view.stims),source=view.attributes['m016_source'])
+                stims=len(view.stims),source=view.attributes['application']['m016_source'])
         deadline.check()
         summary=dict(case=name,recording=recorded,elapsed_s=time.perf_counter()-elapsed,
                      cpu_s=time.process_time()-cpu,peak_rss_bytes=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)

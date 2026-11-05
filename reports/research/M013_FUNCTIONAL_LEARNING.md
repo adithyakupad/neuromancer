@@ -90,3 +90,15 @@ To defend this work: explain pre/post arrival ordering, eligibility decay at rew
 | 13001 | C4 | 50.00 |
 
 Independent parameter hashes and every time-indexed noise-block hash match across C0–C4 within each network. All owned worker groups were checked absent after acquisition. V1 evidence reproduction PASS: four numerical artifacts and four figures byte-identical; no neural V1 reacquisition. The final source/evidence commit is reported in the handoff. No hosted CI success is claimed for this new research branch.
+
+### Label-boundary implementation detail
+
+The evaluator computes and archives XOR labels from task symbols while collecting
+trials, before final prediction generation. Thus the protocol's literal phrase
+"labels read only ... after predictions" is stronger than the implementation's
+capability boundary. Test labels are never passed to training updates, probe
+fitting, scaling, hyperparameter selection or prediction functions; only the
+post-prediction scorer consumes them. The evaluator is trusted code, not a sealed
+label server. This timing/documentation discrepancy is disclosed rather than
+claiming a stronger isolation mechanism. It does not establish observed label
+leakage, but a separate-label-store harness would strengthen future confirmation.

@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "module": "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/cl/__init__.py",
+  "simulator": true,
+  "signatures": {
+    "cl.open": "(take_control: 'bool' = True, wait_until_recordable: 'bool' = True) -> 'Generator[Neurons]'",
+    "cl.is_simulator": "() -> 'bool'",
+    "cl.ChannelSet": "(*channels: 'int | Iterable[int]') -> 'None'",
+    "cl.StimDesign": "(*args) -> 'None'",
+    "cl.RecordingView": "(file_path: 'str')",
+    "Neurons.read": "(self, frame_count: 'int', from_timestamp: 'int | None' = None, /, *, analysis: 'bool' = False) -> 'ndarray[tuple[int, int], np.dtype[np.int16]] | DetectionResult'",
+    "Neurons.stim": "(self, channel_set: 'ChannelSet | int', stim_design: 'StimDesign | float', /, burst_design: 'BurstDesign | None' = None, lead_time_us: 'int' = 80) -> 'None'",
+    "Neurons.loop": "(self, ticks_per_second: 'float', stop_after_seconds: 'float | None' = None, stop_after_ticks: 'int | None' = None, ignore_jitter: 'bool' = False, jitter_tolerance_frames: 'int' = 0) -> 'Loop'",
+    "Neurons.record": "(self, file_suffix: 'str | None' = None, file_location: 'str | None' = None, from_seconds_ago: 'float | None' = None, from_frames_ago: 'int | None' = None, from_timestamp: 'int | None' = None, stop_after_seconds: 'float | None' = None, stop_after_frames: 'int | None' = None, attributes: 'dict[str, Any] | None' = None, include_spikes: 'bool' = True, include_stims: 'bool' = True, include_raw_samples: 'bool' = True, include_data_streams: 'bool' = True, exclude_data_streams: 'list[str]' = []) -> 'Recording'",
+    "cl.sim.SimulatorDataSourceMetadata": "(channel_count: 'int' = 64, frames_per_second: 'int' = 25000, uV_per_sample_unit: 'float' = 0.195, start_timestamp: 'int' = 0, duration_frames: 'int | None' = None, seekable: 'bool' = True, realtime_only: 'bool' = False, supports_accelerated: 'bool' = True) -> None",
+    "cl.sim.DataSourceBatch": "(frames: 'ndarray | None' = None, spikes: 'Sequence[DataSourceSpike]' = ()) -> None",
+    "cl.sim.DataSourceSpike": "(timestamp: 'int', channel: 'int', samples: 'ndarray | None' = None, channel_mean_sample: 'float | None' = None) -> None",
+    "cl.sim.DataSourceStim": "(timestamp: 'int', channel: 'int', intended_timestamp: 'int | None' = None, phase_durations_us: 'tuple[int, ...]' = (), phase_currents_uA: 'tuple[float, ...]' = ()) -> None",
+    "cl.sim.set_simulator_data_source": "(factory: 'str | Callable[..., SimulatorDataSource]', config: 'Mapping[str, Any] | None' = None, metadata: 'SimulatorDataSourceMetadata | Mapping[str, Any] | None' = None) -> 'None'",
+    "SimulatorDataSource.open": "(self) -> 'None'",
+    "SimulatorDataSource.close": "(self) -> 'None'",
+    "SimulatorDataSource.read": "(self, from_timestamp: 'int', frame_count: 'int') -> 'DataSourceBatch'",
+    "SimulatorDataSource.on_stim": "(self, stim: 'DataSourceStim') -> 'None'",
+    "SimulatorDataSource.on_stims": "(self, stims: 'Sequence[DataSourceStim]') -> 'None'"
+  }
+}

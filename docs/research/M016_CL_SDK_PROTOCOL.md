@@ -71,3 +71,15 @@ late request at tick 13 with an already expired frame bound. This extends
 the rejection checks without changing the source, pulse schedule or controls.
 SDK children create their own sessions, so a supplementary outer watcher
 tracks descendants by PID and creation time. Any forced cleanup is a failure.
+
+## Post-PI diagnostics
+
+The rate arithmetic for 20 int16 channels at 25 kHz is 1,000,000 raw
+bytes/s. The 64-channel forecast used for acquisition remains 3,200,000
+bytes/s. After the independent PI gate, run a shadow count FIR/RLS
+predictor against the saved SDK receipt trace. Fit an intercept and
+single planned-pulse indicator on the first eight C1 bins, ridge 0.1 on
+the slope, and update an adaptive copy with forgetting factor 0.999
+only after a matching valid PI bin. Compare against frozen coefficients.
+This shadow replay has no control authority. The historic V1 predictor
+expects a different calibrated pA input and four-sector rate output.

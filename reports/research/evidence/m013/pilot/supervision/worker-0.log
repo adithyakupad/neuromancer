@@ -1,0 +1,13 @@
+ERROR      Brian 2 encountered an unexpected error. If you think this is a bug in Brian 2, please report this issue either to the discourse forum at <http://brian.discourse.group/>, or to the issue tracker at <https://github.com/brian-team/brian2/issues>. Please include this file with debug information in your report: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_debug_kb1mjo8m.log  Additionally, you can also include a copy of the script that was run, available at: /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/brian_script_7n4udpck.py Thanks! [brian2]
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m013_pilot.py", line 116, in <module>
+    execute(Path(sys.argv[1]))
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m013_pilot.py", line 45, in execute
+    observations=reservoir.engine.run_commands(commands)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py", line 205, in run_commands
+    currents = self._validate(command, timestamp, previous, ids)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py", line 177, in _validate
+    raise ValueError('Currents must be plain finite numbers in pA')
+ValueError: Currents must be plain finite numbers in pA

@@ -8,6 +8,7 @@ def test_balancing_energy_and_slew():
     exposures=[]
     for a,b in symbols:
         commands,_=schedule(a,b,40,0,'task')
+        assert all(type(value) is float for command in commands for value in command.current_pA)
         inputs=np.array([x.current_pA for x in commands])
         assert np.max(np.abs(np.diff(np.vstack((np.zeros(4),inputs)),axis=0)))<=30
         assert inputs.max()<=120 and inputs.sum(axis=1).max()<=240

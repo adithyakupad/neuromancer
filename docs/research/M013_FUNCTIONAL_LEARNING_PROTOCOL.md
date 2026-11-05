@@ -96,3 +96,10 @@ Mechanism/task tests10pass; initial complete suite205pass. No confirmation cohor
 is opened. All failed development commands remain archived, including an invalid
 Brian identifier and a test comparison of NaN-initialized public filter fields;
 field-wise numerical equality including NaN masks replaced Python NaN equality.
+
+### Typed-boundary repair, before any neural trial completed
+First pilot process was rejected before integration: task builder passed NumPy
+float scalars where the original API requires plain Python floats. Convert scalars
+without changing numeric currents, schedules or equations; retain failure. Resume
+only under the FIRST pilot's original absolute900sdeadline, never a reset budget.
+No features, rewards, learning or test outcomes were generated before rejection.

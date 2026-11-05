@@ -21,7 +21,7 @@ def schedule(a, b, delay_ms, start_us, trial_id):
     rows[second,2+b] = 30
     rows[second+1,2+b] = 60
     rows[second+2,2+b] = 30
-    commands = [Command(trial_id,str(start_us+i*20000),start_us+i*20000,tuple(row))
+    commands = [Command(trial_id,str(start_us+i*20000),start_us+i*20000,tuple(float(value) for value in row))
                 for i,row in enumerate(rows)]
     return commands, slice(second+2,second+4)
 

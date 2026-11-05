@@ -75,8 +75,7 @@ Benchmark one original development network 15000, three independent
 360-ms D80 trials (OU IDs 159000–159002) with no scoring. Fixed 120-s
 benchmark, 180-s regression and 420-s access deadlines. Access 336
 trajectories, 26.88 simulated seconds. Conditional retention 720
-trajectories, 278.4 simulated seconds (40*6*(.24+.36+.52) = 268.8 s,
-the explicit schedule sum 268.8 s controls). Separate 1100-s deadline.
+trajectories and 268.8 simulated seconds (40*6*(.24+.36+.52)). Separate 1100-s deadline.
 Require 2*(6*construction + number_of_trajectories*maximum_benchmark_trial)
 +30 s within each cap. Expect under 2 GiB peak per worker, dominated by
 the original 1-s noise buffers. Cap 2 GiB measured RSS and 100 MiB output

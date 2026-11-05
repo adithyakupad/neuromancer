@@ -122,3 +122,18 @@ lag throughput from the same measured trial. Required pilot forecast:
 2*(4*construction + 640*max_trial + 20.48*max_trial/.36)+60 <=900s.
 Full confirmation uses64*2*4*224trials (114688) and the same conservative cost,
 compared with3600s. Qualification may finish while acquisition remains HOLD.
+
+### Implementation freeze before pilot outcomes
+Reduced tests pass4/4 after fixing a test-only amp-versus-unitless comparison;
+no neural failure or test expectation was waived. Explicit zero E/I recurrent
+currents under ablation and exact reset/replay are verified. Construction0.027783s;
+fixed D80trial times[0.514785,0.371963,0.366565]s. Conservative pilot forecast777.719s
+passes900s; confirmation118146.503s exceeds3600s, therefore confirmation NOT RUN.
+Measured probe peakRSS1016561664bytes (macOS), no watchdog/cleanup failure.
+C6 independent shuffle uses role204 so it is distinct from C5 role203. The lag
+probe's declared separate noise identity is replicate149900 through original
+OUrole4 (not a new Brian RNG); this makes the previously descriptive role211
+noise wording concrete. All test/model-selection rules are unchanged.
+Only recorded-population activity is retained; full hidden-population statistics
+are not claimed. Final-window silence denotes zero input, never zero background.
+No untested-delay generalization is claimed. Study is explicitly PILOT.

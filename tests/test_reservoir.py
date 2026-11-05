@@ -24,20 +24,23 @@ def test_task_balance_independence_energy_constraints():
 
 def test_recurrence_ablation_and_reset_replay():
     from neuromancer._brian import BrianEngine
+    import brian2 as b
     engine=BrianEngine(Config(network_id=14000,replicate_id=140000,root_seed=20261105,trial_id='test'))
     commands=commands_for_trial(0,1,20,'test')
-    weights=[np.array(s.weight[:]) for s in engine.synapses]
+    weights=[np.asarray(s.weight[:]/b.pA).copy() for s in engine.synapses]
     try:
         reset_trial(engine,140000,False)
         assert not any(s.active for s in engine.synapses)
         actual=engine.run_commands(commands)
+        np.testing.assert_array_equal(engine.group.I_E[:]/b.pA,np.zeros(1000))
+        np.testing.assert_array_equal(engine.group.I_I[:]/b.pA,np.zeros(1000))
         reset_trial(engine,140000,False)
         replay=engine.run_commands(commands)
         for left,right in zip(actual,replay):
             for field in fields(left.observation):
                 np.testing.assert_array_equal(getattr(left.observation,field.name),getattr(right.observation,field.name))
         for index,synapse in enumerate(engine.synapses):
-            np.testing.assert_array_equal(synapse.weight[:],weights[index])
+            np.testing.assert_array_equal(np.asarray(synapse.weight[:]/b.pA),weights[index])
         set_recurrence(engine,True)
         assert all(s.active for s in engine.synapses)
         final,history=features(actual,commands[-1].start_us+20000)

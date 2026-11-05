@@ -59,3 +59,15 @@ relative counts and receipts, and a causal PI feedback trace with valid
 receipt-gated state. Report skipped/missing data, all timings and failures.
 Application latency is measured with the qualified OS clock. Frame response
 latency is separate. No physical device execution is authorized.
+
+## Pre-matrix qualification note
+
+The fixed default probe opened in 1.468 s. The 9-session conservative
+forecast is 56.424 s including 30 s of cleanup margin. Initial custom smoke
+completed its 16 ticks and wrote the recording, but the report opener treated
+the installed `Recording.file` dictionary as a path. Use its observed
+`path` field. The first smoke stays archived. C6 additionally tests one
+late request at tick 13 with an already expired frame bound. This extends
+the rejection checks without changing the source, pulse schedule or controls.
+SDK children create their own sessions, so a supplementary outer watcher
+tracks descendants by PID and creation time. Any forced cleanup is a failure.

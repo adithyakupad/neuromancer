@@ -57,13 +57,16 @@ def run_case(output,name,enabled=True,delay=0):
                     if receipts and controller is not None:
                         controller.resolve(True)
                     proposal=(controller.propose(observation) if controller is not None and index<15
-                              else name not in ('PI','C0','FROZEN') and index in (2,5,8,11))
+                              else name not in ('PI','C0','FROZEN') and (index in (2,5,8,11) or (name=='C6' and index==13)))
                     request=None
                     decision=None
                     submit_ns=None
                     if proposal:
-                        channel=1 if name=='C4' else 99 if name=='C6' else 0
-                        request=ElectrodeRequest(f'{name}-{index}',clock,channel,stop,stop+BIN_FRAMES)
+                        late_fixture=name=='C6' and index==13
+                        channel=1 if name=='C4' else 99 if name=='C6' and not late_fixture else 0
+                        request=ElectrodeRequest(f'{name}-{index}',clock,channel,
+                            stop-BIN_FRAMES if late_fixture else stop,
+                            stop if late_fixture else stop+BIN_FRAMES)
                         submit_start=now_ns()
                         decision=session.submit(request,observation,clock)
                         submit_ns=now_ns()-submit_start
@@ -85,7 +88,7 @@ def run_case(output,name,enabled=True,delay=0):
                 recording.stop()
                 recording.wait_until_stopped()
                 atomic_json(directory/'ticks.json',rows)
-        with sdk.RecordingView(str(recording.file)) as view:
+        with sdk.RecordingView(recording.file['path']) as view:
             recorded=dict(shape=list(view.samples.shape),spikes=len(view.spikes),
                 stims=len(view.stims),source=view.attributes['m016_source'])
         deadline.check()

@@ -64,7 +64,8 @@ class ChannelMap:
             raise ValueError('Fixture requires disjoint stimulation and recording')
         if self.geometry_um is not None and (
             len(self.geometry_um) != self.electrode_count
-            or any(len(point) != 2 or not all(isfinite(value) for value in point)
+            or any(not isinstance(point, tuple) or len(point) != 2
+                   or not all(type(value) in (int, float) and isfinite(value) for value in point)
                    for point in self.geometry_um)
             or len(set(self.geometry_um)) != self.electrode_count
         ):
@@ -105,10 +106,11 @@ class SpikeBin:
 def bin_frames(frames: SampleFrames, spikes: tuple[SpikeEvent, ...], mapping: ChannelMap,
                available_frame: int, expected_start: int) -> SpikeBin:
     start, stop, available = map(tick, (frames.start, frames.stop, available_frame))
-    frames.clock.relative_us(start)
+    offset = frames.clock.relative_us(start)
     frames.clock.relative_us(stop)
     frames.clock.relative_us(available)
-    if start != tick(expected_start) or stop-start != BIN_FRAMES or available < stop:
+    if (start != tick(expected_start) or offset % (FRAME_US * BIN_FRAMES)
+            or stop-start != BIN_FRAMES or available < stop):
         raise ValueError('Discontinuous or incomplete observation interval')
     if (frames.frames_per_second != FRAME_HZ or not isfinite(frames.sample_unit_uV)
             or frames.sample_unit_uV <= 0 or frames.electrode_ids != tuple(range(mapping.electrode_count))

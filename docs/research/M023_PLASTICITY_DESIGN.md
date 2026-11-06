@@ -65,3 +65,14 @@ suppress or reverse a fixed eligibility update. This establishes a
 diagnostic, with no causal attribution for M013. Engineering PASS
 for arithmetic. New scientific study NOT RUN. Research release HOLD
 pending identifiable study and measured budget. [Exact model results](../../reports/research/evidence/recover-models/results.json)
+
+A descriptive audit of archived training signals found mean C1
+reward −0.5625 and −0.125 across 32 trials on networks 13000 and
+13001. The first and second halves were −0.875/−0.250 and
+−0.250/0.000 respectively. The decoder's logged C2 reward is a
+diagnostic only because the C2 update applied +1. Final weight
+deltas can be summarized but trial-by-edge eligibility was not
+archived. Reward alignment and timing therefore cannot be recovered
+from these data. The negative training reward and cold-start
+hypothesis are distinguishable in a new controlled study.
+[Archived training audit](../../reports/research/evidence/recover-models/archived-training-audit.json)

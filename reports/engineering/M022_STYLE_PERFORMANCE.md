@@ -51,3 +51,8 @@ and PI proportional and integral intermediates. Integrate none
 of the 18 files in this sprint. No new performance threshold was
 introduced after outcomes.
 [Raw evidence](evidence/m022)
+
+The separately supervised full style regression passed 228 tests
+with 46 warnings in 70.72 s of pytest time after the performance
+session ended. The acquisition contains no concurrent regression
+run. Test success does not override the performance gate.

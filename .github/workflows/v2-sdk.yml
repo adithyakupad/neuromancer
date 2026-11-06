@@ -19,9 +19,20 @@ jobs:
       - run: .venv-sdk/bin/python -m pip install cl-sdk==1.0.0
       - run: .venv-sdk/bin/python -m pip check
       - run: |
+          mkdir -p runs
+          .venv-sdk/bin/python -m pip freeze > runs/v2-sdk-dependencies.txt
+      - run: |
           export PYTHONPATH="$PWD/src"
+          if [ "${{ matrix.os }}" = macos-15-intel ]; then
+            export NEUROMANCER_M018_TRACE=1
+          fi
           .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk 120 .venv-sdk/bin/python scripts/m016_run.py runs/v2-sdk matrix
           .venv-sdk/bin/python scripts/m017_sdk_verify.py runs/v2-sdk
+      - name: Bounded stock SDK control
+        if: ${{ always() && matrix.os == 'macos-15-intel' }}
+        run: |
+          export PYTHONPATH="$PWD/src"
+          .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk-stock 120 .venv-sdk/bin/python scripts/m018_sdk_only.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:

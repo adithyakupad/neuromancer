@@ -17,12 +17,36 @@ from neuromancer.neural_io import (BIN_FRAMES, ElectrodeRequest, FrameClock,
 from neuromancer.supervisor import Deadline,atomic_json
 
 
+def m018_observed_ticks(neurons, trace):
+    """Observe SDK consumption boundaries without changing tick values."""
+    iterator = iter(neurons.loop(50, stop_after_ticks=16))
+    for index in range(16):
+        trace('m018_next_begin', tick=index)
+        try:
+            current = next(iterator)
+        except StopIteration:
+            trace('m018_next_early_stop', tick=index)
+            raise RuntimeError('SDK ended before sixteen complete ticks')
+        trace('m018_next_end', tick=index,
+              start=current.analysis.start_timestamp,
+              stop=current.analysis.stop_timestamp,
+              frame_count=len(current.frames))
+        yield current
+
+
 def run_case(output,name,enabled=True,delay=0):
     from cl.sim import clear_simulator_data_source,set_simulator_data_source
     sdk=verified_sdk()
     directory=output/name
     directory.mkdir()
     source_log=directory/'source.jsonl'
+    trace_path=directory/'client_trace.jsonl'
+    trace_file=trace_path.open('x') if trace_path else None
+    def trace(kind, **fields):
+        if trace_file is not None:
+            trace_file.write(json.dumps(dict(kind=kind,host_monotonic_ns=time.monotonic_ns(),
+                clock_domain='host_monotonic',**fields))+'\n')
+            trace_file.flush()
     set_simulator_data_source('neuromancer.cl_response_source:create_source',
         dict(seed=16016,enabled=enabled,extra_delay_frames=delay,audit_path=str(source_log)))
     deadline=Deadline.from_environment()
@@ -32,13 +56,15 @@ def run_case(output,name,enabled=True,delay=0):
     elapsed=time.perf_counter()
     cpu=time.process_time()
     try:
+        trace('m018_session_open_begin')
         with session.open():
+            trace('m018_session_open_end')
             neurons=session.neurons
             recording=neurons.record(file_suffix=name,file_location=str(directory),
                 attributes={'m016_source':'m016-pulse-v1','m016_case':name})
             expected=None
             try:
-                for index,current in enumerate(neurons.loop(50,stop_after_ticks=16)):
+                for index,current in enumerate(m018_observed_ticks(neurons,trace)):
                     began=now_ns()
                     deadline.check()
                     analysis=current.analysis
@@ -73,6 +99,8 @@ def run_case(output,name,enabled=True,delay=0):
                         if not decision.accepted and controller is not None:
                             controller.resolve(False)
                     finished=now_ns()
+                    trace('m018_tick_processed',tick=index,start=start,stop=stop,
+                          receipts=len(receipts))
                     rows.append(dict(index=index,start=start,stop=stop,available=observation.available_frame,
                         counts=observation.counts,valid=all(observation.valid),missing=observation.missing_frames,
                         late=observation.late,spikes=[(s.frame,s.electrode) for s in events],
@@ -85,8 +113,10 @@ def run_case(output,name,enabled=True,delay=0):
                 if session.pending is not None:
                     raise RuntimeError('Unresolved stimulation at end of session')
             finally:
+                trace('m018_recording_stop_begin')
                 recording.stop()
                 recording.wait_until_stopped()
+                trace('m018_recording_stop_end',completed_ticks=len(rows))
                 atomic_json(directory/'ticks.json',rows)
         with sdk.RecordingView(recording.file['path']) as view:
             recorded=dict(shape=[int(size) for size in view.samples.shape],spikes=len(view.spikes),
@@ -97,7 +127,13 @@ def run_case(output,name,enabled=True,delay=0):
         atomic_json(directory/'summary.json',summary)
         return summary
     finally:
-        clear_simulator_data_source()
+        trace('m018_clear_source_begin')
+        try:
+            clear_simulator_data_source()
+        finally:
+            trace('m018_clear_source_end')
+            if trace_file is not None:
+                trace_file.close()
 
 
 def main(output,mode):

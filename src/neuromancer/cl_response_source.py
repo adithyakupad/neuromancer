@@ -1,6 +1,7 @@
 """Importable CL SDK synthetic pulse-response source."""
 import json
 from pathlib import Path
+import time
 
 import numpy as np
 from cl.sim import DataSourceBatch, DataSourceSpike, SimulatorDataSource, SimulatorDataSourceMetadata
@@ -25,27 +26,45 @@ class PulseSource(SimulatorDataSource):
         self.pending = set()
         self.stop = None
         self.collisions = 0
+        self.m018_trace = True
+        self.trace_file = None
 
     def _log(self, **event):
         self.audit.write(json.dumps(event)+'\n')
         self.audit.flush()
 
+    def _trace(self, kind, **details):
+        if self.trace_file is not None:
+            self.trace_file.write(json.dumps(dict(kind=kind,
+                host_monotonic_ns=time.monotonic_ns(),
+                frame_clock='sdk_frame_index', **details))+'\n')
+            self.trace_file.flush()
+
     def open(self):
         self.audit = self.path.open('x')
+        if self.m018_trace:
+            self.trace_file = self.path.with_name('m018_source_trace.jsonl').open('x')
         self._log(kind='open',source=self.identity,phase=self.phase,
                   enabled=self.enabled,extra_delay_frames=self.delay)
+        self._trace('m018_source_open')
 
     def close(self):
         if self.audit is not None:
+            self._trace('m018_source_close_begin',last_stop=self.stop)
             self._log(kind='close',pending=len(self.pending),collisions=self.collisions)
             self.audit.close()
             self.audit = None
+            if self.trace_file is not None:
+                self.trace_file.close()
+                self.trace_file = None
 
     def on_stim(self, stim):
+        self._trace('m018_stim_begin',frame=stim.timestamp)
         self._log(kind='commit',frame=stim.timestamp,electrode=stim.channel,
                   intended=stim.intended_timestamp,durations_us=stim.phase_durations_us,
                   currents_uA=stim.phase_currents_uA)
         if not self.enabled or stim.channel != 4:
+            self._trace('m018_stim_end',frame=stim.timestamp,queued=len(self.pending))
             return
         for offset in (100,150,200):
             frame = stim.timestamp+offset+self.delay
@@ -54,8 +73,11 @@ class PulseSource(SimulatorDataSource):
             self.pending.add(frame)
         if len(self.pending)>4096:
             raise RuntimeError('Synthetic response queue limit exceeded')
+        self._trace('m018_stim_end',frame=stim.timestamp,queued=len(self.pending))
 
     def read(self, from_timestamp, frame_count):
+        self._trace('m018_read_begin',start=from_timestamp,count=frame_count,
+                    previous_stop=self.stop)
         if self.stop is not None and from_timestamp != self.stop:
             raise ValueError('Discontinuous source read')
         stop = from_timestamp+frame_count
@@ -64,8 +86,11 @@ class PulseSource(SimulatorDataSource):
         self.pending.difference_update(emitted)
         self.collisions += len(baseline & emitted)
         self.stop = stop
-        return DataSourceBatch(frames=np.zeros((frame_count,64),dtype=np.int16),
+        batch = DataSourceBatch(frames=np.zeros((frame_count,64),dtype=np.int16),
             spikes=[DataSourceSpike(timestamp=frame,channel=8) for frame in sorted(baseline|emitted)])
+        self._trace('m018_read_end',start=from_timestamp,stop=stop,
+                    count=frame_count,spike_count=len(baseline|emitted))
+        return batch
 
 
 def create_source(seed,enabled,extra_delay_frames,audit_path):

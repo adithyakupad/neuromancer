@@ -45,7 +45,7 @@ def run_case(output,name,enabled=True,delay=0):
     def trace(kind, **fields):
         if trace_file is not None:
             trace_file.write(json.dumps(dict(kind=kind,host_monotonic_ns=time.monotonic_ns(),
-                clock_domain='host_monotonic',**fields))+'\\n')
+                clock_domain='host_monotonic',**fields))+'\n')
             trace_file.flush()
     set_simulator_data_source('neuromancer.cl_response_source:create_source',
         dict(seed=16016,enabled=enabled,extra_delay_frames=delay,audit_path=str(source_log)))

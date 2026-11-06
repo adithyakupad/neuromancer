@@ -21,7 +21,7 @@ jobs:
       - run: |
           export PYTHONPATH="$PWD/src"
           .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk 120 .venv-sdk/bin/python scripts/m016_run.py runs/v2-sdk matrix
-          .venv-sdk/bin/python scripts/m016_verify.py runs/v2-sdk
+          .venv-sdk/bin/python scripts/m017_sdk_verify.py runs/v2-sdk
       - uses: actions/upload-artifact@v4
         if: always()
         with:

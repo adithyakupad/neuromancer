@@ -116,7 +116,7 @@ def verify_preservation():
     return count
 
 
-def verify(root):
+def verify(root, *, verify_base=verify_preservation):
     cases=('C0','C1','C2','C4','C5','C6','PI','FROZEN','C1_REPEAT')
     results,rows,commits,events,submission_times,observation_times={},{},{},{},[],[]
     for case in cases:
@@ -169,7 +169,7 @@ def verify(root):
         sampled_peak_tree_rss_bytes=evidence['sampled_peak_tree_rss_bytes'],
         cpu_s_parent_sum=sum(read(root/name/'summary.json')['cpu_s'] for name in cases),
         recording_bytes=sum(results[name]['recording_bytes'] for name in cases),
-        preserved_base_paths=verify_preservation())
+        preserved_base_paths=verify_base())
 
 
 if __name__=='__main__':

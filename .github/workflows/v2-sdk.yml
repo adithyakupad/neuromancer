@@ -1,0 +1,29 @@
+name: V2 SDK simulator qualification
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  simulator:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m venv .venv-sdk
+      - run: .venv-sdk/bin/python -m pip install cl-sdk==1.0.0
+      - run: .venv-sdk/bin/python -m pip check
+      - run: |
+          export PYTHONPATH="$PWD/src"
+          .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk 120 .venv-sdk/bin/python scripts/m016_run.py runs/v2-sdk matrix
+          .venv-sdk/bin/python scripts/m016_verify.py runs/v2-sdk
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v2-sdk-${{ matrix.os }}
+          path: runs/v2-sdk*

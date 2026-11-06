@@ -52,3 +52,9 @@ so 6 × 3 × 48 cue plus matched sham is an order-of-magnitude 690 s
 estimate before overhead. Freeze a 1,200 s cap only if measured cost
 fits with 25% headroom. No neural simulation, retention, threshold
 tuning or confirmation was executed for M024 in this sprint.
+
+**Engineering PARTIAL** for a proposed protocol without a new cost
+probe or implementation qualification. **Scientific NOT RUN.**
+Research release **HOLD**. Before acquisition, freeze the exact
+cue code, offset search bounds and sham-noise estimator on a
+separate prospective revision. The prior cue-access failure stands.

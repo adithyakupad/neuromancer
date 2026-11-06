@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/neuromancer-recover-bench/baseline/env/bin/python",
+        "/tmp/neuromancer-recover-style/tools/recover_style.py",
+        "/tmp/neuromancer-recover-bench",
+        "/tmp/recover-style-run.t4HOyQ/measurements",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m017/golden_final"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1487910166209333
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1487910168814041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1488187090468083
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 73798,
+      "pgid": 73798,
+      "stop_file": "/private/tmp/recover-style-run.t4HOyQ/supervision/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1487910166209333,
+  "deadline_ns": 1489710166195208,
+  "work_cutoff_ns": 1489709366195208,
+  "finished_ns": 1488187090620500,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1489710166195208,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

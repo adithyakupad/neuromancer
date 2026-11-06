@@ -75,7 +75,7 @@ temporal XOR task?
 
 `identify.py` and `online_identify.py` build lag vectors from causal
 four-channel inputs. FIR maps recent stimulus into four observed
-sector rates. ARX also includes past output terms. Forecasting advances
+sector rates as an intercept plus the sum of lagged input products. ARX adds a sum of lagged rate products. Forecasting advances
 with predicted, not future measured, outputs. `tests/test_identify.py`
 checks features and recursive forecasts.
 Questions. What is a lag? Why does ARX need a stability check? Where
@@ -106,7 +106,7 @@ How would delayed observations alter the safe response?
 
 `predictive_planner.py` evaluates 625 candidate action pairs over
 100 future bins with a causal four-channel history. It predicts rates,
-evaluates the objective, applies constraints and selects a stable tie
+evaluates tracking error squared plus dose and switching penalties, applies constraints and selects a stable tie
 winner. Finite wall time limits the calculation. `tests/test_predictive.py`
 checks all candidates against an independent projection and forecast.
 Questions. What is the optimization variable? What makes a candidate

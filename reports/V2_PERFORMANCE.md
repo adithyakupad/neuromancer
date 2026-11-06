@@ -35,3 +35,10 @@ Process peak RSS was 986,169,344 and 986,742,784 bytes. Brian2 timings are singl
   * application_processing, 144 samples. p50 0.0411, p95 0.1232, p99 0.2121, max 0.2476 ms.
   * submit_to_observed_commit, 28 samples. p50 0.1283, p95 0.3843, p99 0.4204, max 0.4213 ms.
   * inter_tick_median_deviation, 135 samples. p50 0.0158, p95 0.1601, p99 0.3355, max 1.9599 ms.
+
+## Forecast-only coverage
+
+Baseline ARX 50-step forecast p50/p95/p99/max over nine samples was 0.3180 / 0.3348 / 0.3374 / 0.3380 ms. Process peak RSS 39,043,072 bytes.
+Style ARX 50-step forecast p50/p95/p99/max over nine samples was 0.3071 / 0.3286 / 0.3373 / 0.3395 ms. Process peak RSS 39,141,376 bytes.
+
+Both forecast hashes match the exact ARX4 golden array. This supplement leaves the prior style performance HOLD in force.

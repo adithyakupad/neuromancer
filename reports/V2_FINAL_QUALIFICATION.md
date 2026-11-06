@@ -36,7 +36,7 @@ reports and preserves the pre-style runtime.
 | Demo B neural computation | PASS. M013/M014 summaries independently reproduced from scratch archive copies |
 | Demo C CL SDK | PASS. Nine real SDK simulator sessions, 144 bins and 28 matching commitments. PI MAE 1.50 vs frozen 1.00 |
 | V1 evidence | Four numerical outputs and four figures byte-identical. Independent model and statistics checks passed |
-| M015 preservation | Gate HOLD and retention not run preserved. The reduced three-cell qualification remains archival evidence |
+| M015 preservation | Gate HOLD and retention not run preserved. The reduced three-cell rerun passed all eight cases and exactly matched 56 archived arrays |
 | Wheel | PASS. Clean install, imports, dependency check and installed CLI smoke |
 | Hardware interlock | Simulator-only execution. Hardware unvalidated. Biological validation not run |
 | Style | Exact 102 arrays and deterministic JSON, 228 post-style tests and semantic SDK replay. Planner/PI timing failed |

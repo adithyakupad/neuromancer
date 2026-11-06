@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/neuromancer-m011-v1-env/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=reports/engineering/evidence/m017/baseline_tests/tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1431623806472500
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1431623807836000
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1431665990539833
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 57406,
+      "pgid": 57406,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m017/baseline_tests/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1431623806472500,
+  "deadline_ns": 1431803806465958,
+  "work_cutoff_ns": 1431803006465958,
+  "finished_ns": 1431665995648416,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1431803806465958,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -23,3 +23,9 @@ Seven sessions passed before `FROZEN` stalled waiting for frame 5500. Supervisor
 - Any subsequent correction requires a separately reviewed diff, same timing and exact-head CI on Linux/macOS.
 
 Release HOLD until explained and qualified. No merge, tag or publication.
+
+## Prospective amendment: unexpected C2 frame stall
+
+The first instrumented CI attempt on macOS Intel (run 42179696188) failed in C2, not FROZEN. Worker log: SDK timed out awaiting frame 8000. Its completed C2 ticks extend through 7500 frames; same job's C0/C1 sessions completed. Original source trace hooks were restricted to FROZEN, so this result cannot be localized. The supervisor returned WORKER_FAILURE and verified cleanup. The complete artifact was downloaded and inspected; it remains historical failed evidence.
+
+**Before broadening the next diagnostic source:** apply the already-designed source/client opt-in boundary traces to ALL nine existing SDK cases, not only FROZEN. Keep the identical case roster, order, 16 ticks, 120 s supervisor deadline, SDK version, and controls. Log in separate diagnostic files, never in the stimulation commit ledger. No additional iterations or outcome-based test selection. The amendment addresses the direct evidence that stalls can affect C2. It does not erase the FROZEN stall or claim a root cause.

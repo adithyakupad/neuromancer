@@ -26,7 +26,7 @@ class PulseSource(SimulatorDataSource):
         self.pending = set()
         self.stop = None
         self.collisions = 0
-        self.m018_trace = self.path.parent.name == 'FROZEN'
+        self.m018_trace = True
         self.trace_file = None
 
     def _log(self, **event):

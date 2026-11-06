@@ -7,9 +7,6 @@ import resource
 import sys
 import time
 
-os.environ['CL_SDK_ACCELERATED_TIME']='1'
-os.environ['CL_SDK_VISUALISATION']='0'
-
 from neuromancer.cl_adapter import CountPI,FIXTURE_MAP,SimulatorSession,verified_sdk
 from neuromancer.clocks import now_ns
 from neuromancer.neural_io import (BIN_FRAMES, ElectrodeRequest, FrameClock,
@@ -20,35 +17,41 @@ from neuromancer.supervisor import Deadline,atomic_json
 def m018_observed_ticks(neurons, trace):
     """Observe SDK consumption boundaries without changing tick values."""
     iterator = iter(neurons.loop(50, stop_after_ticks=16))
-    for index in range(16):
+    index = 0
+    while True:
         trace('m018_next_begin', tick=index)
         try:
             current = next(iterator)
         except StopIteration:
-            trace('m018_next_early_stop', tick=index)
-            raise RuntimeError('SDK ended before sixteen complete ticks')
+            trace('m018_iterator_exhausted', ticks=index)
+            if index != 16:
+                raise RuntimeError('SDK ended before sixteen complete ticks')
+            return
+        if index == 16:
+            raise RuntimeError('SDK returned more than sixteen ticks')
         trace('m018_next_end', tick=index,
               start=current.analysis.start_timestamp,
               stop=current.analysis.stop_timestamp,
               frame_count=len(current.frames))
         yield current
+        index += 1
 
 
-def run_case(output,name,enabled=True,delay=0):
+def run_case(output, name, enabled=True, delay=0, *, trace_frames=False):
     from cl.sim import clear_simulator_data_source,set_simulator_data_source
     sdk=verified_sdk()
     directory=output/name
     directory.mkdir()
     source_log=directory/'source.jsonl'
-    trace_path=directory/'client_trace.jsonl'
-    trace_file=trace_path.open('x') if trace_path else None
+    trace_path = directory / 'client_trace.jsonl'
+    trace_file = trace_path.open('x') if trace_frames else None
     def trace(kind, **fields):
         if trace_file is not None:
             trace_file.write(json.dumps(dict(kind=kind,host_monotonic_ns=time.monotonic_ns(),
                 clock_domain='host_monotonic',**fields))+'\n')
             trace_file.flush()
     set_simulator_data_source('neuromancer.cl_response_source:create_source',
-        dict(seed=16016,enabled=enabled,extra_delay_frames=delay,audit_path=str(source_log)))
+        dict(seed=16016,enabled=enabled,extra_delay_frames=delay,audit_path=str(source_log),trace=trace_frames))
     deadline=Deadline.from_environment()
     rows=[]
     controller=CountPI() if name=='PI' else None
@@ -60,11 +63,15 @@ def run_case(output,name,enabled=True,delay=0):
         with session.open():
             trace('m018_session_open_end')
             neurons=session.neurons
+            trace('m018_recording_open_begin')
             recording=neurons.record(file_suffix=name,file_location=str(directory),
                 attributes={'m016_source':'m016-pulse-v1','m016_case':name})
+            trace('m018_recording_open_end')
             expected=None
             try:
-                for index,current in enumerate(m018_observed_ticks(neurons,trace)):
+                ticks = (m018_observed_ticks(neurons, trace) if trace_frames
+                         else neurons.loop(50, stop_after_ticks=16))
+                for index,current in enumerate(ticks):
                     began=now_ns()
                     deadline.check()
                     analysis=current.analysis
@@ -118,6 +125,7 @@ def run_case(output,name,enabled=True,delay=0):
                 recording.wait_until_stopped()
                 trace('m018_recording_stop_end',completed_ticks=len(rows))
                 atomic_json(directory/'ticks.json',rows)
+        trace('m018_session_close_end')
         with sdk.RecordingView(recording.file['path']) as view:
             recorded=dict(shape=[int(size) for size in view.samples.shape],spikes=len(view.spikes),
                 stims=len(view.stims),source=view.attributes['application']['m016_source'])
@@ -137,6 +145,9 @@ def run_case(output,name,enabled=True,delay=0):
 
 
 def main(output,mode):
+    os.environ['CL_SDK_ACCELERATED_TIME'] = '1'
+    os.environ['CL_SDK_VISUALISATION'] = '0'
+    trace_frames = os.environ.get('NEUROMANCER_M018_TRACE') == '1'
     verified_sdk()
     if mode=='smoke':
         cases=[('SMOKE',True,0)]
@@ -147,7 +158,7 @@ def main(output,mode):
         raise ValueError('Unknown workload')
     completed=[]
     for name,enabled,delay in cases:
-        completed.append(run_case(output,name,enabled,delay))
+        completed.append(run_case(output, name, enabled, delay, trace_frames=trace_frames))
         if sum(path.stat().st_size for path in output.rglob('*') if path.is_file())>25*1024**2:
             raise RuntimeError('Recording storage cap exceeded')
         atomic_json(output/'completed.json',completed)

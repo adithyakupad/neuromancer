@@ -11,7 +11,7 @@ class PulseSource(SimulatorDataSource):
     metadata = SimulatorDataSourceMetadata(channel_count=64,seekable=False)
     identity = 'm016-pulse-v1'
 
-    def __init__(self, seed, enabled, extra_delay_frames, audit_path):
+    def __init__(self, seed, enabled, extra_delay_frames, audit_path, trace=False):
         if type(seed) is not int or not 0 <= seed < 2**32 or type(enabled) is not bool:
             raise ValueError('Invalid source seed or response flag')
         if type(extra_delay_frames) is not int or extra_delay_frames not in (0,700):
@@ -26,7 +26,7 @@ class PulseSource(SimulatorDataSource):
         self.pending = set()
         self.stop = None
         self.collisions = 0
-        self.m018_trace = True
+        self.m018_trace = trace
         self.trace_file = None
 
     def _log(self, **event):
@@ -55,6 +55,7 @@ class PulseSource(SimulatorDataSource):
             self.audit.close()
             self.audit = None
             if self.trace_file is not None:
+                self._trace('m018_source_close_end', last_stop=self.stop)
                 self.trace_file.close()
                 self.trace_file = None
 
@@ -93,5 +94,5 @@ class PulseSource(SimulatorDataSource):
         return batch
 
 
-def create_source(seed,enabled,extra_delay_frames,audit_path):
-    return PulseSource(seed,enabled,extra_delay_frames,audit_path)
+def create_source(seed, enabled, extra_delay_frames, audit_path, trace=False):
+    return PulseSource(seed, enabled, extra_delay_frames, audit_path, trace=trace)

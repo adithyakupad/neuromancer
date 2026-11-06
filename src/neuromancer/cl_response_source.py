@@ -27,18 +27,23 @@ class PulseSource(SimulatorDataSource):
         self.stop = None
         self.collisions = 0
         self.m018_trace = self.path.parent.name == 'FROZEN'
+        self.trace_file = None
 
     def _log(self, **event):
         self.audit.write(json.dumps(event)+'\n')
         self.audit.flush()
 
     def _trace(self, kind, **details):
-        if self.m018_trace:
-            self._log(kind=kind, host_monotonic_ns=time.monotonic_ns(),
-                      frame_clock='sdk_frame_index', **details)
+        if self.trace_file is not None:
+            self.trace_file.write(json.dumps(dict(kind=kind,
+                host_monotonic_ns=time.monotonic_ns(),
+                frame_clock='sdk_frame_index', **details))+'\n')
+            self.trace_file.flush()
 
     def open(self):
         self.audit = self.path.open('x')
+        if self.m018_trace:
+            self.trace_file = self.path.with_name('m018_source_trace.jsonl').open('x')
         self._log(kind='open',source=self.identity,phase=self.phase,
                   enabled=self.enabled,extra_delay_frames=self.delay)
         self._trace('m018_source_open')
@@ -49,6 +54,9 @@ class PulseSource(SimulatorDataSource):
             self._log(kind='close',pending=len(self.pending),collisions=self.collisions)
             self.audit.close()
             self.audit = None
+            if self.trace_file is not None:
+                self.trace_file.close()
+                self.trace_file = None
 
     def on_stim(self, stim):
         self._trace('m018_stim_begin',frame=stim.timestamp)

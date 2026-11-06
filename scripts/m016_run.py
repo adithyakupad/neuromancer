@@ -40,7 +40,7 @@ def run_case(output,name,enabled=True,delay=0):
     directory=output/name
     directory.mkdir()
     source_log=directory/'source.jsonl'
-    trace_path=directory/'client_trace.jsonl' if name=='FROZEN' else None
+    trace_path=directory/'client_trace.jsonl'
     trace_file=trace_path.open('x') if trace_path else None
     def trace(kind, **fields):
         if trace_file is not None:
@@ -64,8 +64,7 @@ def run_case(output,name,enabled=True,delay=0):
                 attributes={'m016_source':'m016-pulse-v1','m016_case':name})
             expected=None
             try:
-                for index,current in enumerate(m018_observed_ticks(neurons,trace) if name=='FROZEN'
-                                               else neurons.loop(50,stop_after_ticks=16)):
+                for index,current in enumerate(m018_observed_ticks(neurons,trace)):
                     began=now_ns()
                     deadline.check()
                     analysis=current.analysis

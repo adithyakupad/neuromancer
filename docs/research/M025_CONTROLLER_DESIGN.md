@@ -44,3 +44,24 @@ network/plant realizations as the replication unit and report paired
 intervals, failures, latency and pulse burden. A new authority
 and precision gate precedes acquisition. The historical synthetic
 MAE 1.50 versus 1.00 stays fixed.
+
+## Executed deterministic results
+
+| Target, plant gain, lag | No pulse MAE | Frozen PI MAE | Predictor MAE |
+|---|---:|---:|---:|
+| 2, 3, 1 | 1.000 | 1.500 | 1.000 |
+| 2, 1, 1 | 1.000 | 0.500 | 1.000 |
+| 2, 3, 2 | 1.000 | 1.500 | 1.000 |
+| 3, 3, 1 | 2.000 | 1.500 | 1.042 |
+| 3, 1, 1 | 2.000 | 1.042 | 1.042 |
+| 3, 3, 2 | 2.000 | 1.500 | 1.083 |
+
+The target-2 nominal PI alternated [1, 4] for all 24 observations.
+The predictor attained the no-pulse optimum there, and lost to PI
+at gain one because its fixed gain estimate rejected useful pulses.
+At target 3 it issued 23 pulses in all scenarios, versus 12 under
+nominal PI. This is the observed tracking and pulse-burden tradeoff
+in this declared model. No plant fit, SDK validation, neural cohort
+or superiority inference followed. Engineering PASS for the
+deterministic model. Scientific NOT RUN. Controller release HOLD.
+[Exact traces](../../reports/research/evidence/recover-models/results.json)

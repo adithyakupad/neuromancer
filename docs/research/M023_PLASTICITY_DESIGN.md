@@ -54,3 +54,14 @@ independent precision review. Start with one bounded benchmark before
 acquisition and reject if the forecast cannot fit the 600 s development
 cap with 25% headroom. Historical or previously used networks provide
 context only.
+
+## Executed arithmetic and disposition
+
+For eligibility [4, 2, −1, −1], the unmodulated mean is 1. The six
+balanced signed assignments give [2, 0.5, 0.5, −0.5, −0.5, −2], with
+zero permutation expectation. Decay over one and two time constants
+retains 0.368 and 0.135. The same reward histogram can enhance,
+suppress or reverse a fixed eligibility update. This establishes a
+diagnostic, with no causal attribution for M013. Engineering PASS
+for arithmetic. New scientific study NOT RUN. Research release HOLD
+pending identifiable study and measured budget. [Exact model results](../../reports/research/evidence/recover-models/results.json)

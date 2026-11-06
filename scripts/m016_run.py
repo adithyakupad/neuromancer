@@ -34,8 +34,12 @@ def run_case(output,name,enabled=True,delay=0):
     try:
         with session.open():
             neurons=session.neurons
+            origin = neurons.timestamp()
+            expected_final_frame = origin + 16 * BIN_FRAMES
             recording=neurons.record(file_suffix=name,file_location=str(directory),
-                attributes={'m016_source':'m016-pulse-v1','m016_case':name})
+                attributes={'m016_source':'m016-pulse-v1','m016_case':name,
+                            'expected_final_frame':expected_final_frame})
+            recording_closed = False
             expected=None
             try:
                 for index,current in enumerate(neurons.loop(50,stop_after_ticks=16)):
@@ -82,14 +86,29 @@ def run_case(output,name,enabled=True,delay=0):
                         tick_began_ns=began,submit_started_ns=submit_start if proposal else None,
                         submit_ns=submit_ns,pi_integral=controller.integral if controller else None))
                     deadline.check()
-                if session.pending is not None:
-                    raise RuntimeError('Unresolved stimulation at end of session')
+                    if index == 15:
+                        if stop != expected_final_frame or session.pending is not None:
+                            raise RuntimeError('Final observation or stimulus receipt incomplete')
+                        # Resuming the final yield can request one more SDK batch.
+                        recording.stop()
+                        recording.wait_until_stopped()
+                        recording_closed = True
+                if not recording_closed:
+                    raise RuntimeError('SDK ended before the final observation')
             finally:
-                recording.stop()
-                recording.wait_until_stopped()
+                if not recording_closed:
+                    recording.stop()
+                    recording.wait_until_stopped()
                 atomic_json(directory/'ticks.json',rows)
         with sdk.RecordingView(recording.file['path']) as view:
-            recorded=dict(shape=[int(size) for size in view.samples.shape],spikes=len(view.spikes),
+            actual_end = int(view.attributes['end_timestamp'])
+            if (int(view.attributes['start_timestamp']) != origin
+                    or actual_end != expected_final_frame
+                    or view.samples.shape != (16 * BIN_FRAMES, 64)
+                    or view.attributes['application']['expected_final_frame'] != expected_final_frame):
+                raise RuntimeError('Recording differs from the consumed frame interval')
+            recorded=dict(expected_final_frame=expected_final_frame, actual_end_frame=actual_end,
+                shape=[int(size) for size in view.samples.shape],spikes=len(view.spikes),
                 stims=len(view.stims),source=view.attributes['application']['m016_source'])
         deadline.check()
         summary=dict(case=name,recording=recorded,elapsed_s=time.perf_counter()-elapsed,

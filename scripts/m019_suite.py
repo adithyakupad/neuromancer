@@ -18,7 +18,9 @@ def main(root):
         try:
             supervisor = json.loads((output / 'returned.json').read_text())
             watchdog = json.loads(output.with_name(condition + '_descendants.json').read_text())
-            cleanup = (supervisor['cleanup_verified'] and not watchdog['timed_out']
+            worker_log = (output / 'supervision/worker-0.log').read_text()
+            cleanup = ('Observer needed forced cleanup' not in worker_log
+                       and supervisor['cleanup_verified'] and not watchdog['timed_out']
                        and not watchdog['forced_cleanup_pids'] and not watchdog['remaining'])
         except (OSError, ValueError, KeyError):
             cleanup = False

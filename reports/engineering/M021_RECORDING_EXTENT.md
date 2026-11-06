@@ -92,3 +92,19 @@ the committed pathname is complete or absent. Supervisor code,
 deadlines, process ownership, termination checks and test assertions
 remain unchanged. This amendment permits one exact-head hosted
 matrix after the test-only change, then stops regardless of outcome.
+
+The atomic fixture change is isolated at
+`c91cd4d5e2884a6f03333118762ffe30573e7228`. It passed 59 local
+supervisor and clock tests. The follow-up Linux and macOS SDK workers each completed
+144 windows and 28 receipts, independently matching the original
+deterministic records and recording endpoints. The two hosted SDK
+jobs nonetheless failed at the source-preservation assertion
+for `tests/supervisor_worker.py`. That protected test file changed
+from SHA-256
+`c19982062ba119b1a86db187d62c2ee9b1f25725398a526a36e60072250b2fef`
+to `2e9a482da8a7819926531119fc9c73b2c4106f9e44f8368858bbddd3ac722471`.
+The historical bytes remain in Git and the manifest remains intact.
+This candidate has no combined qualification. A future provenance
+review must identify the old and new fixture explicitly before
+another integration attempt. The sprint did not bypass the gate.
+[Follow-up SDK CI](https://github.com/adithyakupad/neuromancer/actions/runs/42299151853)

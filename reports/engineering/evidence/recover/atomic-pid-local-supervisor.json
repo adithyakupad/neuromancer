@@ -1,0 +1,52 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_supervisor.py",
+        "tests/test_supervisor_boundaries.py",
+        "tests/test_suspend_clock.py",
+        "--junitxml=/tmp/recover-pid-fixture.zKPjcI/tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1488683275558708
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1488683279292958
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1488703200185458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 75751,
+      "pgid": 75751,
+      "stop_file": "/private/tmp/recover-pid-fixture.zKPjcI/supervision/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1488683275558708,
+  "deadline_ns": 1488863275543583,
+  "work_cutoff_ns": 1488862475543583,
+  "finished_ns": 1488703200288166,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1488863275543583,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

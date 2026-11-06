@@ -70,15 +70,16 @@ def probe(directory, mode):
                     ticks.close()
                     recording.stop()
             with cl.RecordingView(recording.file['path']) as view:
-                count = view.samples.shape[0]
+                count = int(view.samples.shape[0])
                 np.testing.assert_array_equal(view.samples[:, 0], np.arange(origin, origin + count))
                 events = [int(event['timestamp']) + origin for event in view.spikes]
                 expected = [frame for frame in range(origin, origin + count) if frame % 500 in (0, 499)]
                 assert events == expected and len(view.stims) == 0
                 assert view.attributes['application']['expected_final_frame'] == target
+                actual_end = int(view.attributes['end_timestamp'])
                 mark(log, 'recording_verified', origin=origin, expected_final_frame=target,
-                     recorded=count, actual_end=view.attributes['end_timestamp'], spikes=len(events))
-                assert view.attributes['end_timestamp'] == origin + count
+                     recorded=count, actual_end=actual_end, spikes=len(events))
+                assert actual_end == origin + count
                 if mode in ('before', 'bounded'):
                     assert count == 8000
         except Exception as error:

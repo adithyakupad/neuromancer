@@ -251,6 +251,7 @@ def main():
             assert actual == repeated
             np.testing.assert_array_equal(forecasts, forecasts_repeated)
             np.testing.assert_array_equal(coefficients, coefficients_repeated)
+        retain("feedback_pi_state", [row.pop("pi") for row in actual])
         records["feedback"] = actual
         retain("feedback_forecasts", forecasts)
         retain("feedback_coefficients", coefficients)

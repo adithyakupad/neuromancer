@@ -24,7 +24,15 @@ atexit.register(lambda:_trace.event('worker_atexit'))
 
 mode, folder = sys.argv[1:3]
 p = Path(folder); p.mkdir(exist_ok=True)
-(p/'pid.json').write_text(json.dumps({'pid':os.getpid(), 'pgid':os.getpgrp(), 'deadline_ns':int(os.environ['NEUROMANCER_DEADLINE_NS']), 'started_ns':now_ns()}))
+# Cancellation can interrupt a write, so expose the PID marker only when complete.
+pid_path = p / 'pid.json'
+staged_pid = p / 'pid.json.tmp'
+staged_pid.write_text(json.dumps({
+    'pid': os.getpid(), 'pgid': os.getpgrp(),
+    'deadline_ns': int(os.environ['NEUROMANCER_DEADLINE_NS']),
+    'started_ns': now_ns(),
+}))
+staged_pid.replace(pid_path)
 if mode in ('ignore_term', 'descendant', 'shutdown_block'):
     signal.signal(signal.SIGTERM, signal.SIG_IGN)
 (p/'partial.txt').write_text('completed checkpoint\n')

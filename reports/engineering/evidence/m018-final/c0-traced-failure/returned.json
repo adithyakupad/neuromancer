@@ -1,0 +1,48 @@
+{
+  "status": "WORKER_FAILURE",
+  "cause": "WORKER_FAILURE",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        ".venv-sdk/bin/python",
+        "scripts/m016_run.py",
+        "runs/v2-sdk",
+        "matrix"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 433162976386
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 433190892716
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 442177001770
+        }
+      ],
+      "terminal": "WORKER_FAILURE",
+      "cause": "exit 1",
+      "pid": 3277,
+      "pgid": 3277,
+      "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/v2-sdk/supervision/stop-0",
+      "returncode": 1,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 433162976386,
+  "deadline_ns": 553162929263,
+  "work_cutoff_ns": 552362929263,
+  "finished_ns": 442177301355,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@CF55AE00-5145-4065-8E86-6F4D6B8C1F85",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@CF55AE00-5145-4065-8E86-6F4D6B8C1F85",
+  "cleanup_deadline_ns": 553162929263,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

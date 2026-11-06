@@ -27,3 +27,7 @@ tracking MAE than its frozen no-pulse control.
 
 The source is MIT licensed. Experimental archives are retained in Git
 and excluded from the installable wheel.
+
+Publication readiness is tracked separately from the scientific results.
+See the [M018 release decision](reports/engineering/M018_RELEASE_READINESS.md)
+for the macOS Intel SDK qualification.

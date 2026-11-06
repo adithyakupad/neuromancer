@@ -1,0 +1,996 @@
+{
+  "target_frame": null,
+  "status": "COMPLETED",
+  "cleanup_verified": true,
+  "supervised_elapsed_s": 8.293729834,
+  "watchdog_timed_out": false,
+  "forced_cleanup_pids": [],
+  "remaining_descendants": [],
+  "sampled_peak_tree_rss_bytes": 254656512,
+  "cases": {
+    "C0": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064234600452291,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064234876113000,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064234876129083,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064234945810291,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064234945849958,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 0,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064234739897083,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064234873692416,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064234876106208,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064234876060916,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064234876100041,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064234876118875,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064234940704375,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064234941216125,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064234984718291,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C1": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064235136567666,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064235405479333,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064235405496375,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064235476212416,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064235476251375,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 4,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064235274344708,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064235402415041,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064235405472416,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064235405426666,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064235405466500,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064235405483125,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064235471698250,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064235472305208,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064235515027291,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C2": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064235660604541,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064235925152541,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064235925170833,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064235996324166,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064235996360416,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 4,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064235797905583,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064235922492750,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064235925145541,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064235925097833,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064235925139541,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064235925156291,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064235988868125,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064235989570791,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064236034054958,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C4": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064236185406583,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064236497162458,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064236497180041,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064236547569416,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064236547608000,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 4,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064236324876166,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064236494601333,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064236497155375,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064236497107250,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064236497149291,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064236497168583,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064236543167708,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064236543749541,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064236586470875,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C5": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064236736996375,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064237007039666,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064237007057333,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064237078651750,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064237078695416,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 4,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064236878901416,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064237004128916,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064237007032458,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064237006982791,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064237007026375,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064237007046125,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064237072551666,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064237073473875,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064237114248833,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C6": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064237263808333,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064237550200458,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064237550237083,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064237619319666,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064237619356333,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 0,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064237407677541,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064237546976708,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064237550191166,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064237550144875,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064237550185000,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064237550202208,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064237614906416,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064237615665541,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064237658226375,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "PI": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064237813812791,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064238102538041,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064238102555333,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064238169157333,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064238169197541,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 8,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064237958939500,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064238099474500,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064238102522833,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064238102403083,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064238102502125,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 1
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064238102544666,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064238164349250,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064238165118041,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064238204565916,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "FROZEN": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064238358263083,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064238628369125,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064238628388750,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064238698342708,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064238698382500,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 0,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064238497668166,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064238625723500,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064238628361250,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064238628305125,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064238628353083,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064238628372958,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064238694086000,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064238694653083,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064238731795708,
+        "clock_domain": "host_monotonic"
+      }
+    },
+    "C1_REPEAT": {
+      "complete": true,
+      "ticks_persisted": 16,
+      "last_persisted_stop": 8000,
+      "recording_count": 1,
+      "source_open": {
+        "kind": "m018_source_open",
+        "host_monotonic_ns": 1064238876640083,
+        "frame_clock": "sdk_frame_index"
+      },
+      "last_read_begin": {
+        "kind": "m018_read_begin",
+        "host_monotonic_ns": 1064239147387625,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "count": 500,
+        "previous_stop": 8000
+      },
+      "last_read_end": {
+        "kind": "m018_read_end",
+        "host_monotonic_ns": 1064239147404708,
+        "frame_clock": "sdk_frame_index",
+        "start": 8000,
+        "stop": 8500,
+        "count": 500,
+        "spike_count": 1
+      },
+      "source_close": {
+        "kind": "close",
+        "pending": 0,
+        "collisions": 0
+      },
+      "source_close_begin": {
+        "kind": "m018_source_close_begin",
+        "host_monotonic_ns": 1064239217177250,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_close_end": {
+        "kind": "m018_source_close_end",
+        "host_monotonic_ns": 1064239217210916,
+        "frame_clock": "sdk_frame_index",
+        "last_stop": 8500
+      },
+      "source_commits": 4,
+      "client_session_open": {
+        "kind": "m018_session_open_end",
+        "host_monotonic_ns": 1064239016656916,
+        "clock_domain": "host_monotonic"
+      },
+      "client_recording_open": {
+        "kind": "m018_recording_open_end",
+        "host_monotonic_ns": 1064239144814291,
+        "clock_domain": "host_monotonic"
+      },
+      "last_next_begin": {
+        "kind": "m018_next_begin",
+        "host_monotonic_ns": 1064239147380916,
+        "clock_domain": "host_monotonic",
+        "tick": 16
+      },
+      "last_next_end": {
+        "kind": "m018_next_end",
+        "host_monotonic_ns": 1064239147335083,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "frame_count": 500
+      },
+      "last_processed": {
+        "kind": "m018_tick_processed",
+        "host_monotonic_ns": 1064239147375166,
+        "clock_domain": "host_monotonic",
+        "tick": 15,
+        "start": 7500,
+        "stop": 8000,
+        "receipts": 0
+      },
+      "recording_stop_begin": {
+        "kind": "m018_recording_stop_begin",
+        "host_monotonic_ns": 1064239147394250,
+        "clock_domain": "host_monotonic"
+      },
+      "recording_stop_end": {
+        "kind": "m018_recording_stop_end",
+        "host_monotonic_ns": 1064239212633791,
+        "clock_domain": "host_monotonic",
+        "completed_ticks": 16
+      },
+      "client_session_close": {
+        "kind": "m018_session_close_end",
+        "host_monotonic_ns": 1064239213448166,
+        "clock_domain": "host_monotonic"
+      },
+      "source_reg_cleared": {
+        "kind": "m018_clear_source_end",
+        "host_monotonic_ns": 1064239295439750,
+        "clock_domain": "host_monotonic"
+      }
+    }
+  },
+  "files_sha256": {
+    "matrix/C0/2026-11-06_07-31-23.520+00-00_C0.h5": "3208891e435fa74e4d17360be441d3300e92de3dfa7834bc489a5d723dab723b",
+    "matrix/C0/client_trace.jsonl": "37bf9f4c1f23227101b625609987adc7986971d520eb09e35b90293bcb8dd407",
+    "matrix/C0/m018_source_trace.jsonl": "2631364ac4457fb059e30658640a53a46fe86bf93fb39a8e05ab19b0fee4b875",
+    "matrix/C0/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "matrix/C0/summary.json": "370ab86cadc97acd4259b6ff9e5209fbbe07644165c0425ab887b8aebb4fc412",
+    "matrix/C0/ticks.json": "85c8bbfee3825ead90587cafa14db93ed31a61c15ee0480e3a83bae48f0f7ed8",
+    "matrix/C1/2026-11-06_07-31-24.055+00-00_C1.h5": "c76ebd8a59f9c6510762b9d8ca7ecc3c0d6b002c64fc4140ef4b7e0f599c5658",
+    "matrix/C1/client_trace.jsonl": "302a93d0dd8a368e7b75dcbd217a9ae05f11858f9bbb321af8e129e2f25150ff",
+    "matrix/C1/m018_source_trace.jsonl": "23819ddc76f4575836afc9e9402cd5fce4af7669aa884d9bec09866a403a8dc6",
+    "matrix/C1/source.jsonl": "0b313f5a61693d7d72850f4b8dae18c316976a28620fafc7679e9d492376aa55",
+    "matrix/C1/summary.json": "bd4cd69b3139da5ec224ad9005fbb61cfa3ffb51df4cbb3aff321ab7b78c4653",
+    "matrix/C1/ticks.json": "878a2928c7275a06595d8a5eb5a709fa9fe43d6d0b1ffade5fe458ac13f5794d",
+    "matrix/C1_REPEAT/2026-11-06_07-31-27.797+00-00_C1_REPEAT.h5": "4fc39eff5adad3ff083cb584ea99dd6bb15631019e94a8bd56d6c6d824ed303b",
+    "matrix/C1_REPEAT/client_trace.jsonl": "4c432b78da6f8200ec059ed040109bed2b3c327c9dd84cfde3e3bd1518222c99",
+    "matrix/C1_REPEAT/m018_source_trace.jsonl": "826ce1a13df998183a3e35eed5bb8a97e2e156e3976841bc7bd3857c1ef9fed9",
+    "matrix/C1_REPEAT/source.jsonl": "0b313f5a61693d7d72850f4b8dae18c316976a28620fafc7679e9d492376aa55",
+    "matrix/C1_REPEAT/summary.json": "9365d17aee6668a4bf815f307b1a2e7a113fddfe0fbfd2d8a56c7eb5837a2070",
+    "matrix/C1_REPEAT/ticks.json": "cc7405039899101f125b6c9e704c9281d40516695f9a6c982557097311b798b5",
+    "matrix/C2/2026-11-06_07-31-24.578+00-00_C2.h5": "e083fe7a0f86936cdf085e474c3ab58b1b88bd8cd3a98e448e881fe5db948491",
+    "matrix/C2/client_trace.jsonl": "4ddd8c562e80c66fadea15ff4c346166fc483df48ba6dbb271923f2d49c523ac",
+    "matrix/C2/m018_source_trace.jsonl": "06406fbfe5e606c06acbedb56bea9b04f8976959ac940f6d9ee055001c043333",
+    "matrix/C2/source.jsonl": "5bd80ea8dbe7d9e9edf8b397b9072f8112480159e2552fa760f2c78c68f740ea",
+    "matrix/C2/summary.json": "dbc1750609ff3ef09ff2278949c3de7a8e8ffe68748ae0b96a0adafb8f532354",
+    "matrix/C2/ticks.json": "cd927d1f2297b06b71ff2ca145403878377915b168aec0344aa9ca798d7f1677",
+    "matrix/C4/2026-11-06_07-31-25.105+00-00_C4.h5": "44938c448f32ced62e87b6a57188ae1235b6a3517b7e76e86776026c906b4c9d",
+    "matrix/C4/client_trace.jsonl": "d96aeab9ad6d015d41fa5f7c16225c6d3817f56f8654bbc1c5a8d31928eb4d8e",
+    "matrix/C4/m018_source_trace.jsonl": "6813dbdf15565566acb0b629b6b5c80235d9e9b19ecbade9690d92c0a7e01550",
+    "matrix/C4/source.jsonl": "f68cea0d9869a68be102282611872d28a866de1566f7f976547c5b4800e0bd12",
+    "matrix/C4/summary.json": "bedfe07987aff29775a70c7c728e67b80ba7eddaae0e2d7b7077f7f6f4ccf47d",
+    "matrix/C4/ticks.json": "bae3ba2f7067bc09685780b8e5bb40888abc135913fc11efbce537c06ce2fda6",
+    "matrix/C5/2026-11-06_07-31-25.659+00-00_C5.h5": "1a23f5b8c8712aa38ee62f1a22adf68a76102e32b77bb20aa95da7c3606d1d9b",
+    "matrix/C5/client_trace.jsonl": "5a117f5bbcaf24d9bd07246fb2f56de4855c14ed6ac44322f12a33a2a91bcf55",
+    "matrix/C5/m018_source_trace.jsonl": "3eee4930d02990d43531e6a7150f9e82cf2cf9fb1ab75ce43a39acbf8877856c",
+    "matrix/C5/source.jsonl": "26dc01c96b67339c911a00104352fcdbf857e2c0dd824034ab7e93332f494b56",
+    "matrix/C5/summary.json": "60db45da656fadfb45d5005d4f6c39fab9da3b92ae4880161c323c66b755c11f",
+    "matrix/C5/ticks.json": "20f61f9a262784df04c35dbc6dacaa18e4e78a4000845140feb2e4bb898dfe72",
+    "matrix/C6/2026-11-06_07-31-26.188+00-00_C6.h5": "9da042540dc440095599abc329569b6d1149de47c6287955558ae328fbeb20b6",
+    "matrix/C6/client_trace.jsonl": "b9f910e415276efa83ed329bd38f1e5b88862774560370a9b859122d2f4560c7",
+    "matrix/C6/m018_source_trace.jsonl": "20f4463febe4809024fcf1cd29eb6895cd9869dbc15ed598d5d2d44972a2932d",
+    "matrix/C6/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "matrix/C6/summary.json": "0add5016715673f281b1f675d88d96a3e48c77fdd99bdc66cddd5dcb7ffa1df3",
+    "matrix/C6/ticks.json": "2a40f9670f4b7f48dcea23c730a792cb50463945ef0132456ee6bca608c1e155",
+    "matrix/FROZEN/2026-11-06_07-31-27.278+00-00_FROZEN.h5": "890a80edb933b9bc4d6e4ba31b3200f318578ed3a7373be3710f9ec99e457dff",
+    "matrix/FROZEN/client_trace.jsonl": "02cba6eee3a3426d1159e088b8ff158ba7d61d43634228ae03ed403d05afc7a6",
+    "matrix/FROZEN/m018_source_trace.jsonl": "40bd1484da222b6f8f62928dbf2bbc613c38dc8d05103d1af1303e7782540cb8",
+    "matrix/FROZEN/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "matrix/FROZEN/summary.json": "caeadccdddc22063198fb41aa9fa61d3ec605874cb3869ba4d25d470067f48f3",
+    "matrix/FROZEN/ticks.json": "735debc4bf2dca8b4968806b97657703ac932377a60030512479a9065a7eb7a3",
+    "matrix/PI/2026-11-06_07-31-26.739+00-00_PI.h5": "c2823f596d477e8402d86676fbd020eaed1c0fef8dd4a615c147f4cedfa4db6a",
+    "matrix/PI/client_trace.jsonl": "1a370ee1af79e022736c6ae078ee72d63bcaf1750cdc0692770b682a2b94ae7e",
+    "matrix/PI/m018_source_trace.jsonl": "a2cc87fb2497e6eb2b0e72bbb8012695a83851282b5f8b2182578f5bda988a8a",
+    "matrix/PI/source.jsonl": "92def10d5af7ebcc3239001d3fe7b26b00ae54fc5b395545ec5aa7c079b3c9fd",
+    "matrix/PI/summary.json": "e4f942c1b5f792e14278b27b4b496a2449b504556eac260c877562a1bfe54eda",
+    "matrix/PI/ticks.json": "6283641921a695576e2ef9ae9c9572ccf6c0929636b39e38d4400692e10d3291",
+    "matrix/completed.json": "b9869b1ddc34f4f12aa63d32f2d827200bf1fb6a61d07bb9762d4428111b5b0e",
+    "matrix/outer.json": "0c853f246cb13a5037d329342e6782baae36eb6b9bb0bb1dda95f5f1fab4c4b6",
+    "matrix/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "matrix/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "matrix/returned.json": "fa536472aab5b9725988ef5a4a57a44c831614f1d029300bd8de8fba57e5f364",
+    "matrix/supervision/progress.json": "52d7c0ee4807ea9bf93b06e34b751f5134d7cf02a64a6601a690d829ee180fb1",
+    "matrix/supervision/terminal.json": "fa536472aab5b9725988ef5a4a57a44c831614f1d029300bd8de8fba57e5f364",
+    "matrix/supervision/worker-0.log": "a2bf087f7af2ee129d0269822b14c39f97958ff1c90d0b646ffc9effd04590cb",
+    "matrix_descendants.json": "309767637efe25a89787fb41737c885c421d91544f460136b9af4af9f14e8aab",
+    "matrix_verification.json": "7dab598533a2cba54967f07bc51340b52f7e224b14cdb8666a0743f0fea8e81f",
+    "stock/outer.json": "0c853f246cb13a5037d329342e6782baae36eb6b9bb0bb1dda95f5f1fab4c4b6",
+    "stock/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/returned.json": "b0545b3bef613dffd9a238c81ec727916a91bd899aaea6b05c72b4e7b4efe713",
+    "stock/supervision/progress.json": "ce6c4637403a3fce190c3f97ed22342bbcab1dd5d1155fcdf63cb01af1bb5caf",
+    "stock/supervision/terminal.json": "b0545b3bef613dffd9a238c81ec727916a91bd899aaea6b05c72b4e7b4efe713",
+    "stock/supervision/worker-0.log": "2ecf8f5a11c647c50467de6962dc14362e6c8b90a5b89928409cc43c22e6d102",
+    "stock_descendants.json": "630aeff5382f51d352526345170facdae71451a5432ca4590a80e9c74b2cc5c3",
+    "verified.log": "7dab598533a2cba54967f07bc51340b52f7e224b14cdb8666a0743f0fea8e81f"
+  }
+}

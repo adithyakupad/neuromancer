@@ -42,3 +42,31 @@ Baseline ARX 50-step forecast p50/p95/p99/max over nine samples was 0.3180 / 0.3
 Style ARX 50-step forecast p50/p95/p99/max over nine samples was 0.3071 / 0.3286 / 0.3373 / 0.3395 ms. Process peak RSS 39,141,376 bytes.
 
 Both forecast hashes match the exact ARX4 golden array. This supplement leaves the prior style performance HOLD in force.
+
+## Prospective M018 performance qualification design
+
+This design is deferred until the pre-style SDK gate qualifies. The
+original M017 timing failures stand. No new performance samples were
+acquired for style selection in M018.
+
+For each coherent edit, freeze the baseline and candidate SHA, build
+separate same-version environments from the same dependencies, and
+check source hashes and exact fixture arrays before timing. Use 12
+consecutive process pairs in one session, six baseline-first and six
+candidate-first, alternating order. Use the unchanged nine-sample
+kernel workloads and warm-up from the M017 probe for both processes.
+Measure wall and CPU for every kernel, process RSS, thread settings,
+host and process order. Avoid parallel build/test tasks during the
+session. Preserve adverse samples and failures. Cap the session at
+30 minutes and 2 GiB per observed worker process. A missed resource or
+equivalence gate ends that edit's qualification.
+
+For each kernel, report pooled median and p95 ratios and process-pair
+bootstrap intervals by resampling complete pairs with a fixed seed
+`18017`, using 10,000 draws and percentile 95% intervals. Report each
+pair's result and the per-order summaries. Use the existing ceilings
+median ≤ 1.10, p95 ≤ 1.20 and peak RSS ratio ≤ 1.10. Ratios above the
+ceilings fail. If ratios meet the ceilings but uncertainty spans a
+ceiling, retain HOLD and report the precision limit. This additional
+precision rule cannot erase the original failed M017 measurements.
+The previous V1.1 throughput and latency targets remain unqualified.

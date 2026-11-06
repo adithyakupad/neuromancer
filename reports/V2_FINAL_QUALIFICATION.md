@@ -89,3 +89,9 @@ Mandatory workflows are substrate qualification, V1 package and
 regression qualification, and V2 SDK simulator qualification. All
 must finish successfully for publication readiness. No publication
 operation is part of this candidate review.
+
+## M018 follow-up
+
+The pre-style release revision and historical results remain intact.
+See the [M018 release decision](engineering/M018_RELEASE_READINESS.md)
+and [frame-stall evidence](engineering/M018_SDK_FRAME_STALL.md).

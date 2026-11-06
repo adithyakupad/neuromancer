@@ -20,3 +20,13 @@
   different epochs. Accelerated simulator timings characterize
   this software workload. Physical hardware and biological
   validation remain outside the evidence.
+
+## SDK reliability across hosts
+
+The local M016 result and the exact simulator response offsets
+remain qualified for the archived fixture. Hosted macOS Intel runs
+have also failed within the SDK's accelerated frame wait. The
+[M018 trace](../reports/engineering/M018_SDK_FRAME_STALL.md)
+records the last confirmed source and consumer boundaries.
+These observations give no device timing or real-time performance
+guarantee.

@@ -174,3 +174,46 @@ authorized devices and evidence.
 Questions. Where is hardware refused? Why is pA injection different
 from electrode µA? How should an unverified device identity affect
 actuation and logging?
+
+## 17. Stimulus execution receipts
+
+The SDK bridge carries one pending command. Its state contains the
+request ID, observation stop, expiry, electrode and submission frame.
+A candidate receipt is valid when the electrode matches and
+\(t_{submit} \le t_{commit} < \min(t_{bin\ end},t_{expiry})\).
+The SDK analysis event supplies the commitment. The adapter associates
+it with the pending request before releasing that state. The fixture
+verifier separately joins that receipt to the source callback and HDF5
+stimulus entry. A mismatch or an expired pending command fails the
+operation. See `cl_adapter.py`, `tests/test_neural_io.py` and
+`scripts/m016_verify.py`.
+
+Questions. Which field distinguishes the chosen electrode from the
+controller's logical channel? Why does the receipt expire even if a
+pulse eventually appears? How would multiple pending commands change
+the matching model and the ambiguity tests?
+
+Independent exercise. Draw two adjacent 500-frame bins and place
+submission, SDK commitment, source response and controller update on
+them. Show which evidence would remain if the SDK iterator timed out.
+
+## 18. Real-time limits and SDK frame stalls
+
+A sample interval is \(500 / 25000 = 0.020\) seconds in the SDK frame
+domain. In accelerated mode, a consumer request drives the simulator
+producer. The producer's frame range, consumer tick count, monotonic
+clock timestamps, and global supervisor deadline are separate state.
+The frozen fixture can reproduce its event offsets without establishing
+a maximum host scheduling latency. The SDK can time out inside an
+iterator call while substantial experiment wall budget remains.
+See `scripts/m016_watch.py`, `scripts/m014_supervise.py`,
+`tests/test_supervisor.py` and the
+[M018 frame timeline](../reports/engineering/M018_SDK_FRAME_STALL.md).
+
+Questions. Which clock measures the 20 ms bin? Can a short p95 latency
+bound worst-case behavior? Which additional boundary measurement would
+distinguish producer scheduling delay from request handoff failure?
+
+Independent exercise. Read a failure trace and label the last confirmed
+source batch, SDK tick, processed observation and reaped worker.
+Explain which causal links are observed and which remain hypotheses.

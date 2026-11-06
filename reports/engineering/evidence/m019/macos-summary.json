@@ -1,0 +1,1121 @@
+{
+  "outcomes": {
+    "stock": {
+      "returncode": 0,
+      "cleanup_verified": true,
+      "completed": 3
+    },
+    "custom": {
+      "returncode": 0,
+      "cleanup_verified": true,
+      "completed": 3
+    },
+    "record": {
+      "returncode": 1,
+      "cleanup_verified": true,
+      "completed": 0
+    },
+    "replay": {
+      "returncode": 1,
+      "cleanup_verified": true,
+      "completed": 0
+    },
+    "pi": {
+      "returncode": 1,
+      "cleanup_verified": true,
+      "completed": 0
+    }
+  },
+  "conditions": {
+    "custom": {
+      "supervisor": {
+        "status": "COMPLETED",
+        "cause": "normal completion",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/Users/runner/work/neuromancer/neuromancer/.venv-sdk/bin/python",
+              "scripts/m019_probe.py",
+              "/Users/runner/work/neuromancer/neuromancer/runs/m019/custom",
+              "custom",
+              "3"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 313081371028
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 313087235167
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 319790272449
+              }
+            ],
+            "terminal": "COMPLETED",
+            "cause": "normal exit",
+            "pid": 2821,
+            "pgid": 2821,
+            "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/m019/custom/supervision/stop-0",
+            "returncode": 0,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 313081371028,
+        "deadline_ns": 433081347701,
+        "work_cutoff_ns": 432281347701,
+        "finished_ns": 319790627047,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "cleanup_deadline_ns": 433081347701,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 0,
+        "sampled_peak_tree_rss_bytes": 155328512,
+        "elapsed_s": 7.135948618999976,
+        "processes": [
+          {
+            "pid": 2819,
+            "created": 1793951535.87517,
+            "name": "Python",
+            "peak_rss_bytes": 23056384,
+            "cpu_seconds": 0.32598444
+          },
+          {
+            "pid": 2821,
+            "created": 1793951536.122935,
+            "name": "python3.12",
+            "peak_rss_bytes": 49221632,
+            "cpu_seconds": 1.658842304
+          },
+          {
+            "pid": 2824,
+            "created": 1793951537.057035,
+            "name": "Python",
+            "peak_rss_bytes": 11100160,
+            "cpu_seconds": 0.083675124
+          },
+          {
+            "pid": 2825,
+            "created": 1793951537.062236,
+            "name": "Python",
+            "peak_rss_bytes": 46878720,
+            "cpu_seconds": 1.541764224
+          },
+          {
+            "pid": 2888,
+            "created": 1793951537.65589,
+            "name": "Python",
+            "peak_rss_bytes": 11214848,
+            "cpu_seconds": 0.098648144
+          },
+          {
+            "pid": 2923,
+            "created": 1793951538.388665,
+            "name": "Python",
+            "peak_rss_bytes": 12496896,
+            "cpu_seconds": 0.170273996
+          },
+          {
+            "pid": 2924,
+            "created": 1793951538.82797,
+            "name": "Python",
+            "peak_rss_bytes": 47632384,
+            "cpu_seconds": 1.821137952
+          },
+          {
+            "pid": 2928,
+            "created": 1793951539.701203,
+            "name": "Python",
+            "peak_rss_bytes": 11264000,
+            "cpu_seconds": 0.111210908
+          },
+          {
+            "pid": 2932,
+            "created": 1793951540.447087,
+            "name": "Python",
+            "peak_rss_bytes": 12943360,
+            "cpu_seconds": 0.131811604
+          },
+          {
+            "pid": 2933,
+            "created": 1793951540.862379,
+            "name": "Python",
+            "peak_rss_bytes": 47833088,
+            "cpu_seconds": 1.544271392
+          },
+          {
+            "pid": 2939,
+            "created": 1793951541.537789,
+            "name": "Python",
+            "peak_rss_bytes": 11165696,
+            "cpu_seconds": 0.11294818
+          },
+          {
+            "pid": 2940,
+            "created": 1793951542.178551,
+            "name": "Python",
+            "peak_rss_bytes": 12980224,
+            "cpu_seconds": 0.15399332
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 315564101883,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 315563573065,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 315564147990,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "count": 500,
+            "previous_stop": 8000
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 315564280092,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "stop": 8500,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 4,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        },
+        "session-1": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 317565261625,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 317564052323,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 317565350016,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "count": 500,
+            "previous_stop": 8000
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 317565462924,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "stop": 8500,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 4,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        },
+        "session-2": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 319321566949,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 319320620820,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 319321687464,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "count": 500,
+            "previous_stop": 8000
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 319322121311,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "stop": 8500,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 5,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        }
+      }
+    },
+    "pi": {
+      "supervisor": {
+        "status": "WORKER_FAILURE",
+        "cause": "WORKER_FAILURE",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/Users/runner/work/neuromancer/neuromancer/.venv-sdk/bin/python",
+              "scripts/m019_probe.py",
+              "/Users/runner/work/neuromancer/neuromancer/runs/m019/pi",
+              "pi",
+              "3"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 332295807658
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 332304192698
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 338627689622
+              }
+            ],
+            "terminal": "WORKER_FAILURE",
+            "cause": "exit 1",
+            "pid": 3153,
+            "pgid": 3153,
+            "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/m019/pi/supervision/stop-0",
+            "returncode": 1,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 332295807658,
+        "deadline_ns": 452295772297,
+        "work_cutoff_ns": 451495772297,
+        "finished_ns": 338669832387,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "cleanup_deadline_ns": 452295772297,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 1,
+        "sampled_peak_tree_rss_bytes": 212627456,
+        "elapsed_s": 6.936863456000026,
+        "processes": [
+          {
+            "pid": 3152,
+            "created": 1793951555.088261,
+            "name": "Python",
+            "peak_rss_bytes": 22900736,
+            "cpu_seconds": 0.304318264
+          },
+          {
+            "pid": 3153,
+            "created": 1793951555.347619,
+            "name": "Python",
+            "peak_rss_bytes": 51466240,
+            "cpu_seconds": 1.303987104
+          },
+          {
+            "pid": 3158,
+            "created": 1793951556.174056,
+            "name": "Python",
+            "peak_rss_bytes": 11161600,
+            "cpu_seconds": 0.092829308
+          },
+          {
+            "pid": 3159,
+            "created": 1793951556.182271,
+            "name": "Python",
+            "peak_rss_bytes": 48013312,
+            "cpu_seconds": 4.240438656
+          },
+          {
+            "pid": 3160,
+            "created": 1793951556.912425,
+            "name": "Python",
+            "peak_rss_bytes": 10969088,
+            "cpu_seconds": 0.09720997399999999
+          },
+          {
+            "pid": 3183,
+            "created": 1793951559.465059,
+            "name": "Python",
+            "peak_rss_bytes": 51601408,
+            "cpu_seconds": 0.859436064
+          },
+          {
+            "pid": 3267,
+            "created": 1793951560.568199,
+            "name": "Python",
+            "peak_rss_bytes": 11124736,
+            "cpu_seconds": 0.086016204
+          },
+          {
+            "pid": 3268,
+            "created": 1793951560.59019,
+            "name": "Python",
+            "peak_rss_bytes": 12718080,
+            "cpu_seconds": 0.104993114
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": false,
+          "processed": 16,
+          "receipts": 8,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 337670791773,
+            "target": 8000,
+            "receipts": 1
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 337669626739,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 337670895005,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "count": 500,
+            "previous_stop": 8000
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 337671040738,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "stop": 8500,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 4,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        }
+      }
+    },
+    "record": {
+      "supervisor": {
+        "status": "WORKER_FAILURE",
+        "cause": "WORKER_FAILURE",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/Users/runner/work/neuromancer/neuromancer/.venv-sdk/bin/python",
+              "scripts/m019_probe.py",
+              "/Users/runner/work/neuromancer/neuromancer/runs/m019/record",
+              "record",
+              "3"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 320321894099
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 320327294464
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 324908125287
+              }
+            ],
+            "terminal": "WORKER_FAILURE",
+            "cause": "exit 1",
+            "pid": 2948,
+            "pgid": 2948,
+            "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/m019/record/supervision/stop-0",
+            "returncode": 1,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 320321894099,
+        "deadline_ns": 440321870788,
+        "work_cutoff_ns": 439521870788,
+        "finished_ns": 324908453574,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "cleanup_deadline_ns": 440321870788,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 1,
+        "sampled_peak_tree_rss_bytes": 212258816,
+        "elapsed_s": 4.984276707999982,
+        "processes": [
+          {
+            "pid": 2947,
+            "created": 1793951543.140588,
+            "name": "Python",
+            "peak_rss_bytes": 22908928,
+            "cpu_seconds": 0.267364288
+          },
+          {
+            "pid": 2948,
+            "created": 1793951543.367564,
+            "name": "Python",
+            "peak_rss_bytes": 48267264,
+            "cpu_seconds": 1.010094912
+          },
+          {
+            "pid": 2951,
+            "created": 1793951543.966542,
+            "name": "Python",
+            "peak_rss_bytes": 11116544,
+            "cpu_seconds": 0.089306052
+          },
+          {
+            "pid": 2952,
+            "created": 1793951543.972533,
+            "name": "Python",
+            "peak_rss_bytes": 47271936,
+            "cpu_seconds": 2.570325216
+          },
+          {
+            "pid": 2953,
+            "created": 1793951544.519458,
+            "name": "Python",
+            "peak_rss_bytes": 11186176,
+            "cpu_seconds": 0.103360292
+          },
+          {
+            "pid": 2975,
+            "created": 1793951545.694187,
+            "name": "Python",
+            "peak_rss_bytes": 50155520,
+            "cpu_seconds": 1.090680592
+          },
+          {
+            "pid": 3000,
+            "created": 1793951546.770299,
+            "name": "python3.12",
+            "peak_rss_bytes": 11194368,
+            "cpu_seconds": 0.08094322400000001
+          },
+          {
+            "pid": 3007,
+            "created": 1793951546.814643,
+            "name": "Python",
+            "peak_rss_bytes": 12595200,
+            "cpu_seconds": 0.11422586400000001
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": false,
+          "processed": 8,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 323975358921,
+            "target": 4000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 323975396180,
+            "target": 4500
+          },
+          "next_failure": {
+            "event": "next_failed",
+            "host_ns": 324077879198,
+            "target": 4500,
+            "error": "TimeoutError('Timeout waiting for timestamp 4500')"
+          },
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 323973190922,
+            "frame_clock": "sdk_frame_index",
+            "start": 3500,
+            "count": 500,
+            "previous_stop": 3500
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 323973309894,
+            "frame_clock": "sdk_frame_index",
+            "start": 3500,
+            "stop": 4000,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 8,
+          "held_samples": 2,
+          "first_held": {
+            "begin_ns": 324001802915,
+            "observed_ns": 324059956833,
+            "stable": true,
+            "producer_pid": 2952,
+            "producer_status": "sleeping",
+            "producer_cpu_ns": 2209209344,
+            "written": 4000,
+            "request": 4500,
+            "stim": 4500,
+            "paused": 0,
+            "shutdown": 0,
+            "ready": 1
+          },
+          "last_held": {
+            "begin_ns": 324074748759,
+            "observed_ns": 324075075410,
+            "stable": true,
+            "producer_pid": 2952,
+            "producer_status": "sleeping",
+            "producer_cpu_ns": 2209209344,
+            "written": 4000,
+            "request": 4500,
+            "stim": 4500,
+            "paused": 0,
+            "shutdown": 0,
+            "ready": 1
+          },
+          "held_statuses": [
+            "sleeping"
+          ]
+        }
+      }
+    },
+    "replay": {
+      "supervisor": {
+        "status": "WORKER_FAILURE",
+        "cause": "WORKER_FAILURE",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/Users/runner/work/neuromancer/neuromancer/.venv-sdk/bin/python",
+              "scripts/m019_probe.py",
+              "/Users/runner/work/neuromancer/neuromancer/runs/m019/replay",
+              "replay",
+              "3"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 325444823991
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 325453878649
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 331730520461
+              }
+            ],
+            "terminal": "WORKER_FAILURE",
+            "cause": "exit 1",
+            "pid": 3090,
+            "pgid": 3090,
+            "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/m019/replay/supervision/stop-0",
+            "returncode": 1,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 325444823991,
+        "deadline_ns": 445444797568,
+        "work_cutoff_ns": 444644797568,
+        "finished_ns": 331730927424,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "cleanup_deadline_ns": 445444797568,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 1,
+        "sampled_peak_tree_rss_bytes": 205246464,
+        "elapsed_s": 6.694864336000023,
+        "processes": [
+          {
+            "pid": 3064,
+            "created": 1793951548.249394,
+            "name": "Python",
+            "peak_rss_bytes": 23154688,
+            "cpu_seconds": 0.28957096800000004
+          },
+          {
+            "pid": 3090,
+            "created": 1793951548.492729,
+            "name": "Python",
+            "peak_rss_bytes": 51453952,
+            "cpu_seconds": 1.465383872
+          },
+          {
+            "pid": 3126,
+            "created": 1793951549.819276,
+            "name": "Python",
+            "peak_rss_bytes": 10985472,
+            "cpu_seconds": 0.09195114
+          },
+          {
+            "pid": 3127,
+            "created": 1793951549.827967,
+            "name": "Python",
+            "peak_rss_bytes": 47964160,
+            "cpu_seconds": 3.918279424
+          },
+          {
+            "pid": 3130,
+            "created": 1793951550.705202,
+            "name": "Python",
+            "peak_rss_bytes": 11165696,
+            "cpu_seconds": 0.122638036
+          },
+          {
+            "pid": 3135,
+            "created": 1793951552.163551,
+            "name": "Python",
+            "peak_rss_bytes": 51970048,
+            "cpu_seconds": 1.271376304
+          },
+          {
+            "pid": 3141,
+            "created": 1793951553.786508,
+            "name": "Python",
+            "peak_rss_bytes": 2387968,
+            "cpu_seconds": 0.080863184
+          },
+          {
+            "pid": 3140,
+            "created": 1793951553.705437,
+            "name": "Python",
+            "peak_rss_bytes": 11198464,
+            "cpu_seconds": 0.21372096000000002
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": false,
+          "processed": 16,
+          "receipts": 8,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 331003741707,
+            "target": 8000,
+            "receipts": 1
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 331001217791,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": {
+            "kind": "m018_read_begin",
+            "host_monotonic_ns": 331003871501,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "count": 500,
+            "previous_stop": 8000
+          },
+          "source_last_batch": {
+            "kind": "m018_read_end",
+            "host_monotonic_ns": 331004312163,
+            "frame_clock": "sdk_frame_index",
+            "start": 8000,
+            "stop": 8500,
+            "count": 500,
+            "spike_count": 1
+          },
+          "ring_samples": 3,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        }
+      }
+    },
+    "stock": {
+      "supervisor": {
+        "status": "COMPLETED",
+        "cause": "normal completion",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/Users/runner/work/neuromancer/neuromancer/.venv-sdk/bin/python",
+              "scripts/m019_probe.py",
+              "/Users/runner/work/neuromancer/neuromancer/runs/m019/stock",
+              "stock",
+              "3"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 300996449140
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 301002635389
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 312515044801
+              }
+            ],
+            "terminal": "COMPLETED",
+            "cause": "normal exit",
+            "pid": 2703,
+            "pgid": 2703,
+            "stop_file": "/Users/runner/work/neuromancer/neuromancer/runs/m019/stock/supervision/stop-0",
+            "returncode": 0,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 300996449140,
+        "deadline_ns": 420996425012,
+        "work_cutoff_ns": 420196425012,
+        "finished_ns": 312515347477,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@A5967AB5-131C-450F-95F0-8C671E10C5F2",
+        "cleanup_deadline_ns": 420996425012,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 0,
+        "sampled_peak_tree_rss_bytes": 323264512,
+        "elapsed_s": 11.94725538800003,
+        "processes": [
+          {
+            "pid": 2700,
+            "created": 1793951523.806275,
+            "name": "Python",
+            "peak_rss_bytes": 22835200,
+            "cpu_seconds": 0.34637670400000004
+          },
+          {
+            "pid": 2703,
+            "created": 1793951524.031781,
+            "name": "python3.12",
+            "peak_rss_bytes": 48881664,
+            "cpu_seconds": 1.478122624
+          },
+          {
+            "pid": 2705,
+            "created": 1793951524.783743,
+            "name": "Python",
+            "peak_rss_bytes": 11071488,
+            "cpu_seconds": 0.091379396
+          },
+          {
+            "pid": 2706,
+            "created": 1793951524.788503,
+            "name": "Python",
+            "peak_rss_bytes": 214368256,
+            "cpu_seconds": 4.265685952
+          },
+          {
+            "pid": 2709,
+            "created": 1793951525.4315,
+            "name": "Python",
+            "peak_rss_bytes": 11231232,
+            "cpu_seconds": 0.147869104
+          },
+          {
+            "pid": 2789,
+            "created": 1793951527.663045,
+            "name": "Python",
+            "peak_rss_bytes": 9490432,
+            "cpu_seconds": 0.052532560000000006
+          },
+          {
+            "pid": 2795,
+            "created": 1793951528.098016,
+            "name": "Python",
+            "peak_rss_bytes": 201756672,
+            "cpu_seconds": 3.426478144
+          },
+          {
+            "pid": 2796,
+            "created": 1793951528.795086,
+            "name": "Python",
+            "peak_rss_bytes": 11280384,
+            "cpu_seconds": 0.080851886
+          },
+          {
+            "pid": 2801,
+            "created": 1793951530.364555,
+            "name": "Python",
+            "peak_rss_bytes": 12976128,
+            "cpu_seconds": 0.117904064
+          },
+          {
+            "pid": 2802,
+            "created": 1793951530.802738,
+            "name": "Python",
+            "peak_rss_bytes": 216801280,
+            "cpu_seconds": 6.636624383999999
+          },
+          {
+            "pid": 2805,
+            "created": 1793951531.947063,
+            "name": "Python",
+            "peak_rss_bytes": 11288576,
+            "cpu_seconds": 0.092230108
+          },
+          {
+            "pid": 2814,
+            "created": 1793951534.920806,
+            "name": "Python",
+            "peak_rss_bytes": 12976128,
+            "cpu_seconds": 0.223264712
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 304763651238,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 304763168540,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": null,
+          "source_last_batch": null,
+          "ring_samples": 4,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        },
+        "session-1": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 307478435941,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 307477676890,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": null,
+          "source_last_batch": null,
+          "ring_samples": 3,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        },
+        "session-2": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 312168676343,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 312167892861,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": null,
+          "source_last_batch": null,
+          "ring_samples": 5,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        }
+      }
+    }
+  },
+  "sha256": {
+    "custom/outer.json": "0c853f246cb13a5037d329342e6782baae36eb6b9bb0bb1dda95f5f1fab4c4b6",
+    "custom/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/returned.json": "3779f6fcd17c3fcd91c4fcc89924c7de03a4e5259aaf484ee7743b6056090ca1",
+    "custom/session-0/client.jsonl": "d946ed395e7fd4c5616db0a725c795864db55e61b47ef094ae9e42733542b286",
+    "custom/session-0/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-0/m018_source_trace.jsonl": "9b1c6fc1d950ad7fbe6d38655c7f1de39721bc0ed335be889b58fa0b4629871d",
+    "custom/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-0/ring.jsonl": "938bcc6e5b13a19024e216af7a752c6d536b224e92c1184f490de28779fd74d3",
+    "custom/session-0/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "custom/session-1/client.jsonl": "8ebf51e1d6892fe0d98d6fb87b299e9ce6c36ddf0d59fb361d6cc37be1dcca04",
+    "custom/session-1/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-1/m018_source_trace.jsonl": "d46f80785e92ab0830d1c60865ef05fe07161c29d5ffc9449049e32a0f4379f3",
+    "custom/session-1/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-1/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-1/ring.jsonl": "a33cde118bc44fcaf3475a689266f1ad87efa6673cc4b55c20fba7d2a44876c2",
+    "custom/session-1/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "custom/session-2/client.jsonl": "fa79fe1190c8f882ab7fde7f43f1c9ea5614a97052b791b8ddaef5dd78b83c5d",
+    "custom/session-2/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-2/m018_source_trace.jsonl": "587d07e0a68881012374645ebba3ffb79dd1e2b9e919aa97a6fd87f455b56380",
+    "custom/session-2/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-2/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "custom/session-2/ring.jsonl": "58e8835de2337954a8fa5096bdcffef6f412ba4ddc42f738bcc82a7fc0c71c9c",
+    "custom/session-2/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "custom/supervision/progress.json": "bd311bc5d7723c076518f0c2c0c08ba1f2a9807a658bf96bd7d0be8627a3c03e",
+    "custom/supervision/terminal.json": "3779f6fcd17c3fcd91c4fcc89924c7de03a4e5259aaf484ee7743b6056090ca1",
+    "custom/supervision/worker-0.log": "a2bf087f7af2ee129d0269822b14c39f97958ff1c90d0b646ffc9effd04590cb",
+    "custom_descendants.json": "838f3d40074883630a12920bd3fe4fd87ba86e6241682283a648eccf7f1043c5",
+    "outcomes.json": "8294181900474a2fccb815f6dca5735430d237910b77e3ecb8fcba3469bfe86d",
+    "pi/outer.json": "267778e928483554e406dfbbbf718a59e2617efd51e02742b8e8bda577af6658",
+    "pi/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pi/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pi/returned.json": "a9ca6abca8b08b7fdab03260091a8845883fcb86d379a8b010d391d5c49ead04",
+    "pi/session-0/2026-11-06_07-52-39.461+00-00_m019.h5": "56609d4807a6f5a413f17c36ccfd971476aafc9741c1b25ba7550da79406d4da",
+    "pi/session-0/client.jsonl": "760ceb0eccead75fe8144546c8933b7f00df57641704e2ea76c50bbb5a28abcf",
+    "pi/session-0/m018_source_trace.jsonl": "de4dbf5dde63bf5d3e6351be8e5c914daeb6a4adae331640c1613530e76c920c",
+    "pi/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pi/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pi/session-0/ring.jsonl": "a7c6a4012325864413543f27b185149aa269583e2c8a8ba32191b2cbb706cd13",
+    "pi/session-0/source.jsonl": "92def10d5af7ebcc3239001d3fe7b26b00ae54fc5b395545ec5aa7c079b3c9fd",
+    "pi/supervision/progress.json": "4160c60d62b69b7afb67c16a8032e8944d5338c73e197f16ed666c30ae7aeb65",
+    "pi/supervision/terminal.json": "a9ca6abca8b08b7fdab03260091a8845883fcb86d379a8b010d391d5c49ead04",
+    "pi/supervision/worker-0.log": "0d8459cfc0982f0938a6c022deaf3aa84a752f01f7a53df36e020c215639befe",
+    "pi_descendants.json": "df56de4b0f3e82bf0d4b6523d94d41bd2804939d693f8d9c1b9fdf80cda98455",
+    "record/outer.json": "267778e928483554e406dfbbbf718a59e2617efd51e02742b8e8bda577af6658",
+    "record/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "record/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "record/returned.json": "16fd58cde9534dbaf83385ee5160a16510c74d14599f1fd1bd8c534b3525b900",
+    "record/session-0/2026-11-06_07-52-25.672+00-00_m019.h5": "d159b557daa45caf820ef15663bd8dbdc6fa494a28fd08122a3537a8db879519",
+    "record/session-0/client.jsonl": "c0f7fe3b2c99ef8e0791780b18483e21e032cee818f2c220fbf7e503645d0be0",
+    "record/session-0/m018_source_trace.jsonl": "8edc92adf0d18510265ef3790199fb25a136c70abe7d10c4846111146b42e722",
+    "record/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "record/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "record/session-0/ring.jsonl": "020b9563fad9e9fd14d2c8ad7832122b45c9178e6818ff7a328fd14599dbe56f",
+    "record/session-0/source.jsonl": "f7ffea9b08a4be9f97454a92d318a6e5ca8d6be44f30d4e864c1b0a7fd04d362",
+    "record/supervision/progress.json": "61a1640234bd5c6e3c70debfe907aa9b4f9174b71774df5b823ca0f6c7ec9e2a",
+    "record/supervision/terminal.json": "16fd58cde9534dbaf83385ee5160a16510c74d14599f1fd1bd8c534b3525b900",
+    "record/supervision/worker-0.log": "26c2fdf2e49a0d8a6e2d3352cc95f5014a242f642851de54244166ab3a3ae6e2",
+    "record_descendants.json": "9ef7f17a7e0f3a97dbc99048ffd92961417097d0f09a2900f4ab8d6c9f90148a",
+    "replay/outer.json": "267778e928483554e406dfbbbf718a59e2617efd51e02742b8e8bda577af6658",
+    "replay/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay/returned.json": "930d60a854b950913e336a51bfb2e5576741b8cfb278b1466f1a63f62cc4a515",
+    "replay/session-0/2026-11-06_07-52-32.155+00-00_m019.h5": "c905ecd6543dc57b67eb2b39a20fd4a43af7fc8d36f0cc17d56c8e06219fb57a",
+    "replay/session-0/client.jsonl": "2bfd030b141448a86a38948c5b90a7f1cfefa7a9f05afa92d34cca730ae3c213",
+    "replay/session-0/m018_source_trace.jsonl": "1a6feacb9ba11a4a7e49b39df548c9936de77642a532eb12fa2d2f8629cfd817",
+    "replay/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay/session-0/ring.jsonl": "54613e41fab405da03cd6e8911c577a67c1fcbef494393b79fb417b5fd433a85",
+    "replay/session-0/source.jsonl": "92def10d5af7ebcc3239001d3fe7b26b00ae54fc5b395545ec5aa7c079b3c9fd",
+    "replay/supervision/progress.json": "8f72a8ea8813bf6d1f23d2b0cca9f134aa52d921b14273d8fff317a4924c25e9",
+    "replay/supervision/terminal.json": "930d60a854b950913e336a51bfb2e5576741b8cfb278b1466f1a63f62cc4a515",
+    "replay/supervision/worker-0.log": "0d8459cfc0982f0938a6c022deaf3aa84a752f01f7a53df36e020c215639befe",
+    "replay_descendants.json": "97a4e9cd67fbb1759e73adc075c3cf9f1f3dd75922eaec05dba30973672313c4",
+    "stock/outer.json": "0c853f246cb13a5037d329342e6782baae36eb6b9bb0bb1dda95f5f1fab4c4b6",
+    "stock/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/returned.json": "49da008ec20555953eabb2b9940d80e7ced9cf3bcc843cd8b09329b3ab8e5c2b",
+    "stock/session-0/client.jsonl": "d1b6ea8c76018b229cbb6f01b9544138fd7416b15c0d41d50efd2e9eef0176c6",
+    "stock/session-0/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/ring.jsonl": "8a9f94edb2d02e810281a8f0060fa49468dc75b5fa30a2940188209cefbbe279",
+    "stock/session-1/client.jsonl": "a37b35eb680936ea0de9fe0bbc6caf1d194a1c9d556d54fdebe163a1496bf1bf",
+    "stock/session-1/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-1/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-1/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-1/ring.jsonl": "15ce5dc66b9d9b093947193fb97562901238f5dfba22e32d8c26ed54fe2939b5",
+    "stock/session-2/client.jsonl": "fd0d5ebfb38dc8e6ce3179f235836855c6d93024526aac067bdb842f826e5189",
+    "stock/session-2/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-2/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-2/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-2/ring.jsonl": "d9532f40360fd588dc09b55c02ba9b3171278e3a90e90a7a88bf31844929ae32",
+    "stock/supervision/progress.json": "1d4e9473d65b149b0002d00d3a2c017d7c725b2ecfc06bcf2d0dfd07a786d25d",
+    "stock/supervision/terminal.json": "49da008ec20555953eabb2b9940d80e7ced9cf3bcc843cd8b09329b3ab8e5c2b",
+    "stock/supervision/worker-0.log": "f38e62df4006604139cc1e2b96fa20e6ee7d752c5fd7158dde0994ce95fe3806",
+    "stock_descendants.json": "1066c37e9f1c0273b3d8f17d2bd37d903b8d196fc2946eb136b3a187fb53ebe2"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "outcomes": null,
+  "conditions": {
+    "stock": {
+      "supervisor": {
+        "status": "COMPLETED",
+        "cause": "normal completion",
+        "error": null,
+        "workers": [
+          {
+            "index": 0,
+            "command": [
+              "/tmp/neuromancer-final-sdk-env/bin/python",
+              "scripts/m019_probe.py",
+              "/tmp/neuro-m019.cEEykS/stock",
+              "stock",
+              "1"
+            ],
+            "state": "REAPED",
+            "events": [
+              {
+                "state": "CREATED",
+                "monotonic_ns": 1438530532938291
+              },
+              {
+                "state": "RUNNING",
+                "monotonic_ns": 1438530534203666
+              },
+              {
+                "state": "REAPED",
+                "monotonic_ns": 1438531377338208
+              }
+            ],
+            "terminal": "COMPLETED",
+            "cause": "normal exit",
+            "pid": 64136,
+            "pgid": 64136,
+            "stop_file": "/private/tmp/neuro-m019.cEEykS/stock/supervision/stop-0",
+            "returncode": 0,
+            "parent_reaped": true
+          }
+        ],
+        "started_ns": 1438530532938291,
+        "deadline_ns": 1438650532931375,
+        "work_cutoff_ns": 1438649732931375,
+        "finished_ns": 1438531377405708,
+        "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+        "post_deadline_cleanup": false,
+        "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+        "cleanup_deadline_ns": 1438650532931375,
+        "persistence_errors": [],
+        "cleanup_verified": true
+      },
+      "watchdog": {
+        "timed_out": false,
+        "forced_cleanup_pids": [],
+        "remaining": [],
+        "exit_code": 0,
+        "sampled_peak_tree_rss_bytes": 382550016,
+        "elapsed_s": 0.9421596669126302,
+        "processes": [
+          {
+            "pid": 64135,
+            "created": 1793951311.467799,
+            "name": "Python",
+            "peak_rss_bytes": 28901376,
+            "cpu_seconds": 0.048027458
+          },
+          {
+            "pid": 64136,
+            "created": 1793951311.53487,
+            "name": "Python",
+            "peak_rss_bytes": 60686336,
+            "cpu_seconds": 0.15745937599999998
+          },
+          {
+            "pid": 64137,
+            "created": 1793951311.778768,
+            "name": "Python",
+            "peak_rss_bytes": 16695296,
+            "cpu_seconds": 0.019079583
+          },
+          {
+            "pid": 64138,
+            "created": 1793951311.780416,
+            "name": "Python",
+            "peak_rss_bytes": 242073600,
+            "cpu_seconds": 0.931301984
+          },
+          {
+            "pid": 64139,
+            "created": 1793951311.895423,
+            "name": "Python",
+            "peak_rss_bytes": 16728064,
+            "cpu_seconds": 0.018263749000000003
+          },
+          {
+            "pid": 64140,
+            "created": 1793951312.279381,
+            "name": "Python",
+            "peak_rss_bytes": 18497536,
+            "cpu_seconds": 0.022329455999999998
+          }
+        ]
+      },
+      "sessions": {
+        "session-0": {
+          "completed": true,
+          "processed": 16,
+          "receipts": 0,
+          "last_processed": {
+            "event": "processed",
+            "host_ns": 1065263527725416,
+            "target": 8000,
+            "receipts": 0
+          },
+          "last_next": {
+            "event": "next_begin",
+            "host_ns": 1065263527623041,
+            "target": 8000
+          },
+          "next_failure": null,
+          "source_last_read": null,
+          "source_last_batch": null,
+          "ring_samples": 2,
+          "held_samples": 0,
+          "first_held": null,
+          "last_held": null,
+          "held_statuses": []
+        }
+      }
+    }
+  },
+  "sha256": {
+    "stock/outer.json": "0c853f246cb13a5037d329342e6782baae36eb6b9bb0bb1dda95f5f1fab4c4b6",
+    "stock/outer_stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/outer_stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/returned.json": "6b360b2b6c09dfa8bb8cc424222e76d7b1bd581fa2edb76b7ee1fada79b90b89",
+    "stock/session-0/client.jsonl": "c0132e539b56b471d7059be0b2caf39c4bd013d234455de3a6d9b67cefbda0c9",
+    "stock/session-0/complete": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/observer.ready": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/observer.stop": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stock/session-0/ring.jsonl": "69d79574851d8beb52bb5b3c97899e22ea439c642378b5fe485368d63ab2bfed",
+    "stock/supervision/progress.json": "7a415a2f47738de91432ddcb8e677d222fcf7146c1c16ee8988a1dbbc5ff9c10",
+    "stock/supervision/terminal.json": "6b360b2b6c09dfa8bb8cc424222e76d7b1bd581fa2edb76b7ee1fada79b90b89",
+    "stock/supervision/worker-0.log": "5d7b81c6d2c1741738d3223652c93cb875ac27a62d9e1fc3d6ec881b43e9bce1",
+    "stock_descendants.json": "3859cbd9bad7fd816b77b36474e15c44a5bb6e6ef844e2ebe8c691d9000420c8"
+  }
+}

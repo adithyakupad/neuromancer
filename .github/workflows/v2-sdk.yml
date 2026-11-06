@@ -1,20 +1,18 @@
-name: M019 SDK producer-boundary diagnostic
+name: Recover SDK producer and recording diagnostics
 on:
   push:
-    branches: [engineering/m019-producer-boundary]
-    paths:
-      - scripts/m019_*.py
-      - .github/workflows/v2-sdk.yml
+    branches: [engineering/recover-sdk]
+    paths: ['tools/recover_sdk/**', '.github/workflows/v2-sdk.yml']
 permissions:
   contents: read
 jobs:
   diagnostic:
+    timeout-minutes: 16
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-15-intel]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,13 +23,14 @@ jobs:
       - run: |
           mkdir -p runs
           .venv-sdk/bin/python -m pip check
-          .venv-sdk/bin/python -m pip freeze > runs/m019-dependencies.txt
-          uname -srm > runs/m019-platform.txt
-      - run: |
-          export PYTHONPATH="$PWD/src"
-          .venv-sdk/bin/python scripts/m019_suite.py runs/m019
+          .venv-sdk/bin/python -m pip freeze > runs/sdk-dependencies.txt
+          uname -srm > runs/sdk-platform.txt
+          .venv-sdk/bin/python tools/recover_sdk/suite.py runs/recover-sdk
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: m019-${{ matrix.os }}
-          path: runs/m019*
+          name: recover-sdk-${{ matrix.os }}
+          path: |
+            runs/sdk-*
+            runs/recover-sdk/**
+            !runs/recover-sdk/shadow/cl/**

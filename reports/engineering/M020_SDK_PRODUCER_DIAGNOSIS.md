@@ -43,3 +43,26 @@ not raise the timeout or claim an SDK defect based on this suite.
 [Exact hosted diagnostic](https://github.com/adithyakupad/neuromancer/actions/runs/42297238288) ·
 [M019 positive failure](M019_PRODUCER_BOUNDARY.md) ·
 [Official SDK simulator contract](https://docs.corticallabs.com/cl/sim)
+
+Across 64 traced consumed batches per host, median / p95 / max
+request-load-to-write time was 0.250 / 0.505 / 0.544 ms on Linux
+and 0.298 / 0.845 / 12.530 ms on macOS Intel. These times exclude
+the unknown interval before the producer load. Across M020 and
+M021, summed watchdog wall time was 21.575 s and 49.876 s, and
+maximum sampled tree RSS was 303,349,760 and 211,103,744 bytes,
+respectively. All raw phases, frame-coded recordings, prior local
+failures, watchdog records and checksums are in
+[retained artifacts](evidence/recover).
+
+For upstream reproduction, put `tools/recover_sdk/probe.py` on
+`PYTHONPATH` in a disposable Python 3.12 environment with
+`cl-sdk==1.0.0`. Use the accelerated simulator only. The repository
+suite preserves the watchdog, diagnostic variant and exact order:
+
+```sh
+/path/to/sdk-python tools/recover_sdk/suite.py /tmp/new-recover-sdk
+```
+
+The script qualifies only the named synthetic fixture. It is suitable
+for describing the observed boundary to the SDK maintainer, with
+the M019 failure artifact attached separately.

@@ -1,15 +1,20 @@
-name: V2 SDK simulator qualification
-on: [push, pull_request, workflow_dispatch]
+name: M019 SDK producer-boundary diagnostic
+on:
+  push:
+    branches: [engineering/m019-producer-boundary]
+    paths:
+      - scripts/m019_*.py
+      - .github/workflows/v2-sdk.yml
 permissions:
   contents: read
 jobs:
-  simulator:
+  diagnostic:
     strategy:
       fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-15-intel]
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -17,24 +22,16 @@ jobs:
           python-version: '3.12'
       - run: python -m venv .venv-sdk
       - run: .venv-sdk/bin/python -m pip install cl-sdk==1.0.0
-      - run: .venv-sdk/bin/python -m pip check
       - run: |
           mkdir -p runs
-          .venv-sdk/bin/python -m pip freeze > runs/v2-sdk-dependencies.txt
+          .venv-sdk/bin/python -m pip check
+          .venv-sdk/bin/python -m pip freeze > runs/m019-dependencies.txt
+          uname -srm > runs/m019-platform.txt
       - run: |
           export PYTHONPATH="$PWD/src"
-          if [ "${{ matrix.os }}" = macos-15-intel ]; then
-            export NEUROMANCER_M018_TRACE=1
-          fi
-          .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk 120 .venv-sdk/bin/python scripts/m016_run.py runs/v2-sdk matrix
-          .venv-sdk/bin/python scripts/m017_sdk_verify.py runs/v2-sdk
-      - name: Bounded stock SDK control
-        if: ${{ always() && matrix.os == 'macos-15-intel' }}
-        run: |
-          export PYTHONPATH="$PWD/src"
-          .venv-sdk/bin/python scripts/m016_watch.py runs/v2-sdk-stock 120 .venv-sdk/bin/python scripts/m018_sdk_only.py
+          .venv-sdk/bin/python scripts/m019_suite.py runs/m019
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: v2-sdk-${{ matrix.os }}
-          path: runs/v2-sdk*
+          name: m019-${{ matrix.os }}
+          path: runs/m019*

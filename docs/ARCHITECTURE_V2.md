@@ -64,3 +64,11 @@ Use the earlier style performance thresholds, paired median no more than
 10% slower, p95 no more than 20% slower, and peak process RSS no more than
 10% higher. Capture nine samples per measured kernel with no exclusions.
 An unfavorable result remains a failure and keeps the style branch isolated.
+
+The supplemental forecast-only timing uses the existing ARX4 golden
+fixture, nine consecutive 50-step forecasts per process, fixed baseline
+then style order, unchanged one-thread requests and 60 s per process.
+Compare to the original exact golden forecast. The separate M015
+reduced simulation rerun uses its frozen eight-case workload and
+120 s cap. These measurements add coverage after the independent style
+HOLD, with no replacement of any failed timing sample or acceptance gate.

@@ -27,6 +27,14 @@ AUTHORIZED_REPLACEMENTS = {
         "e6ac4422f251c6de7602321c7cc4dc01bffd19a00ff76f8f0e7bcb1bd46eca86",
         "f78dac7ee7caea0f66bd2d573e648933e765b654c6178a90b2778a7debce5bb0",
     ),
+    "README.md": (
+        "edcff65561b74ddcac4694b2d3909557b3950d3b894dd7c54aad5a161dc5ac3c",
+        "ce57d5ab99905c794d6a7af83688b03ad8d0d9da62b1c4cb4f83c33b2f90ca50",
+    ),
+    "docs/V2_QUICKSTART.md": (
+        "38fa9de5ca93fc97a4785c9d6c8f42dc1c1c8f14ae99064ab08c3c5a2eb678f9",
+        "6f4399ef57e1daa207f2734cb15e10a3dfc2e1dff56a47422c68cf16feb6ce17",
+    ),
 }
 
 

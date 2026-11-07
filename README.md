@@ -1,9 +1,11 @@
-# NEUROMANCER V2.0 research candidate
+# NEUROMANCER V2 Core Research Candidate
 
 NEUROMANCER is a reproducible in-silico platform for stimulation-response
 identification, causal feedback, spiking plasticity and reservoir experiments.
 This branch packages the cumulative V1 and M013–M016 implementation as
 `2.0.0rc1`.
+
+**Supported release boundary:** The independently qualified core covers in-silico Brian2 dynamics, simulation-based identification and control, supervision, reproducible evidence and its installable CLI. The **Cortical Labs CL SDK 1.0.0 accelerated simulator adapter is experimental and NOT reliability-qualified**. In particular, macOS Intel has shown intermittent frame-producer stalls after a published request and before the source callback. A passing SDK matrix does not resolve this failure. There has been **no living-neuron or physical hardware execution** and there are **no hard-real-time guarantees**. See the [approved core support boundary](docs/V2_CORE_RELEASE_SCOPE_REVIEW.md), [release notes](docs/V2_CORE_RELEASE_NOTES_DRAFT.md), and [open SDK reliability issue](https://github.com/adithyakupad/neuromancer/issues/7).
 
 | Path | Evidence |
 |---|---|

@@ -88,7 +88,10 @@ def injected():
   if (p/'worker/ready.json').exists() and (p/'worker/partial.txt').exists():
    triggered=True
    raise ClockError('injected post-ready inconsistency')
- if mode not in ('clock_failure','clock_failure_pre_ready') and active()-started>350000000:
+ if (mode not in ('clock_failure','clock_failure_pre_ready')
+     and active()-started>350000000
+     and (p/'worker/partial.txt').exists()
+     and (mode!='expired_suspend_descendant' or (p/'worker/child/partial.txt').exists())):
   triggered=True
   value=native()+(10000000000 if mode.startswith('expired_suspend') else 200000000)
   if resume_at is None:resume_at=value

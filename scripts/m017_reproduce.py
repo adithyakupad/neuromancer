@@ -9,7 +9,7 @@ import sys
 
 MANIFEST = Path("reports/engineering/evidence/m017/base_preservation.json")
 MANIFEST_SHA256 = "f88c41d51355e115863fd1a12dee6901aa4034ac7bf68f86c0c64e622e1719b1"
-# M026 v1 authorizes exact active-file replacements, never path-wide exemptions.
+# M026 and final core-release fixture authorization use exact file hashes, never path-wide exemptions.
 AUTHORIZED_REPLACEMENTS = {
     "scripts/m016_run.py": (
         "781893b0e301d2b858b185b19db4b322451c0d8ed58255a356dda5ad4a826a1b",
@@ -22,6 +22,10 @@ AUTHORIZED_REPLACEMENTS = {
     "tests/supervisor_worker.py": (
         "c19982062ba119b1a86db187d62c2ee9b1f25725398a526a36e60072250b2fef",
         "2e9a482da8a7819926531119fc9c73b2c4106f9e44f8368858bbddd3ac722471",
+    ),
+    "tests/test_suspend_clock.py": (
+        "e6ac4422f251c6de7602321c7cc4dc01bffd19a00ff76f8f0e7bcb1bd46eca86",
+        "f78dac7ee7caea0f66bd2d573e648933e765b654c6178a90b2778a7debce5bb0",
     ),
 }
 

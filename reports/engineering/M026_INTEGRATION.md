@@ -35,6 +35,12 @@ scratch. The frozen SDK and supervisor deadlines remain in force.
 No locked cohorts or new scientific experiments are run.
 
 Record one exact-head hosted attempt, including failures and cleanup.
+The superseded implementation was dispatched before an independent
+collection check found that the plain pytest entry point could not
+import the repository's scripts namespace. Retain those runs as
+superseded evidence. The corrected test loads the verifier from its
+file path. Qualification uses one hosted attempt on the corrected
+source, with the existing workflows and all assertions unchanged.
 Record executed outcomes and raw artifact hashes on a separate
 qualification evidence ref based on the tested integration source.
 The integration ref stays at the source SHA actually tested. This

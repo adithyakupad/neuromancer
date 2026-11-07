@@ -2,16 +2,18 @@
 import json
 import os
 from pathlib import Path
+import runpy
 import subprocess
 import sys
 
 import pytest
 
 from neuromancer.clocks import clock_domain, now_ns
-from scripts.m017_reproduce import verify_history
 
 
 def test_unauthorized_change_to_authorized_fixture_is_rejected(monkeypatch):
+    script = Path(__file__).resolve().parents[1] / "scripts/m017_reproduce.py"
+    verify_history = runpy.run_path(str(script))["verify_history"]
     read_bytes = Path.read_bytes
 
     def edited_fixture(path):

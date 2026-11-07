@@ -52,3 +52,9 @@ The current conversational go-ahead permits **preparing a scope-review proposal*
 - SDK matrix: https://github.com/adithyakupad/neuromancer/actions/runs/42325130966
 - Original M019 failure: https://github.com/adithyakupad/neuromancer/actions/runs/42183363096
 - M026 release options: https://github.com/adithyakupad/neuromancer/blob/release/v2-0-final-integration-evidence/reports/V2_RELEASE_DECISION.md
+
+## Release-document review, subsequent CI
+
+The proposed user-facing disclosure text is [V2 core release notes draft](V2_CORE_RELEASE_NOTES_DRAFT.md). Those notes retain the original supported/experimental distinction and all negative scientific conclusions.
+
+The documentation-only scope review branch itself reproduced a **macOS Intel SDK CI failure** at https://github.com/adithyakupad/neuromancer/actions/runs/42333658869 while Ubuntu SDK passed. This is consistent with the existing unresolved intermittent reliability blocker; failure subtype has not yet been independently classified from the retained artifact. Do not characterize the documentation branch as universally CI-green. Core-only publication would require separate explicit approval of the revised release gate and confirmation that core tests, package integrity and reproducibility still pass. This does not alter the full-SDK HOLD.

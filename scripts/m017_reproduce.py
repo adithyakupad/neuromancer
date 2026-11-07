@@ -8,26 +8,40 @@ import subprocess
 import sys
 
 MANIFEST = Path("reports/engineering/evidence/m017/base_preservation.json")
-STYLE_PATHS = {
-    "src/neuromancer/control.py", "src/neuromancer/identify.py",
-    "src/neuromancer/online_identify.py", "src/neuromancer/predictive.py",
-    "src/neuromancer/predictive_planner.py", "src/neuromancer/plasticity.py",
-    "src/neuromancer/functional_learning.py", "src/neuromancer/reservoir.py",
-    "src/neuromancer/causal_memory.py", "src/neuromancer/neural_io.py",
-    "src/neuromancer/cl_adapter.py", "src/neuromancer/cl_response_source.py",
-    "scripts/m013_pilot.py", "scripts/m014_pilot.py", "scripts/m015_memory.py",
-    "scripts/m016_run.py", "scripts/m013_analyze.py", "scripts/m014_analyze.py",
+MANIFEST_SHA256 = "f88c41d51355e115863fd1a12dee6901aa4034ac7bf68f86c0c64e622e1719b1"
+# M026 v1 authorizes exact active-file replacements, never path-wide exemptions.
+AUTHORIZED_REPLACEMENTS = {
+    "scripts/m016_run.py": (
+        "781893b0e301d2b858b185b19db4b322451c0d8ed58255a356dda5ad4a826a1b",
+        "03661773740d1b0fcb83fa8eddc1496f06c5fd432f72119670e84f6ebae3dad6",
+    ),
+    "scripts/m016_verify.py": (
+        "9d2e26072c913e47695cdf54146a73d670bde94d6c162e329120273d978c41f2",
+        "46cb116e269c25a0ec89c60db12c69c519ca756ee28a2e835dc8fb57fb91ee3d",
+    ),
+    "tests/supervisor_worker.py": (
+        "c19982062ba119b1a86db187d62c2ee9b1f25725398a526a36e60072250b2fef",
+        "2e9a482da8a7819926531119fc9c73b2c4106f9e44f8368858bbddd3ac722471",
+    ),
 }
 
 
 def verify_history():
-    protected = json.loads(MANIFEST.read_text())["protected_sha256"]
+    manifest_bytes = MANIFEST.read_bytes()
+    if hashlib.sha256(manifest_bytes).hexdigest() != MANIFEST_SHA256:
+        raise AssertionError("Protected baseline manifest differs")
+    protected = json.loads(manifest_bytes)["protected_sha256"]
+    for name, (original, replacement) in AUTHORIZED_REPLACEMENTS.items():
+        if protected.get(name) != original:
+            raise AssertionError(f"Replacement does not match baseline: {name}")
+        protected[name] = replacement
     for name, expected in protected.items():
         path = Path(name)
+        if name in AUTHORIZED_REPLACEMENTS and (path.is_symlink() or not path.is_file()):
+            raise AssertionError(f"Authorized replacement must be a regular file: {name}")
         data = os.readlink(path).encode() if path.is_symlink() else path.read_bytes()
         if hashlib.sha256(data).hexdigest() != expected:
-            if name not in STYLE_PATHS and name != "scripts/m016_verify.py":
-                raise AssertionError(f"Protected baseline path differs: {name}")
+            raise AssertionError(f"Protected baseline path differs: {name}")
     return len(protected)
 
 

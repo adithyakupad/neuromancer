@@ -1,0 +1,32 @@
+[
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "check"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp=reports/engineering/evidence/m009/test_tmp",
+    "--junitxml=reports/engineering/evidence/m009/tests.xml"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "tools/m008_traced_repeats.py",
+    "reports/engineering/evidence/m009/process_trials"
+  ],
+  [
+    "/private/tmp/neuromancer-m007-20261101/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-deps",
+    "--no-build-isolation",
+    ".",
+    "-w",
+    "reports/engineering/evidence/m009/wheel"
+  ]
+]

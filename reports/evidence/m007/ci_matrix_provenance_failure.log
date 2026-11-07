@@ -1,0 +1,125 @@
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	﻿2026-11-01T19:58:20.6251564Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6251848Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml^[[0m
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6275545Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6275683Z env:
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6275797Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6275942Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6276068Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6276210Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6276397Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6276620Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6276842Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6277198Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6277402Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6277637Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:20.6277838Z ##[endgroup]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:36.6745057Z ..........F............................................................. [ 39%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:09.4940705Z ........................................................................ [ 78%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5042833Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5044267Z .......................................                                  [100%]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5044500Z =================================== FAILURES ===================================
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5044743Z _______________ test_execution_lineage_frozen_before_neural_run ________________
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5044902Z 
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5045003Z     def test_execution_lineage_frozen_before_neural_run():
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5045205Z         import hashlib,json,subprocess
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5045485Z         from pathlib import Path
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5045736Z         root=Path(__file__).resolve().parents[1]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5045953Z         provenance=root/'runs/m002_3-calibration-01/provenance.json'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5046268Z         if not provenance.exists():provenance=root/'reports/evidence/m002_3/results/raw_provenance.json'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5046612Z         if not provenance.exists():pytest.skip('Scientific evidence not yet generated')
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5046934Z         record=json.loads(provenance.read_text())
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5047450Z         prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5047900Z         assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5048385Z         for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5048733Z         old=json.loads((prereg.parent/'preservation.json').read_text())
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5049074Z >       for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5049557Z                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5050006Z E       AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5050386Z E         
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5050655Z E         - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5051081Z E         + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5051333Z 
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5051442Z tests/test_calibration.py:123: AssertionError
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5051760Z =============================== warnings summary ===============================
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5052068Z tests/test_control.py: 22 warnings
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5052685Z tests/test_substrate.py: 3 warnings
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5053391Z   /opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5054096Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5054308Z 
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5054544Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5054952Z =========================== short test summary info ============================
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5055746Z FAILED tests/test_calibration.py::test_execution_lineage_frozen_before_neural_run - AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5056345Z   
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5056587Z   - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5056979Z   + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5057472Z 1 failed, 182 passed, 25 warnings in 64.57s (0:01:04)
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5058126Z The object was created here (most recent call only):
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5058863Z   File '/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5059672Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5060356Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5060889Z The object was created here (most recent call only):
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5061238Z   File '/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.5061743Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (ubuntu-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:25.7349459Z ##[error]Process completed with exit code 1.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	﻿2026-11-01T19:58:37.6356680Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6357010Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml^[[0m
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6390090Z shell: /bin/bash -e {0}
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6390280Z env:
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6390430Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6390660Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6390870Z   OMP_NUM_THREADS: 1
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6391070Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6391590Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6392260Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6392610Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6393020Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6393330Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:37.6393570Z ##[endgroup]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:58:55.7167360Z ..........F............................................................. [ 39%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:20.8772420Z ........................................................................ [ 78%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6830370Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6831400Z .......................................                                  [100%]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6832200Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6832790Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6833710Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6834670Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6835450Z The object was created here (most recent call only):
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6836050Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6836820Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6837330Z =================================== FAILURES ===================================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6837660Z _______________ test_execution_lineage_frozen_before_neural_run ________________
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6837890Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6837990Z     def test_execution_lineage_frozen_before_neural_run():
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6838290Z         import hashlib,json,subprocess
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6838560Z         from pathlib import Path
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6838810Z         root=Path(__file__).resolve().parents[1]
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6839180Z         provenance=root/'runs/m002_3-calibration-01/provenance.json'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6839620Z         if not provenance.exists():provenance=root/'reports/evidence/m002_3/results/raw_provenance.json'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6840080Z         if not provenance.exists():pytest.skip('Scientific evidence not yet generated')
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6840490Z         record=json.loads(provenance.read_text())
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6840840Z         prereg=root/'reports/evidence/m002_3/PREREGISTRATION.md'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6841220Z         assert record['preregistration_sha256']==hashlib.sha256(prereg.read_bytes()).hexdigest()
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6841760Z         for name,digest in record['source_hashes'].items():assert hashlib.sha256((root/'src'/name).read_bytes()).hexdigest()==digest
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6842660Z         old=json.loads((prereg.parent/'preservation.json').read_text())
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6843080Z >       for name,digest in old['sha256'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6843470Z                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6843930Z E       AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6844690Z E         
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6844950Z E         - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6845380Z E         + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6845640Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6845770Z tests/test_calibration.py:123: AssertionError
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6846000Z =============================== warnings summary ===============================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6846290Z tests/test_control.py: 22 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6846510Z tests/test_substrate.py: 3 warnings
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6847070Z   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6847670Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6847860Z 
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6848020Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6848370Z =========================== short test summary info ============================
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6848970Z FAILED tests/test_calibration.py::test_execution_lineage_frozen_before_neural_run - AssertionError: assert '1ba64ea63799...45ed6cfe4bf3b' == '14cb91196032...c94803ad25846'
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6849500Z   
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6849680Z   - 14cb91196032783746d63c77812b9c14a3a05a6a89d6835f598c94803ad25846
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6850030Z   + 1ba64ea63799bece3f90aaf9227ac2c705353a5168be6f631d645ed6cfe4bf3b
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.6850340Z 1 failed, 182 passed, 25 warnings in 60.82s (0:01:00)
+qualification (macos-latest)	Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml	2026-11-01T19:59:38.8142790Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,28 @@
+# Actual invocations, repository root; /tmp/neuromancer-audit/venv/bin/python used throughout.
+# Before scientific run:
+python -m pytest -q --junitxml=reports/evidence/m002_3/baseline_tests.xml
+python -m pytest -q tests/test_calibration.py
+# Preregistration ad5c213, execution source df50431 committed before next command.
+MPLCONFIGDIR=/tmp/neuromancer-m0023-mpl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python -m neuromancer.calibration_diagnostic --output runs/m002_3-calibration-01
+# During bounded run, before outcome inspection: analysis source d3190d6 and eight software fixture tests.
+python -m pytest -q tests/test_calibration.py
+python -m pytest -q --junitxml=reports/evidence/m002_3/tests.xml
+python -m py_compile reports/evidence/m002_3/analyze.py reports/evidence/m002_3/verify.py reports/evidence/m002_3/figures.py
+
+# After all50 trials/400 branches completed, no additional neural experiment:
+python reports/evidence/m002_3/analyze.py runs/m002_3-calibration-01 reports/evidence/m002_3/results
+# First attempt failed with duplicate gain keyword; preserved failure log and original analysis.
+# Corrected receipt-row exporter only; fixture strengthened.
+python -m pytest -q tests/test_calibration.py
+python reports/evidence/m002_3/analyze.py runs/m002_3-calibration-01 reports/evidence/m002_3/results
+python reports/evidence/m002_3/verify.py runs/m002_3-calibration-01 reports/evidence/m002_3/results
+MPLCONFIGDIR=/tmp/neuromancer-m0023-mpl python reports/evidence/m002_3/figures.py reports/evidence/m002_3/results
+python reports/evidence/m002_3/export_tables.py reports/evidence/m002_3/results
+MPLCONFIGDIR=/tmp/neuromancer-m0023-mpl python -m pytest -q --junitxml=reports/evidence/m002_3/final_tests.xml
+MPLCONFIGDIR=/tmp/neuromancer-m0023-mpl python reports/evidence/m002_3/verify.py runs/m002_3-calibration-01 reports/evidence/m002_3/results
+python reports/evidence/m002_3/analyze.py runs/m002_3-calibration-01 runs/m002_3-analysis-recheck
+# Compare eight scientific output SHA256 values; analysis_lineage measured wall time excluded.
+# Regenerate ten PNG/SVG files and compare every SHA256; corrected layout/fallback labels before final figure freeze.
+python -m pip check
+sysctl -n hw.memsize hw.physicalcpu machdep.cpu.brand_string
+# Read-only hardware query required unsandboxed execution; no machine settings changed.

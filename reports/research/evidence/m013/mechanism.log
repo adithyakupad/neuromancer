@@ -1,0 +1,59 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_actual_network_disabled_replay_and_restoration ______________
+
+    def test_actual_network_disabled_replay_and_restoration():
+        from neuromancer._brian import BrianEngine
+        config = Config(network_id=13000,replicate_id=1300,root_seed=20261104,trial_id='mechanism')
+        original = BrianEngine(config)
+>       plastic = PlasticReservoir(config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_plasticity.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/neuromancer/plasticity.py:81: in __init__
+    self.traces = b.Synapses(self.engine.group, self.engine.group, model,
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/synapses/synapses.py:919: in __init__
+    model = Equations(model)
+            ^^^^^^^^^^^^^^^^
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/equations/equations.py:621: in __init__
+    self.check_identifiers()
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/equations/equations.py:823: in check_identifiers
+    Equations.check_identifier(name)
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/equations/equations.py:807: in check_identifier
+    check_func(identifier)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+identifier = 'e'
+
+    def check_identifier_constants(identifier):
+        """
+        Make sure that identifier names do not clash with function names.
+        """
+        if identifier in DEFAULT_CONSTANTS:
+>           raise SyntaxError(
+                f"'{identifier}' is the name of a constant, cannot be used as "
+                "a variable name."
+            )
+E           SyntaxError: 'e' is the name of a constant, cannot be used as a variable name.
+
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/equations/equations.py:238: SyntaxError
+----------------------------- Captured stderr call -----------------------------
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib:__init__.py:541 /Users/adithyaupad/.matplotlib is not a writable directory
+WARNING  matplotlib:__init__.py:554 Matplotlib created a temporary cache directory at /var/folders/br/fbs3tt8n6y30846w865ym9180000gn/T/matplotlib-j8xj04pw because there was an issue with the default path (/Users/adithyaupad/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+WARNING  matplotlib.font_manager:font_manager.py:1095 Matplotlib is building the font cache; this may take a moment.
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+=========================== short test summary info ============================
+FAILED tests/test_plasticity.py::test_actual_network_disabled_replay_and_restoration
+1 failed, 3 passed in 9.12s

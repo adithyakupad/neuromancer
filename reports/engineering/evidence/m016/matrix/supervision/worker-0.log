@@ -1,0 +1,13 @@
+Warning: Jitter detection is currently not supported in cl-sdk. This may lead to unexpected loop timing behaviour if your loop body takes a long time to execute.
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 121, in <module>
+    main(Path(sys.argv[1]).resolve(),sys.argv[2])
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 114, in main
+    completed.append(run_case(output,name,enabled,delay))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 93, in run_case
+    stims=len(view.stims),source=view.attributes['m016_source'])
+                                 ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/cl/util/recording_view.py", line 868, in __getitem__
+    raise KeyError(key)
+KeyError: 'm016_source'

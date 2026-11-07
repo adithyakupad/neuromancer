@@ -1,0 +1,79 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/evidence/m005b_1/final_test_fixtures",
+        "--junitxml=reports/evidence/m005b_1/final_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 728921133827541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 728921135458500
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 728959369813458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 40466,
+      "pgid": 40466,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_1/final_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "reports/evidence/m005b_1/final_replay.py"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 728921133827541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 728959373236041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 728959610317875
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 40663,
+      "pgid": 40663,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_1/final_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 728921133827541,
+  "deadline_ns": 730322465200833,
+  "work_cutoff_ns": 730321665200833,
+  "finished_ns": 728959610381083,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 730322465200833,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

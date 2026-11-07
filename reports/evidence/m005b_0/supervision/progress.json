@@ -1,0 +1,95 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/test_design.py",
+        "--basetemp=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/synthetic_fixtures",
+        "--junitxml=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/synthetic_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 723978022581291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 723978024126500
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 723981237242250
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 35937,
+      "pgid": 35937,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/regression_fixtures",
+        "--junitxml=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/regression_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 723978022581291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 723981238778125
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 724026787895458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 35963,
+      "pgid": 35963,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/benchmark.py"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 723978022581291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 724026789514958
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 37045,
+      "pgid": 37045,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/supervision/stop-2"
+    }
+  ]
+}

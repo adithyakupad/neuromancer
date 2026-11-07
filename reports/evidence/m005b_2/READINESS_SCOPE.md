@@ -1,0 +1,9 @@
+# M005B.2 readiness audit scope
+
+Scientific protocol011, controllers, comparator set, seeds and gates remain unchanged. No new scientific outcome, model selection or target evaluation has been opened.
+
+A mandatory resource-feasibility concern was identified from existing M005B.1 measurements before scientific acquisition. Complete only bounded readiness verification and reporting under the frozen1,200s preflight deadline: full regression suite, existing artifact/source preservation, clock/domain/cleanup and independent625-bank feasibility checks, independent resource projection. No new neural scientific trajectory or extra throughput probe. Historical regression neural fixtures are unchanged software tests.
+
+Projection method is explicit and not a new scientific endpoint: use actual original FIXED/RLS/BIAS smoke branch durations, two simulated seconds each, with the slower observed RLS timing retained instead of selecting its favorable technical replay. Give ideal three-worker scaling, old measured batched PI throughput for all primary nonpredictive branches/prefixes, and the fastest observed per-tick timing as an optimistic proxy for secondary PI. Show alternative sensitivity including the faster RLS replay. These are scheduling forecasts, not mathematical bounds or benchmarks of an unexecuted M005B.2 runner. A favorable sensitivity case cannot replace a credible verified scheduling contract under the mandatory frozen cap.
+
+If the qualified-path projection exceeds development10,800s, resource readiness is HOLD and no primary/fault/validation acquisition proceeds. No resource limit is enlarged and no controller/simulator optimization is applied within this scientific mission. Preserve this stop and propose prospective engineering qualification or separately authorized budget amendment. Scientific hypotheses remain unevaluated, not falsified.

@@ -1,0 +1,162 @@
+{
+  "experiment_kind": "simulation",
+  "prefix": {
+    "start_us": 0,
+    "stop_us": 51000000,
+    "calibration_freeze_us": 47000000,
+    "bins": 2550
+  },
+  "confirmation": {
+    "start_us": 51000000,
+    "stop_us": 57000000,
+    "bins": 300,
+    "late_start_us": 52000000
+  },
+  "bin_us": 20000,
+  "neural_dt_us": 100,
+  "observation": {
+    "channels": 20,
+    "neurons_per_channel": 5,
+    "valid": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "coverage_us": [
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000,
+      20000
+    ],
+    "available_us": "stop_us",
+    "E_channel_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13,
+      15,
+      16,
+      17,
+      18
+    ],
+    "filtered_uninitialized_before_us": 15000000
+  },
+  "currents_unit": "pA",
+  "rate_unit": "Hz",
+  "time_unit": "integer us",
+  "charge_unit": "pC",
+  "nominal_charge_rule": "50 * sum(channel_current_pA * duration_s)",
+  "record_contract": "Requested current equals delivered rows; start/stop/available and masks checked in execution. No simulated dropout.",
+  "lookup": "Identical frozen q across gains; invalid map safe-zero branches remain labeled failures",
+  "array_axes": {
+    "observed_counts": [
+      "network",
+      "noise",
+      "gain",
+      "condition",
+      "bin",
+      "recording_channel"
+    ],
+    "filtered_sector_rates_hz": [
+      "network",
+      "noise",
+      "gain",
+      "condition",
+      "bin",
+      "E_sector"
+    ],
+    "neuron_counts": [
+      "network",
+      "noise",
+      "gain",
+      "condition",
+      "neuron_whole6s"
+    ],
+    "delivered_current_pA": [
+      "network",
+      "noise",
+      "gain",
+      "condition",
+      "bin",
+      "stimulation_channel"
+    ],
+    "prefix_counts": [
+      "network",
+      "noise",
+      "prefix_bin",
+      "recording_channel"
+    ],
+    "prefix_filtered_hz": [
+      "network",
+      "noise",
+      "prefix_bin",
+      "E_sector"
+    ],
+    "prefix_delivered_pA": [
+      "network",
+      "noise",
+      "prefix_bin",
+      "stimulation_channel"
+    ],
+    "stimulation": [
+      "network",
+      "noise",
+      "stimulation_channel",
+      "member_neuron"
+    ],
+    "recording": [
+      "network",
+      "noise",
+      "recording_channel",
+      "member_neuron"
+    ],
+    "raw_rate_hz": [
+      "network",
+      "noise",
+      "gain",
+      "condition",
+      "bin"
+    ]
+  }
+}

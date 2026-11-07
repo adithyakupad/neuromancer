@@ -1,0 +1,65 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "ignore_term",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/provenance_repair_fixtures/test_real_worker_lifecycle_ign1/worker",
+        "1050520086758916"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1050519086804916
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1050519089405875
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1050520087683083
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1050520287635541
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1050520487957958
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1050520500556541
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 56409,
+      "pgid": 56409,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/provenance_repair_fixtures/test_real_worker_lifecycle_ign1/supervision/stop-0",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1050519086804916,
+  "deadline_ns": 1050520886758916,
+  "work_cutoff_ns": 1050520086758916,
+  "finished_ns": 1050520512655375,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1050520886758916,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

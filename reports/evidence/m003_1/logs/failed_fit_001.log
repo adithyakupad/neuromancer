@@ -1,0 +1,24 @@
+STATIC {'size': 1, 'lambda': 0.0001, 'features': 4, 'loss': 0.2165752493778961}
+FIR {'size': 10, 'lambda': 0.1, 'features': 40, 'loss': 0.19235245486376068}
+ARX {'size': 4, 'lambda': 0.1, 'features': 32, 'loss': 0.18366521580029666}
+AR {'size': 1, 'lambda': 0.0001, 'features': 4, 'loss': 0.4148495696481837}
+STATIC_SHUFFLED {'size': 1, 'lambda': 0.1, 'features': 4, 'loss': 0.41502943587854446}
+FIR_SHUFFLED {'size': 10, 'lambda': 0.1, 'features': 40, 'loss': 0.42653668582375254}
+ARX_SHUFFLED {'size': 4, 'lambda': 0.1, 'features': 32, 'loss': 0.332474710316399}
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m003_1/fit_models.py", line 84, in <module>
+    p=argparse.ArgumentParser();p.add_argument('raw');p.add_argument('output');a=p.parse_args();main(a.raw,a.output)
+                                                                                                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m003_1/fit_models.py", line 73, in main
+    ablation=np.array([forecast(model,replaced,d['delivered'],plan) for plan in plans])
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/necessity.py", line 59, in forecast
+    return Predictor.load(mapped).forecast(y_history,u_history,plan)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/identify.py", line 46, in forecast
+    y,u=arrays(y_history,u_history)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/identify.py", line 15, in arrays
+    if y.ndim!=2 or y.shape[1]!=4 or u.shape!=y.shape:raise ValueError('Expected aligned Nx4 rates and currents')
+                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Expected aligned Nx4 rates and currents

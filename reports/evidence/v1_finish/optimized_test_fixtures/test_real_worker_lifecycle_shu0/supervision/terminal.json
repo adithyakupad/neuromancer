@@ -1,0 +1,65 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "shutdown_block",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/optimized_test_fixtures/test_real_worker_lifecycle_shu0/worker",
+        "788564351033041"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 788563351078958
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 788563353613291
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 788564351263791
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 788564553389875
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 788564751810833
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 788564763392791
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 59015,
+      "pgid": 59015,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/optimized_test_fixtures/test_real_worker_lifecycle_shu0/supervision/stop-0",
+      "signal_errors": [
+        null,
+        null
+      ],
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 788563351078958,
+  "deadline_ns": 788565151033041,
+  "work_cutoff_ns": 788564351033041,
+  "finished_ns": 788564775981583,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 788565151033041,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

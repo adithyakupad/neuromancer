@@ -1,0 +1,22 @@
+Warning: Jitter detection is currently not supported in cl-sdk. This may lead to unexpected loop timing behaviour if your loop body takes a long time to execute.
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 118, in <module>
+    main(Path(sys.argv[1]).resolve(),sys.argv[2])
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 111, in main
+    completed.append(run_case(output,name,enabled,delay))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 88, in run_case
+    with sdk.RecordingView(str(recording.file)) as view:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/cl/util/recording_view.py", line 261, in __init__
+    self.file = tables.open_file(file_path, mode='r')
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/tables/file.py", line 325, in open_file
+    return File(filename, mode, title, root_uep, filters, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/tables/file.py", line 811, in __init__
+    self._g_new(filename, mode, **params)
+  File "tables/hdf5extension.pyx", line 499, in tables.hdf5extension.File._g_new
+  File "/private/tmp/neuromancer-m016-sdk/lib/python3.12/site-packages/tables/utils.py", line 172, in check_file_access
+    raise FileNotFoundError(f"``{path}`` does not exist")
+FileNotFoundError: ``/Users/adithyaupad/Developer/neuromancer/{'name': '2026-11-05_22-48-33.509+00-00_SMOKE.h5', 'path': '/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m016/smoke/SMOKE/2026-11-05_22-48-33.509+00-00_SMOKE.h5', 'uri_path': '2026-11-05_22-48-33.509%2B00-00_SMOKE.h5'}`` does not exist

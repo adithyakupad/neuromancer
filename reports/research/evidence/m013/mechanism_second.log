@@ -1,0 +1,237 @@
+...F                                                                     [100%]
+=================================== FAILURES ===================================
+_____________ test_actual_network_disabled_replay_and_restoration ______________
+
+    def test_actual_network_disabled_replay_and_restoration():
+        from neuromancer._brian import BrianEngine
+        config = Config(network_id=13000,replicate_id=1300,root_seed=20261104,trial_id='mechanism')
+        original = BrianEngine(config)
+        plastic = PlasticReservoir(config)
+        commands = [Command('mechanism',str(i),i*20000,(0.,0.,0.,0.)) for i in range(5)]
+        try:
+            expected = original.run_commands(commands)
+            initial_weights = plastic.weights()
+            actual = plastic.engine.run_commands(commands)
+>           assert [x.observation for x in actual] == [x.observation for x in expected]
+E           AssertionError: assert [Observation(...ma_version=1)] == [Observation(...ma_version=1)]
+E             
+E             At index 0 diff: Observation(trial_id='mechanism', start_us=0, stop_us=20000, available_us=20000, counts=(1, 2, 2, 1, 0, 2, 2, 2, 3, 2, 0, 1, 2, 2, 1, 2, 2, 2, 1, 2), rates_hz=(np.float64(10.0), np.float64(20.0), np.float64(20.0), np.float64(10.0), np.float64(0.0), np.float64(20.0), np.float64(20.0), np.float64(20.0), np.float64(30.0), np.float64(20.0), np.float64(0.0), np.float64(10.0), np.float64(20.0), np.float64(20.0), np.float64(10.0), np.float64(20.0), np.float64(20.0), np.float64(20.0), np.float64(10.0), np.float64(20.0)), coverage_us=(20000, 20000, 20000, 20000,...
+E             
+E             ...Full output truncated (2 lines hidden), use '-vv' to show
+
+tests/test_plasticity.py:53: AssertionError
+----------------------------- Captured stderr call -----------------------------
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib.font_manager:font_manager.py:1095 Matplotlib is building the font cache; this may take a moment.
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+=========================== short test summary info ============================
+FAILED tests/test_plasticity.py::test_actual_network_disabled_replay_and_restoration
+1 failed, 3 passed in 9.90s

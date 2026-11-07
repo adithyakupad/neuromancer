@@ -1,0 +1,90 @@
+{
+  "status": "DESCRIPTIVE_TUNING_ONLY",
+  "execution": "PARTIAL_RESOURCE_CAP",
+  "scientific": "NOT_QUALIFIED",
+  "m005b": "HOLD",
+  "selected_controller": null,
+  "confirmation_trials": 0,
+  "networks": 10,
+  "replicates": [
+    40
+  ],
+  "branches": 120,
+  "models": {
+    "ZERO": {
+      "STATIC": {
+        "mean_mae_hz": 1.0146875,
+        "mean_bias_hz": -1.0146875,
+        "mean_nominal_charge_pC": 120000.0
+      },
+      "LOSS": {
+        "mean_mae_hz": 1.0229166666666667,
+        "mean_bias_hz": -1.0229166666666667,
+        "mean_nominal_charge_pC": 120000.0
+      }
+    },
+    "FIXED": {
+      "STATIC": {
+        "mean_mae_hz": 0.21742187499999988,
+        "mean_bias_hz": -0.006406250000000084,
+        "mean_nominal_charge_pC": 264315.8231328872
+      },
+      "LOSS": {
+        "mean_mae_hz": 0.4486979166666667,
+        "mean_bias_hz": -0.42406250000000006,
+        "mean_nominal_charge_pC": 264315.8231328872
+      }
+    },
+    "MAX": {
+      "STATIC": {
+        "mean_mae_hz": 1.648802083333333,
+        "mean_bias_hz": 1.648802083333333,
+        "mean_nominal_charge_pC": 503639.9999999999
+      },
+      "LOSS": {
+        "mean_mae_hz": 0.6585677083333332,
+        "mean_bias_hz": 0.6413541666666666,
+        "mean_nominal_charge_pC": 503639.9999999999
+      }
+    },
+    "PI10_5": {
+      "STATIC": {
+        "mean_mae_hz": 0.2247656249999999,
+        "mean_bias_hz": -0.005677083333333461,
+        "mean_nominal_charge_pC": 265210.1981328873
+      },
+      "LOSS": {
+        "mean_mae_hz": 0.2598177083333333,
+        "mean_bias_hz": -0.19083333333333335,
+        "mean_nominal_charge_pC": 284122.07313288725
+      }
+    },
+    "PI20_10": {
+      "STATIC": {
+        "mean_mae_hz": 0.27143229166666666,
+        "mean_bias_hz": -0.003645833333333408,
+        "mean_nominal_charge_pC": 264253.0700078872
+      },
+      "LOSS": {
+        "mean_mae_hz": 0.2274479166666667,
+        "mean_bias_hz": -0.10468750000000009,
+        "mean_nominal_charge_pC": 294023.6918828872
+      }
+    },
+    "PI30_15": {
+      "STATIC": {
+        "mean_mae_hz": 0.46522135416666666,
+        "mean_bias_hz": 0.044791666666666605,
+        "mean_nominal_charge_pC": 268214.06532038725
+      },
+      "LOSS": {
+        "mean_mae_hz": 0.24434895833333328,
+        "mean_bias_hz": -0.056979166666666727,
+        "mean_nominal_charge_pC": 304221.1434453873
+      }
+    }
+  },
+  "invalid_calibrations": 0,
+  "fallback_decisions": 0,
+  "wall_s": 0.41915450000669807
+}

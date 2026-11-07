@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_6/verify_supplement.py", line 11, in <module>
+    np.testing.assert_allclose([v['fixed_static_evoked_hz'],v['fixed_loss_evoked_hz'],v['scaling_residual_hz']],[s,l,l-.6*s],atol=2e-12,rtol=1e-11)
+  File "/private/tmp/neuromancer-m004-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1780, in assert_allclose
+    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),
+  File "/private/tmp/neuromancer-m004-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 894, in assert_array_compare
+    val = comparison(x, y)
+          ^^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m004-venv/lib/python3.12/site-packages/numpy/testing/_private/utils.py", line 1771, in compare
+    return np._core.numeric.isclose(x, y, rtol=rtol, atol=atol,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/neuromancer-m004-venv/lib/python3.12/site-packages/numpy/_core/numeric.py", line 2443, in isclose
+    result = (less_equal(abs(x - y), atol + rtol * abs(y))
+                             ~~^~~
+numpy._core._exceptions._UFuncNoLoopError: ufunc 'subtract' did not contain a loop with signature matching types (dtype('<U21'), dtype('float64')) -> None

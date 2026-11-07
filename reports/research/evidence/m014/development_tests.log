@@ -1,0 +1,244 @@
+.F..                                                                     [100%]
+=================================== FAILURES ===================================
+__________________ test_recurrence_ablation_and_reset_replay ___________________
+
+    def test_recurrence_ablation_and_reset_replay():
+        from neuromancer._brian import BrianEngine
+        engine=BrianEngine(Config(network_id=14000,replicate_id=140000,root_seed=20261105,trial_id='test'))
+        commands=commands_for_trial(0,1,20,'test')
+        weights=[np.array(s.weight[:]) for s in engine.synapses]
+        try:
+            reset_trial(engine,140000,False)
+            assert not any(s.active for s in engine.synapses)
+            actual=engine.run_commands(commands)
+            reset_trial(engine,140000,False)
+            replay=engine.run_commands(commands)
+            for left,right in zip(actual,replay):
+                for field in fields(left.observation):
+                    np.testing.assert_array_equal(getattr(left.observation,field.name),getattr(right.observation,field.name))
+            for index,synapse in enumerate(engine.synapses):
+>               np.testing.assert_array_equal(synapse.weight[:],weights[index])
+
+tests/test_reservoir.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/units/fundamentalunits.py:1569: in __eq__
+    return self._comparison(other, "==", operator.eq)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/units/fundamentalunits.py:1553: in _comparison
+    fail_for_dimension_mismatch(self, other, message, value1=self, value2=other)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+obj1 = array([14.47517185, 12.01519531, 16.25574425, ..., 15.48943681,
+       12.99928785, 12.57840753], shape=(39694,)) * pamp
+obj2 = array([1.44751719e-11, 1.20151953e-11, 1.62557443e-11, ...,
+       1.54894368e-11, 1.29992879e-11, 1.25784075e-11], shape=(39694,))
+error_message = 'Cannot perform comparison [14.47517185 12.01519531 ... 12.99928785 12.57840753] pA == [1.44751719e-11 1.20151953e-11 ... 1.29992879e-11 1.25784075e-11], units do not match'
+error_quantities = {'value1': '[14.47517185 12.01519531 ... 12.99928785 12.57840753] pA', 'value2': '[1.44751719e-11 1.20151953e-11 ... 1.29992879e-11 1.25784075e-11]'}
+
+    def fail_for_dimension_mismatch(
+        obj1, obj2=None, error_message=None, **error_quantities
+    ):
+        """
+        Compare the dimensions of two objects.
+    
+        Parameters
+        ----------
+        obj1, obj2 : {array-like, `Quantity`}
+            The object to compare. If `obj2` is ``None``, assume it to be
+            dimensionless
+        error_message : str, optional
+            An error message that is used in the DimensionMismatchError
+        error_quantities : dict mapping str to `Quantity`, optional
+            Quantities in this dictionary will be converted using the `_short_str`
+            helper method and inserted into the ``error_message`` (which should
+            have placeholders with the corresponding names). The reason for doing
+            this in a somewhat complicated way instead of directly including all the
+            details in ``error_messsage`` is that converting large quantity arrays
+            to strings can be rather costly and we don't want to do it if no error
+            occured.
+    
+        Returns
+        -------
+        dim1, dim2 : `Dimension`, `Dimension`
+            The physical dimensions of the two arguments (so that later code does
+            not need to get the dimensions again).
+    
+        Raises
+        ------
+        DimensionMismatchError
+            If the dimensions of `obj1` and `obj2` do not match (or, if `obj2` is
+            ``None``, in case `obj1` is not dimensionsless).
+    
+        Notes
+        -----
+        Implements special checking for ``0``, treating it as having "any
+        dimensions".
+        """
+        if not unit_checking:
+            return None, None
+    
+        dim1 = get_dimensions(obj1)
+        if obj2 is None:
+            dim2 = DIMENSIONLESS
+        else:
+            dim2 = get_dimensions(obj2)
+    
+        if dim1 is not dim2 and not (dim1 is None or dim2 is None):
+            # Special treatment for "0":
+            # if it is not a Quantity, it has "any dimension".
+            # This allows expressions like 3*mV + 0 to pass (useful in cases where
+            # zero is treated as the neutral element, e.g. in the Python sum
+            # builtin) or comparisons like 3 * mV == 0 to return False instead of
+            # failing # with a DimensionMismatchError. Note that 3*mV == 0*second
+            # is not allowed, though.
+            if (dim1 is DIMENSIONLESS and np.all(obj1 == 0)) or (
+                dim2 is DIMENSIONLESS and np.all(obj2 == 0)
+            ):
+                return dim1, dim2
+    
+            # We do another check here, this should allow Brian1 units to pass as
+            # having the same dimensions as a Brian2 unit
+            if dim1 == dim2:
+                return dim1, dim2
+    
+            if error_message is None:
+                error_message = "Dimension mismatch"
+            else:
+                error_quantities = {
+                    name: _short_str(q) for name, q in error_quantities.items()
+                }
+                error_message = error_message.format(**error_quantities)
+            # If we are comparing an object to a specific unit, we don't want to
+            # restate this unit (it is probably mentioned in the text already)
+            if obj2 is None or isinstance(obj2, (Dimension, Unit)):
+                raise DimensionMismatchError(error_message, dim1)
+            else:
+>               raise DimensionMismatchError(error_message, dim1, dim2)
+E               brian2.units.fundamentalunits.DimensionMismatchError: Cannot perform comparison [14.47517185 12.01519531 ... 12.99928785 12.57840753] pA == [1.44751719e-11 1.20151953e-11 ... 1.29992879e-11 1.25784075e-11], units do not match (units are A and 1).
+
+/private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/units/fundamentalunits.py:267: DimensionMismatchError
+----------------------------- Captured stderr call -----------------------------
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+WARNING    /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+ [py.warnings]
+------------------------------ Captured log call -------------------------------
+WARNING  matplotlib.font_manager:font_manager.py:1095 Matplotlib is building the font cache; this may take a moment.
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+
+WARNING  py.warnings:warnings.py:112 /private/tmp/neuromancer-m011-v1-env/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+  parsed = STATEMENT.parse_string(code, parseAll=True)
+=========================== short test summary info ============================
+FAILED tests/test_reservoir.py::test_recurrence_ablation_and_reset_replay - b...
+1 failed, 3 passed in 10.26s

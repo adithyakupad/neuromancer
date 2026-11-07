@@ -1,0 +1,126 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "neuromancer.m005b_analysis",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/analysis"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1304745605695208
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1304745609281625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1304757252096500
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 6687,
+      "pgid": 6687,
+      "stop_file": "/private/tmp/neuromancer-m009-scientific-reproduction/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/model_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1304745605695208
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1304757255789666
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1304867660274166
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 6703,
+      "pgid": 6703,
+      "stop_file": "/private/tmp/neuromancer-m009-scientific-reproduction/supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_metrics.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/analysis",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/statistics_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1304745605695208
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1304867663251625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1304868451406125
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 6803,
+      "pgid": 6803,
+      "stop_file": "/private/tmp/neuromancer-m009-scientific-reproduction/supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/research_figures.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/analysis",
+        "/private/tmp/neuromancer-m009-scientific-reproduction/figures"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1304745605695208
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1304868453508208
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 6804,
+      "pgid": 6804,
+      "stop_file": "/private/tmp/neuromancer-m009-scientific-reproduction/supervision/stop-3"
+    }
+  ]
+}

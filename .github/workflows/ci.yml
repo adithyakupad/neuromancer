@@ -1,0 +1,29 @@
+name: substrate qualification
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+      M008_WORKER_TRACE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-v1.txt
+      - run: python -m pip install --no-build-isolation --no-deps -e .
+      - run: python -m pip check
+      - run: mkdir -p runs
+      - run: python -m pytest -q --basetemp=runs/pytest-tmp --junitxml=runs/tests.xml
+      - run: neuromancer-diagnostic --mode smoke --output runs/ci-smoke
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: smoke-evidence
+          path: |
+            runs/ci-smoke
+            runs/tests.xml
+            runs/supervisor-artifacts
+            runs/pytest-tmp

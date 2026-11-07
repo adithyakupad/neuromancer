@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/finish_development.py", line 37, in <module>
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--root',default=str(B));args=parser.parse_args();B=Path(args.root)
+        ^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/finish_development.py", line 21, in main
+    if result['status']!='COMPLETED':raise RuntimeError('Independent primary analysis incomplete')
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Independent primary analysis incomplete

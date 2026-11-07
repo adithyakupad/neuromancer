@@ -1,0 +1,7 @@
+# M004 timing clarification — before model replay, tuning or outcome analysis
+
+The original detector description requires strictly causal completed-block timestamps and forbids backdating. Its phrase “first alarm at/after59” can nevertheless include the block ending exactly59s, which contains only pre-change observations. That alarm cannot be caused by a change applied at59s. This is a concrete endpoint-boundary defect, not a changed sensitivity/false-alarm/delay threshold.
+
+Resolve as follows: a potentially change-related alarm must have **59s < alarm_end <=79s**; timely detection requires **alarm_end<=69s** (delay<=10s). Alarms ending<=59s are pre-change false alarms. The matched stationary10s window is **(59,69]s**. All stationary alarms across39–79s remain false alarms. No-alarm trials are misses, censored20s; late alarms are reported separately. Extra alarms after the first matched event are unmatched for precision.
+
+This clarification is recorded while neural acquisition is in progress, before any replay, detector statistics, tuning outcomes or scientific scores have been opened. It changes no neural trajectory, seed, intervention, perturbation, model, threshold, hypothesis or operating-point requirement. The original frozen protocol is retained. Both this clarification and the protocol hashes belong in final provenance. It implements their original causal/no-backdating contract.

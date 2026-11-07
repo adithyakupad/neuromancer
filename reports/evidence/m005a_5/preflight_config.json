@@ -1,0 +1,19 @@
+{
+  "budget_s": 1200,
+  "workers": 1,
+  "supervision_output": "reports/evidence/m005a_5/preflight_supervision",
+  "commands": [
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_5/preflight.py"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--basetemp=reports/evidence/m005a_5/preflight_trials",
+      "--junitxml=reports/evidence/m005a_5/preflight_tests.xml"
+    ]
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "peak_rss_bytes": 1607942144,
+  "tool": "/usr/bin/time -l",
+  "scope": "pytest process high-water, not simultaneous descendant aggregate",
+  "reason": "First full regression run did not measure RSS; this repeat resolves that resource audit gap",
+  "command": [
+    "/usr/bin/time",
+    "-l",
+    "/private/tmp/neuromancer-m004-venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--basetemp=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/measured_regression_fixtures",
+    "--junitxml=/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005b_0/measured_regression_tests.xml"
+  ]
+}

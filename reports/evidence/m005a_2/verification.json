@@ -1,0 +1,409 @@
+{
+  "starting_revision": "6077ba50fc05a140fa6bdfc21fe2f6e6a859e7d0",
+  "cases": [
+    {
+      "case": "test_cleanup_failure_is_explic0",
+      "status": "CLEANUP_FAILURE",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.782190583,
+      "hard_deadline_margin_s": 0.017804875,
+      "cleanup_verified": false,
+      "workers": [
+        {
+          "pid": 87613,
+          "terminal": "CLEANUP_FAILURE",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_multiworker_shared_budget0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.4245065,
+      "hard_deadline_margin_s": 0.375413583,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87600,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        },
+        {
+          "pid": 87601,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        },
+        {
+          "pid": null,
+          "terminal": "NOT_STARTED",
+          "returncode": null,
+          "states": [
+            "CREATED"
+          ]
+        },
+        {
+          "pid": null,
+          "terminal": "NOT_STARTED",
+          "returncode": null,
+          "states": [
+            "CREATED"
+          ]
+        },
+        {
+          "pid": null,
+          "terminal": "NOT_STARTED",
+          "returncode": null,
+          "states": [
+            "CREATED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_bef0",
+      "status": "COMPLETED",
+      "cause": "normal completion",
+      "elapsed_s": 0.822810083,
+      "hard_deadline_margin_s": 0.977148083,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87581,
+          "terminal": "COMPLETED",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_com0",
+      "status": "COMPLETED",
+      "cause": "normal completion",
+      "elapsed_s": 0.052422792,
+      "hard_deadline_margin_s": 1.747539333,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87493,
+          "terminal": "COMPLETED",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_coo0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.02368825,
+      "hard_deadline_margin_s": 0.776276125,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87506,
+          "terminal": "DEADLINE_EXCEEDED",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_des0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.225205958,
+      "hard_deadline_margin_s": 0.574758667,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87559,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_exc0",
+      "status": "WORKER_FAILURE",
+      "cause": "WORKER_FAILURE",
+      "elapsed_s": 0.054373542,
+      "hard_deadline_margin_s": 1.745589833,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87553,
+          "terminal": "WORKER_FAILURE",
+          "returncode": 1,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_ign0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.225311417,
+      "hard_deadline_margin_s": 0.574651417,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87522,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -15,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_ign1",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.425622583,
+      "hard_deadline_margin_s": 0.374339542,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87531,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_orp0",
+      "status": "WORKER_FAILURE",
+      "cause": "WORKER_FAILURE",
+      "elapsed_s": 0.516842667,
+      "hard_deadline_margin_s": 1.283119875,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87573,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_rac0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.0273855,
+      "hard_deadline_margin_s": 0.77258,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87590,
+          "terminal": "DEADLINE_EXCEEDED",
+          "returncode": 0,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_shu0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.424501667,
+      "hard_deadline_margin_s": 0.375461917,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87544,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_tim0",
+      "status": "DEADLINE_EXCEEDED",
+      "cause": "DEADLINE_EXCEEDED",
+      "elapsed_s": 1.22593175,
+      "hard_deadline_margin_s": 0.574025791,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87496,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -15,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_une0",
+      "status": "WORKER_FAILURE",
+      "cause": "WORKER_FAILURE",
+      "elapsed_s": 0.041423708,
+      "hard_deadline_margin_s": 1.758536375,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87556,
+          "terminal": "WORKER_FAILURE",
+          "returncode": 17,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_real_worker_lifecycle_wri0",
+      "status": "WORKER_FAILURE",
+      "cause": "WORKER_FAILURE",
+      "elapsed_s": 0.051682,
+      "hard_deadline_margin_s": 1.748278459,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87578,
+          "terminal": "WORKER_FAILURE",
+          "returncode": 1,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "REAPED"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "test_supervisor_failure_cleanu0",
+      "status": "SUPERVISOR_FAILURE",
+      "cause": "SUPERVISOR_FAILURE",
+      "elapsed_s": 0.429246458,
+      "hard_deadline_margin_s": 1.570748792,
+      "cleanup_verified": true,
+      "workers": [
+        {
+          "pid": 87598,
+          "terminal": "FORCED_TERMINATION",
+          "returncode": -9,
+          "states": [
+            "CREATED",
+            "RUNNING",
+            "STOP_REQUESTED",
+            "TERMINATING",
+            "KILLING",
+            "REAPED"
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_worker_pids": 19,
+  "live_worker_pids": [],
+  "zombie_pids": [],
+  "prior_tracked_count": 4170,
+  "changed_historical_paths": [
+    "src/neuromancer/control_experiment.py"
+  ],
+  "m005a_1_manifest_verified": 29,
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "monotonic_clock": {
+    "implementation": "mach_absolute_time()",
+    "monotonic": true,
+    "adjustable": false,
+    "resolution": 4.166666666666667e-08
+  },
+  "source_hashes": {
+    "src/neuromancer/supervisor.py": "7d2fc6337f7f6f6290cbcdfc344a4a6d97fbeb0fa3b45ff7156141bba631c30b",
+    "src/neuromancer/control_experiment.py": "1251cabd910c5a597247b55019e947aec7a3d9e08ece47002ca93154d06aa8b6",
+    "tests/test_supervisor.py": "b48316eeffed92b9d70b25b9c00bed20656d3a26b134b57db2d58a23fd7643de",
+    "tests/supervisor_worker.py": "fde92b083abac6128e2ff33a1393db7252197a1626c58710cfd2fe0c402ab23b"
+  }
+}

@@ -1,0 +1,5 @@
+# Post-smoke validation review
+
+Initial source6a5ca6b passed169 tests and the fixed59-s neural fixture. Review identified that receipt status and integer representation should be rejected explicitly, even if malformed metadata numerically equals a delivered receipt. Added strict delivered-status/time/request checks and four analytical tests, without changing valid-input model/planner/PI numerical behavior. Historical source and scientific protocol remain unchanged.
+
+No neural fixture is repeated or replaced. Preserve the original source/data. Qualify final guards with full regressions and replay final controllers on ALL saved smoke public observations/receipts, comparing every command and every model state. This checks source correspondence on the archived valid neural inputs; it is NOT a fresh final-source neural acquisition or additional scientific outcome. Malformed delivery is fatal because its actuator history is unknown; no unchecked next action is issued. No scientific threshold/budget/seed change.

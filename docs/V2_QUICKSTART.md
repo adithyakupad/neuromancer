@@ -37,7 +37,9 @@ The verifier copies M013/M014 archives to scratch, checks the observed
 labels, counts, coefficients and controls, and reproduces the pilot
 summaries. Raw historic data are versioned in the checkout.
 
-## C. SDK simulator feedback
+## C. Experimental SDK simulator feedback
+
+**Experimental only, not reliability-qualified.** CL SDK 1.0.0 accelerated sessions can intermittently stall on macOS Intel after the consumer publishes a frame request and before the producer enters the source callback. The original internal 100 ms wait is preserved; the recording-extent repair does not fix this scheduling issue. This synthetic simulator example has no physical MEA/CL1 or living-neuron validation. Use the separate pinned SDK environment, retain the hardware interlock, and do not use this integration for reliability-sensitive or hard-real-time operation. See [Issue #7](https://github.com/adithyakupad/neuromancer/issues/7) and [the core scope](V2_CORE_RELEASE_SCOPE_REVIEW.md).
 
 ```sh
 python3.12 -m venv /tmp/v2-sdk-env

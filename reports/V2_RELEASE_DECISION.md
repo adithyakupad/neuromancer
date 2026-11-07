@@ -38,3 +38,19 @@ authorized by this proposal.
 The optional personal-style branch remains HOLD under its own
 performance gates. Historical results and the baseline package
 version `2.0.0rc1` remain unchanged.
+
+## M026 final assessment
+
+Integration revision `27872242ef2885fec8a04a7c6061584b6cb68c76` passed
+the complete local regression and all exact-head hosted jobs. Both
+hosted core platforms passed 231 tests and clean wheel/CLI checks.
+Both hosted SDK matrices passed the original recording and
+stimulation checks. Canonical V1 and M013–M016 archive evidence and
+102 golden arrays verified. This qualifies the engineering changes
+and demonstrates core technical readiness for scope review. The
+full V2 decision remains **HOLD** for the unresolved SDK producer
+stall. The separately scoped core proposal remains **HOLD for
+publication** until explicit maintainer approval of the revised scope.
+No workflow was removed, and no release ref was merged, tagged or
+published.
+[Executed integration report](engineering/M026_INTEGRATION.md)

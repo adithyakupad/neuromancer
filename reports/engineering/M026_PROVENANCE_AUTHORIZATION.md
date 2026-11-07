@@ -34,3 +34,15 @@ experiment is reclassified. The regression simulates a further edit
 to the authorized fixture and requires preservation failure. An
 interruption test terminates the actual synthetic worker after a
 partial staging write and verifies that no published PID marker exists.
+
+## Executed scope check
+
+The exact tested integration revision is
+`27872242ef2885fec8a04a7c6061584b6cb68c76`. Independent Git comparison
+checked the worker's prefix and suffix bytes around the one changed PID
+publication block, and compared each imported file to its cited source
+commit. It also found no changes under the package, workflows or
+historical research and M016/M017 evidence trees. The unauthorized edit
+regression rejected an extra comment on the authorized fixture even
+with the valid manifest. The complete publication and partial staging
+worker cases passed. [Machine-readable review](evidence/m026/provenance-review.json)

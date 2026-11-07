@@ -1,0 +1,49 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/tmp/m026-wheel.89PBFm/venv/bin/neuromancer-diagnostic",
+        "--mode",
+        "smoke",
+        "--output",
+        "/tmp/m026-wheel.89PBFm/smoke"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1502566944196583
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1502566946694291
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1502586318414583
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 79439,
+      "pgid": 79439,
+      "stop_file": "/private/tmp/m026-wheel.89PBFm/cli-supervision/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1502566944196583,
+  "deadline_ns": 1502686944182500,
+  "work_cutoff_ns": 1502686144182500,
+  "finished_ns": 1502586318523625,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1502686944182500,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

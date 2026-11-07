@@ -1,0 +1,50 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        ".venv/bin/python",
+        "scripts/m017_probe.py",
+        "/tmp/m026-archive.45dtbG/golden",
+        "--neural",
+        "--reference",
+        "reports/engineering/evidence/m017/golden_final"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1502535248241875
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1502535252389791
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1502546890021208
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 79301,
+      "pgid": 79301,
+      "stop_file": "/private/tmp/m026-archive.45dtbG/golden-supervision/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1502535248241875,
+  "deadline_ns": 1502775248199958,
+  "work_cutoff_ns": 1502774448199958,
+  "finished_ns": 1502546890132166,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1502775248199958,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -49,13 +49,58 @@ jobs:
           test -f dist/neuromancer-2.0.0rc1-py3-none-any.whl
           python -m pip install --no-deps dist/neuromancer-2.0.0rc1-py3-none-any.whl
           python -m pip check
+      # NumPy/SVD can change M013's derived condition number by ~1 ULP across BLAS hosts.
+      # Every other archived field remains exact, with an explicit 1e-14 absolute cap.
       - name: Core regressions, source preservation, and replay
         run: |
           mkdir -p runs
           python -m pytest -q --junitxml=runs/core-release-tests.xml --basetemp=runs/pytest-tmp
           python tools/m008_traced_repeats.py runs/m008-traced
           neuromancer-diagnostic --mode smoke --output runs/core-release-smoke
-          python scripts/m017_reproduce.py runs/core-release-reproduction
+          import json, math, runpy, shutil, subprocess, sys
+          from pathlib import Path
+          
+          # Archive files and the M017 manifest remain unchanged.
+          verify_history = runpy.run_path('scripts/m017_reproduce.py')['verify_history']
+          assert verify_history() == 38721
+          root = Path('runs/core-release-reproduction')
+          root.mkdir(exist_ok=False)
+          for stage, source, analyzer in (
+              ('m013', 'pilot_typed', 'm013_analyze.py'),
+              ('m014', 'pilot', 'm014_analyze.py'),
+          ):
+              original_dir = Path('reports/research/evidence') / stage / source
+              scratch = root / stage
+              shutil.copytree(original_dir, scratch)
+              subprocess.run([sys.executable, f'scripts/{analyzer}', str(scratch)], check=True)
+              original = json.loads((original_dir / 'independent_analysis.json').read_text())
+              reproduced = json.loads((scratch / 'independent_analysis.json').read_text())
+              if stage == 'm013':
+                  original_rest = dict(original)
+                  reproduced_rest = dict(reproduced)
+                  old_rows = original_rest.pop('rows')
+                  new_rows = reproduced_rest.pop('rows')
+                  assert original_rest == reproduced_rest, 'M013 non-row scientific result changed'
+                  assert len(old_rows) == len(new_rows), 'M013 row count changed'
+                  differences = []
+                  for old_row, new_row in zip(old_rows, new_rows):
+                      assert old_row.keys() == new_row.keys(), 'M013 row schema changed'
+                      for key in old_row:
+                          if key == 'probe_design_condition':
+                              a, b = float(old_row[key]), float(new_row[key])
+                              assert math.isfinite(a) and math.isfinite(b)
+                              delta = abs(a - b)
+                              assert delta <= 1e-14, f'M013 diagnostic condition number drift: {delta}'
+                              differences.append(delta)
+                          else:
+                              assert old_row[key] == new_row[key], f'M013 scientific field changed: {key}'
+                  print(json.dumps({'stage': stage, 'rows_exact_except_condition_number': True,
+                                    'max_condition_number_abs_delta': max(differences),
+                                    'max_allowed_abs_delta': 1e-14}, sort_keys=True))
+              else:
+                  assert original == reproduced, 'M014 archived results changed'
+                  print(json.dumps({'stage': stage, 'archived_json_exact': True}))
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

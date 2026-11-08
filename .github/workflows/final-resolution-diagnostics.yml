@@ -1,0 +1,55 @@
+name: Final qualification resolution diagnostics
+on:
+  push:
+    branches: [engineering/final-qualification-resolution]
+    paths:
+      - .github/workflows/final-resolution-diagnostics.yml
+      - tools/final_numeric_diagnosis.py
+      - tools/final_numeric_inventory.py
+      - tests/test_cleanup_clock_phases.py
+      - tests/test_final_numeric_diagnosis.py
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: src
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/neuromancer-resolution-mpl
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/tested-source.txt
+          python -m pip freeze > runs/environment.txt
+      - name: Deterministic cleanup and numerical arithmetic tests
+        run: |
+          python -m pytest -q tests/test_cleanup_clock_phases.py tests/test_final_numeric_diagnosis.py --basetemp=runs/resolution-tests --junitxml=runs/resolution-tests.xml
+      - name: Bounded operation and backend diagnosis
+        if: always()
+        run: |
+          python scripts/m014_supervise.py runs/numeric-guard 180 python tools/final_numeric_diagnosis.py runs/numeric
+      - name: Reconstruct retained array inventory
+        if: always()
+        run: python tools/final_numeric_inventory.py runs/inventory
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: resolution-${{ matrix.os }}
+          path: runs/

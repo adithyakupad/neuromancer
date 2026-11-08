@@ -60,6 +60,8 @@ def worker(output, branch, source):
 
     class BranchReader:
         """Narrow the two archive manifests in the isolated M028 driver."""
+        dumps = staticmethod(json.dumps)
+
         @staticmethod
         def loads(value):
             data = json.loads(value)

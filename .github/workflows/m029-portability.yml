@@ -1,0 +1,42 @@
+name: M029 numerical portability
+on:
+  push:
+    branches: [engineering/m029-final-portability]
+    paths: ['tools/m029_*.py', 'tests/test_m029_*.py', '.github/workflows/m029-portability.yml']
+permissions:
+  contents: read
+jobs:
+  verification:
+    timeout-minutes: 24
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: .:src
+      M028_KERNEL_DIR: ${{ github.workspace }}/runs/build/lib
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/source.txt
+          python -m pip freeze > runs/environment.txt
+      - run: python scripts/m014_supervise.py runs/build-guard 120 python tools/m028_build.py runs/build
+      - run: python -m pytest -q tests/test_m028_arithmetic.py tests/test_m028_io.py tests/test_m029_parallel.py --junitxml=runs/focused.xml
+      - run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m028_verify.py runs/prerequisite --stage 256
+      - run: python tools/m029_matrix.py runs/matrix
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m029-portability-${{ matrix.os }}
+          path: runs/

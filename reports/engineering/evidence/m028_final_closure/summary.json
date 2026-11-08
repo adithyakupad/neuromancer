@@ -1,0 +1,488 @@
+{
+  "source": "e2836b355950c62e5dac6f69abee92e2476fe92c",
+  "hosts": {
+    "local": {
+      "stage": "all",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 40,
+      "prescribed_branches": 40,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 6.319999729988319e-09,
+      "maximum_covariance_radius": 1.074961878572608e-08,
+      "wall_s": 54.781885958,
+      "cpu_s": 53.028815,
+      "peak_rss": 86065152,
+      "timings": {
+        "archive_load": {
+          "calls": 40,
+          "seconds": 0.169717829
+        },
+        "plan_load": {
+          "calls": 2560,
+          "seconds": 2.2244248009999965
+        },
+        "native_planner": {
+          "calls": 2560,
+          "seconds": 12.24596775600001
+        },
+        "planner_certificate": {
+          "calls": 2560,
+          "seconds": 5.292200660000003
+        },
+        "progress_write": {
+          "calls": 2560,
+          "seconds": 1.295037220999995
+        },
+        "information_update": {
+          "calls": 128000,
+          "seconds": 9.978054057000177
+        },
+        "native_update": {
+          "calls": 128000,
+          "seconds": 6.507590325999787
+        },
+        "state_residual": {
+          "calls": 128000,
+          "seconds": 14.327233942000253
+        },
+        "digest": {
+          "calls": 128000,
+          "seconds": 0.9217440180000621
+        }
+      },
+      "digest_differences": 0,
+      "release_qualified": false,
+      "max_checkpoint_cost_radius": 1.8909900758632585e-08,
+      "max_checkpoint_coefficient_radius": 6.312066754272578e-09,
+      "max_checkpoint_covariance_radius": 1.020130202966545e-08,
+      "supervised_elapsed_s": 54.868531625,
+      "cleanup_verified": true,
+      "status": "COMPLETED",
+      "watchdog": false,
+      "retained_updates": 128000,
+      "retained_plans": 2560,
+      "certified_plans_completed": 2560,
+      "backend": {
+        "query_cache": {
+          "hits": 2545,
+          "misses": 15
+        },
+        "denominators": {
+          "count": 128000,
+          "minimum_lower": 0.999650317138373
+        }
+      }
+    },
+    "linux": {
+      "stage": "all",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 40,
+      "prescribed_branches": 40,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 6.294072872979655e-09,
+      "maximum_covariance_radius": 1.0706397998507233e-08,
+      "wall_s": 148.734836963,
+      "cpu_s": 146.647060695,
+      "peak_rss": 87852,
+      "timings": {
+        "archive_load": {
+          "calls": 40,
+          "seconds": 0.4076323860000001
+        },
+        "plan_load": {
+          "calls": 2560,
+          "seconds": 4.532526603999995
+        },
+        "native_planner": {
+          "calls": 2560,
+          "seconds": 27.417467206999962
+        },
+        "planner_certificate": {
+          "calls": 2560,
+          "seconds": 14.879363083000012
+        },
+        "progress_write": {
+          "calls": 2560,
+          "seconds": 3.573441006000002
+        },
+        "information_update": {
+          "calls": 128000,
+          "seconds": 30.346438376999714
+        },
+        "native_update": {
+          "calls": 128000,
+          "seconds": 19.839983796000322
+        },
+        "state_residual": {
+          "calls": 128000,
+          "seconds": 38.64761881800019
+        },
+        "digest": {
+          "calls": 128000,
+          "seconds": 2.6395585220000304
+        }
+      },
+      "digest_differences": 128000,
+      "release_qualified": false,
+      "max_checkpoint_cost_radius": 1.882872288273422e-08,
+      "max_checkpoint_coefficient_radius": 6.285444030307922e-09,
+      "max_checkpoint_covariance_radius": 1.0160123867572658e-08,
+      "supervised_elapsed_s": 148.922489571,
+      "cleanup_verified": true,
+      "status": "COMPLETED",
+      "watchdog": false,
+      "retained_updates": 128000,
+      "retained_plans": 2560,
+      "certified_plans_completed": 2560,
+      "backend": {
+        "query_cache": {
+          "hits": 2545,
+          "misses": 15
+        },
+        "denominators": {
+          "count": 128000,
+          "minimum_lower": 0.9996503171441705
+        }
+      },
+      "kernel_samples": [
+        {
+          "pair": 0,
+          "backend": "original",
+          "wall_s": 0.925144538,
+          "cpu_s": 0.92506947,
+          "p50_ns": 3566983.0,
+          "p95_ns": 3785478.75,
+          "p99_ns": 4062589.3499999996,
+          "maximum_ns": 4328375,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        },
+        {
+          "pair": 0,
+          "backend": "compiled",
+          "wall_s": 0.16647715,
+          "cpu_s": 0.166458328,
+          "p50_ns": 625373.0,
+          "p95_ns": 695651.75,
+          "p99_ns": 845799.9999999999,
+          "maximum_ns": 908607,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        },
+        {
+          "pair": 1,
+          "backend": "compiled",
+          "wall_s": 0.166537762,
+          "cpu_s": 0.166531614,
+          "p50_ns": 624537.5,
+          "p95_ns": 692385.75,
+          "p99_ns": 841718.7,
+          "maximum_ns": 859708,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        },
+        {
+          "pair": 1,
+          "backend": "original",
+          "wall_s": 0.927315027,
+          "cpu_s": 0.927262001,
+          "p50_ns": 3583742.0,
+          "p95_ns": 3726371.25,
+          "p99_ns": 3836170.4,
+          "maximum_ns": 3852526,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        },
+        {
+          "pair": 2,
+          "backend": "original",
+          "wall_s": 0.978708156,
+          "cpu_s": 0.978599655,
+          "p50_ns": 3598675.0,
+          "p95_ns": 5150907.75,
+          "p99_ns": 6328033.899999999,
+          "maximum_ns": 8277792,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        },
+        {
+          "pair": 2,
+          "backend": "compiled",
+          "wall_s": 0.176646664,
+          "cpu_s": 0.17661012,
+          "p50_ns": 666587.0,
+          "p95_ns": 727307.5,
+          "p99_ns": 880387.1,
+          "maximum_ns": 986515,
+          "digest": "3529a786ee2c3981a58e612318c5cf84cfb096e1cc8826f34471bda12daac6b7"
+        }
+      ],
+      "paired_kernel_speedups": [
+        5.5571863045469,
+        5.568196761284687,
+        5.540484795116199
+      ]
+    },
+    "macos": {
+      "stage": "all",
+      "completed_branches": 29,
+      "location": {
+        "network": 7,
+        "replicate": 47,
+        "branch": "LOSS_RLS-MPC",
+        "step": 200
+      },
+      "timings": {
+        "archive_load": {
+          "calls": 30,
+          "seconds": 0.43811848400000003
+        },
+        "plan_load": {
+          "calls": 1861,
+          "seconds": 5.453468392000002
+        },
+        "native_planner": {
+          "calls": 1861,
+          "seconds": 44.60197223800004
+        },
+        "planner_certificate": {
+          "calls": 1861,
+          "seconds": 25.33200607399998
+        },
+        "progress_write": {
+          "calls": 1860,
+          "seconds": 4.753795377999997
+        },
+        "information_update": {
+          "calls": 93000,
+          "seconds": 48.96643716399969
+        },
+        "native_update": {
+          "calls": 93000,
+          "seconds": 28.0928837629999
+        },
+        "state_residual": {
+          "calls": 93000,
+          "seconds": 65.66343855700055
+        },
+        "digest": {
+          "calls": 93000,
+          "seconds": 5.812457977000021
+        }
+      },
+      "digest_differences": 93000,
+      "release_qualified": false,
+      "positive_denominators": {
+        "count": 93000,
+        "minimum_lower": 0.9996503171440128
+      },
+      "format": "m028-append-checkpoints-v1",
+      "checkpoint_count": 1890,
+      "ledger_bytes": 436085,
+      "ledger_chain": "b477938f62065ab6c2de7109448a70d73c43cd288e2921867224ddc2b86276df",
+      "max_checkpoint_cost_radius": 1.883093124960563e-08,
+      "max_checkpoint_coefficient_radius": 6.286117075955786e-09,
+      "max_checkpoint_covariance_radius": 1.0161247225639017e-08,
+      "supervised_elapsed_s": 239.489287845,
+      "cleanup_verified": true,
+      "status": "DEADLINE_EXCEEDED",
+      "watchdog": false,
+      "retained_updates": 93000,
+      "retained_plans": 1861,
+      "certified_plans_completed": 1861,
+      "backend": null,
+      "kernel_samples": [
+        {
+          "pair": 0,
+          "backend": "original",
+          "wall_s": 2.867578774,
+          "cpu_s": 2.819266,
+          "p50_ns": 10851074.5,
+          "p95_ns": 13278559.25,
+          "p99_ns": 20102884.099999998,
+          "maximum_ns": 109522706,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        },
+        {
+          "pair": 0,
+          "backend": "compiled",
+          "wall_s": 0.76320924,
+          "cpu_s": 0.750716,
+          "p50_ns": 2323776.5,
+          "p95_ns": 5879696.25,
+          "p99_ns": 8110100.649999999,
+          "maximum_ns": 9757071,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        },
+        {
+          "pair": 1,
+          "backend": "compiled",
+          "wall_s": 0.577558369,
+          "cpu_s": 0.573803,
+          "p50_ns": 2237268.5,
+          "p95_ns": 2771124.5,
+          "p99_ns": 3299120.9999999986,
+          "maximum_ns": 3989772,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        },
+        {
+          "pair": 1,
+          "backend": "original",
+          "wall_s": 2.43477438,
+          "cpu_s": 2.422131,
+          "p50_ns": 9331334.0,
+          "p95_ns": 12363793.75,
+          "p99_ns": 13233082.149999999,
+          "maximum_ns": 14508512,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        },
+        {
+          "pair": 2,
+          "backend": "original",
+          "wall_s": 3.001089404,
+          "cpu_s": 2.774782,
+          "p50_ns": 10501733.0,
+          "p95_ns": 18345902.0,
+          "p99_ns": 52184177.59999994,
+          "maximum_ns": 102452142,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        },
+        {
+          "pair": 2,
+          "backend": "compiled",
+          "wall_s": 0.721888871,
+          "cpu_s": 0.533648,
+          "p50_ns": 2119326.5,
+          "p95_ns": 5406531.0,
+          "p99_ns": 21413922.499999996,
+          "maximum_ns": 34438709,
+          "digest": "fadae40bd5e4350785f829a2bb5e86baea23a3f1fc804ce70ee7e658a96102ab"
+        }
+      ],
+      "paired_kernel_speedups": [
+        3.757264225469807,
+        4.2156334505474025,
+        4.157273403928124
+      ]
+    }
+  },
+  "local": {
+    "remaining": {
+      "remaining_gates_pass": true,
+      "commands": [
+        {
+          "command": [
+            "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+            "tools/m027_fit_svd.py",
+            "/tmp/neuromancer-m028/remaining/fixed-fit-svd"
+          ],
+          "returncode": 0
+        },
+        {
+          "command": [
+            "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+            "scripts/m017_probe.py",
+            "/tmp/neuromancer-m028/remaining/golden",
+            "--neural",
+            "--reference",
+            "reports/engineering/evidence/m017/golden_final"
+          ],
+          "returncode": 0
+        },
+        {
+          "command": [
+            "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+            "scripts/reproduce_v1_evidence.py",
+            "--output",
+            "/tmp/neuromancer-m028/remaining/v1"
+          ],
+          "returncode": 0
+        },
+        {
+          "command": [
+            "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+            "scripts/m017_reproduce.py",
+            "/tmp/neuromancer-m028/remaining/archives"
+          ],
+          "returncode": 0
+        }
+      ],
+      "scope": "Fixed residual/spectral checks and original exact replay on this host",
+      "cross_platform_release_qualified": false,
+      "release_qualified": false
+    },
+    "remaining_elapsed_s": 101.235386041,
+    "a1": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "3.637",
+        "timestamp": "2026-11-08T10:48:35.078808-05:00",
+        "hostname": "Adithyas-MacBook-Pro.local"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "3.724",
+        "timestamp": "2026-11-08T10:48:38.811010-05:00",
+        "hostname": "Adithyas-MacBook-Pro.local"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "3.702",
+        "timestamp": "2026-11-08T10:48:42.636161-05:00",
+        "hostname": "Adithyas-MacBook-Pro.local"
+      }
+    ]
+  },
+  "historical_protection": {
+    "paths": 38721,
+    "manifest_sha256": "f88c41d51355e115863fd1a12dee6901aa4034ac7bf68f86c0c64e622e1719b1",
+    "production_diff": ""
+  },
+  "package": {
+    "filename": "neuromancer-2.0.0rc1-py3-none-any.whl",
+    "sha256": "6207aad869792e3ac74c9e3dbfe9a489d09bfadc282110ba2ffb9ea377244683",
+    "size": 95561,
+    "modules_matched": 36,
+    "license_matched": true,
+    "no_scientific_archives": true,
+    "pip_check": "No broken requirements found.\n",
+    "imports": "/private/tmp/neuromancer-m028/package/env/lib/python3.12/site-packages/neuromancer/__init__.py\n2.5.4 2.10.1 1.18.0\n",
+    "smoke": "COMPLETED"
+  },
+  "hosted_regression": {
+    "v1-qualification-macos-15-intel": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "292",
+      "time": "272.271",
+      "timestamp": "2026-11-08T15:41:41.994329+00:00",
+      "hostname": "sjc20-cw752-ec415138-24ef-4949-ba91-08a6d7a28d99-0EF9136CA7C4.local"
+    },
+    "v1-qualification-ubuntu-latest": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "292",
+      "time": "102.505",
+      "timestamp": "2026-11-08T15:39:22.846797+00:00",
+      "hostname": "runnervmwuk1x"
+    }
+  },
+  "environment": {
+    "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "numpy": "2.5.4"
+  }
+}

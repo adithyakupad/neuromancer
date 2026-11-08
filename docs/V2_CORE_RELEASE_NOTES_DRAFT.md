@@ -43,3 +43,7 @@ This draft is for scope approval only. Before tagging or publishing, the maintai
 - M026 Linux/macOS core: https://github.com/adithyakupad/neuromancer/actions/runs/42325130927
 - M026 SDK executed matrix: https://github.com/adithyakupad/neuromancer/actions/runs/42325130966
 - M019 reproduced producer failure: https://github.com/adithyakupad/neuromancer/actions/runs/42183363096
+
+## Final closure status, November 7, 2026
+
+The maintainer has authorized the core-only scope and conditional publication. Publication remains HOLD while exact-source qualification is incomplete or failed. PR #5 is already merged. No tag or public release existed at the closure audit. Version remains `2.0.0rc1`. The original M026 results above remain historical results. Current archive-reproduction failures and exact candidate qualification are tracked in the [closure plan](../reports/engineering/FINAL_CORE_CLOSURE_PLAN.md) and scope review. A passing regression suite alone does not clear the strict numerical reproduction gate.

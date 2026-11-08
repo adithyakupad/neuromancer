@@ -1,6 +1,6 @@
 # NEUROMANCER V2 core research release: prospective scope review
 
-**Status: PROPOSED SCOPE. NOT PUBLISHED.** This document is a prospective decision record and not an amendment to the historical M026 qualification. It does not certify that the full CL SDK simulator integration is reliable.
+**Status. Core scope authorized in the final closure campaign. Publication HOLD pending exact-source qualification.** This document is a prospective decision record and not an amendment to the historical M026 qualification. It does not certify that the full CL SDK simulator integration is reliable.
 
 ## Immutable tested source
 
@@ -44,7 +44,7 @@ M026's exact-head successful Linux/macOS workflows are relevant prior evidence; 
 
 ## Authorization boundary
 
-The current conversational go-ahead permits **preparing a scope-review proposal**. It does **not** authorize merging into `main`, deleting or weakening SDK tests, changing the package version, tagging, publishing a wheel or creating a public GitHub release.
+The earlier scope-review campaign authorized proposal preparation only. The final closure instruction of November 7, 2026 prospectively authorizes this core-only boundary and conditional merge, tagging and publication after every mandatory core gate passes. PR #5 had already been merged when this campaign inspected remote state. This authorization leaves numerical tolerances, scientific evidence, SDK tests and hardware interlocks intact. A failed mandatory core gate still requires publication HOLD.
 
 ## Evidence
 
@@ -58,3 +58,9 @@ The current conversational go-ahead permits **preparing a scope-review proposal*
 The proposed user-facing disclosure text is [V2 core release notes draft](V2_CORE_RELEASE_NOTES_DRAFT.md). Those notes retain the original supported/experimental distinction and all negative scientific conclusions.
 
 The documentation-only scope review branch itself reproduced a **macOS Intel SDK CI failure** at https://github.com/adithyakupad/neuromancer/actions/runs/42333658869 while Ubuntu SDK passed. This is consistent with the existing unresolved intermittent reliability blocker; failure subtype has not yet been independently classified from the retained artifact. Do not characterize the documentation branch as universally CI-green. Core-only publication would require separate explicit approval of the revised release gate and confirmation that core tests, package integrity and reproducibility still pass. This does not alter the full-SDK HOLD.
+
+## Final closure qualification boundary
+
+Current baseline main is `db4485613cba8128ee643159b25ef29523ca6c95`. The final hardening branch preserves version `2.0.0rc1` and adds deterministic regressions for the merged suspend fixture synchronization. Its finite qualification plan is [recorded here](../reports/engineering/FINAL_CORE_CLOSURE_PLAN.md).
+
+Publication run 42428618054 failed strict M014 archived-prediction reproduction on Linux and macOS. The Linux maximum absolute discrepancy was `4.99600361e-16`. The existing zero-tolerance assertion remains mandatory. Historical artifact integrity and exact recomputation are assessed separately. The failure blocks publication even if the discrepancy is consistent with floating-point implementation differences. No tolerance change is authorized by this closure campaign.

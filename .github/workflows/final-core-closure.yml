@@ -1,0 +1,60 @@
+name: Final core closure evidence
+on:
+  push:
+    branches: [release/v2-core-closure]
+    paths:
+      - tests/test_final_core_closure.py
+      - .github/workflows/final-core-closure.yml
+permissions:
+  contents: read
+jobs:
+  closure:
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      M008_WORKER_TRACE: '1'
+      NEUROMANCER_TEST_ARTIFACTS: runs/final-supervisor-artifacts
+      MPLCONFIGDIR: /tmp/neuromancer-final-mpl
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/tested-source.txt
+          python -m pip freeze > runs/environment.txt
+      - name: Fixed three-round suspend confirmation
+        run: |
+          for round in 1 2 3; do
+            NEUROMANCER_TEST_ARTIFACTS="runs/final-supervisor-artifacts-$round" python -m pytest -q               tests/test_suspend_clock.py::test_real_workers_after_injected_resume               --basetemp="runs/suspend-round-$round" --junitxml="runs/suspend-$round.xml" || exit $?
+          done
+      - name: Exact golden replay
+        if: always()
+        run: |
+          PYTHONPATH=src python scripts/m014_supervise.py runs/golden-guard 240             python scripts/m017_probe.py runs/golden --neural             --reference reports/engineering/evidence/m017/golden_final
+      - name: Exact V1 numerical and figure reproduction
+        if: always()
+        run: |
+          PYTHONPATH=src python scripts/m014_supervise.py runs/v1-guard 240             python scripts/reproduce_v1_evidence.py --output runs/v1
+      - name: Exact M013 and M014 archived analysis
+        if: always()
+        run: |
+          PYTHONPATH=src python scripts/m014_supervise.py runs/archive-guard 240             python scripts/m017_reproduce.py runs/archives
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-core-closure-${{ matrix.os }}
+          path: runs/

@@ -1,0 +1,65 @@
+{
+  "status": "WORKER_FAILURE",
+  "cause": "WORKER_FAILURE",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "orphan",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_fixtures/test_real_worker_lifecycle_orp0/worker",
+        "792483913425250"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 792482913451250
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 792482915709125
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 792483037229458
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 792483237457250
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 792483438017250
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 792483450761000
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "WORKER_FAILURE",
+      "pid": 62387,
+      "pgid": 62387,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/frozen_source_fixtures/test_real_worker_lifecycle_orp0/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true,
+      "signal_errors": [
+        null,
+        null
+      ]
+    }
+  ],
+  "started_ns": 792482913451250,
+  "deadline_ns": 792484713425250,
+  "work_cutoff_ns": 792483913425250,
+  "finished_ns": 792483463538583,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 792484713425250,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

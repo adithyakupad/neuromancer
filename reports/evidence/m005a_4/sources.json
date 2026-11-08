@@ -1,0 +1,31 @@
+{
+  "access_date": "2026-10-28",
+  "sources": [
+    {
+      "url": "https://developer.apple.com/documentation/kernel/1646199-mach_continuous_time",
+      "kind": "Apple authoritative API",
+      "supports": "Continuous includes sleep; absolute excludes sleep; integer timebase conversion"
+    },
+    {
+      "url": "https://github.com/apple/darwin-xnu/blob/main/osfmk/mach/mach_time.h",
+      "kind": "Apple source header",
+      "supports": "Continuous API sleep behavior and macOS10.12 availability"
+    },
+    {
+      "url": "https://developer.apple.com/documentation/driverkit/kiotimerclockuptimeraw",
+      "kind": "Apple documentation inconsistency observed",
+      "supports": "Its uptime description conflicts with its CLOCK_MONOTONIC_RAW discussion; do not use this isolated mapping as implementation evidence"
+    },
+    {
+      "url": "https://kernel.org/doc/html/next/core-api/timekeeping.html",
+      "kind": "Linux kernel documentation",
+      "supports": "CLOCK_BOOTTIME includes suspend; Linux not locally executed"
+    }
+  ],
+  "local_evidence": [
+    "platform_headers.json",
+    "native_clock_probe.c",
+    "native_clock_probe.csv",
+    "native_probe.json"
+  ]
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/replay.py",
+      "--raw",
+      "runs/m004-dev-01",
+      "--output",
+      "runs/m004-dev-replay-01"
+    ],
+    "returncode": 0,
+    "wall_s": 37.034964417049196
+  },
+  {
+    "command": [
+      "/private/tmp/neuromancer-m004-venv/bin/python",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/select_models.py",
+      "--raw",
+      "runs/m004-dev-01",
+      "--replay",
+      "runs/m004-dev-replay-01",
+      "--output",
+      "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m004/selection.json"
+    ],
+    "returncode": 0,
+    "wall_s": 0.2623834579717368
+  }
+]

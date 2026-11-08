@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/verify_study.py", line 82, in <module>
+    p=argparse.ArgumentParser();p.add_argument('root');p.add_argument('output');a=p.parse_args();verify(a.root,a.output)
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/verify_study.py", line 79, in verify
+    atomic_json(output,dict(status='PASS',**totals,invalid_models=invalid,primary_instrument_valid=not invalid and totals['fallback_bins']==0,scientific_outcome_scored=False));d.check()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 45, in atomic_json
+    temp = path.with_name(path.name + '.tmp')
+           ^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'with_name'

@@ -1,0 +1,132 @@
+{
+  "sham": {
+    "recorded_E_hz": 12.75,
+    "groups": {
+      "stimulated_E": {
+        "neurons": 200,
+        "rate_hz": 13.474,
+        "mean_exc_current_pA": 39.04280248549381,
+        "mean_inh_current_pA": -77.60755758552284
+      },
+      "recorded_unstimulated_E": {
+        "neurons": 80,
+        "rate_hz": 12.749999999999998,
+        "mean_exc_current_pA": 39.07402386038099,
+        "mean_inh_current_pA": -82.01552986082658
+      },
+      "hidden_unstimulated_E": {
+        "neurons": 520,
+        "rate_hz": 12.933076923076923,
+        "mean_exc_current_pA": 39.004151816609415,
+        "mean_inh_current_pA": -79.93179724628882
+      },
+      "all_I": {
+        "neurons": 200,
+        "rate_hz": 13.038,
+        "mean_exc_current_pA": 38.96134663849719,
+        "mean_inh_current_pA": -79.15632196766657
+      }
+    }
+  },
+  "stim_g1": {
+    "recorded_E_hz": 15.2025,
+    "groups": {
+      "stimulated_E": {
+        "neurons": 200,
+        "rate_hz": 34.762,
+        "mean_exc_current_pA": 60.12251927887576,
+        "mean_inh_current_pA": -91.98550173445176
+      },
+      "recorded_unstimulated_E": {
+        "neurons": 80,
+        "rate_hz": 15.2025,
+        "mean_exc_current_pA": 60.671589537709565,
+        "mean_inh_current_pA": -97.3513799959397
+      },
+      "hidden_unstimulated_E": {
+        "neurons": 520,
+        "rate_hz": 15.495384615384614,
+        "mean_exc_current_pA": 60.7582269437775,
+        "mean_inh_current_pA": -94.99925829109726
+      },
+      "all_I": {
+        "neurons": 200,
+        "rate_hz": 15.527000000000001,
+        "mean_exc_current_pA": 60.06160529512271,
+        "mean_inh_current_pA": -93.35132315021828
+      }
+    }
+  },
+  "stim_g06": {
+    "recorded_E_hz": 14.245,
+    "groups": {
+      "stimulated_E": {
+        "neurons": 200,
+        "rate_hz": 26.245,
+        "mean_exc_current_pA": 52.01546948093915,
+        "mean_inh_current_pA": -86.67421317902215
+      },
+      "recorded_unstimulated_E": {
+        "neurons": 80,
+        "rate_hz": 14.245,
+        "mean_exc_current_pA": 52.600194087233234,
+        "mean_inh_current_pA": -91.81822890816619
+      },
+      "hidden_unstimulated_E": {
+        "neurons": 520,
+        "rate_hz": 14.502307692307692,
+        "mean_exc_current_pA": 52.51467881497683,
+        "mean_inh_current_pA": -89.35425994020692
+      },
+      "all_I": {
+        "neurons": 200,
+        "rate_hz": 14.544,
+        "mean_exc_current_pA": 52.03354535460519,
+        "mean_inh_current_pA": -87.91576727090609
+      }
+    }
+  },
+  "provenance": {
+    "schema_version": 1,
+    "experiment_kind": "simulation",
+    "head": "7efb3deac880a049e582ee54f803561da1c33288",
+    "branch": "research/m002-brian-substrate",
+    "working_tree": "?? reports/",
+    "source_hashes": {
+      "neuromancer/__init__.py": "4c74fc568665ec777cb051d3a09428493a36dd00e0a06bf789b2e1feaa9a92ed",
+      "neuromancer/_brian.py": "5e20f00b496c310018421cf200dfd2f767f63c12e84a7eab0af1880a23323519",
+      "neuromancer/diagnostic.py": "e62b3339b76ec34123a41237aaadd9c751750c3c554478a73872627bc4fc2dce",
+      "neuromancer/observation.py": "e057226622cfb65bc4e644cf25e190e3d880cb0e77829c27a29ff4de06e26f5b",
+      "neuromancer/substrate.py": "45771e521ee3a66c2c4046ebbc0eeb5dce576abfe993f36821b9cea33a6b89e9"
+    },
+    "protocol_sha256": "e747c6ce67dfea86bc3f32e2d66fc85b226d3504a00925bb699e2b6fb67c0833",
+    "root_seed": 20261018,
+    "seed_roles": {
+      "0": "membrane/init",
+      "1": "connectivity",
+      "2": "weights/delays",
+      "3": "channels",
+      "4": "OU",
+      "5": "calibration",
+      "6": "masks",
+      "7": "reserved Brian"
+    },
+    "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "package_versions": {
+      "neuromancer": "0.2.0",
+      "brian2": "2.10.1",
+      "numpy": "2.5.4",
+      "sympy": "1.14.0",
+      "cython": "3.1.3"
+    },
+    "cli": [
+      "reports/evidence/m002/mechanism_probe.py",
+      "runs/m002-mechanism-01"
+    ],
+    "clock": "integer us; 100 us neural grid and 20000 us control bins",
+    "evaluated_split": "training only; IDs 0-9, or 0-2 for convergence"
+  },
+  "interpretation": "Descriptive group rates/currents; no causal ablation of inhibition was performed."
+}

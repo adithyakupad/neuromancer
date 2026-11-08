@@ -1,0 +1,5 @@
+WARNING    The object 'synapses_2' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+The object was created here (most recent call only):
+  File '/Users/adithyaupad/Developer/neuromancer/src/neuromancer/_brian.py', line 127, in __init__
+    syn = b.Synapses(self.group, self.group, 'weight : amp', [brian2.core.base.unused_brian_object]
+{"array_count": 102, "environment": {"python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]", "platform": "macOS-26.5.2-arm64-arm-64bit", "numpy": "2.5.4"}, "max_rss_native_units": 986169344}

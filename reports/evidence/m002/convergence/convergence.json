@@ -1,0 +1,588 @@
+{
+  "networks": [
+    {
+      "network_id": 0,
+      "cases": [
+        {
+          "dt_us": 100,
+          "sham_hz": 12.6875,
+          "response_hz": 2.5749999999999993,
+          "provenance": {
+            "config": {
+              "network_id": 0,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 100,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 0,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 100,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+                "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+                "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+                "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+                "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+                "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+                "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+                "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+                "effective": "1810d96707a50eb30e0502b654dc43879c5056ff3d1b3ed16f937bc86e4eaf96"
+              },
+              "1": {
+                "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+                "effective": "dc29ca5630b5bd94c56a3f8527d9d4d108e5327d64fb4540533620951e8db858"
+              },
+              "2": {
+                "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+                "effective": "d1528b22514c00d320b3955c53cf8e51a5ed54939ac2e2fbc88ef36ecc95cf90"
+              },
+              "3": {
+                "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+                "effective": "33f45dd2fa629ec4feff3d79b4b102271f7b59b79d19fc9421fbeca1e99d0642"
+              },
+              "4": {
+                "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+                "effective": "c1de58b41747cf43b999d21dc8141f4a4e865c1caa8064aa6ec33ec9835f8699"
+              },
+              "5": {
+                "fine": "dc2dc700d9e01820c6dee23406e8b80535b9b617a152111721532a37f6141614",
+                "effective": "2fd9a70357b33f29e1400c60cfb9af0de84c9d2d83abe5bb512eb9ccfceb58c0"
+              },
+              "6": {
+                "fine": "0382e9fc9444e51215a142afefa79b0176b956a2c00877160d5ae00558bcd959",
+                "effective": "0edfa994796663b642fbb0b424f8252c7cee71d7e8e3003fc585535b74423215"
+              },
+              "7": {
+                "fine": "b714a8981040d2828909009f76dcc672a245d643fa8871d57038ea2dd25fea64",
+                "effective": "7d7c85405625bbd47f08eb1bcfe8ffa2f8cd6a84185d6d432cbfc70e8db9f267"
+              },
+              "8": {
+                "fine": "4b392ceac0da847f9e65128231b946b7eb880a296477a630caf2d6f765c1cb95",
+                "effective": "2e0ba3aead2ce741c6d254158a4d24353ddd6ff286d830b6ce0e593e83c079e0"
+              },
+              "9": {
+                "fine": "4fac8e21fb9816c4b6cb99b489e8c1ee15b9e644c69dc83ff39c1e4f2452b370",
+                "effective": "e5c74f25186e6d3562c19e0f4524c7248814d18f963cd358a9fa7f2bd36c8606"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+            "initialization_ns": 24714750
+          }
+        },
+        {
+          "dt_us": 50,
+          "sham_hz": 12.85,
+          "response_hz": 2.2874999999999996,
+          "provenance": {
+            "config": {
+              "network_id": 0,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 50,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 0,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 50,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "965062ceb92a5b681073b5a125718ec65b727481c224ce1cda49cb315c723646",
+                "initial_mV": "82d2117257e725c136bd8612e3b14f097afc1ecf96e4ed15ea24942887dca885",
+                "pre": "e8a57ba7f71ce9498649bdee71e34dd1a54c384dbb6c54c5f145dfa7e6d0789f",
+                "post": "6bdda8e1c3c0aba5520f583e6afbdd51e197423a79d91ac34f7d9f7aed11aed5",
+                "weight_pA": "17849a828a7d11fc0da4d12fcecfc646f86447220b6cae4e3f6ef5513ebb4552",
+                "delay_us": "c754df270037d4abee543be91cb35ca8e221cd245514af416e8e5daff1f7f3b7",
+                "stimulation": "31bcb325af2ec4dca0c58d4ae4ab5691409fe690b51c21c21a3d44d5060015b3",
+                "recording": "83825198eec61792260459c0dd6427e1bc8699255b0bef806bfde2b41c79d8fa"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad",
+                "effective": "bba301b6ea56d0454a4258c5ab76c6878e08340a9b500c6c3440e22a8dd581ad"
+              },
+              "1": {
+                "fine": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9",
+                "effective": "11349292eec3582039346439554341df0f3f5aa791490744b764925998d3a2e9"
+              },
+              "2": {
+                "fine": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5",
+                "effective": "c2583bf8940921b0f353765ed8bee4fccc001ddeafb01e6e532057287d326fe5"
+              },
+              "3": {
+                "fine": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2",
+                "effective": "ad0af0b1c1306d4980d9506bed13ec230e8d0524e6c1dfa87353b98e4f6e00d2"
+              },
+              "4": {
+                "fine": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0",
+                "effective": "bfdf0bf602d34a06d8650e729f01b054f872eef100b7519abfa777203dc747f0"
+              },
+              "5": {
+                "fine": "dc2dc700d9e01820c6dee23406e8b80535b9b617a152111721532a37f6141614",
+                "effective": "dc2dc700d9e01820c6dee23406e8b80535b9b617a152111721532a37f6141614"
+              },
+              "6": {
+                "fine": "0382e9fc9444e51215a142afefa79b0176b956a2c00877160d5ae00558bcd959",
+                "effective": "0382e9fc9444e51215a142afefa79b0176b956a2c00877160d5ae00558bcd959"
+              },
+              "7": {
+                "fine": "b714a8981040d2828909009f76dcc672a245d643fa8871d57038ea2dd25fea64",
+                "effective": "b714a8981040d2828909009f76dcc672a245d643fa8871d57038ea2dd25fea64"
+              },
+              "8": {
+                "fine": "4b392ceac0da847f9e65128231b946b7eb880a296477a630caf2d6f765c1cb95",
+                "effective": "4b392ceac0da847f9e65128231b946b7eb880a296477a630caf2d6f765c1cb95"
+              },
+              "9": {
+                "fine": "4fac8e21fb9816c4b6cb99b489e8c1ee15b9e644c69dc83ff39c1e4f2452b370",
+                "effective": "4fac8e21fb9816c4b6cb99b489e8c1ee15b9e644c69dc83ff39c1e4f2452b370"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 400 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 50. us (every step)      | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 50. us (every step)      | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 50. us (every step)      | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 50. us (every step)      | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 50. us (every step)      | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 50. us (every step)      | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 50. us (every step)      | resets     |     0 |  yes  ",
+            "initialization_ns": 15407167
+          }
+        }
+      ],
+      "rate_difference_hz": 0.16249999999999964,
+      "rate_tolerance_hz": 0.6425000000000001,
+      "response_difference_hz": 0.28749999999999964,
+      "response_tolerance_hz": 0.5,
+      "passed": true
+    },
+    {
+      "network_id": 1,
+      "cases": [
+        {
+          "dt_us": 100,
+          "sham_hz": 14.6325,
+          "response_hz": 2.967500000000001,
+          "provenance": {
+            "config": {
+              "network_id": 1,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 100,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 1,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 100,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "2824caa3e4612ecfc9a3b512f54df33dd04d8827297817f283eab4d6f96300e9",
+                "initial_mV": "272eebb9e146a8b4ff3d663527d21d1f54afa0dbff35fbee784bd27008504cfe",
+                "pre": "2050ad8ed89519219a713d04aac89350e886b0e543b31da32f91242414b2a289",
+                "post": "178441aa58f08b5963972a39ae410da0d6979134a197fe6bfa544e7197025058",
+                "weight_pA": "02ad8e6340a03d17617d8c87ef39ff341288243730ac962248a93069c84f5b6a",
+                "delay_us": "9bb1eb975c47fa7b382451ac047150fee02d6c0a79d3fdd12224cf7046703701",
+                "stimulation": "b8ae0b6bc3e9e42fbeeca9d2dba7fe46214b1db900648009d9373278c24fe843",
+                "recording": "b9a0705f1554099bae3d296508c6fcdf40c09f4664599b82ff81785452f540c1"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "3e09f469f1dfa08ca9dddafa78e85d74e4a823c0f25fbea2bef5bf1995aa18c0",
+                "effective": "8aa80487cd8240c99d1451fe89cb194309439514b236ad61b6673d8ff3668dfc"
+              },
+              "1": {
+                "fine": "0259d8fadd345b74371f593be37bcc0f4c4574ba7bf656688fb99afadfafd805",
+                "effective": "dd2983236be52519ecb108bf6cf0ecad67eb9c73bb5e4f204e1fa64f9845a19d"
+              },
+              "2": {
+                "fine": "083f9e6b927a972b96586eea280208a309cafc494f5175e50b81a90d63eedea0",
+                "effective": "830e1bcfa4a46a5e92751897682428df6dd0ffa3e87b5e1631b47e08647cc4db"
+              },
+              "3": {
+                "fine": "8fc53e113f46c12b3e4d61af7df05de36313e1b1ea5c5575693e854115fddc04",
+                "effective": "ad4f6838f859b60f01fb7341569c4915b5db84afe8e7912a392347f29384dc90"
+              },
+              "4": {
+                "fine": "26c73f50db243a3e0f03db1e8c9abc7281b59a3d587dadd671cc6c866d45f78c",
+                "effective": "a01c45b7f98670fe63880c8a872e3f0db04cd942938b1c2b1e916d0ada547f45"
+              },
+              "5": {
+                "fine": "a255d7632e2585f46fe4dba8a92a7b836ec1798e164e4edcc5f93a29afa7d1a8",
+                "effective": "97667d3b7341c5b5c13979f98c959623c2b5d743435f13bc47725c3955b86748"
+              },
+              "6": {
+                "fine": "798291b3a0405d8f88d45d4efe3dc785456d73f00654c075e78213a23eb13955",
+                "effective": "7cda35ae92617cd590f671b71f6e4879a3350e4b046b9039850103a0a2d8930e"
+              },
+              "7": {
+                "fine": "5d7b83730debe469d569a901475b61ce8f017bbbf4452eaf31f3b586161b30fa",
+                "effective": "2ec69ebf42baaf9333dd7d57f4f2c4ce1028f11c107483f52e946489f43d52a1"
+              },
+              "8": {
+                "fine": "56c7612890c4ad9b235b85cbdbb91c2d5ca992e9975b3cd2f5dfa3ff5459cfae",
+                "effective": "c5c0f8fd97ee65e57d38a9198794ffdb8394b67df095d1c2f36a7fc5e7f7bef8"
+              },
+              "9": {
+                "fine": "9ab98cbb49133b91216d70c7ce06dc794f77d7ded8257196c6b2a5c0a1cfcec8",
+                "effective": "2eeaa1fd3b5097183c6d3f343d21cbf253b0e77f6a03019becd3768c9b722ebd"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+            "initialization_ns": 19949042
+          }
+        },
+        {
+          "dt_us": 50,
+          "sham_hz": 14.7075,
+          "response_hz": 2.7925000000000004,
+          "provenance": {
+            "config": {
+              "network_id": 1,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 50,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 1,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 50,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "2824caa3e4612ecfc9a3b512f54df33dd04d8827297817f283eab4d6f96300e9",
+                "initial_mV": "272eebb9e146a8b4ff3d663527d21d1f54afa0dbff35fbee784bd27008504cfe",
+                "pre": "2050ad8ed89519219a713d04aac89350e886b0e543b31da32f91242414b2a289",
+                "post": "178441aa58f08b5963972a39ae410da0d6979134a197fe6bfa544e7197025058",
+                "weight_pA": "02ad8e6340a03d17617d8c87ef39ff341288243730ac962248a93069c84f5b6a",
+                "delay_us": "9bb1eb975c47fa7b382451ac047150fee02d6c0a79d3fdd12224cf7046703701",
+                "stimulation": "b8ae0b6bc3e9e42fbeeca9d2dba7fe46214b1db900648009d9373278c24fe843",
+                "recording": "b9a0705f1554099bae3d296508c6fcdf40c09f4664599b82ff81785452f540c1"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "3e09f469f1dfa08ca9dddafa78e85d74e4a823c0f25fbea2bef5bf1995aa18c0",
+                "effective": "3e09f469f1dfa08ca9dddafa78e85d74e4a823c0f25fbea2bef5bf1995aa18c0"
+              },
+              "1": {
+                "fine": "0259d8fadd345b74371f593be37bcc0f4c4574ba7bf656688fb99afadfafd805",
+                "effective": "0259d8fadd345b74371f593be37bcc0f4c4574ba7bf656688fb99afadfafd805"
+              },
+              "2": {
+                "fine": "083f9e6b927a972b96586eea280208a309cafc494f5175e50b81a90d63eedea0",
+                "effective": "083f9e6b927a972b96586eea280208a309cafc494f5175e50b81a90d63eedea0"
+              },
+              "3": {
+                "fine": "8fc53e113f46c12b3e4d61af7df05de36313e1b1ea5c5575693e854115fddc04",
+                "effective": "8fc53e113f46c12b3e4d61af7df05de36313e1b1ea5c5575693e854115fddc04"
+              },
+              "4": {
+                "fine": "26c73f50db243a3e0f03db1e8c9abc7281b59a3d587dadd671cc6c866d45f78c",
+                "effective": "26c73f50db243a3e0f03db1e8c9abc7281b59a3d587dadd671cc6c866d45f78c"
+              },
+              "5": {
+                "fine": "a255d7632e2585f46fe4dba8a92a7b836ec1798e164e4edcc5f93a29afa7d1a8",
+                "effective": "a255d7632e2585f46fe4dba8a92a7b836ec1798e164e4edcc5f93a29afa7d1a8"
+              },
+              "6": {
+                "fine": "798291b3a0405d8f88d45d4efe3dc785456d73f00654c075e78213a23eb13955",
+                "effective": "798291b3a0405d8f88d45d4efe3dc785456d73f00654c075e78213a23eb13955"
+              },
+              "7": {
+                "fine": "5d7b83730debe469d569a901475b61ce8f017bbbf4452eaf31f3b586161b30fa",
+                "effective": "5d7b83730debe469d569a901475b61ce8f017bbbf4452eaf31f3b586161b30fa"
+              },
+              "8": {
+                "fine": "56c7612890c4ad9b235b85cbdbb91c2d5ca992e9975b3cd2f5dfa3ff5459cfae",
+                "effective": "56c7612890c4ad9b235b85cbdbb91c2d5ca992e9975b3cd2f5dfa3ff5459cfae"
+              },
+              "9": {
+                "fine": "9ab98cbb49133b91216d70c7ce06dc794f77d7ded8257196c6b2a5c0a1cfcec8",
+                "effective": "9ab98cbb49133b91216d70c7ce06dc794f77d7ded8257196c6b2a5c0a1cfcec8"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 400 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 50. us (every step)      | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 50. us (every step)      | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 50. us (every step)      | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 50. us (every step)      | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 50. us (every step)      | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 50. us (every step)      | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 50. us (every step)      | resets     |     0 |  yes  ",
+            "initialization_ns": 21125500
+          }
+        }
+      ],
+      "rate_difference_hz": 0.07499999999999929,
+      "rate_tolerance_hz": 0.735375,
+      "response_difference_hz": 0.1750000000000007,
+      "response_tolerance_hz": 0.5,
+      "passed": true
+    },
+    {
+      "network_id": 2,
+      "cases": [
+        {
+          "dt_us": 100,
+          "sham_hz": 11.75,
+          "response_hz": 2.2699999999999996,
+          "provenance": {
+            "config": {
+              "network_id": 2,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 100,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 2,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 100,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "e66ab40c184b17c950fc83c4c9b286cdc0358b742d0a39bbd9f506331e04a764",
+                "initial_mV": "e9f3d4cad66b6fbc582edc47a5b77fde17782eda012a1e45e3c1f425376d8e78",
+                "pre": "42af10cf7cd45eaed0c4de79f85ec603d7b4c3c18c80e878c6297a7ffda48733",
+                "post": "182456e42c2a7c4bb4bad7f0717dc48b73249a7726240a5e4a9c31e58895f090",
+                "weight_pA": "2bceaf3d7a1ee1415e533e463443731f5235937ebb95ce3996b25181e3cb473a",
+                "delay_us": "a52793e1e6d271a68f7fc5cbe0dc7708c74d7b8144c83df957def6fdcdd295e4",
+                "stimulation": "931055c0225664087b0849d171ac4bd120f4bb3ee7c9859a9f8a90c5da7e7c6c",
+                "recording": "1f582c536b21d3096995822621d36b8c539a9fca11e81eec1dfb35d8609092d7"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "4b907902c5aca71e8605d1c056538415e56f7231554bd0207c70d691db157e2c",
+                "effective": "55d73f677cf0585d3326bee3f09c5ca0c8ecee5db8359900ddd09f2915bb3005"
+              },
+              "1": {
+                "fine": "d93b89e1926fc6fca47c7d568be6e0d8f2786670e211e831f0a259d2c1a4abdc",
+                "effective": "fc68d491cced44c19debda2d714034d72ce2dfca91259a29b3f042d0e2e79914"
+              },
+              "2": {
+                "fine": "05378c183de6626e75dba20041793fac8359b627b3486a7efd26f0b72b746dbe",
+                "effective": "5d919d62b049c10302bd1aeb02b4d8f8e293982e0260134458621c52b95b0ee0"
+              },
+              "3": {
+                "fine": "fc8468ec7389edfc97cd48d8027b5366eeaee3d3bc395cc040fa43f1359f6baa",
+                "effective": "e77187f6637b4514d9b7545971613f943bea92f060d2ac106e6d6e6dede931b6"
+              },
+              "4": {
+                "fine": "5f08c504deea2a77229f979d0a5cd55e2965f36bc83d270ee71664369ac24da6",
+                "effective": "a010f3c3299c46d629d3b18ec632c642382a09f5636cd99307b1a3602d76d0dc"
+              },
+              "5": {
+                "fine": "8a5fc5ff6b5ae2ded79502b9355239a797270c5917cdb6432be1d435585c698f",
+                "effective": "963a528da39d286014506c76bdf2a4814611ee871444fcadf4d410174ff63b88"
+              },
+              "6": {
+                "fine": "b572a0c64b87193f62b68ebed35ceb42fa721e4ec6ef3a91571cb4e8fd5a8da9",
+                "effective": "17e27a6ef7f915543353204ce4d27ffd391ca944bf407a95bd356825cde4085c"
+              },
+              "7": {
+                "fine": "24d04f3a802a561305a02fc006ec0177020251386e8985e832578d5ae6fdf3ea",
+                "effective": "709d7ac536e12e8890605c5b6fd1918a44116954794741347967394c7d620a7c"
+              },
+              "8": {
+                "fine": "a9df7622554c8c79aee88557614bac4c36cfe387ecb0a9dc1152a5e1ab66dabf",
+                "effective": "a76770dcaf75da3ce2f25a56e5836bd233987400fb3f4ed65404c38e6135efa8"
+              },
+              "9": {
+                "fine": "e99e2a120f08f9ae0b10aa5065673f6124c4cb7b6c9dce9b4a9fb23ea923070c",
+                "effective": "dad29ca7a8e523fa834f68493ffe326a390c5cf099bee1daedb51bd13c74f706"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 200 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 100. us (every step)     | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 100. us (every step)     | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 100. us (every step)     | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 100. us (every step)     | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 100. us (every step)     | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 100. us (every step)     | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 100. us (every step)     | resets     |     0 |  yes  ",
+            "initialization_ns": 15681333
+          }
+        },
+        {
+          "dt_us": 50,
+          "sham_hz": 11.785,
+          "response_hz": 2.1875,
+          "provenance": {
+            "config": {
+              "network_id": 2,
+              "replicate_id": 0,
+              "root_seed": 20261018,
+              "trial_id": "trial",
+              "dt_us": 50,
+              "efficacy": 1.0,
+              "retain_spikes": false
+            },
+            "metadata": {
+              "schema_version": 1,
+              "experiment_kind": "simulation",
+              "trial_id": "trial",
+              "network_id": 2,
+              "replicate_id": 0,
+              "engine": "brian2",
+              "engine_version": "2.10.1",
+              "dt_us": 50,
+              "control_us": 20000,
+              "recording_channels": 20,
+              "neurons_per_recording_channel": 5,
+              "current_unit": "pA",
+              "time_unit": "us",
+              "parameter_hashes": {
+                "tau_ms": "e66ab40c184b17c950fc83c4c9b286cdc0358b742d0a39bbd9f506331e04a764",
+                "initial_mV": "e9f3d4cad66b6fbc582edc47a5b77fde17782eda012a1e45e3c1f425376d8e78",
+                "pre": "42af10cf7cd45eaed0c4de79f85ec603d7b4c3c18c80e878c6297a7ffda48733",
+                "post": "182456e42c2a7c4bb4bad7f0717dc48b73249a7726240a5e4a9c31e58895f090",
+                "weight_pA": "2bceaf3d7a1ee1415e533e463443731f5235937ebb95ce3996b25181e3cb473a",
+                "delay_us": "a52793e1e6d271a68f7fc5cbe0dc7708c74d7b8144c83df957def6fdcdd295e4",
+                "stimulation": "931055c0225664087b0849d171ac4bd120f4bb3ee7c9859a9f8a90c5da7e7c6c",
+                "recording": "1f582c536b21d3096995822621d36b8c539a9fca11e81eec1dfb35d8609092d7"
+              }
+            },
+            "numpy_version": "2.5.4",
+            "generator": "PCG64 / SeedSequence",
+            "role_key": "(network_id,role_id,replicate_id[,block_index])",
+            "parameter_replicate": 0,
+            "ou_fine_dt_us": 50,
+            "noise_block_us": 1000000,
+            "noise_hashes": {
+              "0": {
+                "fine": "4b907902c5aca71e8605d1c056538415e56f7231554bd0207c70d691db157e2c",
+                "effective": "4b907902c5aca71e8605d1c056538415e56f7231554bd0207c70d691db157e2c"
+              },
+              "1": {
+                "fine": "d93b89e1926fc6fca47c7d568be6e0d8f2786670e211e831f0a259d2c1a4abdc",
+                "effective": "d93b89e1926fc6fca47c7d568be6e0d8f2786670e211e831f0a259d2c1a4abdc"
+              },
+              "2": {
+                "fine": "05378c183de6626e75dba20041793fac8359b627b3486a7efd26f0b72b746dbe",
+                "effective": "05378c183de6626e75dba20041793fac8359b627b3486a7efd26f0b72b746dbe"
+              },
+              "3": {
+                "fine": "fc8468ec7389edfc97cd48d8027b5366eeaee3d3bc395cc040fa43f1359f6baa",
+                "effective": "fc8468ec7389edfc97cd48d8027b5366eeaee3d3bc395cc040fa43f1359f6baa"
+              },
+              "4": {
+                "fine": "5f08c504deea2a77229f979d0a5cd55e2965f36bc83d270ee71664369ac24da6",
+                "effective": "5f08c504deea2a77229f979d0a5cd55e2965f36bc83d270ee71664369ac24da6"
+              },
+              "5": {
+                "fine": "8a5fc5ff6b5ae2ded79502b9355239a797270c5917cdb6432be1d435585c698f",
+                "effective": "8a5fc5ff6b5ae2ded79502b9355239a797270c5917cdb6432be1d435585c698f"
+              },
+              "6": {
+                "fine": "b572a0c64b87193f62b68ebed35ceb42fa721e4ec6ef3a91571cb4e8fd5a8da9",
+                "effective": "b572a0c64b87193f62b68ebed35ceb42fa721e4ec6ef3a91571cb4e8fd5a8da9"
+              },
+              "7": {
+                "fine": "24d04f3a802a561305a02fc006ec0177020251386e8985e832578d5ae6fdf3ea",
+                "effective": "24d04f3a802a561305a02fc006ec0177020251386e8985e832578d5ae6fdf3ea"
+              },
+              "8": {
+                "fine": "a9df7622554c8c79aee88557614bac4c36cfe387ecb0a9dc1152a5e1ab66dabf",
+                "effective": "a9df7622554c8c79aee88557614bac4c36cfe387ecb0a9dc1152a5e1ab66dabf"
+              },
+              "9": {
+                "fine": "e99e2a120f08f9ae0b10aa5065673f6124c4cb7b6c9dce9b4a9fb23ea923070c",
+                "effective": "e99e2a120f08f9ae0b10aa5065673f6124c4cb7b6c9dce9b4a9fb23ea923070c"
+              }
+            },
+            "brian_rng": "role 7 reserved; no Brian random expressions or stochastic solver",
+            "schedule": "                  object                    |           part of           |         Clock dt         |    when    | order | active\n--------------------------------------------+-----------------------------+--------------------------+------------+-------+-------\nneurongroup_run_regularly (CodeRunner)      | neurongroup (NeuronGroup)   | 20. ms (every 400 steps) | start      |    -2 |  yes  \nneurongroup_run_regularly_1 (CodeRunner)    | neurongroup (NeuronGroup)   | 50. us (every step)      | start      |    -1 |  yes  \nneurongroup_stateupdater (StateUpdater)     | neurongroup (NeuronGroup)   | 50. us (every step)      | groups     |     0 |  yes  \nneurongroup_spike_thresholder (Thresholder) | neurongroup (NeuronGroup)   | 50. us (every step)      | thresholds |     0 |  yes  \nspikemonitor (SpikeMonitor)                 | spikemonitor (SpikeMonitor) | 50. us (every step)      | thresholds |     1 |  yes  \nsynapses_1_pre (SynapticPathway)            | synapses_1 (Synapses)       | 50. us (every step)      | synapses   |    -1 |  yes  \nsynapses_pre (SynapticPathway)              | synapses (Synapses)         | 50. us (every step)      | synapses   |    -1 |  yes  \nneurongroup_spike_resetter (Resetter)       | neurongroup (NeuronGroup)   | 50. us (every step)      | resets     |     0 |  yes  ",
+            "initialization_ns": 18217917
+          }
+        }
+      ],
+      "rate_difference_hz": 0.03500000000000014,
+      "rate_tolerance_hz": 0.58925,
+      "response_difference_hz": 0.08249999999999957,
+      "response_tolerance_hz": 0.5,
+      "passed": true
+    }
+  ],
+  "gate": "PASS",
+  "limitation": "Paired nested OU innovations; one finite-duration realization per network, no equality of spikes across dt asserted. Held-current response rather than short-pulse convergence."
+}

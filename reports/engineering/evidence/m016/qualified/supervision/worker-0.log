@@ -1,0 +1,28 @@
+Warning: Jitter detection is currently not supported in cl-sdk. This may lead to unexpected loop timing behaviour if your loop body takes a long time to execute.
+Traceback (most recent call last):
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 121, in <module>
+    main(Path(sys.argv[1]).resolve(),sys.argv[2])
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 114, in main
+    completed.append(run_case(output,name,enabled,delay))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/adithyaupad/Developer/neuromancer/scripts/m016_run.py", line 97, in run_case
+    atomic_json(directory/'summary.json',summary)
+  File "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/supervisor.py", line 47, in atomic_json
+    json.dump(value, stream, allow_nan=False, indent=2)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+                 ^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type int64 is not JSON serializable

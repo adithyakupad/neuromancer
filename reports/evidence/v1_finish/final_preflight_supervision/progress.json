@@ -1,0 +1,63 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/evidence/v1_finish/final_preflight_fixtures",
+        "--junitxml=reports/evidence/v1_finish/final_preflight_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 790023024848541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 790023027866666
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 790084711558625
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 60780,
+      "pgid": 60780,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/final_preflight_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/runner_smoke",
+        "reports/evidence/v1_finish/runner_verification.json"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 790023024848541
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 790084715121875
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 61062,
+      "pgid": 61062,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/final_preflight_supervision/stop-1"
+    }
+  ]
+}

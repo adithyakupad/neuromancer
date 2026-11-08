@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "reports/evidence/m005a/analyze.py",
+        "reports/evidence/m005a/results/tune",
+        "reports/evidence/m005a_3/tuning_analysis"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 500246525988791
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 500246529061791
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 500247085533458
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 89020,
+      "pgid": 89020,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_3/tuning_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m004-venv/bin/python",
+        "reports/evidence/m005a/verify.py",
+        "reports/evidence/m005a/results/tune",
+        "reports/evidence/m005a_3/tuning_analysis",
+        "reports/evidence/m005a_3/tuning_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 500246525988791
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 500247088055500
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 500284875385333
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 89021,
+      "pgid": 89021,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m005a_3/tuning_supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 500246525988791,
+  "deadline_ns": 501446525976166,
+  "work_cutoff_ns": 501445725976166,
+  "finished_ns": 500284875564500,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -1,0 +1,65 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_fixtures",
+        "--junitxml=/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 789429306368791
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 789429309106333
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 789490230710250
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 59652,
+      "pgid": 59652,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+        "-m",
+        "neuromancer.m005b_study",
+        "inner",
+        "engineering",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/runner_smoke"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 789429306368791
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 789490233368708
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 59948,
+      "pgid": 59948,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/v1_finish/acquisition_preflight_supervision/stop-1"
+    }
+  ]
+}

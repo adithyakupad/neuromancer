@@ -1,0 +1,64 @@
+{
+  "execution": "PASS",
+  "scientific": "PASS",
+  "extended_recovery": "PASS",
+  "stationary_guardrail": "PASS",
+  "m005b": "HOLD",
+  "old_m005a5": "FAIL_UNCHANGED",
+  "trials": 20,
+  "branches": 100,
+  "new_networks": false,
+  "new_noise": [
+    45,
+    46
+  ],
+  "horizon_s": 64,
+  "primary_window": [
+    48,
+    64
+  ],
+  "cohort_loss": {
+    "qualified": 10,
+    "bias_ci_hz": [
+      -0.04902343750000003,
+      -0.017617187500000072
+    ],
+    "pass_gate": true,
+    "component_counts": {
+      "calibration": 10,
+      "noise": 10,
+      "headroom": 10,
+      "bias": 10,
+      "block_bias": 10,
+      "mae": 10,
+      "block_mae": 10,
+      "valid": 10
+    }
+  },
+  "cohort_static": {
+    "qualified": 9,
+    "bias_ci_hz": [
+      -0.020664062500000132,
+      0.009140624999999975
+    ],
+    "pass_gate": true,
+    "component_counts": {
+      "calibration": 10,
+      "noise": 10,
+      "headroom": 10,
+      "bias": 10,
+      "block_bias": 10,
+      "mae": 10,
+      "block_mae": 9,
+      "valid": 10
+    }
+  },
+  "acquisition_revision": "5332f4291b0a17098d047b32ea8a4b818bfe007a",
+  "preregistration_revision": "40ee4b71f472beaef4ab3d8610a29f9d6ffc7148",
+  "tests": {
+    "preflight_tests.xml": 157,
+    "final_tests.xml": 157
+  },
+  "monitoring_cadence_deviation_disclosed": true,
+  "no_new_mission_authorized": true
+}

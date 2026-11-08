@@ -1,0 +1,67 @@
+{
+  "deadline": {
+    "end_ns": 800828544621625,
+    "clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897"
+  },
+  "source_revision": "0a9b34e4145f4b42274c1e2b4966b772b2f791b9",
+  "commands": [
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "reports/evidence/v1_finish/prediction_summary.py",
+      "reports/evidence/v1_finish/m005b/analysis_primary",
+      "reports/evidence/v1_finish/m005b/prediction_summary.json"
+    ],
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "reports/evidence/v1_finish/supplemental_metrics.py",
+      "reports/evidence/v1_finish/m005b/primary",
+      "reports/evidence/v1_finish/m005b/supplement_primary"
+    ],
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "reports/evidence/v1_finish/supplemental_metrics.py",
+      "reports/evidence/v1_finish/m005b/faults",
+      "reports/evidence/v1_finish/m005b/supplement_faults"
+    ],
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--basetemp=reports/evidence/v1_finish/closing_regression_fixtures",
+      "--junitxml=reports/evidence/v1_finish/m005b/final_tests.xml"
+    ],
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "reports/evidence/v1_finish/final_integrity.py"
+    ],
+    [
+      "/Users/adithyaupad/Developer/neuromancer/.venv/bin/python",
+      "reports/evidence/v1_finish/build_research_report.py"
+    ]
+  ],
+  "auxiliary_source_sha256": {
+    "reports/evidence/v1_finish/prediction_summary.py": "af13503d6d0c143399c0c910240a7ae3f178299af7bf2ca5157a820cd34a553e",
+    "reports/evidence/v1_finish/build_research_report.py": "1064df2418da61946f9e045058f84501f25addf69143861964aef6cf806e6f78",
+    "reports/evidence/v1_finish/final_qualification.py": "6a595fb4674c776f71323664c31c5107921292e609a4650cbb29d03d0628c115",
+    "reports/evidence/v1_finish/concurrent_profile_four.py": "e76ba714853c384e819a87b73bae0352a5cb6392057249c953f58b883700b5d8",
+    "reports/evidence/v1_finish/stage1.py": "9602615313b0f1dacc4d268cbeb6257b6b93f97252e44d25ebb9ed5589363734",
+    "reports/evidence/v1_finish/verify_metrics.py": "d6de3aac8dc1edaaa12c5e9e8a725392f3ed73b824401aa7cd77a4f1556c8f3f",
+    "reports/evidence/v1_finish/final_integrity.py": "eb5d07467cfd0c58d48e81c9f02aadb3199e35ffa2d8ed91447646d60b2689ce",
+    "reports/evidence/v1_finish/profile.py": "af728b903ad4ce895667212649f5b94f6c132a6852405c25c26b63e7fdfb9a6e",
+    "reports/evidence/v1_finish/acquisition_preflight.py": "455d8722b417e3e903c33d4e5b78a68c521bbe8f1fd60b59dfb37a0f77f378c4",
+    "reports/evidence/v1_finish/concurrent_profile.py": "f19b057f8ff5aae79c32379cc199647d37e86b732702ed75de1acb08eefd5d5b",
+    "reports/evidence/v1_finish/verify_study.py": "00676aef63f97f0a0aa8f744f0c17af457a714c7e84be1ccfb0ed33e95be6342",
+    "reports/evidence/v1_finish/shadow_controls.py": "c9977826392845d5df147650c47c4945303858156293809a928fd0fc3a761423",
+    "reports/evidence/v1_finish/research_figures.py": "1f7a5d0ec762248747e927d78474e83de5e51a647b359edda63352339ebebcb9",
+    "reports/evidence/v1_finish/codec_check.py": "8aaefa70f7d3b0e15e7c8efbe42ceba029dada03560cfda55debe76c01c456ef",
+    "reports/evidence/v1_finish/final_ready.py": "e51ee20505e554d48a200a46b6254548fbe4d51ad03972eda2cc95e1e0355ae6",
+    "reports/evidence/v1_finish/freeze_acquisition.py": "af1e259d09d526ff88ef823e21877e4775b1403d3b819525e7c044ef531d8a74",
+    "reports/evidence/v1_finish/profile_extended.py": "86461faaff880d6067b0523c2c4f998cb7943c356c45603f7a3d83dc3026498a",
+    "reports/evidence/v1_finish/stage2.py": "99e2bcd6c47df80442c5a40ee313677d35c4f27709264f93bd2ae300753d53cf",
+    "reports/evidence/v1_finish/recover_analysis.py": "92bac7e4e9093033dc7741f9dac15eb98f89e7befc026a31bcb8d215c383aaae",
+    "reports/evidence/v1_finish/finish_development.py": "0d737f09c1c8c9696a754d5b48928b0d18c03d7806cc1fa77215d0933afa277d",
+    "reports/evidence/v1_finish/supplemental_metrics.py": "5137a4f0a45eb9dd0a2d2019ab1edf45139e07b0a48bfa5cffd2757ba8696e15",
+    "reports/evidence/v1_finish/monitor_readiness.py": "e61d5ef2d83dd26f3c95c1f55f41b99a98525e6747dffd7856262959160c08c9"
+  }
+}

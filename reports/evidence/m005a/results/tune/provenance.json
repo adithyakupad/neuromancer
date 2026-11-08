@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "experiment_kind": "simulation",
+  "head": "d17017b13fa55ed7173500044b5ce57da5dd3b2d",
+  "branch": "research/m005a-closed-loop-foundation",
+  "working_tree": "?? reports/evidence/m005a/acquisition_tune_corrected.log",
+  "source_hashes": {
+    "neuromancer/__init__.py": "4c74fc568665ec777cb051d3a09428493a36dd00e0a06bf789b2e1feaa9a92ed",
+    "neuromancer/_brian.py": "5e20f00b496c310018421cf200dfd2f767f63c12e84a7eab0af1880a23323519",
+    "neuromancer/authority_diagnosis.py": "ab78622f6579a671feb65ac03cc5f71b247cb33be9fd25f15977825f321ac468",
+    "neuromancer/calibration.py": "8fe18c34fcb5b59504e827f3a233bd4d4bd6465b3c771c82f4ad2dca31fec657",
+    "neuromancer/calibration_diagnostic.py": "1930bb4d63f84eff2e7e238518ba833880efe31b90db64ed43f73679efef45b3",
+    "neuromancer/control.py": "e7f63a8b150d4ddbff0f647399043f5f36fcd0d7239108e5c97dfc3d38612876",
+    "neuromancer/control_experiment.py": "47a38c430d5466d465538ed2695206b4305fb243e21715b7a005a0718d6565e2",
+    "neuromancer/diagnostic.py": "e62b3339b76ec34123a41237aaadd9c751750c3c554478a73872627bc4fc2dce",
+    "neuromancer/identification_experiment.py": "c5eb49a606fe02355e70765ea5fa9de5454f72b585617d4dde41c67c60d686ef",
+    "neuromancer/identify.py": "fd3c4aa489f16514ab1f6a99fb1ccd45622ef661c3a6693cc0fc956e65342b34",
+    "neuromancer/necessity.py": "ada3d8a7ed1667b69b5d8c5b3ba12d574c48bb15004dcb259ecc77135c41e602",
+    "neuromancer/necessity_experiment.py": "d9bbe6cfe98d8837e940ee65effe01b399e9cc109df1df64bef27079fb61dedb",
+    "neuromancer/observation.py": "e057226622cfb65bc4e644cf25e190e3d880cb0e77829c27a29ff4de06e26f5b",
+    "neuromancer/online_experiment.py": "8a5d7d5c555df4e1b8c901d44b874f81f8440af72f6d8610093ad03b6ad2fc11",
+    "neuromancer/online_identify.py": "b4d225effd81107874d1914b1dee384b74c99f90003955a4b176bf4134a4aa57",
+    "neuromancer/reachability.py": "ace1b964b4f774aaf4322adc1925def3802dc15d48471621140e78147f8129bf",
+    "neuromancer/state_dependence.py": "5220e237b11673d6e3a0e61ff66c797f91b6c9b682610d4a4a966f5913cf4334",
+    "neuromancer/state_experiment.py": "058ac550d10a986065cc95953377bd1b2f1f564c44ce0842164dc3516645de8f",
+    "neuromancer/substrate.py": "45771e521ee3a66c2c4046ebbc0eeb5dce576abfe993f36821b9cea33a6b89e9"
+  },
+  "protocol_sha256": "0a2526ef4b6d9da37e4d65395f5ce264cc01c36bfd8c4bcbbe0e8399fbd404d6",
+  "root_seed": 20261018,
+  "seed_roles": {
+    "0": "membrane/init",
+    "1": "connectivity",
+    "2": "weights/delays",
+    "3": "channels",
+    "4": "OU",
+    "5": "calibration",
+    "6": "masks",
+    "7": "reserved Brian"
+  },
+  "python": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-26.5.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "package_versions": {
+    "neuromancer": "0.2.0",
+    "brian2": "2.10.1",
+    "numpy": "2.5.4",
+    "sympy": "1.14.0",
+    "cython": "3.1.3"
+  },
+  "cli": [
+    "/Users/adithyaupad/Developer/neuromancer/src/neuromancer/control_experiment.py",
+    "--stage",
+    "TUNE",
+    "--output",
+    "runs/m005a-tune-02"
+  ],
+  "clock": "integer us; 100 us neural grid and 20000 us control bins",
+  "evaluated_split": "training only; IDs 0-9, or 0-2 for convergence",
+  "stage": "TUNE",
+  "names": [
+    "ZERO",
+    "FIXED",
+    "MAX",
+    "PI10_5",
+    "PI20_10",
+    "PI30_15"
+  ],
+  "replicates": [
+    40
+  ],
+  "networks": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "wall_limit_s": 3600,
+  "simulated_seconds": 4350
+}

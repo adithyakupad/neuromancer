@@ -1,0 +1,35 @@
+{
+  "status": "STOP_REQUESTED",
+  "reason": "Preregistered clock-discrepancy stop: calendar elapsed exceeds monotonic by33.865679seconds; suspend-inclusive enforcement unqualified",
+  "pid": 89210,
+  "epoch_s": 1793162604.829986,
+  "monotonic_ns": 500950783064250,
+  "clock_evidence": {
+    "epoch_s": 1793162565.8935418,
+    "monotonic_ns": 500911847134083,
+    "clock_info": {
+      "time": {
+        "implementation": "clock_gettime(CLOCK_REALTIME)",
+        "monotonic": false,
+        "adjustable": true,
+        "resolution": 1.0000000000000002e-06
+      },
+      "monotonic": {
+        "implementation": "mach_absolute_time()",
+        "monotonic": true,
+        "adjustable": false,
+        "resolution": 4.166666666666667e-08
+      },
+      "perf_counter": {
+        "implementation": "mach_absolute_time()",
+        "monotonic": true,
+        "adjustable": false,
+        "resolution": 4.166666666666667e-08
+      }
+    },
+    "calendar_elapsed_s": 503.3155949115753,
+    "monotonic_elapsed_s": 469.449915917,
+    "difference_s": 33.86567899457532
+  },
+  "scientific_retry_authorized": false
+}

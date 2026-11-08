@@ -1,0 +1,56 @@
+{
+  "budget_s": 1200,
+  "workers": 1,
+  "supervision_output": "reports/evidence/m005a_7/verification_supervision",
+  "commands": [
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/analyze.py",
+      "--output",
+      "reports/evidence/m005a_7/analysis"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/verify.py"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/causality.py",
+      "reports/evidence/m005a_7/trials",
+      "reports/evidence/m005a_7/causality_verification.json",
+      "reports/evidence/m005a_3/tuning_analysis/selection.json"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/replay.py"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "--basetemp=reports/evidence/m005a_7/final_trials",
+      "--junitxml=reports/evidence/m005a_7/final_tests.xml"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/figures.py",
+      "reports/evidence/m005a_7/analysis"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/analyze.py",
+      "--output",
+      "reports/evidence/m005a_7/repeat_analysis"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/figures.py",
+      "reports/evidence/m005a_7/repeat_analysis"
+    ],
+    [
+      "/tmp/neuromancer-m004-venv/bin/python",
+      "reports/evidence/m005a_7/compare_repeat.py"
+    ]
+  ]
+}

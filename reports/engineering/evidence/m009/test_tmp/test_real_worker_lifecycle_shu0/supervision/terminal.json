@@ -1,0 +1,67 @@
+{
+  "status": "DEADLINE_EXCEEDED",
+  "cause": "DEADLINE_EXCEEDED",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "/Users/adithyaupad/Developer/neuromancer/tests/supervisor_worker.py",
+        "shutdown_block",
+        "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/test_tmp/test_real_worker_lifecycle_shu0/worker",
+        "1298829978052250"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298828978099625
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298828980916500
+        },
+        {
+          "state": "STOP_REQUESTED",
+          "monotonic_ns": 1298829980495875
+        },
+        {
+          "state": "TERMINATING",
+          "monotonic_ns": 1298830180431166
+        },
+        {
+          "state": "KILLING",
+          "monotonic_ns": 1298830380199458
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298830392829041
+        }
+      ],
+      "terminal": "FORCED_TERMINATION",
+      "cause": "DEADLINE_EXCEEDED",
+      "pid": 4620,
+      "pgid": 4620,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/test_tmp/test_real_worker_lifecycle_shu0/supervision/stop-0",
+      "last_running_poll_ns": 1298830380256125,
+      "signal_errors": [
+        null,
+        null
+      ],
+      "first_observed_exit_ns": 1298830392791291,
+      "returncode": -9,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1298828978099625,
+  "deadline_ns": 1298830778052250,
+  "work_cutoff_ns": 1298829978052250,
+  "finished_ns": 1298830405393708,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1298830778052250,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

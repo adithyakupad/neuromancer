@@ -1,0 +1,147 @@
+{
+  "status": "COMPLETED",
+  "cause": "normal completion",
+  "error": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298763366718416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298763370158708
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298763706052708
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 4251,
+      "pgid": 4251,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/qualification/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp=reports/engineering/evidence/m009/test_tmp",
+        "--junitxml=reports/engineering/evidence/m009/tests.xml"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298763366718416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298763708439791
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298842939207833
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 4252,
+      "pgid": 4252,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/qualification/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "tools/m008_traced_repeats.py",
+        "reports/engineering/evidence/m009/process_trials"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298763366718416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298842941666291
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298878300701291
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 4793,
+      "pgid": 4793,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/qualification/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        ".",
+        "-w",
+        "reports/engineering/evidence/m009/wheel"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1298763366718416
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1298878302528041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1298879171671916
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 5138,
+      "pgid": 5138,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/engineering/evidence/m009/qualification/stop-3",
+      "returncode": 0,
+      "parent_reaped": true
+    }
+  ],
+  "started_ns": 1298763366718416,
+  "deadline_ns": 1299663366215541,
+  "work_cutoff_ns": 1299662566215541,
+  "finished_ns": 1298879171764333,
+  "deadline_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "post_deadline_cleanup": false,
+  "cleanup_clock_id": "darwin.mach_continuous_time.ns.v1@7F7CEE11-4C83-4DAA-B9AA-1E99D6875897",
+  "cleanup_deadline_ns": 1299663366215541,
+  "persistence_errors": [],
+  "cleanup_verified": true
+}

@@ -1,0 +1,126 @@
+{
+  "cause": null,
+  "workers": [
+    {
+      "index": 0,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "-m",
+        "neuromancer.m005b_analysis",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/analysis"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1049737563055291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1049737566019041
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1049748544498208
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 55029,
+      "pgid": 55029,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/supervision/stop-0",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 1,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_study.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/model_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1049737563055291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1049748550718416
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1049858872647958
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 55047,
+      "pgid": 55047,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/supervision/stop-1",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 2,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/verify_metrics.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/analysis",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/statistics_verification.json"
+      ],
+      "state": "REAPED",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1049737563055291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1049858877185625
+        },
+        {
+          "state": "REAPED",
+          "monotonic_ns": 1049859784487291
+        }
+      ],
+      "terminal": "COMPLETED",
+      "cause": "normal exit",
+      "pid": 55139,
+      "pgid": 55139,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/supervision/stop-2",
+      "returncode": 0,
+      "parent_reaped": true
+    },
+    {
+      "index": 3,
+      "command": [
+        "/private/tmp/neuromancer-m007-20261101/bin/python",
+        "reports/evidence/v1_finish/research_figures.py",
+        "reports/evidence/v1_finish/m005b/primary",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/analysis",
+        "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/figures"
+      ],
+      "state": "RUNNING",
+      "events": [
+        {
+          "state": "CREATED",
+          "monotonic_ns": 1049737563055291
+        },
+        {
+          "state": "RUNNING",
+          "monotonic_ns": 1049859787399958
+        }
+      ],
+      "terminal": null,
+      "cause": null,
+      "pid": 55140,
+      "pgid": 55140,
+      "stop_file": "/Users/adithyaupad/Developer/neuromancer/reports/evidence/m007/guide_reproduction/supervision/stop-3"
+    }
+  ]
+}

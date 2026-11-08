@@ -1,0 +1,43 @@
+name: M028 compiled verification kernels
+on:
+  push:
+    branches: [codex/m028-numerical-closure]
+    paths: [tools/m028_*, tests/test_m028_*, .github/workflows/m028-kernels.yml]
+permissions:
+  contents: read
+jobs:
+  kernels:
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: .:src
+      M028_KERNEL_DIR: ${{ github.workspace }}/runs/build/lib
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/source.txt
+          python -m pip freeze > runs/environment.txt
+      - run: python scripts/m014_supervise.py runs/build-guard 120 python tools/m028_build.py runs/build
+      - run: python -m pytest -q tests/test_m028_arithmetic.py --junitxml=runs/soundness.xml
+      - run: python scripts/m014_supervise.py runs/kernel-guard 180 python tools/m028_verify.py runs/kernel --stage kernel
+      - run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m028_verify.py runs/prerequisite --stage 256
+      - run: python scripts/m014_supervise.py runs/first-guard 180 python tools/m028_verify.py runs/first --stage first
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m028-kernels-${{ matrix.os }}
+          path: runs/

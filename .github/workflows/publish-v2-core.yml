@@ -57,6 +57,7 @@ jobs:
           python -m pytest -q --junitxml=runs/core-release-tests.xml --basetemp=runs/pytest-tmp
           python tools/m008_traced_repeats.py runs/m008-traced
           neuromancer-diagnostic --mode smoke --output runs/core-release-smoke
+          python - <<'PY'
           import json, math, runpy, shutil, subprocess, sys
           from pathlib import Path
           

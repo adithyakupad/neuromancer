@@ -17,7 +17,7 @@ def environment_check():
     return dict(double_bytes=sizeof(double), round_to_nearest=True, fast_math=False,
                 fma_contraction=False, subnormal_inputs_supported=False)
 
-cdef double normal_up(double value) except *:
+cdef double normal_up(double value) except -1.0:
     if not isfinite(value) or value < 0:
         raise CertificateFailure('Nonfinite or negative radius')
     if value == 0:
@@ -40,15 +40,19 @@ def upward(value):
     return result.reshape(a.shape)
 
 def binary(a, b, int operation):
-    a, b = np.broadcast_arrays(np.asarray(a, dtype=np.float64), np.asarray(b, dtype=np.float64))
+    a, b = np.asarray(a, dtype=np.float64), np.asarray(b, dtype=np.float64)
+    if a.shape != b.shape and a.ndim != 0 and b.ndim != 0:
+        a, b = np.broadcast_arrays(a,b)
+    shape = b.shape if a.ndim == 0 else a.shape
     cdef const double[::1] left = np.ascontiguousarray(a).reshape(-1)
     cdef const double[::1] right = np.ascontiguousarray(b).reshape(-1)
-    result = np.empty(a.size, dtype=np.float64)
+    result = np.empty(int(np.prod(shape)), dtype=np.float64)
     cdef double[::1] target = result
     cdef Py_ssize_t i
     cdef double x, y, value
-    for i in range(left.shape[0]):
-        x, y = left[i], right[i]
+    cdef bint scalar_left = a.ndim == 0, scalar_right = b.ndim == 0
+    for i in range(target.shape[0]):
+        x, y = left[0 if scalar_left else i], right[0 if scalar_right else i]
         if not isfinite(x) or not isfinite(y):
             raise CertificateFailure('Nonfinite arithmetic input')
         if operation == 0:
@@ -83,7 +87,14 @@ def binary(a, b, int operation):
             if not isfinite(value):
                 raise CertificateFailure('Nonfinite center addition')
         target[i] = value
-    return result.reshape(a.shape)
+    return result.reshape(shape)
+
+def is_zero(value):
+    cdef const double[::1] data=np.ascontiguousarray(value,dtype=np.float64).reshape(-1)
+    cdef Py_ssize_t i
+    for i in range(data.shape[0]):
+        if data[i] != 0:return False
+    return True
 
 def positive_add(a,b):
     return binary(a,b,0)
@@ -174,8 +185,14 @@ class Enclosure:
 
     def product(self,other):
         center=self.center@other.center
-        radius=positive_add(positive_product(np.abs(self.center),other.radius),positive_product(self.radius,np.abs(other.center)))
-        radius=positive_add(radius,positive_product(self.radius,other.radius))
+        # Multiplying a finite array by an exactly zero radius gives exact zero.
+        # Keep the original subsequent outward additions, preserving M027 bytes.
+        left_zero=is_zero(self.radius);right_zero=is_zero(other.radius)
+        first=np.zeros_like(center) if right_zero else positive_product(np.abs(self.center),other.radius)
+        second=np.zeros_like(center) if left_zero else positive_product(self.radius,np.abs(other.center))
+        cross=np.zeros_like(center) if left_zero or right_zero else positive_product(self.radius,other.radius)
+        radius=positive_add(first,second)
+        radius=positive_add(radius,cross)
         rounding=positive_multiply(2*gamma(self.center.shape[-1]),positive_product(np.abs(self.center),np.abs(other.center)))
         return Enclosure(center,positive_add(radius,rounding))
 

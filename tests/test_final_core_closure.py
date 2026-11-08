@@ -21,7 +21,7 @@ def fixture_injection(tmp_path, mode, elapsed=400_000_000):
                     if isinstance(node, ast.FunctionDef) and node.name == "injected")
     state = dict(mode=mode, p=tmp_path, active=lambda: elapsed,
                  started=0, native=lambda: 1_000_000_000,
-                 triggered=False, resume_at=None, ClockError=ClockError)
+                 triggered=False, resume_at=None, ClockError=ClockError, work_cutoff_ns=2_000_000_000)
     exec(compile(ast.Module(body=[function], type_ignores=[]), "<actual suspend fixture>", "exec"), state)
     return state
 
@@ -72,3 +72,13 @@ def test_startup_clock_errors_remain_fail_closed(tmp_path, mode):
     with pytest.raises(ClockError):
         state["injected"]()
     assert state["triggered"]
+
+
+def test_missed_running_phase_is_setup_failure(tmp_path):
+    worker = tmp_path / "worker"
+    worker.mkdir()
+    (worker / "partial.txt").write_text("completed checkpoint\n")
+    state = fixture_injection(tmp_path, "expired_suspend")
+    state["work_cutoff_ns"] = 1_000_000_000
+    with pytest.raises(RuntimeError, match="missed work cutoff"):
+        state["injected"]()

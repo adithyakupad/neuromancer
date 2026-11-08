@@ -25,7 +25,7 @@ AUTHORIZED_REPLACEMENTS = {
     ),
     "tests/test_suspend_clock.py": (
         "e6ac4422f251c6de7602321c7cc4dc01bffd19a00ff76f8f0e7bcb1bd46eca86",
-        "f78dac7ee7caea0f66bd2d573e648933e765b654c6178a90b2778a7debce5bb0",
+        "1edd4e2a5db202b4626371b2127c9f5b801b534aba8fdea27c711e18c5461128",
     ),
 }
 

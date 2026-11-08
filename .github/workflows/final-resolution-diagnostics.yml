@@ -8,6 +8,11 @@ on:
       - tools/final_numeric_inventory.py
       - tests/test_cleanup_clock_phases.py
       - tests/test_final_numeric_diagnosis.py
+      - tests/test_suspend_clock.py
+      - tests/test_cleanup_phase_process.py
+      - tests/supervisor_phase_worker.py
+      - tests/test_portable_numeric_verification.py
+      - tools/portable_numeric_verification.py
 permissions:
   contents: read
 jobs:
@@ -40,7 +45,18 @@ jobs:
           python -m pip freeze > runs/environment.txt
       - name: Deterministic cleanup and numerical arithmetic tests
         run: |
-          python -m pytest -q tests/test_cleanup_clock_phases.py tests/test_final_numeric_diagnosis.py --basetemp=runs/resolution-tests --junitxml=runs/resolution-tests.xml
+          python -m pytest -q tests/test_cleanup_clock_phases.py tests/test_final_numeric_diagnosis.py tests/test_final_core_closure.py tests/test_portable_numeric_verification.py --basetemp=runs/resolution-tests --junitxml=runs/resolution-tests.xml
+      - name: Three fixed rounds of A1 real-process qualification
+        run: |
+          for round in 1 2 3; do
+            python -m pytest -q tests/test_suspend_clock.py::test_real_workers_after_injected_resume tests/test_cleanup_phase_process.py --basetemp="runs/a1-$round" --junitxml="runs/a1-$round.xml" || exit $?
+          done
+      - name: Bounded portability feasibility
+        if: always()
+        run: python scripts/m014_supervise.py runs/portability-guard 180 python tools/portable_numeric_verification.py runs/portability
+      - name: Fixed saved-data RLS certificate
+        if: always()
+        run: python scripts/m014_supervise.py runs/archive-certificate-guard 240 python tools/portable_numeric_verification.py runs/archive-certificate --archive
       - name: Bounded operation and backend diagnosis
         if: always()
         run: |

@@ -93,13 +93,16 @@ def injected():
      and (p/'worker/partial.txt').exists()
      and (mode!='expired_suspend_descendant' or (p/'worker/child/partial.txt').exists())):
   triggered=True
-  value=native()+(10000000000 if mode.startswith('expired_suspend') else 200000000)
+  reading=native()
+  if resume_at is None and reading>=work_cutoff_ns:raise RuntimeError('Running-phase readiness missed work cutoff')
+  value=reading+(10000000000 if mode.startswith('expired_suspend') else 200000000)
   if resume_at is None:resume_at=value
   return value
  return native()
 s.now_ns=injected
 d=s.Deadline.after(1.8)
-command=([sys.executable,str(Path(sys.argv[3]).with_name('supervisor_handshake_worker.py')),str(p/'worker')] if mode.startswith('clock_failure') else [sys.executable,sys.argv[3],'descendant' if mode.endswith('descendant') else 'ignore_term',str(p/'worker')])
+work_cutoff_ns=d.end_ns-800000000
+command=([sys.executable,str(Path(sys.argv[3]).with_name('supervisor_handshake_worker.py')),str(p/'worker')] if mode.startswith('clock_failure') else [sys.executable,str(Path(sys.argv[3]).with_name('supervisor_phase_worker.py')),str(p/'worker'),'descendant' if mode.endswith('descendant') else 'ignore_term'])
 r=s.supervise([command],p/'supervision',d)
 r['injection_triggered']=triggered
 r['injected_resume_ns']=resume_at

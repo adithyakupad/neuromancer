@@ -58,6 +58,18 @@ def test_real_clock_jump_during_cancellation_retains_failure(tmp_path):
         raise AssertionError('Independent outer watchdog intervened')
     (tmp_path/'stdout.log').write_bytes(stdout)
     (tmp_path/'stderr.log').write_bytes(stderr)
+    if process.returncode != 0:
+        cleanup = []
+        for marker in tmp_path.rglob('pid.json'):
+            group = json.loads(marker.read_text())['pgid']
+            try:
+                os.killpg(group, signal.SIGKILL)
+                cleanup.append(dict(pgid=group, action='emergency KILL after observer failure'))
+            except ProcessLookupError:
+                cleanup.append(dict(pgid=group, action='already absent'))
+            except PermissionError as exc:
+                cleanup.append(dict(pgid=group, action='cleanup denied', error=repr(exc)))
+        (tmp_path/'observer-failure-cleanup.json').write_text(json.dumps(cleanup, indent=2))
     assert process.returncode == 0, stderr.decode()
     result = json.loads((tmp_path/'returned.json').read_text())
     observed = json.loads((tmp_path/'observer.json').read_text())

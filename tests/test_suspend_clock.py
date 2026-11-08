@@ -75,9 +75,10 @@ from pathlib import Path
 import neuromancer.supervisor as s
 from neuromancer.clocks import ClockError
 p=Path(sys.argv[1]);mode=sys.argv[2];native=s.now_ns;active=time.monotonic_ns
-started=active();triggered=False;resume_at=None
+started=active();triggered=False;resume_at=None;setup_failed=False
 def injected():
- global triggered,resume_at
+ global triggered,resume_at,setup_failed
+ if setup_failed:return native()
  if mode=='clock_failure_pre_ready':
   # A fault before readiness must never invent a successful checkpoint.
   if (p/'supervision/progress.json').exists() and not (p/'worker/ready.json').exists():
@@ -92,9 +93,11 @@ def injected():
      and active()-started>350000000
      and (p/'worker/partial.txt').exists()
      and (mode!='expired_suspend_descendant' or (p/'worker/child/partial.txt').exists())):
-  triggered=True
   reading=native()
-  if resume_at is None and reading>=work_cutoff_ns:raise RuntimeError('Running-phase readiness missed work cutoff')
+  if resume_at is None and reading>=work_cutoff_ns:
+   setup_failed=True
+   return reading
+  triggered=True
   value=reading+(10000000000 if mode.startswith('expired_suspend') else 200000000)
   if resume_at is None:resume_at=value
   return value
@@ -105,6 +108,7 @@ work_cutoff_ns=d.end_ns-800000000
 command=([sys.executable,str(Path(sys.argv[3]).with_name('supervisor_handshake_worker.py')),str(p/'worker')] if mode.startswith('clock_failure') else [sys.executable,str(Path(sys.argv[3]).with_name('supervisor_phase_worker.py')),str(p/'worker'),'descendant' if mode.endswith('descendant') else 'ignore_term'])
 r=s.supervise([command],p/'supervision',d)
 r['injection_triggered']=triggered
+r['setup_failed']=setup_failed
 r['injected_resume_ns']=resume_at
 r['real_active_elapsed_s']=(active()-started)/1e9
 (p/'returned.json').write_text(json.dumps(r))
@@ -120,6 +124,7 @@ r['real_active_elapsed_s']=(active()-started)/1e9
         pytest.fail('Outer watchdog intervened')
     assert p.returncode==0,err.decode()
     r=json.loads((tmp_path/'returned.json').read_text())
+    assert not r['setup_failed'],r
     assert r['injection_triggered'] and r['cleanup_verified'],r
     assert r['status']==('CLOCK_FAILURE' if mode.startswith('clock_failure') else 'DEADLINE_EXCEEDED')
     if mode=='clock_failure_pre_ready':

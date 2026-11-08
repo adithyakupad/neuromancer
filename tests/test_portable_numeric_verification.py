@@ -73,3 +73,16 @@ def test_rls_step_contains_independent_scalar_intercept_update():
     assert lower > 0
     assert theta.contains(expected_theta)
     assert covariance.contains(expected_covariance)
+
+
+def test_underflow_in_bound_arithmetic_is_rejected():
+    tiny = np.finfo(np.float64).tiny
+    with pytest.raises(Failure, match="underflow"):
+        MODULE['positive_product'](np.array([[tiny]]), np.array([[tiny]]))
+    with pytest.raises(Failure, match="underflow"):
+        MODULE['positive_multiply'](tiny, tiny)
+    with pytest.raises(Failure, match='underflow'):
+        Ball(tiny).divide_positive(Ball(2.))
+    with pytest.raises(Failure, match='underflow'):
+        Ball(tiny).multiply(Ball(tiny))
+    np.testing.assert_array_equal(MODULE['upward'](np.zeros(2)), np.zeros(2))

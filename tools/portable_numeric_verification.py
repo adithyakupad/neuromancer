@@ -19,7 +19,16 @@ def upward(value):
     value = np.asarray(value, dtype=np.float64)
     if not np.isfinite(value).all() or np.any(value < 0):
         raise CertificateFailure('Nonfinite or negative radius')
-    return np.nextafter(value, np.inf)
+    if np.any((value > 0) & (value < np.finfo(np.float64).tiny)):
+        raise CertificateFailure('Radius underflow needs a separate arithmetic model')
+    return np.where(value == 0, 0., np.nextafter(value, np.inf))
+
+
+def checked_divide(numerator, denominator):
+    quotient = np.asarray(numerator)/np.asarray(denominator)
+    if np.any((np.asarray(numerator) != 0) & (np.abs(quotient) < np.finfo(np.float64).tiny)):
+        raise CertificateFailure('Division underflow needs a separate arithmetic model')
+    return quotient
 
 
 def positive_add(a, b):
@@ -27,7 +36,11 @@ def positive_add(a, b):
 
 
 def positive_multiply(a, b):
-    return upward(np.asarray(a) * np.asarray(b))
+    a, b = np.broadcast_arrays(np.asarray(a), np.asarray(b))
+    product = a * b
+    if np.any((a > 0) & (b > 0) & (product < np.finfo(np.float64).tiny)):
+        raise CertificateFailure('Radius product underflow needs a separate arithmetic model')
+    return upward(product)
 
 
 def gamma(length):
@@ -39,8 +52,16 @@ def gamma(length):
 
 def positive_product(a, b):
     # Nonnegative dot products have no cancellation. Inflate for their own rounding.
-    product = np.asarray(a) @ np.asarray(b)
-    return upward(product/(1-gamma(np.asarray(a).shape[-1])))
+    a = np.asarray(a)
+    b = np.asarray(b)
+    positive_a = a[a > 0]
+    positive_b = b[b > 0]
+    if len(positive_a) and len(positive_b):
+        # Conservative domain check also detects products rounded all the way to zero.
+        if positive_a.min() < np.finfo(np.float64).tiny/positive_b.min():
+            raise CertificateFailure('Dot-product underflow needs a separate arithmetic model')
+    product = a @ b
+    return upward(product/(1-gamma(a.shape[-1])))
 
 
 class Enclosure:
@@ -50,6 +71,8 @@ class Enclosure:
         self.radius = np.broadcast_to(np.asarray(radius, dtype=np.float64), self.center.shape).copy()
         if not np.isfinite(self.center).all() or not np.isfinite(self.radius).all() or np.any(self.radius < 0):
             raise CertificateFailure('Invalid enclosure')
+        if np.any((self.radius > 0) & (self.radius < np.finfo(np.float64).tiny)):
+            raise CertificateFailure('Radius underflow needs a separate arithmetic model')
         if np.any((np.abs(self.center) > 0) & (np.abs(self.center) < np.finfo(np.float64).tiny)):
             raise CertificateFailure('Subnormal center needs a separate underflow model')
 
@@ -62,6 +85,8 @@ class Enclosure:
 
     def add(self, other):
         center = self.center + other.center
+        if np.any((center == 0) & (self.center != -other.center)):
+            raise CertificateFailure('Addition underflow or non-IEEE arithmetic')
         # Twice the local roundoff covers two permitted floating evaluation paths.
         rounding = positive_multiply(2*UNIT_ROUNDOFF/(1-UNIT_ROUNDOFF), np.abs(center))
         radius = positive_add(positive_add(self.radius, other.radius), rounding)
@@ -78,6 +103,8 @@ class Enclosure:
 
     def multiply(self, other):
         center = self.center * other.center
+        if np.any((self.center != 0) & (other.center != 0) & (np.abs(center) < np.finfo(np.float64).tiny)):
+            raise CertificateFailure('Product underflow needs a separate arithmetic model')
         radius = positive_add(positive_multiply(np.abs(self.center), other.radius),
                               positive_multiply(self.radius, np.abs(other.center)))
         radius = positive_add(radius, positive_multiply(self.radius, other.radius))
@@ -90,7 +117,7 @@ class Enclosure:
         radius = upward(self.radius.sum(axis=axes)/(1-gamma(count)))
         magnitude = upward(np.abs(self.center).sum(axis=axes)/(1-gamma(count)))
         radius = positive_add(radius, positive_multiply(2*gamma(count), magnitude))
-        radius = upward(radius/count)
+        radius = upward(checked_divide(radius, count))
         radius = positive_add(radius, positive_multiply(2*UNIT_ROUNDOFF, np.abs(center)))
         return Enclosure(center, radius)
 
@@ -107,9 +134,9 @@ class Enclosure:
         lower = np.nextafter(denominator.center-denominator.radius, -np.inf)
         if not np.all(lower > 0):
             raise CertificateFailure('Cannot certify a positive RLS denominator')
-        center = self.center/denominator.center
+        center = checked_divide(self.center, denominator.center)
         error = positive_add(self.radius, positive_multiply(np.abs(center), denominator.radius))
-        radius = upward(error/lower)
+        radius = upward(checked_divide(error, lower))
         rounding = positive_multiply(2*UNIT_ROUNDOFF/(1-UNIT_ROUNDOFF), np.abs(center))
         return Enclosure(center, positive_add(radius, rounding))
 

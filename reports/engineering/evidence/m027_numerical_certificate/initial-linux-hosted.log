@@ -1,0 +1,146 @@
+certify (ubuntu-latest)	Environment and source identity	﻿2026-11-08T03:39:07.6638147Z ##[group]Run python -m pip install -r requirements-v1.txt
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6638738Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6639225Z ^[[36;1mpython -m pip install --no-build-isolation --no-deps -e .^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6639865Z ^[[36;1mpython -m pip check^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640222Z ^[[36;1mmkdir -p runs^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640535Z ^[[36;1mgit rev-parse HEAD > runs/tested-source.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640891Z ^[[36;1mpython -m pip freeze > runs/environment.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6641383Z ^[[36;1mpython -c 'import numpy as n; n.show_config(); n.show_runtime()' > runs/numerical-runtime.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689010Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689332Z env:
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689784Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690145Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690408Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690641Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690884Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6691288Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6691719Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692125Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692494Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692858Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6693220Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6693533Z ##[endgroup]
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.5055640Z Collecting Brian2==2.10.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.5584539Z   Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6263477Z Collecting contourpy==1.4.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6372102Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6555724Z Collecting cycler==0.12.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6663282Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.8728877Z Collecting Cython==3.1.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.8841498Z   Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0150154Z Collecting fonttools==4.67.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0260351Z   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0700643Z Collecting iniconfig==2.3.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0812886Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1009375Z Collecting Jinja2==3.1.6 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1114170Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1857882Z Collecting kiwisolver==1.5.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1964719Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.2501419Z Collecting MarkupSafe==3.0.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.2605012Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.3765563Z Collecting matplotlib==3.10.8 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.3873029Z   Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.4155638Z Collecting mpmath==1.3.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.4259327Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6208040Z Collecting numpy==2.5.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6315937Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6521848Z Collecting packaging==26.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6630303Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8112856Z Collecting pillow==13.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8219885Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8424889Z Collecting pluggy==1.7.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8530355Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8768595Z Collecting Pygments==2.21.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8873115Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9136255Z Collecting pyparsing==3.3.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9250102Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9544581Z Collecting pytest==9.1.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9661872Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9861609Z Collecting python-dateutil==2.9.0.post0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9967934Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0646116Z Collecting setuptools==84.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0751551Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0972747Z Collecting six==1.17.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1076860Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1289604Z Collecting sympy==1.14.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1393955Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.2528822Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.2634961Z   Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3136596Z Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3485910Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 88.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3614330Z Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3879497Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 126.9 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3985871Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4120100Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4249434Z Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4658036Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 133.8 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4763485Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4889104Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5019918Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5102032Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 212.5 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5211616Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5351214Z Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5716039Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 250.1 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5868123Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5952464Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 65.9 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6064021Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6582244Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 336.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6690485Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.7761868Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.8583698Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 86.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.8690021Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9163200Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9227659Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 229.8 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9333328Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9463425Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9597491Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9728317Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9782100Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 185.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9887768Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0011442Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0179949Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 412.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0312922Z Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.1843894Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 232.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.5167192Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4698673Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4724559Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4733450Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4734456Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4734977Z [notice] To update, run: pip install --upgrade pip
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.9481679Z Obtaining file:///home/runner/work/neuromancer/neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.9492319Z   Checking if build backend supports build_editable: started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.1343200Z   Checking if build backend supports build_editable: finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.1352084Z   Preparing editable metadata (pyproject.toml): started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3832561Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3878424Z Building wheels for collected packages: neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3886040Z   Building editable for neuromancer (pyproject.toml): started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6611048Z   Building editable for neuromancer (pyproject.toml): finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6617851Z   Created wheel for neuromancer: filename=neuromancer-2.0.0rc1-0.editable-py3-none-any.whl size=2624 sha256=17775df8b95fcae5da44927a3d25ac2d25afe583fdb407ad7ba684122d7e0872
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6619176Z   Stored in directory: /tmp/pip-ephem-wheel-cache-n7q_vm2i/wheels/5b/be/0c/f3c68bcae6b907cf7d005d256ee3f8974bc9b52a9ea2bee757
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6642853Z Successfully built neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6755544Z Installing collected packages: neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6832168Z Successfully installed neuromancer-2.0.0rc1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6840788Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6841431Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6841903Z [notice] To update, run: pip install --upgrade pip
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.9563891Z No broken requirements found.
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:31.3216135Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/numpy/__config__.py:155: UserWarning: Install `pyyaml` for better output
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:31.3216950Z   warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+certify (ubuntu-latest)	Independent arithmetic and phase tests	﻿2026-11-08T03:39:31.3465409Z ##[group]Run python -m pytest -q tests/test_m027_residual_bounds.py tests/test_m027_spectral_bounds.py tests/test_portable_numeric_verification.py tests/test_cleanup_clock_phases.py --junitxml=runs/arithmetic.xml
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3466761Z ^[[36;1mpython -m pytest -q tests/test_m027_residual_bounds.py tests/test_m027_spectral_bounds.py tests/test_portable_numeric_verification.py tests/test_cleanup_clock_phases.py --junitxml=runs/arithmetic.xml^[[0m
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501108Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501396Z env:
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501637Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501868Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502105Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502340Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502591Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502933Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3503356Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3503830Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504198Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504582Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504962Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3505299Z ##[endgroup]
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:34.3722928Z .................................                                        [100%]
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:34.3723603Z 33 passed in 2.75s

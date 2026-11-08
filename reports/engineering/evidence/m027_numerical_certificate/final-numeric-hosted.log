@@ -1,0 +1,70 @@
+certify (macos-15-intel)	Original 256-update prerequisite	﻿2026-11-08T03:46:38.4577840Z ##[group]Run python scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4580720Z ^[[36;1mpython scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite^[[0m
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4677190Z shell: /bin/bash -e {0}
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4677990Z env:
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4678670Z   PYTHONPATH: .:src
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4679410Z   VECLIB_MAXIMUM_THREADS: 1
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4680250Z   OPENBLAS_NUM_THREADS: 1
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4681030Z   OMP_NUM_THREADS: 1
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4681830Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4683120Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4684810Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4688180Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4689860Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4691430Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Original 256-update prerequisite	2026-11-08T03:46:38.4692910Z ##[endgroup]
+certify (macos-15-intel)	Residual 256-update prerequisite	﻿2026-11-08T03:46:41.9806610Z ##[group]Run python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m027_certify.py runs/prerequisite --stage 256
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9808890Z ^[[36;1mpython scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m027_certify.py runs/prerequisite --stage 256^[[0m
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9883950Z shell: /bin/bash -e {0}
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9884490Z env:
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9884980Z   PYTHONPATH: .:src
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9885500Z   VECLIB_MAXIMUM_THREADS: 1
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9886260Z   OPENBLAS_NUM_THREADS: 1
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9888910Z   OMP_NUM_THREADS: 1
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9889540Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9890810Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9892530Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9894230Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9895670Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9897340Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+certify (macos-15-intel)	Residual 256-update prerequisite	2026-11-08T03:46:41.9898540Z ##[endgroup]
+certify (ubuntu-latest)	Three fixed A1 rounds	﻿2026-11-08T03:44:55.7726843Z ##[group]Run for round in 1 2 3; do
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7727200Z ^[[36;1mfor round in 1 2 3; do^[[0m
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7728008Z ^[[36;1m  python -m pytest -q tests/test_suspend_clock.py::test_real_workers_after_injected_resume tests/test_cleanup_phase_process.py --basetemp="runs/a1-$round" --junitxml="runs/a1-$round.xml" || exit $?^[[0m
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7728825Z ^[[36;1mdone^[[0m
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7778085Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7778342Z env:
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7778538Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7778760Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7778993Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7779387Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7779622Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7780096Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7780525Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7780947Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7781361Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7781743Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7782128Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:55.7782447Z ##[endgroup]
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:59.9956317Z ......                                                                   [100%]
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:44:59.9956963Z 6 passed in 4.03s
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:45:04.2197264Z ......                                                                   [100%]
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:45:04.2198027Z 6 passed in 4.02s
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:45:08.4484831Z ......                                                                   [100%]
+certify (ubuntu-latest)	Three fixed A1 rounds	2026-11-08T03:45:08.4485307Z 6 passed in 4.02s
+certify (ubuntu-latest)	Original 256-update prerequisite	﻿2026-11-08T03:45:08.4792560Z ##[group]Run python scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4793823Z ^[[36;1mpython scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite^[[0m
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4843617Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4843865Z env:
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4844055Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4844284Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4844527Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4844755Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4844997Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4845342Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4845771Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4846219Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4846596Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4847009Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4847390Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Original 256-update prerequisite	2026-11-08T03:45:08.4847709Z ##[endgroup]

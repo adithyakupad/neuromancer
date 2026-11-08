@@ -1,0 +1,3028 @@
+{
+  "linux": {
+    "source": "88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f",
+    "completed_branches": 15,
+    "last": {
+      "network": 3,
+      "replicate": 48,
+      "branch": "LOSS_RLS-MPC",
+      "step": 1300
+    },
+    "retained_plans": 987,
+    "retained_maximum_theta_radius": 5.869380878174487e-09,
+    "retained_maximum_cost_radius": 1.882872288273422e-08,
+    "status": "DEADLINE_EXCEEDED",
+    "cause": "DEADLINE_EXCEEDED",
+    "cleanup_verified": true,
+    "outer": {
+      "watchdog_intervened": false,
+      "returncode": 1
+    },
+    "elapsed_s": 239.420416674,
+    "timings": {
+      "archive_load": {
+        "calls": 16,
+        "seconds": 0.166635487
+      },
+      "plan_load": {
+        "calls": 987,
+        "seconds": 1.800531718999999
+      },
+      "native_planner": {
+        "calls": 987,
+        "seconds": 11.267884093000001
+      },
+      "planner_certificate": {
+        "calls": 987,
+        "seconds": 42.292167978
+      },
+      "progress_write": {
+        "calls": 986,
+        "seconds": 7.102472208999999
+      },
+      "information_update": {
+        "calls": 49300,
+        "seconds": 79.14396514500027
+      },
+      "native_update": {
+        "calls": 49300,
+        "seconds": 4.199709896000002
+      },
+      "state_residual": {
+        "calls": 49300,
+        "seconds": 87.90867069600043
+      },
+      "digest": {
+        "calls": 49300,
+        "seconds": 1.1005383800000106
+      }
+    },
+    "rounds": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "4.033",
+        "timestamp": "2026-11-08T03:44:55.949816+00:00",
+        "hostname": "runnervmwuk1x"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "4.018",
+        "timestamp": "2026-11-08T03:45:00.188175+00:00",
+        "hostname": "runnervmwuk1x"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "4.021",
+        "timestamp": "2026-11-08T03:45:04.413106+00:00",
+        "hostname": "runnervmwuk1x"
+      }
+    ],
+    "core": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "275",
+      "time": "112.601",
+      "timestamp": "2026-11-08T03:44:56.167354+00:00",
+      "hostname": "runnervmwuk1x"
+    },
+    "first": {
+      "stage": "first",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 1,
+      "prescribed_branches": 1,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 5.5826567550463154e-09,
+      "maximum_covariance_radius": 1.021773479754039e-08,
+      "wall_s": 15.136471795,
+      "cpu_s": 15.100820006,
+      "peak_rss": 63736,
+      "checkpoints": [
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 0,
+          "theta_radius": 4.248018943684598e-09,
+          "covariance_radius": 4.1432480682318323e-10,
+          "cost_radius": 1.4429628100598736e-08,
+          "contraction": 3.538265698088921e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 50,
+          "theta_radius": 4.023502279258812e-09,
+          "covariance_radius": 4.342203879104362e-10,
+          "cost_radius": 1.1389954808396712e-08,
+          "contraction": 3.534606138912942e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 100,
+          "theta_radius": 4.005158798627829e-09,
+          "covariance_radius": 4.5655565530713465e-10,
+          "cost_radius": 1.1345512680874428e-08,
+          "contraction": 3.535084227638089e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 150,
+          "theta_radius": 4.009532258764713e-09,
+          "covariance_radius": 4.80040215605525e-10,
+          "cost_radius": 1.1276904194347913e-08,
+          "contraction": 3.535565360438622e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 200,
+          "theta_radius": 4.021882238329561e-09,
+          "covariance_radius": 5.047340297469988e-10,
+          "cost_radius": 1.1293886525835284e-08,
+          "contraction": 3.536055144094287e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 250,
+          "theta_radius": 4.015289729560019e-09,
+          "covariance_radius": 5.306983781631582e-10,
+          "cost_radius": 1.1232884784934278e-08,
+          "contraction": 3.536546582871539e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 300,
+          "theta_radius": 4.014800580786716e-09,
+          "covariance_radius": 5.58000986898062e-10,
+          "cost_radius": 1.1270055446515113e-08,
+          "contraction": 3.537054518332091e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 350,
+          "theta_radius": 4.020743650159541e-09,
+          "covariance_radius": 5.867101833480706e-10,
+          "cost_radius": 1.1248696003146336e-08,
+          "contraction": 3.5375742289217404e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 400,
+          "theta_radius": 4.0126707083832656e-09,
+          "covariance_radius": 6.16907272816959e-10,
+          "cost_radius": 1.1197844318861558e-08,
+          "contraction": 3.538155839038878e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 450,
+          "theta_radius": 4.038951219573619e-09,
+          "covariance_radius": 6.48665176561083e-10,
+          "cost_radius": 1.1164375527554525e-08,
+          "contraction": 3.538773500382306e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 500,
+          "theta_radius": 4.014628620472519e-09,
+          "covariance_radius": 6.820713408492435e-10,
+          "cost_radius": 1.109827237065174e-08,
+          "contraction": 3.5394606085669263e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 550,
+          "theta_radius": 4.017382611684768e-09,
+          "covariance_radius": 7.172005075394311e-10,
+          "cost_radius": 1.108638874829508e-08,
+          "contraction": 3.540160493505127e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 600,
+          "theta_radius": 4.0339164417480485e-09,
+          "covariance_radius": 7.541419116558975e-10,
+          "cost_radius": 1.1058113936663026e-08,
+          "contraction": 3.540874259411826e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 650,
+          "theta_radius": 4.027092658403955e-09,
+          "covariance_radius": 7.92989775028826e-10,
+          "cost_radius": 1.0946838217133048e-08,
+          "contraction": 3.541593690288989e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 700,
+          "theta_radius": 4.0339649124262086e-09,
+          "covariance_radius": 8.338427087853557e-10,
+          "cost_radius": 1.0929752580335007e-08,
+          "contraction": 3.542323630738957e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 750,
+          "theta_radius": 4.039180941711043e-09,
+          "covariance_radius": 8.768029876573801e-10,
+          "cost_radius": 1.0904918333021577e-08,
+          "contraction": 3.543064968829973e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 800,
+          "theta_radius": 4.06023523290699e-09,
+          "covariance_radius": 9.219777587860228e-10,
+          "cost_radius": 1.0910407102233216e-08,
+          "contraction": 3.5438111907474904e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 850,
+          "theta_radius": 4.070864427733096e-09,
+          "covariance_radius": 9.694808011249171e-10,
+          "cost_radius": 1.0917734232475991e-08,
+          "contraction": 3.544560721569213e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 900,
+          "theta_radius": 4.0764056161210866e-09,
+          "covariance_radius": 1.0194325035778596e-09,
+          "cost_radius": 1.0887357267425131e-08,
+          "contraction": 3.545314785701885e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 950,
+          "theta_radius": 4.073719271855011e-09,
+          "covariance_radius": 1.0719639334624377e-09,
+          "cost_radius": 1.0925296693091821e-08,
+          "contraction": 3.5460892134218354e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1000,
+          "theta_radius": 4.057983381984683e-09,
+          "covariance_radius": 1.1272051110358613e-09,
+          "cost_radius": 1.08752265083808e-08,
+          "contraction": 3.5468729475582776e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1050,
+          "theta_radius": 4.084047336731619e-09,
+          "covariance_radius": 1.1852954560061508e-09,
+          "cost_radius": 1.0936842725041259e-08,
+          "contraction": 3.547664486966205e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1100,
+          "theta_radius": 4.086111906413301e-09,
+          "covariance_radius": 1.2463774931747316e-09,
+          "cost_radius": 1.0867810232531065e-08,
+          "contraction": 3.548450872658245e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1150,
+          "theta_radius": 4.099909565751641e-09,
+          "covariance_radius": 1.310587559911232e-09,
+          "cost_radius": 1.0877312155818665e-08,
+          "contraction": 3.549184340660877e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1200,
+          "theta_radius": 4.097504229291622e-09,
+          "covariance_radius": 1.37810539765688e-09,
+          "cost_radius": 1.082216057232999e-08,
+          "contraction": 3.549917854996851e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1250,
+          "theta_radius": 4.081516956389978e-09,
+          "covariance_radius": 1.4491023426617454e-09,
+          "cost_radius": 1.0800638966017033e-08,
+          "contraction": 3.550653726164392e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1300,
+          "theta_radius": 4.070320868578941e-09,
+          "covariance_radius": 1.5237575640478646e-09,
+          "cost_radius": 1.0810226029411679e-08,
+          "contraction": 3.551391612218584e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1350,
+          "theta_radius": 4.102005215559021e-09,
+          "covariance_radius": 1.6022587059452786e-09,
+          "cost_radius": 1.0846188113610076e-08,
+          "contraction": 3.552129532099817e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1400,
+          "theta_radius": 4.096802933179354e-09,
+          "covariance_radius": 1.6848063099766863e-09,
+          "cost_radius": 1.0842949194815568e-08,
+          "contraction": 3.5528725944245696e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1450,
+          "theta_radius": 4.132812852824823e-09,
+          "covariance_radius": 1.7716167098264736e-09,
+          "cost_radius": 1.093491972010957e-08,
+          "contraction": 3.553636115892222e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1500,
+          "theta_radius": 4.126684093705252e-09,
+          "covariance_radius": 1.8629042887210023e-09,
+          "cost_radius": 1.08221004941033e-08,
+          "contraction": 3.554408153365317e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1550,
+          "theta_radius": 4.118731234050506e-09,
+          "covariance_radius": 1.958896285813144e-09,
+          "cost_radius": 1.0796417477020893e-08,
+          "contraction": 3.555181652774492e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1600,
+          "theta_radius": 4.10962692928415e-09,
+          "covariance_radius": 2.0598369406807264e-09,
+          "cost_radius": 1.0819133403102574e-08,
+          "contraction": 3.555959668037434e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1650,
+          "theta_radius": 4.100883866986626e-09,
+          "covariance_radius": 2.1659841862407522e-09,
+          "cost_radius": 1.079316278742058e-08,
+          "contraction": 3.556746618035314e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1700,
+          "theta_radius": 4.107300407224385e-09,
+          "covariance_radius": 2.2776047757635017e-09,
+          "cost_radius": 1.0840237474734591e-08,
+          "contraction": 3.5575392628952945e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1750,
+          "theta_radius": 4.113769033544842e-09,
+          "covariance_radius": 2.3949837291523924e-09,
+          "cost_radius": 1.080577285249598e-08,
+          "contraction": 3.558341491796146e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1800,
+          "theta_radius": 4.09545546697564e-09,
+          "covariance_radius": 2.5184113248982293e-09,
+          "cost_radius": 1.0752415913465554e-08,
+          "contraction": 3.559143261335216e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1850,
+          "theta_radius": 4.117857434889441e-09,
+          "covariance_radius": 2.6481645221447387e-09,
+          "cost_radius": 1.0805482265542287e-08,
+          "contraction": 3.5598979155501515e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1900,
+          "theta_radius": 4.101048459300771e-09,
+          "covariance_radius": 2.784601437767942e-09,
+          "cost_radius": 1.071316750544425e-08,
+          "contraction": 3.5606511475096514e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1950,
+          "theta_radius": 4.0614110524365054e-09,
+          "covariance_radius": 2.928069136833122e-09,
+          "cost_radius": 1.065172901417235e-08,
+          "contraction": 3.561406418442604e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2000,
+          "theta_radius": 4.061850302597605e-09,
+          "covariance_radius": 3.0789254579990318e-09,
+          "cost_radius": 1.0632034814110017e-08,
+          "contraction": 3.5621584720685826e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2050,
+          "theta_radius": 4.054955459082605e-09,
+          "covariance_radius": 3.237559775536554e-09,
+          "cost_radius": 1.0627095072986571e-08,
+          "contraction": 3.562917223340357e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2100,
+          "theta_radius": 4.0663023681127195e-09,
+          "covariance_radius": 3.404367554311967e-09,
+          "cost_radius": 1.0615756868335474e-08,
+          "contraction": 3.563676538023659e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2150,
+          "theta_radius": 4.0940028148221115e-09,
+          "covariance_radius": 3.5797871276930193e-09,
+          "cost_radius": 1.0635312360096522e-08,
+          "contraction": 3.564453530072897e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2200,
+          "theta_radius": 4.1032102559562675e-09,
+          "covariance_radius": 3.7642449209338925e-09,
+          "cost_radius": 1.0655419909396201e-08,
+          "contraction": 3.565230140877771e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2250,
+          "theta_radius": 4.129660707338636e-09,
+          "covariance_radius": 3.9582140143187985e-09,
+          "cost_radius": 1.0656330965740018e-08,
+          "contraction": 3.5660130660049344e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2300,
+          "theta_radius": 4.123362477991296e-09,
+          "covariance_radius": 4.1621747572179265e-09,
+          "cost_radius": 1.0720281849332135e-08,
+          "contraction": 3.56679336619858e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2350,
+          "theta_radius": 4.121345156749186e-09,
+          "covariance_radius": 4.376646179551861e-09,
+          "cost_radius": 1.072528953808601e-08,
+          "contraction": 3.5675747198926684e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2400,
+          "theta_radius": 4.094629901475908e-09,
+          "covariance_radius": 4.6021743552006414e-09,
+          "cost_radius": 1.0723281709965473e-08,
+          "contraction": 3.5683605197534105e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2450,
+          "theta_radius": 4.115249376841976e-09,
+          "covariance_radius": 4.839319259469692e-09,
+          "cost_radius": 1.0686864930955236e-08,
+          "contraction": 3.56914315651207e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2500,
+          "theta_radius": 4.162532372466039e-09,
+          "covariance_radius": 5.0886740286526054e-09,
+          "cost_radius": 1.0634369803383389e-08,
+          "contraction": 3.5699191240790575e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2550,
+          "theta_radius": 4.134578068612036e-09,
+          "covariance_radius": 5.350866411704381e-09,
+          "cost_radius": 1.0679135076083478e-08,
+          "contraction": 3.570688154461381e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2600,
+          "theta_radius": 4.1464554947421695e-09,
+          "covariance_radius": 5.6265585131912415e-09,
+          "cost_radius": 1.0645960247530755e-08,
+          "contraction": 3.5714513426658264e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2650,
+          "theta_radius": 4.118798655579085e-09,
+          "covariance_radius": 5.916463039922383e-09,
+          "cost_radius": 1.0612762647068446e-08,
+          "contraction": 3.5722196284211295e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2700,
+          "theta_radius": 4.109798215952797e-09,
+          "covariance_radius": 6.221300015148562e-09,
+          "cost_radius": 1.0608827969519404e-08,
+          "contraction": 3.572985507393008e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2750,
+          "theta_radius": 4.122533125061225e-09,
+          "covariance_radius": 6.54184318322348e-09,
+          "cost_radius": 1.0596160185530738e-08,
+          "contraction": 3.573751618612022e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2800,
+          "theta_radius": 4.085078912737516e-09,
+          "covariance_radius": 6.878904109655125e-09,
+          "cost_radius": 1.06374216737292e-08,
+          "contraction": 3.57451917104068e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2850,
+          "theta_radius": 4.088696838800012e-09,
+          "covariance_radius": 7.233336088273386e-09,
+          "cost_radius": 1.0681483214370127e-08,
+          "contraction": 3.575289154026027e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2900,
+          "theta_radius": 4.081899729244947e-09,
+          "covariance_radius": 7.60602784632197e-09,
+          "cost_radius": 1.069103397882289e-08,
+          "contraction": 3.576058392418345e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2950,
+          "theta_radius": 4.073504538069971e-09,
+          "covariance_radius": 7.99792597468462e-09,
+          "cost_radius": 1.0766136027982126e-08,
+          "contraction": 3.576829558604627e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3000,
+          "theta_radius": 4.237754419067695e-09,
+          "covariance_radius": 8.3983244884331e-09,
+          "cost_radius": 1.184652608663728e-08,
+          "contraction": 3.575728530013562e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3050,
+          "theta_radius": 4.520185111206327e-09,
+          "covariance_radius": 8.817142648563816e-09,
+          "cost_radius": 1.3041201021402639e-08,
+          "contraction": 3.574124613242776e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3100,
+          "theta_radius": 4.954673836750794e-09,
+          "covariance_radius": 9.257316412854153e-09,
+          "cost_radius": 1.3366419207459002e-08,
+          "contraction": 3.572834256538354e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3150,
+          "theta_radius": 4.995199635699415e-09,
+          "covariance_radius": 9.734511389349092e-09,
+          "cost_radius": 1.3899992409703684e-08,
+          "contraction": 3.5736793617134224e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "completed": true,
+          "branch_wall_s": 15.114088344
+        }
+      ],
+      "timings": {
+        "archive_load": {
+          "calls": 1,
+          "seconds": 0.013042522
+        },
+        "plan_load": {
+          "calls": 64,
+          "seconds": 0.11627781199999997
+        },
+        "native_planner": {
+          "calls": 64,
+          "seconds": 0.7234490890000002
+        },
+        "planner_certificate": {
+          "calls": 64,
+          "seconds": 2.7730921519999994
+        },
+        "progress_write": {
+          "calls": 64,
+          "seconds": 0.088761844
+        },
+        "information_update": {
+          "calls": 3200,
+          "seconds": 5.120226193999986
+        },
+        "native_update": {
+          "calls": 3200,
+          "seconds": 0.27166232199999985
+        },
+        "state_residual": {
+          "calls": 3200,
+          "seconds": 5.685919924000003
+        },
+        "digest": {
+          "calls": 3200,
+          "seconds": 0.07111538799999986
+        }
+      },
+      "digest_differences": 3200,
+      "release_qualified": false
+    },
+    "dependency": {
+      "stage": "dependency",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 1,
+      "prescribed_branches": 1,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 4.980023706597314e-09,
+      "maximum_covariance_radius": 1.0706397998507233e-08,
+      "wall_s": 15.358205376,
+      "cpu_s": 15.321342676,
+      "peak_rss": 63420,
+      "checkpoints": [
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 0,
+          "theta_radius": 4.045523737280776e-09,
+          "covariance_radius": 4.1432480682318323e-10,
+          "cost_radius": 9.502897665607026e-09,
+          "contraction": 3.538265698088921e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 50,
+          "theta_radius": 3.984458727757291e-09,
+          "covariance_radius": 4.328383130998507e-10,
+          "cost_radius": 7.68921679199217e-09,
+          "contraction": 3.5301370544698915e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 100,
+          "theta_radius": 3.98669726359268e-09,
+          "covariance_radius": 4.550548791143764e-10,
+          "cost_radius": 7.553044185467372e-09,
+          "contraction": 3.5303798284181345e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 150,
+          "theta_radius": 3.992097985793837e-09,
+          "covariance_radius": 4.784746856542904e-10,
+          "cost_radius": 7.516696296591185e-09,
+          "contraction": 3.5309091480216946e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 200,
+          "theta_radius": 3.9846404552728315e-09,
+          "covariance_radius": 5.031029077799205e-10,
+          "cost_radius": 7.456511237686924e-09,
+          "contraction": 3.531461237555191e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 250,
+          "theta_radius": 4.0130181887492105e-09,
+          "covariance_radius": 5.290146258646723e-10,
+          "cost_radius": 7.459743889681542e-09,
+          "contraction": 3.5321200369418e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 300,
+          "theta_radius": 3.953205437438066e-09,
+          "covariance_radius": 5.562423041238655e-10,
+          "cost_radius": 7.438198424724436e-09,
+          "contraction": 3.532830213645297e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 350,
+          "theta_radius": 3.941149717805327e-09,
+          "covariance_radius": 5.848605169094824e-10,
+          "cost_radius": 7.350016206557695e-09,
+          "contraction": 3.5335353000134786e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 400,
+          "theta_radius": 3.959448549767238e-09,
+          "covariance_radius": 6.149582503323725e-10,
+          "cost_radius": 7.428299973044206e-09,
+          "contraction": 3.534245015486143e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 450,
+          "theta_radius": 3.9102690732413694e-09,
+          "covariance_radius": 6.465917703569822e-10,
+          "cost_radius": 7.3314253837584075e-09,
+          "contraction": 3.534945155992241e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 500,
+          "theta_radius": 3.880838352767074e-09,
+          "covariance_radius": 6.798621096986978e-10,
+          "cost_radius": 7.316484155503373e-09,
+          "contraction": 3.53565935458469e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 550,
+          "theta_radius": 3.8784667660262934e-09,
+          "covariance_radius": 7.149298222967149e-10,
+          "cost_radius": 7.258182702558122e-09,
+          "contraction": 3.536565122385269e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 600,
+          "theta_radius": 3.8721745099628835e-09,
+          "covariance_radius": 7.518072189930846e-10,
+          "cost_radius": 7.196143709879236e-09,
+          "contraction": 3.537477032673532e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 650,
+          "theta_radius": 3.874003947718955e-09,
+          "covariance_radius": 7.905931963606404e-10,
+          "cost_radius": 7.171097988553833e-09,
+          "contraction": 3.538400392398136e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 700,
+          "theta_radius": 3.868916967255557e-09,
+          "covariance_radius": 8.31383197015293e-10,
+          "cost_radius": 7.096799947870265e-09,
+          "contraction": 3.5393334098651133e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 750,
+          "theta_radius": 3.874895803081066e-09,
+          "covariance_radius": 8.742810181659809e-10,
+          "cost_radius": 7.034356978076975e-09,
+          "contraction": 3.540282657402041e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 800,
+          "theta_radius": 3.8705161517907956e-09,
+          "covariance_radius": 9.19396623125811e-10,
+          "cost_radius": 7.01265435596556e-09,
+          "contraction": 3.541251425276883e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 850,
+          "theta_radius": 3.89217132874706e-09,
+          "covariance_radius": 9.66843547366978e-10,
+          "cost_radius": 7.0299990995025076e-09,
+          "contraction": 3.5422347181164193e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 900,
+          "theta_radius": 3.883199689274368e-09,
+          "covariance_radius": 1.0165808166280799e-09,
+          "cost_radius": 6.83393159899826e-09,
+          "contraction": 3.543032064617027e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 950,
+          "theta_radius": 3.901011071621545e-09,
+          "covariance_radius": 1.0690753264329779e-09,
+          "cost_radius": 6.7867355322522526e-09,
+          "contraction": 3.5441023865173855e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1000,
+          "theta_radius": 3.921565664886777e-09,
+          "covariance_radius": 1.1242844912991812e-09,
+          "cost_radius": 6.77194453911249e-09,
+          "contraction": 3.5451894431762284e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1050,
+          "theta_radius": 3.9604337740301035e-09,
+          "covariance_radius": 1.1823504035220934e-09,
+          "cost_radius": 6.757126457538172e-09,
+          "contraction": 3.546297552807594e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1100,
+          "theta_radius": 3.967095680334353e-09,
+          "covariance_radius": 1.243421456942633e-09,
+          "cost_radius": 6.745494305975384e-09,
+          "contraction": 3.547427340660551e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1150,
+          "theta_radius": 3.940334959869853e-09,
+          "covariance_radius": 1.3073990634252383e-09,
+          "cost_radius": 6.5932709857928845e-09,
+          "contraction": 3.5483573155012953e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1200,
+          "theta_radius": 3.946011743630816e-09,
+          "covariance_radius": 1.3749963969649213e-09,
+          "cost_radius": 6.537156474295645e-09,
+          "contraction": 3.549641991989695e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1250,
+          "theta_radius": 3.94974509321988e-09,
+          "covariance_radius": 1.4461046075079737e-09,
+          "cost_radius": 6.496121328775314e-09,
+          "contraction": 3.550971499482572e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1300,
+          "theta_radius": 3.865710265873625e-09,
+          "covariance_radius": 1.5205429505521608e-09,
+          "cost_radius": 6.273208953193462e-09,
+          "contraction": 3.552042551320753e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1350,
+          "theta_radius": 3.853413663723017e-09,
+          "covariance_radius": 1.599257481198273e-09,
+          "cost_radius": 6.263074179185232e-09,
+          "contraction": 3.553532623324218e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1400,
+          "theta_radius": 3.8611663754560366e-09,
+          "covariance_radius": 1.6820725423723491e-09,
+          "cost_radius": 6.245549135547322e-09,
+          "contraction": 3.5550850523067935e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1450,
+          "theta_radius": 3.932297601219985e-09,
+          "covariance_radius": 1.769205425834045e-09,
+          "cost_radius": 6.167595005477258e-09,
+          "contraction": 3.556703941282818e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1500,
+          "theta_radius": 4.035834978881086e-09,
+          "covariance_radius": 1.8603204069199812e-09,
+          "cost_radius": 6.1134523339548684e-09,
+          "contraction": 3.557986521388565e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1550,
+          "theta_radius": 4.08951334900456e-09,
+          "covariance_radius": 1.9568083373009254e-09,
+          "cost_radius": 6.1138935442140984e-09,
+          "contraction": 3.5598153551488367e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1600,
+          "theta_radius": 4.111857519305052e-09,
+          "covariance_radius": 2.058359662205506e-09,
+          "cost_radius": 6.110342012697459e-09,
+          "contraction": 3.561755581754257e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1650,
+          "theta_radius": 4.111606806285089e-09,
+          "covariance_radius": 2.1644925966147346e-09,
+          "cost_radius": 6.143144036673919e-09,
+          "contraction": 3.563356957520488e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1700,
+          "theta_radius": 4.128777901386633e-09,
+          "covariance_radius": 2.2761036564399224e-09,
+          "cost_radius": 6.270783135571192e-09,
+          "contraction": 3.565000256954454e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1750,
+          "theta_radius": 3.950922745902809e-09,
+          "covariance_radius": 2.3935341986217506e-09,
+          "cost_radius": 5.982667604418777e-09,
+          "contraction": 3.5668061161632907e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1800,
+          "theta_radius": 3.951863893099565e-09,
+          "covariance_radius": 2.5181521805289893e-09,
+          "cost_radius": 6.028432306723527e-09,
+          "contraction": 3.5693284175344395e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1850,
+          "theta_radius": 3.928104694405474e-09,
+          "covariance_radius": 2.6493641427514206e-09,
+          "cost_radius": 6.111820621613097e-09,
+          "contraction": 3.572002807821969e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1900,
+          "theta_radius": 4.112999971868446e-09,
+          "covariance_radius": 2.786185024817213e-09,
+          "cost_radius": 6.291817456550412e-09,
+          "contraction": 3.574125716864678e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1950,
+          "theta_radius": 4.266153605815401e-09,
+          "covariance_radius": 2.9301616311834983e-09,
+          "cost_radius": 6.306418580105904e-09,
+          "contraction": 3.576432389025116e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2000,
+          "theta_radius": 4.269732878089563e-09,
+          "covariance_radius": 3.083265354597309e-09,
+          "cost_radius": 6.26198816328387e-09,
+          "contraction": 3.57962005921175e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2050,
+          "theta_radius": 4.273651603681795e-09,
+          "covariance_radius": 3.2445728462753027e-09,
+          "cost_radius": 6.315789408470128e-09,
+          "contraction": 3.583040601713559e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2100,
+          "theta_radius": 4.278193100981174e-09,
+          "covariance_radius": 3.4145432979161024e-09,
+          "cost_radius": 6.407312376354536e-09,
+          "contraction": 3.586703791387157e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2150,
+          "theta_radius": 4.2829477408478695e-09,
+          "covariance_radius": 3.5936298959623016e-09,
+          "cost_radius": 6.435213864202435e-09,
+          "contraction": 3.5905864267840666e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2200,
+          "theta_radius": 4.129448546817872e-09,
+          "covariance_radius": 3.779863041820679e-09,
+          "cost_radius": 6.557465521980361e-09,
+          "contraction": 3.5937123029753365e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2250,
+          "theta_radius": 4.217922039873123e-09,
+          "covariance_radius": 3.975967932103424e-09,
+          "cost_radius": 6.27829373211187e-09,
+          "contraction": 3.5971284693397294e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2300,
+          "theta_radius": 4.2227250063604225e-09,
+          "covariance_radius": 4.185330748099786e-09,
+          "cost_radius": 6.195074787449319e-09,
+          "contraction": 3.60174558312247e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2350,
+          "theta_radius": 4.229429650933988e-09,
+          "covariance_radius": 4.406073185007745e-09,
+          "cost_radius": 6.233002236451513e-09,
+          "contraction": 3.606661996882656e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2400,
+          "theta_radius": 4.231823173304606e-09,
+          "covariance_radius": 4.638821500351336e-09,
+          "cost_radius": 6.110624930039817e-09,
+          "contraction": 3.611870530036321e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2450,
+          "theta_radius": 4.189928362340364e-09,
+          "covariance_radius": 4.880220571258144e-09,
+          "cost_radius": 6.197637679105035e-09,
+          "contraction": 3.616158723432212e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2500,
+          "theta_radius": 4.191601682774912e-09,
+          "covariance_radius": 5.138958320515595e-09,
+          "cost_radius": 6.029198093354278e-09,
+          "contraction": 3.622038693935554e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2550,
+          "theta_radius": 4.193980412159919e-09,
+          "covariance_radius": 5.4122614127437634e-09,
+          "cost_radius": 5.862003268416661e-09,
+          "contraction": 3.628499903407326e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2600,
+          "theta_radius": 4.238905295368104e-09,
+          "covariance_radius": 5.695288348793374e-09,
+          "cost_radius": 6.119876183056449e-09,
+          "contraction": 3.6339667177186484e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2650,
+          "theta_radius": 4.246877861474429e-09,
+          "covariance_radius": 5.999463970747969e-09,
+          "cost_radius": 6.1898824019452625e-09,
+          "contraction": 3.641225678476937e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2700,
+          "theta_radius": 4.25568615822748e-09,
+          "covariance_radius": 6.321202481058348e-09,
+          "cost_radius": 6.3095511493726265e-09,
+          "contraction": 3.649263784384103e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2750,
+          "theta_radius": 4.3037807128223165e-09,
+          "covariance_radius": 6.6534830611181266e-09,
+          "cost_radius": 6.220909117595116e-09,
+          "contraction": 3.6560260719284816e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2800,
+          "theta_radius": 4.321823290989178e-09,
+          "covariance_radius": 7.012634243546608e-09,
+          "cost_radius": 6.2404128007844344e-09,
+          "contraction": 3.665333638567204e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2850,
+          "theta_radius": 4.343864790605059e-09,
+          "covariance_radius": 7.3928183342488446e-09,
+          "cost_radius": 6.145906334948026e-09,
+          "contraction": 3.675484731656182e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2900,
+          "theta_radius": 4.309180493753124e-09,
+          "covariance_radius": 7.784705916622779e-09,
+          "cost_radius": 6.3450514942540045e-09,
+          "contraction": 3.684249038726695e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2950,
+          "theta_radius": 4.371594888570809e-09,
+          "covariance_radius": 8.198674451077888e-09,
+          "cost_radius": 6.403110373503151e-09,
+          "contraction": 3.693736360675389e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3000,
+          "theta_radius": 4.385624595354387e-09,
+          "covariance_radius": 8.647911151405302e-09,
+          "cost_radius": 6.39564057730771e-09,
+          "contraction": 3.706007139928149e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3050,
+          "theta_radius": 4.40039164121134e-09,
+          "covariance_radius": 9.123318668418018e-09,
+          "cost_radius": 6.394938627452975e-09,
+          "contraction": 3.718953648102195e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3100,
+          "theta_radius": 4.4146320249814e-09,
+          "covariance_radius": 9.626645192838067e-09,
+          "cost_radius": 6.405198169969713e-09,
+          "contraction": 3.732638007611384e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3150,
+          "theta_radius": 4.436403683792521e-09,
+          "covariance_radius": 1.0160123867572658e-08,
+          "cost_radius": 6.358102699542951e-09,
+          "contraction": 3.747252780564289e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "completed": true,
+          "branch_wall_s": 15.336153932
+        }
+      ],
+      "timings": {
+        "archive_load": {
+          "calls": 1,
+          "seconds": 0.012727333
+        },
+        "plan_load": {
+          "calls": 64,
+          "seconds": 0.118438185
+        },
+        "native_planner": {
+          "calls": 64,
+          "seconds": 0.7352502890000001
+        },
+        "planner_certificate": {
+          "calls": 64,
+          "seconds": 2.7888370000000005
+        },
+        "progress_write": {
+          "calls": 64,
+          "seconds": 0.09008496699999999
+        },
+        "information_update": {
+          "calls": 3200,
+          "seconds": 5.218887956999996
+        },
+        "native_update": {
+          "calls": 3200,
+          "seconds": 0.27550763400000006
+        },
+        "state_residual": {
+          "calls": 3200,
+          "seconds": 5.769557085000014
+        },
+        "digest": {
+          "calls": 3200,
+          "seconds": 0.07254798599999977
+        }
+      },
+      "digest_differences": 3200,
+      "release_qualified": false
+    },
+    "prefix_equivalent_branches": 15.40625,
+    "full_wall_forecast_s": 621.6189317296552,
+    "forecast_required_speedup": 2.5900788822068965,
+    "m008_completed": {
+      "trials": 35,
+      "remaining_s": 864.622274109
+    },
+    "m008_watchdogs": 0
+  },
+  "macos": {
+    "source": "88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f",
+    "completed_branches": 9,
+    "last": {
+      "network": 2,
+      "replicate": 47,
+      "branch": "LOSS_RLS-MPC",
+      "step": 450
+    },
+    "retained_plans": 586,
+    "retained_maximum_theta_radius": 5.558239437951402e-09,
+    "retained_maximum_cost_radius": 1.5227626103720805e-08,
+    "status": "DEADLINE_EXCEEDED",
+    "cause": "DEADLINE_EXCEEDED",
+    "cleanup_verified": true,
+    "outer": {
+      "watchdog_intervened": false,
+      "returncode": 1
+    },
+    "elapsed_s": 239.544237678,
+    "timings": {
+      "archive_load": {
+        "calls": 10,
+        "seconds": 0.139418045
+      },
+      "plan_load": {
+        "calls": 586,
+        "seconds": 1.509936570000001
+      },
+      "native_planner": {
+        "calls": 586,
+        "seconds": 12.307850530999996
+      },
+      "planner_certificate": {
+        "calls": 586,
+        "seconds": 42.381828275999965
+      },
+      "progress_write": {
+        "calls": 585,
+        "seconds": 5.195570534000006
+      },
+      "information_update": {
+        "calls": 29250,
+        "seconds": 79.30907312800035
+      },
+      "native_update": {
+        "calls": 29250,
+        "seconds": 3.65652090100001
+      },
+      "state_residual": {
+        "calls": 29250,
+        "seconds": 88.59584642199997
+      },
+      "digest": {
+        "calls": 29250,
+        "seconds": 1.52774900499999
+      }
+    },
+    "rounds": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "5.724",
+        "timestamp": "2026-11-08T03:46:20.089575+00:00",
+        "hostname": "iad01-dz252-34145448-7a46-4cd2-9e17-70ff06e22bc2-3AF450665B58.local"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "5.512",
+        "timestamp": "2026-11-08T03:46:26.309491+00:00",
+        "hostname": "iad01-dz252-34145448-7a46-4cd2-9e17-70ff06e22bc2-3AF450665B58.local"
+      },
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "6",
+        "time": "5.952",
+        "timestamp": "2026-11-08T03:46:32.406493+00:00",
+        "hostname": "iad01-dz252-34145448-7a46-4cd2-9e17-70ff06e22bc2-3AF450665B58.local"
+      }
+    ],
+    "core": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "275",
+      "time": "320.378",
+      "timestamp": "2026-11-08T03:46:23.690096+00:00",
+      "hostname": "sat12-jr311-927fbb17-6787-4fe4-b067-3dfa550343bb-0EF7F5B5C16F.local"
+    },
+    "first": {
+      "stage": "first",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 1,
+      "prescribed_branches": 1,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 5.58326535288692e-09,
+      "maximum_covariance_radius": 1.0218907392697295e-08,
+      "wall_s": 39.127705826,
+      "cpu_s": 37.688181,
+      "peak_rss": 47403008,
+      "checkpoints": [
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 0,
+          "theta_radius": 4.248517790682399e-09,
+          "covariance_radius": 4.1437346809026014e-10,
+          "cost_radius": 1.4431321111701097e-08,
+          "contraction": 3.538681257290773e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 50,
+          "theta_radius": 4.023971837456667e-09,
+          "covariance_radius": 4.342714309809614e-10,
+          "cost_radius": 1.1391291442728057e-08,
+          "contraction": 3.5350216356262996e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 100,
+          "theta_radius": 4.0056259303002995e-09,
+          "covariance_radius": 4.566091174732707e-10,
+          "cost_radius": 1.1346845250245178e-08,
+          "contraction": 3.535498182106518e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 150,
+          "theta_radius": 4.0100088858746945e-09,
+          "covariance_radius": 4.800964112115177e-10,
+          "cost_radius": 1.1278250095973686e-08,
+          "contraction": 3.535979249159759e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 200,
+          "theta_radius": 4.022364687693405e-09,
+          "covariance_radius": 5.047932120820985e-10,
+          "cost_radius": 1.1295229690280404e-08,
+          "contraction": 3.5364697624491715e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 250,
+          "theta_radius": 4.0157666239181245e-09,
+          "covariance_radius": 5.307607289236943e-10,
+          "cost_radius": 1.1234225340209725e-08,
+          "contraction": 3.536962085104798e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 300,
+          "theta_radius": 4.01525577464952e-09,
+          "covariance_radius": 5.580664976698753e-10,
+          "cost_radius": 1.1271366594281909e-08,
+          "contraction": 3.537469777746833e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 350,
+          "theta_radius": 4.02120358516012e-09,
+          "covariance_radius": 5.867788041755868e-10,
+          "cost_radius": 1.125000929298193e-08,
+          "contraction": 3.537987978792272e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 400,
+          "theta_radius": 4.013113127610161e-09,
+          "covariance_radius": 6.169792622927368e-10,
+          "cost_radius": 1.1199126144798402e-08,
+          "contraction": 3.538568721146583e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 450,
+          "theta_radius": 4.039399340113026e-09,
+          "covariance_radius": 6.487407001539836e-10,
+          "cost_radius": 1.1165654438706098e-08,
+          "contraction": 3.539185517073519e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 500,
+          "theta_radius": 4.0150812414996225e-09,
+          "covariance_radius": 6.821505063377616e-10,
+          "cost_radius": 1.109954465694457e-08,
+          "contraction": 3.539871420605884e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 550,
+          "theta_radius": 4.01782992234248e-09,
+          "covariance_radius": 7.172837776237097e-10,
+          "cost_radius": 1.1087647503229867e-08,
+          "contraction": 3.540571521452149e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 600,
+          "theta_radius": 4.034369231085588e-09,
+          "covariance_radius": 7.542291587783722e-10,
+          "cost_radius": 1.1059371949384788e-08,
+          "contraction": 3.541283905228434e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 650,
+          "theta_radius": 4.027548612537249e-09,
+          "covariance_radius": 7.930813543889875e-10,
+          "cost_radius": 1.0948097612763393e-08,
+          "contraction": 3.542002695402086e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 700,
+          "theta_radius": 4.034426114879867e-09,
+          "covariance_radius": 8.339380867581199e-10,
+          "cost_radius": 1.0931010852746832e-08,
+          "contraction": 3.542728814631849e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 750,
+          "theta_radius": 4.039636452462599e-09,
+          "covariance_radius": 8.769033336820383e-10,
+          "cost_radius": 1.0906154815288751e-08,
+          "contraction": 3.543470456125448e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 800,
+          "theta_radius": 4.060698142029165e-09,
+          "covariance_radius": 9.22083118737183e-10,
+          "cost_radius": 1.0911645844493003e-08,
+          "contraction": 3.5442161633807096e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 850,
+          "theta_radius": 4.07133718046675e-09,
+          "covariance_radius": 9.695911334744915e-10,
+          "cost_radius": 1.0918987268170783e-08,
+          "contraction": 3.544964112433996e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 900,
+          "theta_radius": 4.0768689238538146e-09,
+          "covariance_radius": 1.0195495205378957e-09,
+          "cost_radius": 1.0888587514067014e-08,
+          "contraction": 3.545721739514352e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 950,
+          "theta_radius": 4.074191775779063e-09,
+          "covariance_radius": 1.0720865070062782e-09,
+          "cost_radius": 1.0926537576529912e-08,
+          "contraction": 3.5464946904091485e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1000,
+          "theta_radius": 4.058460951095458e-09,
+          "covariance_radius": 1.1273336045064806e-09,
+          "cost_radius": 1.0876462052849867e-08,
+          "contraction": 3.5472772661638706e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1050,
+          "theta_radius": 4.084517751580702e-09,
+          "covariance_radius": 1.1854309241728097e-09,
+          "cost_radius": 1.0938076721420121e-08,
+          "contraction": 3.548069951767814e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1100,
+          "theta_radius": 4.086588911688337e-09,
+          "covariance_radius": 1.2465193169164233e-09,
+          "cost_radius": 1.086904916320338e-08,
+          "contraction": 3.548854646446577e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1150,
+          "theta_radius": 4.100379663579829e-09,
+          "covariance_radius": 1.3107364519179432e-09,
+          "cost_radius": 1.0878540238812641e-08,
+          "contraction": 3.549587553064287e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1200,
+          "theta_radius": 4.09796907280827e-09,
+          "covariance_radius": 1.378262037540852e-09,
+          "cost_radius": 1.0823383566009005e-08,
+          "contraction": 3.5503213500431084e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1250,
+          "theta_radius": 4.081972152778986e-09,
+          "covariance_radius": 1.4492671360156633e-09,
+          "cost_radius": 1.080185550565041e-08,
+          "contraction": 3.5510575100091435e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1300,
+          "theta_radius": 4.0707784282417595e-09,
+          "covariance_radius": 1.5239301978813826e-09,
+          "cost_radius": 1.0811448387930276e-08,
+          "contraction": 3.551793966465107e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1350,
+          "theta_radius": 4.102465509709654e-09,
+          "covariance_radius": 1.6024390236706933e-09,
+          "cost_radius": 1.0847417648814372e-08,
+          "contraction": 3.552529287702627e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1400,
+          "theta_radius": 4.097266963321729e-09,
+          "covariance_radius": 1.6850030625685419e-09,
+          "cost_radius": 1.084417633176395e-08,
+          "contraction": 3.553287500792446e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1450,
+          "theta_radius": 4.133277467787047e-09,
+          "covariance_radius": 1.7718231073262472e-09,
+          "cost_radius": 1.0936162342522386e-08,
+          "contraction": 3.554050122815554e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1500,
+          "theta_radius": 4.1271499699136744e-09,
+          "covariance_radius": 1.863120431295891e-09,
+          "cost_radius": 1.082331738659336e-08,
+          "contraction": 3.554820551848597e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1550,
+          "theta_radius": 4.1191952880264065e-09,
+          "covariance_radius": 1.9591232595715666e-09,
+          "cost_radius": 1.0797640378343673e-08,
+          "contraction": 3.555593585207442e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1600,
+          "theta_radius": 4.110092269028863e-09,
+          "covariance_radius": 2.060076439473108e-09,
+          "cost_radius": 1.0820360985298515e-08,
+          "contraction": 3.55637312213137e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1650,
+          "theta_radius": 4.101347369829332e-09,
+          "covariance_radius": 2.1662352738518414e-09,
+          "cost_radius": 1.0794390514901802e-08,
+          "contraction": 3.5571589271304025e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1700,
+          "theta_radius": 4.107767459033428e-09,
+          "covariance_radius": 2.2778676152179343e-09,
+          "cost_radius": 1.0841468298084795e-08,
+          "contraction": 3.55794980894598e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1750,
+          "theta_radius": 4.114243801181518e-09,
+          "covariance_radius": 2.3952598254091055e-09,
+          "cost_radius": 1.0807006345109708e-08,
+          "contraction": 3.558751701151254e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1800,
+          "theta_radius": 4.095927745198438e-09,
+          "covariance_radius": 2.5187014843457844e-09,
+          "cost_radius": 1.0753637863585874e-08,
+          "contraction": 3.5595533289820327e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1850,
+          "theta_radius": 4.1183150980200965e-09,
+          "covariance_radius": 2.6484710522670076e-09,
+          "cost_radius": 1.0806709496929261e-08,
+          "contraction": 3.560309980546621e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1900,
+          "theta_radius": 4.101514046019497e-09,
+          "covariance_radius": 2.7849237885636688e-09,
+          "cost_radius": 1.0714393953024665e-08,
+          "contraction": 3.5610633352914516e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 1950,
+          "theta_radius": 4.061873600682707e-09,
+          "covariance_radius": 2.9284080002633495e-09,
+          "cost_radius": 1.0652933212955246e-08,
+          "contraction": 3.56181857754678e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2000,
+          "theta_radius": 4.062304921589611e-09,
+          "covariance_radius": 3.079281053031777e-09,
+          "cost_radius": 1.0633228684462536e-08,
+          "contraction": 3.5625698772262167e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2050,
+          "theta_radius": 4.055405670484169e-09,
+          "covariance_radius": 3.237934642267959e-09,
+          "cost_radius": 1.0628297455107088e-08,
+          "contraction": 3.5633297621593405e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2100,
+          "theta_radius": 4.0667581404197405e-09,
+          "covariance_radius": 3.404766518400262e-09,
+          "cost_radius": 1.061694568742506e-08,
+          "contraction": 3.564094171809557e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2150,
+          "theta_radius": 4.0944523001973045e-09,
+          "covariance_radius": 3.5802060840184053e-09,
+          "cost_radius": 1.0636515708062611e-08,
+          "contraction": 3.56487069183321e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2200,
+          "theta_radius": 4.103671374485813e-09,
+          "covariance_radius": 3.764685748412105e-09,
+          "cost_radius": 1.0656625043188849e-08,
+          "contraction": 3.565647661891739e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2250,
+          "theta_radius": 4.130127174278065e-09,
+          "covariance_radius": 3.958676627191724e-09,
+          "cost_radius": 1.0657539591864243e-08,
+          "contraction": 3.566429840713061e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2300,
+          "theta_radius": 4.123820797273255e-09,
+          "covariance_radius": 4.162662537080623e-09,
+          "cost_radius": 1.0721491033736477e-08,
+          "contraction": 3.56721137121227e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2350,
+          "theta_radius": 4.121798603525299e-09,
+          "covariance_radius": 4.377158783811705e-09,
+          "cost_radius": 1.072649809551403e-08,
+          "contraction": 3.567992563569871e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2400,
+          "theta_radius": 4.0950715112324105e-09,
+          "covariance_radius": 4.602711480374664e-09,
+          "cost_radius": 1.0724502764243795e-08,
+          "contraction": 3.5687769872856716e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2450,
+          "theta_radius": 4.115703137494721e-09,
+          "covariance_radius": 4.839885208346537e-09,
+          "cost_radius": 1.0688108095979963e-08,
+          "contraction": 3.5695605607750084e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2500,
+          "theta_radius": 4.163002498886598e-09,
+          "covariance_radius": 5.089268549870256e-09,
+          "cost_radius": 1.0635607418320308e-08,
+          "contraction": 3.570336205734679e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2550,
+          "theta_radius": 4.13503778494542e-09,
+          "covariance_radius": 5.351493203314903e-09,
+          "cost_radius": 1.0680378236885112e-08,
+          "contraction": 3.571106418930511e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2600,
+          "theta_radius": 4.146917722633541e-09,
+          "covariance_radius": 5.627216841154261e-09,
+          "cost_radius": 1.0647197886325394e-08,
+          "contraction": 3.571869215544594e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2650,
+          "theta_radius": 4.119249544851573e-09,
+          "covariance_radius": 5.917154421824263e-09,
+          "cost_radius": 1.0613994567251418e-08,
+          "contraction": 3.572637068350312e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2700,
+          "theta_radius": 4.110249070847287e-09,
+          "covariance_radius": 6.222023305384948e-09,
+          "cost_radius": 1.0610060343398547e-08,
+          "contraction": 3.573400903762513e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2750,
+          "theta_radius": 4.122976264412897e-09,
+          "covariance_radius": 6.54260527305202e-09,
+          "cost_radius": 1.0597369675398582e-08,
+          "contraction": 3.574167941593887e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2800,
+          "theta_radius": 4.0855130827613075e-09,
+          "covariance_radius": 6.879702466121473e-09,
+          "cost_radius": 1.0638635880882713e-08,
+          "contraction": 3.574934024968976e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2850,
+          "theta_radius": 4.089137963030709e-09,
+          "covariance_radius": 7.2341757433221166e-09,
+          "cost_radius": 1.0682710224349175e-08,
+          "contraction": 3.57570417822024e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2900,
+          "theta_radius": 4.082326218138835e-09,
+          "covariance_radius": 7.606908090320215e-09,
+          "cost_radius": 1.0692252782525722e-08,
+          "contraction": 3.576472248886967e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 2950,
+          "theta_radius": 4.07393395715024e-09,
+          "covariance_radius": 7.998849657861965e-09,
+          "cost_radius": 1.0767383131520125e-08,
+          "contraction": 3.5772426478459856e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3000,
+          "theta_radius": 4.238228056978186e-09,
+          "covariance_radius": 8.399288652121356e-09,
+          "cost_radius": 1.1847849629569521e-08,
+          "contraction": 3.576139038977482e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3050,
+          "theta_radius": 4.520664809459282e-09,
+          "covariance_radius": 8.818155320982073e-09,
+          "cost_radius": 1.3042683950213393e-08,
+          "contraction": 3.574535111000397e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3100,
+          "theta_radius": 4.955219674205299e-09,
+          "covariance_radius": 9.258388126611422e-09,
+          "cost_radius": 1.3367919153554313e-08,
+          "contraction": 3.573247881320913e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "step": 3150,
+          "theta_radius": 4.995740925084317e-09,
+          "covariance_radius": 9.735630818095995e-09,
+          "cost_radius": 1.3901538582389074e-08,
+          "contraction": 3.5740903201176745e-08
+        },
+        {
+          "network": 0,
+          "replicate": 47,
+          "branch": "STATIC_RLS-MPC",
+          "completed": true,
+          "branch_wall_s": 39.083720989
+        }
+      ],
+      "timings": {
+        "archive_load": {
+          "calls": 1,
+          "seconds": 0.018859683
+        },
+        "plan_load": {
+          "calls": 64,
+          "seconds": 0.3195788309999999
+        },
+        "native_planner": {
+          "calls": 64,
+          "seconds": 1.8852923779999986
+        },
+        "planner_certificate": {
+          "calls": 64,
+          "seconds": 6.924324477000001
+        },
+        "progress_write": {
+          "calls": 64,
+          "seconds": 0.25357819600000014
+        },
+        "information_update": {
+          "calls": 3200,
+          "seconds": 13.149822730000004
+        },
+        "native_update": {
+          "calls": 3200,
+          "seconds": 0.6710031719999995
+        },
+        "state_residual": {
+          "calls": 3200,
+          "seconds": 14.824481255000002
+        },
+        "digest": {
+          "calls": 3200,
+          "seconds": 0.3220937989999993
+        }
+      },
+      "digest_differences": 3200,
+      "release_qualified": false
+    },
+    "dependency": {
+      "stage": "dependency",
+      "method": "continuous-information-residual-v1",
+      "completed_branches": 1,
+      "prescribed_branches": 1,
+      "failure": null,
+      "stage_pass": true,
+      "maximum_coefficient_radius": 4.976892974199239e-09,
+      "maximum_covariance_radius": 1.0707636124604182e-08,
+      "wall_s": 32.302224844,
+      "cpu_s": 32.264595,
+      "peak_rss": 47280128,
+      "checkpoints": [
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 0,
+          "theta_radius": 4.045998804786339e-09,
+          "covariance_radius": 4.1437346809026014e-10,
+          "cost_radius": 9.504012638403939e-09,
+          "contraction": 3.538681257290773e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 50,
+          "theta_radius": 3.9849275964633544e-09,
+          "covariance_radius": 4.3288899342932775e-10,
+          "cost_radius": 7.690119689492528e-09,
+          "contraction": 3.530550392423784e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 100,
+          "theta_radius": 3.987165176077119e-09,
+          "covariance_radius": 4.55108253047316e-10,
+          "cost_radius": 7.553936907165099e-09,
+          "contraction": 3.53079391089084e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 150,
+          "theta_radius": 3.992563324620238e-09,
+          "covariance_radius": 4.785306894700047e-10,
+          "cost_radius": 7.517583840621681e-09,
+          "contraction": 3.5313224287744185e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 200,
+          "theta_radius": 3.985114351073738e-09,
+          "covariance_radius": 5.031618797307765e-10,
+          "cost_radius": 7.457393820950341e-09,
+          "contraction": 3.53187518298857e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 250,
+          "theta_radius": 4.013495621253304e-09,
+          "covariance_radius": 5.290769458826208e-10,
+          "cost_radius": 7.46063012501267e-09,
+          "contraction": 3.532536134655475e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 300,
+          "theta_radius": 3.953676084716272e-09,
+          "covariance_radius": 5.563080345286968e-10,
+          "cost_radius": 7.439073957884872e-09,
+          "contraction": 3.5332476834245954e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 350,
+          "theta_radius": 3.941598745989596e-09,
+          "covariance_radius": 5.849291622512639e-10,
+          "cost_radius": 7.3508795556411075e-09,
+          "contraction": 3.533950032625412e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 400,
+          "theta_radius": 3.959888775581443e-09,
+          "covariance_radius": 6.150301949590869e-10,
+          "cost_radius": 7.429159440469198e-09,
+          "contraction": 3.534658490594789e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 450,
+          "theta_radius": 3.9107084273954914e-09,
+          "covariance_radius": 6.466667748367586e-10,
+          "cost_radius": 7.332282065418402e-09,
+          "contraction": 3.535355208710579e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 500,
+          "theta_radius": 3.881277559372746e-09,
+          "covariance_radius": 6.799428471823703e-10,
+          "cost_radius": 7.317332377254699e-09,
+          "contraction": 3.536079234182695e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 550,
+          "theta_radius": 3.878911022909579e-09,
+          "covariance_radius": 7.150145176269689e-10,
+          "cost_radius": 7.259033744774183e-09,
+          "contraction": 3.536984087339687e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 600,
+          "theta_radius": 3.872627750954048e-09,
+          "covariance_radius": 7.518961115098779e-10,
+          "cost_radius": 7.1969875370917275e-09,
+          "contraction": 3.537895298443618e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 650,
+          "theta_radius": 3.874457272422381e-09,
+          "covariance_radius": 7.906860611378556e-10,
+          "cost_radius": 7.171943318252781e-09,
+          "contraction": 3.5388160205037444e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 700,
+          "theta_radius": 3.8693668953383534e-09,
+          "covariance_radius": 8.314814015163755e-10,
+          "cost_radius": 7.097620895745555e-09,
+          "contraction": 3.539751482374427e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 750,
+          "theta_radius": 3.875354584297112e-09,
+          "covariance_radius": 8.743846925987135e-10,
+          "cost_radius": 7.035178242805754e-09,
+          "contraction": 3.540702472971174e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 800,
+          "theta_radius": 3.870980471571297e-09,
+          "covariance_radius": 9.195056319990079e-10,
+          "cost_radius": 7.01347452702822e-09,
+          "contraction": 3.541671296096717e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 850,
+          "theta_radius": 3.8926448607466815e-09,
+          "covariance_radius": 9.669580219641052e-10,
+          "cost_radius": 7.030811788713483e-09,
+          "contraction": 3.542654119868673e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 900,
+          "theta_radius": 3.883659962975893e-09,
+          "covariance_radius": 1.0167000111797304e-09,
+          "cost_radius": 6.83472010375533e-09,
+          "contraction": 3.543447486683383e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 950,
+          "theta_radius": 3.901473628377901e-09,
+          "covariance_radius": 1.0692009831762815e-09,
+          "cost_radius": 6.787516632586802e-09,
+          "contraction": 3.544518952438447e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1000,
+          "theta_radius": 3.922020017513471e-09,
+          "covariance_radius": 1.1244166216041443e-09,
+          "cost_radius": 6.7727314259656545e-09,
+          "contraction": 3.545606087672613e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1050,
+          "theta_radius": 3.960898029898874e-09,
+          "covariance_radius": 1.1824893012232141e-09,
+          "cost_radius": 6.757914359109956e-09,
+          "contraction": 3.5467141573595423e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1100,
+          "theta_radius": 3.967580593085371e-09,
+          "covariance_radius": 1.2435677661988932e-09,
+          "cost_radius": 6.746287647505734e-09,
+          "contraction": 3.54784475459091e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1150,
+          "theta_radius": 3.940809367993609e-09,
+          "covariance_radius": 1.3075546332068138e-09,
+          "cost_radius": 6.59404867364657e-09,
+          "contraction": 3.5487795409475093e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1200,
+          "theta_radius": 3.946474209354172e-09,
+          "covariance_radius": 1.3751603954654291e-09,
+          "cost_radius": 6.537923167415317e-09,
+          "contraction": 3.550065364694267e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1250,
+          "theta_radius": 3.9502218472531576e-09,
+          "covariance_radius": 1.446276820627673e-09,
+          "cost_radius": 6.496862429000744e-09,
+          "contraction": 3.551394376123028e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1300,
+          "theta_radius": 3.866170620639414e-09,
+          "covariance_radius": 1.520723075924815e-09,
+          "cost_radius": 6.273926508157338e-09,
+          "contraction": 3.5524633305991546e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1350,
+          "theta_radius": 3.853860134307202e-09,
+          "covariance_radius": 1.5994495150521284e-09,
+          "cost_radius": 6.263769801787303e-09,
+          "contraction": 3.553959320430988e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1400,
+          "theta_radius": 3.861629582183468e-09,
+          "covariance_radius": 1.6822751942937874e-09,
+          "cost_radius": 6.246249981203154e-09,
+          "contraction": 3.555513360107416e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1450,
+          "theta_radius": 3.932758322989443e-09,
+          "covariance_radius": 1.7694168167122608e-09,
+          "cost_radius": 6.1682661679893625e-09,
+          "contraction": 3.5571289087467306e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1500,
+          "theta_radius": 4.036319540075882e-09,
+          "covariance_radius": 1.8605439605768955e-09,
+          "cost_radius": 6.114121191099288e-09,
+          "contraction": 3.5584140826123444e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1550,
+          "theta_radius": 4.089979709232745e-09,
+          "covariance_radius": 1.9570436569433595e-09,
+          "cost_radius": 6.114556494200535e-09,
+          "contraction": 3.5602434473797987e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1600,
+          "theta_radius": 4.11233232573196e-09,
+          "covariance_radius": 2.058600871696846e-09,
+          "cost_radius": 6.110991365199795e-09,
+          "contraction": 3.562172967130255e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1650,
+          "theta_radius": 4.112091536529766e-09,
+          "covariance_radius": 2.1647467679745175e-09,
+          "cost_radius": 6.143815346602981e-09,
+          "contraction": 3.563775394272095e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1700,
+          "theta_radius": 4.129250174067962e-09,
+          "covariance_radius": 2.2763676241764178e-09,
+          "cost_radius": 6.2714484621551265e-09,
+          "contraction": 3.5654137025425835e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1750,
+          "theta_radius": 3.9513814921200675e-09,
+          "covariance_radius": 2.3938126651668165e-09,
+          "cost_radius": 5.98331906482497e-09,
+          "contraction": 3.5672210825093865e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1800,
+          "theta_radius": 3.952310436826127e-09,
+          "covariance_radius": 2.5184437868898584e-09,
+          "cost_radius": 6.029074977693434e-09,
+          "contraction": 3.569741751899804e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1850,
+          "theta_radius": 3.928547557461304e-09,
+          "covariance_radius": 2.649668797186146e-09,
+          "cost_radius": 6.112466926304518e-09,
+          "contraction": 3.5724135578732055e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1900,
+          "theta_radius": 4.1134188640187366e-09,
+          "covariance_radius": 2.786504658280346e-09,
+          "cost_radius": 6.292486488287206e-09,
+          "contraction": 3.574535743524624e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 1950,
+          "theta_radius": 4.266628680366857e-09,
+          "covariance_radius": 2.930493811849706e-09,
+          "cost_radius": 6.30711973319517e-09,
+          "contraction": 3.5768378347993336e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2000,
+          "theta_radius": 4.270197235296835e-09,
+          "covariance_radius": 3.0836198364206185e-09,
+          "cost_radius": 6.26268573682368e-09,
+          "contraction": 3.5800316067284206e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2050,
+          "theta_radius": 4.274068138789606e-09,
+          "covariance_radius": 3.2449390311329378e-09,
+          "cost_radius": 6.316444910157799e-09,
+          "contraction": 3.58344498627442e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2100,
+          "theta_radius": 4.278719338147161e-09,
+          "covariance_radius": 3.4149218442884124e-09,
+          "cost_radius": 6.4079879779416645e-09,
+          "contraction": 3.5871014239668656e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2150,
+          "theta_radius": 4.283475657545196e-09,
+          "covariance_radius": 3.594025991894829e-09,
+          "cost_radius": 6.43589769260267e-09,
+          "contraction": 3.590982187246089e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2200,
+          "theta_radius": 4.1298824183679965e-09,
+          "covariance_radius": 3.7802770256078015e-09,
+          "cost_radius": 6.558143641677149e-09,
+          "contraction": 3.594105898869972e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2250,
+          "theta_radius": 4.218369607792031e-09,
+          "covariance_radius": 3.976404413804914e-09,
+          "cost_radius": 6.278976388173699e-09,
+          "contraction": 3.5975233620363266e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2300,
+          "theta_radius": 4.223157333894027e-09,
+          "covariance_radius": 4.185797122008736e-09,
+          "cost_radius": 6.19563747993107e-09,
+          "contraction": 3.6021469277729255e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2350,
+          "theta_radius": 4.229935838758251e-09,
+          "covariance_radius": 4.406554868860995e-09,
+          "cost_radius": 6.233542014105373e-09,
+          "contraction": 3.607056286925607e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2400,
+          "theta_radius": 4.232337309000931e-09,
+          "covariance_radius": 4.639333681492428e-09,
+          "cost_radius": 6.111094987633373e-09,
+          "contraction": 3.6122693235450996e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2450,
+          "theta_radius": 4.190557514204501e-09,
+          "covariance_radius": 4.880758731618372e-09,
+          "cost_radius": 6.198152808725164e-09,
+          "contraction": 3.6165574909023395e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2500,
+          "theta_radius": 4.192221695920671e-09,
+          "covariance_radius": 5.139513492777688e-09,
+          "cost_radius": 6.029751819260604e-09,
+          "contraction": 3.622429990228858e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2550,
+          "theta_radius": 4.194543332773609e-09,
+          "covariance_radius": 5.412874088700319e-09,
+          "cost_radius": 5.862540253261069e-09,
+          "contraction": 3.6289106549211526e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2600,
+          "theta_radius": 4.239347221794264e-09,
+          "covariance_radius": 5.69592648085426e-09,
+          "cost_radius": 6.120346272700225e-09,
+          "contraction": 3.63437388772383e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2650,
+          "theta_radius": 4.247228644618725e-09,
+          "covariance_radius": 6.000147336287527e-09,
+          "cost_radius": 6.190472494384239e-09,
+          "contraction": 3.641640430206748e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2700,
+          "theta_radius": 4.255764958258656e-09,
+          "covariance_radius": 6.32189648182204e-09,
+          "cost_radius": 6.310137552372327e-09,
+          "contraction": 3.6496644346984114e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2750,
+          "theta_radius": 4.304029887825426e-09,
+          "covariance_radius": 6.6542312223951645e-09,
+          "cost_radius": 6.2213058889435506e-09,
+          "contraction": 3.65643717946565e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2800,
+          "theta_radius": 4.322473526358755e-09,
+          "covariance_radius": 7.013375925229813e-09,
+          "cost_radius": 6.2411670945971025e-09,
+          "contraction": 3.665721297559317e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2850,
+          "theta_radius": 4.344792077293757e-09,
+          "covariance_radius": 7.393596916916267e-09,
+          "cost_radius": 6.14660995775614e-09,
+          "contraction": 3.675871819296087e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2900,
+          "theta_radius": 4.3120423964298664e-09,
+          "covariance_radius": 7.785515463551087e-09,
+          "cost_radius": 6.346374254307816e-09,
+          "contraction": 3.684632171039525e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 2950,
+          "theta_radius": 4.375592555372596e-09,
+          "covariance_radius": 8.199522534392648e-09,
+          "cost_radius": 6.4039447495931475e-09,
+          "contraction": 3.694118446350285e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3000,
+          "theta_radius": 4.386137883335174e-09,
+          "covariance_radius": 8.64880656831854e-09,
+          "cost_radius": 6.3952774670950335e-09,
+          "contraction": 3.706390865118265e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3050,
+          "theta_radius": 4.3999563040579395e-09,
+          "covariance_radius": 9.124270490782387e-09,
+          "cost_radius": 6.394425169289695e-09,
+          "contraction": 3.719341641030132e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3100,
+          "theta_radius": 4.41862593746951e-09,
+          "covariance_radius": 9.62766575583321e-09,
+          "cost_radius": 6.405635321728535e-09,
+          "contraction": 3.733033720968045e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "step": 3150,
+          "theta_radius": 4.433025272835934e-09,
+          "covariance_radius": 1.0161247225639017e-08,
+          "cost_radius": 6.358228105562778e-09,
+          "contraction": 3.747667097017007e-08
+        },
+        {
+          "network": 5,
+          "replicate": 47,
+          "branch": "LOSS_RLS-MPC",
+          "completed": true,
+          "branch_wall_s": 32.259024257
+        }
+      ],
+      "timings": {
+        "archive_load": {
+          "calls": 1,
+          "seconds": 0.019599955
+        },
+        "plan_load": {
+          "calls": 64,
+          "seconds": 0.21839525099999996
+        },
+        "native_planner": {
+          "calls": 64,
+          "seconds": 1.740925865
+        },
+        "planner_certificate": {
+          "calls": 64,
+          "seconds": 5.7513767829999995
+        },
+        "progress_write": {
+          "calls": 64,
+          "seconds": 0.148843488
+        },
+        "information_update": {
+          "calls": 3200,
+          "seconds": 10.841185642999996
+        },
+        "native_update": {
+          "calls": 3200,
+          "seconds": 0.5332328449999999
+        },
+        "state_residual": {
+          "calls": 3200,
+          "seconds": 12.188168070999998
+        },
+        "digest": {
+          "calls": 3200,
+          "seconds": 0.23322190600000012
+        }
+      },
+      "digest_differences": 3200,
+      "release_qualified": false
+    },
+    "prefix_equivalent_branches": 9.140625,
+    "full_wall_forecast_s": 1048.2619631721025,
+    "forecast_required_speedup": 4.367758179883761,
+    "m008_completed": {
+      "trials": 35,
+      "remaining_s": 851.420486555
+    },
+    "m008_watchdogs": 0
+  }
+}

@@ -1,0 +1,446 @@
+certify (macos-15-intel)	Run actions/checkout@v4	﻿2026-11-08T03:38:55.0880500Z ##[group]Run actions/checkout@v4
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0883660Z with:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0885490Z   fetch-depth: 0
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0887920Z   repository: adithyakupad/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0915420Z   token: ***
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0918970Z   ssh-strict: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0921540Z   ssh-user: git
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0924070Z   persist-credentials: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0926930Z   clean: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0929440Z   sparse-checkout-cone-mode: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0932610Z   fetch-tags: false
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0935210Z   show-progress: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0937750Z   lfs: false
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0940020Z   submodules: false
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0942260Z   set-safe-directory: true
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0944660Z   allow-unsafe-pr-checkout: false
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0948630Z env:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0950800Z   PYTHONPATH: .:src
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0952950Z   VECLIB_MAXIMUM_THREADS: 1
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0955920Z   OPENBLAS_NUM_THREADS: 1
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0958490Z   OMP_NUM_THREADS: 1
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0961120Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:55.0963720Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.1372120Z Syncing repository: adithyakupad/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.1382150Z ##[group]Getting Git version info
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.1387210Z Working directory is '/Users/runner/work/neuromancer/neuromancer'
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.1393840Z [command]/usr/local/bin/git version
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.1988670Z git version 2.55.0
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2147220Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2219260Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/2d2b4517-de62-4f4a-981b-87084e666cb5/.gitconfig'
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2305330Z Temporarily overriding HOME='/Users/runner/work/_temp/2d2b4517-de62-4f4a-981b-87084e666cb5' before making global git config changes
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2315470Z Adding repository directory to the temporary git global config as a safe directory
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2326880Z [command]/usr/local/bin/git config --global --add safe.directory /Users/runner/work/neuromancer/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2549510Z Deleting the contents of '/Users/runner/work/neuromancer/neuromancer'
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2626340Z ##[group]Initializing the repository
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.2681340Z [command]/usr/local/bin/git init /Users/runner/work/neuromancer/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3974460Z hint: Using 'master' as the name for the initial branch. This default branch name
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3980440Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3986020Z hint: to use in all of your new repositories, which will suppress this warning,
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3990520Z hint: call:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3993110Z hint:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.3997310Z hint: 	git config --global init.defaultBranch <name>
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4001450Z hint:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4004880Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4011030Z hint: 'development'. The just-created branch can be renamed via this command:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4015740Z hint:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4019640Z hint: 	git branch -m <name>
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4022790Z hint:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4027070Z hint: Disable this message with "git config set advice.defaultBranchName false"
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4033710Z Initialized empty Git repository in /Users/runner/work/neuromancer/neuromancer/.git/
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4045060Z [command]/usr/local/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4149520Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4153230Z ##[group]Disabling automatic garbage collection
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4156330Z [command]/usr/local/bin/git config --local gc.auto 0
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4275630Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4278820Z ##[group]Setting up auth
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4282890Z [command]/usr/local/bin/git config --local --name-only --get-regexp core\.sshCommand
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.4396240Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.6414530Z [command]/usr/local/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.6533210Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.9228090Z [command]/usr/local/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:56.9723420Z [command]/usr/local/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:57.3116480Z [command]/usr/local/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:57.3361020Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:57.3364130Z ##[group]Fetching the repository
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:38:57.3379680Z [command]/usr/local/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2592740Z From https://github.com/adithyakupad/neuromancer
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2595640Z  * [new branch]        engineering/final-qualification-resolution -> origin/engineering/final-qualification-resolution
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2599320Z  * [new branch]        engineering/final-qualification-resolution-evidence-final -> origin/engineering/final-qualification-resolution-evidence-final
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2602000Z  * [new branch]        engineering/m008-supervisor-diagnosis -> origin/engineering/m008-supervisor-diagnosis
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2604180Z  * [new branch]        engineering/m009-v1-qualification -> origin/engineering/m009-v1-qualification
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2606340Z  * [new branch]        engineering/m010-write-failure-qualification -> origin/engineering/m010-write-failure-qualification
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2610290Z  * [new branch]        engineering/m011-persistence-review -> origin/engineering/m011-persistence-review
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2612890Z  * [new branch]        engineering/m018-final-qualification -> origin/engineering/m018-final-qualification
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2614760Z  * [new branch]        engineering/m018-sdk-frame-stall -> origin/engineering/m018-sdk-frame-stall
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2616540Z  * [new branch]        engineering/m019-producer-boundary -> origin/engineering/m019-producer-boundary
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2618400Z  * [new branch]        engineering/m027-numerical-certificate -> origin/engineering/m027-numerical-certificate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2620250Z  * [new branch]        engineering/recover-core-fixture -> origin/engineering/recover-core-fixture
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2622070Z  * [new branch]        engineering/recover-recording-contract -> origin/engineering/recover-recording-contract
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2623750Z  * [new branch]        engineering/recover-sdk -> origin/engineering/recover-sdk
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2625660Z  * [new branch]        engineering/v2-final-supervisor-qualification -> origin/engineering/v2-final-supervisor-qualification
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2627400Z  * [new branch]        main                    -> origin/main
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2628600Z  * [new branch]        performance/v1-1-baseline -> origin/performance/v1-1-baseline
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2630100Z  * [new branch]        performance/v1-1-optimization -> origin/performance/v1-1-optimization
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2631770Z  * [new branch]        refactor/personal-code-style -> origin/refactor/personal-code-style
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2633290Z  * [new branch]        refactor/recover-performance -> origin/refactor/recover-performance
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2682190Z  * [new branch]        refactor/v2-m017-personal-style -> origin/refactor/v2-m017-personal-style
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2683660Z  * [new branch]        release/m011-v1-isolated -> origin/release/m011-v1-isolated
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2685210Z  * [new branch]        release/m012-clock-qualification -> origin/release/m012-clock-qualification
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2694840Z  * [new branch]        release/v1-audit        -> origin/release/v1-audit
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2698530Z  * [new branch]        release/v1-license-version -> origin/release/v1-license-version
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2700660Z  * [new branch]        release/v2-0-final-integration -> origin/release/v2-0-final-integration
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2702380Z  * [new branch]        release/v2-0-final-integration-evidence -> origin/release/v2-0-final-integration-evidence
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2704130Z  * [new branch]        release/v2-0-research-candidate -> origin/release/v2-0-research-candidate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2705540Z  * [new branch]        release/v2-core-closure -> origin/release/v2-core-closure
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2707040Z  * [new branch]        release/v2-core-closure-evidence -> origin/release/v2-core-closure-evidence
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2708700Z  * [new branch]        release/v2-core-final-disclosure -> origin/release/v2-core-final-disclosure
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2710480Z  * [new branch]        release/v2-core-portable-reproduction -> origin/release/v2-core-portable-reproduction
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2712180Z  * [new branch]        release/v2-core-publish-workflow -> origin/release/v2-core-publish-workflow
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2713700Z  * [new branch]        release/v2-core-scope-review -> origin/release/v2-core-scope-review
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2715110Z  * [new branch]        research/recover-designs -> origin/research/recover-designs
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2716410Z  * [new branch]        research/v1-1-proposals -> origin/research/v1-1-proposals
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2717970Z  * [new branch]        research/v2-m013-functional-plasticity -> origin/research/v2-m013-functional-plasticity
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2719780Z  * [new branch]        research/v2-m014-reservoir-computing -> origin/research/v2-m014-reservoir-computing
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2721480Z  * [new branch]        research/v2-m015-causal-validation -> origin/research/v2-m015-causal-validation
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2723820Z  * [new branch]        research/v2-m016-cl-sdk-integration -> origin/research/v2-m016-cl-sdk-integration
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2726790Z [command]/usr/local/bin/git branch --list --remote origin/engineering/m027-numerical-certificate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2754950Z   origin/engineering/m027-numerical-certificate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2775430Z [command]/usr/local/bin/git rev-parse refs/remotes/origin/engineering/m027-numerical-certificate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2873290Z 70073198e4c6bd290a8ca5fe8261dfbd06e9ba45
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2880410Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2881610Z ##[group]Determining the checkout info
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2882690Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.2888930Z [command]/usr/local/bin/git sparse-checkout disable
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.3032520Z [command]/usr/local/bin/git config --local --unset-all extensions.worktreeConfig
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.3146640Z ##[group]Checking out the ref
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:18.3152540Z [command]/usr/local/bin/git checkout --progress --force -B engineering/m027-numerical-certificate refs/remotes/origin/engineering/m027-numerical-certificate
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:19.7193240Z Updating files:   1% (555/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:20.2435630Z Updating files:   2% (780/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:20.4743630Z Updating files:   3% (1170/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:20.6479600Z Updating files:   3% (1300/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:20.8583310Z Updating files:   4% (1560/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:21.0003480Z Updating files:   5% (1950/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:21.1427330Z Updating files:   6% (2340/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:21.4923660Z Updating files:   7% (2730/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:21.7550170Z Updating files:   7% (2971/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:21.9770840Z Updating files:   8% (3120/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:22.3104420Z Updating files:   9% (3510/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:22.4285290Z Updating files:  10% (3900/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:22.8529390Z Updating files:  10% (4035/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:23.2348710Z Updating files:  11% (4290/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:23.4452800Z Updating files:  12% (4680/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:23.4696040Z Updating files:  12% (5015/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:23.6270510Z Updating files:  13% (5069/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:24.0070380Z Updating files:  14% (5459/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:24.5112230Z Updating files:  15% (5849/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:25.4107300Z Updating files:  15% (5986/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:25.4234290Z Updating files:  16% (6239/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:25.9138950Z Updating files:  16% (6241/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:26.5058030Z Updating files:  17% (6629/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:27.4429220Z Updating files:  17% (6871/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:27.9138280Z Updating files:  17% (6963/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:28.5159320Z Updating files:  18% (7019/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:28.5898120Z Updating files:  18% (7252/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:29.3613560Z Updating files:  19% (7409/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:29.5023460Z Updating files:  20% (7799/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:30.1050420Z Updating files:  20% (7838/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:30.4213200Z Updating files:  21% (8189/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:30.8401660Z Updating files:  21% (8378/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:31.1009040Z Updating files:  22% (8579/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:31.5006650Z Updating files:  23% (8969/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:32.5245960Z Updating files:  23% (9098/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:32.7866380Z Updating files:  23% (9201/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:33.6471770Z Updating files:  24% (9359/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:33.8253090Z Updating files:  24% (9677/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:34.4433060Z Updating files:  25% (9748/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:34.6221180Z Updating files:  25% (10096/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:35.1110760Z Updating files:  26% (10138/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:35.4388080Z Updating files:  27% (10528/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:36.5355440Z Updating files:  27% (10641/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:36.6078420Z Updating files:  27% (10831/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:37.0347820Z Updating files:  28% (10918/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:37.4067180Z Updating files:  29% (11308/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:37.6091300Z Updating files:  29% (11492/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:38.4138310Z Updating files:  30% (11698/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:39.2399510Z Updating files:  30% (12005/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:39.4596580Z Updating files:  31% (12088/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:40.4930330Z Updating files:  31% (12126/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:41.4212620Z Updating files:  31% (12197/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:42.2457690Z Updating files:  31% (12303/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:42.4798550Z Updating files:  32% (12478/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:42.7589160Z Updating files:  32% (12569/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:43.1982820Z Updating files:  33% (12868/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:43.4091880Z Updating files:  34% (13258/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:43.4367560Z Updating files:  34% (13597/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:43.7425170Z Updating files:  35% (13648/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:43.9094690Z Updating files:  36% (14038/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:44.4684110Z Updating files:  37% (14428/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:44.7727490Z Updating files:  37% (14511/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:44.9770370Z Updating files:  38% (14817/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:45.1792430Z Updating files:  39% (15207/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:45.8002960Z Updating files:  40% (15597/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:46.4095970Z Updating files:  40% (15861/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:46.5732770Z Updating files:  40% (15936/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:47.5215630Z Updating files:  41% (15987/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:48.4111110Z Updating files:  41% (16064/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:49.6161490Z Updating files:  41% (16105/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:50.4508620Z Updating files:  41% (16153/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:51.4970110Z Updating files:  41% (16172/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:52.6862290Z Updating files:  41% (16202/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:53.4843130Z Updating files:  41% (16245/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:54.4654030Z Updating files:  41% (16271/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:55.6671210Z Updating files:  41% (16295/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:56.3828110Z Updating files:  41% (16340/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:56.4349600Z Updating files:  42% (16377/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:57.5548340Z Updating files:  42% (16380/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:58.5489760Z Updating files:  42% (16411/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:59.7056860Z Updating files:  42% (16476/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:39:59.9895330Z Updating files:  42% (16689/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:00.5127590Z Updating files:  43% (16767/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:01.1374670Z Updating files:  43% (16926/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:01.4138900Z Updating files:  44% (17157/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:01.9091550Z Updating files:  44% (17347/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:02.4442910Z Updating files:  45% (17547/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:02.6605630Z Updating files:  45% (17787/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:03.1929840Z Updating files:  46% (17937/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:03.4208080Z Updating files:  47% (18327/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:03.7393390Z Updating files:  47% (18523/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.0711260Z Updating files:  48% (18717/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.3738950Z Updating files:  49% (19107/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.4203020Z Updating files:  50% (19496/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.5779490Z Updating files:  50% (19528/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.7480950Z Updating files:  51% (19886/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:04.9020770Z Updating files:  52% (20276/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.1807440Z Updating files:  53% (20666/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.4260120Z Updating files:  54% (21056/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.4987380Z Updating files:  54% (21431/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.5763250Z Updating files:  55% (21446/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.7113340Z Updating files:  56% (21836/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:05.9538700Z Updating files:  57% (22226/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:06.1062940Z Updating files:  58% (22616/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:06.3207660Z Updating files:  59% (23006/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:06.4215360Z Updating files:  60% (23396/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:06.6361230Z Updating files:  60% (23628/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:06.9375520Z Updating files:  61% (23786/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:07.2383090Z Updating files:  62% (24176/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:07.4078170Z Updating files:  63% (24565/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:07.4472710Z Updating files:  63% (24896/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:07.6870560Z Updating files:  64% (24955/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:07.8594350Z Updating files:  65% (25345/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.0784960Z Updating files:  66% (25735/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.3647640Z Updating files:  67% (26125/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.4071700Z Updating files:  68% (26515/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.5763600Z Updating files:  68% (26595/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.7784050Z Updating files:  69% (26905/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:08.9647190Z Updating files:  70% (27295/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:09.2235610Z Updating files:  71% (27685/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:09.4073580Z Updating files:  72% (28075/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:09.4190520Z Updating files:  72% (28442/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:09.7137440Z Updating files:  73% (28465/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:10.0969020Z Updating files:  74% (28855/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:10.4084710Z Updating files:  75% (29244/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:10.6065450Z Updating files:  75% (29602/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:10.9815190Z Updating files:  76% (29634/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:11.4081770Z Updating files:  77% (30024/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:11.4315870Z Updating files:  77% (30383/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:11.7359410Z Updating files:  78% (30414/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:11.9554550Z Updating files:  79% (30804/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:12.1723470Z Updating files:  80% (31194/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:12.4313780Z Updating files:  81% (31584/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:12.7895420Z Updating files:  81% (31763/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:13.0962850Z Updating files:  82% (31974/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:13.4173720Z Updating files:  83% (32364/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:13.4186970Z Updating files:  83% (32752/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:13.6761880Z Updating files:  84% (32754/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:13.8853060Z Updating files:  85% (33144/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:14.1055650Z Updating files:  86% (33534/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:14.4091840Z Updating files:  87% (33924/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:14.4296220Z Updating files:  87% (34298/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:14.9866310Z Updating files:  88% (34313/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:15.2616530Z Updating files:  89% (34703/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:15.4067290Z Updating files:  90% (35093/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:15.5370570Z Updating files:  90% (35362/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:15.9276360Z Updating files:  91% (35483/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.1137710Z Updating files:  92% (35873/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.2912850Z Updating files:  93% (36263/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.4113150Z Updating files:  94% (36653/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.4371550Z Updating files:  94% (36971/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.5752860Z Updating files:  95% (37043/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.7131410Z Updating files:  96% (37433/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:16.9048550Z Updating files:  97% (37823/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.1784940Z Updating files:  98% (38213/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.3041010Z Updating files:  99% (38603/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.3043510Z Updating files: 100% (38992/38992)
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.3045950Z Updating files: 100% (38992/38992), done.
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.3919380Z Switched to a new branch 'engineering/m027-numerical-certificate'
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.3931310Z branch 'engineering/m027-numerical-certificate' set up to track 'origin/engineering/m027-numerical-certificate'.
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.4182880Z ##[endgroup]
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.4417970Z [command]/usr/local/bin/git log -1 --format=%H
+certify (macos-15-intel)	Run actions/checkout@v4	2026-11-08T03:40:17.4625740Z 70073198e4c6bd290a8ca5fe8261dfbd06e9ba45
+certify (macos-15-intel)	Run actions/setup-python@v5	﻿2026-11-08T03:40:17.5301600Z ##[group]Run actions/setup-python@v5
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5302180Z with:
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5302540Z   python-version: 3.12
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5302970Z   check-latest: false
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5308850Z   token: ***
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5309270Z   update-environment: true
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5309740Z   allow-prereleases: false
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5310200Z   freethreaded: false
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5310590Z env:
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5310930Z   PYTHONPATH: .:src
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5311470Z   VECLIB_MAXIMUM_THREADS: 1
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5311950Z   OPENBLAS_NUM_THREADS: 1
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5312890Z   OMP_NUM_THREADS: 1
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5313340Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.5313880Z ##[endgroup]
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.8025050Z ##[group]Installed versions
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.8168310Z (node:36363) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.8171150Z Successfully set up CPython (3.12.10)
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.8172900Z (Use `node --trace-deprecation ...` to show where the warning was created)
+certify (macos-15-intel)	Run actions/setup-python@v5	2026-11-08T03:40:17.8175080Z ##[endgroup]
+certify (ubuntu-latest)	Environment and source identity	﻿2026-11-08T03:39:07.6638147Z ##[group]Run python -m pip install -r requirements-v1.txt
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6638738Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6639225Z ^[[36;1mpython -m pip install --no-build-isolation --no-deps -e .^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6639865Z ^[[36;1mpython -m pip check^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640222Z ^[[36;1mmkdir -p runs^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640535Z ^[[36;1mgit rev-parse HEAD > runs/tested-source.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6640891Z ^[[36;1mpython -m pip freeze > runs/environment.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6641383Z ^[[36;1mpython -c 'import numpy as n; n.show_config(); n.show_runtime()' > runs/numerical-runtime.txt^[[0m
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689010Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689332Z env:
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6689784Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690145Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690408Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690641Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6690884Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6691288Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6691719Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692125Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692494Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6692858Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6693220Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:07.6693533Z ##[endgroup]
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.5055640Z Collecting Brian2==2.10.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.5584539Z   Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6263477Z Collecting contourpy==1.4.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6372102Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6555724Z Collecting cycler==0.12.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.6663282Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.8728877Z Collecting Cython==3.1.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:08.8841498Z   Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0150154Z Collecting fonttools==4.67.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0260351Z   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0700643Z Collecting iniconfig==2.3.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.0812886Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1009375Z Collecting Jinja2==3.1.6 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1114170Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1857882Z Collecting kiwisolver==1.5.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.1964719Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.2501419Z Collecting MarkupSafe==3.0.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.2605012Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.3765563Z Collecting matplotlib==3.10.8 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.3873029Z   Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.4155638Z Collecting mpmath==1.3.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.4259327Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6208040Z Collecting numpy==2.5.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6315937Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6521848Z Collecting packaging==26.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.6630303Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8112856Z Collecting pillow==13.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8219885Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8424889Z Collecting pluggy==1.7.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8530355Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8768595Z Collecting Pygments==2.21.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.8873115Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9136255Z Collecting pyparsing==3.3.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9250102Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9544581Z Collecting pytest==9.1.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9661872Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9861609Z Collecting python-dateutil==2.9.0.post0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:09.9967934Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0646116Z Collecting setuptools==84.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0751551Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.0972747Z Collecting six==1.17.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1076860Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1289604Z Collecting sympy==1.14.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.1393955Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.2528822Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.2634961Z   Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3136596Z Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3485910Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 88.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3614330Z Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3879497Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 126.9 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.3985871Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4120100Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4249434Z Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4658036Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 133.8 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4763485Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.4889104Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5019918Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5102032Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 212.5 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5211616Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5351214Z Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5716039Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 250.1 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5868123Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.5952464Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 65.9 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6064021Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6582244Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 336.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.6690485Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.7761868Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.8583698Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 86.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.8690021Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9163200Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9227659Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 229.8 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9333328Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9463425Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9597491Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9728317Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9782100Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 185.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:10.9887768Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0011442Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0179949Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 412.0 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.0312922Z Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.1843894Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 232.4 MB/s  0:00:00
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:11.5167192Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4698673Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4724559Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4733450Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4734456Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.4734977Z [notice] To update, run: pip install --upgrade pip
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.9481679Z Obtaining file:///home/runner/work/neuromancer/neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:29.9492319Z   Checking if build backend supports build_editable: started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.1343200Z   Checking if build backend supports build_editable: finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.1352084Z   Preparing editable metadata (pyproject.toml): started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3832561Z   Preparing editable metadata (pyproject.toml): finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3878424Z Building wheels for collected packages: neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.3886040Z   Building editable for neuromancer (pyproject.toml): started
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6611048Z   Building editable for neuromancer (pyproject.toml): finished with status 'done'
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6617851Z   Created wheel for neuromancer: filename=neuromancer-2.0.0rc1-0.editable-py3-none-any.whl size=2624 sha256=17775df8b95fcae5da44927a3d25ac2d25afe583fdb407ad7ba684122d7e0872
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6619176Z   Stored in directory: /tmp/pip-ephem-wheel-cache-n7q_vm2i/wheels/5b/be/0c/f3c68bcae6b907cf7d005d256ee3f8974bc9b52a9ea2bee757
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6642853Z Successfully built neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6755544Z Installing collected packages: neuromancer
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6832168Z Successfully installed neuromancer-2.0.0rc1
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6840788Z 
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6841431Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.6841903Z [notice] To update, run: pip install --upgrade pip
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:30.9563891Z No broken requirements found.
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:31.3216135Z /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/numpy/__config__.py:155: UserWarning: Install `pyyaml` for better output
+certify (ubuntu-latest)	Environment and source identity	2026-11-08T03:39:31.3216950Z   warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+certify (ubuntu-latest)	Independent arithmetic and phase tests	﻿2026-11-08T03:39:31.3465409Z ##[group]Run python -m pytest -q tests/test_m027_residual_bounds.py tests/test_m027_spectral_bounds.py tests/test_portable_numeric_verification.py tests/test_cleanup_clock_phases.py --junitxml=runs/arithmetic.xml
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3466761Z ^[[36;1mpython -m pytest -q tests/test_m027_residual_bounds.py tests/test_m027_spectral_bounds.py tests/test_portable_numeric_verification.py tests/test_cleanup_clock_phases.py --junitxml=runs/arithmetic.xml^[[0m
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501108Z shell: /usr/bin/bash -e {0}
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501396Z env:
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501637Z   PYTHONPATH: .:src
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3501868Z   VECLIB_MAXIMUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502105Z   OPENBLAS_NUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502340Z   OMP_NUM_THREADS: 1
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502591Z   MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3502933Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3503356Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3503830Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504198Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504582Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3504962Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:31.3505299Z ##[endgroup]
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:34.3722928Z .................................                                        [100%]
+certify (ubuntu-latest)	Independent arithmetic and phase tests	2026-11-08T03:39:34.3723603Z 33 passed in 2.75s

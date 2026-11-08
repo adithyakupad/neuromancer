@@ -1,0 +1,1165 @@
+qualification (ubuntu-latest)	UNKNOWN STEP	﻿2026-11-08T03:44:07.2758156Z Current runner version: '2.338.2'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2802362Z ##[group]Runner Image Provisioner
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2803842Z Hosted Compute Agent
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2804966Z Version: 20261028.624
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2805735Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2806455Z Build Date: 2026-10-28T21:51:42Z
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2807318Z Worker ID: {1fc76732-30c8-4dc9-bf23-632fc6404b73}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2808719Z Region: southcentralus
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2809721Z Cloud: Azure
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2810299Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2812703Z ##[group]Operating System
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2814052Z Ubuntu
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2814625Z 26.04.1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2816108Z LTS
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2817262Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2818245Z ##[group]Runner Image
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2819412Z Image: ubuntu-26.04
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2820396Z Version: 20261101.186.1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2822165Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261101.186/images/ubuntu/Ubuntu2604-Readme.md
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2824695Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261101.186
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2826269Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2828300Z ##[group]GITHUB_TOKEN Permissions
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2832309Z Contents: read
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2833204Z Metadata: read
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2834150Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2837998Z Secret source: Actions
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2839491Z Cache mode: write
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.2841636Z Prepare workflow directory
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.3489447Z Prepare all required actions
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.3571352Z Getting action download info
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.6572000Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.8120027Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:07.8695593Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.0714693Z Complete job name: qualification (ubuntu-latest)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1526222Z ##[group]Run actions/checkout@v4
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1527021Z with:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1527614Z   repository: adithyakupad/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1531672Z   token: ***
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1532197Z   ssh-strict: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1532721Z   ssh-user: git
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1533243Z   persist-credentials: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1533812Z   clean: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1534356Z   sparse-checkout-cone-mode: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1534925Z   fetch-depth: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1535455Z   fetch-tags: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1535970Z   show-progress: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1536527Z   lfs: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1537030Z   submodules: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1537533Z   set-safe-directory: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1538282Z   allow-unsafe-pr-checkout: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1539047Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1539598Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1540252Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1540790Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1541456Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1542177Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1542899Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.1543414Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4013913Z Syncing repository: adithyakupad/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4015809Z ##[group]Getting Git version info
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4016609Z Working directory is '/home/runner/work/neuromancer/neuromancer'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4018027Z [command]/usr/bin/git version
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4077072Z git version 2.56.0
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4101095Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4115475Z Temporarily overriding HOME='/home/runner/work/_temp/b693acfc-7d99-4e99-b448-2b09b10942a2' before making global git config changes
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4117043Z Adding repository directory to the temporary git global config as a safe directory
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4122193Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4215621Z Deleting the contents of '/home/runner/work/neuromancer/neuromancer'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4218375Z ##[group]Initializing the repository
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4223001Z [command]/usr/bin/git init /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4366511Z hint: Using 'master' as the name for the initial branch. This default branch name
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4367945Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4369345Z hint: to use in all of your new repositories, which will suppress this warning,
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4370250Z hint: call:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4370855Z hint:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4371594Z hint: 	git config --global init.defaultBranch <name>
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4372357Z hint:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4373119Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4374173Z hint: 'development'. The just-created branch can be renamed via this command:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4375083Z hint:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4375684Z hint: 	git branch -m <name>
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4376336Z hint:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4377162Z hint: Disable this message with "git config set advice.defaultBranchName false"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4379455Z Initialized empty Git repository in /home/runner/work/neuromancer/neuromancer/.git/
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4393026Z [command]/usr/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4447970Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4449626Z ##[group]Disabling automatic garbage collection
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4451320Z [command]/usr/bin/git config --local gc.auto 0
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4485907Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4486817Z ##[group]Setting up auth
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4494232Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4527244Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4954112Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.4987663Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5230421Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5261672Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5481661Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5521114Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5522682Z ##[group]Fetching the repository
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:08.5531772Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f:refs/remotes/origin/engineering/m027-numerical-certificate
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7647338Z From https://github.com/adithyakupad/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7648781Z  * [new ref]           88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f -> origin/engineering/m027-numerical-certificate
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7652242Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7653499Z ##[group]Determining the checkout info
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7654840Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7660028Z [command]/usr/bin/git sparse-checkout disable
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7711230Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7743297Z ##[group]Checking out the ref
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:23.7746487Z [command]/usr/bin/git checkout --progress --force -B engineering/m027-numerical-certificate refs/remotes/origin/engineering/m027-numerical-certificate
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:24.8186247Z Updating files:  13% (5388/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:24.9234521Z Updating files:  14% (5460/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.0258824Z Updating files:  15% (5849/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.1684975Z Updating files:  16% (6239/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.3876719Z Updating files:  17% (6629/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.3994205Z Updating files:  18% (7019/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4079461Z Updating files:  19% (7409/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4175288Z Updating files:  20% (7799/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4277515Z Updating files:  21% (8189/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4356188Z Updating files:  22% (8579/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4477042Z Updating files:  23% (8969/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.4914796Z Updating files:  24% (9359/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.5026061Z Updating files:  25% (9749/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.5099440Z Updating files:  26% (10139/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.5212834Z Updating files:  27% (10529/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.5300773Z Updating files:  28% (10919/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.5405929Z Updating files:  29% (11308/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.7042486Z Updating files:  30% (11698/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.8075848Z Updating files:  31% (12088/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.9397074Z Updating files:  31% (12207/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.9497007Z Updating files:  32% (12478/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.9603523Z Updating files:  33% (12868/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.9680281Z Updating files:  34% (13258/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:25.9940497Z Updating files:  35% (13648/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.0027210Z Updating files:  36% (14038/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.0750468Z Updating files:  37% (14428/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.0832516Z Updating files:  38% (14818/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.0943204Z Updating files:  39% (15208/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.1986835Z Updating files:  40% (15598/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.5320561Z Updating files:  41% (15988/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6052037Z Updating files:  42% (16378/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6138301Z Updating files:  43% (16767/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6245370Z Updating files:  44% (17157/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6321579Z Updating files:  45% (17547/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6424129Z Updating files:  46% (17937/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6639726Z Updating files:  47% (18327/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.6730819Z Updating files:  48% (18717/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7101966Z Updating files:  49% (19107/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7211273Z Updating files:  50% (19497/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7300611Z Updating files:  51% (19887/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7378024Z Updating files:  52% (20277/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7489219Z Updating files:  53% (20667/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7578354Z Updating files:  54% (21057/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7663662Z Updating files:  55% (21447/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7761288Z Updating files:  56% (21837/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7913773Z Updating files:  57% (22227/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.7998956Z Updating files:  58% (22616/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8073749Z Updating files:  59% (23006/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8103874Z Updating files:  59% (23257/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8193216Z Updating files:  60% (23396/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8270663Z Updating files:  61% (23786/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8377627Z Updating files:  62% (24176/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8453583Z Updating files:  63% (24566/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8559081Z Updating files:  64% (24956/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:26.8964501Z Updating files:  65% (25346/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.0044016Z Updating files:  66% (25736/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.1099190Z Updating files:  67% (26126/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.1989026Z Updating files:  68% (26516/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.2916719Z Updating files:  69% (26906/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.3928437Z Updating files:  70% (27296/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.4990678Z Updating files:  71% (27686/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.5896576Z Updating files:  72% (28075/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.6755790Z Updating files:  73% (28465/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.7715650Z Updating files:  74% (28855/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.8074623Z Updating files:  75% (29245/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.8699840Z Updating files:  75% (29374/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:27.9583508Z Updating files:  76% (29635/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.0453243Z Updating files:  77% (30025/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.1485955Z Updating files:  78% (30415/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.2405677Z Updating files:  79% (30805/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.3288702Z Updating files:  80% (31195/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.4084508Z Updating files:  81% (31585/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.5088161Z Updating files:  82% (31975/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.6040689Z Updating files:  83% (32365/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.6948142Z Updating files:  84% (32755/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.7852003Z Updating files:  85% (33145/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:28.8080716Z Updating files:  86% (33534/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.1260301Z Updating files:  86% (33614/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.2238065Z Updating files:  87% (33924/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.3136586Z Updating files:  88% (34314/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.4064506Z Updating files:  89% (34704/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.5421195Z Updating files:  90% (35094/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.5841372Z Updating files:  91% (35484/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.5922447Z Updating files:  92% (35874/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6012553Z Updating files:  93% (36264/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6165271Z Updating files:  94% (36654/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6277551Z Updating files:  95% (37044/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6434775Z Updating files:  96% (37434/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6531670Z Updating files:  97% (37824/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.6827658Z Updating files:  98% (38214/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7176134Z Updating files:  99% (38604/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7177048Z Updating files: 100% (38993/38993)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7177638Z Updating files: 100% (38993/38993), done.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7609562Z Switched to a new branch 'engineering/m027-numerical-certificate'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7610522Z branch 'engineering/m027-numerical-certificate' set up to track 'origin/engineering/m027-numerical-certificate'.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7723174Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7762570Z [command]/usr/bin/git log -1 --format=%H
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.7785330Z 88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8042332Z ##[group]Run actions/setup-python@v5
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8042768Z with:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8043097Z   python-version: 3.12
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8043420Z   check-latest: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8045604Z   token: ***
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8045948Z   update-environment: true
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8046316Z   allow-prereleases: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8046697Z   freethreaded: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8047004Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8047279Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8047642Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8048118Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8048470Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8048912Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8049311Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.8049645Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9377070Z ##[group]Installed versions
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9495937Z (node:2395) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9497174Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9498085Z Successfully set up CPython (3.12.16)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9499067Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9660359Z ##[group]Run python -m pip install -r requirements-v1.txt
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9661024Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9714923Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9715417Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9715762Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9716114Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9716452Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9716801Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9717293Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9718101Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9718497Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9719027Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9719532Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9720007Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9720628Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9721104Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:29.9721511Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.2981623Z Collecting Brian2==2.10.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.3918146Z   Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.4732439Z Collecting contourpy==1.4.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.4877463Z   Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.5099286Z Collecting cycler==0.12.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.5243366Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.7237677Z Collecting Cython==3.1.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.7414157Z   Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.8758367Z Collecting fonttools==4.67.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.8929101Z   Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (137 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.9491188Z Collecting iniconfig==2.3.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.9647560Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:31.9910260Z Collecting Jinja2==3.1.6 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.0052758Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.0706591Z Collecting kiwisolver==1.5.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.0861280Z   Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.1545082Z Collecting MarkupSafe==3.0.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.1696821Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.2841024Z Collecting matplotlib==3.10.8 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.3009568Z   Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.3313084Z Collecting mpmath==1.3.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.3490017Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.5454986Z Collecting numpy==2.5.4 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.5629619Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.5861974Z Collecting packaging==26.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.6018790Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.7475945Z Collecting pillow==13.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.7639694Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.7870843Z Collecting pluggy==1.7.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.8016966Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.8486620Z Collecting Pygments==2.21.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.8632483Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.8911222Z Collecting pyparsing==3.3.3 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.9060522Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.9361387Z Collecting pytest==9.1.1 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.9512916Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.9733128Z Collecting python-dateutil==2.9.0.post0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:32.9880889Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.0554818Z Collecting setuptools==84.0.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.0709280Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.1058294Z Collecting six==1.17.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.1202137Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.1436967Z Collecting sympy==1.14.0 (from -r /home/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.1584605Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.2673812Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.2819696Z   Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.5400829Z Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.7530444Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 10.9 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.7735515Z Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.8268298Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 60.3 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.8454969Z Downloading contourpy-1.4.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (383 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.8759514Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:33.8966451Z Downloading fonttools-4.67.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.0592403Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 32.3 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.0749344Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.1084008Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.2111176Z Downloading kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.3574668Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 8.5 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.3727900Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.4305488Z Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.5360647Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.7/8.7 MB 82.1 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.5508810Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.5569600Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 72.8 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.5711746Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.7105211Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 120.1 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.7254230Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.7450159Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8018159Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 126.8 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8168943Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8525020Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8646794Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 98.5 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8788752Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.8955399Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.9181242Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.9354376Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.9430243Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 107.6 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.9642058Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:34.9829459Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:35.0398738Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 112.7 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:35.0569141Z Downloading scipy-1.18.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:35.4175164Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 97.8 MB/s  0:00:00
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:35.7098790Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.6968212Z 
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.6990387Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.6998346Z 
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.6998599Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.6999406Z [notice] To update, run: pip install --upgrade pip
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8202248Z ##[group]Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8202924Z ^[[36;1mpython -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8239377Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8239815Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8240134Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8240502Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8240871Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8241212Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8241689Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8242098Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8242493Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8243067Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8243562Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8244169Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8244614Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8245134Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:52.8245541Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.1220732Z Processing ./.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.1232120Z   Preparing metadata (pyproject.toml): started
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.3898547Z   Preparing metadata (pyproject.toml): finished with status 'done'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.3920740Z Building wheels for collected packages: neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.3938910Z   Building wheel for neuromancer (pyproject.toml): started
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6531913Z   Building wheel for neuromancer (pyproject.toml): finished with status 'done'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6538380Z   Created wheel for neuromancer: filename=neuromancer-2.0.0rc1-py3-none-any.whl size=95561 sha256=e72af12be8cc18613e90f265012437e63f36b103cbd3550d48b892a237284439
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6539927Z   Stored in directory: /tmp/pip-ephem-wheel-cache-j9t7z9as/wheels/5b/be/0c/f3c68bcae6b907cf7d005d256ee3f8974bc9b52a9ea2bee757
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6561324Z Successfully built neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6572599Z 
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6572982Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.6573603Z [notice] To update, run: pip install --upgrade pip
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7021982Z ##[group]Run python -m pip install --no-deps dist/*.whl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7022493Z ^[[36;1mpython -m pip install --no-deps dist/*.whl^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7055109Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7055565Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7055868Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7056184Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7056566Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7056906Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7057333Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7057937Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7058327Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7058893Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7059397Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7059859Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7060473Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7060950Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.7061397Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:53.9898479Z Processing ./dist/neuromancer-2.0.0rc1-py3-none-any.whl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.0049292Z Installing collected packages: neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.0884376Z Successfully installed neuromancer-2.0.0rc1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.0892225Z 
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.0892779Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.0893616Z [notice] To update, run: pip install --upgrade pip
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1427934Z ##[group]Run python -m pip check
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1428424Z ^[[36;1mpython -m pip check^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1462245Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1462629Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1462942Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1463311Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1463673Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1464021Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1464498Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1464904Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1465365Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1465864Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1466348Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1466849Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1467409Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1468230Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.1468640Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3534825Z No broken requirements found.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3851331Z ##[group]Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3852408Z ^[[36;1mpython -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3886756Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3887115Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3887511Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3888087Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3888475Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3888895Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3889328Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3889779Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3890167Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3890705Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3891340Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3891809Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3892299Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3892762Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:54.3893303Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.7712441Z 2.5.4 2.10.1 1.18.0 9.1.1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9461709Z ##[group]Run mkdir -p runs
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9462124Z ^[[36;1mmkdir -p runs^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9494228Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9494589Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9494970Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9495321Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9495697Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9496068Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9496548Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9496988Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9497378Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9498140Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9498683Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9499149Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9499737Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9500225Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9500651Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9615972Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml --basetemp=runs/pytest-tmp
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9616630Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml --basetemp=runs/pytest-tmp^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9643614Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9644052Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9644366Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9644699Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9645104Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9645496Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9646422Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9646847Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9647241Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9647888Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9648396Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9648980Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9649443Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9649925Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:44:55.9650384Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:45:13.8600638Z ........................................................................ [ 26%]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:45:42.7424849Z ........................................................................ [ 52%]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:31.6894503Z ........................................................................ [ 78%]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9569996Z WARNING    The object 'public_tick_driver_1' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9572024Z ...........................................................              [100%]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9572738Z The object was created here (most recent call only):
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9573784Z   File '/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9574930Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9575825Z =============================== warnings summary ===============================
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9576375Z tests/test_causal_memory.py: 22 warnings
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9576866Z tests/test_plasticity.py: 21 warnings
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9577404Z tests/test_substrate.py: 3 warnings
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9578677Z   /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9579929Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9580417Z 
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9580963Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:48.9582009Z 275 passed, 46 warnings in 112.60s (0:01:52)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4054387Z ##[group]Run python tools/m008_traced_repeats.py runs/m008-traced
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4055088Z ^[[36;1mpython tools/m008_traced_repeats.py runs/m008-traced^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4088237Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4088846Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4089240Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4089682Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4090762Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4091257Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4091818Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4092244Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4092636Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4093219Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4093723Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4094197Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4094782Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4095249Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:46:49.4095687Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9061368Z ##[group]Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9061991Z ^[[36;1mneuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke^[[0m
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9093847Z shell: /usr/bin/bash -e {0}
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9094234Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9094648Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9095029Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9095415Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9095765Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9096222Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9096661Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9097038Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9097569Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9098387Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9098931Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9099443Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9099971Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:24.9100426Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6185333Z ##[group]Run actions/upload-artifact@v4
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6185724Z with:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6186085Z   name: v1-qualification-ubuntu-latest
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6186716Z   path: runs/v1-ci-tests.xml
+qualification (ubuntu-latest)	UNKNOWN STEP	runs/v1-ci-smoke
+qualification (ubuntu-latest)	UNKNOWN STEP	dist/*.whl
+qualification (ubuntu-latest)	UNKNOWN STEP	runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	runs/pytest-tmp
+qualification (ubuntu-latest)	UNKNOWN STEP	runs/m008-traced
+qualification (ubuntu-latest)	UNKNOWN STEP	
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6187278Z   if-no-files-found: warn
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6187610Z   compression-level: 6
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6188063Z   overwrite: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6188496Z   include-hidden-files: false
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6188834Z env:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6189120Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6189480Z   OPENBLAS_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6189804Z   OMP_NUM_THREADS: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6190160Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6190592Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6190974Z   M008_WORKER_TRACE: 1
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6191324Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6191982Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6192507Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6192995Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6193447Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6193955Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.6194352Z ##[endgroup]
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.7851656Z (node:2808) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:28.7852469Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.3373026Z Multiple search paths detected. Calculating the least common ancestor of all paths
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.3375858Z The least common ancestor is /home/runner/work/neuromancer/neuromancer. This will be the root directory of the artifact
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.3376725Z With the provided path, there will be 3647 files uploaded
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.3381294Z Artifact name is valid!
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.3381912Z Root directory input is valid!
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:29.7093452Z Beginning upload of artifact content to blob storage
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:31.1910292Z (node:2808) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:31.6486261Z Uploaded bytes 3709306
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:31.6958723Z Finished uploading artifact content to blob storage!
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:31.6962387Z SHA256 digest of uploaded artifact zip is 423e0ee87c37602f0a5c4678a149f6c6d6a356e67a62c3259f208979000013b0
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:31.6964803Z Finalizing artifact upload
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.0940946Z Artifact v1-qualification-ubuntu-latest.zip successfully finalized. Artifact ID 13602289778
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.0942245Z Artifact v1-qualification-ubuntu-latest has been successfully uploaded! Final size is 3709306 bytes. Artifact ID is 13602289778
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.0950411Z Artifact download URL: https://github.com/adithyakupad/neuromancer/actions/runs/42443939147/artifacts/13602289778
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.1239096Z Post job cleanup.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.2404839Z (node:2825) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.2405823Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.2541332Z Post job cleanup.
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3528787Z [command]/usr/bin/git version
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3579039Z git version 2.56.0
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3623743Z Temporarily overriding HOME='/home/runner/work/_temp/737d374e-294a-462a-843a-2b1548fad78e' before making global git config changes
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3625142Z Adding repository directory to the temporary git global config as a safe directory
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3627522Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/neuromancer/neuromancer
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3679155Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.3729690Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4210991Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4236010Z http.https://github.com/.extraheader
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4250023Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4299221Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4620234Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.4649283Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.5071914Z Cleaning up orphan processes
+qualification (ubuntu-latest)	UNKNOWN STEP	2026-11-08T03:47:32.5293872Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+qualification (macos-15-intel)	UNKNOWN STEP	﻿2026-11-08T03:44:08.8834060Z Current runner version: '2.338.2'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8872650Z ##[group]Runner Image Provisioner
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8874710Z Hosted Compute Agent
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8876220Z Version: 20260819.586
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8877700Z Commit: 3cc4a88dfa507ef76119ad1bb3eccc6378bb2b76
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8879250Z Build Date: 2026-08-18T23:20:18Z
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8880740Z Worker ID: {2232e44e-5bef-4b97-a4c7-b7162ef4a8ef}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8882250Z Azure Region: westus
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8883720Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8887380Z ##[group]Operating System
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8888640Z macOS
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8889700Z 15.7.9
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8890820Z 24G830
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8891900Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8892970Z ##[group]Runner Image
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8894140Z Image: macos-15
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8895260Z Version: 20260824.0482.1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8898030Z Included Software: https://github.com/actions/runner-images/blob/macos-15/20260824.0482/images/macos/macos-15-Readme.md
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8902040Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-15%2F20260824.0482
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8904440Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8907220Z ##[group]GITHUB_TOKEN Permissions
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8911670Z Contents: read
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8912960Z Metadata: read
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8914120Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8919150Z Secret source: Actions
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8921390Z Cache mode: write
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.8923730Z Prepare workflow directory
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.9488080Z Prepare all required actions
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:08.9558170Z Getting action download info
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:09.2800840Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:09.5013490Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:09.6468740Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:09.9850400Z Complete job name: qualification (macos-15-intel)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1024560Z ##[group]Run actions/checkout@v4
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1026000Z with:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1026730Z   repository: adithyakupad/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1033970Z   token: ***
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1034650Z   ssh-strict: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1035340Z   ssh-user: git
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1036030Z   persist-credentials: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1036810Z   clean: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1037510Z   sparse-checkout-cone-mode: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1038340Z   fetch-depth: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1039020Z   fetch-tags: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1039730Z   show-progress: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1040430Z   lfs: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1041080Z   submodules: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1041790Z   set-safe-directory: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1042600Z   allow-unsafe-pr-checkout: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1043880Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1044640Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1045460Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1046320Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1047140Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1048230Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1049260Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.1049970Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.3896410Z Syncing repository: adithyakupad/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.3899730Z ##[group]Getting Git version info
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.3901040Z Working directory is '/Users/runner/work/neuromancer/neuromancer'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.3902860Z [command]/usr/local/bin/git version
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4207160Z git version 2.55.0
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4231930Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4245260Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/71cddc36-cc90-47f9-bf45-cf6371137259/.gitconfig'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4260900Z Temporarily overriding HOME='/Users/runner/work/_temp/71cddc36-cc90-47f9-bf45-cf6371137259' before making global git config changes
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4263360Z Adding repository directory to the temporary git global config as a safe directory
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4266410Z [command]/usr/local/bin/git config --global --add safe.directory /Users/runner/work/neuromancer/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4391530Z Deleting the contents of '/Users/runner/work/neuromancer/neuromancer'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4398330Z ##[group]Initializing the repository
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4403870Z [command]/usr/local/bin/git init /Users/runner/work/neuromancer/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4750690Z hint: Using 'master' as the name for the initial branch. This default branch name
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4753310Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4755800Z hint: to use in all of your new repositories, which will suppress this warning,
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4757600Z hint: call:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4758310Z hint:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4759230Z hint: 	git config --global init.defaultBranch <name>
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4760530Z hint:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4761790Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4763540Z hint: 'development'. The just-created branch can be renamed via this command:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4764810Z hint:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4765520Z hint: 	git branch -m <name>
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4766340Z hint:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4767480Z hint: Disable this message with "git config set advice.defaultBranchName false"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4769370Z Initialized empty Git repository in /Users/runner/work/neuromancer/neuromancer/.git/
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4772410Z [command]/usr/local/bin/git remote add origin https://github.com/adithyakupad/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4886820Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4888190Z ##[group]Disabling automatic garbage collection
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4892420Z [command]/usr/local/bin/git config --local gc.auto 0
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4990850Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.4992130Z ##[group]Setting up auth
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.5000270Z [command]/usr/local/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.5102870Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.6497520Z [command]/usr/local/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.6597790Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.7871980Z [command]/usr/local/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.7976520Z [command]/usr/local/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.9451470Z [command]/usr/local/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.9580450Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.9601930Z ##[group]Fetching the repository
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:10.9609970Z [command]/usr/local/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f:refs/remotes/origin/engineering/m027-numerical-certificate
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3445750Z From https://github.com/adithyakupad/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3448320Z  * [new ref]           88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f -> origin/engineering/m027-numerical-certificate
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3456750Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3458050Z ##[group]Determining the checkout info
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3460220Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3469670Z [command]/usr/local/bin/git sparse-checkout disable
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3626510Z [command]/usr/local/bin/git config --local --unset-all extensions.worktreeConfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3755730Z ##[group]Checking out the ref
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:33.3763850Z [command]/usr/local/bin/git checkout --progress --force -B engineering/m027-numerical-certificate refs/remotes/origin/engineering/m027-numerical-certificate
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:34.5641700Z Updating files:   4% (1795/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:34.7063890Z Updating files:   5% (1950/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:34.8791360Z Updating files:   6% (2340/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:35.4693840Z Updating files:   7% (2730/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:35.5768650Z Updating files:   7% (3018/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:35.8459660Z Updating files:   8% (3120/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:36.2644810Z Updating files:   9% (3510/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:36.4657730Z Updating files:  10% (3900/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:36.8197550Z Updating files:  10% (4033/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:37.2128460Z Updating files:  11% (4290/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:37.3981790Z Updating files:  12% (4680/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:37.4807110Z Updating files:  13% (5070/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:37.6673410Z Updating files:  13% (5198/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:37.9135040Z Updating files:  14% (5460/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:38.1459640Z Updating files:  15% (5849/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:38.4676180Z Updating files:  16% (6239/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:38.7367380Z Updating files:  16% (6352/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:39.4717400Z Updating files:  17% (6629/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:40.0892160Z Updating files:  17% (6830/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:40.3466450Z Updating files:  18% (7019/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:40.4676900Z Updating files:  19% (7409/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:40.5026810Z Updating files:  19% (7700/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:40.8377310Z Updating files:  20% (7799/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:41.5811390Z Updating files:  21% (8189/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:41.6759950Z Updating files:  21% (8567/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:41.8936530Z Updating files:  22% (8579/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:42.4196160Z Updating files:  23% (8969/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:42.4695230Z Updating files:  24% (9359/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:42.6247690Z Updating files:  24% (9489/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:42.7912770Z Updating files:  25% (9749/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.0041200Z Updating files:  26% (10139/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.1804390Z Updating files:  27% (10529/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.3245430Z Updating files:  28% (10919/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.4688000Z Updating files:  29% (11308/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.4976260Z Updating files:  29% (11624/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:43.8706560Z Updating files:  30% (11698/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:44.2961010Z Updating files:  31% (12088/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:44.4508220Z Updating files:  32% (12478/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:44.4727830Z Updating files:  33% (12868/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:44.6104980Z Updating files:  33% (12942/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:44.7997710Z Updating files:  34% (13258/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.1304290Z Updating files:  35% (13648/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.2581800Z Updating files:  36% (14038/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.4592740Z Updating files:  37% (14428/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.4741420Z Updating files:  38% (14818/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.6024370Z Updating files:  38% (14826/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:45.7252770Z Updating files:  39% (15208/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:46.4977770Z Updating files:  40% (15598/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:46.8101010Z Updating files:  40% (15942/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:47.4720860Z Updating files:  41% (15988/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:47.4959490Z Updating files:  41% (16357/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:47.7091920Z Updating files:  42% (16378/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:47.8467360Z Updating files:  43% (16767/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.1207390Z Updating files:  44% (17157/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.2564430Z Updating files:  45% (17547/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.3987230Z Updating files:  46% (17937/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.4723200Z Updating files:  47% (18327/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.5510090Z Updating files:  47% (18531/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.7015680Z Updating files:  48% (18717/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:48.9542820Z Updating files:  49% (19107/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.1172540Z Updating files:  50% (19497/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.2588960Z Updating files:  51% (19887/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.4035550Z Updating files:  52% (20277/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.4721500Z Updating files:  53% (20667/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.5748100Z Updating files:  53% (20820/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.7955040Z Updating files:  54% (21057/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:49.9232530Z Updating files:  55% (21447/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.0732230Z Updating files:  56% (21837/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.2420860Z Updating files:  57% (22227/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.3840550Z Updating files:  58% (22616/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.4735340Z Updating files:  59% (23006/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.5577030Z Updating files:  59% (23202/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.7462940Z Updating files:  60% (23396/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:50.8930870Z Updating files:  61% (23786/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.0539090Z Updating files:  62% (24176/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.1931900Z Updating files:  63% (24566/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.3586980Z Updating files:  64% (24956/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.4731150Z Updating files:  65% (25346/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.5873830Z Updating files:  65% (25506/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:51.9582050Z Updating files:  66% (25736/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:52.2047820Z Updating files:  67% (26126/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:52.4229150Z Updating files:  68% (26516/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:52.4736530Z Updating files:  69% (26906/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:52.6429200Z Updating files:  69% (26995/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:52.8593540Z Updating files:  70% (27296/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:53.2464500Z Updating files:  71% (27686/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:53.4981590Z Updating files:  72% (28075/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:53.8911810Z Updating files:  72% (28363/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:54.3181180Z Updating files:  73% (28465/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:54.4750960Z Updating files:  74% (28855/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:54.6252100Z Updating files:  74% (28959/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:55.2484260Z Updating files:  75% (29245/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:55.4816140Z Updating files:  76% (29635/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:55.8372380Z Updating files:  76% (29849/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:56.4806870Z Updating files:  77% (30025/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:56.7492120Z Updating files:  77% (30317/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:57.5363700Z Updating files:  78% (30415/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:58.0020130Z Updating files:  78% (30514/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:58.4901280Z Updating files:  79% (30805/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:59.5620720Z Updating files:  79% (30858/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:44:59.9655760Z Updating files:  79% (31182/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:00.2156610Z Updating files:  80% (31195/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:00.6438600Z Updating files:  81% (31585/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:01.2804390Z Updating files:  81% (31662/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:01.4818070Z Updating files:  82% (31975/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:01.8815550Z Updating files:  82% (31997/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:02.5719110Z Updating files:  83% (32365/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:03.2983440Z Updating files:  83% (32486/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:03.4800190Z Updating files:  84% (32755/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:03.6056700Z Updating files:  84% (33075/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:04.2632900Z Updating files:  85% (33145/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:04.5152040Z Updating files:  86% (33534/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:04.7338840Z Updating files:  86% (33764/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:05.2803820Z Updating files:  87% (33924/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:05.4799570Z Updating files:  88% (34314/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:05.5456420Z Updating files:  88% (34609/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:05.7648930Z Updating files:  89% (34704/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.0286630Z Updating files:  90% (35094/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.2260430Z Updating files:  91% (35484/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.4808500Z Updating files:  92% (35874/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.4846940Z Updating files:  92% (36252/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.7328580Z Updating files:  93% (36264/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:06.9236480Z Updating files:  94% (36654/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:07.0909340Z Updating files:  95% (37044/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:07.3323700Z Updating files:  96% (37434/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:07.4831940Z Updating files:  97% (37824/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:07.7921920Z Updating files:  97% (37949/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:07.9738120Z Updating files:  98% (38214/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.1270460Z Updating files:  99% (38604/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.1272530Z Updating files: 100% (38993/38993)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.1274120Z Updating files: 100% (38993/38993), done.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.2360130Z Switched to a new branch 'engineering/m027-numerical-certificate'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.2373820Z branch 'engineering/m027-numerical-certificate' set up to track 'origin/engineering/m027-numerical-certificate'.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.2555410Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.2813420Z [command]/usr/local/bin/git log -1 --format=%H
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3038800Z 88b6e94d7e5db572ddc8a954f46e1dec7f9b3d4f
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3783100Z ##[group]Run actions/setup-python@v5
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3783730Z with:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3784110Z   python-version: 3.12
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3784500Z   check-latest: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3790170Z   token: ***
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3790590Z   update-environment: true
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3791030Z   allow-prereleases: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3791440Z   freethreaded: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3791940Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3792290Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3792730Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3793160Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3793590Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3794370Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3794960Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:08.3795330Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.0625960Z (node:1495) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.0629200Z ##[group]Installed versions
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.0704700Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.0801380Z Successfully set up CPython (3.12.10)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.0804310Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1028530Z ##[group]Run python -m pip install -r requirements-v1.txt
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1029890Z ^[[36;1mpython -m pip install -r requirements-v1.txt^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1209070Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1209830Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1210560Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1211410Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1212170Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1213110Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1214210Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1215450Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1216680Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1218790Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1221310Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1222610Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1223990Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:09.1225450Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:11.8966500Z Collecting Brian2==2.10.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 1))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:11.9974670Z   Downloading brian2-2.10.1-cp312-cp312-macosx_10_13_x86_64.whl.metadata (6.7 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.1569860Z Collecting contourpy==1.4.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 2))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.1718240Z   Downloading contourpy-1.4.0-cp312-cp312-macosx_10_13_x86_64.whl.metadata (3.8 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.2092020Z Collecting cycler==0.12.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 3))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.2227980Z   Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.7146780Z Collecting Cython==3.1.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 4))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:12.7365600Z   Downloading cython-3.1.3-cp312-cp312-macosx_10_13_x86_64.whl.metadata (4.7 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.0359440Z Collecting fonttools==4.67.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 5))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.0518680Z   Downloading fonttools-4.67.0-cp312-cp312-macosx_10_13_x86_64.whl.metadata (137 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.1281900Z Collecting iniconfig==2.3.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 6))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.1420490Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.1787700Z Collecting Jinja2==3.1.6 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 7))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.1924180Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.3242670Z Collecting kiwisolver==1.5.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 8))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.3414260Z   Downloading kiwisolver-1.5.1-cp312-cp312-macosx_10_13_x86_64.whl.metadata (5.2 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.5742200Z Collecting MarkupSafe==3.0.4 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 9))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:13.5920620Z   Downloading markupsafe-3.0.4-cp312-cp312-macosx_10_13_x86_64.whl.metadata (2.7 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.0194850Z Collecting matplotlib==3.10.8 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 10))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.0547650Z   Downloading matplotlib-3.10.8-cp312-cp312-macosx_10_13_x86_64.whl.metadata (52 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.1720990Z Collecting mpmath==1.3.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 11))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.1861690Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.9380470Z Collecting numpy==2.5.4 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 12))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:14.9658190Z   Downloading numpy-2.5.4-cp312-cp312-macosx_14_0_x86_64.whl.metadata (6.6 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.1204780Z Collecting packaging==26.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 13))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.1503190Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.5791730Z Collecting pillow==13.0.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 14))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.5943420Z   Downloading pillow-13.0.0-cp312-cp312-macosx_10_13_x86_64.whl.metadata (9.1 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.6405450Z Collecting pluggy==1.7.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 15))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.6546550Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.7004640Z Collecting Pygments==2.21.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 16))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.7190880Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.7757400Z Collecting pyparsing==3.3.3 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 17))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.7901210Z   Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.8575810Z Collecting pytest==9.1.1 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 18))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.8715480Z   Downloading pytest-9.1.1-py3-none-any.whl.metadata (7.6 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.9144290Z Collecting python-dateutil==2.9.0.post0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 19))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:15.9284940Z   Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.0747470Z Collecting setuptools==84.0.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 20))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.0920270Z   Downloading setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.1338180Z Collecting six==1.17.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 21))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.1477480Z   Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.1900900Z Collecting sympy==1.14.0 (from -r /Users/runner/work/neuromancer/neuromancer/requirements-m002.txt (line 22))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.2038990Z   Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.4336060Z Collecting scipy==1.18.0 (from -r requirements-v1.txt (line 5))
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.4497340Z   Downloading scipy-1.18.0-cp312-cp312-macosx_14_0_x86_64.whl.metadata (62 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.5461610Z Downloading brian2-2.10.1-cp312-cp312-macosx_10_13_x86_64.whl (1.1 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.5860260Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 30.8 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.6060240Z Downloading cython-3.1.3-cp312-cp312-macosx_10_13_x86_64.whl (3.0 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.6607200Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 54.1 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.6817030Z Downloading contourpy-1.4.0-cp312-cp312-macosx_10_13_x86_64.whl (297 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.7126920Z Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.7385280Z Downloading fonttools-4.67.0-cp312-cp312-macosx_10_13_x86_64.whl (2.6 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.7740820Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 73.1 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.7884960Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.8171020Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.8473030Z Downloading kiwisolver-1.5.1-cp312-cp312-macosx_10_13_x86_64.whl (66 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.8706890Z Downloading markupsafe-3.0.4-cp312-cp312-macosx_10_13_x86_64.whl (11 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:16.8935900Z Downloading matplotlib-3.10.8-cp312-cp312-macosx_10_13_x86_64.whl (8.3 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.0161720Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 67.8 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.0327540Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.0661480Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 9.2 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.0849760Z Downloading numpy-2.5.4-cp312-cp312-macosx_14_0_x86_64.whl (6.8 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.1658880Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 84.7 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.1810500Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.2814750Z Downloading pillow-13.0.0-cp312-cp312-macosx_10_13_x86_64.whl (5.6 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.3773420Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.6/5.6 MB 58.0 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.3925480Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.4344770Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.4562920Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 55.8 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.4712150Z Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.4971820Z Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.5227520Z Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.5473850Z Downloading setuptools-84.0.0-py3-none-any.whl (818 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.5673900Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 818.2/818.2 kB 34.5 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.5828750Z Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.6105980Z Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.6749450Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 100.5 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:17.6958620Z Downloading scipy-1.18.0-cp312-cp312-macosx_14_0_x86_64.whl (23.1 MB)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:18.1987020Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.1/23.1 MB 45.7 MB/s  0:00:00
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:18.6957380Z Installing collected packages: mpmath, sympy, six, setuptools, pyparsing, Pygments, pluggy, pillow, packaging, numpy, MarkupSafe, kiwisolver, iniconfig, fonttools, Cython, cycler, scipy, python-dateutil, pytest, Jinja2, contourpy, matplotlib, Brian2
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:51.9202810Z 
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:51.9259360Z Successfully installed Brian2-2.10.1 Cython-3.1.3 Jinja2-3.1.6 MarkupSafe-3.0.4 Pygments-2.21.0 contourpy-1.4.0 cycler-0.12.1 fonttools-4.67.0 iniconfig-2.3.1 kiwisolver-1.5.1 matplotlib-3.10.8 mpmath-1.3.0 numpy-2.5.4 packaging-26.3 pillow-13.0.0 pluggy-1.7.0 pyparsing-3.3.3 pytest-9.1.1 python-dateutil-2.9.0.post0 scipy-1.18.0 setuptools-84.0.0 six-1.17.0 sympy-1.14.0
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:51.9286170Z 
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:51.9287750Z [notice] A new release of pip is available: 26.2.1 -> 26.3
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:51.9288870Z [notice] To update, run: python -m pip install --upgrade pip
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1400140Z ##[group]Run python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1401220Z ^[[36;1mpython -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1472580Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1473060Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1473450Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1473900Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1474770Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1475450Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1476100Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1476880Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1477480Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1478740Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1479750Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1480770Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1481810Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.1482530Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.7111750Z Processing ./.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:52.7137800Z   Preparing metadata (pyproject.toml): started
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.1122540Z   Preparing metadata (pyproject.toml): finished with status 'done'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.1166690Z Building wheels for collected packages: neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.1183110Z   Building wheel for neuromancer (pyproject.toml): started
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6106200Z   Building wheel for neuromancer (pyproject.toml): finished with status 'done'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6121180Z   Created wheel for neuromancer: filename=neuromancer-2.0.0rc1-py3-none-any.whl size=95561 sha256=05715be796d93c69fa36ed6ad93ca7b517c0318961ee916381ef0b262aa0cda1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6124040Z   Stored in directory: /private/var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/pip-ephem-wheel-cache-grqm35_c/wheels/e2/8a/0b/09fe4cff2b32ebb0db92d402fc2d3d03c3a742307afa13b222
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6162290Z Successfully built neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6186800Z 
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6188220Z [notice] A new release of pip is available: 26.2.1 -> 26.3
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6189410Z [notice] To update, run: python -m pip install --upgrade pip
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6836850Z ##[group]Run python -m pip install --no-deps dist/*.whl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6838040Z ^[[36;1mpython -m pip install --no-deps dist/*.whl^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6901290Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6902130Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6922430Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6922980Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6923450Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6923930Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6924650Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6925280Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6925910Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6926900Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6927900Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6928900Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6929830Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:53.6931290Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.2199140Z Processing ./dist/neuromancer-2.0.0rc1-py3-none-any.whl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.2413560Z Installing collected packages: neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.3753230Z Successfully installed neuromancer-2.0.0rc1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.3768250Z 
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.3769250Z [notice] A new release of pip is available: 26.2.1 -> 26.3
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.3770520Z [notice] To update, run: python -m pip install --upgrade pip
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4564100Z ##[group]Run python -m pip check
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4564720Z ^[[36;1mpython -m pip check^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4628060Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4628550Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4628950Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4629420Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4629890Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4630370Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4631040Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4631730Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4633250Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4634650Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4636090Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4637360Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4638740Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.4639750Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8435450Z No broken requirements found.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8785570Z ##[group]Run python -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8787490Z ^[[36;1mpython -c "import numpy,brian2,scipy,pytest; print(numpy.__version__,brian2.__version__,scipy.__version__,pytest.__version__)"^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8847370Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8847820Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8848200Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8848670Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8849130Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8849600Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8850270Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8850910Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8851520Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8852500Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8853600Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8854490Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8855380Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:45:54.8856080Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:00.6838630Z Matplotlib is building the font cache; this may take a moment.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.0633060Z 2.5.4 2.10.1 1.18.0 9.1.1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3343720Z ##[group]Run mkdir -p runs
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3344350Z ^[[36;1mmkdir -p runs^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3411910Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3412350Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3412710Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3413230Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3413660Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3414110Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3414740Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3415340Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3415920Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3416850Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3417910Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3418800Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3420220Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3420920Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3724000Z ##[group]Run python -m pytest -q --junitxml=runs/v1-ci-tests.xml --basetemp=runs/pytest-tmp
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3725260Z ^[[36;1mpython -m pytest -q --junitxml=runs/v1-ci-tests.xml --basetemp=runs/pytest-tmp^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3782290Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3783270Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3783780Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3784230Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3784840Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3785460Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3786110Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3786700Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3787280Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3788220Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3789210Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3790160Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3791010Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:46:23.3791690Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:47:03.6930180Z ........................................................................ [ 26%]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:49:04.4249700Z ........................................................................ [ 52%]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:19.7583910Z ........................................................................ [ 78%]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5408350Z WARNING    The object 'public_tick_driver' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5411370Z ...........................................................              [100%]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5412700Z =============================== warnings summary ===============================
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5413860Z tests/test_causal_memory.py: 22 warnings
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5414870Z tests/test_plasticity.py: 21 warnings
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5415890Z tests/test_substrate.py: 3 warnings
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5422230Z   /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/brian2/parsing/statements.py:51: PyparsingDeprecationWarning: 'parseAll' argument is deprecated, use 'parse_all'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5429890Z     parsed = STATEMENT.parse_string(code, parseAll=True)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5430400Z 
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5430970Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5451200Z 275 passed, 46 warnings in 320.40s (0:05:20)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5572140Z The object was created here (most recent call only):
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5604320Z   File '/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/neuromancer/tick_execution.py', line 17, in __init__
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:44.5618450Z     self.operation=b.NetworkOperation(self._tick,dt=.02*b.second,when='start',order=-100,name='public_tick_driver*') [brian2.core.base.unused_brian_object]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2276630Z ##[group]Run python tools/m008_traced_repeats.py runs/m008-traced
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2281460Z ^[[36;1mpython tools/m008_traced_repeats.py runs/m008-traced^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2632070Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2635110Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2637190Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2639970Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2643100Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2663500Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2666510Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2668330Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2669910Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2673030Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2705090Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2715330Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2724370Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:51:46.2727080Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3792490Z ##[group]Run neuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3795040Z ^[[36;1mneuromancer-diagnostic --mode smoke --output runs/v1-ci-smoke^[[0m
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3955070Z shell: /bin/bash -e {0}
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3955720Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3956250Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3957030Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3963100Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3963980Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3965070Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3966470Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3968100Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3970150Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3971800Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.3974010Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.4041270Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:35.4042380Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5580870Z ##[group]Run actions/upload-artifact@v4
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5581970Z with:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5582650Z   name: v1-qualification-macos-15-intel
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5584410Z   path: runs/v1-ci-tests.xml
+qualification (macos-15-intel)	UNKNOWN STEP	runs/v1-ci-smoke
+qualification (macos-15-intel)	UNKNOWN STEP	dist/*.whl
+qualification (macos-15-intel)	UNKNOWN STEP	runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	runs/pytest-tmp
+qualification (macos-15-intel)	UNKNOWN STEP	runs/m008-traced
+qualification (macos-15-intel)	UNKNOWN STEP	
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5586230Z   if-no-files-found: warn
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5587260Z   compression-level: 6
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5587990Z   overwrite: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5589170Z   include-hidden-files: false
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5589930Z env:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5590660Z   VECLIB_MAXIMUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5591440Z   OPENBLAS_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5592280Z   OMP_NUM_THREADS: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5593060Z   MPLCONFIGDIR: /tmp/neuromancer-v1-ci-mpl
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5594240Z   NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5595310Z   M008_WORKER_TRACE: 1
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5596570Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5598310Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/x64/lib/pkgconfig
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5599970Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5601410Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5603270Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/x64
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:45.5622960Z ##[endgroup]
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:46.6281290Z (node:7316) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:46.6284940Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.5290730Z Multiple search paths detected. Calculating the least common ancestor of all paths
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.5295520Z The least common ancestor is /Users/runner/work/neuromancer/neuromancer. This will be the root directory of the artifact
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.5297530Z With the provided path, there will be 3634 files uploaded
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.5299240Z Artifact name is valid!
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.5299860Z Root directory input is valid!
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:49.8348630Z Beginning upload of artifact content to blob storage
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:55.9171860Z (node:7316) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:56.5772760Z Uploaded bytes 3441815
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:56.6299910Z Finished uploading artifact content to blob storage!
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:56.6307370Z SHA256 digest of uploaded artifact zip is 273ec1a8239f110c17384fa892469d80af31d3130def23059dbdf4b14b8eed5c
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:56.6311040Z Finalizing artifact upload
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.1019870Z Artifact v1-qualification-macos-15-intel.zip successfully finalized. Artifact ID 13603420111
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.1022280Z Artifact v1-qualification-macos-15-intel has been successfully uploaded! Final size is 3441815 bytes. Artifact ID is 13603420111
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.1045510Z Artifact download URL: https://github.com/adithyakupad/neuromancer/actions/runs/42443939147/artifacts/13603420111
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.1618480Z Post job cleanup.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.4501870Z (node:7438) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.4553260Z (Use `node --trace-deprecation ...` to show where the warning was created)
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.4912010Z Post job cleanup.
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7092260Z [command]/usr/local/bin/git version
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7224980Z git version 2.55.0
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7265040Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/d7c006a9-d868-479c-a2bf-e6d1d4f5e072/.gitconfig'
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7288790Z Temporarily overriding HOME='/Users/runner/work/_temp/d7c006a9-d868-479c-a2bf-e6d1d4f5e072' before making global git config changes
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7292680Z Adding repository directory to the temporary git global config as a safe directory
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7296670Z [command]/usr/local/bin/git config --global --add safe.directory /Users/runner/work/neuromancer/neuromancer
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7545360Z [command]/usr/local/bin/git config --local --name-only --get-regexp core\.sshCommand
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:57.7693350Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.0373190Z [command]/usr/local/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.0507790Z http.https://github.com/.extraheader
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.0530290Z [command]/usr/local/bin/git config --local --unset-all http.https://github.com/.extraheader
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.0689980Z [command]/usr/local/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.3306160Z [command]/usr/local/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.3428310Z [command]/usr/local/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:58.5926960Z Cleaning up orphan processes
+qualification (macos-15-intel)	UNKNOWN STEP	2026-11-08T03:52:59.9149650Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

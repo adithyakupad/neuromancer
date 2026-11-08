@@ -1,0 +1,16 @@
+# Prospective acceptance approval
+
+The maintainer explicitly approved both choices in the conversation after reviewing `FINAL_QUALIFICATION_RESOLUTION.md`.
+
+- Approve the proposed operation-derived portability contract for implementation and fresh qualification.
+- Approve A1 phase-specific acceptance for prospective implementation and qualification.
+
+This supersedes the pending-decision paragraphs of the initial report. It does not authorize accepting a failed trial as successful, changing historical data, changing scientific gates, increasing deadlines, or claiming that a proposed error certificate has passed.
+
+## Bounded implementation and qualification
+
+Use a new stdlib-only real worker for running-phase suspend tests, retaining the exact 1.8-second budget and .2/.2/.4-second cleanup policy. Require the injection to occur before work cutoff. A missed setup remains failure. Add a separate cancellation-phase real-process control. Its trial must remain failed and any independent post-result process check must be reported separately. A single narrowly hashed authorization updates the protected active suspend fixture. The historical manifest and former authorized hash are preserved.
+
+Implement outward-rounded interval arithmetic for operation-derived product, residual, RLS and prediction bounds. Require finite enclosures and a strictly positive RLS denominator lower bound. A bound crossing an existing algorithm guard is a qualification failure, even if actual floats are stable. Do not widen a radius limit or reset to archived state to obtain PASS. A fixed 256-update synthetic trajectory checks whether the interval implementation can support the longer archive verifier. If it cannot, retain numerical HOLD and do not run an uncertified full archive verifier.
+
+One local focused run, one full local run and one new exact-source hosted attempt are prescribed. Each host performs three fixed rounds of real running-phase and cancellation-phase checks, stopping on the first failure. The numerical certificate runs once per host under the existing 180-second diagnostic supervisor. Existing core workflows stay enabled. No unqualified contract is used to publish.

@@ -1,0 +1,64 @@
+name: M027 numerical portability qualification
+on:
+  push:
+    branches: [engineering/m027-numerical-certificate]
+    paths:
+      - tools/m027_*.py
+      - tests/test_m027_*.py
+      - .github/workflows/m027-certificate.yml
+permissions:
+  contents: read
+jobs:
+  certify:
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: .:src
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/neuromancer-m027-mpl
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Environment and source identity
+        run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/tested-source.txt
+          python -m pip freeze > runs/environment.txt
+          python -c 'import numpy as n; n.show_config(); n.show_runtime()' > runs/numerical-runtime.txt
+      - name: Independent arithmetic and phase tests
+        run: python -m pytest -q tests/test_m027_residual_bounds.py tests/test_m027_spectral_bounds.py tests/test_portable_numeric_verification.py tests/test_cleanup_clock_phases.py --junitxml=runs/arithmetic.xml
+      - name: Three fixed A1 rounds
+        run: |
+          for round in 1 2 3; do
+            python -m pytest -q tests/test_suspend_clock.py::test_real_workers_after_injected_resume tests/test_cleanup_phase_process.py --basetemp="runs/a1-$round" --junitxml="runs/a1-$round.xml" || exit $?
+          done
+      - name: Original 256-update prerequisite
+        run: python scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite
+      - name: Residual 256-update prerequisite
+        run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m027_certify.py runs/prerequisite --stage 256
+      - name: Complete first saved branch
+        run: python scripts/m014_supervise.py runs/first-guard 180 python tools/m027_certify.py runs/first --stage first
+      - name: Former dependency-growth trajectory
+        run: python scripts/m014_supervise.py runs/dependency-guard 180 python tools/m027_certify.py runs/dependency --stage dependency
+      - name: Forty branches under original 240-second cap
+        run: python scripts/m014_supervise.py runs/all-guard 240 python tools/m027_certify.py runs/all --stage all
+      - name: Fixed fit, SVD and remaining preserved evidence
+        run: python scripts/m014_supervise.py runs/remaining-guard 240 python tools/m027_remaining.py runs/remaining
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m027-${{ matrix.os }}
+          path: runs/

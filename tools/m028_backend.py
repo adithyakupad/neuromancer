@@ -37,6 +37,22 @@ def bounds(kernel):
     exec(compile(source.read_text(),str(source),'exec'),module.__dict__)
     for name in ['Enclosure','gamma','positive_add','positive_multiply','upward']:
         module.__dict__[name]=getattr(kernel,name)
+    if hasattr(kernel,'information_update'):
+        class FusedInformation(module.InformationCertificate):
+            def update(self,features,observed):
+                s,rs,h,rh=kernel.information_update(self.information.center,self.information.radius,
+                    self.rhs.center,self.rhs.radius,features,observed,float(self.forgetting.center))
+                self.information=kernel.Enclosure(s,rs)
+                self.rhs=kernel.Enclosure(h,rh)
+                self.updates+=1
+
+            def state(self,theta,covariance):
+                if not hasattr(self,'_identity'):
+                    self._identity=np.eye(self.size)
+                    self._identity.flags.writeable=False
+                return kernel.state_bounds(self.information.center,self.information.radius,
+                    self.rhs.center,self.rhs.radius,theta,covariance,self._identity)
+        module.InformationCertificate=FusedInformation
     return module
 
 

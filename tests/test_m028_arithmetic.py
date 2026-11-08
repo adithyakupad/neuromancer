@@ -4,6 +4,8 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import runpy
+import types
 
 import numpy as np
 import pytest
@@ -96,3 +98,22 @@ def test_information_no_reset_and_original_match(kernel):
         np.testing.assert_array_equal(old.rhs.radius,new.rhs.radius)
     assert new.updates==65
     assert original.Enclosure is not compiled.Enclosure
+
+
+@pytest.mark.parametrize('name,args',[
+    ('test_gain_covariance_and_coefficient_against_decimal',(False,)),
+    ('test_gain_covariance_and_coefficient_against_decimal',(True,)),
+    ('test_functional_residual_keeps_information_history',()),
+    ('test_prediction_and_objective_decimal_enclosure',()),
+    ('test_full_planner_cost_bound_with_independent_decimal_candidate',()),
+])
+def test_independent_m027_decimal_cases_on_compiled_backend(kernel,name,args):
+    # Reuse the independent Decimal oracle verbatim, substituting only the
+    # implementation under test in a separate function-global namespace.
+    reference=runpy.run_path('tests/test_m027_residual_bounds.py')[name]
+    module=bounds(kernel)
+    namespace=dict(reference.__globals__)
+    for key in ['InformationCertificate','Enclosure','objective_from_means','residual_planner_costs']:
+        namespace[key]=getattr(module,key)
+    tested=types.FunctionType(reference.__code__,namespace)
+    tested(*args)

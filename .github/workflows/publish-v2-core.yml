@@ -1,0 +1,112 @@
+name: Publish NEUROMANCER V2 Core research prerelease
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/publish-v2-core.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-neuromancer-v2-core-rc1
+  cancel-in-progress: false
+
+jobs:
+  core-qualification:
+    name: Core qualification (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    env:
+      VECLIB_MAXIMUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/neuromancer-v2-core-release-mpl
+      NEUROMANCER_TEST_ARTIFACTS: runs/supervisor-artifacts
+      M008_WORKER_TRACE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enforce approved source delta
+        shell: bash
+        run: |
+          git merge-base --is-ancestor a5ebbad40bc9018ee33f201380200e1c52127718 HEAD
+          changed="$(git diff --name-only a5ebbad40bc9018ee33f201380200e1c52127718 HEAD)"
+          test "$changed" = '.github/workflows/publish-v2-core.yml'
+      - name: Install pinned core and build release wheel
+        run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+          test -f dist/neuromancer-2.0.0rc1-py3-none-any.whl
+          python -m pip install --no-deps dist/neuromancer-2.0.0rc1-py3-none-any.whl
+          python -m pip check
+      - name: Core regressions, source preservation, and replay
+        run: |
+          mkdir -p runs
+          python -m pytest -q --junitxml=runs/core-release-tests.xml --basetemp=runs/pytest-tmp
+          python tools/m008_traced_repeats.py runs/m008-traced
+          neuromancer-diagnostic --mode smoke --output runs/core-release-smoke
+          python scripts/m017_reproduce.py runs/core-release-reproduction
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: core-v2-rc1-${{ matrix.os }}
+          path: |
+            runs/core-release-tests.xml
+            runs/core-release-smoke
+            runs/core-release-reproduction
+            runs/m008-traced
+            runs/supervisor-artifacts
+            dist/neuromancer-2.0.0rc1-py3-none-any.whl
+
+  publish:
+    name: Publish validated GitHub prerelease
+    needs: core-qualification
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate publication target
+        shell: bash
+        run: |
+          test "$GITHUB_REF" = 'refs/heads/main'
+          git merge-base --is-ancestor a5ebbad40bc9018ee33f201380200e1c52127718 HEAD
+          changed="$(git diff --name-only a5ebbad40bc9018ee33f201380200e1c52127718 HEAD)"
+          test "$changed" = '.github/workflows/publish-v2-core.yml'
+          test "$(python -c 'import tomllib; print(tomllib.load(open("pyproject.toml","rb"))["project"]["version"])')" = '2.0.0rc1'
+          if git ls-remote --tags origin refs/tags/v2.0.0rc1 | grep -q .; then
+            echo 'Release tag already exists: refusing overwrite'
+            exit 1
+          fi
+      - name: Build wheel for the exact tag target
+        run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip wheel --no-build-isolation --no-deps . --wheel-dir dist
+          test -f dist/neuromancer-2.0.0rc1-py3-none-any.whl
+          sha256sum dist/neuromancer-2.0.0rc1-py3-none-any.whl
+      - name: Publish experimental-scope disclosures and wheel
+        shell: bash
+        run: |
+          gh release create v2.0.0rc1 dist/neuromancer-2.0.0rc1-py3-none-any.whl \
+            --target "$GITHUB_SHA" \
+            --title 'NEUROMANCER V2 Core Research Candidate (2.0.0rc1)' \
+            --notes-file docs/V2_CORE_RELEASE_NOTES_DRAFT.md \
+            --prerelease

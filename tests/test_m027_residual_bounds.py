@@ -6,6 +6,7 @@ import pytest
 
 from tools.m027_residual_bounds import (
     InformationCertificate, Enclosure, CertificateFailure, objective_from_means, residual_planner_costs,
+    check_fixed_objective,
 )
 from tools.portable_numeric_verification import certify_choice
 
@@ -149,3 +150,12 @@ def test_full_planner_cost_bound_with_independent_decimal_candidate():
             q1 = Decimal(candidate%25*5)
             switch = Decimal.from_float(.01)*(q0**2+(q1-q0)**2)/120**2
             assert contains_decimal(cost.part(candidate).reshape((1, 1)), [[tracking+dose+switch]])
+
+
+def test_fixed_objective_cancellation_requires_exact_components():
+    native = {name: np.array([0., .1]) for name in ('dose', 'switch', 'exposure')}
+    saved = {name: values.copy() for name, values in native.items()}
+    check_fixed_objective(native, saved)
+    saved['dose'][1] = np.nextafter(saved['dose'][1], np.inf)
+    with pytest.raises(CertificateFailure, match='component differs: dose'):
+        check_fixed_objective(native, saved)

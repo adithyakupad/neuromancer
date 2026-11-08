@@ -10,7 +10,7 @@ import time
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tools.m027_residual_bounds import InformationCertificate, residual_planner_costs
+from tools.m027_residual_bounds import InformationCertificate, residual_planner_costs, check_fixed_objective
 from tools.portable_numeric_verification import CertificateFailure, certify_choice
 
 
@@ -105,6 +105,7 @@ def run(output, stage):
                             native = plan(model.record, model.theta, past, initial['calibration']['target_hz'],
                                           int(saved['origin_us']), clock=lambda: 0)
                             elapsed('native_planner', began)
+                            check_fixed_objective(native, saved)
                             archived_p = starting['p'] if step==0 else data['dense_p'][step//50-1]
                             began = time.perf_counter_ns()
                             costs, left, right = residual_planner_costs(certificate, model.record,

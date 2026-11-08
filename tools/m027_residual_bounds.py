@@ -170,7 +170,18 @@ def expression_magnitude(record, theta):
     # All ten lags and both active channels, no assumption about stimulus stationarity.
     active = normalized.reshape(10, 4, 4)[:, (0, 2), :].reshape(-1, 4).T
     magnitude = magnitude.add(Enclosure(120.).multiply(Enclosure(row_sum_upper(active))))
-    return float(np.max(positive_add(np.abs(magnitude.center), magnitude.radius)))
+    upper = float(np.max(positive_add(np.abs(magnitude.center), magnitude.radius)))
+    if upper > 100:
+        raise CertificateFailure('Absolute expression cannot certify existing 100 Hz guard')
+    return upper
+
+
+def check_fixed_objective(native, archived):
+    """Rounded immutable cost terms must cancel exactly in the difference proof."""
+    for name in ('dose', 'switch', 'exposure'):
+        left, right = np.asarray(native[name]), np.asarray(archived[name])
+        if left.dtype != right.dtype or left.shape != right.shape or left.tobytes() != right.tobytes():
+            raise CertificateFailure('Fixed planner objective component differs: '+name)
 
 
 def residual_planner_costs(certificate, record, theta, covariance, archived_theta,

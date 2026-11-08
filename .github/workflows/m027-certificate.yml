@@ -49,6 +49,8 @@ jobs:
         run: python scripts/m014_supervise.py runs/original-prerequisite-guard 180 python tools/portable_numeric_verification.py runs/original-prerequisite
       - name: Residual 256-update prerequisite
         run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m027_certify.py runs/prerequisite --stage 256
+      - name: Exact immutable objective terms and forecast guard
+        run: python scripts/m014_supervise.py runs/fixed-terms-guard 180 python tools/m027_fixed_terms.py runs/fixed-terms
       - name: Complete first saved branch
         run: python scripts/m014_supervise.py runs/first-guard 180 python tools/m027_certify.py runs/first --stage first
       - name: Former dependency-growth trajectory

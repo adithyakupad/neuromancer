@@ -36,6 +36,9 @@ jobs:
       - run: python scripts/m014_supervise.py runs/kernel-guard 180 python tools/m028_verify.py runs/kernel --stage kernel
       - run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m028_verify.py runs/prerequisite --stage 256
       - run: python scripts/m014_supervise.py runs/first-guard 180 python tools/m028_verify.py runs/first --stage first
+      - run: python scripts/m014_supervise.py runs/dependency-guard 180 python tools/m028_verify.py runs/dependency --stage dependency
+      - run: python scripts/m014_supervise.py runs/multi-guard 180 python tools/m028_verify.py runs/multi --stage multi
+      - run: python scripts/m014_supervise.py runs/all-guard 240 python tools/m028_verify.py runs/all --stage all
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -46,7 +46,7 @@ def binary(a, b, int operation):
     shape = b.shape if a.ndim == 0 else a.shape
     cdef const double[::1] left = np.ascontiguousarray(a).reshape(-1)
     cdef const double[::1] right = np.ascontiguousarray(b).reshape(-1)
-    result = np.empty(int(np.prod(shape)), dtype=np.float64)
+    result = np.empty(b.size if a.ndim == 0 else a.size, dtype=np.float64)
     cdef double[::1] target = result
     cdef Py_ssize_t i
     cdef double x, y, value
@@ -253,7 +253,7 @@ def information_update(s,rs,h,rh,features,observed,double forgetting):
     absolute_h=positive_product(np.abs(z),np.abs(v))
     result=[]
     cdef double g=gamma(1),k=2*UNIT_ROUNDOFF/(1-UNIT_ROUNDOFF)
-    cdef double denom=1-g,base,center,rr,outer_r,product
+    cdef double base,center,rr,outer_r,product
     cdef const double[::1] old_c,old_r,outer,outer_upper
     cdef double[::1] new_c,new_r
     cdef Py_ssize_t i
@@ -336,3 +336,22 @@ def state_bounds(s,rs,h,rh,theta,covariance,identity):
     coefficient=positive_multiply(inverse_upper,residual)
     return dict(contraction=eta,inverse_upper=inverse_upper,residual_by_output=residual,
                 coefficient_radius=coefficient,covariance_radius=up_multiply(inverse_upper,eta))
+
+def denominator_lower(features,covariance,double forgetting=.999,double covariance_radius=0):
+    """Two dot products plus addition, with an explicit positive lower bound."""
+    z=np.asarray(features,dtype=np.float64)
+    p=np.asarray(covariance,dtype=np.float64)
+    if z.ndim!=1 or p.shape!=(len(z),len(z)) or forgetting<=0 or covariance_radius<0 or not isfinite(covariance_radius):
+        raise CertificateFailure('Invalid denominator dimensions or forgetting')
+    validate(z,np.zeros_like(z));validate(p,np.zeros_like(p))
+    absolute=positive_product(positive_product(np.abs(z),np.abs(p)),np.abs(z))
+    cdef double center=checked_center(forgetting+(z@p)@z)
+    cdef double g=2*gamma(2*len(z)+2),k=2*UNIT_ROUNDOFF/(1-UNIT_ROUNDOFF)
+    cdef double radius=normal_up(up_multiply(g,float(absolute))+up_multiply(k,fabs(center)))
+    cdef double z_norm=float(upward(np.abs(z).sum()/np.nextafter(1-gamma(len(z)),-np.inf)))
+    # A covariance norm bound is also an entrywise bound; the l1-square
+    # expression is conservative and encloses the shared ideal covariance.
+    radius=normal_up(radius+up_multiply(up_multiply(covariance_radius,z_norm),z_norm))
+    cdef double lower=nextafter(center-radius,-INFINITY)
+    if lower<=0:raise CertificateFailure('Cannot certify a positive RLS denominator')
+    return lower

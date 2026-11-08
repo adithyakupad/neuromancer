@@ -117,3 +117,32 @@ def test_independent_m027_decimal_cases_on_compiled_backend(kernel,name,args):
         namespace[key]=getattr(module,key)
     tested=types.FunctionType(reference.__code__,namespace)
     tested(*args)
+
+
+def test_immutable_query_cache_requires_same_inputs(kernel):
+    from neuromancer.predictive_planner import bank
+    module=bounds(kernel)
+    record=dict(mean=np.zeros(40),scale=np.ones(40))
+    history=np.zeros((9,4));delivered=bank(0.)[2]
+    first=module.planner_queries(record,history,delivered)
+    second=module.planner_queries(record,history,delivered)
+    assert first is second and module.query_cache_stats==dict(hits=1,misses=1)
+    expected=original.planner_queries(record,history,delivered)
+    assert first.center.tobytes()==expected.center.tobytes()
+    assert first.radius.tobytes()==expected.radius.tobytes()
+    changed=delivered.copy();changed[0,0]=1.
+    with pytest.raises(ValueError,match='different candidate bank'):
+        module.planner_queries(record,history,changed)
+    record['scale'][0]=2.
+    third=module.planner_queries(record,history,delivered)
+    assert third is not first
+
+
+def test_positive_denominator_lower_is_independent_decimal_bound(kernel):
+    z=np.array([1.,.125]);p=np.diag([1.,1e6])
+    exact=Decimal(1)+Decimal(15625)+Decimal.from_float(.999)
+    lower=kernel.denominator_lower(z,p)
+    assert 0 < Decimal.from_float(lower) <= exact
+    assert kernel.denominator_lower(np.zeros(2),p) > .998
+    with pytest.raises(CertificateFailure,match='positive RLS denominator'):
+        kernel.denominator_lower(np.ones(2),-100*np.eye(2))

@@ -83,8 +83,13 @@ def main(output,stage,backend):
         passed=result['completed_branches']==4 and result['failure'] is None
         atomic_json(output/'component-qualification.json',dict(component='first-four-manifest-branches',
                     component_pass=passed,original_complete_study_result_retained=True,release_qualified=False))
+        atomic_json(output/'backend.json',dict(query_cache=getattr(module,'query_cache_stats',{}),
+                    denominators=getattr(archive_driver,'denominator_stats',{})))
         return 0 if passed else 1
-    return archive_driver.run(output,stage)
+    result=archive_driver.run(output,stage)
+    atomic_json(output/'backend.json',dict(query_cache=getattr(module,'query_cache_stats',{}),
+                denominators=getattr(archive_driver,'denominator_stats',{})))
+    return result
 
 
 if __name__=='__main__':

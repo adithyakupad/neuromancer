@@ -1,0 +1,53 @@
+name: M030 V1 portability audit
+on:
+  push:
+    branches: [engineering/m030-numerical-determinism]
+    paths: ['tools/m030_study.py', 'tools/m030_v1.py', 'tests/test_m030_study.py', '.github/workflows/m030-v1-study.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    timeout-minutes: 16
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONPATH: .:src
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+      MPLCONFIGDIR: /tmp/m030-mpl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          python -m pip check
+          python -m venv .venv-m030-sdk-reader
+          .venv-m030-sdk-reader/bin/python -m pip install cl-sdk==1.0.0
+          .venv-m030-sdk-reader/bin/python -m pip check
+          mkdir -p runs
+          git rev-parse HEAD > runs/source.txt
+          python -m pip freeze > runs/packages.txt
+      - run: python -m pytest -q tests/test_m030_study.py --junitxml=runs/oracle.xml
+      - name: Original shared remaining-stage deadline
+        shell: bash
+        run: |
+          extra=()
+          if [ "$RUNNER_OS" = Linux ]; then
+            extra=(--rls linux)
+          fi
+          python scripts/m014_supervise.py runs/remaining-guard 240 python tools/m030_study.py runs/remaining --sdk-python .venv-m030-sdk-reader/bin/python "${extra[@]}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m030-v1-${{ matrix.os }}
+          path: |
+            runs/
+            !runs/remaining/matrix-native
+            !runs/remaining/matrix-reference

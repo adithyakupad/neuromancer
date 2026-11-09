@@ -2,7 +2,7 @@ name: M029 numerical portability
 on:
   push:
     branches: [engineering/m029-final-portability]
-    paths: ['tools/m029_parallel.py', 'tools/m029_matrix.py', 'tests/test_m029_parallel.py']
+    paths: ['tools/m029_parallel.py', 'tools/m029_matrix.py', 'tools/m029_kernel.py', 'tools/m029_dot4.pyx', 'tests/test_m029_parallel.py', 'tests/test_m029_ordered.py', '.github/workflows/m029-portability.yml']
 permissions:
   contents: read
 jobs:
@@ -16,6 +16,7 @@ jobs:
     env:
       PYTHONPATH: .:src
       M028_KERNEL_DIR: ${{ github.workspace }}/runs/build/lib
+      M029_KERNEL_DIR: ${{ github.workspace }}/runs/ordered-build/lib
       VECLIB_MAXIMUM_THREADS: '1'
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
@@ -32,8 +33,10 @@ jobs:
           git rev-parse HEAD > runs/source.txt
           python -m pip freeze > runs/environment.txt
       - run: python scripts/m014_supervise.py runs/build-guard 120 python tools/m028_build.py runs/build
-      - run: python -m pytest -q tests/test_m028_arithmetic.py tests/test_m028_io.py tests/test_m029_parallel.py --junitxml=runs/focused.xml
+      - run: python scripts/m014_supervise.py runs/ordered-build-guard 120 python tools/m029_kernel.py runs/ordered-build
+      - run: python -m pytest -q tests/test_m028_arithmetic.py tests/test_m028_io.py tests/test_m029_parallel.py tests/test_m029_ordered.py --junitxml=runs/focused.xml
       - run: python scripts/m014_supervise.py runs/prerequisite-guard 180 python tools/m028_verify.py runs/prerequisite --stage 256
+      - run: python scripts/m014_supervise.py runs/ordered-prerequisite-guard 180 python tools/m029_kernel.py runs/ordered-prerequisite --prerequisite
       - run: python tools/m029_matrix.py runs/matrix
       - uses: actions/upload-artifact@v4
         if: always()

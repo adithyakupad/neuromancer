@@ -51,6 +51,7 @@ def worker(output, branch, source):
     from neuromancer.clocks import now_ns
     from neuromancer.supervisor import Deadline, atomic_json
     from tools.m028_backend import bounds, driver, load_kernel
+    from neuromancer.research_codec import model_digest
 
     deadline = Deadline.from_environment()
     started = now_ns()
@@ -76,10 +77,20 @@ def worker(output, branch, source):
                 return {**data, 'branches': selected}
             return data
 
+    if 'M029_KERNEL_DIR' in os.environ:
+        from tools.m029_kernel import load as load_kernel
     kernel = load_kernel()
     module = bounds(kernel)
     replay = driver(module)
     replay.json = BranchReader
+    trajectory = hashlib.sha256()
+
+    class ObservedModel(replay._checked_model_type):
+        def update(self, x, y, valid=True):
+            super().update(x, y, valid)
+            trajectory.update(model_digest(self))
+
+    replay._checked_model_type = ObservedModel
     code = replay.run(output, 'first')
     atomic_json(output / 'backend.json', dict(denominators=replay.denominator_stats,
                 query_cache=module.query_cache_stats))
@@ -89,6 +100,7 @@ def worker(output, branch, source):
                 clock_id=deadline.clock_id, started_ns=started, finished_ns=now_ns(),
                 user_s=usage.ru_utime, system_s=usage.ru_stime,
                 peak_rss_bytes=usage.ru_maxrss * (1 if sys.platform == 'darwin' else 1024),
+                native_state_trajectory_sha256=trajectory.hexdigest(),
                 kernel_sha256=sha(Path(kernel.__file__)), returncode=code,
                 sha256={name: sha(output / name) for name in FILES}))
     deadline.check()
@@ -140,6 +152,7 @@ def verify_worker(output, branch, source, record, result, kernel_sha):
                  'maximum_covariance_radius', 'digest_differences')}
     numerical['checkpoints'] = checkpoints[:-1]
     numerical['denominators'] = denominator
+    numerical['native_state_trajectory_sha256'] = worker_record['native_state_trajectory_sha256']
     fingerprint = hashlib.sha256(json.dumps(numerical, sort_keys=True, allow_nan=False).encode()).hexdigest()
     return {**worker_record, 'numerical_sha256': fingerprint, 'updates': 3200, 'plans': 64,
             'timings': timings, 'startup_s': (worker_record['started_ns'] - next(
@@ -176,8 +189,9 @@ def coordinate(output, workers, size):
     if subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=ROOT):
         raise ValueError('Qualification requires committed tracked sources')
     selected = manifest()[:size]
-    kernel_dir = Path(os.environ['M028_KERNEL_DIR'])
-    binaries = list(kernel_dir.glob('m028_arithmetic*.so'))
+    variant = 'm029' if 'M029_KERNEL_DIR' in os.environ else 'm028'
+    kernel_dir = Path(os.environ[variant.upper()+'_KERNEL_DIR'])
+    binaries = list(kernel_dir.glob(variant+'_arithmetic*.so'))
     if len(binaries) != 1:
         raise ValueError('Expected one compiled kernel')
     kernel_sha = sha(binaries[0])

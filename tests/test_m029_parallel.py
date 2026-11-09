@@ -23,6 +23,7 @@ def artifacts(tmp_path, monkeypatch):
     (tmp_path/'certificate.json').write_text(json.dumps(certificate))
     worker = dict(branch=branch, source='source', pid=1, pgid=1, deadline_ns=100, clock_id='clock',
                   kernel_sha256='kernel', returncode=0, started_ns=15, finished_ns=20,
+                  native_state_trajectory_sha256='synthetic-trajectory',
                   sha256={name: parallel.sha(tmp_path/name) for name in parallel.FILES})
     (tmp_path/'worker.json').write_text(json.dumps(worker))
     record = dict(pid=1, pgid=1, terminal='COMPLETED', parent_reaped=True,

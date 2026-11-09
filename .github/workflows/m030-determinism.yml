@@ -1,0 +1,44 @@
+name: M030 Intel first divergence
+on:
+  push:
+    branches: [engineering/m030-numerical-determinism]
+    paths: ['tools/m030_trace.py', '.github/workflows/m030-determinism.yml']
+permissions:
+  contents: read
+jobs:
+  trace:
+    runs-on: macos-15-intel
+    timeout-minutes: 24
+    env:
+      PYTHONPATH: .:src
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      VECLIB_MAXIMUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          python -m pip install -r requirements-v1.txt
+          python -m pip install --no-build-isolation --no-deps -e .
+          mkdir -p runs
+          git rev-parse HEAD > runs/source.txt
+          python -m pip freeze > runs/packages.txt
+          sysctl hw.ncpu machdep.cpu.brand_string machdep.cpu.features machdep.cpu.leaf7_features > runs/cpu.txt
+          python -c 'import numpy as n; n.show_config(); n.show_runtime()' > runs/numerical-runtime.txt 2>&1
+          otool -L "$(python -c 'import numpy._core._multiarray_umath as m; print(m.__file__)')" > runs/loaded-library-links.txt
+      - run: python scripts/m014_supervise.py runs/build-guard 120 python tools/m028_build.py runs/build
+      - run: python scripts/m014_supervise.py runs/ordered-build-guard 120 python tools/m029_kernel.py runs/ordered-build
+      - run: |
+          M029_KERNEL_DIR="$PWD/runs/ordered-build/lib" python -m pytest -q tests/test_m029_ordered.py --junitxml=runs/ordered-oracle.xml
+      - name: Ordered proof first divergence
+        run: M029_KERNEL_DIR="$PWD/runs/ordered-build/lib" python tools/m030_trace.py pair runs/ordered-traces
+      - name: Historical proof radius trace
+        if: always()
+        run: M028_KERNEL_DIR="$PWD/runs/build/lib" python tools/m030_trace.py pair runs/original-traces
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: m030-intel-diagnostics
+          path: runs/

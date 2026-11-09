@@ -1,0 +1,85 @@
+/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/numpy/__config__.py:155: UserWarning: Install `pyyaml` for better output
+  warnings.warn("Install `pyyaml` for better output", stacklevel=1)
+{
+  "Compilers": {
+    "c": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "17.0.0",
+      "commands": "cc"
+    },
+    "cython": {
+      "name": "cython",
+      "linker": "cython",
+      "version": "3.3.0",
+      "commands": "cython"
+    },
+    "c++": {
+      "name": "clang",
+      "linker": "ld64",
+      "version": "17.0.0",
+      "commands": "c++"
+    }
+  },
+  "Machine Information": {
+    "host": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "darwin"
+    },
+    "build": {
+      "cpu": "x86_64",
+      "family": "x86_64",
+      "endian": "little",
+      "system": "darwin"
+    }
+  },
+  "Build Dependencies": {
+    "blas": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    },
+    "lapack": {
+      "name": "accelerate",
+      "found": true,
+      "version": "unknown",
+      "detection method": "system",
+      "include directory": "unknown",
+      "lib directory": "unknown",
+      "openblas configuration": "unknown",
+      "pc file directory": "unknown"
+    }
+  },
+  "Python Information": {
+    "path": "/private/var/folders/20/jp1_0n3n7kndh6rnbqb5344m0000gn/T/build-env-a9peyscu/bin/python",
+    "version": "3.12"
+  },
+  "SIMD Extensions": {
+    "baseline": [
+      "X86_V2"
+    ],
+    "found": [
+      "X86_V3"
+    ],
+    "not found": [
+      "X86_V4",
+      "AVX512_ICL"
+    ]
+  }
+}
+WARNING: `threadpoolctl` not found in system! Install it by `pip install threadpoolctl`. Once installed, try `np.show_runtime` again for more detailed build information
+[{'numpy_version': '2.5.4',
+  'python': '3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:47:00) [Clang '
+            '13.0.0 (clang-1300.0.29.30)]',
+  'uname': uname_result(system='Darwin', node='iad01-dz252-557b5dfb-3a67-4816-a537-ac1a99b75208-86FB32795FCE.local', release='24.6.0', version='Darwin Kernel Version 24.6.0: Tue Jul 21 20:50:07 PDT 2026; root:xnu-11417.140.69.711.44~1/RELEASE_X86_64', machine='x86_64')},
+ {'simd_extensions': {'baseline': ['X86_V2'],
+                      'found': ['X86_V3'],
+                      'not_found': ['X86_V4', 'AVX512_ICL']}},
+ {'ignore_floating_point_errors_in_matmul': False}]

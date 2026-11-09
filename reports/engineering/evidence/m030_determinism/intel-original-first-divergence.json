@@ -1,0 +1,89 @@
+{
+  "branches": [
+    {
+      "branch": [
+        0,
+        47,
+        "LOSS_RLS-MPC"
+      ],
+      "initial_differences": {
+        "theta": null,
+        "covariance": null,
+        "bias": null
+      },
+      "first_native_update": null,
+      "first_matmul": null,
+      "differences": {},
+      "first_operation_operands": {},
+      "proof_calls": []
+    },
+    {
+      "branch": [
+        1,
+        47,
+        "STATIC_RLS-MPC"
+      ],
+      "initial_differences": {
+        "theta": null,
+        "covariance": null,
+        "bias": null
+      },
+      "first_native_update": null,
+      "first_matmul": null,
+      "differences": {},
+      "first_operation_operands": {},
+      "proof_calls": [
+        {
+          "call": "proof-0.npz",
+          "matches_compiled": [
+            true,
+            true
+          ],
+          "differences": {}
+        },
+        {
+          "call": "proof-1.npz",
+          "matches_compiled": [
+            true,
+            true
+          ],
+          "differences": {}
+        },
+        {
+          "call": "proof-2.npz",
+          "matches_compiled": [
+            true,
+            true
+          ],
+          "differences": {}
+        },
+        {
+          "call": "proof-3.npz",
+          "matches_compiled": [
+            true,
+            true
+          ],
+          "differences": {}
+        }
+      ]
+    },
+    {
+      "branch": [
+        1,
+        47,
+        "LOSS_RLS-MPC"
+      ],
+      "initial_differences": {
+        "theta": null,
+        "covariance": null,
+        "bias": null
+      },
+      "first_native_update": null,
+      "first_matmul": null,
+      "differences": {},
+      "first_operation_operands": {},
+      "proof_calls": []
+    }
+  ],
+  "qualification": false
+}
